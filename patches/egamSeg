@@ -1,0 +1,10 @@
+Bottom: fdcb96ff9d86fa5f9cc4c308f92adf62cd57f388
+Top:    fdcb96ff9d86fa5f9cc4c308f92adf62cd57f388
+Author: sss <sss@karma>
+Date:   2024-12-04 17:13:15 -0500
+
+Update for changes in allegro ecal segmentation.
+
+The allegro ecal segmentation class has been changed to properly return
+a position in the volume-local coordinate system.  Remove the workaround
+here that was dealing with what the segmentation used to return.
