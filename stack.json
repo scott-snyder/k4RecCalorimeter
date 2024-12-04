@@ -1,15 +1,19 @@
 {
   "version": 5,
-  "prev": "99cde6110e3b5765b71d1da3b985419bf6ab5251",
-  "head": "a4f417cb79d96cc1ebe78ec735ebfd460c49782a",
+  "prev": "c668670d69694625887fc9a9f6068e6390f56ed9",
+  "head": "8d18767e7c198f22efa6fcab8c4adb5ea10bda68",
   "applied": [
-    "egamSeg"
+    "egamSeg",
+    "refresh-temp"
   ],
   "unapplied": [],
   "hidden": [],
   "patches": {
     "egamSeg": {
       "oid": "a4f417cb79d96cc1ebe78ec735ebfd460c49782a"
+    },
+    "refresh-temp": {
+      "oid": "8d18767e7c198f22efa6fcab8c4adb5ea10bda68"
     }
   }
 }
