@@ -1,0 +1,6 @@
+Bottom: cbcb0376cbb4265fe9ea1d3a0db547faf4165db5
+Top:    cbcb0376cbb4265fe9ea1d3a0db547faf4165db5
+Author: sss <sss@karma>
+Date:   2024-12-12 10:24:58 -0500
+
+service() with bare pointers is deprecated.  Use SmartIF.
