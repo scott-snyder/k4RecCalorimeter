@@ -16,7 +16,7 @@ StatusCode NoiseCaloCellsFlatTool::initialize() {
   }
 
   // Initialize random service
-  if (service("RndmGenSvc", m_randSvc).isFailure()) {
+  if (!service("RndmGenSvc", m_randSvc)) {
     error() << "Couldn't get RndmGenSvc" << endmsg;
     return StatusCode::FAILURE;
   }
