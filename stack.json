@@ -1,10 +1,11 @@
 {
   "version": 5,
-  "prev": "3daf9e22d28032ba2cd77eb11b27e0096158bc77",
-  "head": "31588a7da96a71edcf796ccd48a858bea5836c3c",
-  "applied": [],
+  "prev": "b4f612267a461223fa8471044b7224ae244aa14c",
+  "head": "88ff6c86249274dc538519bf6a7d0a242c0693b7",
+  "applied": [
+    "service"
+  ],
   "unapplied": [
-    "service",
     "egamSeg"
   ],
   "hidden": [],
