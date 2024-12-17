@@ -1,13 +1,12 @@
 {
   "version": 5,
-  "prev": "fbfc960b26a767696a172b711cde6b3014ed51cc",
-  "head": "a09c5f2db5acac52832c86b09f879d35092d6b4c",
+  "prev": "8606c38d2bf5d8022df8a07a21a0bf485d2ec25e",
+  "head": "f5039faadbc7eee6a2e1da49b3c66d9c33bf4d9f",
   "applied": [
-    "service"
-  ],
-  "unapplied": [
+    "service",
     "egamSeg"
   ],
+  "unapplied": [],
   "hidden": [],
   "patches": {
     "egamSeg": {
