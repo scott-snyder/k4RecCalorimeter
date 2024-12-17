@@ -1,10 +1,9 @@
 {
   "version": 5,
-  "prev": "dfb1e79efe2a2b8f43f22f4c6c0b72ae5346f883",
-  "head": "cf8f9e7e9cf7ccd13f09e7936bfb0b5f3158824a",
+  "prev": "bd0654ac9efbf08c9bd453750bfdcd9689e9e637",
+  "head": "a09c5f2db5acac52832c86b09f879d35092d6b4c",
   "applied": [
-    "service",
-    "refresh-temp"
+    "service"
   ],
   "unapplied": [
     "egamSeg"
@@ -14,11 +13,8 @@
     "egamSeg": {
       "oid": "d52acd1e5dc16f2ae4dde9874c01b0ee3806a4ab"
     },
-    "refresh-temp": {
-      "oid": "cf8f9e7e9cf7ccd13f09e7936bfb0b5f3158824a"
-    },
     "service": {
-      "oid": "88ff6c86249274dc538519bf6a7d0a242c0693b7"
+      "oid": "a09c5f2db5acac52832c86b09f879d35092d6b4c"
     }
   }
 }
