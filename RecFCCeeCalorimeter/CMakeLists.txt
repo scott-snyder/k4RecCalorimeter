@@ -29,24 +29,24 @@ install(DIRECTORY ${CMAKE_CURRENT_LIST_DIR}/tests DESTINATION ${CMAKE_INSTALL_DA
 
 add_test(NAME ALLEGRO_o1_v03_sim_reco
          COMMAND ${PROJECT_SOURCE_DIR}/RecFCCeeCalorimeter/tests/options/ALLEGRO_o1_v03.sh
-         WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}/build/Testing/Temporary
+         WORKING_DIRECTORY ${PROJECT_BINARY_DIR}/Testing/Temporary
 )
 set_test_env(ALLEGRO_o1_v03_sim_reco)
 
 add_test(NAME FCCeeLAr_benchmarkCalibration
-         COMMAND k4run RecFCCeeCalorimeter/tests/options/fcc_ee_caloBenchmarkCalibration.py
-         WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}
+         COMMAND k4run ${PROJECT_SOURCE_DIR}/RecFCCeeCalorimeter/tests/options/fcc_ee_caloBenchmarkCalibration.py
+         WORKING_DIRECTORY ${PROJECT_BINARY_DIR}
 )
 set_test_env(FCCeeLAr_benchmarkCalibration)
 
 add_test(NAME FCCeeLAr_xtalkNeighbours
-  COMMAND k4run RecFCCeeCalorimeter/tests/options/runCaloXTalkNeighbours.py
-         WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}
+  COMMAND k4run ${PROJECT_SOURCE_DIR}/RecFCCeeCalorimeter/tests/options/runCaloXTalkNeighbours.py
+         WORKING_DIRECTORY ${PROJECT_BINARY_DIR}
 )
 set_test_env(FCCeeLAr_xtalkNeighbours)
 
 add_test(NAME FCCeeLAr_benchmarkCorrection
-         COMMAND k4run RecFCCeeCalorimeter/tests/options/run_thetamodulemerged_SW_benchmarkCorr.py
-         WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}
+         COMMAND k4run ${PROJECT_SOURCE_DIR}/RecFCCeeCalorimeter/tests/options/run_thetamodulemerged_SW_benchmarkCorr.py
+         WORKING_DIRECTORY ${PROJECT_BINARY_DIR}
 )
 set_test_env(FCCeeLAr_benchmarkCorrection)
