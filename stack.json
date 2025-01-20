@@ -1,12 +1,11 @@
 {
   "version": 5,
-  "prev": "9210fcfb1cd35eb5e936998b5f0800b21e0f6459",
-  "head": "8c327681026faa292dd7541908ab075fe15c24a7",
+  "prev": "a4d7149f313bc908104037ee623e1171af2fc886",
+  "head": "60aa63cc03ea007237391e7f5234dc0b1b5c4bc6",
   "applied": [
     "service",
     "egamSeg",
-    "testdir",
-    "refresh-temp"
+    "testdir"
   ],
   "unapplied": [],
   "hidden": [],
@@ -14,14 +13,11 @@
     "egamSeg": {
       "oid": "f5039faadbc7eee6a2e1da49b3c66d9c33bf4d9f"
     },
-    "refresh-temp": {
-      "oid": "8c327681026faa292dd7541908ab075fe15c24a7"
-    },
     "service": {
       "oid": "a09c5f2db5acac52832c86b09f879d35092d6b4c"
     },
     "testdir": {
-      "oid": "25582df88976f00d452357468dc951da15d72e79"
+      "oid": "60aa63cc03ea007237391e7f5234dc0b1b5c4bc6"
     }
   }
 }
