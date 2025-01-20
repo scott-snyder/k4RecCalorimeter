@@ -1,10 +1,11 @@
 {
   "version": 5,
-  "prev": "8606c38d2bf5d8022df8a07a21a0bf485d2ec25e",
-  "head": "f5039faadbc7eee6a2e1da49b3c66d9c33bf4d9f",
+  "prev": "5ac9cfb39a46721a229b6baa3ebca1d52c7754a3",
+  "head": "25582df88976f00d452357468dc951da15d72e79",
   "applied": [
     "service",
-    "egamSeg"
+    "egamSeg",
+    "testdir"
   ],
   "unapplied": [],
   "hidden": [],
@@ -14,6 +15,9 @@
     },
     "service": {
       "oid": "a09c5f2db5acac52832c86b09f879d35092d6b4c"
+    },
+    "testdir": {
+      "oid": "25582df88976f00d452357468dc951da15d72e79"
     }
   }
 }
