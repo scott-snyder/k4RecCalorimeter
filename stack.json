@@ -1,9 +1,10 @@
 {
   "version": 5,
-  "prev": "3bd35b3b84fff86bab2f3fd37d67e5f420184c4b",
-  "head": "e01a975382874e38276acd36aa4a904cbe892fb5",
+  "prev": "88830cd62d11cdb6abf5a9d0b8f49a24360dd8bb",
+  "head": "976daa5eda37550e54971c0dbe64588444f591c7",
   "applied": [
-    "service"
+    "service",
+    "refresh-temp"
   ],
   "unapplied": [
     "testdir",
@@ -13,6 +14,9 @@
   "patches": {
     "egamSeg": {
       "oid": "f5039faadbc7eee6a2e1da49b3c66d9c33bf4d9f"
+    },
+    "refresh-temp": {
+      "oid": "976daa5eda37550e54971c0dbe64588444f591c7"
     },
     "service": {
       "oid": "e01a975382874e38276acd36aa4a904cbe892fb5"
