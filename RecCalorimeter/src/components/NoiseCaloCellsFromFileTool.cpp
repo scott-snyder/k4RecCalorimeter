@@ -33,7 +33,7 @@ StatusCode NoiseCaloCellsFromFileTool::initialize() {
   }
 
   // Initialize random service
-  m_randSvc = service("RndmGenSvc", false);
+  m_randSvc = service<IRndmGenSvc> ("RndmGenSvc", false);
   if (!m_randSvc) {
     error() << "Couldn't get RndmGenSvc!!!!" << endmsg;
     return StatusCode::FAILURE;
