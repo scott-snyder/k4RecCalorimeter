@@ -401,7 +401,7 @@ if addCrosstalk:
     # read the crosstalk map
     readCrosstalkMap = ReadCaloCrosstalkMap(
         "ReadCrosstalkMap",
-        fileName="https://fccsw.web.cern.ch/fccsw/filesForSimDigiReco/ALLEGRO/ALLEGRO_o1_v03/xtalk_neighbours_map_ecalB_thetamodulemerged.root",
+        fileName="xtalk_neighbours_map_ecalB_thetamodulemerged.root",
         OutputLevel=INFO,
     )
 else:
