@@ -1,18 +1,22 @@
 {
   "version": 5,
-  "prev": "c6d1bf39202ae2125d0ce90f70edf520fafd295b",
-  "head": "84597b78810eb24f85926864d285e35233810879",
+  "prev": "dccc3379557f94eddc2b3ec9b8a6606878e3336a",
+  "head": "6b714c8f6b83a9bb7ff7604bbd99e7d8559900e0",
   "applied": [
     "service",
     "testdir",
     "egamSeg",
-    "xtalk"
+    "xtalk",
+    "refresh-temp"
   ],
   "unapplied": [],
   "hidden": [],
   "patches": {
     "egamSeg": {
       "oid": "e87003615b5bb0cff45914849e732209b25ab521"
+    },
+    "refresh-temp": {
+      "oid": "6b714c8f6b83a9bb7ff7604bbd99e7d8559900e0"
     },
     "service": {
       "oid": "4e72312295c45c5c57474fba32f09ef6000bdacd"
