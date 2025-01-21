@@ -1,14 +1,13 @@
 {
   "version": 5,
-  "prev": "daa43df30c0dd7a81cc591b27e540198613792ef",
-  "head": "710d7a74ea3afeab26b21d84abaafb59d645b704",
+  "prev": "0cca99d42c1ec62e9036f0191cd30c92e4109d98",
+  "head": "7c3326736d6bf06b9cb85aaecc44280f68531140",
   "applied": [
     "service",
     "testdir",
     "egamSeg",
     "xtalk",
-    "return",
-    "refresh-temp"
+    "return"
   ],
   "unapplied": [],
   "hidden": [],
@@ -16,11 +15,8 @@
     "egamSeg": {
       "oid": "e87003615b5bb0cff45914849e732209b25ab521"
     },
-    "refresh-temp": {
-      "oid": "710d7a74ea3afeab26b21d84abaafb59d645b704"
-    },
     "return": {
-      "oid": "3a073d76b0bac123b92c39aa7f7a4caa9843df78"
+      "oid": "7c3326736d6bf06b9cb85aaecc44280f68531140"
     },
     "service": {
       "oid": "4e72312295c45c5c57474fba32f09ef6000bdacd"
