@@ -1,18 +1,18 @@
 {
   "version": 5,
-  "prev": "0cca99d42c1ec62e9036f0191cd30c92e4109d98",
+  "prev": "323c2ea6f478bd92835d2fd51857d43b8715acee",
   "head": "7c3326736d6bf06b9cb85aaecc44280f68531140",
   "applied": [
     "service",
     "testdir",
-    "egamSeg",
+    "ecalSeg",
     "xtalk",
     "return"
   ],
   "unapplied": [],
   "hidden": [],
   "patches": {
-    "egamSeg": {
+    "ecalSeg": {
       "oid": "e87003615b5bb0cff45914849e732209b25ab521"
     },
     "return": {
