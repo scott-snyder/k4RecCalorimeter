@@ -1,11 +1,12 @@
 {
   "version": 5,
-  "prev": "41f151916c376f4865c133a548a48f2f94aa1f4c",
-  "head": "e87003615b5bb0cff45914849e732209b25ab521",
+  "prev": "c6d1bf39202ae2125d0ce90f70edf520fafd295b",
+  "head": "84597b78810eb24f85926864d285e35233810879",
   "applied": [
     "service",
     "testdir",
-    "egamSeg"
+    "egamSeg",
+    "xtalk"
   ],
   "unapplied": [],
   "hidden": [],
@@ -18,6 +19,9 @@
     },
     "testdir": {
       "oid": "1c9abb924b708048906c9c78bf602b2890d01f8d"
+    },
+    "xtalk": {
+      "oid": "84597b78810eb24f85926864d285e35233810879"
     }
   }
 }
