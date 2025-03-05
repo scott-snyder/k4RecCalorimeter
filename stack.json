@@ -1,22 +1,18 @@
 {
   "version": 5,
-  "prev": "07c3f592f31a13b801ce9f58e441efee96841343",
-  "head": "d54f1c1c593887cff78503b048285647c649255a",
+  "prev": "c6066a5f7529537434fe35dffb087321a32d56a8",
+  "head": "3f88de571364d43ccc816367d306feb7c9d90f59",
   "applied": [
     "service",
     "testdir",
-    "ecalSeg",
     "xtalk",
     "return"
   ],
   "unapplied": [],
   "hidden": [],
   "patches": {
-    "ecalSeg": {
-      "oid": "7766de2d6c782661cd207536c305afe8bd1583fd"
-    },
     "return": {
-      "oid": "d54f1c1c593887cff78503b048285647c649255a"
+      "oid": "3f88de571364d43ccc816367d306feb7c9d90f59"
     },
     "service": {
       "oid": "088a6d829a5247eabbeef1393aed67149f2fabc0"
@@ -25,7 +21,7 @@
       "oid": "9fb6ab1eb51dc33028275c6f5e57e3e65e37fd41"
     },
     "xtalk": {
-      "oid": "2053a31f96d250a0d7163125e0a6dd9fa6dde3c8"
+      "oid": "4f2522debc2d222ff75ab1c2ba2a1b7778a61a86"
     }
   }
 }
