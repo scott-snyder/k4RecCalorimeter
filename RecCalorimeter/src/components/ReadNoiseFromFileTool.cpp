@@ -5,6 +5,7 @@
 
 // k4FWCore
 #include "k4Interface/IGeoSvc.h"
+#include "k4FWCore/k4_check.h"
 
 // DD4hep
 #include "DD4hep/Detector.h"
@@ -19,19 +20,9 @@
 
 DECLARE_COMPONENT(ReadNoiseFromFileTool)
 
-ReadNoiseFromFileTool::ReadNoiseFromFileTool(const std::string& type, const std::string& name, const IInterface* parent)
-    : AlgTool(type, name, parent) {
-  declareInterface<INoiseConstTool>(this);
-}
-
 StatusCode ReadNoiseFromFileTool::initialize() {
-  // Get GeoSvc
-  m_geoSvc = service("GeoSvc");
-  if (!m_geoSvc) {
-    error() << "Unable to locate Geometry Service. "
-            << "Make sure you have GeoSvc and SimSvc in the right order in the configuration." << endmsg;
-    return StatusCode::FAILURE;
-  }
+  K4_GAUDI_CHECK( m_geoSvc.retrieve() );
+
   m_segmentation = dynamic_cast<dd4hep::DDSegmentation::FCCSWGridPhiEta_k4geo*>(
       m_geoSvc->getDetector()->readout(m_readoutName).segmentation().segmentation());
   if (m_segmentation == nullptr) {
@@ -40,24 +31,14 @@ StatusCode ReadNoiseFromFileTool::initialize() {
   }
 
   // open and check file, read the histograms with noise constants
-  if (ReadNoiseFromFileTool::initNoiseFromFile().isFailure()) {
-    error() << "Couldn't open file with noise constants!!!" << endmsg;
-    return StatusCode::FAILURE;
-  }
+  K4_GAUDI_CHECK( ReadNoiseFromFileTool::initNoiseFromFile() );
 
   // Take readout bitfield decoder from GeoSvc
   m_decoder = m_geoSvc->getDetector()->readout(m_readoutName).idSpec().decoder();
 
-  StatusCode sc = AlgTool::initialize();
-  if (sc.isFailure())
-    return sc;
+  K4_GAUDI_CHECK( AlgTool::initialize() );
 
-  return sc;
-}
-
-StatusCode ReadNoiseFromFileTool::finalize() {
-  StatusCode sc = AlgTool::finalize();
-  return sc;
+  return StatusCode::SUCCESS;
 }
 
 StatusCode ReadNoiseFromFileTool::initNoiseFromFile() {
