@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "c7a6cea5614581f5d56398f03cbc243f8a698b17",
-  "head": "69a4fb686d2595945d134d9bd04367d82e61c065",
+  "prev": "de230244e41a01d81c989bafa3ad33ad096b8f90",
+  "head": "535e5589ff0c569530c297c6090cf0fc6b649781",
   "applied": [
     "service",
     "testdir",
@@ -10,7 +10,8 @@
     "cellPositionsConst",
     "noiseConst",
     "calibConst",
-    "xtalkConst"
+    "xtalkConst",
+    "refresh-temp"
   ],
   "unapplied": [],
   "hidden": [],
@@ -23,6 +24,9 @@
     },
     "noiseConst": {
       "oid": "dc4a79441faa1e24b6762038459246303d3006a5"
+    },
+    "refresh-temp": {
+      "oid": "535e5589ff0c569530c297c6090cf0fc6b649781"
     },
     "return": {
       "oid": "3f88de571364d43ccc816367d306feb7c9d90f59"
