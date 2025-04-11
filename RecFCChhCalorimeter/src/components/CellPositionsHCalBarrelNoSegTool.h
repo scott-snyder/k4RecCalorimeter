@@ -40,16 +40,16 @@ public:
   CellPositionsHCalBarrelNoSegTool(const std::string& type, const std::string& name, const IInterface* parent);
   ~CellPositionsHCalBarrelNoSegTool() = default;
 
-  virtual StatusCode initialize() final;
+  virtual StatusCode initialize() override final;
 
-  virtual StatusCode finalize() final;
+  virtual StatusCode finalize() override final;
 
   virtual void getPositions(const edm4hep::CalorimeterHitCollection& aCells,
-                            edm4hep::CalorimeterHitCollection& outputColl) final;
+                            edm4hep::CalorimeterHitCollection& outputColl) const override final;
 
   virtual dd4hep::Position xyzPosition(const uint64_t& aCellId) const final;
 
-  virtual int layerId(const uint64_t& aCellId) final;
+  virtual int layerId(const uint64_t& aCellId) const override final;
 
 private:
   /// Pointer to the geometry service
