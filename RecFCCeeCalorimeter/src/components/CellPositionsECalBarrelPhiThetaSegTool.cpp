@@ -1,36 +1,31 @@
 #include "CellPositionsECalBarrelPhiThetaSegTool.h"
+#include "RecCaloCommon/k4RecCalorimeter_check.h"
 
 // EDM
 #include "edm4hep/CalorimeterHitCollection.h"
 
 DECLARE_COMPONENT(CellPositionsECalBarrelPhiThetaSegTool)
 
-CellPositionsECalBarrelPhiThetaSegTool::CellPositionsECalBarrelPhiThetaSegTool(const std::string& type,
-                                                                               const std::string& name,
-                                                                               const IInterface* parent)
-    : AlgTool(type, name, parent) {
-  declareInterface<ICellPositionsTool>(this);
-}
-
 StatusCode CellPositionsECalBarrelPhiThetaSegTool::initialize() {
-  StatusCode sc = AlgTool::initialize();
-  if (sc.isFailure())
-    return sc;
-  m_geoSvc = service("GeoSvc");
-  if (!m_geoSvc) {
-    error() << "Unable to locate Geometry service." << endmsg;
-    return StatusCode::FAILURE;
-  }
+  K4RECCALORIMETER_CHECK( AlgTool::initialize() );
+  K4RECCALORIMETER_CHECK( m_geoSvc.retrieve() );
+
+  const dd4hep::Detector* detector = m_geoSvc->getDetector();
+  dd4hep::Readout readout = detector->readout(m_readoutName);
+  dd4hep::Segmentation segmentation = readout.segmentation();
+
   // get phi-theta segmentation
   m_segmentation = dynamic_cast<dd4hep::DDSegmentation::FCCSWGridPhiTheta_k4geo*>(
-      m_geoSvc->getDetector()->readout(m_readoutName).segmentation().segmentation());
+      segmentation.segmentation());
   if (m_segmentation == nullptr) {
     error() << "There is no phi-theta segmentation!!!!" << endmsg;
     return StatusCode::FAILURE;
   }
   // Take readout bitfield decoder from GeoSvc
-  m_decoder = m_geoSvc->getDetector()->readout(m_readoutName).idSpec().decoder();
-  m_volman = m_geoSvc->getDetector()->volumeManager();
+  m_decoder = readout.idSpec().decoder();
+  const dd4hep::DetElementObject& de = segmentation.detector();
+  dd4hep::VolumeManager vman_glob = detector->volumeManager();
+  m_volman = vman_glob.subdetector (de.id);
   // check if decoder contains "layer"
   std::vector<std::string> fields;
   for (uint itField = 0; itField < m_decoder->size(); itField++) {
@@ -40,7 +35,7 @@ StatusCode CellPositionsECalBarrelPhiThetaSegTool::initialize() {
   if (iter == fields.end()) {
     error() << "Readout does not contain field: 'layer'" << endmsg;
   }
-  return sc;
+  return StatusCode::SUCCESS;
 }
 
 void CellPositionsECalBarrelPhiThetaSegTool::getPositions(const edm4hep::CalorimeterHitCollection& aCells,
@@ -93,5 +88,3 @@ int CellPositionsECalBarrelPhiThetaSegTool::layerId(const uint64_t& aCellId) con
   layer = m_decoder->get(cID, "layer");
   return layer;
 }
-
-StatusCode CellPositionsECalBarrelPhiThetaSegTool::finalize() { return AlgTool::finalize(); }
