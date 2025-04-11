@@ -42,22 +42,22 @@ class NoiseCaloCellsVsThetaFromFileTool : public AlgTool, virtual public INoiseC
 public:
   NoiseCaloCellsVsThetaFromFileTool(const std::string& type, const std::string& name, const IInterface* parent);
   virtual ~NoiseCaloCellsVsThetaFromFileTool() = default;
-  virtual StatusCode initialize() final;
-  virtual StatusCode finalize() final;
+  virtual StatusCode initialize() override final;
+  virtual StatusCode finalize() override final;
 
   /** @brief Create random CaloHits (gaussian distribution) for the vector of cells (aCells).
    * Vector of cells must contain all cells in the calorimeter with their cellIDs.
    */
-  virtual void addRandomCellNoise(std::unordered_map<uint64_t, double>& aCells) final;
+  virtual void addRandomCellNoise(std::unordered_map<uint64_t, double>& aCells) const override final;
   /** @brief Remove cells with energy below threshold*sigma from the vector of cells
    */
-  virtual void filterCellNoise(std::unordered_map<uint64_t, double>& aCells) final;
+  virtual void filterCellNoise(std::unordered_map<uint64_t, double>& aCells) const override final;
 
   /// Open file and read noise histograms in the memory
   StatusCode initNoiseFromFile();
   /// Find the appropriate noise RMS from the histogram
-  double getNoiseRMSPerCell(uint64_t aCellID);
-  double getNoiseOffsetPerCell(uint64_t aCellID);
+  virtual double getNoiseRMSPerCell(uint64_t aCellID) const override final;
+  virtual double getNoiseOffsetPerCell(uint64_t aCellID) const override final;
 
 private:
   /// Handle for tool to get cell positions

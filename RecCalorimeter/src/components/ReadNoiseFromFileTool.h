@@ -34,15 +34,15 @@ public:
   ReadNoiseFromFileTool(const std::string& type, const std::string& name, const IInterface* parent);
   virtual ~ReadNoiseFromFileTool() = default;
 
-  virtual StatusCode initialize() final;
+  virtual StatusCode initialize() override final;
 
-  virtual StatusCode finalize() final;
+  virtual StatusCode finalize() override final;
 
   /// Open file and read noise histograms in the memory
   StatusCode initNoiseFromFile();
   /// Find the appropriate noise constant from the histogram
-  double getNoiseRMSPerCell(uint64_t aCellID);
-  double getNoiseOffsetPerCell(uint64_t aCellID);
+  virtual double getNoiseRMSPerCell(uint64_t aCellID) const override final;
+  virtual double getNoiseOffsetPerCell(uint64_t aCellID) const override final;
 
 private:
   /// Add pileup contribution to the electronics noise? (only if read from file)

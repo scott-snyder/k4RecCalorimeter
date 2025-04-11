@@ -26,16 +26,16 @@ class NoiseCaloCellsFlatTool : public AlgTool, virtual public INoiseCaloCellsToo
 public:
   NoiseCaloCellsFlatTool(const std::string& type, const std::string& name, const IInterface* parent);
   virtual ~NoiseCaloCellsFlatTool() = default;
-  virtual StatusCode initialize() final;
-  virtual StatusCode finalize() final;
+  virtual StatusCode initialize() override final;
+  virtual StatusCode finalize() override final;
 
   /** @brief Create random CaloHits (gaussian distribution) for the vector of cells (aCells).
    * Vector of cells must contain all cells in the calorimeter with their cellIDs.
    */
-  virtual void addRandomCellNoise(std::unordered_map<uint64_t, double>& aCells) final;
+  virtual void addRandomCellNoise(std::unordered_map<uint64_t, double>& aCells) const override final;
   /** @brief Remove cells with energy below threshold*sigma from the vector of cells
    */
-  virtual void filterCellNoise(std::unordered_map<uint64_t, double>& aCells) final;
+  virtual void filterCellNoise(std::unordered_map<uint64_t, double>& aCells) const override final;
 
 private:
   /// RMS of noise -- uniform RMS per cell in GeV
