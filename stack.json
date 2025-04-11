@@ -1,19 +1,23 @@
 {
   "version": 5,
-  "prev": "2242fbe56e296845848195f016e5702199c776a1",
-  "head": "2aabe772cc3c5daee3921bc9766b102b2ae42dd8",
+  "prev": "456897569e2989ee6215f4def1cc3606ef6f2792",
+  "head": "d37900343241720b57101d2d7fcc62ed4df6fc33",
   "applied": [
     "service",
     "testdir",
     "xtalk",
     "return",
-    "cellPositionsConst"
+    "cellPositionsConst",
+    "noiseConst"
   ],
   "unapplied": [],
   "hidden": [],
   "patches": {
     "cellPositionsConst": {
       "oid": "2aabe772cc3c5daee3921bc9766b102b2ae42dd8"
+    },
+    "noiseConst": {
+      "oid": "d37900343241720b57101d2d7fcc62ed4df6fc33"
     },
     "return": {
       "oid": "3f88de571364d43ccc816367d306feb7c9d90f59"
