@@ -5,16 +5,12 @@
 
 // k4FWCore
 #include "k4Interface/IGeoSvc.h"
+#include "k4FWCore/k4_check.h"
 
 // DD4hep
 #include "DD4hep/Detector.h"
 
 DECLARE_COMPONENT(ConstNoiseTool)
-
-ConstNoiseTool::ConstNoiseTool(const std::string& type, const std::string& name, const IInterface* parent)
-    : AlgTool(type, name, parent) {
-  declareInterface<INoiseConstTool>(this);
-}
 
 StatusCode ConstNoiseTool::initialize() {
   // initialize decoder for retrieving system ID
@@ -32,13 +28,7 @@ StatusCode ConstNoiseTool::initialize() {
     }
   }
 
-  // Get GeoSvc
-  m_geoSvc = service("GeoSvc");
-  if (!m_geoSvc) {
-    error() << "Unable to locate Geometry Service. "
-            << "Make sure you have GeoSvc and SimSvc in the right order in the configuration." << endmsg;
-    return StatusCode::FAILURE;
-  }
+  K4_GAUDI_CHECK( m_geoSvc.retrieve() );
 
   // loop over the detectors
   for (size_t iDet = 0; iDet < m_detectors.size(); iDet++) {
@@ -59,16 +49,9 @@ StatusCode ConstNoiseTool::initialize() {
     }
   }
 
-  StatusCode sc = AlgTool::initialize();
-  if (sc.isFailure())
-    return sc;
+  K4_GAUDI_CHECK( AlgTool::initialize() );
 
-  return sc;
-}
-
-StatusCode ConstNoiseTool::finalize() {
-  StatusCode sc = AlgTool::finalize();
-  return sc;
+  return StatusCode::SUCCESS;
 }
 
 double ConstNoiseTool::getNoiseRMSPerCell(uint64_t aCellId) const {
