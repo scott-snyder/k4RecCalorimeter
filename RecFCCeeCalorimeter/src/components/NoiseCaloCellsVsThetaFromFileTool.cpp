@@ -71,14 +71,14 @@ StatusCode NoiseCaloCellsVsThetaFromFileTool::initialize() {
   return sc;
 }
 
-void NoiseCaloCellsVsThetaFromFileTool::addRandomCellNoise(std::unordered_map<uint64_t, double>& aCells) {
+void NoiseCaloCellsVsThetaFromFileTool::addRandomCellNoise(std::unordered_map<uint64_t, double>& aCells) const {
   std::for_each(aCells.begin(), aCells.end(), [this](std::pair<const uint64_t, double>& p) {
     p.second += getNoiseOffsetPerCell(p.first);
     p.second += (getNoiseRMSPerCell(p.first) * m_gauss.shoot());
   });
 }
 
-void NoiseCaloCellsVsThetaFromFileTool::filterCellNoise(std::unordered_map<uint64_t, double>& aCells) {
+void NoiseCaloCellsVsThetaFromFileTool::filterCellNoise(std::unordered_map<uint64_t, double>& aCells) const {
   // Erase a cell if it has energy below a threshold from the vector
   auto it = aCells.begin();
   while ((it = std::find_if(it, aCells.end(), [this](std::pair<const uint64_t, double>& p) {
@@ -186,7 +186,7 @@ StatusCode NoiseCaloCellsVsThetaFromFileTool::initNoiseFromFile() {
   return StatusCode::SUCCESS;
 }
 
-double NoiseCaloCellsVsThetaFromFileTool::getNoiseRMSPerCell(uint64_t aCellId) {
+double NoiseCaloCellsVsThetaFromFileTool::getNoiseRMSPerCell(uint64_t aCellId) const {
 
   double elecNoiseRMS = 0.;
   double pileupNoiseRMS = 0.;
@@ -198,7 +198,7 @@ double NoiseCaloCellsVsThetaFromFileTool::getNoiseRMSPerCell(uint64_t aCellId) {
   // Using the histogram in the first layer to get the bin size
   if (m_histoElecNoiseRMS.size() != 0) {
     unsigned index = 0;
-    int ibin = m_histoElecNoiseRMS.at(index).FindBin(cellTheta);
+    int ibin = m_histoElecNoiseRMS.at(index).FindFixBin(cellTheta);
     // Check that there are not more layers than the constants are provided for
     if (cellLayer < m_histoElecNoiseRMS.size()) {
       elecNoiseRMS = m_histoElecNoiseRMS.at(cellLayer).GetBinContent(ibin);
@@ -231,7 +231,7 @@ double NoiseCaloCellsVsThetaFromFileTool::getNoiseRMSPerCell(uint64_t aCellId) {
 }
 
 
-double NoiseCaloCellsVsThetaFromFileTool::getNoiseOffsetPerCell(uint64_t aCellId) {
+double NoiseCaloCellsVsThetaFromFileTool::getNoiseOffsetPerCell(uint64_t aCellId) const {
 
   if (!m_setNoiseOffset) return 0.;
 
@@ -247,7 +247,7 @@ double NoiseCaloCellsVsThetaFromFileTool::getNoiseOffsetPerCell(uint64_t aCellId
   if (m_histoElecNoiseOffset.size() != 0) {
     unsigned index = 0;
     int Nbins = m_histoElecNoiseOffset.at(index).GetNbinsX();
-    int ibin = m_histoElecNoiseOffset.at(index).FindBin(cellTheta);
+    int ibin = m_histoElecNoiseOffset.at(index).FindFixBin(cellTheta);
     if (ibin > Nbins) {
       error() << "theta outside range of the histograms! Cell theta: "
               << cellTheta << " Nbins in histogram: " << Nbins << endmsg;
