@@ -33,15 +33,15 @@ public:
   /**  Initialize.
    *   @return status code
    */
-  virtual StatusCode initialize() final;
+  virtual StatusCode initialize() override final;
   /**  Finalize.
    *   @return status code
    */
-  virtual StatusCode finalize() final;
+  virtual StatusCode finalize() override final;
 
   /** @brief  Calibrate Geant4 hit energy to EM scale
    */
-  virtual void calibrate(std::unordered_map<uint64_t, double>& aHits) final;
+  virtual void calibrate(std::unordered_map<uint64_t, double>& aHits) const override final;
 
 private:
   /// Pointer to the geometry service
