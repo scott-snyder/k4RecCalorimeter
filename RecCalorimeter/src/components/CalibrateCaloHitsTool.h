@@ -21,16 +21,16 @@
  *  @date   2016-09
  */
 
-class CalibrateCaloHitsTool : public AlgTool, virtual public ICalibrateCaloHitsTool {
+class CalibrateCaloHitsTool : public extends<AlgTool, ICalibrateCaloHitsTool> {
 public:
-  CalibrateCaloHitsTool(const std::string& type, const std::string& name, const IInterface* parent);
+  using base_class::base_class;
   ~CalibrateCaloHitsTool() = default;
   virtual StatusCode initialize() override final;
-  virtual StatusCode finalize() override final;
 
   /** @brief  Calibrate Geant4 hit energy to EM scale
    */
   virtual void calibrate(std::unordered_map<uint64_t, double>& aHits) const override final;
+  virtual void calibrate(std::vector<std::pair<uint64_t, double> >& aHits) const override final;
 
 private:
   /// Value of 1/sampling fraction
