@@ -1,0 +1,6 @@
+Bottom: c869803fbab7849aa6d9d73c554d376626b8df10
+Top:    c869803fbab7849aa6d9d73c554d376626b8df10
+Author: sss <sss@karma>
+Date:   2025-04-18 16:11:49 -0400
+
+Extend INoiseCaloCellsTool to also allow taking a vector of hit information.
