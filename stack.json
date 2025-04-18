@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "9c8057597cecbb218d280541566837056da437a3",
-  "head": "c6898d2ab84bee251db77ad5b0d1269208efdae8",
+  "prev": "169e7a6bb6afe1fe7beffc2cc3c6e6fa482f4b64",
+  "head": "4bb2abfe028f8312df30cb32fa8f3b6c37feccd5",
   "applied": [
     "service",
     "testdir",
@@ -12,7 +12,8 @@
     "calibConst",
     "xtalkConst",
     "calibVec",
-    "noiseVec"
+    "noiseVec",
+    "refresh-temp"
   ],
   "unapplied": [],
   "hidden": [],
@@ -31,6 +32,9 @@
     },
     "noiseVec": {
       "oid": "c6898d2ab84bee251db77ad5b0d1269208efdae8"
+    },
+    "refresh-temp": {
+      "oid": "4bb2abfe028f8312df30cb32fa8f3b6c37feccd5"
     },
     "return": {
       "oid": "3f88de571364d43ccc816367d306feb7c9d90f59"
