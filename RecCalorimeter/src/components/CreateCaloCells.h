@@ -8,6 +8,7 @@
 #include "k4Interface/ICaloReadCrosstalkMap.h"
 #include "k4Interface/ICalorimeterTool.h"
 #include "k4Interface/INoiseCaloCellsTool.h"
+#include "k4Interface/ICellPositionsTool.h"
 
 // Gaudi
 #include "Gaudi/Algorithm.h"
@@ -15,6 +16,7 @@
 
 // edm4hep
 #include "edm4hep/CalorimeterHitCollection.h"
+#include "edm4hep/CaloHitSimCaloHitLinkCollection.h"
 #include "edm4hep/Constants.h"
 #include "edm4hep/SimCalorimeterHitCollection.h"
 
@@ -22,6 +24,8 @@
 #include "DD4hep/Detector.h"
 #include "DD4hep/Volumes.h"
 #include "TGeoManager.h"
+
+#include <variant>
 
 class IGeoSvc;
 
@@ -55,21 +59,135 @@ class CreateCaloCells : public Gaudi::Algorithm {
 public:
   CreateCaloCells(const std::string& name, ISvcLocator* svcLoc);
 
-  StatusCode initialize();
+  virtual StatusCode initialize() override;
 
-  StatusCode execute(const EventContext&) const;
-
-  StatusCode finalize();
+  virtual StatusCode execute(const EventContext&) const override;
+  
+  virtual StatusCode finalize() override;
 
 private:
+  static constexpr size_t INVALID = static_cast<size_t> (-1);
+  using CellsIndexMap_t = std::unordered_map<uint64_t, size_t>;
+  using CellsIndexPair_t = std::pair<size_t, size_t>;  // cell index, hit index
+
+  struct CellsFullIndex
+  {
+    CellsFullIndex (const CellsIndexMap_t& cellsIndexMap)
+      : m_cellsIndexMap (cellsIndexMap),
+        m_indices (cellsIndexMap.size(), {INVALID, INVALID})
+    {
+    }
+
+    CellsIndexPair_t& index (uint64_t cellid)
+    {
+      auto it = m_cellsIndexMap.find (cellid);
+      if (it == m_cellsIndexMap.end()) {
+        throw std::out_of_range ("bad cellid");
+      }
+      return m_indices.at (it->second);
+    }
+
+    const CellsIndexMap_t& m_cellsIndexMap;
+    std::vector<CellsIndexPair_t> m_indices;
+  };
+
+
+  struct CellsSparseIndex
+  {
+    CellsIndexPair_t& index (uint64_t cellid)
+    {
+      return m_indices.try_emplace (cellid, CellsIndexPair_t{INVALID,INVALID}).first->second;
+    }
+
+    using CellsIndexPairMap_t = std::unordered_map<uint64_t, CellsIndexPair_t>;
+    CellsIndexPairMap_t m_indices;
+  };
+
+  struct CellsIndex
+  {
+    CellsIndex (const CellsIndexMap_t& cellsIndexMap)
+    {
+      if (!cellsIndexMap.empty()) {
+        m_indices.emplace<1> (cellsIndexMap);
+      }
+      else {
+        m_indices.emplace<2>();
+      }
+    }
+
+    CellsIndexPair_t& pair (uint64_t cellid)
+    {
+      if (m_indices.index() == 1) {
+        return std::get<1> (m_indices).index (cellid);
+      }
+      return std::get<2> (m_indices).index (cellid);
+    }
+    size_t& index (uint64_t cellid, size_t ihit)
+    {
+      CellsIndexPair_t& p = pair (cellid);
+      if (p.second == INVALID) p.second = ihit;
+      return p.first;
+    }
+    size_t& index (uint64_t cellid)
+    {
+      return pair (cellid).first;
+    }
+    size_t& ihit (uint64_t cellid)
+    {
+      return pair (cellid).second;
+    }
+
+    std::variant<int, CellsFullIndex, CellsSparseIndex> m_indices;
+  };
+
+  struct CellsInfo
+  {
+    CellsInfo (size_t capacity)
+    {
+      m_cells.reserve (capacity);
+    }
+
+    size_t size() const
+    {
+      return m_cells.size();
+    }
+
+    size_t add (uint64_t cellID, double energy)
+    {
+      m_cells.emplace_back (cellID, energy);
+      return m_cells.size() - 1;
+    }
+
+    uint64_t cellID (size_t icell) const
+    {
+      return m_cells.at(icell).first;
+    }
+      
+    double& energy (size_t icell)
+    {
+      return m_cells.at(icell).second;
+    }
+
+    void sort()
+    {
+      std::ranges::sort (m_cells);
+    }
+
+    std::vector<std::pair<uint64_t, double> > m_cells;
+  };
+
   /// Handle for the calorimeter cells crosstalk tool
-  mutable ToolHandle<ICaloReadCrosstalkMap> m_crosstalksTool{"ReadCaloCrosstalkMap", this};
+  ToolHandle<ICaloReadCrosstalkMap> m_crosstalksTool
+  {this, "crosstalksTool", "ReadCaloCrosstalkMap", "Handle for the cell crosstalk tool"};
+
   /// Handle for tool to calibrate Geant4 energy to EM scale tool
   mutable ToolHandle<ICalibrateCaloHitsTool> m_calibTool{"CalibrateCaloHitsTool", this};
   /// Handle for the calorimeter cells noise tool
   mutable ToolHandle<INoiseCaloCellsTool> m_noiseTool{"NoiseCaloCellsFlatTool", this};
   /// Handle for the geometry tool
   ToolHandle<ICalorimeterTool> m_geoTool{"TubeLayerPhiEtaCaloTool", this};
+  ToolHandle<ICellPositionsTool> m_cellPos
+    { this, "CellPositionsTool", "", "Cell positions tool.  If defaulted, position based on volume only." };
 
   /// Add crosstalk to cells?
   Gaudi::Property<bool> m_addCrosstalk{this, "addCrosstalk", false, "Add crosstalk effect?"};
@@ -91,6 +209,8 @@ private:
   mutable k4FWCore::DataHandle<edm4hep::CalorimeterHitCollection> m_cells{"cells", Gaudi::DataHandle::Writer, this};
   k4FWCore::MetaDataHandle<std::string> m_cellsCellIDEncoding{m_cells, edm4hep::labels::CellIDEncoding,
                                                     Gaudi::DataHandle::Writer};
+  /// Handle for hit<->cell link (output collection)
+  mutable DataHandle<edm4hep::CaloHitSimCaloHitLinkCollection> m_links{"", Gaudi::DataHandle::Writer, this};
   /// Name of the detector readout
   Gaudi::Property<std::string> m_readoutName{this, "readoutName", "ECalBarrelPhiEta", "Name of the detector readout"};
   /// Name of active volumes
@@ -113,12 +233,9 @@ private:
   /// Pointer to the geometry service
   ServiceHandle<IGeoSvc> m_geoSvc;
   dd4hep::VolumeManager m_volman;
-  /// Maps of cell IDs (corresponding to DD4hep IDs) on final energies to be used for clustering
-  mutable std::unordered_map<uint64_t, double> m_cellsMap;
-  /// Maps of cell IDs (corresponding to DD4hep IDs) on transfer of signals due to crosstalk
-  mutable std::unordered_map<uint64_t, double> m_CrosstalkCellsMap;
-  /// Maps of cell IDs with zero energy, for all cells in calo (needed if addCellNoise and filterCellNoise are both set)
-  mutable std::unordered_map<uint64_t, double> m_emptyCellsMap;
+  /// Map of cell IDs to cell indices.
+  /// This assigns to each cell a dense index in the range 0..ncells-1.
+  CellsIndexMap_t m_cellsIndexMap;
 };
 
 #endif /* RECCALORIMETER_CREATECALOCELLS_H */
