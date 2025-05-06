@@ -1,3 +1,4 @@
+#pragma GCC optimize "-O0"
 #include "CreateCaloCells.h"
 
 // k4geo
@@ -5,6 +6,7 @@
 
 // k4FWCore
 #include "k4Interface/IGeoSvc.h"
+#include "k4FWCore/k4_check.h"
 
 // DD4hep
 #include "DD4hep/Detector.h"
@@ -20,16 +22,15 @@ CreateCaloCells::CreateCaloCells(const std::string& name, ISvcLocator* svcLoc) :
 Gaudi::Algorithm(name, svcLoc), m_geoSvc("GeoSvc", name) {
   declareProperty("hits", m_hits, "Hits from which to create cells (input)");
   declareProperty("cells", m_cells, "The created calorimeter cells (output)");
+  declareProperty("links", m_links, "The links between hits and cells (output)");
 
-  declareProperty("crosstalksTool", m_crosstalksTool, "Handle for the cell crosstalk tool");
   declareProperty("calibTool", m_calibTool, "Handle for tool to calibrate Geant4 energy to EM scale tool");
   declareProperty("noiseTool", m_noiseTool, "Handle for the calorimeter cells noise tool");
   declareProperty("geometryTool", m_geoTool, "Handle for the geometry tool");
 }
 
 StatusCode CreateCaloCells::initialize() {
-  StatusCode sc = Gaudi::Algorithm::initialize();
-  if (sc.isFailure()) return sc;
+  K4_CHECK( Gaudi::Algorithm::initialize() );
 
   info() << "CreateCaloCells initialized" << endmsg;
   info() << "do calibration : " << m_doCellCalibration << endmsg;
@@ -41,35 +42,19 @@ StatusCode CreateCaloCells::initialize() {
   // Initialization of tools
   // Cell crosstalk tool
   if (m_addCrosstalk) {
-    if (!m_crosstalksTool.retrieve()) {
-      error() << "Unable to retrieve the cell crosstalk tool!!!" << endmsg;
-      return StatusCode::FAILURE;
-    }
+    K4_CHECK( m_crosstalkTool.retrieve() );
   }
   // Calibrate Geant4 energy to EM scale tool
   if (m_doCellCalibration) {
-    if (!m_calibTool.retrieve()) {
-      error() << "Unable to retrieve the calo cells calibration tool!!!" << endmsg;
-      return StatusCode::FAILURE;
-    }
+    K4_CHECK( m_calibTool.retrieve() );
   }
   // Cell noise tool
   if (m_addCellNoise || m_filterCellNoise) {
-    if (!m_noiseTool.retrieve()) {
-      error() << "Unable to retrieve the calo cells noise tool!!!" << endmsg;
-      return StatusCode::FAILURE;
-    }
+    K4_CHECK( m_noiseTool.retrieve() );
     // Geometry settings
-    if (!m_geoTool.retrieve()) {
-      error() << "Unable to retrieve the geometry tool!!!" << endmsg;
-      return StatusCode::FAILURE;
-    }
+    K4_CHECK( m_geoTool.retrieve() );
     // Prepare map of all existing cells in calorimeter to add noise to all
-    StatusCode sc_prepareCells = m_geoTool->prepareEmptyCells(m_cellsMap);
-    if (sc_prepareCells.isFailure()) {
-      error() << "Unable to create empty cells!" << endmsg;
-      return StatusCode::FAILURE;
-    }
+    K4_CHECK( m_geoTool->prepareEmptyCells(m_cellsMap) );
     verbose() << "Initialised empty cell map with size " << m_cellsMap.size() << endmsg;
     // noise filtering erases cells from the cell map after each event, so we need
     // to backup the empty cell map for later reuse
@@ -81,13 +66,35 @@ StatusCode CreateCaloCells::initialize() {
     m_volman = m_geoSvc->getDetector()->volumeManager();
   }
 
+  if (m_cellPos.isEnabled()) {
+    K4_CHECK( m_cellPos.retrieve() );
+  }
+
+  // Construct cell indices.
+  {
+    // Use the geoTool to get a collection of all CellIDs.
+    std::unordered_map<uint64_t, double> cellsMap;
+    K4_CHECK( m_geoTool->prepareEmptyCells(cellsMap) );
+
+    // Now make a sorted list of them.
+    auto r = cellsMap | std::views::transform ([](auto x){return x.first;});
+    std::vector<size_t> cellIDs (std::ranges::begin(r), std::ranges::end(r));
+    std::ranges::sort (cellIDs);
+
+    // And index them.
+    for (size_t i = 0; size_t id : cellIDs)
+      m_cellsIndexMap[id] = i++;
+  }
+
+
   // Copy over the CellIDEncoding string from the input collection to the output collection
   auto hitsEncoding = m_hitsCellIDEncoding.get_optional();
-  if (!hitsEncoding.has_value()) {
-    error () << "Missing cellID encoding for input collection" << endmsg;
-    return StatusCode::FAILURE;
-  }
+  K4_CHECK( hitsEncoding.has_value() );
   m_cellsCellIDEncoding.put(hitsEncoding.value());
+
+  if (m_links.objKey().empty()) {
+    m_links.updateKey (m_cells.objKey() + "SimCaloHitLinks");
+  }
 
   return StatusCode::SUCCESS;
 }
@@ -96,6 +103,12 @@ StatusCode CreateCaloCells::execute(const EventContext&) const {
   // Get the input collection with Geant4 hits
   const edm4hep::SimCalorimeterHitCollection* hits = m_hits.get();
   debug() << "Input Hit collection size: " << hits->size() << endmsg;
+
+  /// XXX LESS CONFUSING NAMES!
+  std::vector<std::pair<uint64_t, double> > cells; // cellid + energy
+  cells.reserve (m_cellsIndexMap.size());
+  std::vector<std::pair<size_t, size_t> > allCells (m_cellsIndexMap.size());
+  // index into cells+1; index into hits+1
 
   // 0. Clear all cells
   if (m_addCellNoise) {
@@ -115,9 +128,24 @@ StatusCode CreateCaloCells::execute(const EventContext&) const {
   // 1. Merge energy deposits into cells
   // If running with noise map already was prepared. Otherwise it is being
   // created below
-  for (const auto& hit : *hits) {
+  for (size_t ihit = 0; const auto& hit : *hits) {
+    ++ihit;
     verbose() << "CellID : " << hit.getCellID() << endmsg;
     m_cellsMap[hit.getCellID()] += hit.getEnergy();
+    auto it = m_cellsIndexMap.find (hit.getCellID());
+    if (it == m_cellsIndexMap.end()) {
+      error() << "Unknown cell index " << hit.getCellID() << endmsg;
+      return StatusCode::FAILURE;
+    }
+    auto& cell = allCells[it->second];
+    if (cell.first == 0) {
+      cells.emplace_back (hit.getCellID(), hit.getEnergy());
+      cell.first = cells.size();
+      cell.second = ihit;
+    }
+    else {
+      cells[cell.first-1].second += hit.getEnergy();
+    }
   }
   debug() << "Number of calorimeter cells after merging of hits: " << m_cellsMap.size() << endmsg;
 
@@ -129,8 +157,8 @@ StatusCode CreateCaloCells::execute(const EventContext&) const {
     // loop over cells with nominal energies
     for (const auto& this_cell : m_cellsMap) {
       uint64_t this_cellId = this_cell.first;
-      auto vec_neighbours = m_crosstalksTool->getNeighbours(this_cellId); // a vector of neighbour IDs
-      auto vec_crosstalks = m_crosstalksTool->getCrosstalks(this_cellId); // a vector of crosstalk coefficients
+      auto vec_neighbours = m_crosstalkTool->getNeighbours(this_cellId); // a vector of neighbour IDs
+      auto vec_crosstalks = m_crosstalkTool->getCrosstalks(this_cellId); // a vector of crosstalk coefficients
       // loop over crosstalk neighbours of the cell under study
       for (unsigned int i_cell=0; i_cell<vec_neighbours.size(); i_cell++) {
         // signal transfer = energy deposit brought by EM shower hits * crosstalk coefficient
@@ -145,6 +173,19 @@ StatusCode CreateCaloCells::execute(const EventContext&) const {
     // apply the cross-talk contributions on the nominal cell-energy map
     for (const auto& this_cell : m_CrosstalkCellsMap) {
       m_cellsMap[this_cell.first] += this_cell.second;
+      auto it = m_cellsIndexMap.find (this_cell.first);
+      if (it == m_cellsIndexMap.end()) {
+        error() << "Unknown cell index " << this_cell.first << endmsg;
+        return StatusCode::FAILURE;
+      }
+      auto& cell = allCells[it->second];
+      if (cell.first == 0) {
+        cells.emplace_back (this_cell.first, this_cell.second);
+        cell.first = cells.size();
+      }
+      else {
+        cells[cell.first-1].second += this_cell.second;
+      }
     }
     
   }
@@ -152,40 +193,138 @@ StatusCode CreateCaloCells::execute(const EventContext&) const {
   // 3. Calibrate simulation energy to EM scale
   if (m_doCellCalibration) {
     m_calibTool->calibrate(m_cellsMap);
+    m_calibTool->calibrate(cells);
   }
 
   // 4. Add noise to all cells
   if (m_addCellNoise) {
     m_noiseTool->addRandomCellNoise(m_cellsMap);
+    m_noiseTool->addRandomCellNoise(cells);
   }
 
   // 5. Filter cells
   if (m_filterCellNoise) {
     m_noiseTool->filterCellNoise(m_cellsMap);
+    m_noiseTool->filterCellNoise(cells);
   }
 
   // 6. Copy information to CaloHitCollection
   edm4hep::CalorimeterHitCollection* edmCellsCollection = new edm4hep::CalorimeterHitCollection();
+
+  if (cells.size() != m_cellsMap.size()) std::abort();
+
+  for (const auto& cell : cells) {
+    if (cell.second == 0 && !m_addCellNoise) continue;
+    auto newCell = edmCellsCollection->create();
+    newCell.setEnergy(cell.second);
+    uint64_t cellid = cell.first;
+    newCell.setCellID(cellid);
+
+    {
+      auto it = m_cellsMap.find (cellid);
+      if (it == m_cellsMap.end()) std::abort();
+      if (it->second != cell.second) std::abort();
+    }
+
+    static constexpr double inv_mm = 1 / dd4hep::mm;
+
+    size_t inputCellIdx = 0;
+    {
+      auto it = m_cellsIndexMap.find (cellid);
+      if (it != m_cellsIndexMap.end()) {
+        inputCellIdx = allCells[it->second].second;
+      }
+    }
+
+    if (m_cellPos.isEnabled() && (m_addPosition || !inputCellIdx)) {
+      // Recalcuate cell position given cell using positioning tool.
+      // We have the tool, and either the position isn't available
+      // in the input, or we were requested to recalculate it.
+      dd4hep::Position pos = m_cellPos->xyzPosition(cellid) * inv_mm;
+      newCell.setPosition({static_cast<float>(pos.x()),
+          static_cast<float>(pos.y()),
+          static_cast<float>(pos.z())});
+    }
+
+    else if (m_addPosition) {
+      // We were requested to recalculate the positions, but the
+      // positioning tool is not available.
+      // Calculate a position based on the volume center.
+      auto detelement = m_volman.lookupDetElement(cellid);
+      const auto& transformMatrix = detelement.nominal().worldTransformation();
+      double outGlobal[3];
+      double inLocal[] = {0, 0, 0};
+      transformMatrix.LocalToMaster(inLocal, outGlobal);
+      edm4hep::Vector3f position = edm4hep::Vector3f(outGlobal[0] * inv_mm,
+                                                     outGlobal[1] * inv_mm,
+                                                     outGlobal[2] * inv_mm);
+      newCell.setPosition(position);
+    }
+
+    else if (inputCellIdx) {
+      // This cell was present in the input.  Take the position from there.
+      newCell.setPosition((*hits)[inputCellIdx-1].getPosition());
+    }
+
+    // Otherwise, the position will be left set to 0.
+  }
+#if 0
   for (const auto& cell : m_cellsMap) {
-    if (m_addCellNoise || (!m_addCellNoise && cell.second != 0)) {
+    if (m_addCellNoise || cell.second != 0) {
       auto newCell = edmCellsCollection->create();
       newCell.setEnergy(cell.second);
       uint64_t cellid = cell.first;
       newCell.setCellID(cellid);
+      // recalc with tool: have tool && (addPosition || (!addPosition && cell not in input)
+      // recalc w/o tool: no tool && addPosition
+      // take from input: no tool && !addPosition && cell in input
+      // 0: no tool && !addPosition && cell not in input
+
+      // If addPosition: recalcuate, either using or not using the tool
+      // If not addPosition and cell in input: take pos from input
+      // If not addPosition and cell not in input:
+      //   if tool available recalc from tool, else 0
       if (m_addPosition){
-        auto detelement = m_volman.lookupDetElement(cellid);
-        const auto& transformMatrix = detelement.nominal().worldTransformation();
-        double outGlobal[3];
-        double inLocal[] = {0, 0, 0};
-        transformMatrix.LocalToMaster(inLocal, outGlobal);
-        edm4hep::Vector3f position = edm4hep::Vector3f(outGlobal[0] / dd4hep::mm, outGlobal[1] / dd4hep::mm, outGlobal[2] / dd4hep::mm);
-        newCell.setPosition(position);
+        if (m_cellPos.isEnabled()) {
+          static constexpr double inv_mm = 1 / dd4hep::mm;
+          dd4hep::Position pos = m_cellPos->xyzPosition(cellid) * inv_mm;
+          newCell.setPosition({static_cast<float>(pos.x()),
+                               static_cast<float>(pos.y()),
+                               static_cast<float>(pos.z())});
+        }
+        else {
+          auto detelement = m_volman.lookupDetElement(cellid);
+          const auto& transformMatrix = detelement.nominal().worldTransformation();
+          double outGlobal[3];
+          double inLocal[] = {0, 0, 0};
+          transformMatrix.LocalToMaster(inLocal, outGlobal);
+          edm4hep::Vector3f position = edm4hep::Vector3f(outGlobal[0] / dd4hep::mm, outGlobal[1] / dd4hep::mm, outGlobal[2] / dd4hep::mm);
+          newCell.setPosition(position);
+        }
+      }
+    }
+  }
+#endif
+
+  // XXX Avoid N^2!
+  // create hits<->cell links
+  edm4hep::CaloHitSimCaloHitLinkCollection* edmCellHitLinksCollection = new edm4hep::CaloHitSimCaloHitLinkCollection();
+  for (const auto& cell : *edmCellsCollection) {
+    auto cellID = cell.getCellID();
+    for (const auto& hit : *hits) {
+      auto hitID = hit.getCellID();
+      if (hitID == cellID) {
+        // create Sim<->Reco hit associations
+        auto link = edmCellHitLinksCollection->create();
+        link.setFrom(cell);
+        link.setTo(hit);
       }
     }
   }
 
   // push the CaloHitCollection to event store
   m_cells.put(edmCellsCollection);
+  m_links.put(edmCellHitLinksCollection);
 
   debug() << "Output Cell collection size: " << edmCellsCollection->size() << endmsg;
 

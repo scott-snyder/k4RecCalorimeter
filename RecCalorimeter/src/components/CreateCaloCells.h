@@ -8,6 +8,7 @@
 #include "k4Interface/ICalorimeterTool.h"
 #include "k4Interface/INoiseCaloCellsTool.h"
 #include "k4Interface/ICaloReadCrosstalkMap.h"
+#include "k4Interface/ICellPositionsTool.h"
 
 // Gaudi
 #include "Gaudi/Algorithm.h"
@@ -16,6 +17,7 @@
 // edm4hep
 #include "edm4hep/CalorimeterHitCollection.h"
 #include "edm4hep/SimCalorimeterHitCollection.h"
+#include "edm4hep/CaloHitSimCaloHitLinkCollection.h"
 #include "edm4hep/Constants.h"
 
 // DD4hep
@@ -64,13 +66,17 @@ public:
 private:
 
   /// Handle for the calorimeter cells crosstalk tool
-  mutable ToolHandle<ICaloReadCrosstalkMap> m_crosstalksTool{"ReadCaloCrosstalkMap", this};
+  ToolHandle<ICaloReadCrosstalkMap> m_crosstalkTool
+  {this, "crosstalkTool", "ReadCaloCrosstalkMap", "Handle for the cell crosstalk tool"};
+
   /// Handle for tool to calibrate Geant4 energy to EM scale tool
   mutable ToolHandle<ICalibrateCaloHitsTool> m_calibTool{"CalibrateCaloHitsTool", this};
   /// Handle for the calorimeter cells noise tool
   mutable ToolHandle<INoiseCaloCellsTool> m_noiseTool{"NoiseCaloCellsFlatTool", this};
   /// Handle for the geometry tool
   ToolHandle<ICalorimeterTool> m_geoTool{"TubeLayerPhiEtaCaloTool", this};
+  ToolHandle<ICellPositionsTool> m_cellPos
+    { this, "CellPositionsTool", "", "Cell positions tool.  If defaulted, position based on volume only." };
 
   /// Add crosstalk to cells?
   Gaudi::Property<bool> m_addCrosstalk{this, "addCrosstalk", false, "Add crosstalk effect?"};
@@ -90,6 +96,8 @@ private:
   MetaDataHandle<std::string> m_hitsCellIDEncoding{m_hits, edm4hep::labels::CellIDEncoding, Gaudi::DataHandle::Reader};
   /// Handle for calo cells (output collection)
   mutable DataHandle<edm4hep::CalorimeterHitCollection> m_cells{"cells", Gaudi::DataHandle::Writer, this};
+  /// Handle for hit<->cell link (output collection)
+  mutable DataHandle<edm4hep::CaloHitSimCaloHitLinkCollection> m_links{"", Gaudi::DataHandle::Writer, this};
   MetaDataHandle<std::string> m_cellsCellIDEncoding{m_cells, edm4hep::labels::CellIDEncoding, Gaudi::DataHandle::Writer};
   /// Name of the detector readout
   Gaudi::Property<std::string> m_readoutName{this, "readoutName", "ECalBarrelPhiEta", "Name of the detector readout"};
@@ -113,6 +121,10 @@ private:
   /// Pointer to the geometry service
   ServiceHandle<IGeoSvc> m_geoSvc;
   dd4hep::VolumeManager m_volman;
+  /// Map of cell IDs to cell indices.
+  /// This assigns to each cell a dense index in the range 0..ncells-1.
+  std::unordered_map<uint64_t, size_t> m_cellsIndexMap;
+
   /// Maps of cell IDs (corresponding to DD4hep IDs) on final energies to be used for clustering
   mutable std::unordered_map<uint64_t, double> m_cellsMap;
   /// Maps of cell IDs (corresponding to DD4hep IDs) on transfer of signals due to crosstalk
