@@ -166,20 +166,6 @@ private:
   /// Name of the hcal forward calorimeter readout
   Gaudi::Property<std::string> m_hcalFwdReadoutName{this, "hcalFwdReadoutName", "",
                                                     "name of the hcal fwd readout"};
-  /// Type of segmentation of the electromagnetic barrel
-  SegmentationType m_ecalBarrelSegmentationType;
-  /// Type of segmentation of the ecal endcap calorimeter
-  SegmentationType m_ecalEndcapSegmentationType;
-  /// Type of segmentation of the ecal forward calorimeter
-  SegmentationType m_ecalFwdSegmentationType;
-  /// Type of segmentation of the hadronic barrel
-  SegmentationType m_hcalBarrelSegmentationType;
-  /// Type of segmentation of the hadronic extended barrel
-  SegmentationType m_hcalExtBarrelSegmentationType;
-  /// Type of segmentation of the hcal endcap calorimeter
-  SegmentationType m_hcalEndcapSegmentationType;
-  /// Type of segmentation of the hcal forward calorimeter
-  SegmentationType m_hcalFwdSegmentationType;
   /// decoder: only for barrel
   dd4hep::DDSegmentation::BitFieldCoder* m_decoder;
 
