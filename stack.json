@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "bce8584c43077617b3c19640aed4397429a33f8c",
-  "head": "218b5067465092feefe75882bbf308bf94baa359",
+  "prev": "3f26a5d816ab77062c095049bc8c8cc599314ab6",
+  "head": "a2fd6f35889516833ce62e2232bd1ebb6a3ce4c9",
   "applied": [
     "service",
     "testdir",
@@ -14,35 +14,12 @@
     "calibVec",
     "noiseVec",
     "cellPositions",
-    "createCaloCells"
+    "createCaloCells",
+    "clang"
   ],
   "unapplied": [],
   "hidden": [],
   "patches": {
-    "calibConst": {
-      "oid": "5debfdf478e158642a657ab55a71937bbfaef30c"
-    },
-    "calibVec": {
-      "oid": "26f94e46bb40c3ad13962f170ea76a563e0d289a"
-    },
-    "cellPositions": {
-      "oid": "04cc91e05126015b46789711d20f03a15bf6af2b"
-    },
-    "cellPositionsConst": {
-      "oid": "2aabe772cc3c5daee3921bc9766b102b2ae42dd8"
-    },
-    "createCaloCells": {
-      "oid": "218b5067465092feefe75882bbf308bf94baa359"
-    },
-    "noiseConst": {
-      "oid": "dc4a79441faa1e24b6762038459246303d3006a5"
-    },
-    "noiseVec": {
-      "oid": "50c389db883da4a82565cab8db092dd5fad75f74"
-    },
-    "return": {
-      "oid": "3f88de571364d43ccc816367d306feb7c9d90f59"
-    },
     "service": {
       "oid": "088a6d829a5247eabbeef1393aed67149f2fabc0"
     },
@@ -52,8 +29,35 @@
     "xtalk": {
       "oid": "4f2522debc2d222ff75ab1c2ba2a1b7778a61a86"
     },
+    "return": {
+      "oid": "3f88de571364d43ccc816367d306feb7c9d90f59"
+    },
+    "cellPositionsConst": {
+      "oid": "2aabe772cc3c5daee3921bc9766b102b2ae42dd8"
+    },
+    "noiseConst": {
+      "oid": "dc4a79441faa1e24b6762038459246303d3006a5"
+    },
+    "calibConst": {
+      "oid": "5debfdf478e158642a657ab55a71937bbfaef30c"
+    },
     "xtalkConst": {
       "oid": "d4a9940d7e54eff65ea2f4cdcf134d4c404c1046"
+    },
+    "calibVec": {
+      "oid": "26f94e46bb40c3ad13962f170ea76a563e0d289a"
+    },
+    "noiseVec": {
+      "oid": "50c389db883da4a82565cab8db092dd5fad75f74"
+    },
+    "cellPositions": {
+      "oid": "04cc91e05126015b46789711d20f03a15bf6af2b"
+    },
+    "createCaloCells": {
+      "oid": "218b5067465092feefe75882bbf308bf94baa359"
+    },
+    "clang": {
+      "oid": "a2fd6f35889516833ce62e2232bd1ebb6a3ce4c9"
     }
   }
 }
