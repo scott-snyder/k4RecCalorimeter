@@ -42,7 +42,7 @@ StatusCode CreateCaloCells::initialize() {
   // Initialization of tools
   // Cell crosstalk tool
   if (m_addCrosstalk) {
-    K4_CHECK( m_crosstalkTool.retrieve() );
+    K4_CHECK( m_crosstalksTool.retrieve() );
   }
   // Calibrate Geant4 energy to EM scale tool
   if (m_doCellCalibration) {
@@ -61,6 +61,22 @@ StatusCode CreateCaloCells::initialize() {
     if (m_addCellNoise && m_filterCellNoise) {
       m_emptyCellsMap = m_cellsMap;
     }
+
+    // Construct cell indices.
+    {
+      // Use the geoTool to get a collection of all CellIDs.
+      std::unordered_map<uint64_t, double> cellsMap;
+      K4_CHECK( m_geoTool->prepareEmptyCells(cellsMap) );
+
+      // Now make a sorted list of them.
+      auto r = cellsMap | std::views::transform ([](auto x){return x.first;});
+      std::vector<size_t> cellIDs (std::ranges::begin(r), std::ranges::end(r));
+      std::ranges::sort (cellIDs);
+
+      // And index them.
+      for (size_t i = 0; size_t id : cellIDs)
+        m_cellsIndexMap[id] = i++;
+    }
   }
   if (m_addPosition){
     m_volman = m_geoSvc->getDetector()->volumeManager();
@@ -69,23 +85,6 @@ StatusCode CreateCaloCells::initialize() {
   if (m_cellPos.isEnabled()) {
     K4_CHECK( m_cellPos.retrieve() );
   }
-
-  // Construct cell indices.
-  {
-    // Use the geoTool to get a collection of all CellIDs.
-    std::unordered_map<uint64_t, double> cellsMap;
-    K4_CHECK( m_geoTool->prepareEmptyCells(cellsMap) );
-
-    // Now make a sorted list of them.
-    auto r = cellsMap | std::views::transform ([](auto x){return x.first;});
-    std::vector<size_t> cellIDs (std::ranges::begin(r), std::ranges::end(r));
-    std::ranges::sort (cellIDs);
-
-    // And index them.
-    for (size_t i = 0; size_t id : cellIDs)
-      m_cellsIndexMap[id] = i++;
-  }
-
 
   // Copy over the CellIDEncoding string from the input collection to the output collection
   auto hitsEncoding = m_hitsCellIDEncoding.get_optional();
@@ -104,11 +103,8 @@ StatusCode CreateCaloCells::execute(const EventContext&) const {
   const edm4hep::SimCalorimeterHitCollection* hits = m_hits.get();
   debug() << "Input Hit collection size: " << hits->size() << endmsg;
 
-  /// XXX LESS CONFUSING NAMES!
-  std::vector<std::pair<uint64_t, double> > cells; // cellid + energy
-  cells.reserve (m_cellsIndexMap.size());
-  std::vector<std::pair<size_t, size_t> > allCells (m_cellsIndexMap.size());
-  // index into cells+1; index into hits+1
+  CellsInfo cells (m_cellsIndexMap.empty() ? 2048 :  m_cellsIndexMap.size());
+  CellsIndex cellsIndex (m_cellsIndexMap);
 
   // 0. Clear all cells
   if (m_addCellNoise) {
@@ -129,23 +125,16 @@ StatusCode CreateCaloCells::execute(const EventContext&) const {
   // If running with noise map already was prepared. Otherwise it is being
   // created below
   for (size_t ihit = 0; const auto& hit : *hits) {
-    ++ihit;
     verbose() << "CellID : " << hit.getCellID() << endmsg;
     m_cellsMap[hit.getCellID()] += hit.getEnergy();
-    auto it = m_cellsIndexMap.find (hit.getCellID());
-    if (it == m_cellsIndexMap.end()) {
-      error() << "Unknown cell index " << hit.getCellID() << endmsg;
-      return StatusCode::FAILURE;
-    }
-    auto& cell = allCells[it->second];
-    if (cell.first == 0) {
-      cells.emplace_back (hit.getCellID(), hit.getEnergy());
-      cell.first = cells.size();
-      cell.second = ihit;
+    size_t& icell = cellsIndex.index (hit.getCellID());
+    if (icell == INVALID) {
+      icell = cells.add (hit.getCellID(), hit.getEnergy(), ihit);
     }
     else {
-      cells[cell.first-1].second += hit.getEnergy();
+      cells.energy(icell) += hit.getEnergy();
     }
+    ++ihit;
   }
   debug() << "Number of calorimeter cells after merging of hits: " << m_cellsMap.size() << endmsg;
 
@@ -157,8 +146,8 @@ StatusCode CreateCaloCells::execute(const EventContext&) const {
     // loop over cells with nominal energies
     for (const auto& this_cell : m_cellsMap) {
       uint64_t this_cellId = this_cell.first;
-      auto vec_neighbours = m_crosstalkTool->getNeighbours(this_cellId); // a vector of neighbour IDs
-      auto vec_crosstalks = m_crosstalkTool->getCrosstalks(this_cellId); // a vector of crosstalk coefficients
+      auto vec_neighbours = m_crosstalksTool->getNeighbours(this_cellId); // a vector of neighbour IDs
+      auto vec_crosstalks = m_crosstalksTool->getCrosstalks(this_cellId); // a vector of crosstalk coefficients
       // loop over crosstalk neighbours of the cell under study
       for (unsigned int i_cell=0; i_cell<vec_neighbours.size(); i_cell++) {
         // signal transfer = energy deposit brought by EM shower hits * crosstalk coefficient
@@ -173,18 +162,12 @@ StatusCode CreateCaloCells::execute(const EventContext&) const {
     // apply the cross-talk contributions on the nominal cell-energy map
     for (const auto& this_cell : m_CrosstalkCellsMap) {
       m_cellsMap[this_cell.first] += this_cell.second;
-      auto it = m_cellsIndexMap.find (this_cell.first);
-      if (it == m_cellsIndexMap.end()) {
-        error() << "Unknown cell index " << this_cell.first << endmsg;
-        return StatusCode::FAILURE;
-      }
-      auto& cell = allCells[it->second];
-      if (cell.first == 0) {
-        cells.emplace_back (this_cell.first, this_cell.second);
-        cell.first = cells.size();
+      size_t& icell = cellsIndex.index (this_cell.first);
+      if (icell == INVALID) {
+        icell = cells.add (this_cell.first, this_cell.second);
       }
       else {
-        cells[cell.first-1].second += this_cell.second;
+        cells.energy(icell) += this_cell.second;
       }
     }
     
@@ -193,19 +176,19 @@ StatusCode CreateCaloCells::execute(const EventContext&) const {
   // 3. Calibrate simulation energy to EM scale
   if (m_doCellCalibration) {
     m_calibTool->calibrate(m_cellsMap);
-    m_calibTool->calibrate(cells);
+    m_calibTool->calibrate(cells.m_cells);
   }
 
   // 4. Add noise to all cells
   if (m_addCellNoise) {
     m_noiseTool->addRandomCellNoise(m_cellsMap);
-    m_noiseTool->addRandomCellNoise(cells);
+    m_noiseTool->addRandomCellNoise(cells.m_cells);
   }
 
   // 5. Filter cells
   if (m_filterCellNoise) {
     m_noiseTool->filterCellNoise(m_cellsMap);
-    m_noiseTool->filterCellNoise(cells);
+    m_noiseTool->filterCellNoise(cells.m_cells);
   }
 
   // 6. Copy information to CaloHitCollection
@@ -213,31 +196,26 @@ StatusCode CreateCaloCells::execute(const EventContext&) const {
 
   if (cells.size() != m_cellsMap.size()) std::abort();
 
-  for (const auto& cell : cells) {
-    if (cell.second == 0 && !m_addCellNoise) continue;
+  for (size_t icell = 0; icell < cells.size(); ++icell) {
+    double energy = cells.energy(icell);
+    if (energy == 0 && !m_addCellNoise) continue;
     auto newCell = edmCellsCollection->create();
-    newCell.setEnergy(cell.second);
-    uint64_t cellid = cell.first;
+    newCell.setEnergy(energy);
+    uint64_t cellid = cells.cellID(icell);
     newCell.setCellID(cellid);
 
     {
       auto it = m_cellsMap.find (cellid);
       if (it == m_cellsMap.end()) std::abort();
-      if (it->second != cell.second) std::abort();
+      if (it->second != energy) std::abort();
     }
 
     static constexpr double inv_mm = 1 / dd4hep::mm;
 
-    size_t inputCellIdx = 0;
-    {
-      auto it = m_cellsIndexMap.find (cellid);
-      if (it != m_cellsIndexMap.end()) {
-        inputCellIdx = allCells[it->second].second;
-      }
-    }
+    bool hasInputHit = cells.hasInputHit(icell);
 
-    if (m_cellPos.isEnabled() && (m_addPosition || !inputCellIdx)) {
-      // Recalcuate cell position given cell using positioning tool.
+    if (m_cellPos.isEnabled() && (m_addPosition || !hasInputHit)) {
+      // Recalculate cell position given cell using positioning tool.
       // We have the tool, and either the position isn't available
       // in the input, or we were requested to recalculate it.
       dd4hep::Position pos = m_cellPos->xyzPosition(cellid) * inv_mm;
@@ -261,9 +239,9 @@ StatusCode CreateCaloCells::execute(const EventContext&) const {
       newCell.setPosition(position);
     }
 
-    else if (inputCellIdx) {
+    else if (hasInputHit) {
       // This cell was present in the input.  Take the position from there.
-      newCell.setPosition((*hits)[inputCellIdx-1].getPosition());
+      newCell.setPosition((*hits)[cells.ihit(icell)].getPosition());
     }
 
     // Otherwise, the position will be left set to 0.

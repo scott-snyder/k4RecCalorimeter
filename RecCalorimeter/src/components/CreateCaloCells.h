@@ -25,6 +25,8 @@
 #include "DD4hep/Volumes.h"
 #include "TGeoManager.h"
 
+#include <variant>
+
 class IGeoSvc;
 
 /** @class CreateCaloCells
@@ -57,17 +59,125 @@ class CreateCaloCells : public Gaudi::Algorithm {
 public:
   CreateCaloCells(const std::string& name, ISvcLocator* svcLoc);
 
-  StatusCode initialize();
+  virtual StatusCode initialize() override;
 
-  StatusCode execute(const EventContext&) const;
-
-  StatusCode finalize();
+  virtual StatusCode execute(const EventContext&) const override;
+  
+  virtual StatusCode finalize() override;
 
 private:
+  static constexpr size_t INVALID = static_cast<size_t> (-1);
+  using CellsIndexMap_t = std::unordered_map<uint64_t, size_t>;
+
+  struct CellsFullIndex
+  {
+    CellsFullIndex (const CellsIndexMap_t& cellsIndexMap)
+      : m_cellsIndexMap (cellsIndexMap),
+        m_indices (cellsIndexMap.size(), INVALID)
+    {
+    }
+
+    size_t& index (uint64_t cellid)
+    {
+      auto it = m_cellsIndexMap.find (cellid);
+      if (it == m_cellsIndexMap.end()) {
+        throw std::out_of_range ("bad cellid");
+      }
+      return m_indices.at (it->second);
+    }
+
+    const CellsIndexMap_t& m_cellsIndexMap;
+    std::vector<size_t> m_indices;
+  };
+
+
+  struct CellsSparseIndex
+  {
+    size_t& index (uint64_t cellid)
+    {
+      return m_indices.try_emplace (cellid, INVALID).first->second;
+    }
+
+    CellsIndexMap_t m_indices;
+  };
+
+  struct CellsIndex
+  {
+    CellsIndex (const CellsIndexMap_t& cellsIndexMap)
+    {
+      if (!cellsIndexMap.empty()) {
+        m_indices.emplace<1> (cellsIndexMap);
+      }
+      else {
+        m_indices.emplace<2>();
+      }
+    }
+
+    size_t& index (uint64_t cellid)
+    {
+      if (m_indices.index() == 1) {
+        return std::get<1> (m_indices).index (cellid);
+      }
+      return std::get<2> (m_indices).index (cellid);
+    }
+
+    std::variant<int, CellsFullIndex, CellsSparseIndex> m_indices;
+  };
+
+  struct CellsInfo
+  {
+    CellsInfo (size_t capacity)
+    {
+      m_cells.reserve (capacity);
+      m_ihit.reserve (capacity);
+    }
+
+    size_t size() const
+    {
+      return m_cells.size();
+    }
+
+    size_t add (uint64_t cellID, double energy)
+    {
+      m_cells.emplace_back (cellID, energy);
+      m_ihit.push_back (INVALID);
+      return m_cells.size() - 1;
+    }
+
+    size_t add (uint64_t cellID, double energy, size_t ihit)
+    {
+      m_cells.emplace_back (cellID, energy);
+      m_ihit.push_back (ihit);
+      return m_cells.size() - 1;
+    }
+
+    uint64_t cellID (size_t icell) const
+    {
+      return m_cells.at(icell).first;
+    }
+      
+    double& energy (size_t icell)
+    {
+      return m_cells.at(icell).second;
+    }
+
+    bool hasInputHit (size_t icell) const
+    {
+      return m_ihit.at(icell) != INVALID;
+    }
+
+    size_t ihit (size_t icell) const
+    {
+      return m_ihit.at(icell);
+    }
+
+    std::vector<std::pair<uint64_t, double> > m_cells;
+    std::vector<size_t> m_ihit;
+  };
 
   /// Handle for the calorimeter cells crosstalk tool
-  ToolHandle<ICaloReadCrosstalkMap> m_crosstalkTool
-  {this, "crosstalkTool", "ReadCaloCrosstalkMap", "Handle for the cell crosstalk tool"};
+  ToolHandle<ICaloReadCrosstalkMap> m_crosstalksTool
+  {this, "crosstalksTool", "ReadCaloCrosstalkMap", "Handle for the cell crosstalk tool"};
 
   /// Handle for tool to calibrate Geant4 energy to EM scale tool
   mutable ToolHandle<ICalibrateCaloHitsTool> m_calibTool{"CalibrateCaloHitsTool", this};
@@ -123,7 +233,7 @@ private:
   dd4hep::VolumeManager m_volman;
   /// Map of cell IDs to cell indices.
   /// This assigns to each cell a dense index in the range 0..ncells-1.
-  std::unordered_map<uint64_t, size_t> m_cellsIndexMap;
+  CellsIndexMap_t m_cellsIndexMap;
 
   /// Maps of cell IDs (corresponding to DD4hep IDs) on final energies to be used for clustering
   mutable std::unordered_map<uint64_t, double> m_cellsMap;
