@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "3d96d2deeb732e7c1b4bfc1dc57b8a679035c479",
-  "head": "5835b11085ed7fe4644f15fb04a0ae8889244009",
+  "prev": "fb33d6727fab0cf0a6a59ede9b4cc94a6e3d4c7f",
+  "head": "34943313fa862d3a68900bb2f269faa919233abc",
   "applied": [
     "service",
     "testdir",
@@ -14,11 +14,10 @@
     "calibVec",
     "noiseVec",
     "cellPositions",
-    "createCaloCells"
-  ],
-  "unapplied": [
+    "createCaloCells",
     "clang"
   ],
+  "unapplied": [],
   "hidden": [],
   "patches": {
     "calibConst": {
@@ -34,7 +33,7 @@
       "oid": "94c1561a791ff50bf264c28c6e535761372e13c9"
     },
     "clang": {
-      "oid": "c0d24ea83465a2d096cc38747b2db1a27b28ecbd"
+      "oid": "34943313fa862d3a68900bb2f269faa919233abc"
     },
     "createCaloCells": {
       "oid": "5835b11085ed7fe4644f15fb04a0ae8889244009"
