@@ -1,6 +1,6 @@
-Bottom: bfc4ba77aac76b9f5c99202eb661f18f44f41fe9
-Top:    a8be180daf78c87dec5c6a654b132a42b5328bff
+Bottom: 4094c84da2037de6a9a47b92e938521d7903c451
+Top:    f7378e5b4e0135f7d2777d8eadb7417a37167473
 Author: sss <sss@karma>
-Date:   2025-06-04 15:52:23 -0400
+Date:   2025-06-07 10:39:49 -0400
 
 Extend INoiseCaloCellsTool to also allow taking a vector of hit information.
