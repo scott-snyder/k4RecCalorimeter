@@ -107,14 +107,14 @@ private:
   Gaudi::Property<std::vector<std::string>> m_cellCollections{
       this, "cells", {}, "Names of CalorimeterHit collections to read"};
   /// the vector of input DataHandles for the input cell collections
-  std::vector<DataHandle<edm4hep::CalorimeterHitCollection>*> m_cellCollectionHandles;
+  std::vector<k4FWCore::DataHandle<edm4hep::CalorimeterHitCollection>*> m_cellCollectionHandles;
   // Cluster collection (output)
-  mutable DataHandle<edm4hep::ClusterCollection> m_clusterCollection{"clusters", Gaudi::DataHandle::Writer, this};
+  mutable k4FWCore::DataHandle<edm4hep::ClusterCollection> m_clusterCollection{"clusters", Gaudi::DataHandle::Writer, this};
   // Cluster cells in collection (output)
-  mutable DataHandle<edm4hep::CalorimeterHitCollection> m_clusterCellsCollection{"clusterCells",
+  mutable k4FWCore::DataHandle<edm4hep::CalorimeterHitCollection> m_clusterCellsCollection{"clusterCells",
                                                                                  Gaudi::DataHandle::Writer, this};
   /// Handle for the cluster shape metadata to write
-  MetaDataHandle<std::vector<std::string>> m_shapeParametersHandle{
+  k4FWCore::MetaDataHandle<std::vector<std::string>> m_shapeParametersHandle{
       m_clusterCollection, edm4hep::labels::ShapeParameterNames, Gaudi::DataHandle::Writer};
   /// Handle for the cells noise tool
   mutable ToolHandle<INoiseConstTool> m_noiseTool{"TopoCaloNoisyCells", this};
