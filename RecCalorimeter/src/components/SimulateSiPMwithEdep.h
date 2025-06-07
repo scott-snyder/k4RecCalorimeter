@@ -59,9 +59,9 @@ private:
   Gaudi::Property<std::string> m_outColl{this, "outputHitCollection", "DRcaloSiPMreadoutDigiHit_scint", "output calo collection name"};
   Gaudi::Property<std::string> m_outTimeColl{this, "outputTimeStructCollection", "DRcaloSiPMreadoutDigiWaveform_scint", "output waveform collection name"};
 
-  mutable DataHandle<edm4hep::SimCalorimeterHitCollection> m_scintHits{m_hitColl, Gaudi::DataHandle::Reader, this};
-  mutable DataHandle<edm4hep::CalorimeterHitCollection> m_digiHits{m_outColl, Gaudi::DataHandle::Writer, this};
-  mutable DataHandle<edm4hep::TimeSeriesCollection> m_waveforms{m_outTimeColl, Gaudi::DataHandle::Writer, this};
+  mutable k4FWCore::DataHandle<edm4hep::SimCalorimeterHitCollection> m_scintHits{m_hitColl, Gaudi::DataHandle::Reader, this};
+  mutable k4FWCore::DataHandle<edm4hep::CalorimeterHitCollection> m_digiHits{m_outColl, Gaudi::DataHandle::Writer, this};
+  mutable k4FWCore::DataHandle<edm4hep::TimeSeriesCollection> m_waveforms{m_outTimeColl, Gaudi::DataHandle::Writer, this};
 
   std::unique_ptr<sipm::SiPMSensor> m_sensor;
 
