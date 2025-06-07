@@ -59,9 +59,9 @@ private:
   /// Decoder for system ID
   dd4hep::DDSegmentation::BitFieldCoder* m_decoder = new dd4hep::DDSegmentation::BitFieldCoder("system:4");
   /// Input collection
-  mutable DataHandle<edm4hep::CalorimeterHitCollection> m_hits{"hits/hits", Gaudi::DataHandle::Reader, this};
+  mutable k4FWCore::DataHandle<edm4hep::CalorimeterHitCollection> m_hits{"hits/hits", Gaudi::DataHandle::Reader, this};
   /// Output collection
-  mutable DataHandle<edm4hep::CalorimeterHitCollection> m_positionedHits{"hits/positionedHits",
+  mutable k4FWCore::DataHandle<edm4hep::CalorimeterHitCollection> m_positionedHits{"hits/positionedHits",
                                                                          Gaudi::DataHandle::Writer, this};
 };
 
