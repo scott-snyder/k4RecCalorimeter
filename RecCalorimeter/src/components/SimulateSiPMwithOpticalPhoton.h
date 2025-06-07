@@ -67,13 +67,13 @@ private:
   Gaudi::Property<std::string> m_outTimeColl{this, "outputTimeStructCollection", "DRcaloSiPMreadoutDigiWaveform", "output waveform collection name"};
 
   // Input collections
-  mutable DataHandle<edm4hep::SimCalorimeterHitCollection> m_simHits{m_hitColl, Gaudi::DataHandle::Reader, this};
-  mutable DataHandle<edm4hep::RawTimeSeriesCollection> m_timeStruct{m_inTimeColl, Gaudi::DataHandle::Reader, this};
-  mutable DataHandle<edm4hep::RawTimeSeriesCollection> m_wavelenStruct{m_inWavlenColl, Gaudi::DataHandle::Reader, this};
+  mutable k4FWCore::DataHandle<edm4hep::SimCalorimeterHitCollection> m_simHits{m_hitColl, Gaudi::DataHandle::Reader, this};
+  mutable k4FWCore::DataHandle<edm4hep::RawTimeSeriesCollection> m_timeStruct{m_inTimeColl, Gaudi::DataHandle::Reader, this};
+  mutable k4FWCore::DataHandle<edm4hep::RawTimeSeriesCollection> m_wavelenStruct{m_inWavlenColl, Gaudi::DataHandle::Reader, this};
 
   // Output collections
-  mutable DataHandle<edm4hep::CalorimeterHitCollection> m_digiHits{m_outColl, Gaudi::DataHandle::Writer, this};
-  mutable DataHandle<edm4hep::TimeSeriesCollection> m_waveforms{m_outTimeColl, Gaudi::DataHandle::Writer, this};
+  mutable k4FWCore::DataHandle<edm4hep::CalorimeterHitCollection> m_digiHits{m_outColl, Gaudi::DataHandle::Writer, this};
+  mutable k4FWCore::DataHandle<edm4hep::TimeSeriesCollection> m_waveforms{m_outTimeColl, Gaudi::DataHandle::Writer, this};
 
   // SiPM sensor model
   std::unique_ptr<sipm::SiPMSensor> m_sensor;

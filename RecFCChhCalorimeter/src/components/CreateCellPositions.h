@@ -46,9 +46,9 @@ private:
   /// Handle for tool to get positions
   mutable ToolHandle<ICellPositionsTool> m_cellPositionsTool;
   /// Input collection
-  mutable DataHandle<edm4hep::CalorimeterHitCollection> m_hits{"hits/hits", Gaudi::DataHandle::Reader, this};
+  mutable k4FWCore::DataHandle<edm4hep::CalorimeterHitCollection> m_hits{"hits/hits", Gaudi::DataHandle::Reader, this};
   /// Output collection
-  mutable DataHandle<edm4hep::CalorimeterHitCollection> m_positionedHits{"hits/positionedHits",
+  mutable k4FWCore::DataHandle<edm4hep::CalorimeterHitCollection> m_positionedHits{"hits/positionedHits",
                                                                          Gaudi::DataHandle::Writer, this};
 };
 
