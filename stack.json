@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "021d2876a5171792d20b1dc5992468ca5cfeebea",
-  "head": "fed44040d1ebb15df61c16dc7b9141287d120439",
+  "prev": "53d941965859106a72a30e63a55635431f66273d",
+  "head": "d43f44cc376a7868eedc023fd98c4848d8a39140",
   "applied": [
     "service",
     "testdir",
@@ -15,7 +15,8 @@
     "noiseVec",
     "cellPositions",
     "createCaloCells",
-    "dhns"
+    "dhns",
+    "refresh-temp"
   ],
   "unapplied": [],
   "hidden": [],
@@ -43,6 +44,9 @@
     },
     "noiseVec": {
       "oid": "e85637900fc7899e214cc5ac9593b3fe02c017e0"
+    },
+    "refresh-temp": {
+      "oid": "d43f44cc376a7868eedc023fd98c4848d8a39140"
     },
     "return": {
       "oid": "66e11ad304dd6c8112769a47381c8828f33052c6"
