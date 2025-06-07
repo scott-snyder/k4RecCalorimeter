@@ -201,15 +201,15 @@ private:
   Gaudi::Property<bool> m_addPosition{this, "addPosition", false, "Add position information to the cells?"};
 
   /// Handle for calo hits (input collection)
-  mutable DataHandle<edm4hep::SimCalorimeterHitCollection> m_hits{"hits", Gaudi::DataHandle::Reader, this};
+  mutable k4FWCore::DataHandle<edm4hep::SimCalorimeterHitCollection> m_hits{"hits", Gaudi::DataHandle::Reader, this};
   /// Handle for the cellID encoding string of the input collection
-  MetaDataHandle<std::string> m_hitsCellIDEncoding{m_hits, edm4hep::labels::CellIDEncoding, Gaudi::DataHandle::Reader};
+  k4FWCore::MetaDataHandle<std::string> m_hitsCellIDEncoding{m_hits, edm4hep::labels::CellIDEncoding, Gaudi::DataHandle::Reader};
   /// Handle for calo cells (output collection)
-  mutable DataHandle<edm4hep::CalorimeterHitCollection> m_cells{"cells", Gaudi::DataHandle::Writer, this};
-  MetaDataHandle<std::string> m_cellsCellIDEncoding{m_cells, edm4hep::labels::CellIDEncoding,
+  mutable k4FWCore::DataHandle<edm4hep::CalorimeterHitCollection> m_cells{"cells", Gaudi::DataHandle::Writer, this};
+  k4FWCore::MetaDataHandle<std::string> m_cellsCellIDEncoding{m_cells, edm4hep::labels::CellIDEncoding,
                                                     Gaudi::DataHandle::Writer};
   /// Handle for hit<->cell link (output collection)
-  mutable DataHandle<edm4hep::CaloHitSimCaloHitLinkCollection> m_links{"", Gaudi::DataHandle::Writer, this};
+  mutable k4FWCore::DataHandle<edm4hep::CaloHitSimCaloHitLinkCollection> m_links{"", Gaudi::DataHandle::Writer, this};
   /// Name of the detector readout
   Gaudi::Property<std::string> m_readoutName{this, "readoutName", "ECalBarrelPhiEta", "Name of the detector readout"};
   /// Name of active volumes
