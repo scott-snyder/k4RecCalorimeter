@@ -146,7 +146,7 @@ private:
     this, "calorimeterIDs", {}, "Corresponding list of calorimeter IDs"};
 
   /// The vector of input DataHandles for the input cell collections
-  std::vector<DataHandle<edm4hep::CalorimeterHitCollection>*> m_cellCollectionHandles;
+  std::vector<k4FWCore::DataHandle<edm4hep::CalorimeterHitCollection>*> m_cellCollectionHandles;
 
   /// Maximum theta of towers
   /// Can be left to pi, it won't hurt
