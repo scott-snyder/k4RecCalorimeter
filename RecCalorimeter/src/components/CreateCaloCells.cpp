@@ -1,4 +1,3 @@
-//#pragma GCC optimize "-O0"
 #include "CreateCaloCells.h"
 
 // k4geo
@@ -146,12 +145,16 @@ StatusCode CreateCaloCells::execute(const EventContext&) const {
     // loop over cells with nominal energies
     for (const auto& this_cell : m_cellsMap) {
       uint64_t this_cellId = this_cell.first;
+      double this_energy = this_cell.second;
+      //for (size_t jcell = 0; jcell < cells.size(); ++jcell) {
+      //uint64_t this_cellId = cells.cellID(jcell);
+      //uint64_t this_energy = cells.energy(jcell);
       auto vec_neighbours = m_crosstalksTool->getNeighbours(this_cellId); // a vector of neighbour IDs
       auto vec_crosstalks = m_crosstalksTool->getCrosstalks(this_cellId); // a vector of crosstalk coefficients
       // loop over crosstalk neighbours of the cell under study
       for (unsigned int i_cell = 0; i_cell < vec_neighbours.size(); i_cell++) {
         // signal transfer = energy deposit brought by EM shower hits * crosstalk coefficient
-        double signal_transfer = this_cell.second * vec_crosstalks[i_cell];
+        double signal_transfer = this_energy * vec_crosstalks[i_cell];
         // for the cell under study, record the signal transfer that will be subtracted from its final cell energy
         m_CrosstalkCellsMap[this_cellId] -= signal_transfer;
         // for the crosstalk neighbour, record the signal transfer that will be added to its final cell energy
@@ -161,7 +164,6 @@ StatusCode CreateCaloCells::execute(const EventContext&) const {
 
     // apply the cross-talk contributions on the nominal cell-energy map
     for (const auto& this_cell : m_CrosstalkCellsMap) {
-      m_cellsMap[this_cell.first] += this_cell.second;
       size_t& icell = cellsIndex.index (this_cell.first);
       if (icell == INVALID) {
         icell = cells.add (this_cell.first, this_cell.second);
@@ -174,26 +176,21 @@ StatusCode CreateCaloCells::execute(const EventContext&) const {
 
   // 3. Calibrate simulation energy to EM scale
   if (m_doCellCalibration) {
-    m_calibTool->calibrate(m_cellsMap);
     m_calibTool->calibrate(cells.m_cells);
   }
 
   // 4. Add noise to all cells
   if (m_addCellNoise) {
-    m_noiseTool->addRandomCellNoise(m_cellsMap);
     m_noiseTool->addRandomCellNoise(cells.m_cells);
   }
 
   // 5. Filter cells
   if (m_filterCellNoise) {
-    m_noiseTool->filterCellNoise(m_cellsMap);
     m_noiseTool->filterCellNoise(cells.m_cells);
   }
 
   // 6. Copy information to CaloHitCollection
   edm4hep::CalorimeterHitCollection* edmCellsCollection = new edm4hep::CalorimeterHitCollection();
-
-  if (cells.size() != m_cellsMap.size()) std::abort();
 
   for (size_t icell = 0; icell < cells.size(); ++icell) {
     double energy = cells.energy(icell);
@@ -202,12 +199,6 @@ StatusCode CreateCaloCells::execute(const EventContext&) const {
     newCell.setEnergy(energy);
     uint64_t cellid = cells.cellID(icell);
     newCell.setCellID(cellid);
-
-    {
-      auto it = m_cellsMap.find (cellid);
-      if (it == m_cellsMap.end()) std::abort();
-      if (it->second != energy) std::abort();
-    }
 
     static constexpr double inv_mm = 1 / dd4hep::mm;
 
@@ -245,43 +236,6 @@ StatusCode CreateCaloCells::execute(const EventContext&) const {
 
     // Otherwise, the position will be left set to 0.
   }
-#if 0
-  for (const auto& cell : m_cellsMap) {
-    if (m_addCellNoise || cell.second != 0) {
-      auto newCell = edmCellsCollection->create();
-      newCell.setEnergy(cell.second);
-      uint64_t cellid = cell.first;
-      newCell.setCellID(cellid);
-      // recalc with tool: have tool && (addPosition || (!addPosition && cell not in input)
-      // recalc w/o tool: no tool && addPosition
-      // take from input: no tool && !addPosition && cell in input
-      // 0: no tool && !addPosition && cell not in input
-
-      // If addPosition: recalcuate, either using or not using the tool
-      // If not addPosition and cell in input: take pos from input
-      // If not addPosition and cell not in input:
-      //   if tool available recalc from tool, else 0
-      if (m_addPosition){
-        if (m_cellPos.isEnabled()) {
-          static constexpr double inv_mm = 1 / dd4hep::mm;
-          dd4hep::Position pos = m_cellPos->xyzPosition(cellid) * inv_mm;
-          newCell.setPosition({static_cast<float>(pos.x()),
-                               static_cast<float>(pos.y()),
-                               static_cast<float>(pos.z())});
-        }
-        else {
-          auto detelement = m_volman.lookupDetElement(cellid);
-          const auto& transformMatrix = detelement.nominal().worldTransformation();
-          double outGlobal[3];
-          double inLocal[] = {0, 0, 0};
-          transformMatrix.LocalToMaster(inLocal, outGlobal);
-          edm4hep::Vector3f position = edm4hep::Vector3f(outGlobal[0] / dd4hep::mm, outGlobal[1] / dd4hep::mm, outGlobal[2] / dd4hep::mm);
-          newCell.setPosition(position);
-        }
-      }
-    }
-  }
-#endif
 
   // XXX Avoid N^2!
   // create hits<->cell links
