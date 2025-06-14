@@ -13,6 +13,12 @@
 #include "k4Interface/ICellPositionsTool.h"
 #include "k4Interface/INoiseCaloCellsTool.h"
 #include "k4Interface/INoiseConstTool.h"
+#include "k4FWCore/k4_check.h"
+#include "edm4hep/EventHeaderCollection.h"
+#include "k4FWCore/DataHandle.h"
+#include "CLHEP/Random/Ranlux64Engine.h"
+#include "CLHEP/Random/RandGauss.h"
+
 
 class IGeoSvc;
 
@@ -70,7 +76,7 @@ public:
 
 private:
   template <typename C>
-  void addRandomCellNoiseT (C& aCells) const;
+  void addRandomCellNoiseT (C& aCells, CLHEP::RandGauss& r) const;
   template <typename C>
   void filterCellNoiseT (C& aCells) const;
 
@@ -138,6 +144,10 @@ private:
   /// Decoder for ECal layers
   dd4hep::DDSegmentation::BitFieldCoder* m_decoder;
   int m_index_activeField;
+
+  mutable k4FWCore::DataHandle<edm4hep::EventHeaderCollection> m_header{"EventHeader", Gaudi::DataHandle::Reader, this};
+
+  void initEvent (CLHEP::Ranlux64Engine& e) const;
 };
 
 #endif /* RECFCCEECALORIMETER_NOISECALOCELLSVSTHETAFROMFILETOOL_H */
