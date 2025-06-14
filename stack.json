@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "0ff65555c0fa24abe5a43eedbc95b698e447222e",
-  "head": "ffeb3458efdfa88f39f6b067f2adc774c9c18e84",
+  "prev": "486b0900fd28429cb2bc46994b40fd4315bec923",
+  "head": "1e765196ab7c4a16b2fb3bf8f919696937ade146",
   "applied": [
     "service",
     "testdir",
@@ -15,8 +15,7 @@
     "noiseVec",
     "cellPositions",
     "createCaloCells",
-    "dhns",
-    "refresh-temp"
+    "dhns"
   ],
   "unapplied": [],
   "hidden": [],
@@ -34,19 +33,16 @@
       "oid": "94c1561a791ff50bf264c28c6e535761372e13c9"
     },
     "createCaloCells": {
-      "oid": "3579c6c7dfc3210e8001550ddcaaab6129289d9c"
+      "oid": "8d3dcbcddb4d79b0b1eee9cf702a33c99f9c3076"
     },
     "dhns": {
-      "oid": "bb2cb237b65244f55673d77de153a8df59e4f30f"
+      "oid": "1e765196ab7c4a16b2fb3bf8f919696937ade146"
     },
     "noiseConst": {
       "oid": "367b9b7768a368b5e027ff29c29e39d779482e51"
     },
     "noiseVec": {
       "oid": "8f1b092355ea86ccf58e832a9747109ddcdfe9e9"
-    },
-    "refresh-temp": {
-      "oid": "ffeb3458efdfa88f39f6b067f2adc774c9c18e84"
     },
     "return": {
       "oid": "66e11ad304dd6c8112769a47381c8828f33052c6"
