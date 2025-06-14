@@ -68,16 +68,17 @@ public:
 private:
   static constexpr size_t INVALID = static_cast<size_t> (-1);
   using CellsIndexMap_t = std::unordered_map<uint64_t, size_t>;
+  using CellsIndexPair_t = std::pair<size_t, size_t>;  // cell index, hit index
 
   struct CellsFullIndex
   {
     CellsFullIndex (const CellsIndexMap_t& cellsIndexMap)
       : m_cellsIndexMap (cellsIndexMap),
-        m_indices (cellsIndexMap.size(), INVALID)
+        m_indices (cellsIndexMap.size(), {INVALID, INVALID})
     {
     }
 
-    size_t& index (uint64_t cellid)
+    CellsIndexPair_t& index (uint64_t cellid)
     {
       auto it = m_cellsIndexMap.find (cellid);
       if (it == m_cellsIndexMap.end()) {
@@ -87,18 +88,19 @@ private:
     }
 
     const CellsIndexMap_t& m_cellsIndexMap;
-    std::vector<size_t> m_indices;
+    std::vector<CellsIndexPair_t> m_indices;
   };
 
 
   struct CellsSparseIndex
   {
-    size_t& index (uint64_t cellid)
+    CellsIndexPair_t& index (uint64_t cellid)
     {
-      return m_indices.try_emplace (cellid, INVALID).first->second;
+      return m_indices.try_emplace (cellid, CellsIndexPair_t{INVALID,INVALID}).first->second;
     }
 
-    CellsIndexMap_t m_indices;
+    using CellsIndexPairMap_t = std::unordered_map<uint64_t, CellsIndexPair_t>;
+    CellsIndexPairMap_t m_indices;
   };
 
   struct CellsIndex
@@ -113,12 +115,26 @@ private:
       }
     }
 
-    size_t& index (uint64_t cellid)
+    CellsIndexPair_t& pair (uint64_t cellid)
     {
       if (m_indices.index() == 1) {
         return std::get<1> (m_indices).index (cellid);
       }
       return std::get<2> (m_indices).index (cellid);
+    }
+    size_t& index (uint64_t cellid, size_t ihit)
+    {
+      CellsIndexPair_t& p = pair (cellid);
+      if (p.second == INVALID) p.second = ihit;
+      return p.first;
+    }
+    size_t& index (uint64_t cellid)
+    {
+      return pair (cellid).first;
+    }
+    size_t& ihit (uint64_t cellid)
+    {
+      return pair (cellid).second;
     }
 
     std::variant<int, CellsFullIndex, CellsSparseIndex> m_indices;
@@ -129,7 +145,6 @@ private:
     CellsInfo (size_t capacity)
     {
       m_cells.reserve (capacity);
-      m_ihit.reserve (capacity);
     }
 
     size_t size() const
@@ -140,14 +155,6 @@ private:
     size_t add (uint64_t cellID, double energy)
     {
       m_cells.emplace_back (cellID, energy);
-      m_ihit.push_back (INVALID);
-      return m_cells.size() - 1;
-    }
-
-    size_t add (uint64_t cellID, double energy, size_t ihit)
-    {
-      m_cells.emplace_back (cellID, energy);
-      m_ihit.push_back (ihit);
       return m_cells.size() - 1;
     }
 
@@ -161,18 +168,7 @@ private:
       return m_cells.at(icell).second;
     }
 
-    bool hasInputHit (size_t icell) const
-    {
-      return m_ihit.at(icell) != INVALID;
-    }
-
-    size_t ihit (size_t icell) const
-    {
-      return m_ihit.at(icell);
-    }
-
     std::vector<std::pair<uint64_t, double> > m_cells;
-    std::vector<size_t> m_ihit;
   };
 
   /// Handle for the calorimeter cells crosstalk tool

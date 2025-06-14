@@ -1,4 +1,4 @@
-#pragma GCC optimize "-O0"
+//#pragma GCC optimize "-O0"
 #include "CreateCaloCells.h"
 
 // k4geo
@@ -126,9 +126,9 @@ StatusCode CreateCaloCells::execute(const EventContext&) const {
   for (size_t ihit = 0; const auto& hit : *hits) {
     verbose() << "CellID : " << hit.getCellID() << endmsg;
     m_cellsMap[hit.getCellID()] += hit.getEnergy();
-    size_t& icell = cellsIndex.index (hit.getCellID());
+    size_t& icell = cellsIndex.index (hit.getCellID(), ihit);
     if (icell == INVALID) {
-      icell = cells.add (hit.getCellID(), hit.getEnergy(), ihit);
+      icell = cells.add (hit.getCellID(), hit.getEnergy());
     }
     else {
       cells.energy(icell) += hit.getEnergy();
@@ -211,9 +211,9 @@ StatusCode CreateCaloCells::execute(const EventContext&) const {
 
     static constexpr double inv_mm = 1 / dd4hep::mm;
 
-    bool hasInputHit = cells.hasInputHit(icell);
+    size_t ihit = cellsIndex.ihit(cellid);
 
-    if (m_cellPos.isEnabled() && (m_addPosition || !hasInputHit)) {
+    if (m_cellPos.isEnabled() && (m_addPosition || ihit == INVALID)) {
       // Recalculate cell position given cell using positioning tool.
       // We have the tool, and either the position isn't available
       // in the input, or we were requested to recalculate it.
@@ -238,9 +238,9 @@ StatusCode CreateCaloCells::execute(const EventContext&) const {
       newCell.setPosition(position);
     }
 
-    else if (hasInputHit) {
+    else if (ihit != INVALID) {
       // This cell was present in the input.  Take the position from there.
-      newCell.setPosition((*hits)[cells.ihit(icell)].getPosition());
+      newCell.setPosition((*hits)[ihit].getPosition());
     }
 
     // Otherwise, the position will be left set to 0.
