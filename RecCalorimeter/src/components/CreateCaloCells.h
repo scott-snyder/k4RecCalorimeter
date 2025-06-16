@@ -237,12 +237,8 @@ private:
   /// This assigns to each cell a dense index in the range 0..ncells-1.
   CellsIndexMap_t m_cellsIndexMap;
 
-  /// Maps of cell IDs (corresponding to DD4hep IDs) on final energies to be used for clustering
-  mutable std::unordered_map<uint64_t, double> m_cellsMap;
   /// Maps of cell IDs (corresponding to DD4hep IDs) on transfer of signals due to crosstalk
   mutable std::unordered_map<uint64_t, double> m_CrosstalkCellsMap;
-  /// Maps of cell IDs with zero energy, for all cells in calo (needed if addCellNoise and filterCellNoise are both set)
-  mutable std::unordered_map<uint64_t, double> m_emptyCellsMap;
 };
 
 #endif /* RECCALORIMETER_CREATECALOCELLS_H */

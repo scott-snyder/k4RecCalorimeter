@@ -52,14 +52,6 @@ StatusCode CreateCaloCells::initialize() {
     K4_CHECK( m_noiseTool.retrieve() );
     // Geometry settings
     K4_CHECK( m_geoTool.retrieve() );
-    // Prepare map of all existing cells in calorimeter to add noise to all
-    K4_CHECK( m_geoTool->prepareEmptyCells(m_cellsMap) );
-    verbose() << "Initialised empty cell map with size " << m_cellsMap.size() << endmsg;
-    // noise filtering erases cells from the cell map after each event, so we need
-    // to backup the empty cell map for later reuse
-    if (m_addCellNoise && m_filterCellNoise) {
-      m_emptyCellsMap = m_cellsMap;
-    }
 
     // Construct cell indices.
     {
@@ -107,22 +99,11 @@ StatusCode CreateCaloCells::execute(const EventContext&) const {
 
   // 0. Clear all cells
   if (m_addCellNoise) {
-    // if cells are not filtered, the map has same size in each event, equal to the total number
-    // of cells in the calorimeter, so we can just reset the values to 0
-    // if cells are filtered, during each event they are removed from the cellsMap, so one has to
-    // restore the initial map of all empty cells
-    if (!m_filterCellNoise)
-      std::for_each(m_cellsMap.begin(), m_cellsMap.end(), [](std::pair<const uint64_t, double>& p) { p.second = 0; });
-    else
-      m_cellsMap = m_emptyCellsMap;
-
     cells.m_cells.resize (m_cellsIndexMap.size());
     for (const auto& p : m_cellsIndexMap) {
       cells.m_cells.at(p.second).first = p.first;
       cellsIndex.index(p.first) = p.second;
     }
-  } else {
-    m_cellsMap.clear();
   }
 
   // 1. Merge energy deposits into cells
@@ -130,7 +111,6 @@ StatusCode CreateCaloCells::execute(const EventContext&) const {
   // created below
   for (size_t ihit = 0; const auto& hit : *hits) {
     verbose() << "CellID : " << hit.getCellID() << endmsg;
-    m_cellsMap[hit.getCellID()] += hit.getEnergy();
     size_t& icell = cellsIndex.index (hit.getCellID(), ihit);
     if (icell == INVALID) {
       icell = cells.add (hit.getCellID(), hit.getEnergy());
@@ -140,7 +120,7 @@ StatusCode CreateCaloCells::execute(const EventContext&) const {
     }
     ++ihit;
   }
-  debug() << "Number of calorimeter cells after merging of hits: " << m_cellsMap.size() << endmsg;
+  debug() << "Number of calorimeter cells after merging of hits: " << cells.size() << endmsg;
 
   // 2. Emulate cross-talk (if asked)
   if (m_addCrosstalk) {
