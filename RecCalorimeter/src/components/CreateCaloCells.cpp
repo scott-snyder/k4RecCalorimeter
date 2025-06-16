@@ -115,6 +115,12 @@ StatusCode CreateCaloCells::execute(const EventContext&) const {
       std::for_each(m_cellsMap.begin(), m_cellsMap.end(), [](std::pair<const uint64_t, double>& p) { p.second = 0; });
     else
       m_cellsMap = m_emptyCellsMap;
+
+    cells.m_cells.resize (m_cellsIndexMap.size());
+    for (const auto& p : m_cellsIndexMap) {
+      cells.m_cells.at(p.second).first = p.first;
+      cellsIndex.index(p.first) = p.second;
+    }
   } else {
     m_cellsMap.clear();
   }
@@ -143,12 +149,9 @@ StatusCode CreateCaloCells::execute(const EventContext&) const {
     m_CrosstalkCellsMap.clear(); // this is a temporary map to hold energy exchange due to cross-talk, without affecting
                                  // yet the nominal energy
     // loop over cells with nominal energies
-    for (const auto& this_cell : m_cellsMap) {
-      uint64_t this_cellId = this_cell.first;
-      double this_energy = this_cell.second;
-      //for (size_t jcell = 0; jcell < cells.size(); ++jcell) {
-      //uint64_t this_cellId = cells.cellID(jcell);
-      //uint64_t this_energy = cells.energy(jcell);
+    for (size_t jcell = 0; jcell < cells.size(); ++jcell) {
+      uint64_t this_cellId = cells.cellID(jcell);
+      double this_energy = cells.energy(jcell);
       auto vec_neighbours = m_crosstalksTool->getNeighbours(this_cellId); // a vector of neighbour IDs
       auto vec_crosstalks = m_crosstalksTool->getCrosstalks(this_cellId); // a vector of crosstalk coefficients
       // loop over crosstalk neighbours of the cell under study
@@ -191,6 +194,8 @@ StatusCode CreateCaloCells::execute(const EventContext&) const {
 
   // 6. Copy information to CaloHitCollection
   edm4hep::CalorimeterHitCollection* edmCellsCollection = new edm4hep::CalorimeterHitCollection();
+
+  cells.sort();
 
   for (size_t icell = 0; icell < cells.size(); ++icell) {
     double energy = cells.energy(icell);

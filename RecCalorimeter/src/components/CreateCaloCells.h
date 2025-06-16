@@ -168,6 +168,11 @@ private:
       return m_cells.at(icell).second;
     }
 
+    void sort()
+    {
+      std::ranges::sort (m_cells);
+    }
+
     std::vector<std::pair<uint64_t, double> > m_cells;
   };
 
