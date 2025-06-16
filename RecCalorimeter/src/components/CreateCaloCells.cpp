@@ -126,12 +126,12 @@ StatusCode CreateCaloCells::execute(const EventContext&) const {
   if (m_addCrosstalk) {
     // Derive the cross-talk contributions without affecting yet the nominal energy
     // (one has to emulate crosstalk based on cells free from any cross-talk contributions)
-    m_CrosstalkCellsMap.clear(); // this is a temporary map to hold energy exchange due to cross-talk, without affecting
+    CellsInfo cells_orig = cells;
                                  // yet the nominal energy
     // loop over cells with nominal energies
-    for (size_t jcell = 0; jcell < cells.size(); ++jcell) {
-      uint64_t this_cellId = cells.cellID(jcell);
-      double this_energy = cells.energy(jcell);
+    for (size_t jcell = 0; jcell < cells_orig.size(); ++jcell) {
+      uint64_t this_cellId = cells_orig.cellID(jcell);
+      double this_energy = cells_orig.energy(jcell);
       auto vec_neighbours = m_crosstalksTool->getNeighbours(this_cellId); // a vector of neighbour IDs
       auto vec_crosstalks = m_crosstalksTool->getCrosstalks(this_cellId); // a vector of crosstalk coefficients
       // loop over crosstalk neighbours of the cell under study
@@ -139,20 +139,15 @@ StatusCode CreateCaloCells::execute(const EventContext&) const {
         // signal transfer = energy deposit brought by EM shower hits * crosstalk coefficient
         double signal_transfer = this_energy * vec_crosstalks[i_cell];
         // for the cell under study, record the signal transfer that will be subtracted from its final cell energy
-        m_CrosstalkCellsMap[this_cellId] -= signal_transfer;
+        cells.energy(jcell) -= signal_transfer;
         // for the crosstalk neighbour, record the signal transfer that will be added to its final cell energy
-        m_CrosstalkCellsMap[vec_neighbours[i_cell]] += signal_transfer;
-      }
-    }
-
-    // apply the cross-talk contributions on the nominal cell-energy map
-    for (const auto& this_cell : m_CrosstalkCellsMap) {
-      size_t& icell = cellsIndex.index (this_cell.first);
-      if (icell == INVALID) {
-        icell = cells.add (this_cell.first, this_cell.second);
-      }
-      else {
-        cells.energy(icell) += this_cell.second;
+        size_t& kcell = cellsIndex.index (vec_neighbours[i_cell]);
+        if (kcell == INVALID) {
+          kcell = cells.add (vec_neighbours[i_cell], signal_transfer);
+        }
+        else {
+          cells.energy(kcell) += signal_transfer;
+        }
       }
     }
   }

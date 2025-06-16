@@ -236,9 +236,6 @@ private:
   /// Map of cell IDs to cell indices.
   /// This assigns to each cell a dense index in the range 0..ncells-1.
   CellsIndexMap_t m_cellsIndexMap;
-
-  /// Maps of cell IDs (corresponding to DD4hep IDs) on transfer of signals due to crosstalk
-  mutable std::unordered_map<uint64_t, double> m_CrosstalkCellsMap;
 };
 
 #endif /* RECCALORIMETER_CREATECALOCELLS_H */
