@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "0f63746dd99db1bd55985418694e545c7636ae7b",
-  "head": "29c6d7ac2d9969474b2b47f27c5e1efaa601a2b5",
+  "prev": "d44506a6d800f51dece385cb83ffbaf5253523ff",
+  "head": "bc7b411aae8a3f299951b0f20b4722fa56f58a09",
   "applied": [
     "service",
     "testdir",
@@ -16,8 +16,7 @@
     "cellPositions",
     "createCaloCells",
     "dhns",
-    "repnoise",
-    "refresh-temp"
+    "repnoise"
   ],
   "unapplied": [],
   "hidden": [],
@@ -35,10 +34,10 @@
       "oid": "94c1561a791ff50bf264c28c6e535761372e13c9"
     },
     "createCaloCells": {
-      "oid": "0b266bc8d44ff942e726e12030d17b230f92cfa9"
+      "oid": "fcaa825674581af40b3e830f192e17d7e7b9fe0f"
     },
     "dhns": {
-      "oid": "4d9184ae9a3d5ce54e87f872387429f59765f00c"
+      "oid": "6ccf9609005272647b0d0ad39cf34fda1d168e9b"
     },
     "noiseConst": {
       "oid": "367b9b7768a368b5e027ff29c29e39d779482e51"
@@ -46,11 +45,8 @@
     "noiseVec": {
       "oid": "8f1b092355ea86ccf58e832a9747109ddcdfe9e9"
     },
-    "refresh-temp": {
-      "oid": "29c6d7ac2d9969474b2b47f27c5e1efaa601a2b5"
-    },
     "repnoise": {
-      "oid": "78c6219b9b75a71b13f433a4df9ec1269ae75968"
+      "oid": "bc7b411aae8a3f299951b0f20b4722fa56f58a09"
     },
     "return": {
       "oid": "66e11ad304dd6c8112769a47381c8828f33052c6"
