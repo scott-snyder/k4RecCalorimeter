@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "e8d243a5ecff5de5a8bfa865b4a2b4e9d0407a83",
-  "head": "f316aace1fe31044e034d902f4be0d095af93152",
+  "prev": "84256a7179a47e460731610e8246271ae82457f4",
+  "head": "8e13a83cd949c65ef378c64e529b80f7009fb481",
   "applied": [
     "service",
     "testdir",
@@ -18,8 +18,7 @@
     "dhns",
     "repnoise",
     "warn2",
-    "cmakewarn",
-    "refresh-temp"
+    "cmakewarn"
   ],
   "unapplied": [],
   "hidden": [],
@@ -37,7 +36,7 @@
       "oid": "94c1561a791ff50bf264c28c6e535761372e13c9"
     },
     "cmakewarn": {
-      "oid": "2360613241c14e224e74ef6cdc0cfd297d12c5cb"
+      "oid": "8e13a83cd949c65ef378c64e529b80f7009fb481"
     },
     "createCaloCells": {
       "oid": "e44b521f8ac3c942296e5b6217df315188dfe0e7"
@@ -50,9 +49,6 @@
     },
     "noiseVec": {
       "oid": "8f1b092355ea86ccf58e832a9747109ddcdfe9e9"
-    },
-    "refresh-temp": {
-      "oid": "f316aace1fe31044e034d902f4be0d095af93152"
     },
     "repnoise": {
       "oid": "ab294b4f02e5a95554da0c2cfe55c58afa2b9ddf"
