@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "f861842e54304d22ea63932a927eec81dc507c92",
-  "head": "2360613241c14e224e74ef6cdc0cfd297d12c5cb",
+  "prev": "e8d243a5ecff5de5a8bfa865b4a2b4e9d0407a83",
+  "head": "f316aace1fe31044e034d902f4be0d095af93152",
   "applied": [
     "service",
     "testdir",
@@ -18,7 +18,8 @@
     "dhns",
     "repnoise",
     "warn2",
-    "cmakewarn"
+    "cmakewarn",
+    "refresh-temp"
   ],
   "unapplied": [],
   "hidden": [],
@@ -49,6 +50,9 @@
     },
     "noiseVec": {
       "oid": "8f1b092355ea86ccf58e832a9747109ddcdfe9e9"
+    },
+    "refresh-temp": {
+      "oid": "f316aace1fe31044e034d902f4be0d095af93152"
     },
     "repnoise": {
       "oid": "ab294b4f02e5a95554da0c2cfe55c58afa2b9ddf"
