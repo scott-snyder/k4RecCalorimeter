@@ -58,7 +58,6 @@ void NoiseCaloCellsVsThetaFromFileTool::addRandomCellNoiseT(C& aCells, CLHEP::Ra
   std::map<uint64_t, typename C::iterator> m;
   for (auto i = aCells.begin(); i != aCells.end(); ++i) m[i->first] = i;
   for (auto& p : m) {
-    double esave = p.second->second;
     p.second->second += getNoiseOffsetPerCell(p.first);
     p.second->second += (getNoiseRMSPerCell(p.first) * r.fire());
   }
