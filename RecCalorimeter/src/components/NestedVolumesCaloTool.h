@@ -23,8 +23,8 @@ class NestedVolumesCaloTool : public AlgTool, virtual public ICalorimeterTool {
 public:
   NestedVolumesCaloTool(const std::string& type, const std::string& name, const IInterface* parent);
   virtual ~NestedVolumesCaloTool() = default;
-  virtual StatusCode initialize() final;
-  virtual StatusCode finalize() final;
+  virtual StatusCode initialize() override final;
+  virtual StatusCode finalize() override final;
   /** Prepare a map of all existing cells in current geometry.
    *   Active volumes are looked in the geometry manager by name ('\b activeVolumeName').
    *   Corresponding bitfield name is given in '\b activeFieldName'.
@@ -33,7 +33,7 @@ public:
    *   @param[out] aCells map of existing cells (and deposited energy, set to 0)
    *   return Status code.
    */
-  virtual StatusCode prepareEmptyCells(std::unordered_map<uint64_t, double>& aCells) final;
+  virtual StatusCode prepareEmptyCells(std::unordered_map<uint64_t, double>& aCells) const override final;
 
 private:
   /// Pointer to the geometry service
