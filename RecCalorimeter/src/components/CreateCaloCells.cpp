@@ -56,13 +56,7 @@ StatusCode CreateCaloCells::initialize() {
     // Construct cell indices.
     {
       // Use the geoTool to get a collection of all CellIDs.
-      std::unordered_map<uint64_t, double> cellsMap;
-      K4_CHECK( m_geoTool->prepareEmptyCells(cellsMap) );
-
-      // Now make a sorted list of them.
-      auto r = cellsMap | std::views::transform ([](auto x){return x.first;});
-      std::vector<size_t> cellIDs (std::ranges::begin(r), std::ranges::end(r));
-      std::ranges::sort (cellIDs);
+      std::vector<size_t> cellIDs = m_geoTool->cellIDs();
 
       // And index them.
       for (size_t i = 0; size_t id : cellIDs)
