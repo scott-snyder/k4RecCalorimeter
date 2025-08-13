@@ -1,46 +1,40 @@
 #ifndef RECCALORIMETER_TUBELAYERPHIETACALOTOOL_H
 #define RECCALORIMETER_TUBELAYERPHIETACALOTOOL_H
 
-// from Gaudi
-#include "GaudiKernel/AlgTool.h"
-
-// k4FWCore
-#include "k4Interface/ICalorimeterTool.h"
-
-class IGeoSvc;
+#include "RecCaloCommon/CalorimeterToolBase.h"
 
 /** @class TubeLayerPhiEtaCaloTool Reconstruction/RecCalorimeter/src/components/TubeLayerPhiEtaCaloTool.h
  *TubeLayerPhiEtaCaloTool.h
  *
  *  Tool for geometry-dependent settings of the digitisation.
  *  It assumes cylindrical geometry (layers) and phi-eta segmentation.
+ * 
+ *  Prepare a map of all existing cells in current geometry.
+ *   Active layers (cylindrical tubes) are looked in the geometry manager by name ('\b activeVolumeName').
+ *   Corresponding bitfield name is given in '\b activeFieldName'.
+ *   If users wants to limit the number of active layers, it is possible by setting '\b activeVolumesNumber'.
+ *   The total number of cells N = n_layer * n_eta * n_phi, where
+ *   n_layer is number of layers (taken from geometry if activeVolumesNumber not set),
+ *   n_eta is number of eta bins in that layer,
+ *   n_phi is number of phi bins (the same for each layer).
+ *   For more explanation please [see reconstruction documentation](@ref md_reconstruction_doc_reccalorimeter).
  *
  *  @author Anna Zaborowska
  */
 
-class TubeLayerPhiEtaCaloTool : public AlgTool, virtual public ICalorimeterTool {
+class TubeLayerPhiEtaCaloTool : public CalorimeterToolBase
+{
 public:
-  TubeLayerPhiEtaCaloTool(const std::string& type, const std::string& name, const IInterface* parent);
+  using CalorimeterToolBase::CalorimeterToolBase;
   virtual ~TubeLayerPhiEtaCaloTool() = default;
+
   virtual StatusCode initialize() override final;
-  virtual StatusCode finalize() override final;
-  /** Prepare a map of all existing cells in current geometry.
-   *   Active layers (cylindrical tubes) are looked in the geometry manager by name ('\b activeVolumeName').
-   *   Corresponding bitfield name is given in '\b activeFieldName'.
-   *   If users wants to limit the number of active layers, it is possible by setting '\b activeVolumesNumber'.
-   *   The total number of cells N = n_layer * n_eta * n_phi, where
-   *   n_layer is number of layers (taken from geometry if activeVolumesNumber not set),
-   *   n_eta is number of eta bins in that layer,
-   *   n_phi is number of phi bins (the same for each layer).
-   *   For more explanation please [see reconstruction documentation](@ref md_reconstruction_doc_reccalorimeter).
-   *   @param[out] aCells map of existing cells (and deposited energy, set to 0)
-   *   return Status code.
-   */
-  virtual StatusCode prepareEmptyCells(std::unordered_map<uint64_t, double>& aCells) const override final;
+
+
+protected:
+  virtual StatusCode collectCells(std::function<void(uint64_t)> cellFunc) const override final;
 
 private:
-  /// Pointer to the geometry service
-  ServiceHandle<IGeoSvc> m_geoSvc;
   /// Name of the detector readout
   Gaudi::Property<std::string> m_readoutName{this, "readoutName", ""};
   /// Name of active volumes
