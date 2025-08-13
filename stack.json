@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "9a4cae5ae32af0bbf313a5406c57d3cd49c85437",
-  "head": "9d2ba0e42010474427e7121e17e3c1b0be531597",
+  "prev": "a74f0acedce7d38dc8109d9750c4b0bbfa7c53a2",
+  "head": "6b95fe2e12ba582fafde67a8035066924e6dd569",
   "applied": [
     "service",
     "testdir",
@@ -19,7 +19,8 @@
     "repnoise",
     "warn2",
     "cmakewarn",
-    "geoConst"
+    "geoConst",
+    "refresh-temp"
   ],
   "unapplied": [],
   "hidden": [],
@@ -53,6 +54,9 @@
     },
     "noiseVec": {
       "oid": "8f1b092355ea86ccf58e832a9747109ddcdfe9e9"
+    },
+    "refresh-temp": {
+      "oid": "6b95fe2e12ba582fafde67a8035066924e6dd569"
     },
     "repnoise": {
       "oid": "ab294b4f02e5a95554da0c2cfe55c58afa2b9ddf"
