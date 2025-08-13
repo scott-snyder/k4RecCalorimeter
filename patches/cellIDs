@@ -1,0 +1,8 @@
+Bottom: 5156546c3b00e2b5503de293b3649bfc2d584d33
+Top:    5156546c3b00e2b5503de293b3649bfc2d584d33
+Author: sss <sss@karma>
+Date:   2025-08-13 15:35:34 -0400
+
+Add ICalorimeterTool::cellIDs.
+
+Add a method to ICalorimeterTool to get just a vector of all valid cell IDs.
