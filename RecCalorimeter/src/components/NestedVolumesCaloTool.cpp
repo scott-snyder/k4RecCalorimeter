@@ -4,38 +4,21 @@
 #include "DD4hep/Detector.h"
 #include "detectorCommon/DetUtils_k4geo.h"
 #include "k4Interface/IGeoSvc.h"
+#include "k4FWCore/k4_check.h"
 
 DECLARE_COMPONENT(NestedVolumesCaloTool)
 
-NestedVolumesCaloTool::NestedVolumesCaloTool(const std::string& type, const std::string& name, const IInterface* parent)
-    : AlgTool(type, name, parent), m_geoSvc("GeoSvc", name) {
-  declareInterface<ICalorimeterTool>(this);
-}
-
 StatusCode NestedVolumesCaloTool::initialize() {
-  StatusCode sc = AlgTool::initialize();
-  if (sc.isFailure())
-    return sc;
-
-  if (!m_geoSvc) {
-    error() << "Unable to locate Geometry Service. "
-            << "Make sure you have GeoSvc and SimSvc in the right order in the configuration." << endmsg;
-    return StatusCode::FAILURE;
-  }
-  // Check if readouts exist
-  info() << "Readout: " << m_readoutName << endmsg;
-  if (m_geoSvc->getDetector()->readouts().find(m_readoutName) == m_geoSvc->getDetector()->readouts().end()) {
-    error() << "Readout <<" << m_readoutName << ">> does not exist." << endmsg;
-    return StatusCode::FAILURE;
-  }
-  return sc;
+  K4_CHECK( AlgTool::initialize() );
+  K4_CHECK( CalorimeterToolBase::getReadout (m_readoutName) );
+  return StatusCode::SUCCESS;
 }
 
-StatusCode NestedVolumesCaloTool::finalize() { return AlgTool::finalize(); }
 
-StatusCode NestedVolumesCaloTool::prepareEmptyCells(std::unordered_map<uint64_t, double>& aCells) const {
+StatusCode NestedVolumesCaloTool::collectCells(std::function<void(uint64_t)> cellFunc) const
+{
   // Take readout bitfield decoder from GeoSvc
-  auto decoder = m_geoSvc->getDetector()->readout(m_readoutName).idSpec().decoder();
+  auto decoder = readout().idSpec().decoder();
   if (m_fieldNames.size() != m_fieldValues.size()) {
     error() << "Volume readout field descriptors (names and values) have different size." << endmsg;
     return StatusCode::FAILURE;
@@ -94,7 +77,7 @@ StatusCode NestedVolumesCaloTool::prepareEmptyCells(std::unordered_map<uint64_t,
     for (unsigned int it = 0; it < numVolTypes; it++) {
       decoder->set(cID, numVolumesMap[it].first, currentVol[it]);
     }
-    aCells.insert(std::pair<uint64_t, double>(cID, 0));
+    cellFunc(cID);
     if (msgLevel() <= MSG::VERBOSE) {
       verbose() << "Adding volume: " << decoder->valueString(cID) << endmsg;
     }
