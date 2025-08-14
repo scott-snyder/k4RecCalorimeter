@@ -31,10 +31,10 @@ StatusCode TubeLayerPhiEtaCaloTool::collectCells(std::function<void(uint64_t)> c
   // get PhiEta segmentation
   const dd4hep::DDSegmentation::FCCSWGridPhiEta_k4geo* segmentation = nullptr;
   const dd4hep::DDSegmentation::MultiSegmentation* segmentationMulti = nullptr;
-  segmentation = dynamic_cast<dd4hep::DDSegmentation::FCCSWGridPhiEta_k4geo*>(
+  segmentation = dynamic_cast<const dd4hep::DDSegmentation::FCCSWGridPhiEta_k4geo*>(
       readout().segmentation().segmentation());
   if (segmentation == nullptr) {
-    segmentationMulti = dynamic_cast<dd4hep::DDSegmentation::MultiSegmentation*>(
+    segmentationMulti = dynamic_cast<const dd4hep::DDSegmentation::MultiSegmentation*>(
         readout().segmentation().segmentation());
     if (segmentationMulti == nullptr) {
       error() << "There is no phi-eta or multi- segmentation for the readout " << m_readoutName << " defined."
@@ -44,7 +44,7 @@ StatusCode TubeLayerPhiEtaCaloTool::collectCells(std::function<void(uint64_t)> c
       // check if multisegmentation contains only phi-eta sub-segmentations
       const dd4hep::DDSegmentation::FCCSWGridPhiEta_k4geo* subsegmentation = nullptr;
       for (const auto& subSegm : segmentationMulti->subSegmentations()) {
-        subsegmentation = dynamic_cast<dd4hep::DDSegmentation::FCCSWGridPhiEta_k4geo*>(subSegm.segmentation);
+        subsegmentation = dynamic_cast<const dd4hep::DDSegmentation::FCCSWGridPhiEta_k4geo*>(subSegm.segmentation);
         if (subsegmentation == nullptr) {
           error() << "At least one of the sub-segmentations in MultiSegmentation named " << m_readoutName
                   << " is not a phi-eta grid." << endmsg;
