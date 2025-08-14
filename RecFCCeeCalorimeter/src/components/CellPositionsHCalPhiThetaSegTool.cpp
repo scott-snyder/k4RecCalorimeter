@@ -12,6 +12,8 @@ StatusCode CellPositionsHCalPhiThetaSegTool::initialize() {
   K4_GAUDI_CHECK( AlgTool::initialize() );
   K4_GAUDI_CHECK( m_geoSvc.retrieve() );
 
+  m_volman = m_geoSvc->getDetector()->volumeManager();
+
   // get the segmentation class type
   m_segmentationType = m_geoSvc->getDetector()->readout(m_readoutName).segmentation().segmentation()->type();
 
@@ -135,8 +137,17 @@ void CellPositionsHCalPhiThetaSegTool::getPositions(const edm4hep::CalorimeterHi
 }
 
 dd4hep::Position CellPositionsHCalPhiThetaSegTool::xyzPosition(const CellID aCellId) const {
-  // retrieve position for FCCSWHCalPhiTheta_k4geo and FCCSWHCalPhiRow_k4geo segmentation types
-  if (m_segmentationType == "FCCSWHCalPhiTheta_k4geo" || m_segmentationType == "FCCSWHCalPhiRow_k4geo") {
+
+  if (m_segmentationType == "FCCSWHCalPhiTheta_k4geo") {
+    dd4hep::DDSegmentation::CellID volumeId = m_segmentation->volumeID(aCellId);
+    dd4hep::VolumeManagerContext* vc = m_volman.lookupContext(volumeId);
+    dd4hep::DDSegmentation::Vector3D inSeg = m_segmentation->position(aCellId);
+    dd4hep::Position outSeg = vc->localToWorld(dd4hep::Position(inSeg));
+    return outSeg;
+  }
+
+
+  if (m_segmentationType == "FCCSWHCalPhiRow_k4geo") {
     // get global position
     auto posCell = m_segmentation->position(aCellId);
     dd4hep::Position outSeg(posCell.x(), posCell.y(), posCell.z());
