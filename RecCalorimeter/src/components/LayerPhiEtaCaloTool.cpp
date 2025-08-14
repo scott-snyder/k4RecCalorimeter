@@ -29,8 +29,8 @@ StatusCode LayerPhiEtaCaloTool::collectCells(std::function<void(uint64_t)> cellF
   info() << "Number of active layers " << numLayers << endmsg;
 
   // get PhiEta segmentation
-  dd4hep::DDSegmentation::FCCSWGridPhiEta_k4geo* segmentation;
-  segmentation = dynamic_cast<dd4hep::DDSegmentation::FCCSWGridPhiEta_k4geo*>(
+  const dd4hep::DDSegmentation::FCCSWGridPhiEta_k4geo* segmentation;
+  segmentation = dynamic_cast<const dd4hep::DDSegmentation::FCCSWGridPhiEta_k4geo*>(
       readout().segmentation().segmentation());
   if (segmentation == nullptr) {
     error() << "There is no phi-eta segmentation!!!!" << endmsg;
