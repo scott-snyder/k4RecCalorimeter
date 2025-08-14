@@ -1,9 +1,8 @@
 {
   "version": 5,
-  "prev": "ed6fb5e60ffff90e935aeb2e0c13784e9a75c9f8",
-  "head": "a2254d53c5316b64332e6c61b37fefc50b371fc7",
-  "applied": [],
-  "unapplied": [
+  "prev": "d703411aa5647b8ec4a129469f30178c88d71e8e",
+  "head": "e04bd8e28296eda1c1f2f94c025c655983167ae2",
+  "applied": [
     "service",
     "testdir",
     "xtalk",
@@ -25,6 +24,7 @@
     "hcal-seg",
     "hcal-tool-wip"
   ],
+  "unapplied": [],
   "hidden": [],
   "patches": {
     "calibConst": {
