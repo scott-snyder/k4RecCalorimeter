@@ -70,7 +70,7 @@ public:
 
 private:
   /// Pointer to the geometry service
-  SmartIF<IGeoSvc> m_geoSvc;
+  ServiceHandle<IGeoSvc> m_geoSvc { this, "GeoSvc", "GeoSvc" };
   /// Name of the hadronic calorimeter readout
   Gaudi::Property<std::string> m_readoutName{this, "readoutName", "HCalBarrelReadout"};
   /// Name of the hadronic calorimeter
@@ -87,5 +87,7 @@ private:
   const std::vector<dd4hep::rec::LayeredCalorimeterStruct::Layer>* m_layersRetrieved = nullptr;
   /// for the HCal Endcap, one needs to provide the number of layers in each cylinder
   Gaudi::Property<std::vector<int>> m_numLayersHCalThreeParts{this, "numLayersHCalThreeParts", {6, 9, 22}};
+  /// Volume manager
+  dd4hep::VolumeManager m_volman;
 };
 #endif /* RECCALORIMETER_CellPositionsHCalPhiThetaSegTool_H */
