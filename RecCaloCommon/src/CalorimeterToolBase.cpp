@@ -59,3 +59,9 @@ std::vector<uint64_t> CalorimeterToolBase::cellIDs() const
 }
 
 
+const dd4hep::DDSegmentation::Segmentation*
+CalorimeterToolBase::segmentation() const
+{
+  return m_readout.segmentation().segmentation();
+}
+
