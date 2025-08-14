@@ -12,23 +12,35 @@ StatusCode CellPositionsHCalPhiThetaSegTool::initialize() {
   K4RECCALORIMETER_CHECK( AlgTool::initialize() );
   K4RECCALORIMETER_CHECK( m_geoSvc.retrieve() );
 
+  const dd4hep::Detector* detector = m_geoSvc->getDetector();
+  if (!detector) {
+    error() << "Unable to retrieve the detector." << endmsg;
+    return StatusCode::FAILURE;
+  }
+
   // get the segmentation class type
-  m_segmentationType = m_geoSvc->getDetector()->readout(m_readoutName).segmentation().segmentation()->type();
+  dd4hep::Readout readout = detector->readout(m_readoutName);
+  dd4hep::Segmentation segmentation = readout.segmentation();
+  m_segmentationType = segmentation.segmentation()->type();
+
+  const dd4hep::DetElementObject& de = segmentation.detector();
+  dd4hep::VolumeManager vman_glob = detector->volumeManager();
+  m_volman = vman_glob.subdetector (de.id);
 
   if (m_segmentationType == "FCCSWGridPhiTheta_k4geo") {
     // get GridPhiTheta segmentation
     m_segmentation = dynamic_cast<dd4hep::DDSegmentation::FCCSWGridPhiTheta_k4geo*>(
-        m_geoSvc->getDetector()->readout(m_readoutName).segmentation().segmentation());
+        segmentation.segmentation());
   }
   if (m_segmentationType == "FCCSWHCalPhiTheta_k4geo") {
     // get PhiTheta segmentation
     m_segmentation = dynamic_cast<dd4hep::DDSegmentation::FCCSWHCalPhiTheta_k4geo*>(
-        m_geoSvc->getDetector()->readout(m_readoutName).segmentation().segmentation());
+        segmentation.segmentation());
   }
   if (m_segmentationType == "FCCSWHCalPhiRow_k4geo") {
     // get PhiRow segmentation
     m_segmentation = dynamic_cast<dd4hep::DDSegmentation::FCCSWHCalPhiRow_k4geo*>(
-        m_geoSvc->getDetector()->readout(m_readoutName).segmentation().segmentation());
+        segmentation.segmentation());
   }
 
   if (m_segmentation == nullptr) {
@@ -36,7 +48,7 @@ StatusCode CellPositionsHCalPhiThetaSegTool::initialize() {
     return StatusCode::FAILURE;
   }
   // Take readout bitfield decoder from GeoSvc
-  m_decoder = m_geoSvc->getDetector()->readout(m_readoutName).idSpec().decoder();
+  m_decoder = readout.idSpec().decoder();
 
   // check if decoder contains "layer"
   std::vector<std::string> fields;
@@ -50,12 +62,6 @@ StatusCode CellPositionsHCalPhiThetaSegTool::initialize() {
   }
 
   // retrieve radii from the LayeredCalorimeterData extension
-  const dd4hep::Detector* detector = m_geoSvc->getDetector();
-  if (!detector) {
-    error() << "Unable to retrieve the detector." << endmsg;
-    return StatusCode::FAILURE;
-  }
-
   DetElement caloDetElem = detector->detector(m_detectorName);
   if (!caloDetElem.isValid()) {
     error() << "Unable to retrieve the detector element: " << m_detectorName << endmsg;
@@ -131,8 +137,17 @@ void CellPositionsHCalPhiThetaSegTool::getPositions(const edm4hep::CalorimeterHi
 }
 
 dd4hep::Position CellPositionsHCalPhiThetaSegTool::xyzPosition(const uint64_t& aCellId) const {
-  // retrieve position for FCCSWHCalPhiTheta_k4geo and FCCSWHCalPhiRow_k4geo segmentation types
-  if (m_segmentationType == "FCCSWHCalPhiTheta_k4geo" || m_segmentationType == "FCCSWHCalPhiRow_k4geo") {
+
+  if (m_segmentationType == "FCCSWHCalPhiTheta_k4geo") {
+    dd4hep::DDSegmentation::CellID volumeId = m_segmentation->volumeID(aCellId);
+    dd4hep::VolumeManagerContext* vc = m_volman.lookupContext(volumeId);
+    dd4hep::DDSegmentation::Vector3D inSeg = m_segmentation->position(aCellId);
+    dd4hep::Position outSeg = vc->localToWorld(dd4hep::Position(inSeg));
+    return outSeg;
+  }
+
+
+  if (m_segmentationType == "FCCSWHCalPhiRow_k4geo") {
     // get global position
     auto posCell = m_segmentation->position(aCellId);
     dd4hep::Position outSeg(posCell.x(), posCell.y(), posCell.z());
