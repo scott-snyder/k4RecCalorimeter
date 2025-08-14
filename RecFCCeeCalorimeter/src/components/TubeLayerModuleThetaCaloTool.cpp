@@ -27,13 +27,13 @@ StatusCode TubeLayerModuleThetaCaloTool::collectCells(std::function<void(uint64_
   info() << "Number of active layers " << numLayers << endmsg;
 
   // get segmentation
-  dd4hep::DDSegmentation::Segmentation* aSegmentation =
+  const dd4hep::DDSegmentation::Segmentation* aSegmentation =
       readout().segmentation().segmentation();
   std::string segmentationType = aSegmentation->type();
   info() << "Segmentation type : " << segmentationType << endmsg;
-  dd4hep::DDSegmentation::FCCSWGridModuleThetaMerged_k4geo* moduleThetaSegmentation = nullptr;
+  const dd4hep::DDSegmentation::FCCSWGridModuleThetaMerged_k4geo* moduleThetaSegmentation = nullptr;
   if (segmentationType == "FCCSWGridModuleThetaMerged_k4geo") {
-    moduleThetaSegmentation = dynamic_cast<dd4hep::DDSegmentation::FCCSWGridModuleThetaMerged_k4geo*>(aSegmentation);
+    moduleThetaSegmentation = dynamic_cast<const dd4hep::DDSegmentation::FCCSWGridModuleThetaMerged_k4geo*>(aSegmentation);
     info() << "Segmentation: bins in Module " << moduleThetaSegmentation->nModules() << endmsg;
   } else {
     error() << "Unable to cast segmentation pointer!!!! Tool only applicable to FCCSWGridModuleThetaMerged_k4geo "
