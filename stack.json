@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "0b8522881181cce2eba802612be7874e02dbbb32",
-  "head": "80e487d6704ab7ab54a9283bb6d9af9c82fc57f5",
+  "prev": "b7461cdc47c13449728bf9cf55eb2907b1ae681f",
+  "head": "b383944b09c53c3b8a5868d0fa0072505f171d5e",
   "applied": [
     "service",
     "testdir",
@@ -20,7 +20,8 @@
     "warn2",
     "cmakewarn",
     "geoConst",
-    "cellIDs"
+    "cellIDs",
+    "refresh-temp"
   ],
   "unapplied": [],
   "hidden": [],
@@ -57,6 +58,9 @@
     },
     "noiseVec": {
       "oid": "8f1b092355ea86ccf58e832a9747109ddcdfe9e9"
+    },
+    "refresh-temp": {
+      "oid": "b383944b09c53c3b8a5868d0fa0072505f171d5e"
     },
     "repnoise": {
       "oid": "e2d08ea136c280b8a10def5c94bf41e22b637d70"
