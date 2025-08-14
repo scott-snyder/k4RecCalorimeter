@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "49f1fda5ed97ba9213138c6429018448aed25797",
-  "head": "b29cce8a1c2e81d77f9490bed1e19a5e0705f1e5",
+  "prev": "052e7d99f4b489eab9768938f35ead4044729da1",
+  "head": "e790798bc6d1e6ccc4b3be692e9b02cca785884d",
   "applied": [
     "service",
     "testdir",
@@ -22,8 +22,7 @@
     "geoConst",
     "cellIDs",
     "hcal-seg",
-    "hcal-tool-wip",
-    "refresh-temp"
+    "hcal-tool-wip"
   ],
   "unapplied": [],
   "hidden": [],
@@ -35,7 +34,7 @@
       "oid": "cbbdd9d6f925b2f9051dd7606bec012ad1565625"
     },
     "cellIDs": {
-      "oid": "f5e266e938bf21a4e563aef21234522f15c2b4c0"
+      "oid": "13502e0cf33e34c0145c913569e0d1ab191c41a4"
     },
     "cellPositions": {
       "oid": "d4c4e62099a83cff0185fcc41d4ca86b9964cc1c"
@@ -56,19 +55,16 @@
       "oid": "e9ef0f922d547f7622973f586fb8d4a33b4bc03b"
     },
     "hcal-seg": {
-      "oid": "f225bbda8a42cc9d32ecea867939703ea6d869ae"
+      "oid": "26544d7f7a0a8018300320152c4fb716d85b24fb"
     },
     "hcal-tool-wip": {
-      "oid": "e04bd8e28296eda1c1f2f94c025c655983167ae2"
+      "oid": "e790798bc6d1e6ccc4b3be692e9b02cca785884d"
     },
     "noiseConst": {
       "oid": "367b9b7768a368b5e027ff29c29e39d779482e51"
     },
     "noiseVec": {
       "oid": "8f1b092355ea86ccf58e832a9747109ddcdfe9e9"
-    },
-    "refresh-temp": {
-      "oid": "b29cce8a1c2e81d77f9490bed1e19a5e0705f1e5"
     },
     "repnoise": {
       "oid": "e2d08ea136c280b8a10def5c94bf41e22b637d70"
