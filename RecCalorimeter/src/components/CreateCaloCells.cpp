@@ -192,7 +192,8 @@ StatusCode CreateCaloCells::execute(const EventContext&) const {
       // We were requested to recalculate the positions, but the
       // positioning tool is not available.
       // Calculate a position based on the volume center.
-      auto detelement = m_volman.lookupDetElement(cellid);
+      uint64_t volid = m_geoTool->segmentation()->volumeID (cellid);
+      auto detelement = m_volman.lookupDetElement(volid);
       const auto& transformMatrix = detelement.nominal().worldTransformation();
       double outGlobal[3];
       double inLocal[] = {0, 0, 0};
