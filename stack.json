@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "8483d87f39591aede24a180f12d54c431b2f8081",
-  "head": "74f7aa9d4a2ae142d8a9bf496ee5d23871909e1b",
+  "prev": "5f60b120ae777ae0750e55f887f707a82b83fc12",
+  "head": "f5e266e938bf21a4e563aef21234522f15c2b4c0",
   "applied": [
     "service",
     "testdir",
@@ -20,8 +20,7 @@
     "warn2",
     "cmakewarn",
     "geoConst",
-    "cellIDs",
-    "refresh-temp"
+    "cellIDs"
   ],
   "unapplied": [],
   "hidden": [],
@@ -33,7 +32,7 @@
       "oid": "cbbdd9d6f925b2f9051dd7606bec012ad1565625"
     },
     "cellIDs": {
-      "oid": "e7c1556ac64e81414e39da158c15018dd96ad36f"
+      "oid": "f5e266e938bf21a4e563aef21234522f15c2b4c0"
     },
     "cellPositions": {
       "oid": "d4c4e62099a83cff0185fcc41d4ca86b9964cc1c"
@@ -58,9 +57,6 @@
     },
     "noiseVec": {
       "oid": "8f1b092355ea86ccf58e832a9747109ddcdfe9e9"
-    },
-    "refresh-temp": {
-      "oid": "74f7aa9d4a2ae142d8a9bf496ee5d23871909e1b"
     },
     "repnoise": {
       "oid": "e2d08ea136c280b8a10def5c94bf41e22b637d70"
