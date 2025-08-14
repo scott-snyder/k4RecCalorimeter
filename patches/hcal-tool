@@ -1,0 +1,6 @@
+Bottom: b135514dbef0ea458590f2140140552234e4935c
+Top:    b135514dbef0ea458590f2140140552234e4935c
+Author: sss <sss@karma>
+Date:   2025-08-14 14:02:30 -0400
+
+Implementation of ICalorimeterTool for HCal.
