@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "9a841f325e925c8b6764c125b8a9e06857d1e302",
-  "head": "cf0b3f33a2338c9b1711065e42f38ed30ddbc1f5",
+  "prev": "ad5a624b03276c91ce206afd3e6a4918b7819331",
+  "head": "07b3e6f8be5689cf52663f084f360aa2ee94377a",
   "applied": [
     "service",
     "testdir",
@@ -23,7 +23,8 @@
     "cellIDs",
     "hcal-seg",
     "hcal-tool-wip",
-    "danglewarn"
+    "danglewarn",
+    "refresh-temp"
   ],
   "unapplied": [],
   "hidden": [],
@@ -69,6 +70,9 @@
     },
     "noiseVec": {
       "oid": "8f1b092355ea86ccf58e832a9747109ddcdfe9e9"
+    },
+    "refresh-temp": {
+      "oid": "07b3e6f8be5689cf52663f084f360aa2ee94377a"
     },
     "repnoise": {
       "oid": "0e70bd391bb4ee2a36ac09f1e355d21221bfc4e1"
