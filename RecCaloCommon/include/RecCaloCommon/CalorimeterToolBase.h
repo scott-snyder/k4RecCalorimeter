@@ -37,7 +37,7 @@ public:
 
   virtual std::vector<uint64_t> cellIDs() const override final;
 
-  virtual const dd4hep::DDSegmentation::Segmentation* segmentation() const;
+  virtual const dd4hep::DDSegmentation::Segmentation* segmentation() const override;
 
 protected:
   StatusCode getReadout (const std::string& readoutName);
