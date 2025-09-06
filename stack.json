@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "ad5a624b03276c91ce206afd3e6a4918b7819331",
-  "head": "07b3e6f8be5689cf52663f084f360aa2ee94377a",
+  "prev": "09f4dc2b75c478fdd6ae27180fec7a3c40ae90d8",
+  "head": "742da74a285c201af1b95c36b4de377c74551479",
   "applied": [
     "service",
     "testdir",
@@ -23,8 +23,7 @@
     "cellIDs",
     "hcal-seg",
     "hcal-tool-wip",
-    "danglewarn",
-    "refresh-temp"
+    "danglewarn"
   ],
   "unapplied": [],
   "hidden": [],
@@ -51,7 +50,7 @@
       "oid": "0a7e1d7d4aa48d4bd1cb4d7d72eebc9717ae71bc"
     },
     "danglewarn": {
-      "oid": "cf0b3f33a2338c9b1711065e42f38ed30ddbc1f5"
+      "oid": "742da74a285c201af1b95c36b4de377c74551479"
     },
     "dhns": {
       "oid": "2b8bae3f8271cf3b0a4089fb000d9c1492b564f7"
@@ -70,9 +69,6 @@
     },
     "noiseVec": {
       "oid": "8f1b092355ea86ccf58e832a9747109ddcdfe9e9"
-    },
-    "refresh-temp": {
-      "oid": "07b3e6f8be5689cf52663f084f360aa2ee94377a"
     },
     "repnoise": {
       "oid": "0e70bd391bb4ee2a36ac09f1e355d21221bfc4e1"
