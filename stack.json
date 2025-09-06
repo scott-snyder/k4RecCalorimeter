@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "60529973c35417341c604c60600afc8b40013948",
-  "head": "ff595524c76b919229913082ca93e9346a23245d",
+  "prev": "9a841f325e925c8b6764c125b8a9e06857d1e302",
+  "head": "cf0b3f33a2338c9b1711065e42f38ed30ddbc1f5",
   "applied": [
     "service",
     "testdir",
@@ -22,7 +22,8 @@
     "geoConst",
     "cellIDs",
     "hcal-seg",
-    "hcal-tool-wip"
+    "hcal-tool-wip",
+    "danglewarn"
   ],
   "unapplied": [],
   "hidden": [],
@@ -47,6 +48,9 @@
     },
     "createCaloCells": {
       "oid": "0a7e1d7d4aa48d4bd1cb4d7d72eebc9717ae71bc"
+    },
+    "danglewarn": {
+      "oid": "cf0b3f33a2338c9b1711065e42f38ed30ddbc1f5"
     },
     "dhns": {
       "oid": "2b8bae3f8271cf3b0a4089fb000d9c1492b564f7"
