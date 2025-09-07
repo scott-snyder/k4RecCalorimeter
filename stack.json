@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "6c50c4a0c7f82529ccf0cbf469efe9b0b18eb98a",
-  "head": "a708ee393aea84b2c2440baee6c2a75cb8a62a99",
+  "prev": "0a0cb27ab912b90603ab2a862bc3c056ce85644a",
+  "head": "9eb2bbac2520923478e38abfed12c3671dc0bfd2",
   "applied": [
     "danglewarn",
     "service",
@@ -23,7 +23,8 @@
     "geoConst",
     "cellIDs",
     "hcal-seg",
-    "hcal-tool-wip"
+    "hcal-tool-wip",
+    "refresh-temp"
   ],
   "unapplied": [],
   "hidden": [],
@@ -69,6 +70,9 @@
     },
     "noiseVec": {
       "oid": "8b530e97be3be4088ad67bf166582b1d5fbaee1f"
+    },
+    "refresh-temp": {
+      "oid": "9eb2bbac2520923478e38abfed12c3671dc0bfd2"
     },
     "repnoise": {
       "oid": "aad281ba2529935a31b9f57fd10321e38c1e714c"
