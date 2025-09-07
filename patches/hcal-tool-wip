@@ -1,6 +1,6 @@
-Bottom: 84f5893035fcae1155b76d76e5c01908fcc07efc
-Top:    af63da1507c80214a8dc7cd484892acd3b4a572f
+Bottom: 8a2a93c211cb84fb0c2a38edf808accb9aeb8eaf
+Top:    1763aa83b07ec1ad013571001816f5af33dda778
 Author: sss <sss@karma>
-Date:   2025-09-06 20:44:39 -0400
+Date:   2025-09-06 20:45:52 -0400
 
 Implementation of ICalorimeterTool for HCal.
