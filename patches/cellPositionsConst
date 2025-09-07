@@ -1,7 +1,7 @@
-Bottom: 8210e6a1ec24988e0fdab785e9cee20bbee3e1b1
-Top:    1341f245077b7853404f1347278837e017b05cc9
+Bottom: 6bdd3e8f2b462f340d7d9114304463d6d2f48ef4
+Top:    1aef09339635d2dbf34422e7c2224ffea72d5feb
 Author: sss <sss@karma>
-Date:   2025-09-06 20:44:23 -0400
+Date:   2025-09-06 20:44:39 -0400
 
 Make all methods of ICellPositionsTool const.
 
