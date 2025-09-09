@@ -1,8 +1,9 @@
 Bottom: 40c7e3bb2d9fd661e92af0cea82f1d7a13dc476b
 Top:    b6b75aa793b8e43af9e42e7603646ec1b7eba1de
 Author: sss <sss@karma>
-Date:   2025-09-08 23:06:38 -0400
+Date:   2025-09-08 23:07:09 -0400
 
-Make all methods of ICellPositionsTool const.
+Remove non-const methods of ICellPositionsTool.
 
-Calo components cleanup.
+Now that the ICellPositionsTool interface class been updated, we can remove
+the non-const methods from its derived classes (and add override keywords).
