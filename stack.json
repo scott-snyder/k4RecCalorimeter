@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "0fb8c299b0f0faae0c95c002a7e57fe09502b905",
-  "head": "e59313a61f682d4ad1eee625caeab5e8cb683ec8",
+  "prev": "6e3077fd4294b89ba0a136b1c4154ec6040cbca7",
+  "head": "73aa86b6782a11f7d9493d4b384f78d20bc3a351",
   "applied": [
     "service",
     "testdir",
@@ -23,7 +23,8 @@
     "cellIDs",
     "hcal-seg",
     "hcal-tool-wip",
-    "danglewarn"
+    "danglewarn",
+    "hcal-seg2"
   ],
   "unapplied": [],
   "hidden": [],
@@ -60,6 +61,9 @@
     },
     "hcal-seg": {
       "oid": "ba952862c13edd4d15a9e3638e9af7086bb4c06d"
+    },
+    "hcal-seg2": {
+      "oid": "73aa86b6782a11f7d9493d4b384f78d20bc3a351"
     },
     "hcal-tool-wip": {
       "oid": "d5b9cb072ee6c5ef80ea7eb29ed837a3d6122556"
