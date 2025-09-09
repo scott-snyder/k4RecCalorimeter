@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "4af67637619dfa9d2770c97840dcfff73bdd035c",
-  "head": "0f61539c1252ed0f3f80aee7b9f31af1b8b56675",
+  "prev": "278270b0c0a20f01c6c37e13fb81aa8bf2ad82b3",
+  "head": "8f5aa8da1c85614fa38c5089543b7904a2f9b3f7",
   "applied": [
     "service",
     "testdir",
@@ -10,8 +10,7 @@
     "cmakewarn",
     "dhns",
     "cellPositionsConst1",
-    "cellPositionsConst2",
-    "refresh-temp"
+    "cellPositionsConst2"
   ],
   "unapplied": [
     "noiseConst",
@@ -47,7 +46,7 @@
       "oid": "c0334d8b5c77a56144c15fffc792349a728b6649"
     },
     "cellPositionsConst2": {
-      "oid": "0f5b4f14f7c125a5ec826c632b97803a904c8c1d"
+      "oid": "8f5aa8da1c85614fa38c5089543b7904a2f9b3f7"
     },
     "cmakewarn": {
       "oid": "19a76415cc4e81cf42057149d3ce6e121ef42a47"
@@ -78,9 +77,6 @@
     },
     "noiseVec": {
       "oid": "7dd4e2ccc0b6653bea0026c96f28d6d0fb4f2fb2"
-    },
-    "refresh-temp": {
-      "oid": "0f61539c1252ed0f3f80aee7b9f31af1b8b56675"
     },
     "repnoise": {
       "oid": "69d33740317e525a919e9208786bf6ddf1875705"
