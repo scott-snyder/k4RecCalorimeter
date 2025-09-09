@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "bf63a7fe756aac11a6e7f842f15680551f0c6410",
-  "head": "e7d707be48c4d219590a34cc13ecc5552f70a609",
+  "prev": "d2a127ff0899d264e3c608217e8e033910a32ce3",
+  "head": "c907e1c9af7c896535bb43343eace9e58e4dc8f4",
   "applied": [
     "service",
     "testdir",
@@ -9,7 +9,8 @@
     "return",
     "cmakewarn",
     "dhns",
-    "cellPositionsConst1"
+    "cellPositionsConst1",
+    "refresh-temp"
   ],
   "unapplied": [
     "cellPositionsConst",
@@ -77,6 +78,9 @@
     },
     "noiseVec": {
       "oid": "7dd4e2ccc0b6653bea0026c96f28d6d0fb4f2fb2"
+    },
+    "refresh-temp": {
+      "oid": "c907e1c9af7c896535bb43343eace9e58e4dc8f4"
     },
     "repnoise": {
       "oid": "69d33740317e525a919e9208786bf6ddf1875705"
