@@ -1,8 +1,9 @@
 {
   "version": 5,
-  "prev": "15e13dddd07cef2b4a6702fc8ae6a0bba2b7175a",
-  "head": "6a74c1cf3197a9743d3e96e9735acf7b6159da94",
-  "applied": [
+  "prev": "b3ce7afc775e94a0c2e175c34d04ac9be1efd82b",
+  "head": "a2254d53c5316b64332e6c61b37fefc50b371fc7",
+  "applied": [],
+  "unapplied": [
     "service",
     "testdir",
     "xtalk",
@@ -26,7 +27,6 @@
     "danglewarn",
     "hcal-seg2"
   ],
-  "unapplied": [],
   "hidden": [],
   "patches": {
     "calibConst": {
