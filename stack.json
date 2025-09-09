@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "6e3077fd4294b89ba0a136b1c4154ec6040cbca7",
-  "head": "73aa86b6782a11f7d9493d4b384f78d20bc3a351",
+  "prev": "a3b3482780d59825bdc3e61e7b5cdb59b3ba60cf",
+  "head": "14642cbefb5aea9bbef19c50686a080a8936d702",
   "applied": [
     "service",
     "testdir",
@@ -24,7 +24,8 @@
     "hcal-seg",
     "hcal-tool-wip",
     "danglewarn",
-    "hcal-seg2"
+    "hcal-seg2",
+    "refresh-temp"
   ],
   "unapplied": [],
   "hidden": [],
@@ -73,6 +74,9 @@
     },
     "noiseVec": {
       "oid": "7dd4e2ccc0b6653bea0026c96f28d6d0fb4f2fb2"
+    },
+    "refresh-temp": {
+      "oid": "14642cbefb5aea9bbef19c50686a080a8936d702"
     },
     "repnoise": {
       "oid": "69d33740317e525a919e9208786bf6ddf1875705"
