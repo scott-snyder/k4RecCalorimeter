@@ -1,0 +1,10 @@
+Bottom: aa621ed0e423d3a8178c13c15bcb4e5f9736c5e8
+Top:    aa621ed0e423d3a8178c13c15bcb4e5f9736c5e8
+Author: sss <sss@karma>
+Date:   2025-09-08 22:57:28 -0400
+
+Making methods of ICellPositionsTool const.
+
+Make ICellPositionsTool::getPositions and layerId const.
+For now (until the interface class is changed) we retain the non-const
+overloads and have them call the const versions.
