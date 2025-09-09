@@ -138,23 +138,13 @@ void CellPositionsHCalPhiThetaSegTool::getPositions(const edm4hep::CalorimeterHi
 
 dd4hep::Position CellPositionsHCalPhiThetaSegTool::xyzPosition(const CellID aCellId) const {
 
-  if (m_segmentationType == "FCCSWHCalPhiTheta_k4geo") {
+  if (m_segmentationType == "FCCSWHCalPhiTheta_k4geo" ||
+      m_segmentationType == "FCCSWHCalPhiRow_k4geo")
+  {
     dd4hep::DDSegmentation::CellID volumeId = m_segmentation->volumeID(aCellId);
     dd4hep::VolumeManagerContext* vc = m_volman.lookupContext(volumeId);
     dd4hep::DDSegmentation::Vector3D inSeg = m_segmentation->position(aCellId);
     dd4hep::Position outSeg = vc->localToWorld(dd4hep::Position(inSeg));
-    return outSeg;
-  }
-
-
-  if (m_segmentationType == "FCCSWHCalPhiRow_k4geo") {
-    // get global position
-    auto posCell = m_segmentation->position(aCellId);
-    dd4hep::Position outSeg(posCell.x(), posCell.y(), posCell.z());
-
-    debug() << "Layer : " << m_decoder->get(aCellId, "layer") << endmsg;
-    debug() << "Global position : x = " << outSeg.x() << " y = " << outSeg.y() << " z = " << outSeg.z() << endmsg;
-
     return outSeg;
   }
 
