@@ -1,12 +1,13 @@
 {
   "version": 5,
-  "prev": "670e03e478ee75f679e338b681c2e44c3b05833e",
-  "head": "773025fb5adba4627dbf4569fe963dac8a03b1c6",
+  "prev": "bcc56b49afe236810313a1a1adc77426f7402e38",
+  "head": "19a76415cc4e81cf42057149d3ce6e121ef42a47",
   "applied": [
     "service",
     "testdir",
     "xtalk",
-    "return"
+    "return",
+    "cmakewarn"
   ],
   "unapplied": [
     "cellPositionsConst",
@@ -19,7 +20,6 @@
     "createCaloCells",
     "dhns",
     "repnoise",
-    "cmakewarn",
     "geoConst",
     "cellIDs",
     "hcal-seg",
@@ -45,7 +45,7 @@
       "oid": "5dc7c89ea63deaf507f1f990095b7339965b501d"
     },
     "cmakewarn": {
-      "oid": "fb34f67e00823f3c1b5137e8fa38af0ea7538fdc"
+      "oid": "19a76415cc4e81cf42057149d3ce6e121ef42a47"
     },
     "createCaloCells": {
       "oid": "298458b707186f904f0a5201dd8c39a7364909be"
