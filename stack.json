@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "b3ce7afc775e94a0c2e175c34d04ac9be1efd82b",
+  "prev": "5c6dca535d462b5e70c8cc3fa9cc4e7e762b344b",
   "head": "a2254d53c5316b64332e6c61b37fefc50b371fc7",
   "applied": [],
   "unapplied": [
@@ -63,7 +63,7 @@
       "oid": "ba952862c13edd4d15a9e3638e9af7086bb4c06d"
     },
     "hcal-seg2": {
-      "oid": "6a74c1cf3197a9743d3e96e9735acf7b6159da94"
+      "oid": "e0cf33be2ef02096cdc730478b81cdb28cbf26ab"
     },
     "hcal-tool-wip": {
       "oid": "d5b9cb072ee6c5ef80ea7eb29ed837a3d6122556"
