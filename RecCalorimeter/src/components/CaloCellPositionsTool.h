@@ -17,18 +17,30 @@
 #include "DD4hep/Volumes.h"
 
 
+/** Generic tool to find positions of calorimeter cells.
+ */
 class CaloCellPositionsTool
   : public extends<AlgTool, ICellPositionsTool>
 {
 public:
   using base_class::base_class;
 
+  /** Standard Gaudi initialize method.
+   */
   virtual StatusCode initialize() override;
-  virtual void getPositions(const edm4hep::CalorimeterHitCollection& aCells,
-                            edm4hep::CalorimeterHitCollection&       outputColl) const override;
 
-  virtual dd4hep::Position xyzPosition(const uint64_t& aCellId) const override;
-  virtual int              layerId(const uint64_t& aCellId)     const override;
+  /** Return the cartesian global coordinates of a cell center
+   */
+  virtual dd4hep::Position xyzPosition(const uint64_t& aCellId) const final override;
+
+  /** Copy cells from aCells to outputColl filling in cell positions.
+   */
+  virtual void getPositions(const edm4hep::CalorimeterHitCollection& aCells,
+                            edm4hep::CalorimeterHitCollection&       outputColl) const final override;
+
+  /** Return the layer number of a cell.
+   */
+  virtual int              layerId(const uint64_t& aCellId)     const final override;
 
 
 private:
@@ -37,9 +49,16 @@ private:
   Gaudi::Property<std::string> m_layerFieldName
   { this, "layerFieldName", "layer", "Name of the decoder field for layer" };
 
+  // DD4hep volume manager.
   dd4hep::VolumeManager m_volman;
+
+  // Segmentation for this geometry.
   dd4hep::Segmentation m_segmentation;
+
+  // Decoder for this segmentation.
   const dd4hep::BitFieldCoder* m_decoder = nullptr;
+
+  // Index of the layer field.
   size_t m_layerFieldIdx = 0;
 };
 

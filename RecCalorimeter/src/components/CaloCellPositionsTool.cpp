@@ -1,5 +1,6 @@
 #include "CaloCellPositionsTool.h"
 #include "k4Interface/IGeoSvc.h"
+#include "k4FWCore/k4_check.h"
 #include "edm4hep/CalorimeterHitCollection.h"
 #include "DD4hep/Detector.h"
 #include "DD4hep/Readout.h"
@@ -8,11 +9,11 @@
 DECLARE_COMPONENT(CaloCellPositionsTool)
 
 
+/** Standard Gaudi initialize method.
+ */
 StatusCode CaloCellPositionsTool::initialize()
 {
-  if (StatusCode sc = base_class::initialize(); sc.isFailure()) {
-    return sc;
-  }
+  K4_CHECK( base_class::initialize() );
 
   SmartIF<IGeoSvc> geoSvc = service<IGeoSvc>("GeoSvc");
   if (!geoSvc) {
@@ -30,6 +31,8 @@ StatusCode CaloCellPositionsTool::initialize()
 }
 
 
+/** Return the cartesian global coordinates of a cell center
+ */
 dd4hep::Position
 CaloCellPositionsTool::xyzPosition(const uint64_t& aCellId) const
 {
@@ -45,6 +48,8 @@ CaloCellPositionsTool::xyzPosition(const uint64_t& aCellId) const
 }
 
 
+/** Copy cells from aCells to outputColl filling in cell positions.
+ */
 void CaloCellPositionsTool::getPositions(const edm4hep::CalorimeterHitCollection& aCells,
                                          edm4hep::CalorimeterHitCollection& outputColl) const
 {
@@ -63,6 +68,8 @@ void CaloCellPositionsTool::getPositions(const edm4hep::CalorimeterHitCollection
 }
 
   
+/** Return the layer number of a cell.
+ */
 int CaloCellPositionsTool::layerId(const uint64_t& aCellId) const
 {
   return m_decoder->get(aCellId, m_layerFieldIdx);
