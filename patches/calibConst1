@@ -1,0 +1,10 @@
+Bottom: 7189ba621a1ac860801543c69c90afbc772bcb36
+Top:    7189ba621a1ac860801543c69c90afbc772bcb36
+Author: sss <sss@karma>
+Date:   2025-09-09 22:06:11 -0400
+
+Making methods of ICalibrateCaloHitsTool const.
+
+Make ICalibrateCaloHitsTool::calibrate const.
+For now (until the interface class is changed) we retain the non-const
+overloads and have them call the const versions.
