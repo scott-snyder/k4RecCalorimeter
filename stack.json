@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "491c6686eb529504aca431ce8bc510fd38053e27",
-  "head": "3f0e921785f4ddc26a7e55c06008abf1cb3377da",
+  "prev": "fac2e172ee1a18a2e62b911cff2c9d3518e6dab4",
+  "head": "ff6658085a924c499deefd9ccfff64348b59390f",
   "applied": [
     "service",
     "testdir",
@@ -14,8 +14,7 @@
     "noiseConst1",
     "noiseVec1",
     "noise2",
-    "calibConst1",
-    "refresh-temp"
+    "calibConst1"
   ],
   "unapplied": [
     "calibConst",
@@ -37,7 +36,7 @@
       "oid": "830089081088e125222c1d0d3907923ec540330a"
     },
     "calibConst1": {
-      "oid": "12cf1ff7cea675e7fa220cac25df98d09be03a20"
+      "oid": "ff6658085a924c499deefd9ccfff64348b59390f"
     },
     "calibVec": {
       "oid": "6863ded7a1c67982e6276c4ccb37d2a6093c2f6f"
@@ -86,9 +85,6 @@
     },
     "noiseVec1": {
       "oid": "f64f3b1b0e09e481675c1e1d034babcf0fa3778d"
-    },
-    "refresh-temp": {
-      "oid": "3f0e921785f4ddc26a7e55c06008abf1cb3377da"
     },
     "repnoise": {
       "oid": "69d33740317e525a919e9208786bf6ddf1875705"
