@@ -1,0 +1,12 @@
+Bottom: ad926401d8e261f64e8b0ddfa3e864d47b8b9595
+Top:    ad926401d8e261f64e8b0ddfa3e864d47b8b9595
+Author: sss <sss@karma>
+Date:   2025-09-10 11:13:41 -0400
+
+Making ICalorimeterTool::prepareEmptyCells const
+
+Make ICalorimeterTool::prepareEmptyCells const.
+For now (until the interface class is changed) we retain the non-const
+overloads.
+
+Also prepare for IGeoSvc::getDetector returning a const pointer.
