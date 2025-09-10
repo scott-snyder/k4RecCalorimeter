@@ -16,7 +16,7 @@ StatusCode CellPositionsSimpleCylinderPhiThetaSegTool::initialize() {
   K4_CHECK( m_geoSvc.retrieve() );
 
   // get the detector
-  dd4hep::Detector* detector = m_geoSvc->getDetector();
+  const dd4hep::Detector* detector = m_geoSvc->getDetector();
   if (!detector) {
     error() << "Unable to retrieve the detector." << endmsg;
     return StatusCode::FAILURE;
