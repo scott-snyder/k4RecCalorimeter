@@ -1,8 +1,10 @@
 Bottom: 87139369a14df4e6fc9d5135f7b1bac744231575
 Top:    f1f3099d9a7e6a4ed2b7c74e8933879bed008aad
 Author: sss <sss@karma>
-Date:   2025-09-09 22:48:39 -0400
+Date:   2025-09-09 22:48:54 -0400
 
-Make all methods of ICalibrateCaloHitsTool const.
+Remove non-const methods of ICalibrateCaloHitsTool.
 
-Calo components cleanup.
+Now that the ICalibrateCaloHitsTool interface class
+has been updated, we can remove the non-const methods from its
+derived classes (and add override keywords).
