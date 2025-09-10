@@ -1,9 +1,11 @@
 Bottom: b0ff8baf0aefd949d5583cd6cc971973e95bf819
 Top:    87139369a14df4e6fc9d5135f7b1bac744231575
 Author: sss <sss@karma>
-Date:   2025-09-09 22:36:24 -0400
+Date:   2025-09-09 22:38:35 -0400
 
 Extending ICalibrateCaloHitsTool to also allow taking a vector of hit information.
 
 Add a new calibrate method that takes a vector of hit information rather
 than a map.
+
+Also some modernization / clean up.
