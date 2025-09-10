@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "9a3375fb46319b634c599a4ce1f528c18aa061d3",
-  "head": "4e073eb64e26e076339407c596e2d81024ca9ebe",
+  "prev": "333c3d6b1f30b3cebc836e2044946a776ab97e21",
+  "head": "33ab1690048cced4ce03bc438e619a07a0f8e82b",
   "applied": [
     "service",
     "testdir",
@@ -22,7 +22,9 @@
     "geoConst1",
     "cellIDs1",
     "geoConst2",
-    "cellPositions",
+    "cellPositions"
+  ],
+  "unapplied": [
     "repnoise",
     "hcal-tool",
     "hcal-seg",
@@ -31,7 +33,6 @@
     "danglewarn-fix",
     "danglewarn"
   ],
-  "unapplied": [],
   "hidden": [],
   "patches": {
     "calib2": {
