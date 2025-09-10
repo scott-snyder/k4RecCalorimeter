@@ -62,8 +62,7 @@ public:
   virtual StatusCode initialize() override;
 
   virtual StatusCode execute(const EventContext&) const override;
-  
-  virtual StatusCode finalize() override;
+
 
 private:
   static constexpr size_t INVALID = static_cast<size_t> (-1);
@@ -162,7 +161,7 @@ private:
     {
       return m_cells.at(icell).first;
     }
-      
+
     double& energy (size_t icell)
     {
       return m_cells.at(icell).second;

@@ -236,5 +236,3 @@ StatusCode CreateCaloCells::execute(const EventContext&) const {
 
   return StatusCode::SUCCESS;
 }
-
-StatusCode CreateCaloCells::finalize() { return Gaudi::Algorithm::finalize(); }
