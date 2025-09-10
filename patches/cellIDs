@@ -1,8 +1,0 @@
-Bottom: 5ad51b380535e28b88a509186536f74562c04d59
-Top:    d9dad6758638a44858e73c4bc21a2a05546ca9e9
-Author: sss <sss@karma>
-Date:   2025-09-06 20:45:52 -0400
-
-Add ICalorimeterTool::cellIDs.
-
-Add a method to ICalorimeterTool to get just a vector of all valid cell IDs.
