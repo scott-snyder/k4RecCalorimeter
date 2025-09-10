@@ -4,22 +4,14 @@
 #include <algorithm>
 #include <functional>
 
-// k4FWCore
-#include "k4Interface/IGeoSvc.h"
-#include "k4FWCore/k4_check.h"
 
 DECLARE_COMPONENT(HCalPhiThetaCaloTool)
 
-StatusCode HCalPhiThetaCaloTool::initialize() {
-  K4_CHECK( AlgTool::initialize() );
-  K4_CHECK( CalorimeterToolBase::getReadout (m_readoutName) );
-  return StatusCode::SUCCESS;
-}
 
-
-StatusCode HCalPhiThetaCaloTool::collectCells(std::function<void(uint64_t)> cellFunc) const
+/** Fill vector with all existing cells for this geometry.
+ */
+StatusCode HCalPhiThetaCaloTool::collectCells(std::vector<uint64_t>& cells) const
 {
-  std::cout << "hhh0 " << name() << "\n";
   const auto* seg =
     dynamic_cast<const dd4hep::DDSegmentation::FCCSWHCalPhiTheta_k4geo*> (readout().segmentation().segmentation());
   if (!seg) {
@@ -42,19 +34,14 @@ StatusCode HCalPhiThetaCaloTool::collectCells(std::function<void(uint64_t)> cell
 
   int numLayers = std::ranges::fold_left (seg->numLayers(), 0,
                                           std::plus<int>());
-  std::cout << "hhh1 " << numLayers << " " << seg->numLayers().size() << "\n";
   for (int layer = 0; layer < numLayers; ++layer) {
     const std::vector<int>& thetaBins = seg->thetaBins (layer);
-    std::cout << "hhh " << id << " " << layer << " "
-              << thetaBins.size() << " [";
-    for (int th : thetaBins) std::cout << th << ", ";
-    std::cout << "]\n";
     decoder.set(cID, layer_id, layer);
     for (int theta : thetaBins) {
       decoder.set(cID, theta_id, theta);
       for (int phi = 0; phi < seg->phiBins(); ++phi) {
         decoder.set(cID, phi_id, phi);
-        cellFunc(cID);
+        cells.push_back(cID);
       }
     }
   }

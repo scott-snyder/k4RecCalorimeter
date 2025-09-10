@@ -13,15 +13,11 @@ public:
   using CalorimeterToolBase::CalorimeterToolBase;
   virtual ~HCalPhiThetaCaloTool() = default;
 
-  virtual StatusCode initialize() override final;
-
 
 protected:
-  virtual StatusCode collectCells(std::function<void(uint64_t)> cellFunc) const override final;
-
-private:
-  /// Name of the detector readout
-  Gaudi::Property<std::string> m_readoutName{this, "readoutName", ""};
+  /** Fill vector with all existing cells for this geometry.
+   */
+  virtual StatusCode collectCells(std::vector<uint64_t>& cells) const override final;
 };
 
 #endif /* RECFCCEECALORIMETER_HCALPHITHETACALOTOOL_H */
