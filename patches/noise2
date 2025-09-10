@@ -1,8 +1,10 @@
 Bottom: 1f77d4aea533d2db788f2fcec1a48b7c51f4d68b
 Top:    7189ba621a1ac860801543c69c90afbc772bcb36
 Author: sss <sss@karma>
-Date:   2025-09-09 21:53:39 -0400
+Date:   2025-09-09 21:53:48 -0400
 
-Make all methods of INoiseCaloCellsTool and INoiseConstTool const.
+Remove non-const methods of INoiseCaloCellsTool and INoiseConstTool.
 
-Calo components cleanup.
+Now that the INoiseCaloCellsTool and INoiseConstTool interface classs
+have been updated, we can remove the non-const methods from their
+derived classes (and add override keywords).
