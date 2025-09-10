@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "15cada66a45147ae16fae1de83beca401426c3a6",
-  "head": "1324d98b49d080b02b8f813ce85673e0f65b4771",
+  "prev": "d8a38102d436a509c29a05e0a3ed3fc7026dd251",
+  "head": "e4d51e5471fb3937fab652ff1fc95a73b1ad1211",
   "applied": [
     "service",
     "testdir",
@@ -13,13 +13,13 @@
     "cellPositionsConst2",
     "noiseConst1",
     "noiseVec1",
-    "noiseConst"
+    "noiseConst",
+    "noiseVec"
   ],
   "unapplied": [
     "calibConst",
     "xtalkConst",
     "calibVec",
-    "noiseVec",
     "cellPositions",
     "createCaloCells",
     "repnoise",
@@ -81,7 +81,7 @@
       "oid": "965a1688bff4d020ff9d10128ed070309008118e"
     },
     "noiseVec": {
-      "oid": "7dd4e2ccc0b6653bea0026c96f28d6d0fb4f2fb2"
+      "oid": "e4d51e5471fb3937fab652ff1fc95a73b1ad1211"
     },
     "noiseVec1": {
       "oid": "37309a5936b51374aa1101792351987410b74a8f"
