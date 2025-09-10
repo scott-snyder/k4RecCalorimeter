@@ -194,7 +194,8 @@ StatusCode CreateCaloCells::execute(const EventContext&) const {
       // Calculate a position based on the volume center.
       uint64_t volid = m_geoTool->segmentation()->volumeID (cellid);
       auto detelement = m_volman.lookupDetElement(volid);
-      const auto& transformMatrix = detelement.nominal().worldTransformation();
+      dd4hep::Alignment alignment = detelement.nominal();
+      const auto& transformMatrix = alignment.worldTransformation();
       double outGlobal[3];
       double inLocal[] = {0, 0, 0};
       transformMatrix.LocalToMaster(inLocal, outGlobal);
