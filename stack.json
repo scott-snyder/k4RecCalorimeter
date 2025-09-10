@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "a48faf8060c4c2e33b039813aef2ae8124c3a28d",
+  "prev": "4180e83d3e35ed5f268b2f341a223772b2e7ec03",
   "head": "7ba472c1e86cd0fee3d222b741671eddf2333d58",
   "applied": [
     "service",
@@ -26,7 +26,7 @@
     "repnoise",
     "hcal-tool",
     "hcal-seg",
-    "hcal-seg2"
+    "hcal-segrow"
   ],
   "unapplied": [
     "createCaloCells",
@@ -76,7 +76,7 @@
     "hcal-seg": {
       "oid": "a4db6fff2bae82c15f07f5a8e14deee00da46ae5"
     },
-    "hcal-seg2": {
+    "hcal-segrow": {
       "oid": "7ba472c1e86cd0fee3d222b741671eddf2333d58"
     },
     "hcal-tool": {
