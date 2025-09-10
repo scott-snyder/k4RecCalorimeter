@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "333c3d6b1f30b3cebc836e2044946a776ab97e21",
-  "head": "33ab1690048cced4ce03bc438e619a07a0f8e82b",
+  "prev": "3cfa01a70b66f99e6b6de05a86b6c2638a19b405",
+  "head": "74bb1a54279b5ad14a97ee0bb91adcbf8b93f132",
   "applied": [
     "service",
     "testdir",
@@ -22,10 +22,10 @@
     "geoConst1",
     "cellIDs1",
     "geoConst2",
-    "cellPositions"
+    "cellPositions",
+    "repnoise"
   ],
   "unapplied": [
-    "repnoise",
     "hcal-tool",
     "hcal-seg",
     "hcal-seg-row",
