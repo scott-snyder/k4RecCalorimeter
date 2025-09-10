@@ -1,3 +1,11 @@
+/**
+ * @file k4RecCalorimeter/RecCalorimeter/src/components/CaloCellPositionsTool.cpp
+ * @author scott snyder <snyder@bnl.gov>
+ * @date Apr, 2025
+ * @brief Generic tool to find positions of calorimeter cells.
+ */
+
+
 #include "CaloCellPositionsTool.h"
 #include "k4Interface/IGeoSvc.h"
 #include "k4FWCore/k4_check.h"
@@ -67,7 +75,7 @@ void CaloCellPositionsTool::getPositions(const edm4hep::CalorimeterHitCollection
   }
 }
 
-  
+
 /** Return the layer number of a cell.
  */
 int CaloCellPositionsTool::layerId(const uint64_t& aCellId) const
