@@ -1,0 +1,12 @@
+Bottom: 2becbc650721bbef88c215631e73abd175fc988d
+Top:    2becbc650721bbef88c215631e73abd175fc988d
+Author: sss <sss@karma>
+Date:   2025-09-10 14:48:53 -0400
+
+Adding ICalorimeterTool::cellIDs.
+
+Adding a method to ICalorimeterTool to retrieve a vector of all existing
+cell IDs.
+
+Also factor out common code from all ICalorimeterTool implementations
+into CalorimeterToolBase.
