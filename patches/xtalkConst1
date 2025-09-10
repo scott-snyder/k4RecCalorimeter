@@ -1,0 +1,10 @@
+Bottom: f1f3099d9a7e6a4ed2b7c74e8933879bed008aad
+Top:    f1f3099d9a7e6a4ed2b7c74e8933879bed008aad
+Author: sss <sss@karma>
+Date:   2025-09-09 23:02:36 -0400
+
+Making methods of ICaloReadCrosstalkMap const.
+
+Make ICaloReadCrosstalkMap::getNeighbours and getCrosstalks const.
+For now (until the interface class is changed) we retain the non-const
+overloads.
