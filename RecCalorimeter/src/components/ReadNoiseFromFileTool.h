@@ -29,14 +29,12 @@ class TH1F;
  *
  */
 
-class ReadNoiseFromFileTool : public AlgTool, virtual public INoiseConstTool {
+class ReadNoiseFromFileTool : public extends<AlgTool, INoiseConstTool> {
 public:
-  ReadNoiseFromFileTool(const std::string& type, const std::string& name, const IInterface* parent);
+  using base_class::base_class;
   virtual ~ReadNoiseFromFileTool() = default;
 
   virtual StatusCode initialize() override final;
-
-  virtual StatusCode finalize() override final;
 
   /// Open file and read noise histograms in the memory
   StatusCode initNoiseFromFile();
@@ -86,8 +84,8 @@ private:
   /// Histograms with electronics noise offset (index in array - radial layer)
   std::vector<TH1F> m_histoElecNoiseOffset;
 
-  /// Pointer to the geometry service
-  SmartIF<IGeoSvc> m_geoSvc;
+  /// Handle to the geometry service
+  ServiceHandle<IGeoSvc> m_geoSvc { this, "GeoSvc", "GeoSvc" };
   /// PhiEta segmentation
   dd4hep::DDSegmentation::FCCSWGridPhiEta_k4geo* m_segmentation;
   // Decoder
