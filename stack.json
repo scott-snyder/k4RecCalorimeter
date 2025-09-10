@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "58bc03a27d917cd0d00b5336670be9296447e60e",
-  "head": "f0b7e60691585b9238d33831297e56177dd5fe39",
+  "prev": "f4ceb43dbe45ffebdbcd3b9b64f0afb79c2f8087",
+  "head": "31b960919dec273fbdca347bc0ed633c9383b447",
   "applied": [
     "service",
     "testdir",
@@ -18,8 +18,7 @@
     "calibVec1",
     "calib2",
     "xtalkConst1",
-    "xtalkConst2",
-    "refresh-temp"
+    "xtalkConst2"
   ],
   "unapplied": [
     "cellPositions",
@@ -35,13 +34,13 @@
   "hidden": [],
   "patches": {
     "calib2": {
-      "oid": "bb732ca46eac195c77c07289635e8bf5c131b97e"
+      "oid": "716f0f294aa882491782890c1fba244bc71ba3e5"
     },
     "calibConst1": {
-      "oid": "2c878263b02b13f5e34d486c148af84165b187fb"
+      "oid": "c82ccd773130b157b61a606efa13691007c90152"
     },
     "calibVec1": {
-      "oid": "63b1280e0803cdc4089a2f678cb584bc1ae07c5a"
+      "oid": "ab5cdf7c9550bc2898af4f3b01d7c980651d4bd8"
     },
     "cellIDs": {
       "oid": "a8e9bf0060e57f104be47c36ec0d6961f5e9aa25"
@@ -80,16 +79,13 @@
       "oid": "d5b9cb072ee6c5ef80ea7eb29ed837a3d6122556"
     },
     "noise2": {
-      "oid": "a8104c9a0fc8a5744a6b7d426c15a7bcbca9729d"
+      "oid": "a0449791a4516cbed4512892d8069b3879699f6e"
     },
     "noiseConst1": {
       "oid": "6411b3f5774e8dadf83d97272128534f2bd2a29c"
     },
     "noiseVec1": {
       "oid": "0a5a8dffc1979aaeffd5253d53ef06a257327c7c"
-    },
-    "refresh-temp": {
-      "oid": "f0b7e60691585b9238d33831297e56177dd5fe39"
     },
     "repnoise": {
       "oid": "69d33740317e525a919e9208786bf6ddf1875705"
@@ -107,10 +103,10 @@
       "oid": "35ae336f3a137f338466fba0cbef2d259f8a8b75"
     },
     "xtalkConst1": {
-      "oid": "03d663020725e665a992849f690f40c0c7743140"
+      "oid": "8f067824a30b2524567b1158947119d0595ac76b"
     },
     "xtalkConst2": {
-      "oid": "15ae979ff5b455eedca7421df30dca9777e3b621"
+      "oid": "31b960919dec273fbdca347bc0ed633c9383b447"
     }
   }
 }
