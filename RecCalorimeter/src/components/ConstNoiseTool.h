@@ -32,17 +32,13 @@ public:
   ConstNoiseTool(const std::string& type, const std::string& name, const IInterface* parent);
   virtual ~ConstNoiseTool() = default;
 
-  virtual StatusCode initialize() final;
+  virtual StatusCode initialize() override final;
 
-  virtual StatusCode finalize() final;
+  virtual StatusCode finalize() override final;
 
   /// Find the appropriate noise constant from the histogram
-  virtual double getNoiseRMSPerCell(uint64_t aCellID) const final;
-  virtual double getNoiseRMSPerCell(uint64_t aCellID) final
-  { const auto* cthis = this;  return cthis->getNoiseRMSPerCell(aCellID); }
-  virtual double getNoiseOffsetPerCell(uint64_t aCellID) const final;
-  virtual double getNoiseOffsetPerCell(uint64_t aCellID) final
-  { const auto* cthis = this;  return cthis->getNoiseOffsetPerCell(aCellID); }
+  virtual double getNoiseRMSPerCell(uint64_t aCellID) const override final;
+  virtual double getNoiseOffsetPerCell(uint64_t aCellID) const override final;
 
 private:
   std::map<uint, double> m_systemNoiseRMSMap;
