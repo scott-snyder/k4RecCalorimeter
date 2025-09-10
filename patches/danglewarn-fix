@@ -1,0 +1,10 @@
+Bottom: b22dcd61b5f5c256ab258be2166e0e0c971590b5
+Top:    b22dcd61b5f5c256ab258be2166e0e0c971590b5
+Author: sss <sss@karma>
+Date:   2025-09-10 16:22:08 -0400
+
+Fix dangling reference warning.
+
+This warning is currently suppressed in the cmake files.
+But this is a warning which one really would not want to suppress --- better
+to rearrange the code to avoid it.
