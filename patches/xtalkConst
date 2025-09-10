@@ -1,8 +1,12 @@
 Bottom: 8aa515add37f1e50dc25aeed1a0b60a41f5d5f1e
 Top:    d57bfc7f9518f930327b3726b7ff1b7a2daebac3
 Author: sss <sss@karma>
-Date:   2025-09-09 23:10:44 -0400
+Date:   2025-09-09 23:10:46 -0400
 
-Make all methods of ICaloReadCrosstalkMap const.
+Remove non-const methods of ICaloReadCrosstalkMap.
 
-Calo components cleanup.
+Now that the ICaloReadCrosstalkMap interface class
+has been updated, we can remove the non-const methods from its
+derived classes (and add override keywords).
+
+Also some modernization / clean up.
