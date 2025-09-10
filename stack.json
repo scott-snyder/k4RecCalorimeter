@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "be3094145c050c70227888cc7790ba4a13d3f15d",
-  "head": "a4db6fff2bae82c15f07f5a8e14deee00da46ae5",
+  "prev": "a48faf8060c4c2e33b039813aef2ae8124c3a28d",
+  "head": "7ba472c1e86cd0fee3d222b741671eddf2333d58",
   "applied": [
     "service",
     "testdir",
@@ -25,12 +25,12 @@
     "cellPositions",
     "repnoise",
     "hcal-tool",
-    "hcal-seg"
+    "hcal-seg",
+    "hcal-seg2"
   ],
   "unapplied": [
     "createCaloCells",
-    "danglewarn",
-    "hcal-seg2"
+    "danglewarn"
   ],
   "hidden": [],
   "patches": {
@@ -77,7 +77,7 @@
       "oid": "a4db6fff2bae82c15f07f5a8e14deee00da46ae5"
     },
     "hcal-seg2": {
-      "oid": "e0cf33be2ef02096cdc730478b81cdb28cbf26ab"
+      "oid": "7ba472c1e86cd0fee3d222b741671eddf2333d58"
     },
     "hcal-tool": {
       "oid": "a183adb06347b9885a5655a3659a1a839d028be1"
