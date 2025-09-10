@@ -1,6 +1,9 @@
 Bottom: 21f26df857b7d74b1b396bc668ca0c7b823c1e9e
 Top:    aa7644b49d40288accc80607072cfc46bf6edf19
 Author: sss <sss@karma>
-Date:   2025-09-10 15:14:09 -0400
+Date:   2025-09-10 15:44:20 -0400
 
-Generic cell positioning tool.
+Add a generic cell positioning tool.
+
+Add CaloCellPositionsTool, which implements ICellPositionsTool and should
+work for any correctly specified segmentation.
