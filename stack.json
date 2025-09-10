@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "c5fafd669ecd30a73d069690cff8acb5253fde1f",
+  "prev": "713055109bbc7ee2026ff412ca4aad2b599e94a1",
   "head": "2a32da393701799ceed453bc07a3ded62ec4f68b",
   "applied": [
     "service",
@@ -24,7 +24,7 @@
     "geoConst2",
     "cellPositions",
     "repnoise",
-    "hcal-tool-wip"
+    "hcal-too"
   ],
   "unapplied": [
     "createCaloCells",
@@ -79,7 +79,7 @@
     "hcal-seg2": {
       "oid": "e0cf33be2ef02096cdc730478b81cdb28cbf26ab"
     },
-    "hcal-tool-wip": {
+    "hcal-too": {
       "oid": "2a32da393701799ceed453bc07a3ded62ec4f68b"
     },
     "noise2": {
