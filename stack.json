@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "e5fd565302e3cff1fe985a2fe1fc0d49f160eb9d",
-  "head": "7ba472c1e86cd0fee3d222b741671eddf2333d58",
+  "prev": "39dc68ad28a6f4fdafb755e61c81b561fef3dcfe",
+  "head": "2dfd4fa877ea73d9bc70ff0f4ad940dd520677e7",
   "applied": [
     "service",
     "testdir",
@@ -77,7 +77,7 @@
       "oid": "a4db6fff2bae82c15f07f5a8e14deee00da46ae5"
     },
     "hcal-seg-row": {
-      "oid": "7ba472c1e86cd0fee3d222b741671eddf2333d58"
+      "oid": "2dfd4fa877ea73d9bc70ff0f4ad940dd520677e7"
     },
     "hcal-tool": {
       "oid": "a183adb06347b9885a5655a3659a1a839d028be1"
