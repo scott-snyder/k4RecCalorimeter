@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "5da9d18d014efb53a45f3355bf46ebc7ff6856d5",
-  "head": "a1deb1fa5d46869a988ffe3c19a6ce4ae4fe2e4b",
+  "prev": "6c913de2995d480ccf546589b4e961cd881a0569",
+  "head": "16181377424ac9fbeb0e6830a016e26a40d5045a",
   "applied": [
     "service",
     "testdir",
@@ -16,7 +16,8 @@
     "noise2",
     "calibConst1",
     "calibVec1",
-    "calibConst"
+    "calibConst",
+    "refresh-temp"
   ],
   "unapplied": [
     "xtalkConst",
@@ -89,6 +90,9 @@
     },
     "noiseVec1": {
       "oid": "f64f3b1b0e09e481675c1e1d034babcf0fa3778d"
+    },
+    "refresh-temp": {
+      "oid": "16181377424ac9fbeb0e6830a016e26a40d5045a"
     },
     "repnoise": {
       "oid": "69d33740317e525a919e9208786bf6ddf1875705"
