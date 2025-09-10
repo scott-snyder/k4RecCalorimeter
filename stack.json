@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "4c269ea49c08125f1584378c119e9060e5dcbc5c",
-  "head": "62d6cde52fb34b8b3e1a1310f847ef1ef6677966",
+  "prev": "e9f957814ec30afe7dfeb0b4014e6b20bf6d5e39",
+  "head": "21eb75b4880f5d765091d37169c7c47adb6d15a7",
   "applied": [
     "service",
     "testdir",
@@ -75,7 +75,7 @@
       "oid": "a51cfd14a65436d74ab09dcf01ca6d061b69a9ae"
     },
     "geoConst2": {
-      "oid": "62d6cde52fb34b8b3e1a1310f847ef1ef6677966"
+      "oid": "21eb75b4880f5d765091d37169c7c47adb6d15a7"
     },
     "hcal-seg": {
       "oid": "ba952862c13edd4d15a9e3638e9af7086bb4c06d"

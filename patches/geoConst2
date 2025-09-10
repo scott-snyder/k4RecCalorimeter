@@ -1,9 +1,10 @@
 Bottom: d64c768a0dea500d4b18c503f63ebaf077235a87
 Top:    21f26df857b7d74b1b396bc668ca0c7b823c1e9e
 Author: sss <sss@karma>
-Date:   2025-09-10 15:11:34 -0400
+Date:   2025-09-10 15:12:47 -0400
 
-Make const:
-  - ICalorimeterTool::prepareEmptyCells
-  - IGeoSvc::getDetector
-  - IGeoSvc::constantAsString
+Remove non-const methods of ICalorimeterTool
+
+Now that the ICalorimeterTool interface class
+has been updated, we can remove the non-const methods from its
+derived classes (and add override keywords).
