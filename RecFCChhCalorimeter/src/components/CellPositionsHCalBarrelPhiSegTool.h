@@ -35,14 +35,12 @@ namespace DDSegmentation {
  *  @author Coralie Neubueser
  */
 
-class CellPositionsHCalBarrelPhiSegTool : public AlgTool, virtual public ICellPositionsTool {
+class CellPositionsHCalBarrelPhiSegTool : public extends<AlgTool, ICellPositionsTool> {
 public:
-  CellPositionsHCalBarrelPhiSegTool(const std::string& type, const std::string& name, const IInterface* parent);
+  using base_class::base_class;
   ~CellPositionsHCalBarrelPhiSegTool() = default;
 
   virtual StatusCode initialize() override final;
-
-  virtual StatusCode finalize() override final;
 
   virtual void getPositions(const edm4hep::CalorimeterHitCollection& aCells,
                             edm4hep::CalorimeterHitCollection& outputColl) const override final;
@@ -52,8 +50,8 @@ public:
   virtual int layerId(const uint64_t& aCellId) const override final;
 
 private:
-  /// Pointer to the geometry service
-  SmartIF<IGeoSvc> m_geoSvc;
+  /// Handle to the geometry service
+  ServiceHandle<IGeoSvc> m_geoSvc { this, "GeoSvc", "GeoSvc" };
   /// Name of the electromagnetic calorimeter readout
   Gaudi::Property<std::string> m_readoutName{this, "readoutName", "HCalBarrelReadout"};
   /// Cellid decoder

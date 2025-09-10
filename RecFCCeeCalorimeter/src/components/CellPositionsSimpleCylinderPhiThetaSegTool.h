@@ -36,15 +36,12 @@ namespace DDSegmentation {
  *  @author Giovanni Marchiori
  */
 
-class CellPositionsSimpleCylinderPhiThetaSegTool : public AlgTool, virtual public ICellPositionsTool {
+class CellPositionsSimpleCylinderPhiThetaSegTool : public extends<AlgTool, ICellPositionsTool> {
 public:
-  CellPositionsSimpleCylinderPhiThetaSegTool(const std::string& type, const std::string& name,
-                                             const IInterface* parent);
+  using base_class::base_class;
   ~CellPositionsSimpleCylinderPhiThetaSegTool() = default;
 
   virtual StatusCode initialize() override final;
-
-  virtual StatusCode finalize() override final;
 
   virtual void getPositions(const edm4hep::CalorimeterHitCollection& aCells,
                             edm4hep::CalorimeterHitCollection& outputColl) const override final;
@@ -54,8 +51,8 @@ public:
   virtual int layerId(const uint64_t& aCellId) const override final;
 
 private:
-  /// Pointer to the geometry service
-  SmartIF<IGeoSvc> m_geoSvc;
+  /// Handle to the geometry service
+  ServiceHandle<IGeoSvc> m_geoSvc { this, "GeoSvc", "GeoSvc" };
   /// Name of the detector
   Gaudi::Property<std::string> m_detectorName{this, "detectorName", "SimpleCylinderDetector"};
   /// Name of the readout

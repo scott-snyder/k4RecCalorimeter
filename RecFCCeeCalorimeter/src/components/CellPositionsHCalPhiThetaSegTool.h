@@ -46,14 +46,12 @@ namespace DDSegmentation {
  *  @author Michaela Mlynarikova
  */
 
-class CellPositionsHCalPhiThetaSegTool : public AlgTool, virtual public ICellPositionsTool {
+class CellPositionsHCalPhiThetaSegTool : public extends<AlgTool, ICellPositionsTool> {
 public:
-  CellPositionsHCalPhiThetaSegTool(const std::string& type, const std::string& name, const IInterface* parent);
+  using base_class::base_class;
   ~CellPositionsHCalPhiThetaSegTool() = default;
 
   virtual StatusCode initialize() override final;
-
-  virtual StatusCode finalize() override final;
 
   virtual void getPositions(const edm4hep::CalorimeterHitCollection& aCells,
                             edm4hep::CalorimeterHitCollection& outputColl) const override final;
@@ -69,8 +67,8 @@ public:
   virtual std::vector<double> calculateLayerRadiiEndcap();
 
 private:
-  /// Pointer to the geometry service
-  SmartIF<IGeoSvc> m_geoSvc;
+  /// Handle to the geometry service
+  ServiceHandle<IGeoSvc> m_geoSvc { this, "GeoSvc", "GeoSvc" };
   /// Name of the hadronic calorimeter readout
   Gaudi::Property<std::string> m_readoutName{this, "readoutName", "HCalBarrelReadout"};
   /// Name of the hadronic calorimeter

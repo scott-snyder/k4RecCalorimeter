@@ -36,15 +36,13 @@ namespace DDSegmentation {
  *  @author Coralie Neubueser
  */
 
-class CellPositionsCaloDiscsTool : public AlgTool, virtual public ICellPositionsTool {
+class CellPositionsCaloDiscsTool : public extends<AlgTool, ICellPositionsTool> {
 
 public:
-  CellPositionsCaloDiscsTool(const std::string& type, const std::string& name, const IInterface* parent);
+  using base_class::base_class;
   ~CellPositionsCaloDiscsTool() = default;
 
   virtual StatusCode initialize() override final;
-
-  virtual StatusCode finalize() override final;
 
   virtual void getPositions(const edm4hep::CalorimeterHitCollection& aCells,
                             edm4hep::CalorimeterHitCollection& outputColl) const override final;
@@ -55,7 +53,7 @@ public:
 
 private:
   /// Pointer to the geometry service
-  SmartIF<IGeoSvc> m_geoSvc;
+  ServiceHandle<IGeoSvc> m_geoSvc { this, "GeoSvc", "GeoSvc" };
   /// Name of the electromagnetic calorimeter readout
   Gaudi::Property<std::string> m_readoutName{this, "readoutName", "EMECPhiEtaReco", "name of the readout"};
   /// Eta-phi segmentation

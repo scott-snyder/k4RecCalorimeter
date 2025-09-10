@@ -21,15 +21,13 @@ class IGeoSvc;
  *  @author Coralie Neubueser
  */
 
-class CellPositionsDummyTool : public AlgTool, virtual public ICellPositionsTool {
+class CellPositionsDummyTool : public extends<AlgTool, ICellPositionsTool> {
 
 public:
-  CellPositionsDummyTool(const std::string& type, const std::string& name, const IInterface* parent);
+  using base_class::base_class;
   ~CellPositionsDummyTool() = default;
 
   virtual StatusCode initialize() override final;
-
-  virtual StatusCode finalize() override final;
 
   virtual void getPositions(const edm4hep::CalorimeterHitCollection& aCells,
                             edm4hep::CalorimeterHitCollection& outputColl) const override final;
@@ -39,7 +37,7 @@ public:
   virtual int layerId(const uint64_t& aCellId) const override final;
 
 private:
-  /// Pointer to the geometry service
-  SmartIF<IGeoSvc> m_geoSvc;
+  /// Handle to the geometry service
+  ServiceHandle<IGeoSvc> m_geoSvc { this, "GeoSvc", "GeoSvc" };
 };
 #endif /* RECCALORIMETER_CELLPOSITIONSDUMMYTOOL_H */
