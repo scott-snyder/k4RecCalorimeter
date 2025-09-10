@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "33d615575c636a61a151ad38d03ab22597ee8179",
-  "head": "ebbd1350d5815386489204b49311284692d1c25b",
+  "prev": "c5fafd669ecd30a73d069690cff8acb5253fde1f",
+  "head": "2a32da393701799ceed453bc07a3ded62ec4f68b",
   "applied": [
     "service",
     "testdir",
@@ -24,8 +24,7 @@
     "geoConst2",
     "cellPositions",
     "repnoise",
-    "hcal-tool-wip",
-    "refresh-temp"
+    "hcal-tool-wip"
   ],
   "unapplied": [
     "createCaloCells",
@@ -81,7 +80,7 @@
       "oid": "e0cf33be2ef02096cdc730478b81cdb28cbf26ab"
     },
     "hcal-tool-wip": {
-      "oid": "0ffecd4f3964eb6e0b5ae3d671a5ddd1ab8dfaf7"
+      "oid": "2a32da393701799ceed453bc07a3ded62ec4f68b"
     },
     "noise2": {
       "oid": "93c68585830acbb9cc8a950ab2c569d371c6abf4"
@@ -91,9 +90,6 @@
     },
     "noiseVec1": {
       "oid": "0a5a8dffc1979aaeffd5253d53ef06a257327c7c"
-    },
-    "refresh-temp": {
-      "oid": "ebbd1350d5815386489204b49311284692d1c25b"
     },
     "repnoise": {
       "oid": "74bb1a54279b5ad14a97ee0bb91adcbf8b93f132"
