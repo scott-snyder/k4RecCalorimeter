@@ -1,3 +1,5 @@
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+
 #include "CalibrateCaloClusters.h"
 
 // Key4HEP
