@@ -39,6 +39,7 @@ add_test(NAME FCC_createJets
 )
 set_test_env(FCC_createJets)
 set_tests_properties(FCC_createJets PROPERTIES FIXTURES_SETUP ALLEGRO_sim_files)
+set_tests_properties(FCC_createJets PROPERTIES TIMEOUT 3000)
 
 add_test(NAME FCC_createTruthJets
          COMMAND ${PROJECT_SOURCE_DIR}/RecCalorimeter/tests/options/test_truthJets.sh
