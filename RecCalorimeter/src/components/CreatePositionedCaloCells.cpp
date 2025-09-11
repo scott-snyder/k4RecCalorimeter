@@ -1,3 +1,5 @@
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+
 #include "CreatePositionedCaloCells.h"
 
 // dd4hep
