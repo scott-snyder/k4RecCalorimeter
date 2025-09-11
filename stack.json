@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "60238a9aa335d151d82ee734df7a33d0a12bd3ee",
-  "head": "890097db7794fc6129d01c29ee83fda0c2b0b14c",
+  "prev": "ffa2cab8043486967961d5cc03ead1d266d1987f",
+  "head": "86f47f1cf691d6ce0dac421858f601e678ec918b",
   "applied": [
     "service",
     "testdir",
@@ -26,12 +26,11 @@
     "hcal-tool",
     "hcal-seg",
     "hcal-seg-row",
-    "createCaloCells"
-  ],
-  "unapplied": [
+    "createCaloCells",
     "danglewarn-fix",
     "danglewarn"
   ],
+  "unapplied": [],
   "hidden": [],
   "patches": {
     "calib2": {
@@ -62,10 +61,10 @@
       "oid": "890097db7794fc6129d01c29ee83fda0c2b0b14c"
     },
     "danglewarn": {
-      "oid": "0eb628d148dc51b4127feb548d0aaae863ce1306"
+      "oid": "86f47f1cf691d6ce0dac421858f601e678ec918b"
     },
     "danglewarn-fix": {
-      "oid": "874b2ccaf30ee934c9566c187514ad3dfc2f2f11"
+      "oid": "7d3ba222dc57a15bd30f32ab7224e0da3e2ed68e"
     },
     "geoConst1": {
       "oid": "063845d46d35f193b886bfd976896751fc2e5ad5"
