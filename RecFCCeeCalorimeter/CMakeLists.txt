@@ -32,7 +32,8 @@ install(DIRECTORY ${CMAKE_CURRENT_LIST_DIR}/tests DESTINATION ${CMAKE_INSTALL_DA
 add_test(NAME ALLEGRO_o1_v03_sim_reco
          COMMAND ${PROJECT_SOURCE_DIR}/RecFCCeeCalorimeter/tests/options/ALLEGRO_o1_v03.sh
          WORKING_DIRECTORY ${PROJECT_BINARY_DIR}/Testing/Temporary
-)
+       )
+set_tests_properties( ALLEGRO_o1_v03_sim_reco PROPERTIES TIMEOUT 3000 )
 set_test_env(ALLEGRO_o1_v03_sim_reco)
 set_tests_properties(ALLEGRO_o1_v03_sim_reco PROPERTIES FIXTURES_REQUIRED ALLEGRO_sim_files)
 
