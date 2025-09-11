@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "1197a84122bd2ed45618a6672efcf9d09bc3e848",
-  "head": "e437c28b768c79e49c8422b5e73776a0829f097b",
+  "prev": "c03ada0ded42b96830fcbfe22313621f47a8575a",
+  "head": "890097db7794fc6129d01c29ee83fda0c2b0b14c",
   "applied": [
     "service",
     "testdir",
@@ -25,10 +25,10 @@
     "repnoise",
     "hcal-tool",
     "hcal-seg",
-    "hcal-seg-row"
+    "hcal-seg-row",
+    "createCaloCells"
   ],
   "unapplied": [
-    "createCaloCells",
     "danglewarn-fix",
     "danglewarn",
     "depr"
