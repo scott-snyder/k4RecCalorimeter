@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "d34a33738c6acd821201be9e173488247927f7f1",
-  "head": "b4280a8f5b9167136667305c86997baa486d18f6",
+  "prev": "8ab502f0511b859f8e5b055cf2fb08f8a79de703",
+  "head": "9b8e84cf26e7b748fbf7771621b46af8c81d535b",
   "applied": [
     "service",
     "testdir",
@@ -26,13 +26,12 @@
     "hcal-tool",
     "hcal-seg",
     "hcal-seg-row",
-    "createCaloCells"
-  ],
-  "unapplied": [
+    "createCaloCells",
     "danglewarn-fix",
     "danglewarn",
     "depr"
   ],
+  "unapplied": [],
   "hidden": [],
   "patches": {
     "calib2": {
@@ -63,13 +62,13 @@
       "oid": "b4280a8f5b9167136667305c86997baa486d18f6"
     },
     "danglewarn": {
-      "oid": "86f47f1cf691d6ce0dac421858f601e678ec918b"
+      "oid": "c13b708948698f3ef4f6edd4c3cc14d8042ceba8"
     },
     "danglewarn-fix": {
-      "oid": "7d3ba222dc57a15bd30f32ab7224e0da3e2ed68e"
+      "oid": "97e02abab7f0571e58dea7f71038d5b81317eeda"
     },
     "depr": {
-      "oid": "4cf08280157b02af5d367ba7cad0dc42769cab9b"
+      "oid": "9b8e84cf26e7b748fbf7771621b46af8c81d535b"
     },
     "geoConst1": {
       "oid": "063845d46d35f193b886bfd976896751fc2e5ad5"
