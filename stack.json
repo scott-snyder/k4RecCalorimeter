@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "1f92d7b80c2b6be5bebb654eef18f06981300a94",
-  "head": "05cdbe48b0e3fae0fba2d33e6ea9c33654693a89",
+  "prev": "4f845b2f9678870bdf8790394a99fcf8a24557f5",
+  "head": "b586e09f6574041cca5ec367a13c65c07ef727a6",
   "applied": [
     "service",
     "testdir",
@@ -30,7 +30,8 @@
     "danglewarn-fix",
     "danglewarn",
     "depr",
-    "timeout"
+    "timeout",
+    "refresh-temp"
   ],
   "unapplied": [],
   "hidden": [],
@@ -94,6 +95,9 @@
     },
     "noiseVec1": {
       "oid": "72dcb58703b71fba8aa85d99eebc2e00c9d31600"
+    },
+    "refresh-temp": {
+      "oid": "b586e09f6574041cca5ec367a13c65c07ef727a6"
     },
     "repnoise": {
       "oid": "c678af42554a02b7fc109cfdc4ae7217de67ddd3"
