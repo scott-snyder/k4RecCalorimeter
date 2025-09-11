@@ -1,3 +1,5 @@
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+
 #include "AugmentClustersFCCee.h"
 
 // k4FWCore
