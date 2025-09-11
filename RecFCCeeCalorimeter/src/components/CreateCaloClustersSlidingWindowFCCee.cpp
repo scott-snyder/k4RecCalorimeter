@@ -1,3 +1,5 @@
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+
 #include "CreateCaloClustersSlidingWindowFCCee.h"
 #include "CaloTowerToolFCCee.h"
 
