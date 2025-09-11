@@ -1,3 +1,5 @@
+#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
+
 #include "CreateCaloCellPositionsFCCee.h"
 
 // k4FWCore
