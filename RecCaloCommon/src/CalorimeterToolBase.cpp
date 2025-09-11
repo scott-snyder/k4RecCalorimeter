@@ -82,5 +82,8 @@ StatusCode CalorimeterToolBase::prepareEmptyCells(std::unordered_map<uint64_t, d
 const dd4hep::DDSegmentation::Segmentation*
 CalorimeterToolBase::segmentation() const
 {
-  return m_readout.segmentation().segmentation();
+  if (m_readout.isValid()) {
+    return m_readout.segmentation().segmentation();
+  }
+  return nullptr;
 }
