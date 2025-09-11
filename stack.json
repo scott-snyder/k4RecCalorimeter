@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "4f845b2f9678870bdf8790394a99fcf8a24557f5",
-  "head": "b586e09f6574041cca5ec367a13c65c07ef727a6",
+  "prev": "daef9e743c0d31150232015b3d3ac88e448af6e6",
+  "head": "d1ff41b7bb9fd4d75a9bba2a9beb404113c6b873",
   "applied": [
     "service",
     "testdir",
@@ -30,8 +30,7 @@
     "danglewarn-fix",
     "danglewarn",
     "depr",
-    "timeout",
-    "refresh-temp"
+    "timeout"
   ],
   "unapplied": [],
   "hidden": [],
@@ -96,9 +95,6 @@
     "noiseVec1": {
       "oid": "72dcb58703b71fba8aa85d99eebc2e00c9d31600"
     },
-    "refresh-temp": {
-      "oid": "b586e09f6574041cca5ec367a13c65c07ef727a6"
-    },
     "repnoise": {
       "oid": "c678af42554a02b7fc109cfdc4ae7217de67ddd3"
     },
@@ -112,7 +108,7 @@
       "oid": "307b96ca6abde934cebb61e5d6544251f6293735"
     },
     "timeout": {
-      "oid": "05cdbe48b0e3fae0fba2d33e6ea9c33654693a89"
+      "oid": "d1ff41b7bb9fd4d75a9bba2a9beb404113c6b873"
     },
     "xtalk": {
       "oid": "7b2570e94bb633eaece14d67231f44fc19c19073"
