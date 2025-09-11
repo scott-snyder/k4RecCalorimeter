@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "c5e9c969f32b50c098427ea28bdbae4dd1e2f59d",
-  "head": "66e30f9190421323ccddb6eca215663c8f6a35ad",
+  "prev": "60238a9aa335d151d82ee734df7a33d0a12bd3ee",
+  "head": "890097db7794fc6129d01c29ee83fda0c2b0b14c",
   "applied": [
     "service",
     "testdir",
@@ -26,8 +26,7 @@
     "hcal-tool",
     "hcal-seg",
     "hcal-seg-row",
-    "createCaloCells",
-    "refresh-temp"
+    "createCaloCells"
   ],
   "unapplied": [
     "danglewarn-fix",
@@ -60,7 +59,7 @@
       "oid": "89ae50a351bedd80704b257970111fefbfa2ee18"
     },
     "createCaloCells": {
-      "oid": "41c6bf26a687d0edd6e1e28ac34d06a337ca11cc"
+      "oid": "890097db7794fc6129d01c29ee83fda0c2b0b14c"
     },
     "danglewarn": {
       "oid": "0eb628d148dc51b4127feb548d0aaae863ce1306"
@@ -91,9 +90,6 @@
     },
     "noiseVec1": {
       "oid": "72dcb58703b71fba8aa85d99eebc2e00c9d31600"
-    },
-    "refresh-temp": {
-      "oid": "66e30f9190421323ccddb6eca215663c8f6a35ad"
     },
     "repnoise": {
       "oid": "a5c09a0accaaa9b8d26ca88630a4ef9eecf5c129"
