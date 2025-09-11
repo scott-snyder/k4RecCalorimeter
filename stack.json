@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "8b8e0b8e06f6be51ae0e0abde2545c0ad2f05959",
-  "head": "5843eca744f0ea51007ff16c438d5b77a8e691e4",
+  "prev": "d34a33738c6acd821201be9e173488247927f7f1",
+  "head": "b4280a8f5b9167136667305c86997baa486d18f6",
   "applied": [
     "service",
     "testdir",
@@ -26,8 +26,7 @@
     "hcal-tool",
     "hcal-seg",
     "hcal-seg-row",
-    "createCaloCells",
-    "refresh-temp"
+    "createCaloCells"
   ],
   "unapplied": [
     "danglewarn-fix",
@@ -46,10 +45,10 @@
       "oid": "9efe1b0635fb16f5af14bbab1efdff03da6580f9"
     },
     "cellIDs1": {
-      "oid": "e43dea467f1538af215b667c65b0b5de62871bd0"
+      "oid": "e79ce8210621bf5895f7633d7a21249eea2df0b1"
     },
     "cellPositions": {
-      "oid": "07a4ba3c42c5604c4f7cb1ffbcb0aac86e620c9f"
+      "oid": "760e844fffd615b5fb371adcd34f33221f990ba8"
     },
     "cellPositionsConst1": {
       "oid": "c59e5ae5d75a9003616cc28f9afd79467f21560a"
@@ -61,7 +60,7 @@
       "oid": "89ae50a351bedd80704b257970111fefbfa2ee18"
     },
     "createCaloCells": {
-      "oid": "6cd81e18b1e165e25aca038169c924637bfb76f3"
+      "oid": "b4280a8f5b9167136667305c86997baa486d18f6"
     },
     "danglewarn": {
       "oid": "86f47f1cf691d6ce0dac421858f601e678ec918b"
@@ -76,16 +75,16 @@
       "oid": "063845d46d35f193b886bfd976896751fc2e5ad5"
     },
     "geoConst2": {
-      "oid": "aa0221ff704b227acbc1248036ac308c756aedce"
+      "oid": "8acd9d3d75b586ff834f7d5df5b5aee4eb444b47"
     },
     "hcal-seg": {
-      "oid": "7359f6617db5ef4511f252b5191fafd25ab8f293"
+      "oid": "025bd651175ed8033138f7c397e7d57d184b3d55"
     },
     "hcal-seg-row": {
-      "oid": "e437c28b768c79e49c8422b5e73776a0829f097b"
+      "oid": "4be361cd78893c8897e64694dd410ecd94c497cd"
     },
     "hcal-tool": {
-      "oid": "056488f8edb236b223119289d4534b5764414835"
+      "oid": "a4b33189e284646a4199f35730afdccaa28a59ca"
     },
     "noise2": {
       "oid": "73e2b5cbc508cd1f6c8ce4e621b933f1b7c1dbe5"
@@ -96,11 +95,8 @@
     "noiseVec1": {
       "oid": "72dcb58703b71fba8aa85d99eebc2e00c9d31600"
     },
-    "refresh-temp": {
-      "oid": "5843eca744f0ea51007ff16c438d5b77a8e691e4"
-    },
     "repnoise": {
-      "oid": "a5c09a0accaaa9b8d26ca88630a4ef9eecf5c129"
+      "oid": "c678af42554a02b7fc109cfdc4ae7217de67ddd3"
     },
     "return": {
       "oid": "6439a9698408adfb0a0d88677003bd3c1cb3609d"
