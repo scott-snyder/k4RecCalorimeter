@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "271f7fe3abb1c83f022aeef9b981986ef6c422db",
-  "head": "b0d36161a84445910b89547dac8549576d782380",
+  "prev": "17cf4df9472c8b39b22db5eac04b8cd344029d8f",
+  "head": "4cf08280157b02af5d367ba7cad0dc42769cab9b",
   "applied": [
     "service",
     "testdir",
@@ -29,8 +29,7 @@
     "createCaloCells",
     "danglewarn-fix",
     "danglewarn",
-    "depr",
-    "refresh-temp"
+    "depr"
   ],
   "unapplied": [],
   "hidden": [],
@@ -69,7 +68,7 @@
       "oid": "7d3ba222dc57a15bd30f32ab7224e0da3e2ed68e"
     },
     "depr": {
-      "oid": "f9e3478f1964e3611b25a7fc2fc010dd9a20a515"
+      "oid": "4cf08280157b02af5d367ba7cad0dc42769cab9b"
     },
     "geoConst1": {
       "oid": "063845d46d35f193b886bfd976896751fc2e5ad5"
@@ -94,9 +93,6 @@
     },
     "noiseVec1": {
       "oid": "72dcb58703b71fba8aa85d99eebc2e00c9d31600"
-    },
-    "refresh-temp": {
-      "oid": "b0d36161a84445910b89547dac8549576d782380"
     },
     "repnoise": {
       "oid": "a5c09a0accaaa9b8d26ca88630a4ef9eecf5c129"
