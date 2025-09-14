@@ -9,8 +9,8 @@ using dd4hep::DetElement;
 DECLARE_COMPONENT(CellPositionsHCalPhiThetaSegTool)
 
 StatusCode CellPositionsHCalPhiThetaSegTool::initialize() {
-  K4_CHECK( AlgTool::initialize() );
-  K4_CHECK( m_geoSvc.retrieve() );
+  K4_GAUDI_CHECK( AlgTool::initialize() );
+  K4_GAUDI_CHECK( m_geoSvc.retrieve() );
 
   m_volman = m_geoSvc->getDetector()->volumeManager();
 
