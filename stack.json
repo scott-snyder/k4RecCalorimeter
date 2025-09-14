@@ -1,15 +1,15 @@
 {
   "version": 5,
-  "prev": "4422c9f81a6b5512326a8620ad865bde13fd3bf3",
-  "head": "5b6bfc200cd7eaa215dcfbfae975c6df73a20438",
+  "prev": "0399d441d1cd382735390745a9e48d69ab899c96",
+  "head": "e1f2b110d38d67b5f889ddab750b88b2814869c0",
   "applied": [
-    "depr"
+    "depr",
+    "return"
   ],
   "unapplied": [
     "service",
     "testdir",
     "xtalk",
-    "return",
     "cmakewarn",
     "cellPositionsConst1",
     "cellPositionsConst2",
@@ -100,7 +100,7 @@
       "oid": "c678af42554a02b7fc109cfdc4ae7217de67ddd3"
     },
     "return": {
-      "oid": "aed8a9902d14c9bd2255e9d302de186b0b1131a7"
+      "oid": "e1f2b110d38d67b5f889ddab750b88b2814869c0"
     },
     "service": {
       "oid": "52465b29ee6bec31fee9458405c9736a47c91f3e"
