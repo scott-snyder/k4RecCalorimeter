@@ -21,7 +21,7 @@ DECLARE_COMPONENT(CaloCellPositionsTool)
  */
 StatusCode CaloCellPositionsTool::initialize()
 {
-  K4_CHECK( base_class::initialize() );
+  K4_GAUDI_CHECK( base_class::initialize() );
 
   SmartIF<IGeoSvc> geoSvc = service<IGeoSvc>("GeoSvc");
   if (!geoSvc) {
