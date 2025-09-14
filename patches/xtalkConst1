@@ -1,9 +1,16 @@
 Bottom: 6e23495f46bee4ed2eb69c89c7ad4c5a3a7f5bef
 Top:    3a6ea27d868c1956c2b0b5b1a758ac2a4c00402d
 Author: sss <sss@karma>
-Date:   2025-09-13 21:47:53 -0400
+Date:   2025-09-13 21:49:15 -0400
 
 Making methods of ICaloReadCrosstalkMap const.
+
+We want to make the methods of ICaloReadCrosstalkMap const, for thread-safety
+and general cleanliness.
+Here, we add change ICaloReadCrosstalkMap::getNeighbours and getCrosstalks
+to be const.
+However, for now (until the interface class is changed) we also
+retain the non-const overloads.
 
 Make ICaloReadCrosstalkMap::getNeighbours and getCrosstalks const.
 For now (until the interface class is changed) we retain the non-const
