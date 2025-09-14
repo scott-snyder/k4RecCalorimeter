@@ -5,8 +5,8 @@
 name: Key4hep build
 on:
   push:
-    branches:
-    - main
+    #branches:
+    #- main
   pull_request:
   workflow_dispatch:
   schedule:
