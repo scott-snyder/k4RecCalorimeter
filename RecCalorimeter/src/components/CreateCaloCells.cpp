@@ -31,7 +31,7 @@ CreateCaloCells::CreateCaloCells(const std::string& name, ISvcLocator* svcLoc)
 }
 
 StatusCode CreateCaloCells::initialize() {
-  K4_CHECK( Gaudi::Algorithm::initialize() );
+  K4_GAUDI_CHECK( Gaudi::Algorithm::initialize() );
 
   info() << "CreateCaloCells initialized" << endmsg;
   info() << "do calibration : " << m_doCellCalibration << endmsg;
@@ -43,17 +43,17 @@ StatusCode CreateCaloCells::initialize() {
   // Initialization of tools
   // Cell crosstalk tool
   if (m_addCrosstalk) {
-    K4_CHECK( m_crosstalksTool.retrieve() );
+    K4_GAUDI_CHECK( m_crosstalksTool.retrieve() );
   }
   // Calibrate Geant4 energy to EM scale tool
   if (m_doCellCalibration) {
-    K4_CHECK( m_calibTool.retrieve() );
+    K4_GAUDI_CHECK( m_calibTool.retrieve() );
   }
   // Cell noise tool
   if (m_addCellNoise || m_filterCellNoise) {
-    K4_CHECK( m_noiseTool.retrieve() );
+    K4_GAUDI_CHECK( m_noiseTool.retrieve() );
     // Geometry settings
-    K4_CHECK( m_geoTool.retrieve() );
+    K4_GAUDI_CHECK( m_geoTool.retrieve() );
 
     // Construct cell indices.
     {
@@ -70,12 +70,12 @@ StatusCode CreateCaloCells::initialize() {
   }
 
   if (m_cellPos.isEnabled()) {
-    K4_CHECK( m_cellPos.retrieve() );
+    K4_GAUDI_CHECK( m_cellPos.retrieve() );
   }
 
   // Copy over the CellIDEncoding string from the input collection to the output collection
   auto hitsEncoding = m_hitsCellIDEncoding.get_optional();
-  K4_CHECK( hitsEncoding.has_value() );
+  K4_GAUDI_CHECK( hitsEncoding.has_value() );
   m_cellsCellIDEncoding.put(hitsEncoding.value());
 
   if (m_links.objKey().empty()) {
