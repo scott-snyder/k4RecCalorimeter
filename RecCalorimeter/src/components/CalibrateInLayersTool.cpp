@@ -11,7 +11,7 @@
 DECLARE_COMPONENT(CalibrateInLayersTool)
 
 StatusCode CalibrateInLayersTool::initialize() {
-  K4_CHECK( AlgTool::initialize() );
+  K4_GAUDI_CHECK( AlgTool::initialize() );
   // check if readout exists
   if (m_geoSvc->getDetector()->readouts().find(m_readoutName) == m_geoSvc->getDetector()->readouts().end()) {
     error() << "Readout <<" << m_readoutName << ">> does not exist." << endmsg;

@@ -4,7 +4,7 @@
 DECLARE_COMPONENT(CalibrateCaloHitsTool)
 
 StatusCode CalibrateCaloHitsTool::initialize() {
-  K4_CHECK( AlgTool::initialize() );
+  K4_GAUDI_CHECK( AlgTool::initialize() );
 
   info() << "Calibration constant: 1/sampling fraction=" << m_invSamplingFraction << endmsg;
   return StatusCode::SUCCESS;
