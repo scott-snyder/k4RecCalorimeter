@@ -1,6 +1,15 @@
 Bottom: af5f95056e5082fab9a6f7d073f86c0de8ae866d
 Top:    19f2f8f1411eb994d88305ec8d5bbb1871b12bd0
 Author: sss <sss@karma>
-Date:   2025-09-10 23:00:00 -0400
+Date:   2025-09-13 21:44:42 -0400
 
 Fix bad use of return in shell script.
+
+Using return outside of a function in a non-sourced shell script
+gives an error (with bash anyway):
+
+```
+return: can only `return' from a function or sourced script
+```
+
+Use exit rather than return to exit the script.
