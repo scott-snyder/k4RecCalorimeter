@@ -5,9 +5,9 @@
 DECLARE_COMPONENT(NoiseCaloCellsFlatTool)
 
 StatusCode NoiseCaloCellsFlatTool::initialize() {
-  K4_CHECK( AlgTool::initialize() );
-  K4_CHECK( m_randSvc = service<IRndmGenSvc> ("RndmGenSvc", true) );
-  K4_CHECK( m_gauss.initialize(m_randSvc, Rndm::Gauss(0., 1.)) );
+  K4_GAUDI_CHECK( AlgTool::initialize() );
+  K4_GAUDI_CHECK( m_randSvc = service<IRndmGenSvc> ("RndmGenSvc", true) );
+  K4_GAUDI_CHECK( m_gauss.initialize(m_randSvc, Rndm::Gauss(0., 1.)) );
 
   info() << "RMS of the cell noise: " << m_cellNoiseRMS * 1.e3 << " MeV" << endmsg;
   info() << "Offset of the cell noise: " << m_cellNoiseOffset * 1.e3 << " MeV" << endmsg;

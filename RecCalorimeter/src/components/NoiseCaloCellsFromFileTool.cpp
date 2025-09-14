@@ -20,12 +20,12 @@ DECLARE_COMPONENT(NoiseCaloCellsFromFileTool)
 
 StatusCode NoiseCaloCellsFromFileTool::initialize() {
 
-  K4_CHECK( m_geoSvc.retrieve() );
-  K4_CHECK( m_randSvc = service<IRndmGenSvc> ("RndmGenSvc", false) );
-  K4_CHECK( m_gauss.initialize(m_randSvc, Rndm::Gauss(0., 1.)) );
+  K4_GAUDI_CHECK( m_geoSvc.retrieve() );
+  K4_GAUDI_CHECK( m_randSvc = service<IRndmGenSvc> ("RndmGenSvc", false) );
+  K4_GAUDI_CHECK( m_gauss.initialize(m_randSvc, Rndm::Gauss(0., 1.)) );
 
   // open and check file, read the histograms with noise constants
-  K4_CHECK( initNoiseFromFile() );
+  K4_GAUDI_CHECK( initNoiseFromFile() );
 
   // Check if cell position tool available
   if (!m_cellPositionsTool.retrieve() and !m_useSeg) {
@@ -68,7 +68,7 @@ StatusCode NoiseCaloCellsFromFileTool::initialize() {
 
   debug() << "Filter noise threshold: " << m_filterThreshold << "*sigma" << endmsg;
 
-  K4_CHECK( AlgTool::initialize() );
+  K4_GAUDI_CHECK( AlgTool::initialize() );
 
   return StatusCode::SUCCESS;
 }
