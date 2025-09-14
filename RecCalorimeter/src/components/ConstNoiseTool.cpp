@@ -28,7 +28,7 @@ StatusCode ConstNoiseTool::initialize() {
     }
   }
 
-  K4_CHECK( m_geoSvc.retrieve() );
+  K4_GAUDI_CHECK( m_geoSvc.retrieve() );
 
   // loop over the detectors
   for (size_t iDet = 0; iDet < m_detectors.size(); iDet++) {
@@ -49,7 +49,7 @@ StatusCode ConstNoiseTool::initialize() {
     }
   }
 
-  K4_CHECK( AlgTool::initialize() );
+  K4_GAUDI_CHECK( AlgTool::initialize() );
 
   return StatusCode::SUCCESS;
 }

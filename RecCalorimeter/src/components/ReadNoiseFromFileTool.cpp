@@ -21,7 +21,7 @@
 DECLARE_COMPONENT(ReadNoiseFromFileTool)
 
 StatusCode ReadNoiseFromFileTool::initialize() {
-  K4_CHECK( m_geoSvc.retrieve() );
+  K4_GAUDI_CHECK( m_geoSvc.retrieve() );
 
   m_segmentation = dynamic_cast<dd4hep::DDSegmentation::FCCSWGridPhiEta_k4geo*>(
       m_geoSvc->getDetector()->readout(m_readoutName).segmentation().segmentation());
@@ -31,12 +31,12 @@ StatusCode ReadNoiseFromFileTool::initialize() {
   }
 
   // open and check file, read the histograms with noise constants
-  K4_CHECK( ReadNoiseFromFileTool::initNoiseFromFile() );
+  K4_GAUDI_CHECK( ReadNoiseFromFileTool::initNoiseFromFile() );
 
   // Take readout bitfield decoder from GeoSvc
   m_decoder = m_geoSvc->getDetector()->readout(m_readoutName).idSpec().decoder();
 
-  K4_CHECK( AlgTool::initialize() );
+  K4_GAUDI_CHECK( AlgTool::initialize() );
 
   return StatusCode::SUCCESS;
 }
