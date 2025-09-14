@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "70c0681fbc0373e2f105dc164f99f0e46e51c277",
-  "head": "8322bcb2e73f8d37fd5bd9d66ef8f2283e66d03d",
+  "prev": "a67076b230b035e1252cd2b5f00838575e996b96",
+  "head": "3bfbed1c3b1d6a507ef46a1ca96a4106593bb1cb",
   "applied": [
     "depr",
     "return",
@@ -9,7 +9,8 @@
     "ci",
     "cellPositionsConst1",
     "noiseConst1",
-    "noiseVec1"
+    "noiseVec1",
+    "refresh-temp"
   ],
   "unapplied": [
     "service",
@@ -99,6 +100,9 @@
     },
     "noiseVec1": {
       "oid": "8322bcb2e73f8d37fd5bd9d66ef8f2283e66d03d"
+    },
+    "refresh-temp": {
+      "oid": "3bfbed1c3b1d6a507ef46a1ca96a4106593bb1cb"
     },
     "repnoise": {
       "oid": "c678af42554a02b7fc109cfdc4ae7217de67ddd3"
