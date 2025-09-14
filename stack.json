@@ -1,22 +1,22 @@
 {
   "version": 5,
-  "prev": "b20baa566e8dd03e8b7fd1f94b3e5f61f2aa4aeb",
-  "head": "d8c716e1be49514e3ca5f72a7ba3010ee2281c63",
+  "prev": "70c0681fbc0373e2f105dc164f99f0e46e51c277",
+  "head": "8322bcb2e73f8d37fd5bd9d66ef8f2283e66d03d",
   "applied": [
     "depr",
     "return",
     "xtalkConst1",
-    "ci"
+    "ci",
+    "cellPositionsConst1",
+    "noiseConst1",
+    "noiseVec1"
   ],
   "unapplied": [
-    "cellPositionsConst1",
     "service",
     "testdir",
     "xtalk",
     "cmakewarn",
     "cellPositionsConst2",
-    "noiseConst1",
-    "noiseVec1",
     "noise2",
     "calibConst1",
     "calibVec1",
@@ -53,7 +53,7 @@
       "oid": "760e844fffd615b5fb371adcd34f33221f990ba8"
     },
     "cellPositionsConst1": {
-      "oid": "5262fea4ea973e48848a49923de9a4758c894b78"
+      "oid": "3657c84640f798d23a6b013ca965357865189cad"
     },
     "cellPositionsConst2": {
       "oid": "88df9e88a18c7458fc6f00f739ab73f671f071df"
@@ -95,10 +95,10 @@
       "oid": "73e2b5cbc508cd1f6c8ce4e621b933f1b7c1dbe5"
     },
     "noiseConst1": {
-      "oid": "4bf88dbc90956cd717c711bcabd1c45bc2773800"
+      "oid": "b32565e6ea72908b5a534418d0e40393437830ac"
     },
     "noiseVec1": {
-      "oid": "72dcb58703b71fba8aa85d99eebc2e00c9d31600"
+      "oid": "8322bcb2e73f8d37fd5bd9d66ef8f2283e66d03d"
     },
     "repnoise": {
       "oid": "c678af42554a02b7fc109cfdc4ae7217de67ddd3"
