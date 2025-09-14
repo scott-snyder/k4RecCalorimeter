@@ -21,7 +21,7 @@ StatusCode ReadCaloCrosstalkMap::initialize() {
 
   info() << "Loading crosstalk map..." << endmsg;
 
-  K4_CHECK( AlgTool::initialize() );
+  K4_GAUDI_CHECK( AlgTool::initialize() );
 
   // Check if crosstalk file exists
   if (gSystem->AccessPathName(m_fileName.value().c_str())) {
