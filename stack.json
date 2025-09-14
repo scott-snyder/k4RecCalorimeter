@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "32f0e88f37550d6d9827ec2abad2e7d691fc29c8",
-  "head": "3f4916449573c25d573dd939e3ec1cb379c44164",
+  "prev": "a3cddc40fbbba0bae0384defcc8e916fbbe9528b",
+  "head": "c42e67f92cef6dcd064a28d0d3cddbf8bd279bbf",
   "applied": [
     "depr",
     "return",
@@ -30,7 +30,8 @@
     "createCaloCells",
     "danglewarn-fix",
     "danglewarn",
-    "timeout"
+    "timeout",
+    "refresh-temp"
   ],
   "unapplied": [],
   "hidden": [],
@@ -97,6 +98,9 @@
     },
     "noiseVec1": {
       "oid": "b6d0ba2435c481398502ca17403e20e4189ec317"
+    },
+    "refresh-temp": {
+      "oid": "c42e67f92cef6dcd064a28d0d3cddbf8bd279bbf"
     },
     "repnoise": {
       "oid": "57eb0aba06176c3594794a17e6df854536892f42"
