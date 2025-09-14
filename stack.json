@@ -1,13 +1,13 @@
 {
   "version": 5,
-  "prev": "92e846478d2f105b7b81407b9d6bc6e018952a24",
-  "head": "5262fea4ea973e48848a49923de9a4758c894b78",
+  "prev": "ad9cbc250ab139c29e473dd17a956546c2b49348",
+  "head": "e1f2b110d38d67b5f889ddab750b88b2814869c0",
   "applied": [
     "depr",
-    "return",
-    "cellPositionsConst1"
+    "return"
   ],
   "unapplied": [
+    "cellPositionsConst1",
     "service",
     "testdir",
     "xtalk",
