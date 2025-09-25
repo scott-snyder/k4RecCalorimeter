@@ -1,17 +1,17 @@
 {
   "version": 5,
-  "prev": "917f857ce945bc0003ef8ea8c635ca206247097a",
-  "head": "79a3b99555e10f38703294832b5d081c02d148e2",
+  "prev": "088455af5607346a2389e9981058c3d7422d60df",
+  "head": "b8e4aa3904d415b7af625b7d2f87baa5c5f01d17",
   "applied": [
     "cellPositionsConst1",
     "noiseConst1",
     "calibConst1",
     "geoConst1",
     "danglewarn-fix",
-    "depr"
+    "depr",
+    "ci"
   ],
   "unapplied": [
-    "ci",
     "noiseVec1",
     "calibVec1",
     "cmakewarn",
