@@ -1,11 +1,9 @@
 {
   "version": 5,
-  "prev": "8714aaec5947c4bf4d22b79240eaa14735249743",
-  "head": "b1016b26fe0086820baa904037c9f403a73cd676",
+  "prev": "69f47fae8bf5d6353b91cd30171b94dcfc7bff87",
+  "head": "7e6e6ac1f165dfe35e004c7a29a3308aeca3adb0",
   "applied": [
     "depr",
-    "return",
-    "xtalkConst1",
     "ci",
     "cellPositionsConst1",
     "noiseConst1",
@@ -36,88 +34,82 @@
   "hidden": [],
   "patches": {
     "calib2": {
-      "oid": "60b75710359027663e55213cf5e23c2e8de8b6bf"
+      "oid": "357ffbf447d22a4147a9c8d65f19f84304ddb181"
     },
     "calibConst1": {
-      "oid": "c39baeb0cf81ee316c527b4f7d5f7bbb1d716dc8"
+      "oid": "ad0571f4b0269a7c9ae72e9d64e89f54b3fdd23c"
     },
     "calibVec1": {
-      "oid": "1158fa61cfe865623ab45ab30ab15f0c04f43457"
+      "oid": "9e954939a509a788d0ab15cc351b64a5feae10f3"
     },
     "cellIDs1": {
-      "oid": "9eb15674cbe8f15859232208212cf90b2e88cda3"
+      "oid": "e7e79670be5b6f72f5a0ded277944139debb9944"
     },
     "cellPositions": {
-      "oid": "1dc05a5bdd67e11ba6b50af6504c97971a035981"
+      "oid": "30f40e788b66e366754b183f340e59eb15c50ee1"
     },
     "cellPositionsConst1": {
-      "oid": "af31f6d5552847474422e8c489ac65e21f49e76a"
+      "oid": "3c06bb4a15df1255a41e910ca2f86807267d89fc"
     },
     "cellPositionsConst2": {
-      "oid": "29136379d9ee73cd65ce2d6d2db3fe19404612b9"
+      "oid": "3eb882c8ce5ae7a515efa064bf0cb9c4c2083c07"
     },
     "ci": {
-      "oid": "dccdb271a1a05a2618c58f23e0245c6939e26d69"
+      "oid": "325d46bcfb39065f0001e859c980e027d74ea6db"
     },
     "cmakewarn": {
-      "oid": "e363ee3d6f15955071a1759e4ea144d54c14c39f"
+      "oid": "083cc298e5497822bc4191cf780b4856136fd7de"
     },
     "createCaloCells": {
-      "oid": "18486a6456d5fca648e10b9f9351e5af5c22f60a"
+      "oid": "1bba24b53d3a8573b02bccedcc43ffcdf66f22d9"
     },
     "danglewarn": {
-      "oid": "52e9434cd4928ba2fdad6043a9773da929b8c87e"
+      "oid": "6aba22fe171a5cb871e2c5559a9c8b39f3872b5c"
     },
     "danglewarn-fix": {
-      "oid": "7fa7bd580e92a724287d592b2959c6eeefbfe92e"
+      "oid": "8bb8e61c1c9b2ed047c3ea316a72b8bebafb0f15"
     },
     "depr": {
       "oid": "b566ca4efa581af59c6cd151c8e7f382a53dc2ed"
     },
     "geoConst1": {
-      "oid": "bd6b20fe70c4a56dd33560583dc7d4e585c871ae"
+      "oid": "d8f4c3b983d533c8305fa708be914f17c52fa7f7"
     },
     "geoConst2": {
-      "oid": "ffc36919a1bfec2b8f18c13d367e70be53ec2f80"
+      "oid": "0a216e962d2553d5b837b99af38778e672606371"
     },
     "hcal-seg": {
-      "oid": "bfe4d44a0d4057c942f42161a4d96fc3ff0575bb"
+      "oid": "a63e5b1697eaebc247791fa40bc7399656645c97"
     },
     "hcal-seg-row": {
-      "oid": "61467e7fb7cec376410491715e114f190eb0debd"
+      "oid": "890d9904c384cc4a1ac87a66a6b29c84f46232a4"
     },
     "hcal-tool": {
-      "oid": "45dc3ff539681fd699fb97a77730f3207f93f24c"
+      "oid": "38783e043da63213bd316ade76538d266b42cc4f"
     },
     "noise2": {
-      "oid": "94168183529dd9593be356d00ef6082ab9ca760f"
+      "oid": "4a30ab05bb3949714974ef1ed1c5166458070d02"
     },
     "noiseConst1": {
-      "oid": "6c769524ef4b8842de7b3341fbb300071c44aa38"
+      "oid": "eb563ddffb1a510588e38fae57848ebdb254282e"
     },
     "noiseVec1": {
-      "oid": "7383fd13ef2b85a4706952b7191b3c852cba4ab5"
+      "oid": "7d15c44be896454c9a23be1ff13fda87c47b943d"
     },
     "repnoise": {
-      "oid": "7cefa9a383eb4342626b26f8a32bab4d0e00c038"
-    },
-    "return": {
-      "oid": "be285066324395ad45717fe2157ea543d37fc45a"
+      "oid": "4563efc113b13d3fcc5b3f2b7902c05e6069e6f4"
     },
     "testdir": {
-      "oid": "0a54c898bb8e4e798d0658c75fc73bbedd38cb62"
+      "oid": "cfc595d5e9ca0a76059f59e1e977245e247c873b"
     },
     "timeout": {
-      "oid": "b1016b26fe0086820baa904037c9f403a73cd676"
+      "oid": "7e6e6ac1f165dfe35e004c7a29a3308aeca3adb0"
     },
     "xtalk": {
-      "oid": "87e83fba12c9ea90345769d0095de5f416357585"
-    },
-    "xtalkConst1": {
-      "oid": "c762e1a7cff28dd6e2e282b3b73fe9e495de7fbf"
+      "oid": "08001e42bf221b6ae04f66f2c103111ebac1ea30"
     },
     "xtalkConst2": {
-      "oid": "cc98364a9e3d2180c69400e65844158a72942c44"
+      "oid": "040d2800a9937bfe0dc4612597ad7800cc29d7c2"
     }
   }
 }
