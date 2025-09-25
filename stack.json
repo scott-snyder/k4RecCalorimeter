@@ -1,14 +1,13 @@
 {
   "version": 5,
-  "prev": "9bf5bd0356e2d21d0c7750e5e5010f5846417de5",
-  "head": "0740e85efce2becd395dc964ababb10419a542b1",
+  "prev": "bb034eaff17002e2ec840fc60a11b49ffa96b53a",
+  "head": "601c0e4e3cb49b767409a7e83ca610fa525db28d",
   "applied": [
     "cellPositionsConst1",
     "noiseConst1",
     "calibConst1",
     "geoConst1",
-    "danglewarn-fix",
-    "refresh-temp"
+    "danglewarn-fix"
   ],
   "unapplied": [
     "depr",
@@ -69,7 +68,7 @@
       "oid": "6aba22fe171a5cb871e2c5559a9c8b39f3872b5c"
     },
     "danglewarn-fix": {
-      "oid": "4e7139321424c5c1157898ae0a000bd1a2569a65"
+      "oid": "601c0e4e3cb49b767409a7e83ca610fa525db28d"
     },
     "depr": {
       "oid": "b566ca4efa581af59c6cd151c8e7f382a53dc2ed"
@@ -97,9 +96,6 @@
     },
     "noiseVec1": {
       "oid": "7d15c44be896454c9a23be1ff13fda87c47b943d"
-    },
-    "refresh-temp": {
-      "oid": "0740e85efce2becd395dc964ababb10419a542b1"
     },
     "repnoise": {
       "oid": "4563efc113b13d3fcc5b3f2b7902c05e6069e6f4"
