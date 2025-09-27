@@ -1,10 +1,11 @@
 Bottom: c1ea2538279e8bec4e5171ab569dee118bf9909d
 Top:    4c2072f49f943697854d2204f559eaf4f9923f45
 Author: sss <sss@karma>
-Date:   2025-09-26 21:31:42 -0400
+Date:   2025-09-26 21:37:04 -0400
 
-Fix dangling reference warning.
+Fix dangling reference warnings.
 
 This warning is currently suppressed in the cmake files.
 But this is a warning which one really would not want to suppress --- better
-to rearrange the code to avoid it.
+to rearrange the code to avoid it.  So go ahead and fix the instances
+of that which we get in this package.
