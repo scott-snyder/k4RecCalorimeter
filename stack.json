@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "ec510e56d19087f3c9dceabaf647f7dafea172c5",
-  "head": "41b2677ba68b3ec4b259df006685a18825922a70",
+  "prev": "d4813350094f435d61119ecb77dffa3b7228fed3",
+  "head": "fb8f01f5406e0690b8fbec5c42195a63142a8c95",
   "applied": [
     "depr",
     "cellPositionsConst1",
@@ -14,7 +14,8 @@
     "calibVec1",
     "cmakewarn",
     "cellIDs1",
-    "testdir"
+    "testdir",
+    "refresh-temp"
   ],
   "unapplied": [
     "xtalk",
@@ -96,6 +97,9 @@
     },
     "noiseVec1": {
       "oid": "60f1da3a0e45e60d62b269cd8997ac20382567d8"
+    },
+    "refresh-temp": {
+      "oid": "fb8f01f5406e0690b8fbec5c42195a63142a8c95"
     },
     "repnoise": {
       "oid": "5ece5dcb396e109a63b7648d0df81fd0c0bfd55b"
