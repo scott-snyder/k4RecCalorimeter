@@ -1894,7 +1894,8 @@ StatusCode CreateFCCeeCaloNeighbours::initialize_lookups() {
           dd4hep::VolumeManager volman = m_geoSvc->getDetector()->volumeManager();
 
           auto detelement = volman.lookupDetElement(barrelVolumeId);
-          const auto& transformMatrix = detelement.nominal().worldTransformation();
+          dd4hep::Alignment alignment = detelement.nominal();
+          const auto& transformMatrix = alignment.worldTransformation();
           double outGlobal[3];
           double inLocal[] = {0, 0, 0};
           transformMatrix.LocalToMaster(inLocal, outGlobal);
