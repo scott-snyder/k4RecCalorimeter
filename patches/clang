@@ -1,0 +1,9 @@
+Bottom: be0be3de259c8c93273c9a0948e1b9039c67a4f8
+Top:    be0be3de259c8c93273c9a0948e1b9039c67a4f8
+Author: sss <sss@karma>
+Date:   2025-10-07 21:02:40 -0400
+
+Fix clang warnings.
+
+Be careful not to get abs(int) where we mean to get a floating-point version.
+Also, its unneccessary to take abs() of a sum of squares.

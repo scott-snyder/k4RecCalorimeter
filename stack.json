@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "dde6456e0aafc970a0a9ed48b1f8ad1e90b3b7e4",
-  "head": "b9f228a49d716a9e31d72f9f980b43f3e85f2277",
+  "prev": "5d5aecbd2768789d1480fd06d49ad8e592b0f073",
+  "head": "12e785cad795c1b917f96a6cea1c7f42f8b1fd8d",
   "applied": [
     "depr",
     "danglewarn-fix",
@@ -24,7 +24,8 @@
     "hcal-seg-row",
     "createCaloCells",
     "danglewarn",
-    "timeout"
+    "timeout",
+    "clang"
   ],
   "unapplied": [],
   "hidden": [],
@@ -46,6 +47,9 @@
     },
     "ci": {
       "oid": "563c2e29cdea1255d7add2038ad4d1a4afbe880f"
+    },
+    "clang": {
+      "oid": "12e785cad795c1b917f96a6cea1c7f42f8b1fd8d"
     },
     "cmakewarn": {
       "oid": "3dcf0f328a49d8b08dfe6c167adc6c30d7b7458f"
