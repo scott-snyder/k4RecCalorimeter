@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "c9e86e5d60f9f3bba414c91699eda2f6dc703b22",
-  "head": "5f802182ab86d78ebf5e962497644894a1131608",
+  "prev": "319f8e208d1b3a83333d12f59010635d596a2be7",
+  "head": "8f4c5289f56174a00264953eeb3882c9353e7ca6",
   "applied": [
     "depr",
     "danglewarn-fix",
@@ -25,8 +25,7 @@
     "createCaloCells",
     "danglewarn",
     "timeout",
-    "clang",
-    "refresh-temp"
+    "clang"
   ],
   "unapplied": [],
   "hidden": [],
@@ -50,7 +49,7 @@
       "oid": "563c2e29cdea1255d7add2038ad4d1a4afbe880f"
     },
     "clang": {
-      "oid": "12e785cad795c1b917f96a6cea1c7f42f8b1fd8d"
+      "oid": "8f4c5289f56174a00264953eeb3882c9353e7ca6"
     },
     "cmakewarn": {
       "oid": "3dcf0f328a49d8b08dfe6c167adc6c30d7b7458f"
@@ -84,9 +83,6 @@
     },
     "noiseVec1": {
       "oid": "00040d1f695c373f47acdad8d8c2566dde537698"
-    },
-    "refresh-temp": {
-      "oid": "5f802182ab86d78ebf5e962497644894a1131608"
     },
     "repnoise": {
       "oid": "0f93ee740d9ea88e5c05ef28f54f717b32ae3f9b"
