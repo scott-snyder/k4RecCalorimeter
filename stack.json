@@ -1,10 +1,11 @@
 {
   "version": 5,
-  "prev": "c2dcf4cb8325e4f591452b12c4c66066cc622592",
-  "head": "7e82e32dee1a44744dcb358ffb09a1dbee8be550",
-  "applied": [],
+  "prev": "b68e0df9ecb2c003c5a0a815fd4ad3723e979486",
+  "head": "8441c677fb9e2a2a11d22e48a5064952fd152350",
+  "applied": [
+    "depr"
+  ],
   "unapplied": [
-    "depr",
     "danglewarn-fix",
     "ci",
     "noiseVec1",
