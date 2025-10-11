@@ -1,5 +1,5 @@
 #include "CellPositionsHCalPhiThetaSegTool.h"
-#include "RecCaloCommon/k4RecCalorimeter_check.h"
+#include "k4FWCore/k4_check.h"
 
 #include "edm4hep/CalorimeterHitCollection.h"
 #include <DDRec/DetectorData.h>
@@ -9,8 +9,8 @@ using dd4hep::DetElement;
 DECLARE_COMPONENT(CellPositionsHCalPhiThetaSegTool)
 
 StatusCode CellPositionsHCalPhiThetaSegTool::initialize() {
-  K4RECCALORIMETER_CHECK( AlgTool::initialize() );
-  K4RECCALORIMETER_CHECK( m_geoSvc.retrieve() );
+  K4_GAUDI_CHECK( AlgTool::initialize() );
+  K4_GAUDI_CHECK( m_geoSvc.retrieve() );
 
   const dd4hep::Detector* detector = m_geoSvc->getDetector();
   if (!detector) {
