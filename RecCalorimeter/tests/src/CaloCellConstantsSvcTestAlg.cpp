@@ -7,7 +7,7 @@
 
 
 #include "RecCaloCommon/ICaloCellConstantsSvc.h"
-#include "RecCaloCommon/k4RecCalorimeter_check.h"
+#include "k4FWCore/k4_check.h"
 #include "GaudiKernel/Algorithm.h"
 #include "GaudiKernel/ServiceHandle.h"
 
@@ -35,22 +35,22 @@ DECLARE_COMPONENT(k4::recCalo::CaloCellConstantsSvcTestAlg);
 
 StatusCode CaloCellConstantsSvcTestAlg::initialize()
 {
-  K4RECCALORIMETER_CHECK( m_svc.retrieve() );
+  K4_GAUDI_CHECK( m_svc.retrieve() );
 
   using payload_t = std::vector<int>;
-  K4RECCALORIMETER_CHECK (!m_svc->getObj<payload_t> ("test"));
+  K4_GAUDI_CHECK (!m_svc->getObj<payload_t> ("test"));
   payload_t v1 {1, 2, 3};
   payload_t v2 (v1);
-  K4RECCALORIMETER_CHECK (m_svc->putObj ("test", std::move(v2)));
-  K4RECCALORIMETER_CHECK (v2.empty());
+  K4_GAUDI_CHECK (m_svc->putObj ("test", std::move(v2)));
+  K4_GAUDI_CHECK (v2.empty());
   const payload_t* v3 = nullptr;
-  K4RECCALORIMETER_CHECK ((v3 = m_svc->getObj<payload_t> ("test")));
-  K4RECCALORIMETER_CHECK (*v3 == v1);
-  K4RECCALORIMETER_CHECK (!m_svc->getObj<payload_t> ("test2"));
-  K4RECCALORIMETER_CHECK (!m_svc->getObj<std::vector<float> > ("test1"));
-  K4RECCALORIMETER_CHECK (!m_svc->putObj ("test", std::move(v2)));
-  K4RECCALORIMETER_CHECK ((v3 = m_svc->getObj<payload_t> ("test")));
-  K4RECCALORIMETER_CHECK (*v3 == v1);
+  K4_GAUDI_CHECK ((v3 = m_svc->getObj<payload_t> ("test")));
+  K4_GAUDI_CHECK (*v3 == v1);
+  K4_GAUDI_CHECK (!m_svc->getObj<payload_t> ("test2"));
+  K4_GAUDI_CHECK (!m_svc->getObj<std::vector<float> > ("test1"));
+  K4_GAUDI_CHECK (!m_svc->putObj ("test", std::move(v2)));
+  K4_GAUDI_CHECK ((v3 = m_svc->getObj<payload_t> ("test")));
+  K4_GAUDI_CHECK (*v3 == v1);
 
   return StatusCode::SUCCESS;
 }
