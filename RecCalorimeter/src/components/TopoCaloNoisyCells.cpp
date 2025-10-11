@@ -1,5 +1,5 @@
 #include "TopoCaloNoisyCells.h"
-#include "RecCaloCommon/k4RecCalorimeter_check.h"
+#include "k4FWCore/k4_check.h"
 
 #include "TBranch.h"
 #include "TFile.h"
@@ -9,7 +9,7 @@
 DECLARE_COMPONENT(TopoCaloNoisyCells)
 
 StatusCode TopoCaloNoisyCells::initialize() {
-  K4RECCALORIMETER_CHECK( AlgTool::initialize() );
+  K4_GAUDI_CHECK( AlgTool::initialize() );
 
   // Check if file exists
   if (m_fileName.empty()) {
