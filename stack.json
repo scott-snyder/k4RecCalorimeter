@@ -1,10 +1,11 @@
 {
   "version": 5,
-  "prev": "ad8d1f3da178b133bdb3a8c0a231b9632bd4bdb2",
-  "head": "e894615aaee553d807568565c6016e24901cbbb5",
+  "prev": "2766feb3d77891ffa2f52c80981530e4ed07700b",
+  "head": "aa92fe26b1ab3602c0ba8b4ec5bf250452ee4fb5",
   "applied": [
     "depr",
-    "noiseVec1"
+    "noiseVec1",
+    "check-deprecated"
   ],
   "unapplied": [
     "noise-check",
@@ -47,6 +48,9 @@
     },
     "cellPositionsConst2": {
       "oid": "de4797073815d31a1b341abf45f448cee58de3cb"
+    },
+    "check-deprecated": {
+      "oid": "aa92fe26b1ab3602c0ba8b4ec5bf250452ee4fb5"
     },
     "ci": {
       "oid": "563c2e29cdea1255d7add2038ad4d1a4afbe880f"
