@@ -10,7 +10,7 @@
 
 #undef NDEBUG
 #include "k4Interface/ICalorimeterTool.h"
-#include "RecCaloCommon/k4RecCalorimeter_check.h"
+#include "k4FWCore/k4_check.h"
 #include "GaudiKernel/Algorithm.h"
 #include "GaudiKernel/ToolHandle.h"
 #include <span>
@@ -39,7 +39,7 @@ DECLARE_COMPONENT(k4::recCalo::TubeLayerModuleThetaCaloToolTestAlg);
 
 StatusCode TubeLayerModuleThetaCaloToolTestAlg::initialize()
 {
-  K4RECCALORIMETER_CHECK( m_tool.retrieve() );
+  K4_GAUDI_CHECK( m_tool.retrieve() );
   assert (m_tool->readoutName() == "ECalBarrelModuleThetaMerged");
   assert (m_tool->id() == 4);
 
