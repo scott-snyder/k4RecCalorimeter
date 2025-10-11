@@ -7,7 +7,7 @@
 
 
 #include "RecCaloCommon/ICaloCellIndexerSvc.h"
-#include "RecCaloCommon/k4RecCalorimeter_check.h"
+#include "k4FWCore/k4_check.h"
 #include "GaudiKernel/Algorithm.h"
 #include "GaudiKernel/ServiceHandle.h"
 #include <span>
@@ -39,16 +39,16 @@ DECLARE_COMPONENT(k4::recCalo::CaloCellIndexerSvcTestAlg);
 
 StatusCode CaloCellIndexerSvcTestAlg::initialize()
 {
-  K4RECCALORIMETER_CHECK( m_svc.retrieve() );
+  K4_GAUDI_CHECK( m_svc.retrieve() );
 
-  K4RECCALORIMETER_CHECK( m_svc->indexer (999) == nullptr );
+  K4_GAUDI_CHECK( m_svc->indexer (999) == nullptr );
 
   const ICaloIndexer* indexer = m_svc->indexer (m_detID);
-  K4RECCALORIMETER_CHECK( indexer != nullptr );
+  K4_GAUDI_CHECK( indexer != nullptr );
 
   std::span<const uint64_t> ids = indexer->cellIDs();
   for (size_t i = 0; i < ids.size(); ++i) {
-    K4RECCALORIMETER_CHECK( indexer->index(ids[i]) == i );
+    K4_GAUDI_CHECK( indexer->index(ids[i]) == i );
   }
 
   return StatusCode::SUCCESS;
