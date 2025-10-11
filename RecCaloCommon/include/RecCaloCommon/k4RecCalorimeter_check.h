@@ -8,6 +8,8 @@
 #ifndef K4RECCALORIMETER_K4RECCALORIMETER_CHECK_H
 #define K4RECCALORIMETER_K4RECCALORIMETER_CHECK_H
 
+#warning "k4RecCalorimeter_check.h is deprecated.  Use k4FWCore/k4_check instead."
+
 #include "GaudiKernel/StatusCode.h"
 
 /**
