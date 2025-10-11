@@ -1,5 +1,5 @@
 #include "ReadCaloCrosstalkMap.h"
-#include "RecCaloCommon/k4RecCalorimeter_check.h"
+#include "k4FWCore/GaudiChecks.h"
 #include "k4Interface/IGeoSvc.h"
 #include "DD4hep/Detector.h"
 
@@ -23,19 +23,19 @@ StatusCode ReadCaloCrosstalkMap::initialize() {
 
   info() << "Loading crosstalk map..." << endmsg;
 
-  K4RECCALORIMETER_CHECK(AlgTool::initialize());
-  K4RECCALORIMETER_CHECK( m_constantsSvc.retrieve() );
-  K4RECCALORIMETER_CHECK( m_indexerSvc.retrieve() );
+  K4_GAUDI_CHECK( AlgTool::initialize() );
+  K4_GAUDI_CHECK( m_constantsSvc.retrieve() );
+  K4_GAUDI_CHECK( m_indexerSvc.retrieve() );
 
   int detID = m_detID;
   if (detID < 0) {
     // If defaulted, get the ECAL_Barrel ID from the geometry service.
     ServiceHandle<IGeoSvc> geoSvc ("GeoSvc", name());
-    K4RECCALORIMETER_CHECK( geoSvc.retrieve() );
+    K4_GAUDI_CHECK( geoSvc.retrieve() );
     detID = geoSvc->getDetector()->constantAsDouble("DetID_ECAL_Barrel");
   }
   m_indexer = m_indexerSvc->indexer (detID);
-  K4RECCALORIMETER_CHECK( m_indexer != nullptr );
+  K4_GAUDI_CHECK( m_indexer != nullptr );
 
   m_data = m_constantsSvc->getObj<CrosstalkData> (m_fileName);
   if (!m_data) {
@@ -55,9 +55,9 @@ StatusCode ReadCaloCrosstalkMap::initialize() {
     }
 
     CrosstalkData data = readData (*xtalkFile);
-    K4RECCALORIMETER_CHECK( m_constantsSvc->putObj (m_fileName, std::move (data)) );
+    K4_GAUDI_CHECK( m_constantsSvc->putObj (m_fileName, std::move (data)) );
     m_data = m_constantsSvc->getObj<CrosstalkData> (m_fileName);
-    K4RECCALORIMETER_CHECK( m_data != nullptr );
+    K4_GAUDI_CHECK( m_data != nullptr );
   }
 
   return StatusCode::SUCCESS;
