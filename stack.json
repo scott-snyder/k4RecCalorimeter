@@ -1,13 +1,13 @@
 {
   "version": 5,
-  "prev": "76595aa474e940c21545519852727a3929b669ba",
-  "head": "ed0e49b76bf8766027bd514c5a047c10c666a158",
+  "prev": "ad8d1f3da178b133bdb3a8c0a231b9632bd4bdb2",
+  "head": "e894615aaee553d807568565c6016e24901cbbb5",
   "applied": [
     "depr",
-    "noiseVec1",
-    "noise-check"
+    "noiseVec1"
   ],
   "unapplied": [
+    "noise-check",
     "danglewarn-fix",
     "ci",
     "calibVec1",
