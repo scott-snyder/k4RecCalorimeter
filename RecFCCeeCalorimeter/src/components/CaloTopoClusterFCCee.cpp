@@ -10,7 +10,7 @@
 #include <unordered_set>
 #include <vector>
 
-#include "RecCaloCommon/k4RecCalorimeter_check.h"
+#include "k4FWCore/k4_check.h"
 
 // k4geo
 #include "detectorCommon/DetUtils_k4geo.h"
@@ -38,7 +38,7 @@ StatusCode CaloTopoClusterFCCee::initialize() {
     return StatusCode::FAILURE;
   }
 
-  K4RECCALORIMETER_CHECK( m_indexerSvc.retrieve() );
+  K4_GAUDI_CHECK( m_indexerSvc.retrieve() );
 
   // create handles for input cell collections
   for (const auto& col : m_cellCollections) {
