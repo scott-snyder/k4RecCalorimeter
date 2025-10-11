@@ -1,5 +1,5 @@
 #include "NoiseCaloCellsVsThetaFromFileTool.h"
-#include "RecCaloCommon/k4RecCalorimeter_check.h"
+#include "k4FWCore/k4_check.h"
 
 // k4geo
 #include "detectorCommon/DetUtils_k4geo.h"
@@ -31,12 +31,12 @@ NoiseCaloCellsVsThetaFromFileTool::NoiseCaloCellsVsThetaFromFileTool(const std::
 StatusCode NoiseCaloCellsVsThetaFromFileTool::initialize() {
   m_elecNoiseHistoName = m_elecNoiseRMSHistoName;
 
-  K4RECCALORIMETER_CHECK( m_cellPositionsTool.retrieve() );
+  K4_GAUDI_CHECK( m_cellPositionsTool.retrieve() );
 
-  K4RECCALORIMETER_CHECK( ReadNoiseFromFileTool::initialize() );
+  K4_GAUDI_CHECK( ReadNoiseFromFileTool::initialize() );
 
-  K4RECCALORIMETER_CHECK( m_randSvc = service<IRndmGenSvc> ("RndmGenSvc", false) );
-  K4RECCALORIMETER_CHECK( m_gauss.initialize(m_randSvc, Rndm::Gauss(0., 1.)) );
+  K4_GAUDI_CHECK( m_randSvc = service<IRndmGenSvc> ("RndmGenSvc", false) );
+  K4_GAUDI_CHECK( m_gauss.initialize(m_randSvc, Rndm::Gauss(0., 1.)) );
 
   debug() << "Filter noise threshold: " << m_filterThreshold << "*sigma" << endmsg;
 
