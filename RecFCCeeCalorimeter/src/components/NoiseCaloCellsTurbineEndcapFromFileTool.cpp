@@ -1,5 +1,5 @@
 #include "NoiseCaloCellsTurbineEndcapFromFileTool.h"
-#include "RecCaloCommon/k4RecCalorimeter_check.h"
+#include "k4FWCore/GaudiChecks.h"
 
 // k4geo
 #include "detectorCommon/DetUtils_k4geo.h"
@@ -19,13 +19,13 @@
 DECLARE_COMPONENT(NoiseCaloCellsTurbineEndcapFromFileTool)
 
 StatusCode NoiseCaloCellsTurbineEndcapFromFileTool::initialize() {
-  K4RECCALORIMETER_CHECK(m_geoSvc.retrieve());
-  K4RECCALORIMETER_CHECK(m_cellPositionsTool.retrieve());
-  K4RECCALORIMETER_CHECK(m_randSvc = service<IRndmGenSvc>("RndmGenSvc", false));
-  K4RECCALORIMETER_CHECK(m_gauss.initialize(m_randSvc, Rndm::Gauss(0., 1.)));
+  K4_GAUDI_CHECK(m_geoSvc.retrieve());
+  K4_GAUDI_CHECK(m_cellPositionsTool.retrieve());
+  K4_GAUDI_CHECK(m_randSvc = service<IRndmGenSvc>("RndmGenSvc", false));
+  K4_GAUDI_CHECK(m_gauss.initialize(m_randSvc, Rndm::Gauss(0., 1.)));
 
   // open and check file, read the histograms with noise constants
-  K4RECCALORIMETER_CHECK(initNoiseFromFile());
+  K4_GAUDI_CHECK(initNoiseFromFile());
 
   // Get decoder and index of layer field
   // put in try... block
@@ -34,7 +34,7 @@ StatusCode NoiseCaloCellsTurbineEndcapFromFileTool::initialize() {
 
   debug() << "Filter noise threshold: " << m_filterThreshold << "*sigma" << endmsg;
 
-  K4RECCALORIMETER_CHECK(AlgTool::initialize());
+  K4_GAUDI_CHECK(AlgTool::initialize());
 
   return StatusCode::SUCCESS;
 }
