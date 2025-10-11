@@ -1,11 +1,11 @@
 #include "ConstNoiseTool.h"
-#include "RecCaloCommon/k4RecCalorimeter_check.h"
 
 // k4geo
 #include "detectorCommon/DetUtils_k4geo.h"
 
 // k4FWCore
 #include "k4Interface/IGeoSvc.h"
+#include "k4FWCore/GaudiChecks.h"
 
 // DD4hep
 #include "DD4hep/Detector.h"
@@ -29,7 +29,7 @@ StatusCode ConstNoiseTool::initialize() {
     }
   }
 
-  K4RECCALORIMETER_CHECK( m_geoSvc.retrieve() );
+  K4_GAUDI_CHECK( m_geoSvc.retrieve() );
 
   // loop over the detectors
   for (size_t iDet = 0; iDet < m_detectors.size(); iDet++) {
@@ -55,7 +55,7 @@ StatusCode ConstNoiseTool::initialize() {
     }
   }
 
-  K4RECCALORIMETER_CHECK( AlgTool::initialize() );
+  K4_GAUDI_CHECK( AlgTool::initialize() );
 
   return StatusCode::SUCCESS;
 }
