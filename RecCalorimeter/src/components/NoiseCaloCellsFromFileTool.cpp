@@ -1,11 +1,11 @@
 #include "NoiseCaloCellsFromFileTool.h"
-#include "RecCaloCommon/k4RecCalorimeter_check.h"
 
 // k4geo
 #include "detectorCommon/DetUtils_k4geo.h"
 
 // k4FWCore
 #include "k4Interface/IGeoSvc.h"
+#include "k4FWCore/GaudiChecks.h"
 
 // DD4hep
 #include "DD4hep/Detector.h"
@@ -20,12 +20,12 @@ DECLARE_COMPONENT(NoiseCaloCellsFromFileTool)
 
 StatusCode NoiseCaloCellsFromFileTool::initialize() {
 
-  K4RECCALORIMETER_CHECK(m_geoSvc.retrieve());
-  K4RECCALORIMETER_CHECK(m_randSvc = service<IRndmGenSvc>("RndmGenSvc", false));
-  K4RECCALORIMETER_CHECK(m_gauss.initialize(m_randSvc, Rndm::Gauss(0., 1.)));
+  K4_GAUDI_CHECK( m_geoSvc.retrieve() );
+  K4_GAUDI_CHECK( m_randSvc = service<IRndmGenSvc> ("RndmGenSvc", false) );
+  K4_GAUDI_CHECK( m_gauss.initialize(m_randSvc, Rndm::Gauss(0., 1.)) );
 
   // open and check file, read the histograms with noise constants
-  K4RECCALORIMETER_CHECK(initNoiseFromFile());
+  K4_GAUDI_CHECK( initNoiseFromFile() );
 
   // Check if cell position tool available
   if (!m_cellPositionsTool.retrieve() and !m_useSeg) {
@@ -68,7 +68,7 @@ StatusCode NoiseCaloCellsFromFileTool::initialize() {
 
   debug() << "Filter noise threshold: " << m_filterThreshold << "*sigma" << endmsg;
 
-  K4RECCALORIMETER_CHECK(AlgTool::initialize());
+  K4_GAUDI_CHECK( AlgTool::initialize() );
 
   return StatusCode::SUCCESS;
 }
