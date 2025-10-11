@@ -8,6 +8,7 @@
 
 #include "CaloCellPositionsTool.h"
 #include "k4FWCore/GaudiChecks.h"
+#include "k4Interface/IGeoSvc.h"
 #include "edm4hep/CalorimeterHitCollection.h"
 #include "DD4hep/Detector.h"
 #include "DD4hep/Readout.h"
