@@ -1,10 +1,11 @@
 {
   "version": 5,
-  "prev": "2b7489b8d6133da4442ce18790461df5fd0c3e4c",
-  "head": "bf0358653e320870b64a129abd24409a1696fa94",
+  "prev": "73a0b673e89fcab18c56506021146ac25eed4d70",
+  "head": "48fa3f7a1c9ae9259e1caa06504abf3008f40395",
   "applied": [
     "depr",
-    "noiseVec1"
+    "noiseVec1",
+    "refresh-temp"
   ],
   "unapplied": [
     "danglewarn-fix",
@@ -88,6 +89,9 @@
     },
     "noiseVec1": {
       "oid": "bf0358653e320870b64a129abd24409a1696fa94"
+    },
+    "refresh-temp": {
+      "oid": "48fa3f7a1c9ae9259e1caa06504abf3008f40395"
     },
     "repnoise": {
       "oid": "b241dcabdc647f38dd58a6f70a65899166ed4680"
