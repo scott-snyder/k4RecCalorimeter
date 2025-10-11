@@ -1,0 +1,7 @@
+Bottom: b55bf51508d6d6308ec9d5e6c799ee1c5238625f
+Top:    b55bf51508d6d6308ec9d5e6c799ee1c5238625f
+Author: sss <sss@karma>
+Date:   2025-10-11 11:45:26 -0400
+
+Update noise tools to use K4_GAUDI_CHECK from k4FWCore rather than
+K4RECCALORIMETER_CHECK.
