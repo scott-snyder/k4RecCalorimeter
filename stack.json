@@ -1,14 +1,13 @@
 {
   "version": 5,
-  "prev": "e074fc244b53386d503a0d01069104488b9b81e9",
-  "head": "97c21af929ebb5ada45268abc4dc49cbcc6025e7",
+  "prev": "21b4a7ab2546d44de700d2695694eb1b5866dd91",
+  "head": "ffa110f0c8c62a3265237d75a35921eb5842ab4b",
   "applied": [
     "depr",
     "noiseVec1",
     "check-deprecated",
     "noise-check",
-    "check-remove",
-    "refresh-temp"
+    "check-remove"
   ],
   "unapplied": [
     "danglewarn-fix",
@@ -55,7 +54,7 @@
       "oid": "93a6cd4d202bb34cdc946e688ebb1048a2e382eb"
     },
     "check-remove": {
-      "oid": "171df69aaceebde68ca3880d64e1eae1363ac12c"
+      "oid": "ffa110f0c8c62a3265237d75a35921eb5842ab4b"
     },
     "ci": {
       "oid": "563c2e29cdea1255d7add2038ad4d1a4afbe880f"
@@ -101,9 +100,6 @@
     },
     "noiseVec1": {
       "oid": "e894615aaee553d807568565c6016e24901cbbb5"
-    },
-    "refresh-temp": {
-      "oid": "97c21af929ebb5ada45268abc4dc49cbcc6025e7"
     },
     "repnoise": {
       "oid": "b241dcabdc647f38dd58a6f70a65899166ed4680"
