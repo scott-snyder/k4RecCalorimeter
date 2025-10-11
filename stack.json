@@ -1,14 +1,14 @@
 {
   "version": 5,
-  "prev": "d3128e5c5c435a43f3a6308c51c50247708468b4",
-  "head": "93a6cd4d202bb34cdc946e688ebb1048a2e382eb",
+  "prev": "38b9714951fc2ccbde3107d5f4e77d8230c36012",
+  "head": "bf32afcd3142c95bf301999696ceabe5646390ab",
   "applied": [
     "depr",
     "noiseVec1",
-    "check-deprecated"
+    "check-deprecated",
+    "noise-check"
   ],
   "unapplied": [
-    "noise-check",
     "danglewarn-fix",
     "ci",
     "calibVec1",
@@ -89,7 +89,7 @@
       "oid": "a34e34b15ef5bd85e1a8be85c12c1231513b6ba4"
     },
     "noise-check": {
-      "oid": "ed0e49b76bf8766027bd514c5a047c10c666a158"
+      "oid": "bf32afcd3142c95bf301999696ceabe5646390ab"
     },
     "noise2": {
       "oid": "f016132a7bdb5a7462dc8447edbd5d7260000169"

@@ -1,7 +1,7 @@
-Bottom: b55bf51508d6d6308ec9d5e6c799ee1c5238625f
-Top:    3318fe6162803e0b583cfc3899f17a756adbdd0b
+Bottom: 2a6a9820e764a39308072e3cd9d283c6c8694278
+Top:    c710de831aedccd8316ae0abca5a148c513efa07
 Author: sss <sss@karma>
-Date:   2025-10-11 11:46:48 -0400
+Date:   2025-10-11 11:54:12 -0400
 
 Update noise tools to use K4_GAUDI_CHECK from k4FWCore rather than
 K4RECCALORIMETER_CHECK.
