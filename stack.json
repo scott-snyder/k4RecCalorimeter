@@ -1,12 +1,11 @@
 {
   "version": 5,
-  "prev": "84e6248528998f798aa3dd6474a9ff6696397833",
-  "head": "95e1a816878d4132109e7bb953e2cc5569fe0e2a",
+  "prev": "d3128e5c5c435a43f3a6308c51c50247708468b4",
+  "head": "93a6cd4d202bb34cdc946e688ebb1048a2e382eb",
   "applied": [
     "depr",
     "noiseVec1",
-    "check-deprecated",
-    "refresh-temp"
+    "check-deprecated"
   ],
   "unapplied": [
     "noise-check",
@@ -51,7 +50,7 @@
       "oid": "de4797073815d31a1b341abf45f448cee58de3cb"
     },
     "check-deprecated": {
-      "oid": "aa92fe26b1ab3602c0ba8b4ec5bf250452ee4fb5"
+      "oid": "93a6cd4d202bb34cdc946e688ebb1048a2e382eb"
     },
     "ci": {
       "oid": "563c2e29cdea1255d7add2038ad4d1a4afbe880f"
@@ -97,9 +96,6 @@
     },
     "noiseVec1": {
       "oid": "e894615aaee553d807568565c6016e24901cbbb5"
-    },
-    "refresh-temp": {
-      "oid": "95e1a816878d4132109e7bb953e2cc5569fe0e2a"
     },
     "repnoise": {
       "oid": "b241dcabdc647f38dd58a6f70a65899166ed4680"
