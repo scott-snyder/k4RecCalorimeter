@@ -2,7 +2,7 @@
 
 // k4FWCore
 #include "k4Interface/IGeoSvc.h"
-#include "RecCaloCommon/k4RecCalorimeter_check.h"
+#include "k4FWCore/k4_check.h"
 
 // DD4hep
 #include "DD4hep/Detector.h"
@@ -11,7 +11,7 @@
 DECLARE_COMPONENT(CalibrateInLayersTool)
 
 StatusCode CalibrateInLayersTool::initialize() {
-  K4RECCALORIMETER_CHECK( AlgTool::initialize() );
+  K4_GAUDI_CHECK( AlgTool::initialize() );
   // check if readout exists
   if (m_geoSvc->getDetector()->readouts().find(m_readoutName) == m_geoSvc->getDetector()->readouts().end()) {
     error() << "Readout <<" << m_readoutName << ">> does not exist." << endmsg;
