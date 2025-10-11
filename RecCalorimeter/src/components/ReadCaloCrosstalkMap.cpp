@@ -1,5 +1,5 @@
 #include "ReadCaloCrosstalkMap.h"
-#include "RecCaloCommon/k4RecCalorimeter_check.h"
+#include "k4FWCore/k4_check.h"
 #include "k4Interface/IGeoSvc.h"
 #include "DD4hep/Detector.h"
 
@@ -23,9 +23,9 @@ StatusCode ReadCaloCrosstalkMap::initialize() {
 
   info() << "Loading crosstalk map..." << endmsg;
 
-  K4RECCALORIMETER_CHECK( AlgTool::initialize() );
-  K4RECCALORIMETER_CHECK( m_constantsSvc.retrieve() );
-  K4RECCALORIMETER_CHECK( m_indexerSvc.retrieve() );
+  K4_GAUDI_CHECK( AlgTool::initialize() );
+  K4_GAUDI_CHECK( m_constantsSvc.retrieve() );
+  K4_GUADI_CHECK( m_indexerSvc.retrieve() );
 
   int detID = m_detID;
   if (detID < 0) {
