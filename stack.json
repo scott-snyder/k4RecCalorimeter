@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "fdd30cef163dc8089bf36f949b0c7e6c78142e53",
-  "head": "d2a7abb84ac389b511841e4e984f94cffdbdefaa",
+  "prev": "05121606dab942a2290d9071e477bab4d340443a",
+  "head": "ce4a53e6eaa0307102a6d38ad07608440cedb763",
   "applied": [
     "depr",
     "noiseVec1",
@@ -29,7 +29,8 @@
     "danglewarn",
     "timeout",
     "clang",
-    "danglewarn-fix2"
+    "danglewarn-fix2",
+    "celllinking"
   ],
   "unapplied": [],
   "hidden": [],
@@ -48,6 +49,9 @@
     },
     "cellPositionsConst2": {
       "oid": "ecaa9b12fc67398210cb68b6edfe0d6a7fcc04f0"
+    },
+    "celllinking": {
+      "oid": "ce4a53e6eaa0307102a6d38ad07608440cedb763"
     },
     "check-deprecated": {
       "oid": "7f3e0017000663b3705c41d8d8d7f6b780bf4942"

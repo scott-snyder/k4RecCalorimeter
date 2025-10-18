@@ -1,0 +1,14 @@
+Bottom: 366878280673b4b68064a3641980d25639557dac
+Top:    7e6162c71b07e30e998fbe1e2d859a24b58cf03a
+Author: scott snyder <snyder@bnl.gov>
+Date:   2025-10-17 21:38:14 -0400
+
+Speed up cell<->hit linking.
+
+The cell<->hit linking in CreatePositionedCaloCells was N^2 in the
+number of cells.  When noise was enabled for ALLEGRO, this was thus
+taking an excessive about of time.
+
+Keep a multimap from cellid->hits to speed this up; this changes the
+behavior from N^2 to linear.  For an example ALLEGRO reco digi+reco job
+with noise enabled, this reduces the time from ~18m to ~1m.
