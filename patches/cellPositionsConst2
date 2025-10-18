@@ -1,7 +1,7 @@
 Bottom: 440bcfa214f294cc611475434e05aa3296427bd5
 Top:    917864bc249c14f7e559bc4de52b5b618b55c9c2
 Author: sss <sss@karma>
-Date:   2025-10-08 14:40:51 -0400
+Date:   2025-10-17 21:36:00 -0400
 
 Remove non-const methods of ICellPositionsTool.
 
