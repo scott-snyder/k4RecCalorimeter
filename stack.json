@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "f35c465ae7fba6c51daeea0143475101d9e2a8dd",
-  "head": "15e0b44f9e3699ae841dd87c804def6e2a1914b5",
+  "prev": "3d08e9b388530bc1f18637686bced157ced5cc5e",
+  "head": "2bcadebc2993a456f78873708c6fd6932edb83d7",
   "applied": [
     "depr",
     "noiseVec1",
@@ -25,13 +25,13 @@
     "hcal-tool",
     "hcal-seg",
     "hcal-seg-row",
-    "createCaloCells"
-  ],
-  "unapplied": [
+    "createCaloCells",
     "danglewarn",
     "timeout",
     "clang",
-    "danglewarn-fix2",
+    "danglewarn-fix2"
+  ],
+  "unapplied": [
     "celllinking"
   ],
   "hidden": [],
@@ -64,7 +64,7 @@
       "oid": "f867b18273bece06d0ba9607f1b516259d42398d"
     },
     "clang": {
-      "oid": "f11533627cfc798e9ec83806eb2cf5df177371b0"
+      "oid": "158d2c19026a960d3c3c357aae544fe7642dbf24"
     },
     "cmakewarn": {
       "oid": "72de9bc03c2527bae22ac0cdb208b0c39ed493e1"
@@ -73,13 +73,13 @@
       "oid": "15e0b44f9e3699ae841dd87c804def6e2a1914b5"
     },
     "danglewarn": {
-      "oid": "ddc16c66a40aabdc6e989d127b04d4a53fafe25f"
+      "oid": "94ee7d026b943377ea1d87a5cfc069f0a0a7258a"
     },
     "danglewarn-fix": {
       "oid": "7e5a9e4dd9bffde22c5b572fa568f030f4a28469"
     },
     "danglewarn-fix2": {
-      "oid": "d2a7abb84ac389b511841e4e984f94cffdbdefaa"
+      "oid": "2bcadebc2993a456f78873708c6fd6932edb83d7"
     },
     "depr": {
       "oid": "cd64adaf5c82b4fd9b475321601501245d14ad82"
@@ -112,7 +112,7 @@
       "oid": "f231436bddc9c94a5c68d2e3257f48064db8132d"
     },
     "timeout": {
-      "oid": "bb44e8194bed28018131c17439e23905be8ca1c8"
+      "oid": "b7dab564fff85fd0ec09ad537e7468d928a4ef98"
     },
     "xtalk": {
       "oid": "0b3adbe8240ad38fc80ac161a5c8d1ddf48db3ab"
