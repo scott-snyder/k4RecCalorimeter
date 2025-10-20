@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "3d08e9b388530bc1f18637686bced157ced5cc5e",
-  "head": "2bcadebc2993a456f78873708c6fd6932edb83d7",
+  "prev": "baafb19df3601fb1ea294222124588deb2081366",
+  "head": "766ac35205cd6c64a25bec52fec0de905e5b7c59",
   "applied": [
     "depr",
     "noiseVec1",
@@ -29,11 +29,10 @@
     "danglewarn",
     "timeout",
     "clang",
-    "danglewarn-fix2"
-  ],
-  "unapplied": [
+    "danglewarn-fix2",
     "celllinking"
   ],
+  "unapplied": [],
   "hidden": [],
   "patches": {
     "calib2": {
@@ -52,7 +51,7 @@
       "oid": "592cd5121b5ed27b61de97094187730d085ef323"
     },
     "celllinking": {
-      "oid": "ce4a53e6eaa0307102a6d38ad07608440cedb763"
+      "oid": "766ac35205cd6c64a25bec52fec0de905e5b7c59"
     },
     "check-deprecated": {
       "oid": "783c9c4539d5a35cff523bed5f87be99c0672cc1"
