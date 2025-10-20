@@ -1,7 +1,7 @@
-Bottom: 73de9e45c5779fafe8681e80a7af51e8d7251a72
-Top:    cab2908f0a59cb87d0c60a78bf97afee223ad193
+Bottom: 73d86e865a34866f21b63f3d6417690cf52a84df
+Top:    524e3167f26db8a68901cf7d4bf70edb6b41819a
 Author: sss <sss@karma>
-Date:   2025-10-17 21:36:00 -0400
+Date:   2025-10-20 18:30:11 -0400
 
 Remove non-const methods of ICalorimeterTool
 
