@@ -1,11 +1,12 @@
 {
   "version": 5,
-  "prev": "9ef46e1772ba92f0a93d423f742bd8a3448ef6cd",
-  "head": "a19b9fea63d6fb93f2d860b55ba095a7517c8860",
-  "applied": [],
-  "unapplied": [
+  "prev": "a79863807748a032c16e05412bb1db15b52b48f8",
+  "head": "5760c5246eef4aa57ce74cc055d6fbc88a4d0c83",
+  "applied": [
     "depr",
-    "ci",
+    "ci"
+  ],
+  "unapplied": [
     "check-deprecated",
     "noise-check",
     "check-remove",
