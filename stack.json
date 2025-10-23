@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "4b82686611e92d5169264b856e5c03e3e199aaad",
-  "head": "c8f4078b1dcf73ae82e25be3f18dbf49f6c0ce45",
+  "prev": "acfbd05f140aaddcf260ebb23d4683fb34ca717d",
+  "head": "3dd346eede531229cba22e8e9b1526f303d5911f",
   "applied": [
     "depr",
     "ci",
@@ -10,10 +10,10 @@
     "cellIDs1",
     "xtalkConst2",
     "clang",
-    "cmakewarn",
-    "celllinking"
+    "cmakewarn"
   ],
   "unapplied": [
+    "celllinking",
     "cellPositions",
     "move-check",
     "check-deprecated",
