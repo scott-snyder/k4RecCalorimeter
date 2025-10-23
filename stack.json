@@ -1,13 +1,12 @@
 {
   "version": 5,
-  "prev": "31f6c8d60a381147de474c8312f9ce6ccf293fb1",
-  "head": "2e1452ad4102df444eb8f6c616385a2564c77c1b",
+  "prev": "a9cff1e2fcf569b04420c19775178f565d992e28",
+  "head": "89d4ee6f80556313b6eaff649a6fd0852119809b",
   "applied": [
     "depr",
     "ci",
     "calibVec1",
-    "sortnoise",
-    "refresh-temp"
+    "sortnoise"
   ],
   "unapplied": [
     "cellIDs1",
@@ -95,14 +94,11 @@
     "noise2": {
       "oid": "301164ebb6750a9f32d854397deb9264cf36650f"
     },
-    "refresh-temp": {
-      "oid": "2e1452ad4102df444eb8f6c616385a2564c77c1b"
-    },
     "repnoise": {
       "oid": "863cc68d9149fb6f4908da785493e4944550a899"
     },
     "sortnoise": {
-      "oid": "3a7d62fadaa0328dbf51c02fe09c1abdfed229c6"
+      "oid": "89d4ee6f80556313b6eaff649a6fd0852119809b"
     },
     "testdir": {
       "oid": "bc9d5a3744d71c783fb01b4de27ee50663a47c03"
