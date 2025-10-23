@@ -1,15 +1,14 @@
 {
   "version": 5,
-  "prev": "26853168157fe8d3891fd820aae6913b0b7e151b",
-  "head": "943bcbd5c1b9249222f2dfaeac904dd71af7f309",
+  "prev": "5f5fc34e9059753d7614c26c9316d98405316fa0",
+  "head": "76072c19629ef996735bcf5273a5dd75d0a09426",
   "applied": [
     "depr",
     "ci",
     "calibVec1",
     "sortnoise",
     "cellIDs1",
-    "xtalkConst2",
-    "refresh-temp"
+    "xtalkConst2"
   ],
   "unapplied": [
     "move-check",
@@ -95,9 +94,6 @@
     "noise2": {
       "oid": "301164ebb6750a9f32d854397deb9264cf36650f"
     },
-    "refresh-temp": {
-      "oid": "943bcbd5c1b9249222f2dfaeac904dd71af7f309"
-    },
     "repnoise": {
       "oid": "863cc68d9149fb6f4908da785493e4944550a899"
     },
@@ -114,7 +110,7 @@
       "oid": "a26c38c3df60bcdbe5327ae2aa8e350112a69f79"
     },
     "xtalkConst2": {
-      "oid": "f72541d7007d9cbd3b167587cc7cedea01162264"
+      "oid": "76072c19629ef996735bcf5273a5dd75d0a09426"
     }
   }
 }
