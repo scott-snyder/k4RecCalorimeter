@@ -1,11 +1,12 @@
 {
   "version": 5,
-  "prev": "130bf18a368ec669b81d761bf966e85c0ac78a2d",
-  "head": "ff7c8127c2d6fd610d73f333e4e2ee90955414ea",
+  "prev": "1870bce3ff887e7791f515b8b51d6615776081b5",
+  "head": "3a7d62fadaa0328dbf51c02fe09c1abdfed229c6",
   "applied": [
     "depr",
     "ci",
-    "calibVec1"
+    "calibVec1",
+    "sortnoise"
   ],
   "unapplied": [
     "cellIDs1",
@@ -95,6 +96,9 @@
     },
     "repnoise": {
       "oid": "863cc68d9149fb6f4908da785493e4944550a899"
+    },
+    "sortnoise": {
+      "oid": "3a7d62fadaa0328dbf51c02fe09c1abdfed229c6"
     },
     "testdir": {
       "oid": "bc9d5a3744d71c783fb01b4de27ee50663a47c03"
