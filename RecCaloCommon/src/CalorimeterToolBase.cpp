@@ -7,7 +7,7 @@
 
 #include "RecCaloCommon/CalorimeterToolBase.h"
 #include "k4Interface/IGeoSvc.h"
-#include "k4FWCore/k4_check.h"
+#include "RecCaloCommon/k4RecCalorimeter_check.h"
 #include "DD4hep/Detector.h"
 #include <algorithm>
 
@@ -16,8 +16,8 @@
  */
 StatusCode CalorimeterToolBase::initialize()
 {
-  K4_GAUDI_CHECK( AlgTool::initialize() );
-  K4_GAUDI_CHECK( m_geoSvc.retrieve() );
+  K4RECCALORIMETER_CHECK( AlgTool::initialize() );
+  K4RECCALORIMETER_CHECK( m_geoSvc.retrieve() );
 
   // Look up the readout.
   if (!m_readoutName.empty()) {
