@@ -1,7 +1,7 @@
 Bottom: a945c49904dc7d04b4c7a19a2643251994a166d8
 Top:    447583d2523e6c563d386e1c2a68da9c4bfc7806
 Author: sss <sss@karma>
-Date:   2025-10-22 23:06:34 -0400
+Date:   2025-10-22 23:06:58 -0400
 
-Update noise tools to use K4_GAUDI_CHECK from k4FWCore rather than
+Update tools to use K4_GAUDI_CHECK from k4FWCore rather than
 K4RECCALORIMETER_CHECK.

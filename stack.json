@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "ed76cf91c9edf072f73a8d7d0c707ba8120d6655",
-  "head": "b12ae59ffe9e5fd5b30e727ece289e7d5cc0e60c",
+  "prev": "6d2c39510eaa51719eeea2c11a7cf3498abce509",
+  "head": "abfb22fb336dad14de0f92aa07d0aeb0f7539587",
   "applied": [
     "depr",
     "ci",
@@ -88,7 +88,7 @@
       "oid": "2150bc44e1fc958afdc931adfb0efc66e828d6cd"
     },
     "noise-check": {
-      "oid": "b12ae59ffe9e5fd5b30e727ece289e7d5cc0e60c"
+      "oid": "abfb22fb336dad14de0f92aa07d0aeb0f7539587"
     },
     "noise2": {
       "oid": "301164ebb6750a9f32d854397deb9264cf36650f"
