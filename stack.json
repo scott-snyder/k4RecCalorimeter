@@ -1,16 +1,16 @@
 {
   "version": 5,
-  "prev": "d15f1331ee872642893b1240b989ad6bb39ebabd",
-  "head": "111c1273cfb69666c1dc5f51968e07d619677bac",
+  "prev": "097c4fe77e09af453b32be51e46157ddd492aec0",
+  "head": "ae9a9ae2fb4c60fb5c5a6b868d77b2c206996afc",
   "applied": [
     "depr",
     "ci",
     "calibVec1",
     "sortnoise",
-    "cellIDs1",
-    "move-check"
+    "cellIDs1"
   ],
   "unapplied": [
+    "move-check",
     "check-deprecated",
     "check-remove",
     "cmakewarn",
