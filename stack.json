@@ -1,17 +1,17 @@
 {
   "version": 5,
-  "prev": "1b3bb064384c3277352365f3ef4107f19048075f",
-  "head": "23e2ad27757c5e3a036deabae7d47876918e95dd",
+  "prev": "03fee47d161e520138964ef1bc1820f140f717aa",
+  "head": "76072c19629ef996735bcf5273a5dd75d0a09426",
   "applied": [
     "depr",
     "ci",
     "calibVec1",
     "sortnoise",
     "cellIDs1",
-    "xtalkConst2",
-    "move-check"
+    "xtalkConst2"
   ],
   "unapplied": [
+    "move-check",
     "check-deprecated",
     "check-remove",
     "cmakewarn",
