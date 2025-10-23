@@ -1,14 +1,15 @@
 {
   "version": 5,
-  "prev": "03fee47d161e520138964ef1bc1820f140f717aa",
-  "head": "76072c19629ef996735bcf5273a5dd75d0a09426",
+  "prev": "353c5a4bf31c754e87a648402964693ae4987b47",
+  "head": "ba57b37605cfdd5f9548f7a2c8e56da689b38c60",
   "applied": [
     "depr",
     "ci",
     "calibVec1",
     "sortnoise",
     "cellIDs1",
-    "xtalkConst2"
+    "xtalkConst2",
+    "cellPositions"
   ],
   "unapplied": [
     "move-check",
@@ -21,7 +22,6 @@
     "noise2",
     "calib2",
     "geoConst2",
-    "cellPositions",
     "repnoise",
     "hcal-tool",
     "hcal-seg",
@@ -44,7 +44,7 @@
       "oid": "ae9a9ae2fb4c60fb5c5a6b868d77b2c206996afc"
     },
     "cellPositions": {
-      "oid": "9a6443365441f23fe1b1a12aa239a77a70525ef9"
+      "oid": "ba57b37605cfdd5f9548f7a2c8e56da689b38c60"
     },
     "cellPositionsConst2": {
       "oid": "c5316726189236b01f2438806a5911fcf7efa8c1"
