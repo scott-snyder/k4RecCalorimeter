@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "5fedf600bdb2a3cbf10028883fed81a9c770097f",
-  "head": "b1cd38e8c4354e72e16966faae51fdea855e7a1d",
+  "prev": "4a0f33b847e56213cdada1172cce833d28e5af0b",
+  "head": "3dd346eede531229cba22e8e9b1526f303d5911f",
   "applied": [
     "depr",
     "ci",
@@ -9,14 +9,14 @@
     "sortnoise",
     "cellIDs1",
     "xtalkConst2",
-    "clang"
+    "clang",
+    "cmakewarn"
   ],
   "unapplied": [
     "cellPositions",
     "move-check",
     "check-deprecated",
     "check-remove",
-    "cmakewarn",
     "testdir",
     "xtalk",
     "cellPositionsConst2",
@@ -65,7 +65,7 @@
       "oid": "b1cd38e8c4354e72e16966faae51fdea855e7a1d"
     },
     "cmakewarn": {
-      "oid": "d7a84f01cb26fa03e5ffeff0f6037a2f0b9ad220"
+      "oid": "3dd346eede531229cba22e8e9b1526f303d5911f"
     },
     "createCaloCells": {
       "oid": "1750d425b72367c6599ed7e40a030f2deaf64821"
