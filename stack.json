@@ -1,14 +1,14 @@
 {
   "version": 5,
-  "prev": "d4e987165ec451282ca05678ad1b40e1b78825c1",
-  "head": "3b9cc667eb8166ec713385736849175fc3a2a7ef",
+  "prev": "d43957df20b503519fe645313d962d7586e9e817",
+  "head": "ff7c8127c2d6fd610d73f333e4e2ee90955414ea",
   "applied": [
     "depr",
     "ci",
-    "calibVec1",
-    "move-check"
+    "calibVec1"
   ],
   "unapplied": [
+    "move-check",
     "check-deprecated",
     "check-remove",
     "cmakewarn",
