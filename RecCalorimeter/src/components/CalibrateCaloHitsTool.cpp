@@ -1,10 +1,10 @@
 #include "CalibrateCaloHitsTool.h"
-#include "k4FWCore/k4_check.h"
+#include "RecCaloCommon/k4RecCalorimeter_check.h"
 
 DECLARE_COMPONENT(CalibrateCaloHitsTool)
 
 StatusCode CalibrateCaloHitsTool::initialize() {
-  K4_GAUDI_CHECK( AlgTool::initialize() );
+  K4RECCALORIMETER_CHECK( AlgTool::initialize() );
 
   info() << "Calibration constant: 1/sampling fraction=" << m_invSamplingFraction << endmsg;
   return StatusCode::SUCCESS;
