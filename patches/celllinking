@@ -1,7 +1,7 @@
 Bottom: ab70e6f926697dcc93bef8fa2b0d9e7c71c28ce5
 Top:    d90e549b4acb40931a225dd6efe799fe456c67ae
 Author: scott snyder <snyder@bnl.gov>
-Date:   2025-10-20 18:34:34 -0400
+Date:   2025-10-23 16:04:52 -0400
 
 Speed up cell<->hit linking.
 
@@ -11,4 +11,4 @@ taking an excessive about of time.
 
 Keep a multimap from cellid->hits to speed this up; this changes the
 behavior from N^2 to linear.  For an example ALLEGRO reco digi+reco job
-with noise enabled, this reduces the time from ~18m to ~1m.
+with noise enabled, this reduces the time from ~19m to ~3m.

@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "4a0f33b847e56213cdada1172cce833d28e5af0b",
+  "prev": "3d3ccec7d668e8037074a08ab9e956f7aa999352",
   "head": "3dd346eede531229cba22e8e9b1526f303d5911f",
   "applied": [
     "depr",
@@ -50,7 +50,7 @@
       "oid": "c5316726189236b01f2438806a5911fcf7efa8c1"
     },
     "celllinking": {
-      "oid": "c076a9b431b60aaf88d7bf92daebe5c355ba8c70"
+      "oid": "8d0ebfc1023c80cce1594c87a7743b92cda3ccfe"
     },
     "check-deprecated": {
       "oid": "20f3fc88c371aa361f6bf1891d3081ccbfbc9b42"
