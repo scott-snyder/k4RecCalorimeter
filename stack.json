@@ -1,15 +1,14 @@
 {
   "version": 5,
-  "prev": "e373d70bd7c8db0e47f841d80a62ea6025a4b8ec",
-  "head": "e1093e21245d9db40288482d3574c66d4fb551e3",
+  "prev": "d15f1331ee872642893b1240b989ad6bb39ebabd",
+  "head": "111c1273cfb69666c1dc5f51968e07d619677bac",
   "applied": [
     "depr",
     "ci",
     "calibVec1",
     "sortnoise",
     "cellIDs1",
-    "move-check",
-    "refresh-temp"
+    "move-check"
   ],
   "unapplied": [
     "check-deprecated",
@@ -90,13 +89,10 @@
       "oid": "2150bc44e1fc958afdc931adfb0efc66e828d6cd"
     },
     "move-check": {
-      "oid": "2eb098e2f7a63adc997a5bb84cd9a589bbe25e4e"
+      "oid": "111c1273cfb69666c1dc5f51968e07d619677bac"
     },
     "noise2": {
       "oid": "301164ebb6750a9f32d854397deb9264cf36650f"
-    },
-    "refresh-temp": {
-      "oid": "e1093e21245d9db40288482d3574c66d4fb551e3"
     },
     "repnoise": {
       "oid": "863cc68d9149fb6f4908da785493e4944550a899"
