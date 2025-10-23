@@ -1,15 +1,15 @@
 {
   "version": 5,
-  "prev": "245d633d5b43dcfde6a73a040e0e4d0c958a38b7",
-  "head": "f24fb76c721f722edd3320dd3cea88b671e7e617",
+  "prev": "0d96d9d211602c8a7e1124940b0ed473f38bbb22",
+  "head": "89d4ee6f80556313b6eaff649a6fd0852119809b",
   "applied": [
     "depr",
     "ci",
     "calibVec1",
-    "sortnoise",
-    "cellIDs1"
+    "sortnoise"
   ],
   "unapplied": [
+    "cellIDs1",
     "move-check",
     "check-deprecated",
     "check-remove",
