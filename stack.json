@@ -1,17 +1,17 @@
 {
   "version": 5,
-  "prev": "353c5a4bf31c754e87a648402964693ae4987b47",
-  "head": "ba57b37605cfdd5f9548f7a2c8e56da689b38c60",
+  "prev": "bf9dd077d4dc58a37aab2a57d4bad5c211379f67",
+  "head": "76072c19629ef996735bcf5273a5dd75d0a09426",
   "applied": [
     "depr",
     "ci",
     "calibVec1",
     "sortnoise",
     "cellIDs1",
-    "xtalkConst2",
-    "cellPositions"
+    "xtalkConst2"
   ],
   "unapplied": [
+    "cellPositions",
     "move-check",
     "check-deprecated",
     "check-remove",
