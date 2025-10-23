@@ -1,5 +1,5 @@
 #include "ReadCaloCrosstalkMap.h"
-#include "k4FWCore/k4_check.h"
+#include "RecCaloCommon/k4RecCalorimeter_check.h"
 
 #include "TBranch.h"
 #include "TFile.h"
@@ -21,7 +21,7 @@ StatusCode ReadCaloCrosstalkMap::initialize() {
 
   info() << "Loading crosstalk map..." << endmsg;
 
-  K4_GAUDI_CHECK( AlgTool::initialize() );
+  K4RECCALORIMETER_CHECK( AlgTool::initialize() );
 
   // Check if crosstalk file exists
   if (gSystem->AccessPathName(m_fileName.value().c_str())) {
