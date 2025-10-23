@@ -1,14 +1,15 @@
 {
   "version": 5,
-  "prev": "bf9dd077d4dc58a37aab2a57d4bad5c211379f67",
-  "head": "76072c19629ef996735bcf5273a5dd75d0a09426",
+  "prev": "5fedf600bdb2a3cbf10028883fed81a9c770097f",
+  "head": "b1cd38e8c4354e72e16966faae51fdea855e7a1d",
   "applied": [
     "depr",
     "ci",
     "calibVec1",
     "sortnoise",
     "cellIDs1",
-    "xtalkConst2"
+    "xtalkConst2",
+    "clang"
   ],
   "unapplied": [
     "cellPositions",
@@ -29,7 +30,6 @@
     "createCaloCells",
     "danglewarn",
     "timeout",
-    "clang",
     "celllinking"
   ],
   "hidden": [],
@@ -62,7 +62,7 @@
       "oid": "5760c5246eef4aa57ce74cc055d6fbc88a4d0c83"
     },
     "clang": {
-      "oid": "648ffd8e8c956a1e5d79af1e4d2d8d0382c096d9"
+      "oid": "b1cd38e8c4354e72e16966faae51fdea855e7a1d"
     },
     "cmakewarn": {
       "oid": "d7a84f01cb26fa03e5ffeff0f6037a2f0b9ad220"
