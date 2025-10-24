@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "90a3d15b21ae13afe54034c3e036cc9533bf4c55",
-  "head": "aab6ae8c6914feffab8e9a593f09c76e489a261d",
+  "prev": "3e1f0d31903ebcff9a1f501cda68e62214d456f8",
+  "head": "a6c9236c5f57da153cf6ce76ea6b239624c55acb",
   "applied": [
     "depr",
     "ci",
@@ -22,9 +22,7 @@
     "noise2",
     "calib2",
     "geoConst2",
-    "repnoise"
-  ],
-  "unapplied": [
+    "repnoise",
     "hcal-tool",
     "hcal-seg",
     "hcal-seg-row",
@@ -32,6 +30,7 @@
     "danglewarn",
     "timeout"
   ],
+  "unapplied": [],
   "hidden": [],
   "patches": {
     "calib2": {
@@ -68,10 +67,10 @@
       "oid": "f9c623e53b92cacaff9f88262416123de9e09968"
     },
     "createCaloCells": {
-      "oid": "1750d425b72367c6599ed7e40a030f2deaf64821"
+      "oid": "f721af3c2b3bae367802ae44fb8da2b4f6a6efb7"
     },
     "danglewarn": {
-      "oid": "f16c5a9eece90b51797d86a76b6ad8f5671217d2"
+      "oid": "cce14132b5597751472eac5279e8d35bb37cd3d9"
     },
     "depr": {
       "oid": "cd64adaf5c82b4fd9b475321601501245d14ad82"
@@ -80,13 +79,13 @@
       "oid": "94c2f3278519c2347b258d6f9d4204b4a54e8f65"
     },
     "hcal-seg": {
-      "oid": "17490785b9ca9157fe96f0a0b42715ebbb03b495"
+      "oid": "e0a5d7c7a9f02f058518b3903f329ac522449774"
     },
     "hcal-seg-row": {
-      "oid": "a959783dde50e48497201e0bb6afd42f5b897f63"
+      "oid": "dadd5a6955ddfaedcbc7995b65885694739064cb"
     },
     "hcal-tool": {
-      "oid": "2150bc44e1fc958afdc931adfb0efc66e828d6cd"
+      "oid": "5b33e430e9741aac625ae1afa952f1885355cd93"
     },
     "move-check": {
       "oid": "cba96db89bbed3c97880cc5e0968d663f2bc8102"
@@ -104,7 +103,7 @@
       "oid": "880920d8480c465f7abad35e10e1fa90987463dd"
     },
     "timeout": {
-      "oid": "88534a1eca3412817208750029eadb4c437b23cd"
+      "oid": "a6c9236c5f57da153cf6ce76ea6b239624c55acb"
     },
     "xtalk": {
       "oid": "1d0f73a3ea5fc7c31247339ec405f7e9006c6b1d"
