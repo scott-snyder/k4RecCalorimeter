@@ -1,14 +1,14 @@
 {
   "version": 5,
-  "prev": "0d5eccb69d9e978bd66eb4659f008db88a4c3c80",
-  "head": "d7bcd18adf29256f6e50cebf3e27861a7dca7986",
+  "prev": "c3f75860385b9a12f39ca7077b9e861838a569b9",
+  "head": "dee876c40d182030480c16d4163645d967d5164c",
   "applied": [
     "depr",
     "ci",
-    "calibVec1",
     "sortnoise"
   ],
   "unapplied": [
+    "calibVec1",
     "xtalkConst2",
     "clang",
     "cmakewarn",
@@ -98,7 +98,7 @@
       "oid": "863cc68d9149fb6f4908da785493e4944550a899"
     },
     "sortnoise": {
-      "oid": "d7bcd18adf29256f6e50cebf3e27861a7dca7986"
+      "oid": "dee876c40d182030480c16d4163645d967d5164c"
     },
     "testdir": {
       "oid": "bc9d5a3744d71c783fb01b4de27ee50663a47c03"
