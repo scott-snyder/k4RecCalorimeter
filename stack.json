@@ -1,18 +1,18 @@
 {
   "version": 5,
-  "prev": "aaba0e6afcc8e1a2628fc0523acff8bdee226e9c",
-  "head": "b614e84c90c49434317a39f86d7cfe0e984df82b",
+  "prev": "0d5eccb69d9e978bd66eb4659f008db88a4c3c80",
+  "head": "d7bcd18adf29256f6e50cebf3e27861a7dca7986",
   "applied": [
     "depr",
     "ci",
     "calibVec1",
-    "sortnoise",
+    "sortnoise"
+  ],
+  "unapplied": [
     "xtalkConst2",
     "clang",
     "cmakewarn",
-    "celllinking"
-  ],
-  "unapplied": [
+    "celllinking",
     "cellIDs1",
     "cellPositions",
     "move-check",
