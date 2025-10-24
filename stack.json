@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "10806a19ae9266de0e89eb0ccb4e8f78084b7d17",
-  "head": "14298dccfd8a59774865eeb27a963f691f9ce96c",
+  "prev": "90a3d15b21ae13afe54034c3e036cc9533bf4c55",
+  "head": "aab6ae8c6914feffab8e9a593f09c76e489a261d",
   "applied": [
     "depr",
     "ci",
@@ -22,8 +22,7 @@
     "noise2",
     "calib2",
     "geoConst2",
-    "repnoise",
-    "refresh-temp"
+    "repnoise"
   ],
   "unapplied": [
     "hcal-tool",
@@ -95,11 +94,8 @@
     "noise2": {
       "oid": "8f4125fe8ed121dfb18d8efc756ee71e87394f78"
     },
-    "refresh-temp": {
-      "oid": "14298dccfd8a59774865eeb27a963f691f9ce96c"
-    },
     "repnoise": {
-      "oid": "2aa9696389dd23f2bdc3aff306b5e3123329171d"
+      "oid": "aab6ae8c6914feffab8e9a593f09c76e489a261d"
     },
     "sortnoise": {
       "oid": "dee876c40d182030480c16d4163645d967d5164c"
