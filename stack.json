@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "1fca2dff23a19c8a88b47d49c6aaa3c171ab0150",
-  "head": "253428e52d8e34d0ec9d6ffedb3f53de9d50164f",
+  "prev": "2cf6fd9170110d1d31ebe521bcfeea355b889d0c",
+  "head": "91b2c5e69e05fbe4a3415497f47e91380aba47af",
   "applied": [
     "depr",
     "ci",
@@ -28,8 +28,7 @@
     "hcal-seg-row",
     "createCaloCells",
     "danglewarn",
-    "timeout",
-    "refresh-temp"
+    "timeout"
   ],
   "unapplied": [],
   "hidden": [],
@@ -68,10 +67,10 @@
       "oid": "f9c623e53b92cacaff9f88262416123de9e09968"
     },
     "createCaloCells": {
-      "oid": "f721af3c2b3bae367802ae44fb8da2b4f6a6efb7"
+      "oid": "2c7a68bb6bd56c6fe8837e9a6b6b21281da5d3e9"
     },
     "danglewarn": {
-      "oid": "cce14132b5597751472eac5279e8d35bb37cd3d9"
+      "oid": "6d749566bb8cfc639f7ea03d91822f416d8b9928"
     },
     "depr": {
       "oid": "cd64adaf5c82b4fd9b475321601501245d14ad82"
@@ -94,9 +93,6 @@
     "noise2": {
       "oid": "8f4125fe8ed121dfb18d8efc756ee71e87394f78"
     },
-    "refresh-temp": {
-      "oid": "253428e52d8e34d0ec9d6ffedb3f53de9d50164f"
-    },
     "repnoise": {
       "oid": "aab6ae8c6914feffab8e9a593f09c76e489a261d"
     },
@@ -107,7 +103,7 @@
       "oid": "880920d8480c465f7abad35e10e1fa90987463dd"
     },
     "timeout": {
-      "oid": "a6c9236c5f57da153cf6ce76ea6b239624c55acb"
+      "oid": "91b2c5e69e05fbe4a3415497f47e91380aba47af"
     },
     "xtalk": {
       "oid": "1d0f73a3ea5fc7c31247339ec405f7e9006c6b1d"
