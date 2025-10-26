@@ -166,7 +166,7 @@ StatusCode CreateCaloCells::execute(const EventContext&) const {
   // 6. Copy information to CaloHitCollection
   edm4hep::CalorimeterHitCollection* edmCellsCollection = new edm4hep::CalorimeterHitCollection();
 
-  cells.sort();
+  cellsIndex.sort (cells);
 
   for (size_t icell = 0; icell < cells.size(); ++icell) {
     double energy = cells.energy(icell);
@@ -215,20 +215,15 @@ StatusCode CreateCaloCells::execute(const EventContext&) const {
     // Otherwise, the position will be left set to 0.
   }
 
-  // XXX Avoid N^2!
   // create hits<->cell links
   edm4hep::CaloHitSimCaloHitLinkCollection* edmCellHitLinksCollection = new edm4hep::CaloHitSimCaloHitLinkCollection();
-  for (const auto& cell : *edmCellsCollection) {
-    auto cellID = cell.getCellID();
-    for (const auto& hit : *hits) {
-      auto hitID = hit.getCellID();
-      if (hitID == cellID) {
-        // create Sim<->Reco hit associations
-        auto link = edmCellHitLinksCollection->create();
-        link.setFrom(cell);
-        link.setTo(hit);
-      }
-    }
+  for (const auto& hit : *hits) {
+    auto hitID = hit.getCellID();
+    size_t icell = cellsIndex.index(hitID);
+    // create Sim<->Reco hit associations
+    auto link = edmCellHitLinksCollection->create();
+    link.setFrom((*edmCellsCollection)[icell]);
+    link.setTo(hit);
   }
 
   // push the CaloHitCollection to event store

@@ -69,6 +69,38 @@ private:
   using CellsIndexMap_t = std::unordered_map<uint64_t, size_t>;
   using CellsIndexPair_t = std::pair<size_t, size_t>;  // cell index, hit index
 
+  struct CellsInfo
+  {
+    CellsInfo (size_t capacity)
+    {
+      m_cells.reserve (capacity);
+    }
+
+    size_t size() const
+    {
+      return m_cells.size();
+    }
+
+    size_t add (uint64_t cellID, double energy)
+    {
+      m_cells.emplace_back (cellID, energy);
+      return m_cells.size() - 1;
+    }
+
+    uint64_t cellID (size_t icell) const
+    {
+      return m_cells.at(icell).first;
+    }
+
+    double& energy (size_t icell)
+    {
+      return m_cells.at(icell).second;
+    }
+
+    // cell index, first hit index
+    std::vector<std::pair<uint64_t, double> > m_cells;
+  };
+
   struct CellsFullIndex
   {
     CellsFullIndex (const CellsIndexMap_t& cellsIndexMap)
@@ -96,6 +128,16 @@ private:
     CellsIndexPair_t& index (uint64_t cellid)
     {
       return m_indices.try_emplace (cellid, CellsIndexPair_t{INVALID,INVALID}).first->second;
+    }
+
+    void sort (CellsInfo& cells)
+    {
+      std::ranges::sort (cells.m_cells);
+      size_t ncells = cells.m_cells.size();
+      for (size_t icell = 0; icell < ncells; ++icell) {
+        size_t cellID = cells.m_cells[icell].first;
+        m_indices[cellID].first = icell;
+      }
     }
 
     using CellsIndexPairMap_t = std::unordered_map<uint64_t, CellsIndexPair_t>;
@@ -136,43 +178,14 @@ private:
       return pair (cellid).second;
     }
 
+    void sort (CellsInfo& cells)
+    {
+      if (m_indices.index() == 2) {
+        std::get<2> (m_indices).sort (cells);
+      }
+    }
+
     std::variant<int, CellsFullIndex, CellsSparseIndex> m_indices;
-  };
-
-  struct CellsInfo
-  {
-    CellsInfo (size_t capacity)
-    {
-      m_cells.reserve (capacity);
-    }
-
-    size_t size() const
-    {
-      return m_cells.size();
-    }
-
-    size_t add (uint64_t cellID, double energy)
-    {
-      m_cells.emplace_back (cellID, energy);
-      return m_cells.size() - 1;
-    }
-
-    uint64_t cellID (size_t icell) const
-    {
-      return m_cells.at(icell).first;
-    }
-
-    double& energy (size_t icell)
-    {
-      return m_cells.at(icell).second;
-    }
-
-    void sort()
-    {
-      std::ranges::sort (m_cells);
-    }
-
-    std::vector<std::pair<uint64_t, double> > m_cells;
   };
 
   /// Handle for the calorimeter cells crosstalk tool
