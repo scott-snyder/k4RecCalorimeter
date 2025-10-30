@@ -1,13 +1,12 @@
 {
   "version": 5,
-  "prev": "c58f8ebe5a006b1f0196e5016098a3b15b502e83",
-  "head": "000616646ee4d01b24d4158c11766a5a53219085",
+  "prev": "739e6065d6bbc16a7ef4f6afc94689cf36519e1f",
+  "head": "b190429012595f402591520c909261d07968b7fa",
   "applied": [
     "depr",
     "testdir",
     "noise2",
-    "move-check",
-    "refresh-temp"
+    "move-check"
   ],
   "unapplied": [
     "ci",
@@ -73,13 +72,10 @@
       "oid": "7bea1d0468eb0b66b4252eaab7aa3a09b7682dc6"
     },
     "move-check": {
-      "oid": "1eb6c4c19a99856dc3261aba94ff163b791fe12f"
+      "oid": "b190429012595f402591520c909261d07968b7fa"
     },
     "noise2": {
       "oid": "c77d4712a3be6cd5fb953ee047a15a19060b034e"
-    },
-    "refresh-temp": {
-      "oid": "000616646ee4d01b24d4158c11766a5a53219085"
     },
     "repnoise": {
       "oid": "73273ea03f3d68bd5f7161f1a0a456f9da8ec6ef"
