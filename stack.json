@@ -1,17 +1,17 @@
 {
   "version": 5,
-  "prev": "a50501d5e06dd72e4489d76560b50c24d147ea75",
-  "head": "463a7c87c7bbde704c1d01163bb0b12a80caac88",
+  "prev": "0574f952a1098e5f8b500eabd10f48ca320cff86",
+  "head": "08616529baf9bf791b45635905adf19470db0e97",
   "applied": [
     "depr",
     "testdir",
     "noise2",
     "sortnoise",
     "cellIDs1",
-    "cellPositions"
+    "cellPositions",
+    "move-check"
   ],
   "unapplied": [
-    "move-check",
     "ci",
     "check-deprecated",
     "check-remove",
@@ -72,7 +72,7 @@
       "oid": "7bea1d0468eb0b66b4252eaab7aa3a09b7682dc6"
     },
     "move-check": {
-      "oid": "b190429012595f402591520c909261d07968b7fa"
+      "oid": "08616529baf9bf791b45635905adf19470db0e97"
     },
     "noise2": {
       "oid": "c77d4712a3be6cd5fb953ee047a15a19060b034e"
