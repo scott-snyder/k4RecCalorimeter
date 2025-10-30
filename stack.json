@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "c98f3a7e20b90870e8e06fe2730e260e91e7e204",
-  "head": "4679ba416b0676e1f33e439c1f3119b58e99a2cb",
+  "prev": "a9c42e51eef8716923b6c18c966b1d740e72839e",
+  "head": "93c8880b8aa0e0eb8e9239b7b60e63953da982b1",
   "applied": [
     "depr",
     "testdir",
@@ -9,8 +9,7 @@
     "sortnoise",
     "cellIDs1",
     "cellPositions",
-    "move-check",
-    "refresh-temp"
+    "move-check"
   ],
   "unapplied": [
     "ci",
@@ -73,13 +72,10 @@
       "oid": "7bea1d0468eb0b66b4252eaab7aa3a09b7682dc6"
     },
     "move-check": {
-      "oid": "1a71ee6acacfd3cc50926859f49023d020c12b41"
+      "oid": "93c8880b8aa0e0eb8e9239b7b60e63953da982b1"
     },
     "noise2": {
       "oid": "c77d4712a3be6cd5fb953ee047a15a19060b034e"
-    },
-    "refresh-temp": {
-      "oid": "4679ba416b0676e1f33e439c1f3119b58e99a2cb"
     },
     "repnoise": {
       "oid": "73273ea03f3d68bd5f7161f1a0a456f9da8ec6ef"
