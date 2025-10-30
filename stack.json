@@ -1,10 +1,11 @@
 {
   "version": 5,
-  "prev": "1cb13cc78a100f8aa347f7ce13c5804d33166d42",
-  "head": "adf79c38cb4548285c3f20ea07533c0ff340912a",
+  "prev": "e6d60ae5e1f694259a5c7d6776dc147fec3b3754",
+  "head": "a18fff547547689a30271938a9654a5914394278",
   "applied": [
     "depr",
-    "testdir"
+    "testdir",
+    "noise2"
   ],
   "unapplied": [
     "ci",
@@ -16,7 +17,6 @@
     "check-remove",
     "xtalk",
     "cellPositionsConst2",
-    "noise2",
     "calib2",
     "geoConst2",
     "repnoise",
@@ -75,7 +75,7 @@
       "oid": "29568a2872dbef521037fb75985b7254237f91db"
     },
     "noise2": {
-      "oid": "614da847ad24f1fc34ee74c9ecf5f24ce1fd9e4a"
+      "oid": "a18fff547547689a30271938a9654a5914394278"
     },
     "repnoise": {
       "oid": "73273ea03f3d68bd5f7161f1a0a456f9da8ec6ef"
