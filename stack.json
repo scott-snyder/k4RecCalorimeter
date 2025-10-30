@@ -1,14 +1,14 @@
 {
   "version": 5,
-  "prev": "739e6065d6bbc16a7ef4f6afc94689cf36519e1f",
-  "head": "b190429012595f402591520c909261d07968b7fa",
+  "prev": "18b31808cbce4dc796124f7cf6867b60ced6513d",
+  "head": "c77d4712a3be6cd5fb953ee047a15a19060b034e",
   "applied": [
     "depr",
     "testdir",
-    "noise2",
-    "move-check"
+    "noise2"
   ],
   "unapplied": [
+    "move-check",
     "ci",
     "sortnoise",
     "cellIDs1",
