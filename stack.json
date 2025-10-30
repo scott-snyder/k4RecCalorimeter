@@ -1,18 +1,18 @@
 {
   "version": 5,
-  "prev": "9f7c2013789cbbef7e220c33dd45c0e930a4459d",
-  "head": "bafc20bee500df8c63a79abbc35e88c6b9fe7eeb",
+  "prev": "a50501d5e06dd72e4489d76560b50c24d147ea75",
+  "head": "463a7c87c7bbde704c1d01163bb0b12a80caac88",
   "applied": [
     "depr",
     "testdir",
     "noise2",
     "sortnoise",
-    "cellIDs1"
+    "cellIDs1",
+    "cellPositions"
   ],
   "unapplied": [
     "move-check",
     "ci",
-    "cellPositions",
     "check-deprecated",
     "check-remove",
     "xtalk",
@@ -36,7 +36,7 @@
       "oid": "bafc20bee500df8c63a79abbc35e88c6b9fe7eeb"
     },
     "cellPositions": {
-      "oid": "cf01dd4220c87583b1f6bc182e55b7fa4bd3bf9b"
+      "oid": "463a7c87c7bbde704c1d01163bb0b12a80caac88"
     },
     "cellPositionsConst2": {
       "oid": "03238199b77428fe4379fb50b3f2e4ff0aefe702"
