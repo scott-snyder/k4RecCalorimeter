@@ -1,12 +1,11 @@
 {
   "version": 5,
-  "prev": "a7c82de2c6429985e966fe649164f5fd37d85e25",
-  "head": "72d059903e13d48089907aa0594febb581af7b86",
+  "prev": "c40d47e7d9f7f61574307ffab056a4a8cb825f6c",
+  "head": "c77d4712a3be6cd5fb953ee047a15a19060b034e",
   "applied": [
     "depr",
     "testdir",
-    "noise2",
-    "refresh-temp"
+    "noise2"
   ],
   "unapplied": [
     "ci",
@@ -76,10 +75,7 @@
       "oid": "29568a2872dbef521037fb75985b7254237f91db"
     },
     "noise2": {
-      "oid": "a18fff547547689a30271938a9654a5914394278"
-    },
-    "refresh-temp": {
-      "oid": "72d059903e13d48089907aa0594febb581af7b86"
+      "oid": "c77d4712a3be6cd5fb953ee047a15a19060b034e"
     },
     "repnoise": {
       "oid": "73273ea03f3d68bd5f7161f1a0a456f9da8ec6ef"
