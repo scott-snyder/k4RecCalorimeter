@@ -1,8 +1,9 @@
 {
   "version": 5,
-  "prev": "691db0fc8bd0d2d0d4d8def01f31707ac253578b",
-  "head": "c3de382f56ab74965ff36fda355d234f21f11f70",
-  "applied": [
+  "prev": "297864c52d40c70dbefad44229fa11325f916dc7",
+  "head": "40707812ef9dce2e50514a9577507be94fb6a950",
+  "applied": [],
+  "unapplied": [
     "depr",
     "testdir",
     "noise2",
@@ -25,7 +26,6 @@
     "danglewarn",
     "timeout"
   ],
-  "unapplied": [],
   "hidden": [],
   "patches": {
     "calib2": {
