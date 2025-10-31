@@ -1,14 +1,14 @@
 {
   "version": 5,
-  "prev": "52476fe0324b207a631fc2cd10b74476de64a801",
-  "head": "055826984f4d844e31ff51dfcf085c208b18a425",
+  "prev": "bc37e61691ce4b567c867c414b700cad2a76cdb1",
+  "head": "814fec9a91386b0c1c1360b7014e6d698ad7aea0",
   "applied": [
     "depr",
     "testdir",
-    "noise2",
     "ci"
   ],
   "unapplied": [
+    "noise2",
     "sortnoise",
     "cellIDs1",
     "cellPositions",
@@ -48,7 +48,7 @@
       "oid": "5db078cbc5298676f39b7032365f1d3daa6cd609"
     },
     "ci": {
-      "oid": "055826984f4d844e31ff51dfcf085c208b18a425"
+      "oid": "814fec9a91386b0c1c1360b7014e6d698ad7aea0"
     },
     "createCaloCells": {
       "oid": "81eecc8e6a65afc4beb8b35eea219a80fca33959"
