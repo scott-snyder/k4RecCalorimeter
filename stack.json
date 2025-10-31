@@ -1,15 +1,15 @@
 {
   "version": 5,
-  "prev": "b41990d7aa3c944f4c729cae05e8f46f916e57ed",
-  "head": "d48e4708fac602f1abb7e10a8c5c8f885e408c41",
+  "prev": "f0414fca02c96f8b6ae7a52dd56b12fbd0aed6da",
+  "head": "197114ed2059df5c7fe5bd09c616356f175c7253",
   "applied": [
     "depr",
     "testdir",
     "ci",
-    "sortnoise",
-    "noise2"
+    "sortnoise"
   ],
   "unapplied": [
+    "noise2",
     "cellIDs1",
     "cellPositions",
     "move-check",
