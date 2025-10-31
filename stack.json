@@ -1,16 +1,16 @@
 {
   "version": 5,
-  "prev": "81ed0df8f6ad29ea1eca3b068c49cd50042fbc81",
-  "head": "197114ed2059df5c7fe5bd09c616356f175c7253",
+  "prev": "b41990d7aa3c944f4c729cae05e8f46f916e57ed",
+  "head": "d48e4708fac602f1abb7e10a8c5c8f885e408c41",
   "applied": [
     "depr",
     "testdir",
     "ci",
-    "sortnoise"
+    "sortnoise",
+    "noise2"
   ],
   "unapplied": [
     "cellIDs1",
-    "noise2",
     "cellPositions",
     "move-check",
     "check-deprecated",
@@ -75,7 +75,7 @@
       "oid": "93c8880b8aa0e0eb8e9239b7b60e63953da982b1"
     },
     "noise2": {
-      "oid": "c77d4712a3be6cd5fb953ee047a15a19060b034e"
+      "oid": "d48e4708fac602f1abb7e10a8c5c8f885e408c41"
     },
     "repnoise": {
       "oid": "0e401654f42d47f31c5e695fd29ec4a916e4936a"
