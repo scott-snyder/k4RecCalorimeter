@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "eaac6d4df049af65e217ef7719480f20bfea25fd",
-  "head": "3f210f0e9f92a8179838913f3c8691e9ab0cf119",
+  "prev": "dddb262d539d396d9d67283b36bf7281faafa488",
+  "head": "b01cf708483c8209d391fd6148c7c0c51f7695cb",
   "applied": [
     "depr",
     "testdir",
@@ -18,7 +18,8 @@
     "calib2",
     "geoConst2",
     "repnoise",
-    "hcal-tool"
+    "hcal-tool",
+    "hcal-seg"
   ],
   "unapplied": [],
   "hidden": [],
@@ -49,6 +50,9 @@
     },
     "geoConst2": {
       "oid": "24cde662c165b9ff38c49f32119a59c987713002"
+    },
+    "hcal-seg": {
+      "oid": "b01cf708483c8209d391fd6148c7c0c51f7695cb"
     },
     "hcal-tool": {
       "oid": "3f210f0e9f92a8179838913f3c8691e9ab0cf119"
