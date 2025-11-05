@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "67d70ca80cdb0e426ab078d133223983f57b0186",
-  "head": "16deebfed6e8109f2c72bfdb5ebdad3319e80ebb",
+  "prev": "eaac6d4df049af65e217ef7719480f20bfea25fd",
+  "head": "3f210f0e9f92a8179838913f3c8691e9ab0cf119",
   "applied": [
     "depr",
     "testdir",
@@ -17,7 +17,8 @@
     "cellPositionsConst2",
     "calib2",
     "geoConst2",
-    "repnoise"
+    "repnoise",
+    "hcal-tool"
   ],
   "unapplied": [],
   "hidden": [],
@@ -48,6 +49,9 @@
     },
     "geoConst2": {
       "oid": "24cde662c165b9ff38c49f32119a59c987713002"
+    },
+    "hcal-tool": {
+      "oid": "3f210f0e9f92a8179838913f3c8691e9ab0cf119"
     },
     "move-check": {
       "oid": "fc601d71fd94e34759c523840b5392ed696fe6ce"
