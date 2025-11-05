@@ -1,14 +1,18 @@
 {
   "version": 5,
-  "prev": "fbfe6431b0612b0dfc038f3d91194840041ce79a",
-  "head": "f601d1111e421a1d348ad7d07a85e86a794af1b3",
+  "prev": "0e0edd86b358345e17c1c6d0bfc76977af1d9a29",
+  "head": "e6c7848beedb375bc869c22be4b4de1ecafeb2cf",
   "applied": [
     "depr",
-    "testdir"
+    "testdir",
+    "ci"
   ],
   "unapplied": [],
   "hidden": [],
   "patches": {
+    "ci": {
+      "oid": "e6c7848beedb375bc869c22be4b4de1ecafeb2cf"
+    },
     "depr": {
       "oid": "4188c6f418766e7d7667e88706e19d6cd4259618"
     },
