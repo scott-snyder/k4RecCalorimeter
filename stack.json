@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "ff72bd3d65774a916e5af96295df2e52d2901c48",
-  "head": "f24168ea92797e9e1318c177f5759f31561534f3",
+  "prev": "b2c7e2286e61f668520bf9b3dd43c5633fabc3de",
+  "head": "3cf46a4db276a2c23f76ab8c0fd2945d6b048a60",
   "applied": [
     "depr",
     "testdir",
@@ -12,7 +12,8 @@
     "cellPositions",
     "move-check",
     "check-deprecated",
-    "check-remove"
+    "check-remove",
+    "xtalk"
   ],
   "unapplied": [],
   "hidden": [],
@@ -46,6 +47,9 @@
     },
     "testdir": {
       "oid": "f601d1111e421a1d348ad7d07a85e86a794af1b3"
+    },
+    "xtalk": {
+      "oid": "3cf46a4db276a2c23f76ab8c0fd2945d6b048a60"
     }
   }
 }
