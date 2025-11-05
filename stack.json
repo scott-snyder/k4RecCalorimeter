@@ -1,11 +1,12 @@
 {
   "version": 5,
-  "prev": "0e0edd86b358345e17c1c6d0bfc76977af1d9a29",
-  "head": "e6c7848beedb375bc869c22be4b4de1ecafeb2cf",
+  "prev": "8c211f3db9b5996a39f8963fb95eb6302ff8ed68",
+  "head": "dc77cefcff6f187a91c9a66195df4f0292edf0db",
   "applied": [
     "depr",
     "testdir",
-    "ci"
+    "ci",
+    "sortnoise"
   ],
   "unapplied": [],
   "hidden": [],
@@ -15,6 +16,9 @@
     },
     "depr": {
       "oid": "4188c6f418766e7d7667e88706e19d6cd4259618"
+    },
+    "sortnoise": {
+      "oid": "dc77cefcff6f187a91c9a66195df4f0292edf0db"
     },
     "testdir": {
       "oid": "f601d1111e421a1d348ad7d07a85e86a794af1b3"
