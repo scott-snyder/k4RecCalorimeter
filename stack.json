@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "b2c7e2286e61f668520bf9b3dd43c5633fabc3de",
-  "head": "3cf46a4db276a2c23f76ab8c0fd2945d6b048a60",
+  "prev": "88f92b55a902b5d29cf00ca473f4749ea71e5cd5",
+  "head": "b25b42c790d07c7e54b0d67b723766839fd5dce6",
   "applied": [
     "depr",
     "testdir",
@@ -13,7 +13,8 @@
     "move-check",
     "check-deprecated",
     "check-remove",
-    "xtalk"
+    "xtalk",
+    "cellPositionsConst2"
   ],
   "unapplied": [],
   "hidden": [],
@@ -23,6 +24,9 @@
     },
     "cellPositions": {
       "oid": "4fab91b47046e27d9b185670d5ea0fb6445ae2cb"
+    },
+    "cellPositionsConst2": {
+      "oid": "b25b42c790d07c7e54b0d67b723766839fd5dce6"
     },
     "check-deprecated": {
       "oid": "cfa3d5be05b4190b6ba2afd32b52375e663bbca3"
