@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "88f92b55a902b5d29cf00ca473f4749ea71e5cd5",
-  "head": "b25b42c790d07c7e54b0d67b723766839fd5dce6",
+  "prev": "6180435d869a44d8394a47d7088d1da976dedba9",
+  "head": "3dadd26c5f9b6ae46c50865f5faef2470f1f74fd",
   "applied": [
     "depr",
     "testdir",
@@ -14,11 +14,15 @@
     "check-deprecated",
     "check-remove",
     "xtalk",
-    "cellPositionsConst2"
+    "cellPositionsConst2",
+    "calib2"
   ],
   "unapplied": [],
   "hidden": [],
   "patches": {
+    "calib2": {
+      "oid": "3dadd26c5f9b6ae46c50865f5faef2470f1f74fd"
+    },
     "cellIDs1": {
       "oid": "2c86568779efefd687f7ed8825ab17157894ae4d"
     },
