@@ -1,20 +1,24 @@
 {
   "version": 5,
-  "prev": "9d30690c5fc563d0a058dcefebab611f8ab3157c",
-  "head": "ec84d741e5606fce589d35e3b32430777bac8b01",
+  "prev": "847afa4064eb5631bb4753413888d9f79b75fe7e",
+  "head": "4fab91b47046e27d9b185670d5ea0fb6445ae2cb",
   "applied": [
     "depr",
     "testdir",
     "ci",
     "sortnoise",
     "cellIDs1",
-    "noise2"
+    "noise2",
+    "cellPositions"
   ],
   "unapplied": [],
   "hidden": [],
   "patches": {
     "cellIDs1": {
       "oid": "2c86568779efefd687f7ed8825ab17157894ae4d"
+    },
+    "cellPositions": {
+      "oid": "4fab91b47046e27d9b185670d5ea0fb6445ae2cb"
     },
     "ci": {
       "oid": "e6c7848beedb375bc869c22be4b4de1ecafeb2cf"
