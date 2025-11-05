@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "586b149ceafcd0fe33ccde9f22996fa57699a927",
-  "head": "aa82036e2e26236a221b2f9f24df29a89ee2d1d1",
+  "prev": "e2895168f67775cb46f23156474f75df54bb77ae",
+  "head": "72b0e277023e2a7a3e73459e1d14d62ffe999b83",
   "applied": [
     "depr",
     "testdir",
@@ -22,7 +22,8 @@
     "hcal-seg",
     "hcal-seg-row",
     "createCaloCells",
-    "danglewarn"
+    "danglewarn",
+    "timeout"
   ],
   "unapplied": [],
   "hidden": [],
@@ -83,6 +84,9 @@
     },
     "testdir": {
       "oid": "f601d1111e421a1d348ad7d07a85e86a794af1b3"
+    },
+    "timeout": {
+      "oid": "72b0e277023e2a7a3e73459e1d14d62ffe999b83"
     },
     "xtalk": {
       "oid": "3cf46a4db276a2c23f76ab8c0fd2945d6b048a60"
