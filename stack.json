@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "94bad45ad5fd7b1401e01f4b1cfb3f31c757eaa7",
-  "head": "24cde662c165b9ff38c49f32119a59c987713002",
+  "prev": "67d70ca80cdb0e426ab078d133223983f57b0186",
+  "head": "16deebfed6e8109f2c72bfdb5ebdad3319e80ebb",
   "applied": [
     "depr",
     "testdir",
@@ -16,7 +16,8 @@
     "xtalk",
     "cellPositionsConst2",
     "calib2",
-    "geoConst2"
+    "geoConst2",
+    "repnoise"
   ],
   "unapplied": [],
   "hidden": [],
@@ -53,6 +54,9 @@
     },
     "noise2": {
       "oid": "ec84d741e5606fce589d35e3b32430777bac8b01"
+    },
+    "repnoise": {
+      "oid": "16deebfed6e8109f2c72bfdb5ebdad3319e80ebb"
     },
     "sortnoise": {
       "oid": "dc77cefcff6f187a91c9a66195df4f0292edf0db"
