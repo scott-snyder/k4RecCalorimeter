@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "5235599bc49efefac7b061a1ee7e6a8e67834a87",
-  "head": "917a5e076dbe395ed71338252cb46e402e888589",
+  "prev": "c07c66454b41d6b96f8829e64e39ccd2dd4aafdb",
+  "head": "ee6f0e6398fe75e4df325a957076bc5dc27226c1",
   "applied": [
     "depr",
     "testdir",
@@ -20,11 +20,12 @@
     "hcal-seg-row",
     "createCaloCells",
     "danglewarn",
-    "timeout",
+    "timeout"
+  ],
+  "unapplied": [
     "check-deprecated",
     "check-remove"
   ],
-  "unapplied": [],
   "hidden": [],
   "patches": {
     "calib2": {
