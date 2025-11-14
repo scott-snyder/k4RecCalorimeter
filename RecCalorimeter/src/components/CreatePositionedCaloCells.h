@@ -82,6 +82,10 @@ private:
   Gaudi::Property<bool> m_filterCellNoise{this, "filterCellNoise", false,
                                           "Save only cells with energy above threshold?"};
 
+  Gaudi::Property<float> m_discritMin {this, "discritMin", 0};
+  Gaudi::Property<float> m_discritMax {this, "discritMax", 100};
+  Gaudi::Property<int> m_discritN     {this, "discritN", -1};
+
   /// Handle for calo hits (input collection)
   mutable k4FWCore::DataHandle<edm4hep::SimCalorimeterHitCollection> m_hits{"hits", Gaudi::DataHandle::Reader, this};
   /// Handle for calo cells (output collection)
