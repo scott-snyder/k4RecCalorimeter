@@ -8,6 +8,8 @@ gaudi_add_library(RecCaloCommon
                   SOURCES ${_sources}
                   LINK Gaudi::GaudiKernel
                        EDM4HEP::edm4hep
+                       k4FWCore::k4FWCore
+                       k4FWCore::k4Interface
                        ${FASTJET_LIBRARIES}
 )
 
