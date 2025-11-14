@@ -177,6 +177,25 @@ StatusCode CreatePositionedCaloCells::execute(const EventContext&) const {
     m_noiseTool->addRandomCellNoise(m_cellsMap);
   }
 
+  if (m_discritN >= 0) {
+    auto discrit = [&] (float e) -> float
+      {
+        if (m_discritN == 0) return e;
+        if (e < m_discritMin) return m_discritMin;
+        if (e > m_discritMax) return m_discritMax;
+        float range = m_discritMax - m_discritMin;
+        float x = (e - m_discritMin) / range;
+        return static_cast<int>(x*m_discritN + 0.5) / static_cast<float>(m_discritN) * range + m_discritMin;
+      };
+    std::unordered_map<uint64_t, double> calib = m_cellsMap;
+    for (auto& p : calib) p.second = 1;
+    if (m_doCellCalibration) m_calibTool->calibrate(calib);
+    for (auto& p : m_cellsMap) {
+      float c = calib[p.first];
+      p.second = c * discrit(p.second/c);
+    }
+  }
+
   // 5. Filter cells
   if (m_filterCellNoise) {
     m_noiseTool->filterCellNoise(m_cellsMap);
