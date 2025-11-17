@@ -1,0 +1,10 @@
+Bottom: 7c396ab060c34b7bf0df701a3d43dbcb93fa8ea6
+Top:    0da5b6b5ddae209fb79e6537ca9a06220a2d2350
+Author: sss <sss@karma>
+Date:   2025-04-11 14:54:02 -0400
+
+Remove non-const methods of ICalibrateCaloHitsTool.
+
+Now that the ICalibrateCaloHitsTool interface class
+has been updated, we can remove the non-const methods from its
+derived classes (and add override keywords).
