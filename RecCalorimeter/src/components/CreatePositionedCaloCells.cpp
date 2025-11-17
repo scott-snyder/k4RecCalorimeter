@@ -185,7 +185,7 @@ StatusCode CreatePositionedCaloCells::execute(const EventContext&) const {
         if (e > m_discritMax) return m_discritMax;
         float range = m_discritMax - m_discritMin;
         float x = (e - m_discritMin) / range;
-        return static_cast<int>(x*m_discritN + 0.5) / m_discritN * range + m_discritMin;
+        return static_cast<int>(x*m_discritN + 0.5) / static_cast<float>(m_discritN) * range + m_discritMin;
       };
     std::unordered_map<uint64_t, double> calib = m_cellsMap;
     for (auto& p : calib) p.second = 1;
