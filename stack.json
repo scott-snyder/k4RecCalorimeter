@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "707968aa005a43ee01d61bcb9c30f857a658b0ae",
-  "head": "6d4f19905f3ae5861dbf7c47c8b11fd065aa1a3d",
+  "prev": "b78703a3e9529e783f344e238eae0f0620e44b4e",
+  "head": "fb743bc62a4a80d0bda5e5799ac9dab874574a7b",
   "applied": [
     "discrit-wip",
     "cellPositionsConst2",
@@ -10,7 +10,8 @@
     "geoConst2",
     "cellPositions",
     "hcal-tool",
-    "hcal-seg"
+    "hcal-seg",
+    "hcal-seg-row"
   ],
   "unapplied": [],
   "hidden": [],
@@ -38,6 +39,9 @@
     },
     "hcal-seg": {
       "oid": "6d4f19905f3ae5861dbf7c47c8b11fd065aa1a3d"
+    },
+    "hcal-seg-row": {
+      "oid": "fb743bc62a4a80d0bda5e5799ac9dab874574a7b"
     }
   }
 }
