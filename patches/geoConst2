@@ -1,0 +1,10 @@
+Bottom: abd882bc05d075315cf4e873f87d6f847e9d2521
+Top:    fd21b0bc0913bae1d8ec58852722c9c264379054
+Author: sss <sss@karma>
+Date:   2025-08-13 11:35:50 -0400
+
+Remove non-const methods of ICalorimeterTool
+
+Now that the ICalorimeterTool interface class
+has been updated, we can remove the non-const methods from its
+derived classes (and add override keywords).

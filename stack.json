@@ -1,12 +1,13 @@
 {
   "version": 5,
-  "prev": "0872747ad5e8eb84304637414477b56f1422f764",
-  "head": "4826aa053e7eda236d9f48fce31b231f5c39e791",
+  "prev": "90571a6edceeb363c359fff15a553893feebdab4",
+  "head": "1986820cb38447de4647f3dbc3c8deeabc46b6cd",
   "applied": [
     "discrit-wip",
     "cellPositionsConst2",
     "calib2",
-    "cellIDs1"
+    "cellIDs1",
+    "geoConst2"
   ],
   "unapplied": [],
   "hidden": [],
@@ -22,6 +23,9 @@
     },
     "cellIDs1": {
       "oid": "4826aa053e7eda236d9f48fce31b231f5c39e791"
+    },
+    "geoConst2": {
+      "oid": "1986820cb38447de4647f3dbc3c8deeabc46b6cd"
     }
   }
 }
