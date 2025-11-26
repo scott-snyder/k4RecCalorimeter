@@ -224,6 +224,13 @@ StatusCode CreateCaloCells::initialize() {
     {
       // Use the geoTool to get a collection of all CellIDs.
       m_cellIDs = m_geoTool->cellIDs();
+      {
+        std::string fname = name() + ".cellids";
+        FILE* f = fopen(fname.c_str(), "w");
+        for (size_t id : m_cellIDs)
+          fprintf (f, "%012lx\n", id);
+        fclose (f);
+      }
     }
   }
   if (m_addPosition) {
