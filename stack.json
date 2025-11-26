@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "512967df0a27d87d4db675c5467ed4a272b58223",
-  "head": "a6431da34b872e5596b29e0e66bb480cc6174a9f",
+  "prev": "5e92f8ee011c2e1ea7c5aa7db1bae5c5ef1337a7",
+  "head": "a630c5f577ab008a2d9a321854ea8e54f27dc22a",
   "applied": [
     "discrit-wip",
     "cellPositionsConst2",
@@ -13,7 +13,8 @@
     "hcal-seg",
     "hcal-seg-row",
     "createCaloCells",
-    "nocxx23"
+    "nocxx23",
+    "nodebug"
   ],
   "unapplied": [],
   "hidden": [],
@@ -50,6 +51,9 @@
     },
     "nocxx23": {
       "oid": "a6431da34b872e5596b29e0e66bb480cc6174a9f"
+    },
+    "nodebug": {
+      "oid": "a630c5f577ab008a2d9a321854ea8e54f27dc22a"
     }
   }
 }
