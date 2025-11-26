@@ -193,7 +193,7 @@ private:
 
   /// Handle for the calorimeter cells crosstalk tool
   ToolHandle<ICaloReadCrosstalkMap> m_crosstalksTool
-  {this, "crosstalksTool", "ReadCaloCrosstalkMap", "Handle for the cell crosstalk tool"};
+  {this, "crosstalkTool", "ReadCaloCrosstalkMap", "Handle for the cell crosstalk tool"};
 
   /// Handle for tool to calibrate Geant4 energy to EM scale tool
   mutable ToolHandle<ICalibrateCaloHitsTool> m_calibTool{"CalibrateCaloHitsTool", this};
@@ -202,7 +202,7 @@ private:
   /// Handle for the geometry tool
   ToolHandle<ICalorimeterTool> m_geoTool{"TubeLayerPhiEtaCaloTool", this};
   ToolHandle<ICellPositionsTool> m_cellPos
-    { this, "CellPositionsTool", "", "Cell positions tool.  If defaulted, position based on volume only." };
+    { this, "positionsTool", "", "Cell positions tool.  If defaulted, position based on volume only." };
 
   /// Add crosstalk to cells?
   Gaudi::Property<bool> m_addCrosstalk{this, "addCrosstalk", false, "Add crosstalk effect?"};
