@@ -32,8 +32,8 @@ StatusCode HCalPhiThetaCaloTool::collectCells(std::vector<uint64_t>& cells) cons
   size_t theta_id = decoder.index (seg->fieldNameTheta());
   size_t phi_id = decoder.index (seg->fieldNamePhi());
 
-  int numLayers = std::ranges::fold_left (seg->numLayers(), 0,
-                                          std::plus<int>());
+  int numLayers = 0;
+  for (int n : seg->numLayers()) numLayers += n;
   for (int layer = 0; layer < numLayers; ++layer) {
     const std::vector<int>& thetaBins = seg->thetaBins (layer);
     decoder.set(cID, layer_id, layer);
