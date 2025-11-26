@@ -322,6 +322,26 @@ StatusCode CreateCaloCells::execute(const EventContext&) const {
     m_noiseTool->addRandomCellNoise(cells.m_cells);
   }
 
+  if (m_discritN >= 0) {
+    auto discrit = [&] (float e) -> float
+      {
+        if (m_discritN == 0) return e;
+        if (e < m_discritMin) return m_discritMin;
+        if (e > m_discritMax) return m_discritMax;
+        float range = m_discritMax - m_discritMin;
+        float x = (e - m_discritMin) / range;
+        return static_cast<int>(x*m_discritN + 0.5) / static_cast<float>(m_discritN) * range + m_discritMin;
+      };
+    auto calib = cells.m_cells;
+    for (auto& p : calib) p.second = 1;
+    if (m_doCellCalibration) m_calibTool->calibrate(calib);
+    for (size_t i = 0; i < cells.m_cells.size(); ++i) {
+      float c = calib[i].second;
+      auto&p = cells.m_cells[i];
+      p.second = c * discrit(p.second/c);
+    }
+  }
+
   // 5. Filter cells
   if (m_filterCellNoise) {
     size_t orig_size = cells.size();
