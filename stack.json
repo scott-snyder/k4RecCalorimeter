@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "1d7b132b48668209493acf9101601ba4e49556f0",
-  "head": "5fc926cda4144c9eedbbe056a64993f4fcefc146",
+  "prev": "b7c338dbd828213b762278e932e65f50ed147a3f",
+  "head": "b0f0fd999f7e12b60daf0851578ace996a06a4eb",
   "applied": [
     "discrit-wip",
     "cellPositionsConst2",
@@ -15,8 +15,7 @@
     "createCaloCells",
     "nocxx23",
     "nodebug",
-    "discrit2-wip",
-    "refresh-temp"
+    "discrit2-wip"
   ],
   "unapplied": [],
   "hidden": [],
@@ -58,10 +57,7 @@
       "oid": "f0d645a654ae932de520b745d48f6bf39c2ceb7b"
     },
     "discrit2-wip": {
-      "oid": "56a1ef193f1e86e6a9aaaf63288cac805e056355"
-    },
-    "refresh-temp": {
-      "oid": "5fc926cda4144c9eedbbe056a64993f4fcefc146"
+      "oid": "b0f0fd999f7e12b60daf0851578ace996a06a4eb"
     }
   }
 }
