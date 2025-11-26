@@ -233,6 +233,10 @@ private:
   mutable k4FWCore::DataHandle<edm4hep::CaloHitSimCaloHitLinkCollection> m_links{"", Gaudi::DataHandle::Writer, this};
   /// Name of active volumes
 
+  Gaudi::Property<float> m_discritMin {this, "discritMin", 0};
+  Gaudi::Property<float> m_discritMax {this, "discritMax", 100};
+  Gaudi::Property<int> m_discritN     {this, "discritN", -1};
+
   /// Pointer to the geometry service
   ServiceHandle<IGeoSvc> m_geoSvc;
 
