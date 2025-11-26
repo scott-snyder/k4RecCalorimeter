@@ -57,6 +57,13 @@ StatusCode CreateCaloCells::initialize() {
     {
       // Use the geoTool to get a collection of all CellIDs.
       std::vector<size_t> cellIDs = m_geoTool->cellIDs();
+      {
+        std::string fname = name() + ".cellids";
+        FILE* f = fopen(fname.c_str(), "w");
+        for (size_t id : cellIDs)
+          fprintf (f, "%012lx\n", id);
+        fclose (f);
+      }
 
       // And index them.
       for (size_t i = 0; size_t id : cellIDs)
