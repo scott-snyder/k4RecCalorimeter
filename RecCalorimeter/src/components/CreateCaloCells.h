@@ -245,6 +245,10 @@ private:
                                                   "to to change segmentation (e.g. ID of the "
                                                   "ECal)"};
 
+  Gaudi::Property<float> m_discritMin {this, "discritMin", 0};
+  Gaudi::Property<float> m_discritMax {this, "discritMax", 100};
+  Gaudi::Property<int> m_discritN     {this, "discritN", -1};
+
   /// Pointer to the geometry service
   ServiceHandle<IGeoSvc> m_geoSvc;
 
