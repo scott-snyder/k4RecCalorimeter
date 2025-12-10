@@ -1,5 +1,4 @@
 #include "ReadCaloCrosstalkMap.h"
-#include "RecCaloCommon/k4RecCalorimeter_check.h"
 #include "k4FWCore/k4_check.h"
 
 #include "TBranch.h"
