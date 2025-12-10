@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "f9c2e5b877ef86ffaa4c6399d6f4d0a070436176",
-  "head": "7b8af10124ffef5729316825956b2831c288d03d",
+  "prev": "1b3f1715d352540b4acb9df03033fd58cb9cd43f",
+  "head": "bd48d2e3a77be94d9175ccb53a7ccc00e527b7af",
   "applied": [
     "depr",
     "testdir",
@@ -20,7 +20,8 @@
     "createCaloCells",
     "timeout",
     "check-deprecated",
-    "check-remove"
+    "check-remove",
+    "refresh-temp"
   ],
   "unapplied": [],
   "hidden": [],
@@ -63,6 +64,9 @@
     },
     "move-check": {
       "oid": "1dfff1cd5527bad4da5807444e6d17ee6de9ed4e"
+    },
+    "refresh-temp": {
+      "oid": "bd48d2e3a77be94d9175ccb53a7ccc00e527b7af"
     },
     "repnoise": {
       "oid": "7cb9e3eeb9bed14d80daa9dacafc9082784faa59"
