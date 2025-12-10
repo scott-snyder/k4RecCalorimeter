@@ -1,8 +1,9 @@
 {
   "version": 5,
-  "prev": "c07c66454b41d6b96f8829e64e39ccd2dd4aafdb",
-  "head": "ee6f0e6398fe75e4df325a957076bc5dc27226c1",
-  "applied": [
+  "prev": "9d334589e6f1a264caa29ea976a2921b498e90c7",
+  "head": "28215b6fab2af0a6153550638eb6a72d8d41976a",
+  "applied": [],
+  "unapplied": [
     "depr",
     "testdir",
     "ci",
@@ -20,9 +21,7 @@
     "hcal-seg-row",
     "createCaloCells",
     "danglewarn",
-    "timeout"
-  ],
-  "unapplied": [
+    "timeout",
     "check-deprecated",
     "check-remove"
   ],
