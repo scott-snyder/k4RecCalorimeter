@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "8313d70df25efb34a0713f363ca97b28f312136d",
-  "head": "ac4df1aefd307f9356408a00ac99235f045f40c0",
+  "prev": "b0c4ed9c4911967aecabc3cff8e54dc9ed39922f",
+  "head": "bf5c189f20e3a3dbcd2e45cfb516da51e1ed85ca",
   "applied": [
     "depr",
     "testdir",
@@ -21,8 +21,7 @@
     "timeout",
     "check-deprecated",
     "check-remove",
-    "gcc26",
-    "refresh-temp"
+    "gcc26"
   ],
   "unapplied": [],
   "hidden": [],
@@ -52,7 +51,7 @@
       "oid": "d80418510a9d1a62830e708be03f639a19316c59"
     },
     "gcc26": {
-      "oid": "af3c49202344ef97d1f00e2a98553d6d8d2005fd"
+      "oid": "bf5c189f20e3a3dbcd2e45cfb516da51e1ed85ca"
     },
     "geoConst2": {
       "oid": "cfb9d059269374712d9bc591d9fc8fc5a6777c2d"
@@ -68,9 +67,6 @@
     },
     "move-check": {
       "oid": "10a84b6830447ae5fc6ae605052e87ed1be961d7"
-    },
-    "refresh-temp": {
-      "oid": "ac4df1aefd307f9356408a00ac99235f045f40c0"
     },
     "repnoise": {
       "oid": "917bd4c7432fc2408a253b98bf3c80c5f0ce3e43"
