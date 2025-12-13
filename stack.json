@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "5e1656fa40d9ed462cccb71df019a5fc7334d6f5",
-  "head": "515602bc781191c0cbaf4b5c2e4076304ea2c8b5",
+  "prev": "d27f07de95fb7d17255dc8f532ab2cffc66c1234",
+  "head": "af3c49202344ef97d1f00e2a98553d6d8d2005fd",
   "applied": [
     "depr",
     "testdir",
@@ -20,7 +20,8 @@
     "createCaloCells",
     "timeout",
     "check-deprecated",
-    "check-remove"
+    "check-remove",
+    "gcc26"
   ],
   "unapplied": [],
   "hidden": [],
@@ -48,6 +49,9 @@
     },
     "depr": {
       "oid": "d80418510a9d1a62830e708be03f639a19316c59"
+    },
+    "gcc26": {
+      "oid": "af3c49202344ef97d1f00e2a98553d6d8d2005fd"
     },
     "geoConst2": {
       "oid": "cfb9d059269374712d9bc591d9fc8fc5a6777c2d"
