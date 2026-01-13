@@ -1,10 +1,9 @@
 {
   "version": 5,
-  "prev": "5990494fa0d25cc1bdcbe16768c1d5cea3edb092",
-  "head": "069ee882c73f460fefaf718e4805c1726232f2ed",
+  "prev": "b3a0adddffd94bdd70dd6e0d90514ca2ecad5ebf",
+  "head": "edcfce2f8a5803c9c32ffb2dba1b10decde2db86",
   "applied": [
-    "discrit-wip",
-    "cellPositionsConst3"
+    "discrit-wip"
   ],
   "unapplied": [
     "cellPositionsConst2",
@@ -25,9 +24,6 @@
   "patches": {
     "discrit-wip": {
       "oid": "edcfce2f8a5803c9c32ffb2dba1b10decde2db86"
-    },
-    "cellPositionsConst3": {
-      "oid": "069ee882c73f460fefaf718e4805c1726232f2ed"
     },
     "cellPositionsConst2": {
       "oid": "d5ae3e64022cf4eec62cc96f49087889654eed14"
