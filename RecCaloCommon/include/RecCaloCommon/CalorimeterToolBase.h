@@ -32,32 +32,32 @@ public:
 
   /** Standard Gaudi initialize method.
    */
-  virtual StatusCode initialize();
+  virtual StatusCode initialize() override;
 
   /** Return a vector of all existing cells in the current geometry.
    *
    * The result is sorted and unique.
    * Returns an empty vector on error.
    */
-  virtual const std::vector<uint64_t>& cellIDs() const final;
+  virtual const std::vector<uint64_t>& cellIDs() const final override;
 
   /** Prepare a map of all existing cells in current geometry.
    *   @param[out] aCells map of existing cells (and deposited energy, set to 0)
    *   return Status code.
    */
-  virtual StatusCode prepareEmptyCells(std::unordered_map<uint64_t, double>& aCells) const final;
+  virtual StatusCode prepareEmptyCells(std::unordered_map<uint64_t, double>& aCells) const final override;
 
   /** Return the segmentation associated with this geometry.
    */
-  virtual const dd4hep::DDSegmentation::Segmentation* segmentation() const final;
+  virtual const dd4hep::DDSegmentation::Segmentation* segmentation() const final override;
 
   /** Return the name specified for the readout.
    */
-  virtual const std::string& readoutName() const final;
+  virtual const std::string& readoutName() const final override;
 
   /** Return the subdetector ID.
    */
-  virtual int id() const final;
+  virtual int id() const final override;
 
 
 protected:
