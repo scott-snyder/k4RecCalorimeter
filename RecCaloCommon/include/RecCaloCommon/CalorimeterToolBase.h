@@ -55,7 +55,6 @@ public:
    */
   virtual const std::string& readoutName() const final;
 
-
   /** Return the subdetector ID.
    */
   virtual int id() const final;
