@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "cc13b8b9b163fc4c8f35ff6e6dcf52402543b926",
-  "head": "ea8432af8757ae81578b976134adec8f5604da57",
+  "prev": "1c335e38502261e080cb4d01f4dd7d878e6d96ee",
+  "head": "6dbab51d46292e9ccda28c541ba26b7254af3eb4",
   "applied": [
     "depr",
     "testdir",
@@ -22,7 +22,8 @@
     "check-deprecated",
     "check-remove",
     "cxx26",
-    "caloToolInfo1"
+    "caloToolInfo1",
+    "caloToolInfo3"
   ],
   "unapplied": [],
   "hidden": [],
@@ -32,6 +33,9 @@
     },
     "caloToolInfo1": {
       "oid": "ea8432af8757ae81578b976134adec8f5604da57"
+    },
+    "caloToolInfo3": {
+      "oid": "6dbab51d46292e9ccda28c541ba26b7254af3eb4"
     },
     "cellPositions": {
       "oid": "4d8af8a2734c20f5eb39b0246f792e74f175eda2"
