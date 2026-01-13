@@ -63,7 +63,7 @@ private:
   /// Handle for the calorimeter cells noise tool
   mutable ToolHandle<INoiseCaloCellsTool> m_noiseTool{"NoiseCaloCellsFlatTool", this};
   /// Handle for the geometry tool
-  ToolHandle<ICalorimeterTool> m_geoTool{"TubeLayerPhiEtaCaloTool", this};
+  ToolHandle<ICalorimeterTool> m_geoTool{"", this};
 
   /// Calibrate to EM scale?
   Gaudi::Property<bool> m_doCellCalibration{this, "doCellCalibration", true, "Calibrate to EM scale?"};
