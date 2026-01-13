@@ -1,12 +1,11 @@
 {
   "version": 5,
-  "prev": "b3a0adddffd94bdd70dd6e0d90514ca2ecad5ebf",
+  "prev": "8358a30aefe52b86500e72c75d033985f1045eca",
   "head": "edcfce2f8a5803c9c32ffb2dba1b10decde2db86",
   "applied": [
     "discrit-wip"
   ],
   "unapplied": [
-    "cellPositionsConst2",
     "calib2",
     "geoConst2",
     "cellPositions",
@@ -24,9 +23,6 @@
   "patches": {
     "discrit-wip": {
       "oid": "edcfce2f8a5803c9c32ffb2dba1b10decde2db86"
-    },
-    "cellPositionsConst2": {
-      "oid": "d5ae3e64022cf4eec62cc96f49087889654eed14"
     },
     "calib2": {
       "oid": "28727db7828eaa78b2d389f5c351ea8a465345b4"
