@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "50754d7bfcf417f758b1c35cba235d3871f65fa0",
-  "head": "f3aaa3f2dfd0b0262099e1d5f6d5346af04f87b3",
+  "prev": "ac42c1bd1ccf0732b840fe65265a92236965d69c",
+  "head": "b2efd6a1f626c7f1600014afa3a6d4faa221c9fd",
   "applied": [
     "depr",
     "testdir",
@@ -21,13 +21,17 @@
     "timeout",
     "check-deprecated",
     "check-remove",
-    "cxx26"
+    "cxx26",
+    "caloToolInfo1"
   ],
   "unapplied": [],
   "hidden": [],
   "patches": {
     "calib2": {
       "oid": "dd704024ec039e29082d1eb4efb0be68abc78e3d"
+    },
+    "caloToolInfo1": {
+      "oid": "b2efd6a1f626c7f1600014afa3a6d4faa221c9fd"
     },
     "cellPositions": {
       "oid": "4d8af8a2734c20f5eb39b0246f792e74f175eda2"
