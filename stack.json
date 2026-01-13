@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "b1942d218e281da0c0c321c4808582c38058c97e",
+  "prev": "92148c165fd6ef72a9ee1d15590b5d7478cdc909",
   "head": "3bd6efb24196ae38cb52a5d9e2188cdb9262108b",
   "applied": [
     "discrit-wip",
@@ -11,7 +11,6 @@
     "hcal-tool"
   ],
   "unapplied": [
-    "hcal-seg",
     "hcal-seg-row",
     "createCaloCells",
     "nocxx23",
@@ -39,9 +38,6 @@
     },
     "hcal-tool": {
       "oid": "3bd6efb24196ae38cb52a5d9e2188cdb9262108b"
-    },
-    "hcal-seg": {
-      "oid": "d90d86f21c4aa8caf1fca3ab49ae2869d869e75e"
     },
     "hcal-seg-row": {
       "oid": "0ded290d0f7dcefc1ad91cf10456cde72ffbe69a"
