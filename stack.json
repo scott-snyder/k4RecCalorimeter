@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "bb9d3749b4830fc563ee749de8aed03f8f244482",
-  "head": "6ecbd92fcb3e410d0c03dcf68f6774f07522ae13",
+  "prev": "787a46b16db7ab7f1f154a622ca5a8ad165ed930",
+  "head": "11755013b0759e45ac1d3902048c93eb23dab52a",
   "applied": [
     "depr",
     "testdir",
@@ -24,8 +24,7 @@
     "cxx26",
     "caloToolInfo1",
     "caloToolInfo3",
-    "subdetVolman",
-    "refresh-temp"
+    "subdetVolman"
   ],
   "unapplied": [],
   "hidden": [],
@@ -78,9 +77,6 @@
     "move-check": {
       "oid": "f50ab6d33142759a13ca7d7f8b20bb3b2d2f4a55"
     },
-    "refresh-temp": {
-      "oid": "6ecbd92fcb3e410d0c03dcf68f6774f07522ae13"
-    },
     "repnoise": {
       "oid": "b854cf37da888236da67ddf65003be2c75a4dd26"
     },
@@ -88,7 +84,7 @@
       "oid": "fb1bad0101070e938d2dc783981bb98fac4d7a10"
     },
     "subdetVolman": {
-      "oid": "6e06dfdee4e719c0afe98e8f70d35b07a8074f79"
+      "oid": "11755013b0759e45ac1d3902048c93eb23dab52a"
     },
     "testdir": {
       "oid": "5ce71c6cc3893fe611e69fc3ba0ca7e8f2030fe0"
