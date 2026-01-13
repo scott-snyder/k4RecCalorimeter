@@ -53,11 +53,11 @@ public:
 
   /** Return the name specified for the readout.
    */
-  virtual const std::string& readoutName() const final;
+  virtual const std::string& readoutName() const final override;
 
   /** Return the subdetector ID.
    */
-  virtual int id() const final;
+  virtual int id() const final override;
 
 
 protected:
