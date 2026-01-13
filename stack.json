@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "199e1b393dfc147451cd7ef3e1b24ddcf6922b26",
+  "prev": "b6a64554cb5bfd81027d5462edc84ca078dac2fe",
   "head": "b125f1afbb0c86ab7e8aada1b646cc2ee44c312c",
   "applied": [
     "discrit-wip",
@@ -13,7 +13,6 @@
     "hcal-seg-row"
   ],
   "unapplied": [
-    "createCaloCells",
     "nocxx23",
     "nodebug",
     "discrit2-wip",
@@ -45,9 +44,6 @@
     },
     "hcal-seg-row": {
       "oid": "b125f1afbb0c86ab7e8aada1b646cc2ee44c312c"
-    },
-    "createCaloCells": {
-      "oid": "646cef6f7cd46e859f1627abe5f93e2381e6d424"
     },
     "nocxx23": {
       "oid": "0629675b1b9147d8910fc0e5c86bcc74d6d156d5"
