@@ -66,7 +66,8 @@ StatusCode CreateCaloCells::initialize() {
     }
   }
   if (m_addPosition) {
-    m_volman = m_geoSvc->getDetector()->volumeManager();
+    dd4hep::VolumeManager vman_glob = m_geoSvc->getDetector()->volumeManager();
+    m_volman = vman_glob.subdetector (m_geoTool->id());
   }
 
   if (m_cellPos.isEnabled()) {

@@ -224,8 +224,6 @@ private:
                                                               Gaudi::DataHandle::Writer};
   /// Handle for hit<->cell link (output collection)
   mutable k4FWCore::DataHandle<edm4hep::CaloHitSimCaloHitLinkCollection> m_links{"", Gaudi::DataHandle::Writer, this};
-  /// Name of the detector readout
-  Gaudi::Property<std::string> m_readoutName{this, "readoutName", "ECalBarrelPhiEta", "Name of the detector readout"};
   /// Name of active volumes
   Gaudi::Property<std::string> m_activeVolumeName{this, "activeVolumeName", "_sensitive", "Name of the active volumes"};
   /// Name of active layers for sampling calorimeter
