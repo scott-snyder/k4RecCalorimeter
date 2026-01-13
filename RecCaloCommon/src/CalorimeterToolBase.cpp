@@ -93,6 +93,9 @@ const std::string& CalorimeterToolBase::readoutName() const
  */
 int CalorimeterToolBase::id() const
 {
+  if (!m_readout.isValid()) {
+    return -1;
+  }
   return m_readout.segmentation().detector()->id;
 }
 
