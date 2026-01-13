@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "788cdc3da95055f37b9ec3cb383aefa9d42150ed",
-  "head": "f8a92daa4ec559ef6681f74b71424d5a3220dad7",
+  "prev": "199e1b393dfc147451cd7ef3e1b24ddcf6922b26",
+  "head": "b125f1afbb0c86ab7e8aada1b646cc2ee44c312c",
   "applied": [
     "discrit-wip",
     "cellPositionsConst2",
@@ -9,10 +9,10 @@
     "geoConst2",
     "cellPositions",
     "hcal-tool",
-    "hcal-seg"
+    "hcal-seg",
+    "hcal-seg-row"
   ],
   "unapplied": [
-    "hcal-seg-row",
     "createCaloCells",
     "nocxx23",
     "nodebug",
@@ -44,7 +44,7 @@
       "oid": "f8a92daa4ec559ef6681f74b71424d5a3220dad7"
     },
     "hcal-seg-row": {
-      "oid": "0ded290d0f7dcefc1ad91cf10456cde72ffbe69a"
+      "oid": "b125f1afbb0c86ab7e8aada1b646cc2ee44c312c"
     },
     "createCaloCells": {
       "oid": "646cef6f7cd46e859f1627abe5f93e2381e6d424"
