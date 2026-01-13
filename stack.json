@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "d6bf26508e1fb39ec4d17c55938b39e74a8336e6",
-  "head": "f65e87fc04f48980ed01c789d463bbe42024fd1a",
+  "prev": "fd164556e679422d0ed5c4ff07afe5c7a933bf7a",
+  "head": "7e474a752d23fd676d3330ec4ab9277bde00ed1f",
   "applied": [
     "depr",
     "testdir",
@@ -23,7 +23,8 @@
     "check-remove",
     "cxx26",
     "caloToolInfo1",
-    "caloToolInfo3"
+    "caloToolInfo3",
+    "subdetVolman"
   ],
   "unapplied": [],
   "hidden": [],
@@ -81,6 +82,9 @@
     },
     "sortnoise": {
       "oid": "fb1bad0101070e938d2dc783981bb98fac4d7a10"
+    },
+    "subdetVolman": {
+      "oid": "7e474a752d23fd676d3330ec4ab9277bde00ed1f"
     },
     "testdir": {
       "oid": "5ce71c6cc3893fe611e69fc3ba0ca7e8f2030fe0"
