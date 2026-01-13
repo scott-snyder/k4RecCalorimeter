@@ -66,7 +66,17 @@ StatusCode CreateCaloCellsNoise::initialize() {
     }
   }
   if (m_addPosition) {
-    m_volman = m_geoSvc->getDetector()->volumeManager();
+    if (!m_geoTool.retrieve()) {
+      error() << "Unable to retrieve the geometry tool!!!" << endmsg;
+      return StatusCode::FAILURE;
+    }
+
+    dd4hep::VolumeManager vman_glob = m_geoSvc->getDetector()->volumeManager();
+    int id = m_geoTool->id();
+    if (id >= 0)
+      m_volman = vman_glob.subdetector (id);
+    else
+      m_volman = vman_glob;
   }
   return StatusCode::SUCCESS;
 }
