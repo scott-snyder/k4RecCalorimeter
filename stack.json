@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "6d22926207691809c50c69345f3157a35ad9cb82",
-  "head": "90687e56e6812a9024be130f730a0a207d989e28",
+  "prev": "6afc2274ebdba588bd586ea14bc32970bdc7b414",
+  "head": "366ad7712bf04d187de3f36fb74ca097e7bf841f",
   "applied": [
     "discrit-wip",
     "cellPositionsConst2",
@@ -17,7 +17,8 @@
     "discrit2-wip",
     "propnames",
     "cellids-wip",
-    "caloToolInfo1"
+    "caloToolInfo1",
+    "caloToolInfo3"
   ],
   "unapplied": [],
   "hidden": [],
@@ -66,6 +67,9 @@
     },
     "caloToolInfo1": {
       "oid": "90687e56e6812a9024be130f730a0a207d989e28"
+    },
+    "caloToolInfo3": {
+      "oid": "366ad7712bf04d187de3f36fb74ca097e7bf841f"
     }
   }
 }
