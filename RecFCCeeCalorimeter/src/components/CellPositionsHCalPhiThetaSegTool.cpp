@@ -12,25 +12,35 @@ StatusCode CellPositionsHCalPhiThetaSegTool::initialize() {
   K4_GAUDI_CHECK( AlgTool::initialize() );
   K4_GAUDI_CHECK( m_geoSvc.retrieve() );
 
-  m_volman = m_geoSvc->getDetector()->volumeManager();
+  const dd4hep::Detector* detector = m_geoSvc->getDetector();
+  if (!detector) {
+    error() << "Unable to retrieve the detector." << endmsg;
+    return StatusCode::FAILURE;
+  }
 
   // get the segmentation class type
-  m_segmentationType = m_geoSvc->getDetector()->readout(m_readoutName).segmentation().segmentation()->type();
+  dd4hep::Readout readout = detector->readout(m_readoutName);
+  dd4hep::Segmentation segmentation = readout.segmentation();
+  m_segmentationType = segmentation.segmentation()->type();
+
+  const dd4hep::DetElementObject& de = segmentation.detector();
+  dd4hep::VolumeManager vman_glob = detector->volumeManager();
+  m_volman = vman_glob.subdetector (de.id);
 
   if (m_segmentationType == "FCCSWGridPhiTheta_k4geo") {
     // get GridPhiTheta segmentation
     m_segmentation = dynamic_cast<dd4hep::DDSegmentation::FCCSWGridPhiTheta_k4geo*>(
-        m_geoSvc->getDetector()->readout(m_readoutName).segmentation().segmentation());
+        segmentation.segmentation());
   }
   if (m_segmentationType == "FCCSWHCalPhiTheta_k4geo") {
     // get PhiTheta segmentation
     m_segmentation = dynamic_cast<dd4hep::DDSegmentation::FCCSWHCalPhiTheta_k4geo*>(
-        m_geoSvc->getDetector()->readout(m_readoutName).segmentation().segmentation());
+        segmentation.segmentation());
   }
   if (m_segmentationType == "FCCSWHCalPhiRow_k4geo") {
     // get PhiRow segmentation
     m_segmentation = dynamic_cast<dd4hep::DDSegmentation::FCCSWHCalPhiRow_k4geo*>(
-        m_geoSvc->getDetector()->readout(m_readoutName).segmentation().segmentation());
+        segmentation.segmentation());
   }
 
   if (m_segmentation == nullptr) {
@@ -38,7 +48,7 @@ StatusCode CellPositionsHCalPhiThetaSegTool::initialize() {
     return StatusCode::FAILURE;
   }
   // Take readout bitfield decoder from GeoSvc
-  m_decoder = m_geoSvc->getDetector()->readout(m_readoutName).idSpec().decoder();
+  m_decoder = readout.idSpec().decoder();
 
   // check if decoder contains "layer"
   std::vector<std::string> fields;
@@ -52,12 +62,6 @@ StatusCode CellPositionsHCalPhiThetaSegTool::initialize() {
   }
 
   // retrieve radii from the LayeredCalorimeterData extension
-  const dd4hep::Detector* detector = m_geoSvc->getDetector();
-  if (!detector) {
-    error() << "Unable to retrieve the detector." << endmsg;
-    return StatusCode::FAILURE;
-  }
-
   DetElement caloDetElem = detector->detector(m_detectorName);
   if (!caloDetElem.isValid()) {
     error() << "Unable to retrieve the detector element: " << m_detectorName << endmsg;
