@@ -1,7 +1,7 @@
-Bottom: 558ecfbb619a100cf8c894d1f8b612867a12eb56
-Top:    7c8dfc9951d0f54643c6da77c7c828df78fcd6af
+Bottom: d4f2ada27c7d83206a32256d8d6fd2e122df073a
+Top:    6153336c1eb20149f6ff2bcc6d911bca2fea5828
 Author: sss <sss@karma>
-Date:   2026-01-13 13:50:55 -0500
+Date:   2026-01-13 13:51:39 -0500
 
 Adding a few more methods to ICalorimeterTool.
 

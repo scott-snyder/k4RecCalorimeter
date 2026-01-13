@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "ac23daa7a6427a291bb1ce9ed3445e6754f197f5",
-  "head": "48b899110d74343731cf5edbb6ffc613c9ea54c6",
+  "prev": "91f9c92fb9df02e1891d08579d4bb95820209254",
+  "head": "979ea0fe270d66de518c6aa3ee0dde97733f5ce6",
   "applied": [
     "depr",
     "testdir",
@@ -24,8 +24,7 @@
     "cxx26",
     "caloToolInfo1",
     "caloToolInfo3",
-    "subdetVolman",
-    "refresh-temp"
+    "subdetVolman"
   ],
   "unapplied": [],
   "hidden": [],
@@ -34,10 +33,10 @@
       "oid": "f9902d146897424050099566c7a57e06f8c36f65"
     },
     "caloToolInfo1": {
-      "oid": "fe78ae322fd9b48f627255cd3756987f3ba18ef8"
+      "oid": "3a0fb8a5e77e46184fdefde15c02a9ab7aa27f4a"
     },
     "caloToolInfo3": {
-      "oid": "b359b3ba30e42f298b720a4c9ef8cb7a9862436f"
+      "oid": "ed51120d876ef34df45a1dce818f0ce6e3675e27"
     },
     "cellPositions": {
       "oid": "4d8af8a2734c20f5eb39b0246f792e74f175eda2"
@@ -46,19 +45,19 @@
       "oid": "18c370257c67380622dd8d9a9725523e510966b4"
     },
     "check-deprecated": {
-      "oid": "2532c0990a01d452894bb63dee0939c13ef73a55"
+      "oid": "d07313884992a55c3e841d76ddeeb29df70ddd79"
     },
     "check-remove": {
-      "oid": "d693c76ad0bfbb663d85d598521e72aabcadf501"
+      "oid": "77eef05cc3d9b765a6d622744595f70684d78a06"
     },
     "ci": {
       "oid": "f92d050957cb01004854c80d78226a0240945f7f"
     },
     "createCaloCells": {
-      "oid": "36945ec713b5c7bbb9ae8d7f53432db8f26c0bca"
+      "oid": "6ccdb96498e868c79b13db4adbca7028b96c851e"
     },
     "cxx26": {
-      "oid": "5aa9ba3a64c22d7e80836650fcdbd5ae728f8577"
+      "oid": "de739af0a4c0aace73014c788687029366bdece9"
     },
     "depr": {
       "oid": "d80418510a9d1a62830e708be03f639a19316c59"
@@ -67,19 +66,16 @@
       "oid": "501161641c83f3cd798a78a9de12aecb9482a450"
     },
     "hcal-seg": {
-      "oid": "260af7d66935b134d87f9b57a0b8e079c9964283"
+      "oid": "a717f33b337e8381734ebb577c01317d7cfc45b1"
     },
     "hcal-seg-row": {
-      "oid": "58c009c17e1ce5ce034a39f7b437995e8e9402bc"
+      "oid": "ef2ea7a8a4a46d97afef3bacfe3efc9a92c95d37"
     },
     "hcal-tool": {
       "oid": "1fa11ed1972d6c28b6344c82298136a12922f838"
     },
     "move-check": {
       "oid": "f50ab6d33142759a13ca7d7f8b20bb3b2d2f4a55"
-    },
-    "refresh-temp": {
-      "oid": "48b899110d74343731cf5edbb6ffc613c9ea54c6"
     },
     "repnoise": {
       "oid": "2d1f369e253cdd1026faf6a9a56ddacde65b41d2"
@@ -88,13 +84,13 @@
       "oid": "fb1bad0101070e938d2dc783981bb98fac4d7a10"
     },
     "subdetVolman": {
-      "oid": "d35549a8471226c638f53381605cf9b6d81dce75"
+      "oid": "979ea0fe270d66de518c6aa3ee0dde97733f5ce6"
     },
     "testdir": {
       "oid": "5ce71c6cc3893fe611e69fc3ba0ca7e8f2030fe0"
     },
     "timeout": {
-      "oid": "8b43562afa467d47c68bfe61485947490d6b9e0b"
+      "oid": "277f37a74287a065e17d6316a5a0550c5a641b85"
     },
     "xtalk": {
       "oid": "0f65f759ef54c7df554f91a8d8b06152a63dde51"
