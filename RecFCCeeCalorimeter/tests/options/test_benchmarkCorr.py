@@ -142,10 +142,25 @@ readCrosstalkMap = ReadCaloCrosstalkMap("ReadCrosstalkMap",
                                        fileName="https://fccsw.web.cern.ch/fccsw/filesForSimDigiReco/ALLEGRO/ALLEGRO_o1_v03/xtalk_neighbours_map_ecalB_thetamodulemerged.root",
                                        OutputLevel=INFO)
 
+# Geometry tool
+from Configurables import TubeLayerModuleThetaCaloTool,HCalPhiThetaCaloTool
+ecalBarrelGeometryTool = TubeLayerModuleThetaCaloTool("ecalBarrelGeometryTool",
+                                                      readoutName=ecalBarrelReadoutName,
+                                                      activeVolumeName="LAr_sensitive",
+                                                      activeFieldName="layer",
+                                                      activeVolumesNumber=11,
+                                                      fieldNames=["system"],
+                                                      fieldValues=[IDs["ECAL_Barrel"]],
+                                                      OutputLevel=INFO)
+hcalBarrelGeometryTool = HCalPhiThetaCaloTool("hecalBarrelGeometryTool",
+                                              readoutName=hcalBarrelReadoutName)
+
+
 # Step 1: merge hits into cells according to initial segmentation
 ecalBarrelCellsName = "ECalBarrelCells"
 from Configurables import CreateCaloCells
 createEcalBarrelCells = CreateCaloCells("CreateECalBarrelCells",
+                                        geometryTool=ecalBarrelGeometryTool,
                                         doCellCalibration=True,
                                         calibTool=calibEcalBarrel,
                                         crosstalksTool=readCrosstalkMap,
@@ -213,6 +228,7 @@ if runHCal:
     # 1 - merge hits into cells with the default readout
     hcalBarrelCellsName = "HCalBarrelCells"
     createHcalBarrelCells = CreateCaloCells("CreateHCalBarrelCells",
+                                            geometryTool=hcalBarrelGeometryTool,
                                             doCellCalibration=True,
                                             calibTool=calibHcells,
                                             addCellNoise=False,
