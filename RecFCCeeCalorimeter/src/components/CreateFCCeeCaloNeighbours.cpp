@@ -1569,7 +1569,8 @@ StatusCode CreateFCCeeCaloNeighbours::initialize() {
       // for ECAL barrel with module readout, need to find out phi position of module 0 of ECal barrel last layer
       // get it from volume manager
       // for a normal phi grid it would suffice to use the segmentation phi(cellId) method
-      dd4hep::VolumeManager volman = m_geoSvc->getDetector()->volumeManager();
+      dd4hep::VolumeManager volman_glob = m_geoSvc->getDetector()->volumeManager();
+      dd4hep::VolumeManager volman = volman_glob.subdetector (m_ecalBarrelSysId);
       auto detelement = volman.lookupDetElement(volumeIdECal);
       double inLocal[] = {0, 0, 0};
       const auto outGlobal = detelement.nominal().localToWorld(inLocal);
@@ -1960,7 +1961,8 @@ StatusCode CreateFCCeeCaloNeighbours::initialize_lookups() {
           // for ECAL barrel with module readout, need to find out phi position of module 0 of ECal barrel last layer
           // get it from volume manager
           // for a normal phi grid it would suffice to use the segmentation phi(cellId) method
-          dd4hep::VolumeManager volman = m_geoSvc->getDetector()->volumeManager();
+          dd4hep::VolumeManager volman_glob = m_geoSvc->getDetector()->volumeManager();
+          dd4hep::VolumeManager volman = volman_glob.subdetector (m_ecalBarrelSysId);
 
           auto detelement = volman.lookupDetElement(barrelVolumeId);
           double inLocal[] = {0, 0, 0};
