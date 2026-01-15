@@ -99,10 +99,23 @@ calibEcalEndcap = CalibrateInLayersTool("CalibrateECalEndcap",
                                         readoutName=ecalEndcapReadoutName,
                                         layerFieldName="layer")
 
+# Geometry tool
+from Configurables import TubeLayerModuleThetaCaloTool
+ecalBarrelGeometryTool = TubeLayerModuleThetaCaloTool("ecalBarrelGeometryTool",
+                                                      readoutName=ecalBarrelReadoutName,
+                                                      activeVolumeName="LAr_sensitive",
+                                                      activeFieldName="layer",
+                                                      activeVolumesNumber=ecalBarrelLayers,
+                                                      fieldNames=["system"],
+                                                      fieldValues=[IDs["ECAL_Barrel"]],
+                                                      OutputLevel=INFO)
+
+
 # Step 1: merge hits into cells according to initial segmentation
 ecalBarrelCellsName = "ECalBarrelCells"
 from Configurables import CreateCaloCells
 createEcalBarrelCells = CreateCaloCells("CreateECalBarrelCells",
+                                        geometryTool=ecalBarrelGeometryTool,
                                         doCellCalibration=True,
                                         calibTool=calibEcalBarrel,
                                         crosstalksTool=None,
