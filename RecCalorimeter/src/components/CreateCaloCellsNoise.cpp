@@ -72,7 +72,11 @@ StatusCode CreateCaloCellsNoise::initialize() {
     }
 
     dd4hep::VolumeManager vman_glob = m_geoSvc->getDetector()->volumeManager();
-    m_volman = vman_glob.subdetector (m_geoTool->id());
+    int id = m_geoTool->id();
+    if (id >= 0)
+      m_volman = vman_glob.subdetector (id);
+    else
+      m_volman = vman_glob;
   }
   return StatusCode::SUCCESS;
 }
