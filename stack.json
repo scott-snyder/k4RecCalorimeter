@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "4173136542f76bd8634953548f806bb14abd57ff",
-  "head": "f307c9fa1d7ab014947e0b517401f5df73f359f5",
+  "prev": "54de897d57be31712ab4f0ba9ab578f4772ed1a3",
+  "head": "20e6e3d789d72029c79612058634497de45826be",
   "applied": [
     "discrit-wip",
     "cellPositionsConst2",
@@ -19,7 +19,8 @@
     "cellids-wip",
     "caloToolInfo1",
     "caloToolInfo3",
-    "subdetVolman"
+    "subdetVolman",
+    "idmap"
   ],
   "unapplied": [],
   "hidden": [],
@@ -74,6 +75,9 @@
     },
     "subdetVolman": {
       "oid": "f307c9fa1d7ab014947e0b517401f5df73f359f5"
+    },
+    "idmap": {
+      "oid": "20e6e3d789d72029c79612058634497de45826be"
     }
   }
 }
