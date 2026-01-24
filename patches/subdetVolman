@@ -1,6 +1,0 @@
-Bottom: 85f095fd83b4bd4003c9bb3963fe4f0d66e11ce9
-Top:    e3b9b24ddf798cbbe55dcb036f112f8354b6a20e
-Author: sss <sss@karma>
-Date:   2026-01-13 13:47:09 -0500
-
-Use subdetector-specific VolumeManager to avoid ambiguities.
