@@ -327,7 +327,7 @@ ArrLookup::ArrLookup (mapkey_span ids)
   m_tot_sz = tot_sz;
 
   m_arr.resize (tot_sz+1, INVALID);
-  
+
   for (size_t i = 0; i < ids.size(); ++i)
     m_arr[index(ids[i])] = i;
 }
