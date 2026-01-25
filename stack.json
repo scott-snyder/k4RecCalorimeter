@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "75e001e5b928344ffdfc2a37ef4eae518f1348ad",
-  "head": "9465d46ed7c6956030dcb31a5eec85ddad2d757d",
+  "prev": "065a7f02ec51607f850565b6cedd29632c7d90eb",
+  "head": "f5f27ce3835eb00f3778a63aeaaa11f2ee3d7ea0",
   "applied": [
     "depr",
     "testdir",
@@ -23,8 +23,7 @@
     "caloToolInfo3",
     "subdetVolman",
     "idmap",
-    "caloCellConstantsSvc",
-    "refresh-temp"
+    "caloCellConstantsSvc"
   ],
   "unapplied": [
     "move-check",
@@ -37,7 +36,7 @@
       "oid": "b6e94c0a08ccbbfdd0535f0e777746c6dfe0be94"
     },
     "caloCellConstantsSvc": {
-      "oid": "2e6307a4d5c64bccb932b311aa0b6f3358ce32e8"
+      "oid": "f5f27ce3835eb00f3778a63aeaaa11f2ee3d7ea0"
     },
     "caloToolInfo1": {
       "oid": "0c9a61888488bbbcb7c63863f6272cc4e3f2c821"
@@ -86,9 +85,6 @@
     },
     "move-check": {
       "oid": "f50ab6d33142759a13ca7d7f8b20bb3b2d2f4a55"
-    },
-    "refresh-temp": {
-      "oid": "9465d46ed7c6956030dcb31a5eec85ddad2d757d"
     },
     "repnoise": {
       "oid": "7144737c168139f281c99fd12776d82cec7382d4"
