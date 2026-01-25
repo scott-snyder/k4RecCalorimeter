@@ -1,14 +1,13 @@
 {
   "version": 5,
-  "prev": "831e7f7e80db7777e8283dfc94ff5594c20041ad",
-  "head": "2d9463e14a474ad4c925e37bd40a6b3f65e00279",
+  "prev": "ebe07bf31f169239b80b546aee141cbd94414a16",
+  "head": "55f014a154ae7ae500b0f47f49f432a3b21718ec",
   "applied": [
     "depr",
     "testdir",
     "ci",
     "sortnoise",
     "cellPositions",
-    "move-check",
     "xtalk",
     "cellPositionsConst2",
     "calib2",
@@ -26,25 +25,26 @@
     "idmap"
   ],
   "unapplied": [
+    "move-check",
     "check-deprecated",
     "check-remove"
   ],
   "hidden": [],
   "patches": {
     "calib2": {
-      "oid": "f9902d146897424050099566c7a57e06f8c36f65"
+      "oid": "b6e94c0a08ccbbfdd0535f0e777746c6dfe0be94"
     },
     "caloToolInfo1": {
-      "oid": "7c179062d0424fca35206edadd1bbd8453ac8041"
+      "oid": "0c9a61888488bbbcb7c63863f6272cc4e3f2c821"
     },
     "caloToolInfo3": {
-      "oid": "94ccbb44999de63aaa788a9236313405757453a3"
+      "oid": "aa6164671841d29df736d5742b88ebc35d057634"
     },
     "cellPositions": {
       "oid": "4d8af8a2734c20f5eb39b0246f792e74f175eda2"
     },
     "cellPositionsConst2": {
-      "oid": "18c370257c67380622dd8d9a9725523e510966b4"
+      "oid": "ebed951be47e7ee015048c079141f9123b5ef49b"
     },
     "check-deprecated": {
       "oid": "d07313884992a55c3e841d76ddeeb29df70ddd79"
@@ -56,49 +56,49 @@
       "oid": "f92d050957cb01004854c80d78226a0240945f7f"
     },
     "createCaloCells": {
-      "oid": "6ccdb96498e868c79b13db4adbca7028b96c851e"
+      "oid": "1e4855d01685c7d6d061bf7a29ecbe713fb5564b"
     },
     "cxx26": {
-      "oid": "f7bf43042e83c313d95761832a49790bcb00e7a4"
+      "oid": "469a13c76cc8600844d7ae73e2777df71f8b0f49"
     },
     "depr": {
       "oid": "d80418510a9d1a62830e708be03f639a19316c59"
     },
     "geoConst2": {
-      "oid": "501161641c83f3cd798a78a9de12aecb9482a450"
+      "oid": "6b000825dce276c3cde2a7e702abc9f7dc539952"
     },
     "hcal-seg": {
-      "oid": "a717f33b337e8381734ebb577c01317d7cfc45b1"
+      "oid": "bb3b7360e0ec6d2f58cd7b7a050f9028dd90e98a"
     },
     "hcal-seg-row": {
-      "oid": "ef2ea7a8a4a46d97afef3bacfe3efc9a92c95d37"
+      "oid": "6ce15410158322171282ae7d4383baa1dc7e31e1"
     },
     "hcal-tool": {
-      "oid": "1fa11ed1972d6c28b6344c82298136a12922f838"
+      "oid": "1f1d68ee1a1e7303eff26fd42bf57515ca4ddfa8"
     },
     "idmap": {
-      "oid": "2d9463e14a474ad4c925e37bd40a6b3f65e00279"
+      "oid": "55f014a154ae7ae500b0f47f49f432a3b21718ec"
     },
     "move-check": {
       "oid": "f50ab6d33142759a13ca7d7f8b20bb3b2d2f4a55"
     },
     "repnoise": {
-      "oid": "2d1f369e253cdd1026faf6a9a56ddacde65b41d2"
+      "oid": "7144737c168139f281c99fd12776d82cec7382d4"
     },
     "sortnoise": {
       "oid": "fb1bad0101070e938d2dc783981bb98fac4d7a10"
     },
     "subdetVolman": {
-      "oid": "1ee98dac517d1f6e9438fbc4701426fdada1eabb"
+      "oid": "a2fe32dbf2f5a063a02a2ab57817ac1d1b00cf00"
     },
     "testdir": {
       "oid": "5ce71c6cc3893fe611e69fc3ba0ca7e8f2030fe0"
     },
     "timeout": {
-      "oid": "277f37a74287a065e17d6316a5a0550c5a641b85"
+      "oid": "4158e6401ffdd329edcbe6fc72a80d391ccab24d"
     },
     "xtalk": {
-      "oid": "0f65f759ef54c7df554f91a8d8b06152a63dde51"
+      "oid": "b5ec1f4c730cc30d9af4a6ee5386c3cb577107ac"
     }
   }
 }
