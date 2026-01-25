@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "065a7f02ec51607f850565b6cedd29632c7d90eb",
-  "head": "f5f27ce3835eb00f3778a63aeaaa11f2ee3d7ea0",
+  "prev": "f88488450bf411fe2f8129b1562853473cff7fa6",
+  "head": "55f014a154ae7ae500b0f47f49f432a3b21718ec",
   "applied": [
     "depr",
     "testdir",
@@ -22,10 +22,10 @@
     "caloToolInfo1",
     "caloToolInfo3",
     "subdetVolman",
-    "idmap",
-    "caloCellConstantsSvc"
+    "idmap"
   ],
   "unapplied": [
+    "caloCellConstantsSvc",
     "move-check",
     "check-deprecated",
     "check-remove"
