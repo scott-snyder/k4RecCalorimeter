@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "15dc5ec368efc3b2a1ae6c5b37ffe7ec4b640dda",
-  "head": "313946452c1d28f186db93324410a1598054f954",
+  "prev": "31c1de0e0a2f66d9666a7d7411f97cea901f1827",
+  "head": "797065fd66b00a1f9e3ec7e9663bb8bb24a7d092",
   "applied": [
     "depr",
     "testdir",
@@ -22,10 +22,10 @@
     "caloToolInfo1",
     "caloToolInfo3",
     "subdetVolman",
-    "idmap"
+    "idmap",
+    "caloCellConstantsSvc"
   ],
   "unapplied": [
-    "caloCellConstantsSvc",
     "move-check",
     "check-deprecated",
     "check-remove"
@@ -36,7 +36,7 @@
       "oid": "b6e94c0a08ccbbfdd0535f0e777746c6dfe0be94"
     },
     "caloCellConstantsSvc": {
-      "oid": "f5f27ce3835eb00f3778a63aeaaa11f2ee3d7ea0"
+      "oid": "797065fd66b00a1f9e3ec7e9663bb8bb24a7d092"
     },
     "caloToolInfo1": {
       "oid": "0c9a61888488bbbcb7c63863f6272cc4e3f2c821"
