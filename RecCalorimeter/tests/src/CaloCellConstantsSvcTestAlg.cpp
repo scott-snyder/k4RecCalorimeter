@@ -50,7 +50,7 @@ StatusCode CaloCellConstantsSvcTestAlg::initialize()
   K4RECCALORIMETER_CHECK (!m_svc->putObj ("test", std::move(v2)));
   K4RECCALORIMETER_CHECK ((v3 = m_svc->getObj<payload_t> ("test")));
   K4RECCALORIMETER_CHECK (*v3 == v1);
-  
+
   return StatusCode::SUCCESS;
 }
 
