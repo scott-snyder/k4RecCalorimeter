@@ -34,4 +34,3 @@ include(CTest)
 
 add_test(NAME IDMap_test
   COMMAND IDMap_test.exe)
-
