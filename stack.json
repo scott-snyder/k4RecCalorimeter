@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "31ea5c88c91555a9f4acadc81aa6cf5af5e168f1",
-  "head": "2a06140ebd3c52f91948f6bcf29570262848b4df",
+  "prev": "c48399cae7305b4aec82fe3d35cf94b6b7983d4e",
+  "head": "e853b1569b973402350724e5a9841e62cbf7c402",
   "applied": [
     "depr",
     "testdir",
@@ -24,12 +24,11 @@
     "subdetVolman",
     "idmap",
     "caloCellConstantsSvc",
-    "move-check"
-  ],
-  "unapplied": [
+    "move-check",
     "check-deprecated",
     "check-remove"
   ],
+  "unapplied": [],
   "hidden": [],
   "patches": {
     "calib2": {
@@ -51,10 +50,10 @@
       "oid": "ebed951be47e7ee015048c079141f9123b5ef49b"
     },
     "check-deprecated": {
-      "oid": "d07313884992a55c3e841d76ddeeb29df70ddd79"
+      "oid": "a5453aa8950eaa17e81369e170b49e48e5d9958c"
     },
     "check-remove": {
-      "oid": "77eef05cc3d9b765a6d622744595f70684d78a06"
+      "oid": "e853b1569b973402350724e5a9841e62cbf7c402"
     },
     "ci": {
       "oid": "f92d050957cb01004854c80d78226a0240945f7f"
