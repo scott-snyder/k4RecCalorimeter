@@ -66,7 +66,7 @@ StatusCode ReadCaloCrosstalkMap::initialize() {
 }
 
 std::span<const uint64_t>
-ReadCaloCrosstalkMap::getNeighboursSpan(uint64_t aCellId) const {
+ReadCaloCrosstalkMap::getNeighbours(uint64_t aCellId) const {
   auto it = m_mapNeighbours.find(aCellId);
   if (it != m_mapNeighbours.end()) {
     return it->second;
@@ -75,7 +75,7 @@ ReadCaloCrosstalkMap::getNeighboursSpan(uint64_t aCellId) const {
 }
 
 std::span<const double>
-ReadCaloCrosstalkMap::getCrosstalksSpan(uint64_t aCellId) const {
+ReadCaloCrosstalkMap::getCrosstalks(uint64_t aCellId) const {
   auto it = m_mapCrosstalks.find(aCellId);
   if (it != m_mapCrosstalks.end()) {
     return it->second;
