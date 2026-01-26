@@ -32,13 +32,18 @@ public:
   using base_class::base_class;
   virtual ~ConstNoiseTool() = default;
 
-  virtual StatusCode initialize() override final;
+  virtual StatusCode initialize() final;
 
   /// Find the appropriate noise constant from the histogram
-  virtual double getNoiseRMSPerCell(uint64_t aCellID) const override final;
-  virtual double getNoiseOffsetPerCell(uint64_t aCellID) const override final;
+  virtual double getNoiseRMSPerCell(uint64_t aCellID) const final;
+  virtual double getNoiseOffsetPerCell(uint64_t aCellID) const final;
+  virtual std::pair<double, double>
+  getNoisePerCell(uint64_t aCellID) const final;
 
 private:
+  // rms, offset
+  std::vector<std::pair<double, double> > m_noise;
+
   std::map<uint, double> m_systemNoiseRMSMap;
   std::map<uint, double> m_systemNoiseOffsetMap;
 
@@ -73,6 +78,9 @@ private:
 
   /// Decoder
   std::unique_ptr<dd4hep::DDSegmentation::BitFieldCoder> m_decoder;
+
+  /// Index of system field.
+  size_t m_systemIndex;
 };
 
 #endif /* RECCALORIMETER_CONSTNOISETOOL_H */
