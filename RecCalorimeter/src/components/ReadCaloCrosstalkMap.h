@@ -6,8 +6,11 @@
 
 // k4FWCore
 #include "k4Interface/ICaloReadCrosstalkMap.h"
+#include "k4Interface/ICalorimeterTool.h"
+#include "RecCaloCommon/ICaloCellConstantsSvc.h"
 
 class IGeoSvc;
+class TFile;
 
 /** @class ReadCaloCrosstalkMap Reconstruction/RecCalorimeter/src/components/ReadCaloCrosstalkMap.h
  *TopoCaloNeighbours.h
@@ -30,13 +33,13 @@ public:
    *   @param[in] aCellId, cellid of the cell of interest.
    *   @return vector of cellIDs, corresponding to the crosstalk neighbours.
    */
-  virtual const std::vector<uint64_t>& getNeighbours(uint64_t aCellId) const override final;
+  virtual std::span<const uint64_t> getNeighbours(uint64_t aCellId) const override final;
 
   /** Function to be called for the crosstalk coefficients between the input cell and its neighbouring cells.
    *   @param[in] aCellId, cellid of the cell of interest.
    *   @return vector of crosstalk coefficients.
    */
-  virtual const std::vector<double>& getCrosstalks(uint64_t aCellId) const override final;
+  virtual std::span<const double> getCrosstalks(uint64_t aCellId) const override final;
 
 private:
   /// Name of input root file that contains the TTree with cellID->vec<list_crosstalk_neighboursCellID> and
@@ -45,8 +48,32 @@ private:
                                           "Name of the file that contains the crosstalk map. Leave the default empty "
                                           "to avoid crashes when cross-talk is not needed."};
   /// Output maps to be used for the fast lookup in the creating calo-cells algorithm
-  std::unordered_map<uint64_t, std::vector<uint64_t>> m_mapNeighbours;
-  std::unordered_map<uint64_t, std::vector<double>> m_mapCrosstalks;
+  struct CrosstalkData {
+    std::vector<std::pair<size_t, size_t> > m_neighbourIndices;
+    std::vector<uint64_t> m_neighbours;
+    std::vector<std::pair<size_t, size_t> > m_crosstalkIndices;
+    std::vector<double> m_crosstalks;
+
+    std::span<const uint64_t> getNeighbours (size_t cellNdx) const
+    {
+      const auto& indices = m_neighbourIndices[cellNdx];
+      return std::span<const uint64_t> (m_neighbours.data()+indices.first,
+                                        indices.second);
+    }
+
+    std::span<const double> getCrosstalks (size_t cellNdx) const
+    {
+      const auto& indices = m_crosstalkIndices[cellNdx];
+      return std::span<const double> (m_crosstalks.data()+indices.first,
+                                      indices.second);
+    }
+  };
+  const CrosstalkData* m_data = nullptr;
+  ToolHandle<ICalorimeterTool> m_geoTool{this, "geometryTool", ""};
+  ServiceHandle<k4::recCalo::ICaloCellConstantsSvc> m_constantsSvc
+  { this, "CaloCellConstantsSvc", "k4::recCalo::CaloCellConstantsSvc", "" };
+
+  CrosstalkData readData (TFile& xtalkFile) const;
 };
 
 #endif /* RECCALORIMETER_READCALOXTALKMAP_H */
