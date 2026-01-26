@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "55e63a6baa0cce32f4d3e6f8ef4cc62562ce5633",
-  "head": "ff75b784503ad9dcaf9dcba9a7636174d85aa6df",
+  "prev": "34616c619f5b88e2a3efdaa79f311dd7fb43d9ef",
+  "head": "51aae9f799a9851c63506e914f32e5075467639d",
   "applied": [
     "depr",
     "testdir",
@@ -27,7 +27,8 @@
     "move-check",
     "check-deprecated",
     "check-remove",
-    "layerIndex"
+    "layerIndex",
+    "xtalkSpan1"
   ],
   "unapplied": [],
   "hidden": [],
@@ -106,6 +107,9 @@
     },
     "xtalk": {
       "oid": "b5ec1f4c730cc30d9af4a6ee5386c3cb577107ac"
+    },
+    "xtalkSpan1": {
+      "oid": "51aae9f799a9851c63506e914f32e5075467639d"
     }
   }
 }
