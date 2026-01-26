@@ -6,8 +6,12 @@
 
 // k4FWCore
 #include "k4Interface/INoiseConstTool.h"
+#include "k4Interface/ICalorimeterTool.h"
+#include "RecCaloCommon/ICaloCellConstantsSvc.h"
+#include <utility>
 
 class IGeoSvc;
+class TFile;
 
 /** @class TopoCaloNoisyCells Reconstruction/RecCalorimeter/src/components/TopoCaloNoisyCells.h
  *TopoCaloNoisyCells.h
@@ -50,7 +54,15 @@ private:
   /// Name
   Gaudi::Property<std::string> m_fileName{this, "fileName",
                                           "/afs/cern.ch/user/c/cneubuse/public/FCChh/cellNoise_map_segHcal.root"};
-  std::unordered_map<uint64_t, std::pair<double, double>> m_map;
+  ToolHandle<ICalorimeterTool> m_geoTool{this, "geometryTool", ""};
+  ServiceHandle<k4::recCalo::ICaloCellConstantsSvc> m_constantsSvc
+  { this, "CaloCellConstantsSvc", "k4::recCalo::CaloCellConstantsSvc", "" };
+
+  // rms, offset
+  using NoiseData = std::vector<std::pair<double, double> >;
+  const NoiseData* m_data = nullptr;
+
+  NoiseData readData (TFile& inFile) const;
 };
 
 #endif /* RECCALORIMETER_TOPOCALONOISYCELLS_H */
