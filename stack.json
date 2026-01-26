@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "9dfb9f122fdca7d2d4990da30afff9b49f060d53",
-  "head": "21046280a9b8c91d2befc1b6d74aa9a2379ee3d1",
+  "prev": "4fb1369cb0374715db4b9620dd829dadca2cc87c",
+  "head": "02ea1fbd8142975c9f21c23e64dbeeceb1d35081",
   "applied": [
     "depr",
     "testdir",
@@ -28,8 +28,7 @@
     "check-deprecated",
     "check-remove",
     "layerIndex",
-    "xtalkSpan1",
-    "refresh-temp"
+    "xtalkSpan1"
   ],
   "unapplied": [],
   "hidden": [],
@@ -91,9 +90,6 @@
     "move-check": {
       "oid": "2a06140ebd3c52f91948f6bcf29570262848b4df"
     },
-    "refresh-temp": {
-      "oid": "21046280a9b8c91d2befc1b6d74aa9a2379ee3d1"
-    },
     "repnoise": {
       "oid": "7144737c168139f281c99fd12776d82cec7382d4"
     },
@@ -113,7 +109,7 @@
       "oid": "b5ec1f4c730cc30d9af4a6ee5386c3cb577107ac"
     },
     "xtalkSpan1": {
-      "oid": "51aae9f799a9851c63506e914f32e5075467639d"
+      "oid": "02ea1fbd8142975c9f21c23e64dbeeceb1d35081"
     }
   }
 }
