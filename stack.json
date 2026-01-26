@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "ed02bbbe4e0b509881b91022a2f5327e09b082ec",
-  "head": "88e1d664a6f6472e7452ec2c83a9da4d31e067e8",
+  "prev": "f3a67b39ea6d3b3eef22beca461ec143897e3514",
+  "head": "6fef4eb46f4e8a3208bb86d70392a51cb670881d",
   "applied": [
     "depr",
     "testdir",
@@ -29,7 +29,8 @@
     "check-remove",
     "layerIndex",
     "xtalkSpan1",
-    "xtalkSpan3"
+    "xtalkSpan3",
+    "xtalkSpan5"
   ],
   "unapplied": [],
   "hidden": [],
@@ -114,6 +115,9 @@
     },
     "xtalkSpan3": {
       "oid": "88e1d664a6f6472e7452ec2c83a9da4d31e067e8"
+    },
+    "xtalkSpan5": {
+      "oid": "6fef4eb46f4e8a3208bb86d70392a51cb670881d"
     }
   }
 }
