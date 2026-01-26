@@ -10,28 +10,46 @@ DECLARE_COMPONENT(TopoCaloNoisyCells)
 
 StatusCode TopoCaloNoisyCells::initialize() {
   K4RECCALORIMETER_CHECK( AlgTool::initialize() );
+  K4RECCALORIMETER_CHECK( m_geoTool.retrieve() );
+  K4RECCALORIMETER_CHECK( m_constantsSvc.retrieve() );
 
-  // Check if file exists
-  if (m_fileName.empty()) {
-    error() << "Name of the file with the noisy cells not provided!" << endmsg;
-    return StatusCode::FAILURE;
+  m_data = m_constantsSvc->getObj<NoiseData> (m_fileName);
+  if (!m_data) {
+    // Check if file exists
+    if (m_fileName.empty()) {
+      error() << "Name of the file with the noisy cells not provided!" << endmsg;
+      return StatusCode::FAILURE;
+    }
+    if (gSystem->AccessPathName(m_fileName.value().c_str())) {
+      error() << "Provided file with the noisy cells not found!" << endmsg;
+      error() << "File path: " << m_fileName.value() << endmsg;
+      return StatusCode::FAILURE;
+    }
+    std::unique_ptr<TFile> inFile(TFile::Open(m_fileName.value().c_str(), "READ"));
+    if (inFile->IsZombie()) {
+      error() << "Unable to open the file with the noisy cells!" << endmsg;
+      error() << "File path: " << m_fileName.value() << endmsg;
+      return StatusCode::FAILURE;
+    } else {
+      info() << "Using the following file with the noisy cells: " << m_fileName.value() << endmsg;
+    }
+
+    NoiseData data = readData (*inFile);
+    K4RECCALORIMETER_CHECK( m_constantsSvc->putObj (m_fileName, std::move (data)) );
+    m_data = m_constantsSvc->getObj<NoiseData> (m_fileName);
+    K4RECCALORIMETER_CHECK( m_data != nullptr );
   }
-  if (gSystem->AccessPathName(m_fileName.value().c_str())) {
-    error() << "Provided file with the noisy cells not found!" << endmsg;
-    error() << "File path: " << m_fileName.value() << endmsg;
-    return StatusCode::FAILURE;
-  }
-  std::unique_ptr<TFile> inFile(TFile::Open(m_fileName.value().c_str(), "READ"));
-  if (inFile->IsZombie()) {
-    error() << "Unable to open the file with the noisy cells!" << endmsg;
-    error() << "File path: " << m_fileName.value() << endmsg;
-    return StatusCode::FAILURE;
-  } else {
-    info() << "Using the following file with the noisy cells: " << m_fileName.value() << endmsg;
-  }
+
+  return StatusCode::SUCCESS;
+}
+
+
+auto TopoCaloNoisyCells::readData (TFile& inFile) const -> NoiseData
+{
+  NoiseData data;
 
   TTree* tree = nullptr;
-  inFile->GetObject("noisyCells", tree);
+  inFile.GetObject("noisyCells", tree);
   ULong64_t readCellId;
   double readNoisyCells;
   double readNoisyCellsOffset;
@@ -39,32 +57,41 @@ StatusCode TopoCaloNoisyCells::initialize() {
   tree->SetBranchAddress("noiseLevel",
                          &readNoisyCells); // would be better to call branch noiseRMS rather than noiseLevel
   tree->SetBranchAddress("noiseOffset", &readNoisyCellsOffset);
+
+  const ICalorimeterTool* geoTool = m_geoTool.get();
+  data.resize (geoTool->cellIDs().size());
+
   for (uint i = 0; i < tree->GetEntries(); i++) {
     tree->GetEntry(i);
-    m_map.insert(std::pair<uint64_t, std::pair<double, double>>(readCellId,
-                                                                std::make_pair(readNoisyCells, readNoisyCellsOffset)));
+    unsigned ndx = geoTool->index (readCellId);
+    data.at(ndx) = std::make_pair (readNoisyCells, readNoisyCellsOffset);
   }
   delete tree;
-  inFile->Close();
+  inFile.Close();
 
-  return StatusCode::SUCCESS;
+  return data;
 }
+
 
 double TopoCaloNoisyCells::getNoiseRMSPerCell(uint64_t aCellId) const
 {
-  auto it = m_map.find(aCellId);
-  if (it != m_map.end()) {
-    return it->second.first;
-  }
-  return 0;
+  unsigned ndx = m_geoTool->index (aCellId);
+  return m_data->at(ndx).first;
 }
 
 
 double TopoCaloNoisyCells::getNoiseOffsetPerCell(uint64_t aCellId) const
 {
-  auto it = m_map.find(aCellId);
-  if (it != m_map.end()) {
-    return it->second.second;
-  }
-  return 0;
+  unsigned ndx = m_geoTool->index (aCellId);
+  return m_data->at(ndx).second;
 }
+
+
+std::pair<double, double>
+TopoCaloNoisyCells::getNoisePerCell(uint64_t aCellId) const
+{
+  unsigned ndx = m_geoTool->index (aCellId);
+  return m_data->at(ndx);
+}
+
+
