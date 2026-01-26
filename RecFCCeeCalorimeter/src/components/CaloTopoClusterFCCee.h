@@ -19,6 +19,7 @@
 #include "k4Interface/ICaloReadNeighboursMap.h"
 #include "k4Interface/IGeoSvc.h"
 #include "k4Interface/INoiseConstTool.h"
+#include "k4Interface/ICalorimeterTool.h"
 
 // EDM4HEP
 namespace edm4hep {
@@ -95,7 +96,8 @@ public:
    */
   std::vector<std::pair<uint64_t, uint32_t>> searchForNeighbours(
       const uint64_t aCellId, uint32_t& aClusterID, const int aNumSigma,
-      std::map<uint64_t, const edm4hep::CalorimeterHit>& aCellsMap, std::map<uint64_t, uint32_t>& aClusterOfCell,
+      std::vector<int32_t>& cellsMap,
+      const edm4hep::CalorimeterHitCollection& allCells,
       std::map<uint32_t, edm4hep::CalorimeterHitCollection>& protoClusters, const bool aAllowClusterMerge) const;
 
   StatusCode execute(const EventContext&) const;
@@ -161,5 +163,7 @@ private:
 
   // Utility functions
   inline bool cellIdInColl(const uint64_t cellId, const edm4hep::CalorimeterHitCollection& coll) const;
+
+  ToolHandle<ICalorimeterTool> m_geoTool{this, "geometryTool", ""};
 };
 #endif /* RECFCCEECALORIMETER_CALOTOPOCLUSTERFCCEE_H */
