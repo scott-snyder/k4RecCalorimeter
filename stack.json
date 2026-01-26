@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "698d98c32e36407682640a1e8aefaadf1893a6d6",
-  "head": "37b8396aa54e38571014887911b982b4cf1cea1e",
+  "prev": "d7acd1546577d5ef9994a5d83883433bd937c587",
+  "head": "d17a202f14129578639243cce4ec1726654ea29c",
   "applied": [
     "discrit-wip",
     "cellPositionsConst2",
@@ -22,7 +22,8 @@
     "subdetVolman",
     "idmap",
     "caloCellConstantsSvc",
-    "layerIndex"
+    "layerIndex",
+    "refresh-temp"
   ],
   "unapplied": [],
   "hidden": [],
@@ -86,6 +87,9 @@
     },
     "layerIndex": {
       "oid": "37b8396aa54e38571014887911b982b4cf1cea1e"
+    },
+    "refresh-temp": {
+      "oid": "d17a202f14129578639243cce4ec1726654ea29c"
     }
   }
 }
