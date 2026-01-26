@@ -19,6 +19,7 @@
 #include "RecCaloCommon/ICaloReadNeighboursMap.h"
 #include "k4Interface/IGeoSvc.h"
 #include "RecCaloCommon/INoiseConstTool.h"
+#include "RecCaloCommon/ICaloCellIndexerSvc.h"
 
 // EDM4HEP
 namespace edm4hep {
@@ -59,7 +60,75 @@ public:
   /**
    *
    */
-  StatusCode initialize();
+  virtual StatusCode initialize() override;
+
+  virtual StatusCode execute(const EventContext&) const override;
+
+  virtual StatusCode finalize() override;
+
+private:
+  /**
+   * @brief Map from cell ids to cell state:
+   *          0 = no cell
+   *          > 0: cell index + 1
+   *          < 0: -cluster index - 1
+   *
+   * This is implemented one of two ways.  If there is an ICaloIndexer
+   * available and we're dealing with more than 1% of the total cells,
+   * then we store the states using a std::vector (full representation).
+   * Otherwise, we use a std::unordered_map (sparse representation).
+   */
+  class CellsMap
+  {
+  public:
+    /**
+     * @brief Constructor.
+     * @param allCells All cells being clustered.
+     * @param indexer ICaloIndexer object for the detectors being handled,
+     *                or nullptr if one is not available.
+     */
+    CellsMap (const edm4hep::CalorimeterHitCollection& allCells,
+              const k4::recCalo::ICaloIndexer* indexer);
+
+
+    /**
+     * @brief Look up a cell state given a cell id.
+     * Returns a reference to 0 if the cell wasn't in the input set.
+     * This should not be overwritten!
+     */
+    int32_t& find (uint64_t cellid)
+    {
+      if (m_indexer) {
+        unsigned ndx = m_indexer->index (cellid);
+        // Neighbour tool may return invalid cells...
+        if (ndx == k4::recCalo::ICaloIndexer::INVALID)
+          return m_zero;
+        return m_cellVec.at(ndx);
+      }
+      else {
+        auto it = m_cellMap.find (cellid);
+        if (it == m_cellMap.end()) {
+          return m_zero;
+        }
+        return it->second;
+      }
+    }
+
+    /// Map of cellid->state used in the sparse representation.
+    std::unordered_map<uint64_t, int32_t> m_cellMap;
+
+    /// Dummy.  In the sparse representation, we return a reference to this
+    /// for cells that are not present.
+    int32_t m_zero = 0;
+
+    /// Indexer object.  If this is non-null, we're using the full
+    /// representation.
+    const k4::recCalo::ICaloIndexer* m_indexer = nullptr;
+
+    /// Vector of cell states for the full representation.
+    std::vector<int32_t> m_cellVec;
+  };
+
 
   /**  Find cells with a signal to noise ratio > m_seedSigma.
    *   @param[in] allCells, the map of all cells.
@@ -73,36 +142,36 @@ public:
    * and loop over to find neighbours. The iteration of search for neighbours is continued until no more neihgbours are
    * found. Then a last round of adding neighbouring cells to the cluster is run where the parameter lastNeighbourSigma
    * is applied.
+   *   @param[in] indexer, ICaloIndexer object for the set of detectors
+   *                       being processed, or nullptr.
    *   @param[in] seedCells, collection of seeding cells.
    *   @param[in] allCells, collection of all cells.
    *   @param[in] protoClusters, map that is filled with clusterID pointing to the associated cells, in a pair of
    * clsuter index and cell collection
    */
-  StatusCode buildProtoClusters(const edm4hep::CalorimeterHitCollection& seedCells,
+  StatusCode buildProtoClusters(const k4::recCalo::ICaloIndexer* indexer,
+                                const edm4hep::CalorimeterHitCollection& seedCells,
                                 const edm4hep::CalorimeterHitCollection* allCells,
                                 std::map<uint32_t, edm4hep::CalorimeterHitCollection>& protoClusters) const;
+
   /** Search for neighbours and add them to preClusterCollection
    * The
    *   @param[in] aCellId, the cell ID for which to find the neighbours.
    *   @param[in] aClusterID, the current cluster ID.
    *   @param[in] aNumSigma, the signal/noise ratio to be exceeded by the neighbouring cell to be added to cluster.
-   *   @param[in] aCellsMap, map of all cells (CellID, cell pointer).
-   *   @param[in] aClusterOfCell, map of cellID to clusterID.
+   *   @param[in] cellsMap, map of all cells
    *   @param[in] protoClusters, map that is filled with clusterID pointing to the associated cells, in a pair of
    * cluster index and cell collection.
+   *   @param[in] allCells Collection of all cells.
    *   @param[in] allowClusterMerge, bool to allow for clusters to be merged, set to false in case of last iteration in
    * CaloTopoClusterFCCee::buildingProtoCluster. return vector of pairs with cellID and energy of found neighbours.
    */
   std::vector<std::pair<uint64_t, uint32_t>> searchForNeighbours(
       const uint64_t aCellId, uint32_t& aClusterID, const int aNumSigma,
-      std::map<uint64_t, const edm4hep::CalorimeterHit>& aCellsMap, std::map<uint64_t, uint32_t>& aClusterOfCell,
+      CellsMap& cellsMap,
+      const edm4hep::CalorimeterHitCollection& allCells,
       std::map<uint32_t, edm4hep::CalorimeterHitCollection>& protoClusters, const bool aAllowClusterMerge) const;
 
-  StatusCode execute(const EventContext&) const;
-
-  StatusCode finalize();
-
-private:
   /// List of input cell collections
   Gaudi::Property<std::vector<std::string>> m_cellCollections{
       this, "cells", {}, "Names of CalorimeterHit collections to read"};
@@ -161,5 +230,10 @@ private:
 
   // Utility functions
   inline bool cellIdInColl(const uint64_t cellId, const edm4hep::CalorimeterHitCollection& coll) const;
+
+  /// xxx fixme
+  Gaudi::Property<int> m_detID { this, "DetID", 4 };
+  ServiceHandle<k4::recCalo::ICaloCellIndexerSvc> m_indexerSvc
+  { this, "CaloCellIndexerSvc", "k4::recCalo::CaloCellIndexerSvc", "" };
 };
 #endif /* RECFCCEECALORIMETER_CALOTOPOCLUSTERFCCEE_H */
