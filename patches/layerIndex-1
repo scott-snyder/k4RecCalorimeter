@@ -1,0 +1,10 @@
+Bottom: b72160388140e992e58a20b94a5d798337e18c93
+Top:    093ee2c3eba7b4a67dc4d4fedd1342b6598c75a6
+Author: scott snyder <snyder@bnl.gov>
+Date:   2026-01-26 12:35:38 -0500
+
+Cache layer index in CalibrateInLayersTool
+
+In CalibrateInLayersTool, cache the index of the layer identifier field
+rather than doing a string lookup each time.  Speeds up calorimeter
+reconstruction a bit.
