@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "0af9de502ec4a071ab468713aaa8b15a74c00981",
+  "prev": "2d399b65f685619fa48fd6f9cdd5743751e51c24",
   "head": "e094c866551f62b7a6b5376f69f17c10156bc9bc",
   "applied": [
     "discrit-wip",
@@ -25,9 +25,7 @@
     "xtalkIndex-wip",
     "layerIndex-1"
   ],
-  "unapplied": [
-    "layerIndex"
-  ],
+  "unapplied": [],
   "hidden": [],
   "patches": {
     "discrit-wip": {
@@ -92,9 +90,6 @@
     },
     "layerIndex-1": {
       "oid": "e094c866551f62b7a6b5376f69f17c10156bc9bc"
-    },
-    "layerIndex": {
-      "oid": "e57f8173974f2df0c4a0d88871e8eb63e5ab8df9"
     }
   }
 }
