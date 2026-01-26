@@ -1,0 +1,14 @@
+Bottom: 389cf2feebe3de225fdf7d9b493c682c395803e0
+Top:    bc119585cf15f9239cebf5a67728b813194b1306
+Author: sss <sss@karma>
+Date:   2026-01-26 14:14:23 -0500
+
+Migrating ReadCaloCrosstalkMap to return spans.
+
+It would be better for the methods of ReadCaloCrosstalkMap to return
+spans rather than references to vectors.  That then gives implementations
+the freedom to store the data in a different way (for example, flattening
+the nested vectors).
+
+This is the first step towards that, adding new methods to
+ReadCaloCrosstalkMap that return spans.
