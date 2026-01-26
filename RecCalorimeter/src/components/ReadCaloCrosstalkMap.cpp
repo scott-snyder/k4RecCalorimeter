@@ -13,8 +13,8 @@ StatusCode ReadCaloCrosstalkMap::initialize() {
   // otherwise things will crash if m_fileName is not available
   // not a perfect solution but tools seems to not be meant to be optional
   if (m_fileName == "") {
-    debug() << "Empty 'fileName' provided, it means cross-talk map is not needed, exitting ReadCaloCrosstalkMap "
-               "initilization"
+    debug() << "Empty 'fileName' provided, it means cross-talk map is not needed, exiting ReadCaloCrosstalkMap "
+               "initialization"
             << endmsg;
     return StatusCode::SUCCESS;
   }

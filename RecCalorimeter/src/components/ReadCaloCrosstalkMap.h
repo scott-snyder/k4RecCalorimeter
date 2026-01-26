@@ -68,11 +68,11 @@ private:
                                       indices.second);
     }
   };
-  const CrosstalkData* m_data = nullptr;
   ToolHandle<ICalorimeterTool> m_geoTool{this, "geometryTool", ""};
   ServiceHandle<k4::recCalo::ICaloCellConstantsSvc> m_constantsSvc
   { this, "CaloCellConstantsSvc", "k4::recCalo::CaloCellConstantsSvc", "" };
 
+  const CrosstalkData* m_data = nullptr;
   CrosstalkData readData (TFile& xtalkFile) const;
 };
 
