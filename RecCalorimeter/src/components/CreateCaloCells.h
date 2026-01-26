@@ -9,6 +9,7 @@
 #include "k4Interface/ICalorimeterTool.h"
 #include "k4Interface/INoiseCaloCellsTool.h"
 #include "k4Interface/ICellPositionsTool.h"
+#include "RecCaloCommon/ICaloCellIndexerSvc.h"
 
 // Gaudi
 #include "Gaudi/Algorithm.h"
@@ -106,22 +107,22 @@ private:
 
   struct CellsFullIndex
   {
-    CellsFullIndex (const CellsIndexMap_t& cellsIndexMap)
-      : m_cellsIndexMap (cellsIndexMap),
-        m_indices (cellsIndexMap.size(), {INVALID, INVALID})
+    CellsFullIndex (const k4::recCalo::ICaloIndexer& indexer, size_t ncells)
+      : m_indexer (indexer)
     {
+      m_indices.reserve (ncells);
+      for (size_t i = 0; i < ncells; i++) {
+        m_indices.emplace_back (i, INVALID);
+      }
     }
 
     CellsIndexPair_t& index (uint64_t cellid)
     {
-      auto it = m_cellsIndexMap.find (cellid);
-      if (it == m_cellsIndexMap.end()) {
-        throw std::out_of_range ("bad cellid");
-      }
-      return m_indices.at (it->second);
+      unsigned ndx = m_indexer.index (cellid);
+      return m_indices.at (ndx);
     }
 
-    const CellsIndexMap_t& m_cellsIndexMap;
+    const k4::recCalo::ICaloIndexer& m_indexer;
     std::vector<CellsIndexPair_t> m_indices;
   };
 
@@ -149,10 +150,10 @@ private:
 
   struct CellsIndex
   {
-    CellsIndex (const CellsIndexMap_t& cellsIndexMap)
+    CellsIndex (const k4::recCalo::ICaloIndexer* indexer, size_t ncells)
     {
-      if (!cellsIndexMap.empty()) {
-        m_indices.emplace<1> (cellsIndexMap);
+      if (indexer) {
+        m_indices.emplace<1> (*indexer, ncells);
       }
       else {
         m_indices.emplace<2>();
@@ -190,6 +191,9 @@ private:
 
     std::variant<int, CellsFullIndex, CellsSparseIndex> m_indices;
   };
+
+  void addCrosstalk (CellsInfo& cells,
+                     CellsIndex& cellsIndex) const;
 
   /// Handle for the calorimeter cells crosstalk tool
   ToolHandle<ICaloReadCrosstalkMap> m_crosstalksTool
@@ -231,10 +235,14 @@ private:
 
   /// Pointer to the geometry service
   ServiceHandle<IGeoSvc> m_geoSvc;
+
+  ServiceHandle<k4::recCalo::ICaloCellIndexerSvc> m_indexerSvc
+  { this, "CaloCellIndexerSvc", "k4::recCalo::CaloCellIndexerSvc", "" };
+
   dd4hep::VolumeManager m_volman;
-  /// Map of cell IDs to cell indices.
-  /// This assigns to each cell a dense index in the range 0..ncells-1.
-  CellsIndexMap_t m_cellsIndexMap;
+  std::span<const uint64_t> m_cellIDs;
+
+  const k4::recCalo::ICaloIndexer* m_indexer = nullptr;
 
   /// Indexed by system ID, giving the calorimeter type word.
   /// Non-calorimeter system IDs are set to 0.
