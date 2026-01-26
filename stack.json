@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "6d5936c7a6be6d598c449a7c6239c21f7b1b58c5",
-  "head": "03dda08dff4b41fe9898c7a64e97f99005218f5e",
+  "prev": "cf604374e7bdc003c005695269440c2fadc8b214",
+  "head": "59f1aa6c7fe0e877530175b874ecae780c32e914",
   "applied": [
     "discrit-wip",
     "cellPositionsConst2",
@@ -23,7 +23,8 @@
     "idmap",
     "caloCellConstantsSvc",
     "layerIndex",
-    "xtalkSpan1"
+    "xtalkSpan1",
+    "xtalkSpan3"
   ],
   "unapplied": [
     "xtalkIndex-wip",
@@ -94,6 +95,9 @@
     },
     "xtalkSpan1": {
       "oid": "03dda08dff4b41fe9898c7a64e97f99005218f5e"
+    },
+    "xtalkSpan3": {
+      "oid": "59f1aa6c7fe0e877530175b874ecae780c32e914"
     },
     "xtalkIndex-wip": {
       "oid": "d8ae3f29382db7fef9be1c27600abcafb36b3d29"
