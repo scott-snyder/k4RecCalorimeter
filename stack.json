@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "2c31f22570150e727fd22e00c05b7f6968761939",
-  "head": "03044850eabe9e82c72fe19860d5f3ec69d9f60f",
+  "prev": "fa0ca13925144207743e2abccdf3a74ecaa3d571",
+  "head": "9c593f13cca2c9b0e2884763ac29eea85d645940",
   "applied": [
     "depr",
     "testdir",
@@ -34,8 +34,7 @@
     "noise1a",
     "noise1b",
     "noise1c",
-    "noise3",
-    "refresh-temp"
+    "noise3"
   ],
   "unapplied": [],
   "hidden": [],
@@ -107,10 +106,7 @@
       "oid": "4101f82c02b7e602b060bdb64e864dd4e3c467fe"
     },
     "noise3": {
-      "oid": "453778c3462697319737ba1cc2e9dc2f4e406812"
-    },
-    "refresh-temp": {
-      "oid": "03044850eabe9e82c72fe19860d5f3ec69d9f60f"
+      "oid": "9c593f13cca2c9b0e2884763ac29eea85d645940"
     },
     "repnoise": {
       "oid": "7144737c168139f281c99fd12776d82cec7382d4"
