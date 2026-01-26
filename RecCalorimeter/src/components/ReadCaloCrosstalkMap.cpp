@@ -13,8 +13,8 @@ StatusCode ReadCaloCrosstalkMap::initialize() {
   // otherwise things will crash if m_fileName is not available
   // not a perfect solution but tools seems to not be meant to be optional
   if (m_fileName == "") {
-    debug() << "Empty 'fileName' provided, it means cross-talk map is not needed, exitting ReadCaloCrosstalkMap "
-               "initilization"
+    debug() << "Empty 'fileName' provided, it means cross-talk map is not needed, exiting ReadCaloCrosstalkMap "
+               "initialization"
             << endmsg;
     return StatusCode::SUCCESS;
   }
@@ -22,24 +22,42 @@ StatusCode ReadCaloCrosstalkMap::initialize() {
   info() << "Loading crosstalk map..." << endmsg;
 
   K4RECCALORIMETER_CHECK( AlgTool::initialize() );
+  K4RECCALORIMETER_CHECK( m_geoTool.retrieve() );
+  K4RECCALORIMETER_CHECK( m_constantsSvc.retrieve() );
 
-  // Check if crosstalk file exists
-  if (gSystem->AccessPathName(m_fileName.value().c_str())) {
-    error() << "Provided file with the crosstalk map not found!" << endmsg;
-    error() << "File path: " << m_fileName.value() << endmsg;
-    return StatusCode::FAILURE;
+  m_data = m_constantsSvc->getObj<CrosstalkData> (m_fileName);
+  if (!m_data) {
+    // Check if crosstalk file exists
+    if (gSystem->AccessPathName(m_fileName.value().c_str())) {
+      error() << "Provided file with the crosstalk map not found!" << endmsg;
+      error() << "File path: " << m_fileName.value() << endmsg;
+      return StatusCode::FAILURE;
+    }
+    std::unique_ptr<TFile> xtalkFile (TFile::Open(m_fileName.value().c_str(), "READ"));
+    if (xtalkFile->IsZombie()) {
+      error() << "Unable to read the file with the crosstalk map!" << endmsg;
+      error() << "File path: " << m_fileName.value() << endmsg;
+      return StatusCode::FAILURE;
+    } else {
+      info() << "Using the following file with the crosstalk map: " << m_fileName.value() << endmsg;
+    }
+
+    CrosstalkData data = readData (*xtalkFile);
+    K4RECCALORIMETER_CHECK( m_constantsSvc->putObj (m_fileName, std::move (data)) );
+    m_data = m_constantsSvc->getObj<CrosstalkData> (m_fileName);
+    K4RECCALORIMETER_CHECK( m_data != nullptr );
   }
-  std::unique_ptr<TFile> xtalkFile(TFile::Open(m_fileName.value().c_str(), "READ"));
-  if (xtalkFile->IsZombie()) {
-    error() << "Unable to read the file with the crosstalk map!" << endmsg;
-    error() << "File path: " << m_fileName.value() << endmsg;
-    return StatusCode::FAILURE;
-  } else {
-    info() << "Using the following file with the crosstalk map: " << m_fileName.value() << endmsg;
-  }
+
+  return StatusCode::SUCCESS;
+}
+
+
+auto ReadCaloCrosstalkMap::readData (TFile& xtalkFile) const -> CrosstalkData
+{
+  CrosstalkData data;
 
   TTree* tree = nullptr;
-  xtalkFile->GetObject("crosstalk_neighbours", tree);
+  xtalkFile.GetObject("crosstalk_neighbours", tree);
   ULong64_t read_cellId;
   std::vector<uint64_t>* read_neighbours = nullptr;
   std::vector<double>* read_crosstalks = nullptr;
@@ -47,40 +65,48 @@ StatusCode ReadCaloCrosstalkMap::initialize() {
   tree->SetBranchAddress("cellId", &read_cellId);
   tree->SetBranchAddress("list_crosstalk_neighbours", &read_neighbours);
   tree->SetBranchAddress("list_crosstalks", &read_crosstalks);
+
+  const ICalorimeterTool* geoTool = m_geoTool.get();
+
+  size_t ncells = geoTool->cellIDs().size();
+  data.m_neighbourIndices.resize (ncells);
+  data.m_crosstalkIndices.resize (ncells);
+
   for (uint i = 0; i < tree->GetEntries(); i++) {
     tree->GetEntry(i);
-    m_mapNeighbours.insert(std::pair<uint64_t, std::vector<uint64_t>>(read_cellId, *read_neighbours));
-    m_mapCrosstalks.insert(std::pair<uint64_t, std::vector<double>>(read_cellId, *read_crosstalks));
+
+    unsigned ndx = geoTool->index (read_cellId);
+    {
+      size_t oldsz = data.m_neighbours.size();
+      data.m_neighbours.insert (data.m_neighbours.end(), read_neighbours->begin(), read_neighbours->end());
+      data.m_neighbourIndices[ndx] = std::make_pair (oldsz, data.m_neighbours.size()-oldsz);
+    }
+    {
+      size_t oldsz = data.m_crosstalks.size();
+      data.m_crosstalks.insert (data.m_crosstalks.end(), read_crosstalks->begin(), read_crosstalks->end());
+      data.m_crosstalkIndices[ndx] = std::make_pair (oldsz, data.m_crosstalks.size()-oldsz);
+    }
   }
 
-  info() << "Crosstalk input: " << m_fileName.value().c_str() << endmsg;
-  info() << "Total number of cells = " << tree->GetEntries()
-         << ", Size of crosstalk neighbours = " << m_mapNeighbours.size()
-         << ", Size of coefficients = " << m_mapCrosstalks.size() << endmsg;
+  info() << "Crosstalk input: " << xtalkFile.GetName() << endmsg;
+  info() << "Total number of cells = " << tree->GetEntries() << endmsg;
+  //<< ", Size of crosstalk neighbours = " << data.m_mapNeighbours.size()
+  //<< ", Size of coefficients = " << data.m_mapCrosstalks.size() << endmsg;
   delete tree;
   delete read_neighbours;
   delete read_crosstalks;
-  xtalkFile->Close();
+  xtalkFile.Close();
 
-  return StatusCode::SUCCESS;
+  return data;
 }
 
-const std::vector<uint64_t>&
+
+std::span<const uint64_t>
 ReadCaloCrosstalkMap::getNeighbours(uint64_t aCellId) const {
-  auto it = m_mapNeighbours.find(aCellId);
-  if (it != m_mapNeighbours.end()) {
-    return it->second;
-  }
-  static const std::vector<uint64_t> empty;
-  return empty;
+  return m_data->getNeighbours (m_geoTool->index (aCellId));
 }
 
-const std::vector<double>&
+std::span<const double>
 ReadCaloCrosstalkMap::getCrosstalks(uint64_t aCellId) const {
-  auto it = m_mapCrosstalks.find(aCellId);
-  if (it != m_mapCrosstalks.end()) {
-    return it->second;
-  }
-  static const std::vector<double> empty;
-  return empty;
+  return m_data->getCrosstalks (m_geoTool->index (aCellId));
 }
