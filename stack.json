@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "e5a15e8257ed01ddaa00475764140dfbd8a26609",
-  "head": "e4a97391eaef3ba2d5995ad53c615b19f26c4d82",
+  "prev": "fe3bc41cd4a233daa9106e4690185e196dc8d901",
+  "head": "1d75b8ac49198f585a9f374b0e9164ecd40d3874",
   "applied": [
     "depr",
     "testdir",
@@ -30,8 +30,7 @@
     "layerIndex",
     "xtalkSpan1",
     "xtalkSpan3",
-    "xtalkSpan5",
-    "refresh-temp"
+    "xtalkSpan5"
   ],
   "unapplied": [],
   "hidden": [],
@@ -93,9 +92,6 @@
     "move-check": {
       "oid": "2a06140ebd3c52f91948f6bcf29570262848b4df"
     },
-    "refresh-temp": {
-      "oid": "e4a97391eaef3ba2d5995ad53c615b19f26c4d82"
-    },
     "repnoise": {
       "oid": "7144737c168139f281c99fd12776d82cec7382d4"
     },
@@ -121,7 +117,7 @@
       "oid": "88e1d664a6f6472e7452ec2c83a9da4d31e067e8"
     },
     "xtalkSpan5": {
-      "oid": "6fef4eb46f4e8a3208bb86d70392a51cb670881d"
+      "oid": "1d75b8ac49198f585a9f374b0e9164ecd40d3874"
     }
   }
 }
