@@ -8,6 +8,8 @@
 #include <unordered_set>
 #include <vector>
 
+#include "k4FWCore/k4_check.h"
+
 // k4geo
 #include "detectorCommon/DetUtils_k4geo.h"
 
@@ -33,6 +35,8 @@ StatusCode CaloTopoClusterFCCee::initialize() {
   if (Gaudi::Algorithm::initialize().isFailure()) {
     return StatusCode::FAILURE;
   }
+
+  K4_GAUDI_CHECK( m_geoTool.retrieve() );
 
   // create handles for input cell collections
   for (const auto& col : m_cellCollections) {
@@ -122,6 +126,10 @@ StatusCode CaloTopoClusterFCCee::execute(const EventContext&) const {
   }
 
   // Get input collection with calorimeter cells
+  if (m_cellCollectionHandles.size() != 1) std::abort();
+  const edm4hep::CalorimeterHitCollection* inCells = m_cellCollectionHandles[0]->get();
+  
+#if 0
   edm4hep::CalorimeterHitCollection* inCells = new edm4hep::CalorimeterHitCollection();
   for (size_t ih = 0; ih < m_cellCollectionHandles.size(); ih++) {
     verbose() << "Processing collection " << ih << endmsg;
@@ -135,6 +143,7 @@ StatusCode CaloTopoClusterFCCee::execute(const EventContext&) const {
       inCells->push_back(newCell);
     }
   }
+#endif
   if (inCells->empty()) {
     debug() << "No active cells, skipping event..." << endmsg;
     return StatusCode::SUCCESS;
@@ -255,7 +264,7 @@ StatusCode CaloTopoClusterFCCee::execute(const EventContext&) const {
             << endmsg;
   }
 
-  delete inCells;
+  //delete inCells;
   return StatusCode::SUCCESS;
 }
 
@@ -309,20 +318,26 @@ CaloTopoClusterFCCee::buildProtoClusters(const edm4hep::CalorimeterHitCollection
 
   verbose() << "Initial number of seeds to loop over: " << seedCells.size() << endmsg;
 
-  std::map<uint64_t, const edm4hep::CalorimeterHit> allCellsMap;
-  for (const auto& cell : *allCells) {
-    allCellsMap.emplace(cell.getCellID(), cell);
+  // 0 = no cell
+  // > 0: cell index + 1
+  // < 0: -cluster index - 1
+  std::vector<int32_t> cellsMap;
+  cellsMap.resize (m_geoTool->cellIDs().size());
+  size_t ncells = allCells->size();
+  for (size_t icell = 0; icell < ncells; ++icell) {
+    // Could avoid this if we know that the container is complete and sorted
+    unsigned ndx = m_geoTool->index ((*allCells)[icell].getCellID());
+    cellsMap.at(ndx) = icell+1;
   }
-  std::map<uint64_t, uint32_t> alreadyUsedCells;
-
+  
   // Loop over every seed in Calo to create first cluster
   uint32_t seedCounter = 0;
   for (const auto& seedCell : seedCells) {
     seedCounter++;
     verbose() << "Looking at seed: " << seedCounter << endmsg;
     auto seedId = seedCell.getCellID();
-    auto cellInCluster = alreadyUsedCells.find(seedId);
-    if (cellInCluster != alreadyUsedCells.end()) {
+    unsigned ndx = m_geoTool->index(seedId);
+    if (cellsMap.at(ndx) < 0) {
       verbose() << "Seed is already assigned to another cluster!" << endmsg;
       continue;
     }
@@ -333,11 +348,11 @@ CaloTopoClusterFCCee::buildProtoClusters(const edm4hep::CalorimeterHitCollection
     edm4hep::MutableCalorimeterHit clusteredCell = seedCell.clone();
     clusteredCell.setType(1);
     protoClusters[clusterId].push_back(clusteredCell);
-    alreadyUsedCells[seedId] = clusterId;
+    cellsMap.at(ndx) = -clusterId - 1;
 
     std::vector<std::vector<std::pair<uint64_t, uint32_t>>> nextNeighbours(100);
     nextNeighbours[0] =
-        searchForNeighbours(seedId, clusterId, m_neighbourSigma, allCellsMap, alreadyUsedCells, protoClusters, true);
+        searchForNeighbours(seedId, clusterId, m_neighbourSigma, cellsMap, *allCells, protoClusters, true);
 
     // first loop over seeds neighbours
     verbose() << "Found " << nextNeighbours[0].size() << " neighbours.." << endmsg;
@@ -353,8 +368,8 @@ CaloTopoClusterFCCee::buildProtoClusters(const edm4hep::CalorimeterHitCollection
           return StatusCode::FAILURE;
         }
         verbose() << "Next neighbours assigned to cluster ID: " << clusterId << endmsg;
-        auto additionalNeighbours = searchForNeighbours(id.first, clusterId, m_neighbourSigma, allCellsMap,
-                                                        alreadyUsedCells, protoClusters, true);
+        auto additionalNeighbours = searchForNeighbours(id.first, clusterId, m_neighbourSigma, cellsMap, *allCells,
+                                                        protoClusters, true);
         nextNeighbours[it].insert(nextNeighbours[it].end(), additionalNeighbours.begin(), additionalNeighbours.end());
       }
       verbose() << "Found " << nextNeighbours[it].size() << " more neighbours.." << endmsg;
@@ -367,8 +382,8 @@ CaloTopoClusterFCCee::buildProtoClusters(const edm4hep::CalorimeterHitCollection
         if (cell.getType() <= 2) {
           verbose() << "Add neighbours of " << cell.getCellID()
                     << " in last round with thr = " << m_lastNeighbourSigma.value() << " x sigma." << endmsg;
-          auto lastNeighours = searchForNeighbours(cell.getCellID(), clusterId, m_lastNeighbourSigma, allCellsMap,
-                                                   alreadyUsedCells, protoClusters, false);
+          auto lastNeighours = searchForNeighbours(cell.getCellID(), clusterId, m_lastNeighbourSigma, cellsMap, *allCells,
+                                                   protoClusters, false);
         }
       }
     }
@@ -379,7 +394,8 @@ CaloTopoClusterFCCee::buildProtoClusters(const edm4hep::CalorimeterHitCollection
 
 std::vector<std::pair<uint64_t, uint32_t>> CaloTopoClusterFCCee::searchForNeighbours(
     const uint64_t aCellId, uint& aClusterID, int aNumSigma,
-    std::map<uint64_t, const edm4hep::CalorimeterHit>& allCellsMap, std::map<uint64_t, uint32_t>& alreadyUsedCells,
+    std::vector<int32_t>& cellsMap,
+    const edm4hep::CalorimeterHitCollection& allCells,
     std::map<uint32_t, edm4hep::CalorimeterHitCollection>& protoClusters, bool allowClusterMerge) const {
 
   // Fill vector to be returned, next cell ids and cluster id for which
@@ -412,14 +428,14 @@ std::vector<std::pair<uint64_t, uint32_t>> CaloTopoClusterFCCee::searchForNeighb
   verbose() << "For cluster: " << aClusterID << endmsg;
   // loop over neighbours
   for (const auto& neighbourID : neighboursVec) {
-    // Find the neighbour in the Calo cells list
-    auto itAllCells = allCellsMap.find(neighbourID);
-    auto itAllUsedCells = alreadyUsedCells.find(neighbourID);
+    unsigned neighbourIndex = m_geoTool->index (neighbourID);
+    if (neighbourIndex == static_cast<unsigned>(-1)) continue;
 
     // If cell is hit.. and is not assigned to a cluster
-    if (itAllCells != allCellsMap.end() && itAllUsedCells == alreadyUsedCells.end()) {
+    int32_t cellState = cellsMap.at(neighbourIndex);
+    if (cellState > 0) {
       verbose() << "Found neighbour with CellID: " << neighbourID << endmsg;
-      auto neighbouringCellEnergy = allCellsMap[neighbourID].getEnergy();
+      auto neighbouringCellEnergy = allCells[cellState-1].getEnergy();
       bool addNeighbour = false;
       int cellType = 2;
       // retrieve the cell noise level [GeV]
@@ -442,16 +458,16 @@ std::vector<std::pair<uint64_t, uint32_t>> CaloTopoClusterFCCee::searchForNeighb
       if (addNeighbour) {
         // retrieve the cell
         // add neighbour to cells for cluster
-        edm4hep::MutableCalorimeterHit clusteredCell = allCellsMap[neighbourID].clone();
+        edm4hep::MutableCalorimeterHit clusteredCell = allCells[cellState-1].clone();
         clusteredCell.setType(cellType);
         protoClusters[aClusterID].push_back(clusteredCell);
-        alreadyUsedCells[neighbourID] = aClusterID;
+        cellsMap.at(neighbourIndex) = -aClusterID-1;
         additionalNeighbours.push_back(std::make_pair(neighbourID, aClusterID));
       }
     }
     // If cell is hit.. but is assigned to another cluster
-    else if (itAllUsedCells != alreadyUsedCells.end() && itAllUsedCells->second != aClusterID && allowClusterMerge) {
-      uint32_t clusterIDToMergeTo = itAllUsedCells->second;
+    else if (cellState < 0 && (-cellState-1) != static_cast<int>(aClusterID) && allowClusterMerge) {
+      uint32_t clusterIDToMergeTo = -cellState - 1;
       if (msgLevel() <= MSG::VERBOSE) {
         verbose() << "This neighbour was found in cluster " << clusterIDToMergeTo << ", cluster " << aClusterID
                   << " will be merged!" << endmsg;
@@ -459,9 +475,9 @@ std::vector<std::pair<uint64_t, uint32_t>> CaloTopoClusterFCCee::searchForNeighb
                   << clusterIDToMergeTo << " with ( " << protoClusters[clusterIDToMergeTo].size() << " ). " << endmsg;
       }
       // Fill all cells into cluster, and assigned cells to new cluster
-      alreadyUsedCells[neighbourID] = clusterIDToMergeTo;
       for (const auto& cell : protoClusters[aClusterID]) {
-        alreadyUsedCells[cell.getCellID()] = clusterIDToMergeTo;
+        unsigned ndx = m_geoTool->index (cell.getCellID());
+        cellsMap.at(ndx) = -clusterIDToMergeTo - 1;
         // make sure that already assigned cells are not added
         if (cellIdInColl(cell.getCellID(), protoClusters[clusterIDToMergeTo])) {
           continue;
