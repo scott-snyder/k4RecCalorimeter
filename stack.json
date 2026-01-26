@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "db191666e1c960a2b3295acec76e2cc1b10ac9a1",
-  "head": "9e06a493c20d5827f248f651fca31fdc561de890",
+  "prev": "00a30131d7d8af7a436b2da0ed0afcb966823d41",
+  "head": "9eae3dadc5e76d8288c7207bd3451b4917e6475a",
   "applied": [
     "discrit-wip",
     "cellPositionsConst2",
@@ -31,8 +31,7 @@
     "noise1c",
     "noise3",
     "xtalkIndex-wip",
-    "topoNoiseIndex-wip",
-    "refresh-temp"
+    "topoNoiseIndex-wip"
   ],
   "unapplied": [
     "createCaloCells2-wip"
@@ -124,10 +123,7 @@
       "oid": "345b28284d4fb4e56e13a9f723c81aecc2ce5839"
     },
     "topoNoiseIndex-wip": {
-      "oid": "396de6496a7bcda3bca62e13800cb44bbaac26c2"
-    },
-    "refresh-temp": {
-      "oid": "9e06a493c20d5827f248f651fca31fdc561de890"
+      "oid": "9eae3dadc5e76d8288c7207bd3451b4917e6475a"
     },
     "createCaloCells2-wip": {
       "oid": "a573d2d4c0a71102b603922d4c60a30460805631"
