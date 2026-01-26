@@ -19,6 +19,7 @@
 #include "k4Interface/ICaloReadNeighboursMap.h"
 #include "k4Interface/IGeoSvc.h"
 #include "k4Interface/INoiseConstTool.h"
+#include "RecCaloCommon/ICaloCellIndexerSvc.h"
 
 // EDM4HEP
 namespace edm4hep {
@@ -78,7 +79,8 @@ public:
    *   @param[in] protoClusters, map that is filled with clusterID pointing to the associated cells, in a pair of
    * clsuter index and cell collection
    */
-  StatusCode buildProtoClusters(const edm4hep::CalorimeterHitCollection& seedCells,
+  StatusCode buildProtoClusters(const k4::recCalo::ICaloIndexer& indexer,
+                                const edm4hep::CalorimeterHitCollection& seedCells,
                                 const edm4hep::CalorimeterHitCollection* allCells,
                                 std::map<uint32_t, edm4hep::CalorimeterHitCollection>& protoClusters) const;
   /** Search for neighbours and add them to preClusterCollection
@@ -94,8 +96,10 @@ public:
    * CaloTopoClusterFCCee::buildingProtoCluster. return vector of pairs with cellID and energy of found neighbours.
    */
   std::vector<std::pair<uint64_t, uint32_t>> searchForNeighbours(
+      const k4::recCalo::ICaloIndexer& indexer,
       const uint64_t aCellId, uint32_t& aClusterID, const int aNumSigma,
-      std::map<uint64_t, const edm4hep::CalorimeterHit>& aCellsMap, std::map<uint64_t, uint32_t>& aClusterOfCell,
+      std::vector<int32_t>& cellsMap,
+      const edm4hep::CalorimeterHitCollection& allCells,
       std::map<uint32_t, edm4hep::CalorimeterHitCollection>& protoClusters, const bool aAllowClusterMerge) const;
 
   StatusCode execute(const EventContext&) const;
@@ -161,5 +165,10 @@ private:
 
   // Utility functions
   inline bool cellIdInColl(const uint64_t cellId, const edm4hep::CalorimeterHitCollection& coll) const;
+
+  /// xxx fixme
+  Gaudi::Property<int> m_detID { this, "DetID", 4 };
+  ServiceHandle<k4::recCalo::ICaloCellIndexerSvc> m_indexerSvc
+  { this, "CaloCellIndexerSvc", "k4::recCalo::CaloCellIndexerSvc", "" };
 };
 #endif /* RECFCCEECALORIMETER_CALOTOPOCLUSTERFCCEE_H */
