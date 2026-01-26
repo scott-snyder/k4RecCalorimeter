@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "e15e5516ebced3a626f25f5de4f21f5ee387f778",
-  "head": "4e95a3b6a50eeb0ce1f1bda5768506e2429981c7",
+  "prev": "594f38ad6b3f9dbd8c2f170057d33f7f2f400cac",
+  "head": "71d115b0e771a3de220f705446409e319b19c8f3",
   "applied": [
     "discrit-wip",
     "cellPositionsConst2",
@@ -26,7 +26,8 @@
     "xtalkSpan1",
     "xtalkSpan3",
     "xtalkSpan5",
-    "noise1a"
+    "noise1a",
+    "noise1b"
   ],
   "unapplied": [
     "xtalkIndex-wip",
@@ -106,6 +107,9 @@
     },
     "noise1a": {
       "oid": "4e95a3b6a50eeb0ce1f1bda5768506e2429981c7"
+    },
+    "noise1b": {
+      "oid": "71d115b0e771a3de220f705446409e319b19c8f3"
     },
     "xtalkIndex-wip": {
       "oid": "266a74c4790fe4d6744d430f90f9f6679e0fe70f"
