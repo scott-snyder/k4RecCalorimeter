@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "6572198f0336d279b44d9ff05ae537b94a831a4e",
-  "head": "6e5c36eb8554eb86134bc43a0404cd46badcdf6f",
+  "prev": "a1ae2fae475e33a0fdf3254850d2b97d5252a447",
+  "head": "0ebbf54d4dfa70b06584b99bb373118822d538dc",
   "applied": [
     "discrit-wip",
     "cellPositionsConst2",
@@ -35,7 +35,8 @@
     "createCaloCells2-wip",
     "createTopoCluster-wip",
     "cellposIndex-wip",
-    "noiseIndex-wip"
+    "noiseIndex-wip",
+    "ecalIndex-wip"
   ],
   "unapplied": [],
   "hidden": [],
@@ -138,6 +139,9 @@
     },
     "noiseIndex-wip": {
       "oid": "6e5c36eb8554eb86134bc43a0404cd46badcdf6f"
+    },
+    "ecalIndex-wip": {
+      "oid": "0ebbf54d4dfa70b06584b99bb373118822d538dc"
     }
   }
 }
