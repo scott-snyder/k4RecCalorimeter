@@ -7,6 +7,21 @@
 DECLARE_COMPONENT(NestedVolumesCaloTool)
 
 
+NestedVolumesCaloTool::NestedVolumesCaloTool (const std::string& type,
+                                              const std::string& name,
+                                              const IInterface* parent)
+  : CalorimeterToolBase (type, name, parent)
+{
+}
+
+
+unsigned NestedVolumesCaloTool::index (uint64_t /*cellId*/) const
+{
+  std::cerr << "NestedVolumesCaloTool::index\n";
+  std::abort(); //xxx
+}
+
+
 StatusCode NestedVolumesCaloTool::collectCells(std::vector<uint64_t>& cells) const
 {
   // Take readout bitfield decoder from GeoSvc
