@@ -6,9 +6,53 @@
 
 // k4geo
 #include "detectorCommon/DetUtils_k4geo.h"
+#include "RecCaloCommon/k4RecCalorimeter_check.h"
 
 
 DECLARE_COMPONENT(TubeLayerModuleThetaCaloTool)
+
+
+TubeLayerModuleThetaCaloTool::TubeLayerModuleThetaCaloTool (const std::string& type,
+                                                            const std::string& name,
+                                                            const IInterface* parent)
+  : CalorimeterToolBase (type, name, parent)
+{
+}
+
+
+StatusCode TubeLayerModuleThetaCaloTool::initialize()
+{
+  info() << "TubeLayerModuleThetaCaloTool::initialize" << endmsg;
+  K4RECCALORIMETER_CHECK(  CalorimeterToolBase::initialize() );
+  auto idSpec = readout().idSpec();
+  std::vector<IDMap_t::FieldDesc_t> fields;
+  {
+    const dd4hep::BitFieldElement* b = idSpec.field("layer");
+    fields.emplace_back (b->offset(), b->width());
+    std::cout << "bfe " << "layer" << fields.back().first << " " << fields.back().second << "\n";
+  }
+  {
+    const dd4hep::BitFieldElement* b = idSpec.field("theta");
+    fields.emplace_back (b->offset(), b->width());
+    std::cout << "bfe " << "theta" << fields.back().first << " " << fields.back().second << "\n";
+  }
+  {
+    const dd4hep::BitFieldElement* b = idSpec.field("module");
+    fields.emplace_back (b->offset(), b->width());
+    std::cout << "bfe " << "module" << fields.back().first << " " << fields.back().second << "\n";
+  }
+
+  const std::vector<uint64_t>& ids = cellIDs();
+  m_idmap.emplace (fields, static_cast<unsigned>(-1), ids,
+                   [](size_t i) { return i; });
+  return StatusCode::SUCCESS;
+}
+
+
+unsigned TubeLayerModuleThetaCaloTool::index (uint64_t cellId) const
+{
+  return m_idmap->lookup (cellId);
+}
 
 
 StatusCode TubeLayerModuleThetaCaloTool::collectCells(std::vector<uint64_t>& cells) const
@@ -72,3 +116,6 @@ StatusCode TubeLayerModuleThetaCaloTool::collectCells(std::vector<uint64_t>& cel
 
   return StatusCode::SUCCESS;
 }
+
+
+
