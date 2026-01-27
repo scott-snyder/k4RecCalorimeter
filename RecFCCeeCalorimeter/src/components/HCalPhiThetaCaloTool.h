@@ -10,8 +10,13 @@
 class HCalPhiThetaCaloTool : public CalorimeterToolBase
 {
 public:
-  using CalorimeterToolBase::CalorimeterToolBase;
+  HCalPhiThetaCaloTool (const std::string& type,
+                        const std::string& name,
+                        const IInterface* parent);
+  //using CalorimeterToolBase::CalorimeterToolBase;
   virtual ~HCalPhiThetaCaloTool() = default;
+
+  virtual unsigned index(uint64_t cellID) const;
 
 
 protected:
