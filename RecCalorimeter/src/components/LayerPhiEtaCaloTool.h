@@ -15,8 +15,14 @@
 
 class LayerPhiEtaCaloTool : public CalorimeterToolBase {
 public:
-  using CalorimeterToolBase::CalorimeterToolBase;
+  LayerPhiEtaCaloTool (const std::string& type,
+                       const std::string& name,
+                       const IInterface* parent);
+
+  //using CalorimeterToolBase::CalorimeterToolBase;
   virtual ~LayerPhiEtaCaloTool() = default;
+
+  virtual unsigned index(uint64_t cellID) const;
 
 
 protected:
