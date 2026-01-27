@@ -13,6 +13,9 @@
 #include "k4Interface/ICellPositionsTool.h"
 #include "k4Interface/INoiseCaloCellsTool.h"
 #include "k4Interface/INoiseConstTool.h"
+#include "k4Interface/ICalorimeterTool.h"
+
+#include "ReadNoiseFromFileTool.h"
 
 class IGeoSvc;
 
@@ -38,9 +41,12 @@ class TH1F;
  *
  */
 
-class NoiseCaloCellsVsThetaFromFileTool : public extends<AlgTool, INoiseCaloCellsTool,  INoiseConstTool> {
+class NoiseCaloCellsVsThetaFromFileTool : public extends<ReadNoiseFromFileTool, INoiseCaloCellsTool> {
 public:
-  using base_class::base_class;
+  NoiseCaloCellsVsThetaFromFileTool (const std::string& type,
+                                     const std::string& name,
+                                     const IInterface* parent);
+
   virtual ~NoiseCaloCellsVsThetaFromFileTool() = default;
   virtual StatusCode initialize() override final;
 
@@ -62,13 +68,10 @@ public:
    */
   virtual void filterCellNoise(std::vector<std::pair<uint64_t, double> >& aCells)    const override final;
 
-  /// Open file and read noise histograms in the memory
-  StatusCode initNoiseFromFile();
-  /// Find the appropriate noise RMS from the histogram
-  virtual double getNoiseRMSPerCell(uint64_t aCellID) const override final;
-  virtual double getNoiseOffsetPerCell(uint64_t aCellID) const override final;
-  virtual std::pair<double, double>
-  getNoisePerCell(uint64_t aCellID) const override final;
+
+protected:
+  virtual StatusCode initBinning (NoiseData& data) const override;
+
 
 private:
   template <typename C>
@@ -79,33 +82,9 @@ private:
   /// Handle for tool to get cell positions
   ToolHandle<ICellPositionsTool> m_cellPositionsTool{this, "cellPositionsTool", "CellPositionsDummyTool", "Handle for tool to retrieve cell positions"};
 
-  /// Add pileup contribution to the electronics noise? (only if read from file)
-  Gaudi::Property<bool> m_addPileup{this, "addPileup", true,
-                                    "Add pileup contribution to the electronics noise? (only if read from file)"};
-  /// Read noise offset from histograms in files or not (if false, offset is set to 0)
-  Gaudi::Property<bool> m_setNoiseOffset{this, "setNoiseOffset", false, "Set a noise offset per cell"};
-  /// Name of the file with noise constants
-  Gaudi::Property<std::string> m_noiseFileName{this, "noiseFileName", "", "Name of the file with noise constants"};
-  /// Factor to apply to the noise values to get them in GeV if e.g. they were produced in MeV
-  Gaudi::Property<float> m_scaleFactor{this, "scaleFactor", 1, "Factor to apply to the noise values"};
-  /// Name of the detector readout (only needed to retrieve the decoder)
-  Gaudi::Property<std::string> m_readoutName{this, "readoutName", "ECalBarrelThetaModuleMerged",
-                                             "Name of the detector readout"};
-  /// Name of active layers for sampling calorimeter
-  Gaudi::Property<std::string> m_activeFieldName{this, "activeFieldName", "active_layer",
-                                                 "Name of active layers for sampling calorimeter"};
-  /// Name of pileup noise RMS histogram
-  Gaudi::Property<std::string> m_pileupNoiseRMSHistoName{this, "pileupNoiseRMSHistoName", "h_pileup_layer",
-                                                         "Name of pileup noise RMS histogram"};
-  /// Name of electronics noise RMS histogram
+
   Gaudi::Property<std::string> m_elecNoiseRMSHistoName{this, "elecNoiseRMSHistoName", "h_elecNoise_layer",
                                                        "Name of electronics noise RMS histogram"};
-  /// Name of electronics noise offset histogram
-  Gaudi::Property<std::string> m_elecNoiseOffsetHistoName{this, "elecNoiseOffsetHistoName", "h_mean_pileup_layer",
-                                                          "Name of electronics noise offset histogram"};
-  /// Name of pileup noise offset histogram
-  Gaudi::Property<std::string> m_pileupNoiseOffsetHistoName{this, "pileupNoiseOffsetHistoName", "h_pileup_layer",
-                                                            "Name of pileup noise offset histogram"};
 
   /// Energy threshold (cells with Ecell < filterThreshold*m_cellNoise removed)
   Gaudi::Property<double> m_filterThreshold{
@@ -117,29 +96,12 @@ private:
   Gaudi::Property<bool> m_useAbsInFilter{
       this, "useAbsInFilter", false,
       "If set, cell filtering condition becomes: drop cell if abs(Ecell-offset) < filterThreshold*m_cellNoise"};
-  /// Number of radial layers
-  Gaudi::Property<uint> m_numRadialLayers{this, "numRadialLayers", 3, "Number of radial layers"};
-
-  /// Histograms with pileup noise RMS (index in array - radial layer)
-  std::vector<TH1F> m_histoPileupNoiseRMS;
-  /// Histograms with electronics noise RMS (index in array - radial layer)
-  std::vector<TH1F> m_histoElecNoiseRMS;
-  /// Histograms with pileup offset (index in array - radial layer)
-  std::vector<TH1F> m_histoPileupNoiseOffset;
-  /// Histograms with electronics noise offset (index in array - radial layer)
-  std::vector<TH1F> m_histoElecNoiseOffset;
 
   /// Random Number Service
   SmartIF<IRndmGenSvc> m_randSvc;
   /// Gaussian random number generator used for the generation of random noise hits
   Rndm::Numbers m_gauss;
 
-  /// Pointer to the geometry service
-  ServiceHandle<IGeoSvc> m_geoSvc { this, "GeoSvc", "GeoSvc" };
-
-  /// Decoder for ECal layers
-  dd4hep::DDSegmentation::BitFieldCoder* m_decoder;
-  int m_index_activeField;
 };
 
 #endif /* RECFCCEECALORIMETER_NOISECALOCELLSVSTHETAFROMFILETOOL_H */
