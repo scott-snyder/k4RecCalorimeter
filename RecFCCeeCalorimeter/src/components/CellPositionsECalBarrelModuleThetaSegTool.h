@@ -9,6 +9,8 @@
 #include "k4FWCore/DataHandle.h"
 #include "k4Interface/ICellPositionsTool.h"
 #include "k4Interface/IGeoSvc.h"
+#include "k4Interface/ICalorimeterTool.h"
+#include "RecCaloCommon/ICaloCellConstantsSvc.h"
 
 // k4geo
 #include "detectorCommon/DetUtils_k4geo.h"
@@ -19,6 +21,7 @@
 #include "DD4hep/Volumes.h"
 #include "DDSegmentation/Segmentation.h"
 #include "TGeoManager.h"
+#include <span>
 
 class IGeoSvc;
 namespace DD4hep {
@@ -55,11 +58,15 @@ public:
 private:
   /// Handle to the geometry service
   ServiceHandle<IGeoSvc> m_geoSvc { this, "GeoSvc", "GeoSvc" };
+  ToolHandle<ICalorimeterTool> m_geoTool{this, "CalorimeterTool", ""};
+  ServiceHandle<k4::recCalo::ICaloCellConstantsSvc> m_constantsSvc
+  { this, "CaloCellConstantsSvc", "k4::recCalo::CaloCellConstantsSvc", "" };
   /// Name of the electromagnetic calorimeter readout
   Gaudi::Property<std::string> m_readoutName{this, "readoutName", "ECalBarrelModuleThetaMerged"};
   /// Merged module-theta segmentation
   dd4hep::DDSegmentation::FCCSWGridModuleThetaMerged_k4geo* m_segmentation;
-  /// Volume manager
-  dd4hep::VolumeManager m_volman;
+
+  using PositionData = std::vector<dd4hep::Position>;
+  std::span<const dd4hep::Position> m_positions;
 };
 #endif /* RECCALORIMETER_CELLPOSITIONSECALBARRELMODULETHETASEGTOOL_H */
