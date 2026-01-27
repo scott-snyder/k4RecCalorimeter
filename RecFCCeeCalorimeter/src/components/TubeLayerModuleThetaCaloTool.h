@@ -2,6 +2,8 @@
 #define RECFCCEECALORIMETER_TUBELAYERMODULETHETACALOTOOL_H
 
 #include "RecCaloCommon/CalorimeterToolBase.h"
+#include "RecCaloCommon/IDMap.h"
+#include <optional>
 
 /** @class TubeLayerModuleThetaCaloTool
  * k4RecCalorimeter/RecFCCeeCalorimeter/src/components/TubeLayerModuleThetaCaloTool.h TubeLayerModuleThetaCaloTool.h
@@ -15,8 +17,16 @@
 
 class TubeLayerModuleThetaCaloTool : public CalorimeterToolBase {
 public:
-  using CalorimeterToolBase::CalorimeterToolBase;
+  TubeLayerModuleThetaCaloTool (const std::string& type,
+                                const std::string& name,
+                                const IInterface* parent);
+
+  //using CalorimeterToolBase::CalorimeterToolBase;
   virtual ~TubeLayerModuleThetaCaloTool() = default;
+
+  virtual StatusCode initialize() override;
+
+  virtual unsigned index(uint64_t cellID) const;
 
 
   /** Return a new indexer object for this subdetector.
@@ -43,6 +53,9 @@ private:
   Gaudi::Property<std::vector<int>> m_fieldValues{this, "fieldValues"};
   /// Number of layers
   Gaudi::Property<unsigned int> m_activeVolumesNumber{this, "activeVolumesNumber", 0};
+
+  using IDMap_t = k4::recCalo::IDMapN<unsigned, 3>;
+  std::optional<IDMap_t> m_idmap;
 };
 
 #endif /* RECFCCEECALORIMETER_TUBELAYERMODULETHETACALOTOOL_H */
