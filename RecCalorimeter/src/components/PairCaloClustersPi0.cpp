@@ -178,6 +178,9 @@ StatusCode PairCaloClustersPi0::execute(const EventContext&) const {
   // Get the input collection with clusters
   const edm4hep::ClusterCollection* inClusters = m_inClusters.get();
 
+  size_t nclusters = inClusters->size();
+  info() << nclusters << " clusters" << endmsg;
+
   // Initialize output clusters
   edm4hep::ReconstructedParticleCollection* reconstructedPi0 = m_reconstructedPi0.createAndPut();
   edm4hep::ClusterCollection* unpairedClusters = m_unpairedClusters.createAndPut();
