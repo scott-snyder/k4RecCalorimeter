@@ -21,27 +21,37 @@
 DECLARE_COMPONENT(ReadNoiseFromFileTool)
 
 StatusCode ReadNoiseFromFileTool::initialize() {
+  K4RECCALORIMETER_CHECK( AlgTool::initialize() );
+
   K4RECCALORIMETER_CHECK( m_geoSvc.retrieve() );
-
-  m_segmentation = dynamic_cast<dd4hep::DDSegmentation::FCCSWGridPhiEta_k4geo*>(
-      m_geoSvc->getDetector()->readout(m_readoutName).segmentation().segmentation());
-  if (m_segmentation == nullptr) {
-    error() << "There is no phi-eta segmentation!!!!" << endmsg;
-    return StatusCode::FAILURE;
-  }
-
-  // open and check file, read the histograms with noise constants
-  K4RECCALORIMETER_CHECK( ReadNoiseFromFileTool::initNoiseFromFile() );
+  K4RECCALORIMETER_CHECK( m_indexerSvc.retrieve() );
+  K4RECCALORIMETER_CHECK( m_constantsSvc.retrieve() );
 
   // Take readout bitfield decoder from GeoSvc
-  m_decoder = m_geoSvc->getDetector()->readout(m_readoutName).idSpec().decoder();
+  dd4hep::Readout readout = m_geoSvc->getDetector()->readout(m_readoutName);
+  m_decoder = readout.idSpec().decoder();
 
-  K4RECCALORIMETER_CHECK( AlgTool::initialize() );
+  m_index_activeField = m_decoder->index(m_activeFieldName);
+
+  int detID = readout.segmentation().detector()->id;
+  m_indexer = m_indexerSvc->indexer (detID);
+  K4RECCALORIMETER_CHECK( m_indexer != nullptr );
+
+  // get noise constants.
+  m_data = m_constantsSvc->getObj<NoiseData> (m_noiseFileName);
+  if (!m_data) {
+    NoiseData noise;
+    K4RECCALORIMETER_CHECK( ReadNoiseFromFileTool::initNoiseFromFile(noise) );
+    K4RECCALORIMETER_CHECK( m_constantsSvc->putObj (m_noiseFileName, std::move (noise)) );
+    m_data = m_constantsSvc->getObj<NoiseData> (m_noiseFileName);
+    K4RECCALORIMETER_CHECK( m_data != nullptr );
+  }
 
   return StatusCode::SUCCESS;
 }
 
-StatusCode ReadNoiseFromFileTool::initNoiseFromFile() {
+StatusCode ReadNoiseFromFileTool::initNoiseFromFile(NoiseData& data) const
+{
   // Check if file exists
   if (m_noiseFileName.empty()) {
     error() << "Name of the file with the noise values not provided!" << endmsg;
@@ -67,8 +77,8 @@ StatusCode ReadNoiseFromFileTool::initNoiseFromFile() {
   for (unsigned i = 0; i < m_numRadialLayers; i++) {
     elecNoiseLayerHistoName = m_elecNoiseHistoName + std::to_string(i + 1);
     debug() << "Getting histogram with a name " << elecNoiseLayerHistoName << endmsg;
-    m_histoElecNoiseRMS.push_back(*dynamic_cast<TH1F*>(noiseFile->Get(elecNoiseLayerHistoName.c_str())));
-    if (m_histoElecNoiseRMS.at(i).GetNbinsX() < 1) {
+    data.m_histoElecNoiseRMS.push_back(*dynamic_cast<TH1F*>(noiseFile->Get(elecNoiseLayerHistoName.c_str())));
+    if (data.m_histoElecNoiseRMS.at(i).GetNbinsX() < 1) {
       error() << "Histogram  " << elecNoiseLayerHistoName
               << " has 0 bins! check the file with noise and the name of the histogram!" << endmsg;
       return StatusCode::FAILURE;
@@ -76,8 +86,8 @@ StatusCode ReadNoiseFromFileTool::initNoiseFromFile() {
     if (m_setNoiseOffset) {
       elecNoiseOffsetLayerHistoName = m_elecNoiseOffsetHistoName + std::to_string(i + 1);
       debug() << "Getting histogram with a name " << elecNoiseOffsetLayerHistoName << endmsg;
-      m_histoElecNoiseOffset.push_back(*dynamic_cast<TH1F*>(noiseFile->Get(elecNoiseOffsetLayerHistoName.c_str())));
-      if (m_histoElecNoiseOffset.at(i).GetNbinsX() < 1) {
+      data.m_histoElecNoiseOffset.push_back(*dynamic_cast<TH1F*>(noiseFile->Get(elecNoiseOffsetLayerHistoName.c_str())));
+      if (data.m_histoElecNoiseOffset.at(i).GetNbinsX() < 1) {
         error() << "Histogram  " << elecNoiseOffsetLayerHistoName
                 << " has 0 bins! check the file with noise and the name of the histogram!" << endmsg;
         return StatusCode::FAILURE;
@@ -86,8 +96,8 @@ StatusCode ReadNoiseFromFileTool::initNoiseFromFile() {
     if (m_addPileup) {
       pileupLayerHistoName = m_pileupHistoName + std::to_string(i + 1);
       debug() << "Getting histogram with a name " << pileupLayerHistoName << endmsg;
-      m_histoPileupNoiseRMS.push_back(*dynamic_cast<TH1F*>(noiseFile->Get(pileupLayerHistoName.c_str())));
-      if (m_histoPileupNoiseRMS.at(i).GetNbinsX() < 1) {
+      data.m_histoPileupNoiseRMS.push_back(*dynamic_cast<TH1F*>(noiseFile->Get(pileupLayerHistoName.c_str())));
+      if (data.m_histoPileupNoiseRMS.at(i).GetNbinsX() < 1) {
         error() << "Histogram  " << pileupLayerHistoName
                 << " has 0 bins! check the file with noise and the name of the histogram!" << endmsg;
         return StatusCode::FAILURE;
@@ -95,8 +105,8 @@ StatusCode ReadNoiseFromFileTool::initNoiseFromFile() {
       if (m_setNoiseOffset == true) {
         pileupOffsetLayerHistoName = m_pileupOffsetHistoName + std::to_string(i + 1);
         debug() << "Getting histogram with a name " << pileupOffsetLayerHistoName << endmsg;
-        m_histoPileupOffset.push_back(*dynamic_cast<TH1F*>(noiseFile->Get(pileupOffsetLayerHistoName.c_str())));
-        if (m_histoElecNoiseOffset.at(i).GetNbinsX() < 1) {
+        data.m_histoPileupOffset.push_back(*dynamic_cast<TH1F*>(noiseFile->Get(pileupOffsetLayerHistoName.c_str())));
+        if (data.m_histoElecNoiseOffset.at(i).GetNbinsX() < 1) {
           error() << "Histogram  " << pileupOffsetLayerHistoName
                   << " has 0 bins! check the file with noise and the name of the histogram!" << endmsg;
           return StatusCode::FAILURE;
@@ -105,52 +115,97 @@ StatusCode ReadNoiseFromFileTool::initNoiseFromFile() {
     }
   }
   // Check if we have same number of histograms (all layers) for pileup and electronics noise
-  if (m_histoElecNoiseRMS.size() == 0) {
+  if (data.m_histoElecNoiseRMS.size() == 0) {
     error() << "No histograms with noise found!!!!" << endmsg;
     return StatusCode::FAILURE;
   }
   if (m_addPileup) {
-    if (m_histoElecNoiseRMS.size() != m_histoPileupNoiseRMS.size()) {
+    if (data.m_histoElecNoiseRMS.size() != data.m_histoPileupNoiseRMS.size()) {
       error() << "Missing histograms! Different number of histograms for electronics noise and pileup!!!!" << endmsg;
       return StatusCode::FAILURE;
     }
   }
 
+  K4RECCALORIMETER_CHECK( initBinning (data, *m_indexer));
+
   return StatusCode::SUCCESS;
 }
 
-double ReadNoiseFromFileTool::getNoiseRMSPerCell(uint64_t aCellId) const {
 
+StatusCode  ReadNoiseFromFileTool::initBinning (NoiseData& data,
+                                                const ICaloIndexer& indexer) const
+{
+  /// PhiEta segmentation
+  const auto* segmentation = 
+    dynamic_cast<const dd4hep::DDSegmentation::FCCSWGridPhiEta_k4geo*>(
+      m_geoSvc->getDetector()->readout(m_readoutName).segmentation().segmentation());
+  if (segmentation == nullptr) {
+    error() << "There is no phi-eta segmentation!!!!" << endmsg;
+    return StatusCode::FAILURE;
+  }
+
+  data.m_bins.resize (indexer.cellIDs().size());
+
+  auto deltaEta = [] (TH1F* h) -> std::pair<int, double>
+  {
+    if (!h) return std::make_pair (0, 0.);
+    int Nbins = h->GetNbinsX();
+    double delta = (h->GetBinLowEdge(Nbins) + h->GetBinWidth(Nbins) - h->GetBinLowEdge(1)) /
+        Nbins;
+    return std::make_pair (Nbins, delta);
+  };
+  auto [NbinsRMS, deltaEtaRMS] = deltaEta (&data.m_histoElecNoiseRMS.at(0));
+  auto [NbinsOffset, deltaEtaOffset] = deltaEta (m_setNoiseOffset ? &data.m_histoElecNoiseOffset.at(0) : nullptr);
+
+  for (uint64_t id : indexer.cellIDs()) {
+    unsigned ndx = indexer.index (id);
+    double cellEta = segmentation->eta(id);
+
+    {
+      int ibin = floor(fabs(cellEta) / deltaEtaRMS) + 1;
+      if (ibin > NbinsRMS) {
+        error() << "eta outside range of the RMS histograms! Cell eta: " << cellEta << " Nbins in histogram: " << NbinsRMS
+                << endmsg;
+        ibin = NbinsRMS;
+      }
+      data.m_bins.at(ndx).first = ibin;
+    }
+    {
+      int ibin = floor(fabs(cellEta) / deltaEtaOffset) + 1;
+      if (ibin > NbinsOffset) {
+        error() << "eta outside range of the offset histograms! Cell eta: " << cellEta << " Nbins in histogram: " << NbinsOffset
+                << endmsg;
+        ibin = NbinsOffset;
+      }
+      data.m_bins.at(ndx).second = ibin;
+    }
+
+  }
+
+  return StatusCode::SUCCESS;
+}
+
+
+double ReadNoiseFromFileTool::getNoiseRMSPerCell(uint64_t aCellId) const {
+  // Get cell coordinates: bin and radial layer
+  unsigned ndx = m_indexer->index (aCellId);
+  int ibin = m_data->m_bins.at(ndx).first;
+
+  unsigned cellLayer = m_decoder->get(aCellId, m_index_activeField);
+  return getNoiseRMSPerCell(ibin, cellLayer);
+}
+
+double ReadNoiseFromFileTool::getNoiseRMSPerCell(int ibin, unsigned cellLayer) const {
   double elecNoiseRMS = 0.;
   double pileupNoiseRMS = 0.;
 
-  // Get cell coordinates: eta and radial layer
-  dd4hep::DDSegmentation::CellID cID = aCellId;
-  double cellEta = m_segmentation->eta(cID);
-
-  unsigned cellLayer = m_decoder->get(cID, m_activeFieldName);
-
   // All histograms have same binning, all bins with same size
-  // Using the histogram in the first layer to get the bin size
-  unsigned index = 0;
-  if (m_histoElecNoiseRMS.size() != 0) {
-    int Nbins = m_histoElecNoiseRMS.at(index).GetNbinsX();
-    double deltaEtaBin =
-        (m_histoElecNoiseRMS.at(index).GetBinLowEdge(Nbins) + m_histoElecNoiseRMS.at(index).GetBinWidth(Nbins) -
-         m_histoElecNoiseRMS.at(index).GetBinLowEdge(1)) /
-        Nbins;
-    // find the eta bin for the cell
-    int ibin = floor(fabs(cellEta) / deltaEtaBin) + 1;
-    if (ibin > Nbins) {
-      error() << "eta outside range of the histograms! Cell eta: " << cellEta << " Nbins in histogram: " << Nbins
-              << endmsg;
-      ibin = Nbins;
-    }
+  if (m_data->m_histoElecNoiseRMS.size() != 0) {
     // Check that there are not more layers than the constants are provided for
-    if (cellLayer < m_histoElecNoiseRMS.size()) {
-      elecNoiseRMS = m_histoElecNoiseRMS.at(cellLayer).GetBinContent(ibin);
+    if (cellLayer < m_data->m_histoElecNoiseRMS.size()) {
+      elecNoiseRMS = m_data->m_histoElecNoiseRMS.at(cellLayer).GetBinContent(ibin);
       if (m_addPileup) {
-        pileupNoiseRMS = m_histoPileupNoiseRMS.at(cellLayer).GetBinContent(ibin);
+        pileupNoiseRMS = m_data->m_histoPileupNoiseRMS.at(cellLayer).GetBinContent(ibin);
       }
     } else {
       error()
@@ -165,7 +220,7 @@ double ReadNoiseFromFileTool::getNoiseRMSPerCell(uint64_t aCellId) const {
   double totalNoiseRMS = sqrt(elecNoiseRMS * elecNoiseRMS + pileupNoiseRMS * pileupNoiseRMS) * m_scaleFactor;
 
   if (totalNoiseRMS < 1e-6) {
-    warning() << "Zero noise: cell eta " << cellEta << " layer " << cellLayer << " noise " << totalNoiseRMS << endmsg;
+    warning() << "Zero noise: cell bin " << ibin << " layer " << cellLayer << " noise " << totalNoiseRMS << endmsg;
   }
 
   return totalNoiseRMS;
@@ -176,35 +231,25 @@ double ReadNoiseFromFileTool::getNoiseOffsetPerCell(uint64_t aCellId) const {
   if (!m_setNoiseOffset)
     return 0.;
 
+  // Get cell coordinates: bin and radial layer
+  unsigned ndx = m_indexer->index (aCellId);
+  int ibin = m_data->m_bins.at(ndx).second;
+
+  unsigned cellLayer = m_decoder->get(aCellId, m_index_activeField);
+  return getNoiseOffsetPerCell(ibin, cellLayer);
+}
+
+double ReadNoiseFromFileTool::getNoiseOffsetPerCell(int ibin, unsigned cellLayer) const {
   double elecNoiseOffset = 0.;
   double pileupNoiseOffset = 0.;
 
-  // Get cell coordinates: eta and radial layer
-  dd4hep::DDSegmentation::CellID cID = aCellId;
-  double cellEta = m_segmentation->eta(cID);
-  unsigned cellLayer = m_decoder->get(cID, m_activeFieldName);
-
   // All histograms have same binning, all bins with same size
-  // Using the histogram in the first layer to get the bin size
-  unsigned index = 0;
-  if (m_histoElecNoiseOffset.size() != 0) {
-    int Nbins = m_histoElecNoiseOffset.at(index).GetNbinsX();
-    double deltaEtaBin =
-        (m_histoElecNoiseOffset.at(index).GetBinLowEdge(Nbins) + m_histoElecNoiseOffset.at(index).GetBinWidth(Nbins) -
-         m_histoElecNoiseOffset.at(index).GetBinLowEdge(1)) /
-        Nbins;
-    // find the eta bin for the cell
-    int ibin = floor(fabs(cellEta) / deltaEtaBin) + 1;
-    if (ibin > Nbins) {
-      error() << "eta outside range of the histograms! Cell eta: " << cellEta << " Nbins in histogram: " << Nbins
-              << endmsg;
-      ibin = Nbins;
-    }
+  if (m_data->m_histoElecNoiseOffset.size() != 0) {
     // Check that there are not more layers than the constants are provided for
-    if (cellLayer < m_histoElecNoiseOffset.size()) {
-      elecNoiseOffset = m_histoElecNoiseOffset.at(cellLayer).GetBinContent(ibin);
+    if (cellLayer < m_data->m_histoElecNoiseOffset.size()) {
+      elecNoiseOffset = m_data->m_histoElecNoiseOffset.at(cellLayer).GetBinContent(ibin);
       if (m_addPileup) {
-        pileupNoiseOffset = m_histoPileupOffset.at(cellLayer).GetBinContent(ibin);
+        pileupNoiseOffset = m_data->m_histoPileupOffset.at(cellLayer).GetBinContent(ibin);
       }
     } else {
       error()
@@ -227,6 +272,13 @@ double ReadNoiseFromFileTool::getNoiseOffsetPerCell(uint64_t aCellId) const {
 std::pair<double, double>
 ReadNoiseFromFileTool::getNoisePerCell(uint64_t aCellId) const
 {
-  return std::make_pair (getNoiseRMSPerCell(aCellId),
-                         getNoiseOffsetPerCell(aCellId));
+  // Get cell coordinates: bin and radial layer
+  unsigned ndx = m_indexer->index (aCellId);
+  const std::pair<unsigned, unsigned>& bins = m_data->m_bins.at(ndx);
+
+  unsigned cellLayer = m_decoder->get(aCellId, m_index_activeField);
+
+  double rms = getNoiseRMSPerCell(bins.first, cellLayer);
+  double offset = m_setNoiseOffset ? getNoiseOffsetPerCell(bins.second, cellLayer) : 0;
+  return std::make_pair (rms, offset);
 }
