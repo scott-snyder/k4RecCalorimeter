@@ -8,6 +8,21 @@
 DECLARE_COMPONENT(TubeLayerPhiEtaCaloTool)
 
 
+TubeLayerPhiEtaCaloTool::TubeLayerPhiEtaCaloTool (const std::string& type,
+                                                  const std::string& name,
+                                                  const IInterface* parent)
+  : CalorimeterToolBase (type, name, parent)
+{
+}
+
+
+unsigned TubeLayerPhiEtaCaloTool::index (uint64_t /*cellId*/) const
+{
+  std::cerr << "TubeLayerPhiEtaCaloTool::index\n";
+  std::abort(); //xxx
+}
+
+
 StatusCode TubeLayerPhiEtaCaloTool::collectCells(std::vector<uint64_t>& cells) const
 {
   // Get the total number of active volumes in the geometry
