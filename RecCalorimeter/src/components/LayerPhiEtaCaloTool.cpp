@@ -7,6 +7,21 @@
 DECLARE_COMPONENT(LayerPhiEtaCaloTool)
 
 
+LayerPhiEtaCaloTool::LayerPhiEtaCaloTool (const std::string& type,
+                                          const std::string& name,
+                                          const IInterface* parent)
+  : CalorimeterToolBase (type, name, parent)
+{
+}
+
+
+unsigned LayerPhiEtaCaloTool::index (uint64_t /*cellId*/) const
+{
+  std::cerr << "LayerPhiEtaCaloTool::index\n";
+  std::abort(); //xxx
+}
+
+
 StatusCode LayerPhiEtaCaloTool::collectCells(std::vector<uint64_t>& cells) const
 {
   // Get the total number of active volumes in the geometry
