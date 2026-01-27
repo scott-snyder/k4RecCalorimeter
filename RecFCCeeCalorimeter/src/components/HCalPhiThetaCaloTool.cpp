@@ -8,6 +8,21 @@
 DECLARE_COMPONENT(HCalPhiThetaCaloTool)
 
 
+HCalPhiThetaCaloTool::HCalPhiThetaCaloTool (const std::string& type,
+                                            const std::string& name,
+                                            const IInterface* parent)
+  : CalorimeterToolBase (type, name, parent)
+{
+}
+
+
+unsigned HCalPhiThetaCaloTool::index (uint64_t /*cellId*/) const
+{
+  std::cerr << "HCalPhiThetaCaloTool::index\n";
+  std::abort(); //xxx
+}
+
+
 /** Fill vector with all existing cells for this geometry.
  */
 StatusCode HCalPhiThetaCaloTool::collectCells(std::vector<uint64_t>& cells) const
