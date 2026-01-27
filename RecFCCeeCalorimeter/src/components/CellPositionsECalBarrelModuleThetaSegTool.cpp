@@ -11,6 +11,8 @@ DECLARE_COMPONENT(CellPositionsECalBarrelModuleThetaSegTool)
 StatusCode CellPositionsECalBarrelModuleThetaSegTool::initialize() {
   K4_GAUDI_CHECK( AlgTool::initialize() );
   K4_GAUDI_CHECK( m_geoSvc.retrieve() );
+  K4_GAUDI_CHECK( m_geoTool.retrieve() );
+  K4_GAUDI_CHECK( m_constantsSvc.retrieve() );
 
   // get segmentation
   m_segmentation = dynamic_cast<dd4hep::DDSegmentation::FCCSWGridModuleThetaMerged_k4geo*>(
@@ -31,8 +33,28 @@ StatusCode CellPositionsECalBarrelModuleThetaSegTool::initialize() {
     }
   }
 
-  m_volman = m_geoSvc->getDetector()->volumeManager();
+  std::string dataKey = m_readoutName.value() + "-cellPositions";
+  const PositionData* data = m_constantsSvc->getObj<PositionData> (dataKey);
+  if (!data) {
+    dd4hep::VolumeManager volman_glob = m_geoSvc->getDetector()->volumeManager();
+    dd4hep::VolumeManager volman = volman_glob.subdetector (m_geoTool->id());
 
+    const std::vector<uint64_t>& ids = m_geoTool->cellIDs();
+
+    PositionData positions;
+    positions.resize (ids.size());
+    for (uint64_t id : ids) {
+      unsigned index = m_geoTool->index (id);
+      dd4hep::DDSegmentation::CellID volumeId = m_segmentation->volumeID(id);
+      dd4hep::VolumeManagerContext* vc = volman.lookupContext(volumeId);
+      dd4hep::DDSegmentation::Vector3D inSeg = m_segmentation->position(id);
+      positions.at(index) = vc->localToWorld(dd4hep::Position(inSeg));
+    }
+    K4_GAUDI_CHECK( m_constantsSvc->putObj (dataKey, std::move (positions)) );
+    data = m_constantsSvc->getObj<PositionData> (dataKey);
+    K4_GAUDI_CHECK( data != nullptr );
+  }
+  m_positions = *data;
   return StatusCode::SUCCESS;
 }
 
@@ -67,11 +89,9 @@ void CellPositionsECalBarrelModuleThetaSegTool::getPositions(const edm4hep::Calo
 dd4hep::Position CellPositionsECalBarrelModuleThetaSegTool::xyzPosition(const uint64_t& aCellId) const {
 
   // find position of volume corresponding to first of group of merged cells
-  dd4hep::DDSegmentation::CellID volumeId = m_segmentation->volumeID(aCellId);
-  dd4hep::VolumeManagerContext* vc = m_volman.lookupContext(volumeId);
-  dd4hep::DDSegmentation::Vector3D inSeg = m_segmentation->position(aCellId);
-  dd4hep::Position outSeg = vc->localToWorld(dd4hep::Position(inSeg));
-  return outSeg;
+  unsigned index = m_geoTool->index (aCellId);
+  if (index >= m_positions.size()) throw std::out_of_range ("CellPositionsECalBarrelModuleThetaSegTool::xyzPosition");
+  return m_positions[index];
 }
 
 int CellPositionsECalBarrelModuleThetaSegTool::layerId(const uint64_t& aCellId) const {
