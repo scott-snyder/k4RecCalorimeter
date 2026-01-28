@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "4e2f120e2c940b2ce1d129bae7cd1bcc5174069f",
-  "head": "a2a6bfdc5b0074af1812dffd2ddfb163183edb95",
+  "prev": "f63236019fdebf8233e8b24403d4a0dd085f698b",
+  "head": "d8c07389ec2dad2ffb1dbdb9a7a39edffcfc5f51",
   "applied": [
     "depr",
     "testdir",
@@ -36,7 +36,8 @@
     "idmapIndexer",
     "ecalbarrelIndexer",
     "move-check",
-    "check-deprecated"
+    "check-deprecated",
+    "refresh-temp"
   ],
   "unapplied": [
     "check-remove"
@@ -120,6 +121,9 @@
     },
     "noise3": {
       "oid": "f106656cf73cd360582edf9151ef1cd522d1db26"
+    },
+    "refresh-temp": {
+      "oid": "d8c07389ec2dad2ffb1dbdb9a7a39edffcfc5f51"
     },
     "repnoise": {
       "oid": "7144737c168139f281c99fd12776d82cec7382d4"
