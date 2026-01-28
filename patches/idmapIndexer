@@ -1,0 +1,8 @@
+Bottom: 095741bc2719374f33f75b00f9c968047664c931
+Top:    99b2d0617b3bb0be03b8b6af6493b296b65de1b6
+Author: sss <sss@karma>
+Date:   2026-01-28 15:02:00 -0500
+
+Add IDMapIndexer
+
+Add a concrete implementation of ICaloIndexer using IDMap.
