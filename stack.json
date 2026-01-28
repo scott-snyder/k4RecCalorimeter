@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "0dcb162a96d46779453b5562af2e86c315b15732",
-  "head": "f188b5f095e717d8a7361a07964f90111444da8f",
+  "prev": "ef8295a4e3908d084bd024357492d00017e09cdc",
+  "head": "ee7df4718c55db2018cdd2815bcef92797e13caf",
   "applied": [
     "discrit-wip",
     "cellPositionsConst2",
@@ -39,8 +39,7 @@
     "ecalIndex-wip",
     "dummyIndex-wip",
     "diag-wip",
-    "cellsInConst",
-    "refresh-temp"
+    "cellsInConst"
   ],
   "unapplied": [],
   "hidden": [],
@@ -154,10 +153,7 @@
       "oid": "64648b7bb634ad22defaa57e0180918137811976"
     },
     "cellsInConst": {
-      "oid": "5640d66ece6e6e44254328adc04adeeeb0848703"
-    },
-    "refresh-temp": {
-      "oid": "f188b5f095e717d8a7361a07964f90111444da8f"
+      "oid": "ee7df4718c55db2018cdd2815bcef92797e13caf"
     }
   }
 }
