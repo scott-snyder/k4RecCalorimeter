@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "32107c69276907e78c8ccd0ea83c3aaaff82b6aa",
-  "head": "71b06772965e4ea19ec2a0d0e300b456133e005d",
+  "prev": "5c5b1ccc1a22cabbd655b8dc1e6b8aebe4b391c9",
+  "head": "fa30c861dba318e7f1f72f6f5dd2692344d533c7",
   "applied": [
     "depr",
     "testdir",
@@ -34,8 +34,7 @@
     "caloCellConstantsSvc",
     "cellsInConst",
     "move-check",
-    "check-deprecated",
-    "refresh-temp"
+    "check-deprecated"
   ],
   "unapplied": [
     "check-remove"
@@ -64,7 +63,7 @@
       "oid": "b85544a8826ad8b191fc45b8be24acf4add02320"
     },
     "check-deprecated": {
-      "oid": "cbcf6691aa4d5405cd547258a6ab381ec4a36afa"
+      "oid": "fa30c861dba318e7f1f72f6f5dd2692344d533c7"
     },
     "check-remove": {
       "oid": "e853b1569b973402350724e5a9841e62cbf7c402"
@@ -100,7 +99,7 @@
       "oid": "368d7879db9cecf4a66d7363f3d5e63f07f4b6a6"
     },
     "move-check": {
-      "oid": "b008bb821852de0808eba2e560e933a05882a802"
+      "oid": "0230f23e433ed2a2be64bc72c57b020f809ef6bf"
     },
     "noise1a": {
       "oid": "68846a1475567211e77a42a35a50172cb3c312c7"
@@ -113,9 +112,6 @@
     },
     "noise3": {
       "oid": "03e6270ea7689d596dc80966e86cbbb09fb39453"
-    },
-    "refresh-temp": {
-      "oid": "71b06772965e4ea19ec2a0d0e300b456133e005d"
     },
     "repnoise": {
       "oid": "7144737c168139f281c99fd12776d82cec7382d4"
