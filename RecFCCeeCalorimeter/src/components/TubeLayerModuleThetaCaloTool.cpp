@@ -1,4 +1,5 @@
 #include "TubeLayerModuleThetaCaloTool.h"
+#include "RecCaloCommon/IDMapIndexer.h"
 
 // dd4hep
 #include "DD4hep/Detector.h"
@@ -71,4 +72,21 @@ StatusCode TubeLayerModuleThetaCaloTool::collectCells(std::vector<uint64_t>& cel
   }
 
   return StatusCode::SUCCESS;
+}
+
+
+/** Return a new indexer object for this subdetector.
+ */
+std::unique_ptr<k4::recCalo::ICaloIndexer>
+TubeLayerModuleThetaCaloTool::indexer() const
+{
+  using Indexer_t = k4::recCalo::IDMapIndexer<3>;
+  auto idSpec = readout().idSpec();
+  std::vector<Indexer_t::FieldDesc_t> fields
+    { Indexer_t::IDMap_t::makeDesc (*idSpec.field("layer")),
+      Indexer_t::IDMap_t::makeDesc (*idSpec.field("theta")),
+      Indexer_t::IDMap_t::makeDesc (*idSpec.field("module")) };
+
+  // ALLEGRO Ecal requires ~ 15M for indexing.  Hint 16.
+  return std::make_unique<Indexer_t> (fields, cellIDs(), 16*1024*1024);
 }
