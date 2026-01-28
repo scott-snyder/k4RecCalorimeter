@@ -115,13 +115,9 @@ void test1 (mapkey_span ids)
 
   // Make the fields used by the map.
   std::vector<FieldDesc_t> fielddescs;
-  auto pushdesc = [&] (const std::string s) {
-    const dd4hep::BitFieldElement* bfe = desc.field (s);
-    fielddescs.emplace_back (bfe->offset(), bfe->width());
-  };
-  pushdesc ("layer");
-  pushdesc ("theta");
-  pushdesc ("module");
+  fielddescs.push_back (Map_t::makeDesc (*desc.field ("layer")));
+  fielddescs.push_back (Map_t::makeDesc (*desc.field ("theta")));
+  fielddescs.push_back (Map_t::makeDesc (*desc.field ("module")));
 
   // Make and fill the map.
   const unsigned INVALID = static_cast<unsigned>(-1);

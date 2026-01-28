@@ -220,6 +220,16 @@ public:
 
 
   /**
+   * @brief Helper for making a @c FieldDesc_t from a @c BitFieldElement.
+   *
+   * Makes a @c FieldDesc_t from something with @c offset() and @c width()
+   * methods.
+   */
+  template <class T>
+  static FieldDesc_t makeDesc (const T& f);
+
+
+  /**
    * @brief Constructor.
    * @param fields Set of fields to use from the identifiers.
    *               Must be sufficient to make identifiers unique.
@@ -405,6 +415,18 @@ public:
    */
   payload_t lookup (key_t k) const { return base_class::lookup (k, NFIELDS); }
 };
+
+
+/**
+ * @brief Helper for making a @c FieldDesc_t from a @c BitFieldElement.
+ */
+template <IDMapPayload PAYLOAD>
+template <class T>
+inline
+auto IDMap<PAYLOAD>::makeDesc (const T& f) -> FieldDesc_t
+{
+  return std::make_pair (f.offset(), f.width());
+}
 
 
 /**
