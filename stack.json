@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "edc5b9ab658606242f64440c8abcfa28d4368ea3",
-  "head": "95e65cd369e7efff5f27fb4e710f709e6de5549b",
+  "prev": "ad44c376961bceaa94d6857f5896c798f5fa3154",
+  "head": "e1b28542de3d5dd35db279381dc7431ef6d825c9",
   "applied": [
     "discrit-wip",
     "cellPositionsConst2",
@@ -40,8 +40,7 @@
     "noiseIndex-wip",
     "ecalIndex-wip",
     "dummyIndex-wip",
-    "diag-wip",
-    "refresh-temp"
+    "diag-wip"
   ],
   "unapplied": [],
   "hidden": [],
@@ -101,67 +100,64 @@
       "oid": "9ea7d049c8a1b84a2871c09058f6dfcb46799c11"
     },
     "idmapIndexer": {
-      "oid": "c6d6580d1ccda9b89e8e947ada13fed4f739ecc5"
+      "oid": "5edeb7e1881b17d075ad52360fea4b621a40dd40"
     },
     "caloCellConstantsSvc": {
-      "oid": "7d467be3c633b9cd694ba1a3c3c433161245db60"
+      "oid": "72b88baa3bc673768ad1c63a2447e9656caf8864"
     },
     "layerIndex": {
-      "oid": "75c9d30b3e89c28fb913ffdec3065caf0bdf9fc9"
+      "oid": "55988a4efb2a525f1b057e940fc455d6b8ccc41a"
     },
     "xtalkSpan1": {
-      "oid": "6095bc8346bd05b33dd217839254d388443f7d2c"
+      "oid": "a01b6c47450d789acf63f6af87da35be247af7bd"
     },
     "xtalkSpan3": {
-      "oid": "9b1fbef52d2ad446c374ed08bf3ec5f3972df293"
+      "oid": "4683fe5ac0216caf32199fe981a8e6155f0b27e5"
     },
     "xtalkSpan5": {
-      "oid": "b1c8b939f047f9bbb997b8500bc7c258753ed695"
+      "oid": "47cc47a327738c87e8d14dc78aeb0221e88ac029"
     },
     "noise1a": {
-      "oid": "48f19e65e8898cad22f6306e45135f7707309a16"
+      "oid": "c4c4f742f697991dad1b38b1be6a327052b2afef"
     },
     "noise1b": {
-      "oid": "c2f65bfc8d356d3a2e650961c6582b20d71b7271"
+      "oid": "c8b9309e5b5f914a1e11169b7ca93a6040a7e691"
     },
     "noise1c": {
-      "oid": "0a0f1f64484221d5bc1dd058332bfc463ca7c324"
+      "oid": "6062d51592c56725c15bece2303f322402b7123e"
     },
     "noise3": {
-      "oid": "360646b1ac861744953004db851c0a2d6a47d1f4"
+      "oid": "f76f133232099306908a4611c5411ed5834b55cc"
     },
     "cellsInConst": {
-      "oid": "99e6580f81b433604c7c4599a769afeeb6dda4f3"
+      "oid": "84fed9313f29bdf8545bf25070bf47c0648bf9c4"
     },
     "xtalkIndex-wip": {
-      "oid": "e282f824a1de242665c9a242d6a44c592ffab16d"
+      "oid": "808e510110bd72ba74628b5322bfca906d1da657"
     },
     "topoNoiseIndex-wip": {
-      "oid": "9163019d179bdbfd9670f5455718e1a2fbc036fc"
+      "oid": "ad3cc4e8806965363a6f50f421b8338e1693e937"
     },
     "createCaloCells2-wip": {
-      "oid": "a42cb94a5d32a07c3028bd5bc2676e6d29d5f084"
+      "oid": "5ed8e4b034df156c1edeb21595431e8f4e4eee28"
     },
     "createTopoCluster-wip": {
-      "oid": "fdddcbf35014343cf06da43bcd99ebc002b05c84"
+      "oid": "8e5fa0daee36a7f492afd3fa95dd7e79cedfbd92"
     },
     "cellposIndex-wip": {
-      "oid": "d2718f0bc1e854b9ce6d95771d37f1eeec116cb9"
+      "oid": "1dd11e3dab084ce8cafbb6e2e1d8f6aa89d80912"
     },
     "noiseIndex-wip": {
-      "oid": "e86e71121e3cda72e14e1078e2afe94d5dc97b3e"
+      "oid": "9c353e99ef9d434cd126f4bc088a54fd1496ecf9"
     },
     "ecalIndex-wip": {
-      "oid": "6db4ddfa43a41b03c23149ef7c4c689a4f5040f2"
+      "oid": "fa4f8b0448831f4c909fa685d6a50de4aab2d2a8"
     },
     "dummyIndex-wip": {
-      "oid": "78e41dbdf4dbedd06eadc07e5558e2ba1c1e72ad"
+      "oid": "8d2d224064008035becf41f27ea0d78102bd8a8d"
     },
     "diag-wip": {
-      "oid": "0afa4187701ed503ccbd7d91e3ee4cf7d64225a6"
-    },
-    "refresh-temp": {
-      "oid": "95e65cd369e7efff5f27fb4e710f709e6de5549b"
+      "oid": "e1b28542de3d5dd35db279381dc7431ef6d825c9"
     }
   }
 }
