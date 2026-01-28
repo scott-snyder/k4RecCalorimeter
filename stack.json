@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "eda4c4d44a69c8771c716aef1579859c28bc9355",
-  "head": "b3c6e5c82a2725e3b1d7afc97f0821053113b2f6",
+  "prev": "5044db09dcb4e5ac5000afbe462ab6f0e1d56c72",
+  "head": "8bef3aeecfaa184693ad989ad1179ae19e851fa1",
   "applied": [
     "depr",
     "testdir",
@@ -32,10 +32,10 @@
     "noise3",
     "caloCellConstantsSvc",
     "cellsInConst",
-    "idmap",
-    "idmapIndexer"
+    "idmap"
   ],
   "unapplied": [
+    "idmapIndexer",
     "move-check",
     "check-deprecated",
     "check-remove"
