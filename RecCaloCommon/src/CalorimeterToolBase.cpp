@@ -10,6 +10,7 @@
 #include "RecCaloCommon/k4RecCalorimeter_check.h"
 #include "DD4hep/Detector.h"
 #include <algorithm>
+#include <string>
 
 
 /** Standard Gaudi initialize method.
@@ -32,6 +33,12 @@ StatusCode CalorimeterToolBase::initialize()
     m_readout = it->second;
   }
 
+  // Need to do this after m_readout is defined, since it may ask us
+  // for our id.
+  K4RECCALORIMETER_CHECK( m_constantsSvc.retrieve() );
+
+  K4RECCALORIMETER_CHECK( makeCells() );
+
   return StatusCode::SUCCESS;
 }
 
@@ -43,22 +50,7 @@ StatusCode CalorimeterToolBase::initialize()
  */
 const std::vector<uint64_t>& CalorimeterToolBase::cellIDs() const
 {
-  {
-    std::lock_guard lock (m_mutex);
-    if (!m_filledCells) {
-      if (collectCells(m_cells).isSuccess()) {
-        // Sort and make unique.
-        std::ranges::sort(m_cells);
-        const auto ret = std::ranges::unique(m_cells);
-        m_cells.erase(ret.begin(), ret.end());
-      }
-      else {
-        m_cells.clear();
-      }
-      m_filledCells = true;
-    }
-  }
-  return m_cells;
+  return *m_cells;
 }
 
 
@@ -105,4 +97,39 @@ int CalorimeterToolBase::id() const
     return -1;
   }
   return m_readout.segmentation().detector()->id;
+}
+
+
+StatusCode CalorimeterToolBase::makeCells()
+{
+  int detid = id();
+  std::string keyName = "cellIDs-";
+  if (detid >= 0)
+    keyName += std::to_string (detid);
+  else
+    keyName += "dummy";
+
+  m_cells = m_constantsSvc->getObj<std::vector<uint64_t> > (keyName);
+  if (m_cells) {
+    return StatusCode::SUCCESS;
+  }
+
+  std::vector<uint64_t> cells;
+  if (detid >= 0) {
+    if (collectCells(cells).isSuccess()) {
+      // Sort and make unique.
+      std::ranges::sort(cells);
+      const auto ret = std::ranges::unique(cells);
+      cells.erase(ret.begin(), ret.end());
+    }
+    else {
+      cells.clear();
+    }
+  }
+
+  K4RECCALORIMETER_CHECK( m_constantsSvc->putObj (keyName, std::move(cells)) );
+  m_cells = m_constantsSvc->getObj<std::vector<uint64_t> > (keyName);
+  K4RECCALORIMETER_CHECK( m_cells != nullptr );
+
+  return StatusCode::SUCCESS;
 }
