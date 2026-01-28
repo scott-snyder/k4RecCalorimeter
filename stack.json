@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "d784d22495fe1a7437844768855849bd9676eeeb",
-  "head": "313946452c1d28f186db93324410a1598054f954",
+  "prev": "983a3d7c157a306158819d6cd2c3b4eb43661ae0",
+  "head": "03e6270ea7689d596dc80966e86cbbb09fb39453",
   "applied": [
     "depr",
     "testdir",
@@ -22,13 +22,7 @@
     "caloToolInfo1",
     "caloToolInfo3",
     "subdetVolman",
-    "idmap"
-  ],
-  "unapplied": [
-    "caloCellConstantsSvc",
-    "move-check",
-    "check-deprecated",
-    "check-remove",
+    "idmap",
     "layerIndex",
     "xtalkSpan1",
     "xtalkSpan3",
@@ -37,6 +31,12 @@
     "noise1b",
     "noise1c",
     "noise3"
+  ],
+  "unapplied": [
+    "caloCellConstantsSvc",
+    "move-check",
+    "check-deprecated",
+    "check-remove"
   ],
   "hidden": [],
   "patches": {
@@ -92,22 +92,22 @@
       "oid": "313946452c1d28f186db93324410a1598054f954"
     },
     "layerIndex": {
-      "oid": "ff75b784503ad9dcaf9dcba9a7636174d85aa6df"
+      "oid": "368d7879db9cecf4a66d7363f3d5e63f07f4b6a6"
     },
     "move-check": {
       "oid": "2a06140ebd3c52f91948f6bcf29570262848b4df"
     },
     "noise1a": {
-      "oid": "f80ceeff140173ca6b977e40edccadf793506548"
+      "oid": "68846a1475567211e77a42a35a50172cb3c312c7"
     },
     "noise1b": {
-      "oid": "c914f09f8beaf8c7a26c0d984f59f8eacc176697"
+      "oid": "a290e773932e75a5b3fc3827056ef4ef54f5ff76"
     },
     "noise1c": {
-      "oid": "4101f82c02b7e602b060bdb64e864dd4e3c467fe"
+      "oid": "1a880ab790d294bc6cb3c9f0420144c465502999"
     },
     "noise3": {
-      "oid": "9c593f13cca2c9b0e2884763ac29eea85d645940"
+      "oid": "03e6270ea7689d596dc80966e86cbbb09fb39453"
     },
     "repnoise": {
       "oid": "7144737c168139f281c99fd12776d82cec7382d4"
@@ -128,13 +128,13 @@
       "oid": "b5ec1f4c730cc30d9af4a6ee5386c3cb577107ac"
     },
     "xtalkSpan1": {
-      "oid": "02ea1fbd8142975c9f21c23e64dbeeceb1d35081"
+      "oid": "0a82cf4b37014b81a39b688e508868b293a9410f"
     },
     "xtalkSpan3": {
-      "oid": "88e1d664a6f6472e7452ec2c83a9da4d31e067e8"
+      "oid": "6c0babe4d0c15dbf6469f6d38985521a7a587c84"
     },
     "xtalkSpan5": {
-      "oid": "1d75b8ac49198f585a9f374b0e9164ecd40d3874"
+      "oid": "31356dcf3db3b941ad0f42b97a21fd77a7c45210"
     }
   }
 }
