@@ -6,8 +6,8 @@
  */
 
 #undef NDEBUG
-#include "DD4hep/IDDescriptor.h"
 #include "RecCaloCommon/IDMap.h"
+#include "DD4hep/IDDescriptor.h"
 #include "boost/timer/timer.hpp"
 #include <vector>
 #include <map>
