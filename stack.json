@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "983a3d7c157a306158819d6cd2c3b4eb43661ae0",
+  "prev": "4c105985ff4f12ebd8c47d421a4433ccac689191",
   "head": "03e6270ea7689d596dc80966e86cbbb09fb39453",
   "applied": [
     "depr",
@@ -33,7 +33,6 @@
     "noise3"
   ],
   "unapplied": [
-    "caloCellConstantsSvc",
     "move-check",
     "check-deprecated",
     "check-remove"
@@ -42,9 +41,6 @@
   "patches": {
     "calib2": {
       "oid": "b6e94c0a08ccbbfdd0535f0e777746c6dfe0be94"
-    },
-    "caloCellConstantsSvc": {
-      "oid": "85927330c80e237fa6fb5ac88b71a15d7c455d2e"
     },
     "caloToolInfo1": {
       "oid": "0c9a61888488bbbcb7c63863f6272cc4e3f2c821"
