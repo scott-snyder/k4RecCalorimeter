@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "3fe324260a6aafec67c689ff2dd581b671e976c8",
-  "head": "c972dbaa30c00d92dc29880f3ad1f0f73a11bc0c",
+  "prev": "23202a424ce36ffc519d75fdcbd65a3383351817",
+  "head": "5ee406bce5b97a65c211b3e84dabba764654805d",
   "applied": [
     "depr",
     "testdir",
@@ -32,8 +32,7 @@
     "noise1c",
     "noise3",
     "caloCellConstantsSvc",
-    "cellsInConst",
-    "refresh-temp"
+    "cellsInConst"
   ],
   "unapplied": [
     "move-check",
@@ -46,7 +45,7 @@
       "oid": "b6e94c0a08ccbbfdd0535f0e777746c6dfe0be94"
     },
     "caloCellConstantsSvc": {
-      "oid": "a740a843b9adbd4af0fc1551efc9ecaf2ba06626"
+      "oid": "944a8f826976da3313a23764e77be4ba31770d71"
     },
     "caloToolInfo1": {
       "oid": "0c9a61888488bbbcb7c63863f6272cc4e3f2c821"
@@ -61,7 +60,7 @@
       "oid": "ebed951be47e7ee015048c079141f9123b5ef49b"
     },
     "cellsInConst": {
-      "oid": "b85544a8826ad8b191fc45b8be24acf4add02320"
+      "oid": "5ee406bce5b97a65c211b3e84dabba764654805d"
     },
     "check-deprecated": {
       "oid": "fa30c861dba318e7f1f72f6f5dd2692344d533c7"
@@ -94,28 +93,25 @@
       "oid": "1f1d68ee1a1e7303eff26fd42bf57515ca4ddfa8"
     },
     "idmap": {
-      "oid": "313946452c1d28f186db93324410a1598054f954"
+      "oid": "fb1b93585b5851ee7a9eb485dd34ed06fb6b5d67"
     },
     "layerIndex": {
-      "oid": "368d7879db9cecf4a66d7363f3d5e63f07f4b6a6"
+      "oid": "3bbb183c6d5a501944de276e39440d6a67669753"
     },
     "move-check": {
       "oid": "0230f23e433ed2a2be64bc72c57b020f809ef6bf"
     },
     "noise1a": {
-      "oid": "68846a1475567211e77a42a35a50172cb3c312c7"
+      "oid": "518fd435a2fd77e8bc39036afb979e607cec66ef"
     },
     "noise1b": {
-      "oid": "a290e773932e75a5b3fc3827056ef4ef54f5ff76"
+      "oid": "511e196cc0fcb0b5bd31a007c53faa57b1cd26a4"
     },
     "noise1c": {
-      "oid": "1a880ab790d294bc6cb3c9f0420144c465502999"
+      "oid": "7a585fa21f3d196411a3b177540b11fec490f98b"
     },
     "noise3": {
-      "oid": "03e6270ea7689d596dc80966e86cbbb09fb39453"
-    },
-    "refresh-temp": {
-      "oid": "c972dbaa30c00d92dc29880f3ad1f0f73a11bc0c"
+      "oid": "39b2235eedb1cba4a3ac0b9c82cc2410163e0357"
     },
     "repnoise": {
       "oid": "7144737c168139f281c99fd12776d82cec7382d4"
@@ -136,13 +132,13 @@
       "oid": "b5ec1f4c730cc30d9af4a6ee5386c3cb577107ac"
     },
     "xtalkSpan1": {
-      "oid": "0a82cf4b37014b81a39b688e508868b293a9410f"
+      "oid": "13e654ff91381f003d371c35a74671540e3ea57c"
     },
     "xtalkSpan3": {
-      "oid": "6c0babe4d0c15dbf6469f6d38985521a7a587c84"
+      "oid": "97342ebc09f4b16f65f18ad1bb23aced0d0db05c"
     },
     "xtalkSpan5": {
-      "oid": "31356dcf3db3b941ad0f42b97a21fd77a7c45210"
+      "oid": "8accb33c1ef30943cbe762622428f20395a87c3a"
     }
   }
 }
