@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "8693156e1331b2b7f7ad6dfbf64960f5310c7d16",
-  "head": "04bc3493686a0a6ada47eb33c4d87522ff529a0e",
+  "prev": "1bcfcf122f24a015fa587aa727ff5bbaec3ddfcb",
+  "head": "b85544a8826ad8b191fc45b8be24acf4add02320",
   "applied": [
     "depr",
     "testdir",
@@ -32,12 +32,13 @@
     "noise1c",
     "noise3",
     "caloCellConstantsSvc",
-    "cellsInConst",
+    "cellsInConst"
+  ],
+  "unapplied": [
     "move-check",
     "check-deprecated",
     "check-remove"
   ],
-  "unapplied": [],
   "hidden": [],
   "patches": {
     "calib2": {
