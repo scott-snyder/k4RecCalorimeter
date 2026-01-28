@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "b36d4d52bfe6ae4c69c68ea253c626f88bac0b2b",
-  "head": "e9b75da31824c0b1973fce551eef34670984d070",
+  "prev": "472368205bee021ab749b996ab6515834a80dd9e",
+  "head": "c02e4bb5d3b1e35048bfbef79cd1955a90333da5",
   "applied": [
     "depr",
     "testdir",
@@ -34,8 +34,7 @@
     "cellsInConst",
     "idmap",
     "idmapIndexer",
-    "ecalbarrelIndexer",
-    "refresh-temp"
+    "ecalbarrelIndexer"
   ],
   "unapplied": [
     "move-check",
@@ -84,7 +83,7 @@
       "oid": "d80418510a9d1a62830e708be03f639a19316c59"
     },
     "ecalbarrelIndexer": {
-      "oid": "6ef89d1b45a06cea558ccc29ab65f4c9c375d7f3"
+      "oid": "c02e4bb5d3b1e35048bfbef79cd1955a90333da5"
     },
     "geoConst2": {
       "oid": "6b000825dce276c3cde2a7e702abc9f7dc539952"
@@ -121,9 +120,6 @@
     },
     "noise3": {
       "oid": "f106656cf73cd360582edf9151ef1cd522d1db26"
-    },
-    "refresh-temp": {
-      "oid": "e9b75da31824c0b1973fce551eef34670984d070"
     },
     "repnoise": {
       "oid": "7144737c168139f281c99fd12776d82cec7382d4"
