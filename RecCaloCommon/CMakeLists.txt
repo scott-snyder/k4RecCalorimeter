@@ -30,3 +30,9 @@ gaudi_add_executable(IDMap_test
   SOURCES tests/IDMap_test.cpp
   LINK RecCaloCommon DD4hep::DDCore Boost::timer
   TEST)
+
+
+gaudi_add_executable(IDMapIndexer_test
+  SOURCES tests/IDMapIndexer_test.cpp
+  LINK RecCaloCommon DD4hep::DDCore k4FWCore::k4Interface
+  TEST)
