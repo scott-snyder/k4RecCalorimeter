@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "ebc568f27931f74a40fce44329d7822d62d8e58f",
-  "head": "cbcf6691aa4d5405cd547258a6ab381ec4a36afa",
+  "prev": "32107c69276907e78c8ccd0ea83c3aaaff82b6aa",
+  "head": "71b06772965e4ea19ec2a0d0e300b456133e005d",
   "applied": [
     "depr",
     "testdir",
@@ -34,7 +34,8 @@
     "caloCellConstantsSvc",
     "cellsInConst",
     "move-check",
-    "check-deprecated"
+    "check-deprecated",
+    "refresh-temp"
   ],
   "unapplied": [
     "check-remove"
@@ -112,6 +113,9 @@
     },
     "noise3": {
       "oid": "03e6270ea7689d596dc80966e86cbbb09fb39453"
+    },
+    "refresh-temp": {
+      "oid": "71b06772965e4ea19ec2a0d0e300b456133e005d"
     },
     "repnoise": {
       "oid": "7144737c168139f281c99fd12776d82cec7382d4"
