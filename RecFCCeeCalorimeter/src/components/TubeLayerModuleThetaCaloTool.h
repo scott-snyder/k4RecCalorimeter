@@ -19,6 +19,13 @@ public:
   virtual ~TubeLayerModuleThetaCaloTool() = default;
 
 
+  /** Return a new indexer object for this subdetector.
+   *
+   * Returns a null pointer if indexing is not implemented.
+   */
+  virtual std::unique_ptr<k4::recCalo::ICaloIndexer> indexer() const override final;
+
+
 protected:
   /** Fill vector with all existing cells for this geometry.
    */
