@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "a932884b6b28bc57c898abf1c5070392162ee78b",
-  "head": "86041ec6088349f6774e2248a73ab3e60273bb74",
+  "prev": "b1c5ffcc95147bc1f2944951fe75fe475d3d7112",
+  "head": "b85544a8826ad8b191fc45b8be24acf4add02320",
   "applied": [
     "depr",
     "testdir",
@@ -32,8 +32,7 @@
     "noise1c",
     "noise3",
     "caloCellConstantsSvc",
-    "cellsInConst",
-    "refresh-temp"
+    "cellsInConst"
   ],
   "unapplied": [
     "move-check",
@@ -61,7 +60,7 @@
       "oid": "ebed951be47e7ee015048c079141f9123b5ef49b"
     },
     "cellsInConst": {
-      "oid": "d7f5f052a9a827419b4f108aa9ac27ef37bac0dc"
+      "oid": "b85544a8826ad8b191fc45b8be24acf4add02320"
     },
     "check-deprecated": {
       "oid": "a5453aa8950eaa17e81369e170b49e48e5d9958c"
@@ -113,9 +112,6 @@
     },
     "noise3": {
       "oid": "03e6270ea7689d596dc80966e86cbbb09fb39453"
-    },
-    "refresh-temp": {
-      "oid": "86041ec6088349f6774e2248a73ab3e60273bb74"
     },
     "repnoise": {
       "oid": "7144737c168139f281c99fd12776d82cec7382d4"
