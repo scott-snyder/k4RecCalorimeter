@@ -26,11 +26,7 @@ install(TARGETS RecCaloCommon
 )
 
 
-add_executable(IDMap_test.exe tests/IDMap_test.cpp)
-target_include_directories(IDMap_test.exe PUBLIC include)
-target_link_libraries(IDMap_test.exe DD4hep::DDCore Boost::timer)
-
-include(CTest)
-
-add_test(NAME IDMap_test
-  COMMAND IDMap_test.exe)
+gaudi_add_executable(IDMap_test
+  SOURCES tests/IDMap_test.cpp
+  LINK RecCaloCommon DD4hep::DDCore Boost::timer
+  TEST)
