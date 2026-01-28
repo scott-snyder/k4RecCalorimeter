@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "d29cf5cf9aae685b411dbfd1a2962378c6223dc4",
+  "prev": "8928e8c2c31677307b8d9ae43a334d148eee5a60",
   "head": "f307c9fa1d7ab014947e0b517401f5df73f359f5",
   "applied": [
     "discrit-wip",
@@ -22,7 +22,6 @@
     "subdetVolman"
   ],
   "unapplied": [
-    "idmap",
     "caloCellConstantsSvc",
     "layerIndex",
     "xtalkSpan1",
@@ -95,9 +94,6 @@
     },
     "subdetVolman": {
       "oid": "f307c9fa1d7ab014947e0b517401f5df73f359f5"
-    },
-    "idmap": {
-      "oid": "27bd543f0cad19e2c5f23026db11e08c46c2a11b"
     },
     "caloCellConstantsSvc": {
       "oid": "7fd680bfa702a6f76d1645c0c9ccb66d4bf8e103"
