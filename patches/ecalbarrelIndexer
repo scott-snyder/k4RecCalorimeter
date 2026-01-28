@@ -1,0 +1,9 @@
+Bottom: 05d4bf10be081a70fa4989ebef1b1d69cc2a9488
+Top:    05d4bf10be081a70fa4989ebef1b1d69cc2a9488
+Author: sss <sss@karma>
+Date:   2026-01-28 17:03:30 -0500
+
+Implement TubeLayerModuleThetaCaloTool::indexer().
+
+Implement indexer() for the Allegeo ecal barrel, using IDMapIndexer.
+Also add a simple test.

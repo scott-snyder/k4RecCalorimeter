@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "f2cfa2350a71c51cc3129cdb02cd445c47a0c792",
-  "head": "f52bb351351d03552a0cfebcf8ec26dab37ae48f",
+  "prev": "2411021220c89ffd12584afdfcb4064b911c7141",
+  "head": "6ef89d1b45a06cea558ccc29ab65f4c9c375d7f3",
   "applied": [
     "depr",
     "testdir",
@@ -33,7 +33,8 @@
     "caloCellConstantsSvc",
     "cellsInConst",
     "idmap",
-    "idmapIndexer"
+    "idmapIndexer",
+    "ecalbarrelIndexer"
   ],
   "unapplied": [
     "move-check",
@@ -80,6 +81,9 @@
     },
     "depr": {
       "oid": "d80418510a9d1a62830e708be03f639a19316c59"
+    },
+    "ecalbarrelIndexer": {
+      "oid": "6ef89d1b45a06cea558ccc29ab65f4c9c375d7f3"
     },
     "geoConst2": {
       "oid": "6b000825dce276c3cde2a7e702abc9f7dc539952"
