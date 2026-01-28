@@ -35,9 +35,9 @@ StatusCode CalorimeterToolBase::initialize()
 
   // Need to do this after m_readout is defined, since it may ask us
   // for our id.
-  K4RECCALORIMETER_CHECK( m_constantsSvc.retrieve() );
+  K4_GAUDI_CHECK( m_constantsSvc.retrieve() );
 
-  K4RECCALORIMETER_CHECK( makeCells() );
+  K4_GAUDI_CHECK( makeCells() );
 
   return StatusCode::SUCCESS;
 }
@@ -127,9 +127,9 @@ StatusCode CalorimeterToolBase::makeCells()
     }
   }
 
-  K4RECCALORIMETER_CHECK( m_constantsSvc->putObj (keyName, std::move(cells)) );
+  K4_GAUDI_CHECK( m_constantsSvc->putObj (keyName, std::move(cells)) );
   m_cells = m_constantsSvc->getObj<std::vector<uint64_t> > (keyName);
-  K4RECCALORIMETER_CHECK( m_cells != nullptr );
+  K4_GAUDI_CHECK( m_cells != nullptr );
 
   return StatusCode::SUCCESS;
 }
