@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "b1c5ffcc95147bc1f2944951fe75fe475d3d7112",
-  "head": "b85544a8826ad8b191fc45b8be24acf4add02320",
+  "prev": "ebc568f27931f74a40fce44329d7822d62d8e58f",
+  "head": "cbcf6691aa4d5405cd547258a6ab381ec4a36afa",
   "applied": [
     "depr",
     "testdir",
@@ -32,11 +32,11 @@
     "noise1c",
     "noise3",
     "caloCellConstantsSvc",
-    "cellsInConst"
+    "cellsInConst",
+    "move-check",
+    "check-deprecated"
   ],
   "unapplied": [
-    "move-check",
-    "check-deprecated",
     "check-remove"
   ],
   "hidden": [],
@@ -63,7 +63,7 @@
       "oid": "b85544a8826ad8b191fc45b8be24acf4add02320"
     },
     "check-deprecated": {
-      "oid": "a5453aa8950eaa17e81369e170b49e48e5d9958c"
+      "oid": "cbcf6691aa4d5405cd547258a6ab381ec4a36afa"
     },
     "check-remove": {
       "oid": "e853b1569b973402350724e5a9841e62cbf7c402"
@@ -99,7 +99,7 @@
       "oid": "368d7879db9cecf4a66d7363f3d5e63f07f4b6a6"
     },
     "move-check": {
-      "oid": "2a06140ebd3c52f91948f6bcf29570262848b4df"
+      "oid": "b008bb821852de0808eba2e560e933a05882a802"
     },
     "noise1a": {
       "oid": "68846a1475567211e77a42a35a50172cb3c312c7"
