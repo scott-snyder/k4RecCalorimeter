@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "d9afd37d61b35c5251d9fbdcdfbc9ffc2e7b7f23",
-  "head": "752353bfced6e9ecec24ce390f8b723392521c28",
+  "prev": "8e4310d19da5b2f24aa42bf6afb5c3ca11d9a565",
+  "head": "2e2c4eb23df652116b85e3746a46a57a5ecf143b",
   "applied": [
     "depr",
     "testdir",
@@ -31,7 +31,9 @@
     "noise1c",
     "noise3",
     "caloCellConstantsSvc",
-    "cellsInConst"
+    "cellsInConst",
+    "idmap",
+    "idmapIndexer"
   ],
   "unapplied": [
     "move-check",
@@ -90,6 +92,12 @@
     },
     "hcal-tool": {
       "oid": "1f1d68ee1a1e7303eff26fd42bf57515ca4ddfa8"
+    },
+    "idmap": {
+      "oid": "8bef3aeecfaa184693ad989ad1179ae19e851fa1"
+    },
+    "idmapIndexer": {
+      "oid": "2e2c4eb23df652116b85e3746a46a57a5ecf143b"
     },
     "layerIndex": {
       "oid": "89e9b6b7f27f0d6f920235a7cc2e514ec6f991b2"
