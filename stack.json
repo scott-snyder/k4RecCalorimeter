@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "396457132327662ad52f9d53aef622d4ec5e90ed",
-  "head": "8177b6e5ad2761dfda8a99454c21d860a9867be4",
+  "prev": "1d887b72aaeeebed53be793d7ad5ce48e43b2a9b",
+  "head": "f22640a840d7d3ef8076a340e1456556e9ad775a",
   "applied": [
     "depr",
     "testdir",
@@ -33,8 +33,7 @@
     "noise3",
     "caloCellConstantsSvc",
     "cellsInConst",
-    "idmapIndexer",
-    "refresh-temp"
+    "idmapIndexer"
   ],
   "unapplied": [
     "move-check",
@@ -98,7 +97,7 @@
       "oid": "5e2f419480643045d0c4d9e000265eadc105f4ea"
     },
     "idmapIndexer": {
-      "oid": "ba183172fe80ae2bb5ab213467f9aee3110735b6"
+      "oid": "f22640a840d7d3ef8076a340e1456556e9ad775a"
     },
     "layerIndex": {
       "oid": "9d3c2f7c94691eaace9031ef7d31fa859b10c313"
@@ -117,9 +116,6 @@
     },
     "noise3": {
       "oid": "ed17a78673c2714a4d4697d87c28b71ae3f66ed1"
-    },
-    "refresh-temp": {
-      "oid": "8177b6e5ad2761dfda8a99454c21d860a9867be4"
     },
     "repnoise": {
       "oid": "7144737c168139f281c99fd12776d82cec7382d4"
