@@ -10,7 +10,7 @@
 #include "RecCaloCommon/k4RecCalorimeter_check.h"
 #include "DD4hep/Detector.h"
 #include <algorithm>
-#include <format>
+#include <string>
 
 
 /** Standard Gaudi initialize method.
@@ -103,7 +103,11 @@ int CalorimeterToolBase::id() const
 StatusCode CalorimeterToolBase::makeCells()
 {
   int detid = id();
-  std::string keyName = detid >= 0 ? std::format ("cellIDs-{}", detid) : "cellIDs-dummy";
+  std::string keyName = "cellIDs-";
+  if (detid >= 0)
+    keyName += std::to_string (detid);
+  else
+    keyName += "dummy";
 
   m_cells = m_constantsSvc->getObj<std::vector<uint64_t> > (keyName);
   if (m_cells) {
