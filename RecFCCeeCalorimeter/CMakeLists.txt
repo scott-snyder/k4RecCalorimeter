@@ -61,3 +61,16 @@ add_test(NAME IDEA_o1_v03_reco
 )
 set_test_env(IDEA_o1_v03_reco)
 set_tests_properties(IDEA_o1_v03_reco PROPERTIES DEPENDS simulateSiPM)
+
+gaudi_add_module(k4RecFCCeeCalorimeterTests
+                 SOURCES tests/src/TubeLayerModuleThetaCaloToolTestAlg.cpp
+                 LINK k4FWCore::k4FWCore
+                      k4FWCore::k4Interface
+                      Gaudi::GaudiKernel
+                      RecCaloCommon
+                      )
+
+add_test(NAME TubeLayerModuleThetaCaloTool_test
+         COMMAND k4run ${PROJECT_SOURCE_DIR}/RecFCCeeCalorimeter/tests/options/TubeLayerModuleThetaCaloTool_test.py
+         WORKING_DIRECTORY ${PROJECT_BINARY_DIR}/Testing/Temporary
+)
