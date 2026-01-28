@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "70046c0755bd904fa99923735d00323c8e7cc818",
-  "head": "a4baddf495356b7da55a84fd822e74d8220435b0",
+  "prev": "31c329ac53b1ccbda86285804ff126a7b3642029",
+  "head": "cd750eae8abce9020c182c5e39243c412ebc32b1",
   "applied": [
     "discrit-wip",
     "cellPositionsConst2",
@@ -31,7 +31,9 @@
     "noise1b",
     "noise1c",
     "noise3",
-    "cellsInConst",
+    "cellsInConst"
+  ],
+  "unapplied": [
     "xtalkIndex-wip",
     "topoNoiseIndex-wip",
     "createCaloCells2-wip",
@@ -42,7 +44,6 @@
     "dummyIndex-wip",
     "diag-wip"
   ],
-  "unapplied": [],
   "hidden": [],
   "patches": {
     "discrit-wip": {
