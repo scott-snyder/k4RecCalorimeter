@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "4c105985ff4f12ebd8c47d421a4433ccac689191",
-  "head": "03e6270ea7689d596dc80966e86cbbb09fb39453",
+  "prev": "dd102095c0462d5566787fd73a0fb5c8404bbb93",
+  "head": "a740a843b9adbd4af0fc1551efc9ecaf2ba06626",
   "applied": [
     "depr",
     "testdir",
@@ -30,7 +30,8 @@
     "noise1a",
     "noise1b",
     "noise1c",
-    "noise3"
+    "noise3",
+    "caloCellConstantsSvc"
   ],
   "unapplied": [
     "move-check",
@@ -41,6 +42,9 @@
   "patches": {
     "calib2": {
       "oid": "b6e94c0a08ccbbfdd0535f0e777746c6dfe0be94"
+    },
+    "caloCellConstantsSvc": {
+      "oid": "a740a843b9adbd4af0fc1551efc9ecaf2ba06626"
     },
     "caloToolInfo1": {
       "oid": "0c9a61888488bbbcb7c63863f6272cc4e3f2c821"
