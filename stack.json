@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "5011355aa351bb512e5a7925c6f4c01d92a0e910",
-  "head": "16fd315a040b9881f10e2c40e1e2106587c24272",
+  "prev": "0edfefb1b042ad07fae93361a89696f4167a9ade",
+  "head": "0b9f6dc516a2121fd65fa830e6c3aac5116087a6",
   "applied": [
     "depr",
     "testdir",
@@ -36,11 +36,10 @@
     "idmapIndexer",
     "ecalbarrelIndexer",
     "move-check",
-    "check-deprecated"
-  ],
-  "unapplied": [
+    "check-deprecated",
     "check-remove"
   ],
+  "unapplied": [],
   "hidden": [],
   "patches": {
     "calib2": {
@@ -68,7 +67,7 @@
       "oid": "16fd315a040b9881f10e2c40e1e2106587c24272"
     },
     "check-remove": {
-      "oid": "04bc3493686a0a6ada47eb33c4d87522ff529a0e"
+      "oid": "0b9f6dc516a2121fd65fa830e6c3aac5116087a6"
     },
     "ci": {
       "oid": "f92d050957cb01004854c80d78226a0240945f7f"
