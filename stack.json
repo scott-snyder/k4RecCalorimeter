@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "7774d0cd7d1e5487d2a861e16d98bc135fc03b8d",
-  "head": "64648b7bb634ad22defaa57e0180918137811976",
+  "prev": "ff372217ade58120b7d8af4027e853d23861a67d",
+  "head": "5640d66ece6e6e44254328adc04adeeeb0848703",
   "applied": [
     "discrit-wip",
     "cellPositionsConst2",
@@ -38,7 +38,8 @@
     "noiseIndex-wip",
     "ecalIndex-wip",
     "dummyIndex-wip",
-    "diag-wip"
+    "diag-wip",
+    "cellsInConst"
   ],
   "unapplied": [],
   "hidden": [],
@@ -150,6 +151,9 @@
     },
     "diag-wip": {
       "oid": "64648b7bb634ad22defaa57e0180918137811976"
+    },
+    "cellsInConst": {
+      "oid": "5640d66ece6e6e44254328adc04adeeeb0848703"
     }
   }
 }
