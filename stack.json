@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "fa0ca13925144207743e2abccdf3a74ecaa3d571",
-  "head": "9c593f13cca2c9b0e2884763ac29eea85d645940",
+  "prev": "d784d22495fe1a7437844768855849bd9676eeeb",
+  "head": "313946452c1d28f186db93324410a1598054f954",
   "applied": [
     "depr",
     "testdir",
@@ -22,7 +22,9 @@
     "caloToolInfo1",
     "caloToolInfo3",
     "subdetVolman",
-    "idmap",
+    "idmap"
+  ],
+  "unapplied": [
     "caloCellConstantsSvc",
     "move-check",
     "check-deprecated",
@@ -36,7 +38,6 @@
     "noise1c",
     "noise3"
   ],
-  "unapplied": [],
   "hidden": [],
   "patches": {
     "calib2": {
