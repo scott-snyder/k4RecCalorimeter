@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "aa876b321a266c4526bd37887a2e4adf61df48b2",
-  "head": "6dc7675d5276df8ff77a6a10e51aea593310b7e8",
+  "prev": "d29cf5cf9aae685b411dbfd1a2962378c6223dc4",
+  "head": "f307c9fa1d7ab014947e0b517401f5df73f359f5",
   "applied": [
     "discrit-wip",
     "cellPositionsConst2",
@@ -19,7 +19,9 @@
     "cellids-wip",
     "caloToolInfo1",
     "caloToolInfo3",
-    "subdetVolman",
+    "subdetVolman"
+  ],
+  "unapplied": [
     "idmap",
     "caloCellConstantsSvc",
     "layerIndex",
@@ -41,7 +43,6 @@
     "dummyIndex-wip",
     "diag-wip"
   ],
-  "unapplied": [],
   "hidden": [],
   "patches": {
     "discrit-wip": {
