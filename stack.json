@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "2411021220c89ffd12584afdfcb4064b911c7141",
-  "head": "6ef89d1b45a06cea558ccc29ab65f4c9c375d7f3",
+  "prev": "b36d4d52bfe6ae4c69c68ea253c626f88bac0b2b",
+  "head": "e9b75da31824c0b1973fce551eef34670984d070",
   "applied": [
     "depr",
     "testdir",
@@ -34,7 +34,8 @@
     "cellsInConst",
     "idmap",
     "idmapIndexer",
-    "ecalbarrelIndexer"
+    "ecalbarrelIndexer",
+    "refresh-temp"
   ],
   "unapplied": [
     "move-check",
@@ -120,6 +121,9 @@
     },
     "noise3": {
       "oid": "f106656cf73cd360582edf9151ef1cd522d1db26"
+    },
+    "refresh-temp": {
+      "oid": "e9b75da31824c0b1973fce551eef34670984d070"
     },
     "repnoise": {
       "oid": "7144737c168139f281c99fd12776d82cec7382d4"
