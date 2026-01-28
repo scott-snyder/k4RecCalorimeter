@@ -13,6 +13,7 @@
 
 #include "RecCaloCommon/ICaloCellConstantsSvc.h"
 #include "GaudiKernel/Service.h"
+#include <mutex>
 
 
 namespace k4::recCalo {
@@ -70,6 +71,9 @@ public:
 private:
   /// The stored objects.
   std::map<std::string, std::any> m_objs;
+
+  /// Guard access to the map.
+  mutable std::mutex m_mutex;
 };
 
 

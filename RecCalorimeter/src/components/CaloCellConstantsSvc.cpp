@@ -20,6 +20,7 @@ namespace k4::recCalo {
  */
 const std::any* CaloCellConstantsSvc::getAnyObj (const std::string& key) const
 {
+  std::lock_guard lock (m_mutex);
   auto it = m_objs.find (key);
   if (it != m_objs.end()) return &it->second;
   return nullptr;
@@ -33,6 +34,7 @@ const std::any* CaloCellConstantsSvc::getAnyObj (const std::string& key) const
  */
 bool CaloCellConstantsSvc::putAnyObj (const std::string& key, std::any&& obj)
 {
+  std::lock_guard lock (m_mutex);
   return m_objs.try_emplace (key, std::move(obj)).second;
 }
 
