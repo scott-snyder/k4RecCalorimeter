@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "472368205bee021ab749b996ab6515834a80dd9e",
-  "head": "c02e4bb5d3b1e35048bfbef79cd1955a90333da5",
+  "prev": "8dae382c977e2d6bf5a9323be8294eba684a470d",
+  "head": "5a81da03442feb5c442f27fa7ebba83d9e65d619",
   "applied": [
     "depr",
     "testdir",
@@ -34,10 +34,10 @@
     "cellsInConst",
     "idmap",
     "idmapIndexer",
-    "ecalbarrelIndexer"
+    "ecalbarrelIndexer",
+    "move-check"
   ],
   "unapplied": [
-    "move-check",
     "check-deprecated",
     "check-remove"
   ],
@@ -107,7 +107,7 @@
       "oid": "89e9b6b7f27f0d6f920235a7cc2e514ec6f991b2"
     },
     "move-check": {
-      "oid": "0230f23e433ed2a2be64bc72c57b020f809ef6bf"
+      "oid": "5a81da03442feb5c442f27fa7ebba83d9e65d619"
     },
     "noise1a": {
       "oid": "d4be4ef2d5b8300af78beb1c02b03819605a53c8"
