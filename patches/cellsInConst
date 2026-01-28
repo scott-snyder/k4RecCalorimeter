@@ -1,7 +1,0 @@
-Bottom: a143256ebf2d2c64a5aa693c29bfd28c6fc9cce8
-Top:    78eb5edfebeba57cfbe7305d50c94cb18bf1f311
-Author: scott snyder <snyder@bnl.gov>
-Date:   2026-01-28 11:22:58 -0500
-
-Store lists of calorimeter cellIDs in the cell constants service,
-to avoid duplicates.
