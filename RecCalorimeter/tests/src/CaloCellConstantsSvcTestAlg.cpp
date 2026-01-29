@@ -1,9 +1,10 @@
 /**
- * @file RecCalorimeter/tests/src/CaloCellConstantsSvc.cpp
+ * @file RecCalorimeter/tests/src/CaloCellConstantsSvcTestAlg.cpp
  * @author scott snyder <snyder@bnl.gov>
  * @date Jan, 2026
  * @brief Test for CaloCellConstantsSvc
  */
+
 
 #include "RecCaloCommon/ICaloCellConstantsSvc.h"
 #include "RecCaloCommon/k4RecCalorimeter_check.h"
