@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "93415820e0e24305a470bb02c484cc0fc74c056e",
-  "head": "bc437513cd2abcf4fa524d00a78034d84e837bca",
+  "prev": "57e48912fb6ce182dfea2f7f0f6f3843b56a132a",
+  "head": "ba95a11d08b24c08ca1c0372f287aa26abc625ff",
   "applied": [
     "depr",
     "testdir",
@@ -37,11 +37,10 @@
     "ecalbarrelIndexer",
     "caloCellIndexerSvc",
     "move-check",
-    "check-deprecated"
-  ],
-  "unapplied": [
+    "check-deprecated",
     "check-remove"
   ],
+  "unapplied": [],
   "hidden": [],
   "patches": {
     "calib2": {
@@ -72,7 +71,7 @@
       "oid": "bc437513cd2abcf4fa524d00a78034d84e837bca"
     },
     "check-remove": {
-      "oid": "0b9f6dc516a2121fd65fa830e6c3aac5116087a6"
+      "oid": "ba95a11d08b24c08ca1c0372f287aa26abc625ff"
     },
     "ci": {
       "oid": "f92d050957cb01004854c80d78226a0240945f7f"
