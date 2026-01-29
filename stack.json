@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "e1b5428c8ac52dd7352fdd4cdde13cd6a1292726",
-  "head": "1be7344dbb896f02e63837e2cdd406d71649ac2a",
+  "prev": "0811d452d7690ab7717cf80201d527a9230108a4",
+  "head": "cf7bda63c1f54cd2535fbac8093e3f24366ea502",
   "applied": [
     "depr",
     "testdir",
@@ -34,7 +34,8 @@
     "cellsInConst",
     "idmap",
     "idmapIndexer",
-    "ecalbarrelIndexer"
+    "ecalbarrelIndexer",
+    "caloCellIndexerSvc"
   ],
   "unapplied": [
     "move-check",
@@ -48,6 +49,9 @@
     },
     "caloCellConstantsSvc": {
       "oid": "5d569e7f02b822ef51af2c87232bb93dd3b6655c"
+    },
+    "caloCellIndexerSvc": {
+      "oid": "cf7bda63c1f54cd2535fbac8093e3f24366ea502"
     },
     "caloToolInfo1": {
       "oid": "0c9a61888488bbbcb7c63863f6272cc4e3f2c821"
