@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "9e445cf5f20ba70d7feb92819a4850d1f236a0a6",
-  "head": "e85f9d7d5deac743f845664081b5169812d0b317",
+  "prev": "455ade6aa5dffef952c4ffd6136d57203a141d7b",
+  "head": "9e771ffdbf6d5fd5b9427450a83d5b47682b6ad9",
   "applied": [
     "discrit-wip",
     "cellPositionsConst2",
@@ -30,7 +30,8 @@
     "noise1b",
     "noise1c",
     "noise3",
-    "caloCellConstantsSvc"
+    "caloCellConstantsSvc",
+    "caloCellIndexerSvc"
   ],
   "unapplied": [
     "cellsInConst",
@@ -130,6 +131,9 @@
     },
     "caloCellConstantsSvc": {
       "oid": "e85f9d7d5deac743f845664081b5169812d0b317"
+    },
+    "caloCellIndexerSvc": {
+      "oid": "9e771ffdbf6d5fd5b9427450a83d5b47682b6ad9"
     },
     "cellsInConst": {
       "oid": "cd750eae8abce9020c182c5e39243c412ebc32b1"
