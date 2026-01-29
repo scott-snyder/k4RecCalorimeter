@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "2076c55b38782c2a20fe097892a6561ca14eab72",
-  "head": "f927cabaf686cdd42b349967cdfabdc49c0cb865",
+  "prev": "1142f3825c889a48a8ae0926e7bb31a911513246",
+  "head": "f4e8eec5f3c54e219fbb849eb3adcc5c370c4a10",
   "applied": [
     "depr",
     "testdir",
@@ -34,8 +34,7 @@
     "cellsInConst",
     "idmap",
     "idmapIndexer",
-    "ecalbarrelIndexer",
-    "refresh-temp"
+    "ecalbarrelIndexer"
   ],
   "unapplied": [
     "move-check",
@@ -84,7 +83,7 @@
       "oid": "d80418510a9d1a62830e708be03f639a19316c59"
     },
     "ecalbarrelIndexer": {
-      "oid": "c02e4bb5d3b1e35048bfbef79cd1955a90333da5"
+      "oid": "f4e8eec5f3c54e219fbb849eb3adcc5c370c4a10"
     },
     "geoConst2": {
       "oid": "6b000825dce276c3cde2a7e702abc9f7dc539952"
@@ -102,7 +101,7 @@
       "oid": "d1027fa0a85af6ed2dac3363c48cf87ef6dc10aa"
     },
     "idmapIndexer": {
-      "oid": "f52bb351351d03552a0cfebcf8ec26dab37ae48f"
+      "oid": "63f1a91de29cf4abc2c3eaaad557db9c306d42a3"
     },
     "layerIndex": {
       "oid": "89e9b6b7f27f0d6f920235a7cc2e514ec6f991b2"
@@ -121,9 +120,6 @@
     },
     "noise3": {
       "oid": "f106656cf73cd360582edf9151ef1cd522d1db26"
-    },
-    "refresh-temp": {
-      "oid": "f927cabaf686cdd42b349967cdfabdc49c0cb865"
     },
     "repnoise": {
       "oid": "7144737c168139f281c99fd12776d82cec7382d4"
