@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "bfba8dfae0c78ab0f10b866a5c2568c9689f1746",
-  "head": "e2ba7b6e886725eca6721100d51f4ca3fa414dce",
+  "prev": "e1b5428c8ac52dd7352fdd4cdde13cd6a1292726",
+  "head": "1be7344dbb896f02e63837e2cdd406d71649ac2a",
   "applied": [
     "depr",
     "testdir",
@@ -34,8 +34,7 @@
     "cellsInConst",
     "idmap",
     "idmapIndexer",
-    "ecalbarrelIndexer",
-    "refresh-temp"
+    "ecalbarrelIndexer"
   ],
   "unapplied": [
     "move-check",
@@ -48,7 +47,7 @@
       "oid": "b6e94c0a08ccbbfdd0535f0e777746c6dfe0be94"
     },
     "caloCellConstantsSvc": {
-      "oid": "c58e558153b8b781d10a97b44af75316d19ada4e"
+      "oid": "5d569e7f02b822ef51af2c87232bb93dd3b6655c"
     },
     "caloToolInfo1": {
       "oid": "0c9a61888488bbbcb7c63863f6272cc4e3f2c821"
@@ -63,7 +62,7 @@
       "oid": "ebed951be47e7ee015048c079141f9123b5ef49b"
     },
     "cellsInConst": {
-      "oid": "752353bfced6e9ecec24ce390f8b723392521c28"
+      "oid": "a47fd83da3d3ab2e3f1294d32aaf88ea9c96cbe4"
     },
     "check-deprecated": {
       "oid": "16fd315a040b9881f10e2c40e1e2106587c24272"
@@ -84,7 +83,7 @@
       "oid": "d80418510a9d1a62830e708be03f639a19316c59"
     },
     "ecalbarrelIndexer": {
-      "oid": "1524b669164bf6c2021895de254fe8032d3e4764"
+      "oid": "1be7344dbb896f02e63837e2cdd406d71649ac2a"
     },
     "geoConst2": {
       "oid": "6b000825dce276c3cde2a7e702abc9f7dc539952"
@@ -99,10 +98,10 @@
       "oid": "1f1d68ee1a1e7303eff26fd42bf57515ca4ddfa8"
     },
     "idmap": {
-      "oid": "d1027fa0a85af6ed2dac3363c48cf87ef6dc10aa"
+      "oid": "ca717dc22aabaa2aa506826645d67a601a9077e8"
     },
     "idmapIndexer": {
-      "oid": "ea6b9bad27ce1bc0e967e8475082048d8d345ae5"
+      "oid": "ff3311e8e931bdeb0d07a3cee2272bc1364488ca"
     },
     "layerIndex": {
       "oid": "89e9b6b7f27f0d6f920235a7cc2e514ec6f991b2"
@@ -121,9 +120,6 @@
     },
     "noise3": {
       "oid": "f106656cf73cd360582edf9151ef1cd522d1db26"
-    },
-    "refresh-temp": {
-      "oid": "e2ba7b6e886725eca6721100d51f4ca3fa414dce"
     },
     "repnoise": {
       "oid": "7144737c168139f281c99fd12776d82cec7382d4"
