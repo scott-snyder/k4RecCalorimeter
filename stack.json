@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "455ade6aa5dffef952c4ffd6136d57203a141d7b",
-  "head": "9e771ffdbf6d5fd5b9427450a83d5b47682b6ad9",
+  "prev": "e6f94768a0385dd28ba74ba0c2ec2769fd3f0d08",
+  "head": "447c723e67d73f30da7f231da08583e28c753a06",
   "applied": [
     "discrit-wip",
     "cellPositionsConst2",
@@ -31,9 +31,7 @@
     "noise1c",
     "noise3",
     "caloCellConstantsSvc",
-    "caloCellIndexerSvc"
-  ],
-  "unapplied": [
+    "caloCellIndexerSvc",
     "cellsInConst",
     "ecalbarrelIndexer",
     "xtalkIndex-wip",
@@ -46,6 +44,7 @@
     "dummyIndex-wip",
     "diag-wip"
   ],
+  "unapplied": [],
   "hidden": [],
   "patches": {
     "discrit-wip": {
@@ -136,37 +135,37 @@
       "oid": "9e771ffdbf6d5fd5b9427450a83d5b47682b6ad9"
     },
     "cellsInConst": {
-      "oid": "cd750eae8abce9020c182c5e39243c412ebc32b1"
+      "oid": "ae1abf712864884ef65028db0085e99657a76574"
     },
     "ecalbarrelIndexer": {
-      "oid": "16c652d4c79f5baf476d9dd831e1221784fe4cb3"
+      "oid": "8e9c0e0cdf4aa469c878f289597e96f9173df91f"
     },
     "xtalkIndex-wip": {
-      "oid": "b135e5eb888c59eb2915e7d1856b80296a073aea"
+      "oid": "16ca7da071f86dc7d8a874b2bbc0793287c7159d"
     },
     "topoNoiseIndex-wip": {
-      "oid": "58375e9d951ca10eb029489f9ce7987d85568991"
+      "oid": "c127ddca93a3cdbdd0b7653b6a3cc964ae9681b1"
     },
     "createCaloCells2-wip": {
-      "oid": "691a4d7c72677b395075c2a534a412efb8cc9df6"
+      "oid": "90aca8a30a3e0bf0a901799f802af23d5d7a972d"
     },
     "createTopoCluster-wip": {
-      "oid": "06fa0337c38e6e5469c5e329a8fd1583b7645a84"
+      "oid": "0be10098ce8e3692a5829c062e33fd2315a8acb7"
     },
     "cellposIndex-wip": {
-      "oid": "c8f6595ce69ceda7aaa2d67179c0909764ae8519"
+      "oid": "712bd8472b6bc499242cc98620509db2d480b8e3"
     },
     "noiseIndex-wip": {
-      "oid": "68153a1ddddc81bce57b8b8555b50721cc065952"
+      "oid": "adaecdc1cc9cf1cf548e64b70be840585ee88b4c"
     },
     "ecalIndex-wip": {
-      "oid": "ae96561c708971ac23a190f07ee2d52c16dbc2fa"
+      "oid": "e030f10e08528e1cd8e3c12a5351bab3ff127ad5"
     },
     "dummyIndex-wip": {
-      "oid": "ec2552cb35eba07ab83788823bd33f44cbe36722"
+      "oid": "9e9886f464b3e44c9f09d88ee43acc706de4fc15"
     },
     "diag-wip": {
-      "oid": "e1f1e81b6e7335e1f91e4e118de4e7be7e7528e7"
+      "oid": "447c723e67d73f30da7f231da08583e28c753a06"
     }
   }
 }
