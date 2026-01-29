@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "eed6c25943f3bb7be163a0b0bc3df1e876dffd4c",
-  "head": "958c2af281602c1a878f39822a0bcff30ea9afc0",
+  "prev": "64bcc8ac375b0bd1311bb0033dfb98fdc2cf2651",
+  "head": "9d30f11f67eeef624d769827a2f69687f2ca8857",
   "applied": [
     "discrit-wip",
     "cellPositionsConst2",
@@ -21,10 +21,7 @@
     "caloToolInfo3",
     "subdetVolman",
     "idmap",
-    "idmapIndexer"
-  ],
-  "unapplied": [
-    "caloCellConstantsSvc",
+    "idmapIndexer",
     "layerIndex",
     "xtalkSpan1",
     "xtalkSpan3",
@@ -32,7 +29,10 @@
     "noise1a",
     "noise1b",
     "noise1c",
-    "noise3",
+    "noise3"
+  ],
+  "unapplied": [
+    "caloCellConstantsSvc",
     "cellsInConst",
     "ecalbarrelIndexer",
     "xtalkIndex-wip",
@@ -104,32 +104,32 @@
     "idmapIndexer": {
       "oid": "958c2af281602c1a878f39822a0bcff30ea9afc0"
     },
-    "caloCellConstantsSvc": {
-      "oid": "e8f2884c8ca85c4b464cb2c53b7c5e99479e494d"
-    },
     "layerIndex": {
-      "oid": "bb201e08ffd37dca9e1935281475c31b370c3d41"
+      "oid": "95a8caf010a5b172c00b9ba720996ea362946923"
     },
     "xtalkSpan1": {
-      "oid": "8146ecc7f80b032e48d46caca8a6a0a52a6ef2fe"
+      "oid": "2b595df318f245119365285803d535cbfeb016d4"
     },
     "xtalkSpan3": {
-      "oid": "5da2a8b5e87cc87548d9a3f3643aea490b69a376"
+      "oid": "502b1a692378db91d7e442b7bfee0307b8086566"
     },
     "xtalkSpan5": {
-      "oid": "266e367e44fee26b0a4e379a6a08f584ac1d9f68"
+      "oid": "1218c0457c0cb664fc2c3b279aa768677c0fe299"
     },
     "noise1a": {
-      "oid": "d3e9780ce3d7eaa5448782da192f1d2cbe9b0dc7"
+      "oid": "c67a2e1353f498154e769a515f2ec9e255a3adb8"
     },
     "noise1b": {
-      "oid": "64debc480cb808275414fff689dfbacf96ced412"
+      "oid": "dda556307dce2b3dd963a72a91bce23de8763a9e"
     },
     "noise1c": {
-      "oid": "42b97fde94d33d57d51cf6fb15cfda411855c400"
+      "oid": "8080cfccc74e6580a9108bfa203f1db32448b521"
     },
     "noise3": {
-      "oid": "09472259e0ecea781aeccb538962f445e9d695f4"
+      "oid": "9d30f11f67eeef624d769827a2f69687f2ca8857"
+    },
+    "caloCellConstantsSvc": {
+      "oid": "e8f2884c8ca85c4b464cb2c53b7c5e99479e494d"
     },
     "cellsInConst": {
       "oid": "cd750eae8abce9020c182c5e39243c412ebc32b1"
