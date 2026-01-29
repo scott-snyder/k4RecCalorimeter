@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "d29a00b4956c9675eb6d2ffca8b0006048eea454",
-  "head": "58d8f9497f688b0f7d7afb2980a616252d40740d",
+  "prev": "ad47990bbb615358587f1feb62886a9f82cefbe8",
+  "head": "e130214a4ca4dd6837d82855233c65a720b6e50f",
   "applied": [
     "depr",
     "testdir",
@@ -35,11 +35,11 @@
     "idmap",
     "idmapIndexer",
     "ecalbarrelIndexer",
-    "caloCellIndexerSvc"
+    "caloCellIndexerSvc",
+    "move-check",
+    "check-deprecated"
   ],
   "unapplied": [
-    "move-check",
-    "check-deprecated",
     "check-remove"
   ],
   "hidden": [],
@@ -69,7 +69,7 @@
       "oid": "a47fd83da3d3ab2e3f1294d32aaf88ea9c96cbe4"
     },
     "check-deprecated": {
-      "oid": "16fd315a040b9881f10e2c40e1e2106587c24272"
+      "oid": "e130214a4ca4dd6837d82855233c65a720b6e50f"
     },
     "check-remove": {
       "oid": "0b9f6dc516a2121fd65fa830e6c3aac5116087a6"
@@ -111,7 +111,7 @@
       "oid": "89e9b6b7f27f0d6f920235a7cc2e514ec6f991b2"
     },
     "move-check": {
-      "oid": "e02015fda38a3d5dd0c0abf858a7a0eea584d7e8"
+      "oid": "d3015afcd35897217e9a87a3aa41f4e20bfd2213"
     },
     "noise1a": {
       "oid": "d4be4ef2d5b8300af78beb1c02b03819605a53c8"
