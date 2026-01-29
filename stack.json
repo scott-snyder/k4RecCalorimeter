@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "ad47990bbb615358587f1feb62886a9f82cefbe8",
-  "head": "e130214a4ca4dd6837d82855233c65a720b6e50f",
+  "prev": "269ce7834c725a01983f43dfd7b8a7f00314aa34",
+  "head": "67bb91be7b199c1e0d04962b4222746e185173cd",
   "applied": [
     "depr",
     "testdir",
@@ -37,7 +37,8 @@
     "ecalbarrelIndexer",
     "caloCellIndexerSvc",
     "move-check",
-    "check-deprecated"
+    "check-deprecated",
+    "refresh-temp"
   ],
   "unapplied": [
     "check-remove"
@@ -124,6 +125,9 @@
     },
     "noise3": {
       "oid": "f106656cf73cd360582edf9151ef1cd522d1db26"
+    },
+    "refresh-temp": {
+      "oid": "67bb91be7b199c1e0d04962b4222746e185173cd"
     },
     "repnoise": {
       "oid": "7144737c168139f281c99fd12776d82cec7382d4"
