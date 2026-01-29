@@ -55,7 +55,9 @@ set_test_env(simulateSiPM)
 
 
 gaudi_add_module(k4RecCalorimeterTests
-                 SOURCES tests/src/CaloCellConstantsSvcTestAlg.cpp
+                 SOURCES
+                   tests/src/CaloCellConstantsSvcTestAlg.cpp
+                   tests/src/CaloCellIndexerSvcTestAlg.cpp
                  LINK k4FWCore::k4FWCore
                       k4FWCore::k4Interface
                       Gaudi::GaudiKernel
@@ -63,6 +65,10 @@ gaudi_add_module(k4RecCalorimeterTests
                       )
 add_test(NAME CaloCellConstantsSvc_test
          COMMAND k4run ${PROJECT_SOURCE_DIR}/RecCalorimeter/tests/options/CaloCellConstantsSvc_test.py
+         WORKING_DIRECTORY ${PROJECT_BINARY_DIR}/Testing/Temporary
+)
+add_test(NAME CaloCellIndexerSvc_test
+         COMMAND k4run ${PROJECT_SOURCE_DIR}/RecCalorimeter/tests/options/CaloCellIndexerSvc_test.py
          WORKING_DIRECTORY ${PROJECT_BINARY_DIR}/Testing/Temporary
 )
 
