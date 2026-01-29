@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "0edfefb1b042ad07fae93361a89696f4167a9ade",
-  "head": "0b9f6dc516a2121fd65fa830e6c3aac5116087a6",
+  "prev": "71bea6d1e5997c8b0c00a95e741030a6b31a24ca",
+  "head": "c02e4bb5d3b1e35048bfbef79cd1955a90333da5",
   "applied": [
     "depr",
     "testdir",
@@ -34,12 +34,13 @@
     "cellsInConst",
     "idmap",
     "idmapIndexer",
-    "ecalbarrelIndexer",
+    "ecalbarrelIndexer"
+  ],
+  "unapplied": [
     "move-check",
     "check-deprecated",
     "check-remove"
   ],
-  "unapplied": [],
   "hidden": [],
   "patches": {
     "calib2": {
