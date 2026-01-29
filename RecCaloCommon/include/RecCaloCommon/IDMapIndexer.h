@@ -76,12 +76,6 @@ public:
    */
   virtual std::span<const uint64_t> cellIDs() const override final;
 
-
-  /**
-   * @brief Return a copy.
-   */
-  virtual std::unique_ptr<ICaloIndexer> clone() const override final;
-
   
 private:
   /// The mapping.
@@ -123,17 +117,6 @@ inline
 std::span<const uint64_t> IDMapIndexer<NFIELDS>::cellIDs() const
 {
   return m_cellIDs;
-}
-
-
-/**
- * @brief Return a copy.
- */
-template <unsigned NFIELDS>
-inline
-std::unique_ptr<ICaloIndexer> IDMapIndexer<NFIELDS>::clone() const
-{
-  return std::make_unique<IDMapIndexer> (*this);
 }
 
 
