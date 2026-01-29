@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "b88856330d3fd4368c8a3072682452c273675e0a",
-  "head": "8aca42df4963409f0fb1ae67b3f592517c46ec61",
+  "prev": "d29a00b4956c9675eb6d2ffca8b0006048eea454",
+  "head": "58d8f9497f688b0f7d7afb2980a616252d40740d",
   "applied": [
     "depr",
     "testdir",
@@ -35,8 +35,7 @@
     "idmap",
     "idmapIndexer",
     "ecalbarrelIndexer",
-    "caloCellIndexerSvc",
-    "refresh-temp"
+    "caloCellIndexerSvc"
   ],
   "unapplied": [
     "move-check",
@@ -52,7 +51,7 @@
       "oid": "5d569e7f02b822ef51af2c87232bb93dd3b6655c"
     },
     "caloCellIndexerSvc": {
-      "oid": "cf7bda63c1f54cd2535fbac8093e3f24366ea502"
+      "oid": "58d8f9497f688b0f7d7afb2980a616252d40740d"
     },
     "caloToolInfo1": {
       "oid": "0c9a61888488bbbcb7c63863f6272cc4e3f2c821"
@@ -125,9 +124,6 @@
     },
     "noise3": {
       "oid": "f106656cf73cd360582edf9151ef1cd522d1db26"
-    },
-    "refresh-temp": {
-      "oid": "8aca42df4963409f0fb1ae67b3f592517c46ec61"
     },
     "repnoise": {
       "oid": "7144737c168139f281c99fd12776d82cec7382d4"
