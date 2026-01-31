@@ -1,5 +1,7 @@
 #include "ReadCaloCrosstalkMap.h"
 #include "RecCaloCommon/k4RecCalorimeter_check.h"
+#include "k4Interface/IGeoSvc.h"
+#include "DD4hep/Detector.h"
 
 #include "TBranch.h"
 #include "TFile.h"
@@ -22,8 +24,18 @@ StatusCode ReadCaloCrosstalkMap::initialize() {
   info() << "Loading crosstalk map..." << endmsg;
 
   K4RECCALORIMETER_CHECK( AlgTool::initialize() );
-  K4RECCALORIMETER_CHECK( m_geoTool.retrieve() );
   K4RECCALORIMETER_CHECK( m_constantsSvc.retrieve() );
+  K4RECCALORIMETER_CHECK( m_indexerSvc.retrieve() );
+
+  int detID = m_detID;
+  if (detID < 0) {
+    // If defaulted, get the ECAL_Barrel ID from the geometry service.
+    ServiceHandle<IGeoSvc> geoSvc ("GeoSvc", name());
+    K4RECCALORIMETER_CHECK( geoSvc.retrieve() );
+    detID = geoSvc->getDetector()->constantAsDouble("DetID_ECAL_Barrel");
+  }
+  m_indexer = m_indexerSvc->indexer (detID);
+  K4RECCALORIMETER_CHECK( m_indexer != nullptr );
 
   m_data = m_constantsSvc->getObj<CrosstalkData> (m_fileName);
   if (!m_data) {
@@ -66,16 +78,14 @@ auto ReadCaloCrosstalkMap::readData (TFile& xtalkFile) const -> CrosstalkData
   tree->SetBranchAddress("list_crosstalk_neighbours", &read_neighbours);
   tree->SetBranchAddress("list_crosstalks", &read_crosstalks);
 
-  const ICalorimeterTool* geoTool = m_geoTool.get();
-
-  size_t ncells = geoTool->cellIDs().size();
+  size_t ncells = m_indexer->cellIDs().size();
   data.m_neighbourIndices.resize (ncells);
   data.m_crosstalkIndices.resize (ncells);
 
   for (uint i = 0; i < tree->GetEntries(); i++) {
     tree->GetEntry(i);
 
-    unsigned ndx = geoTool->index (read_cellId);
+    unsigned ndx = m_indexer->index (read_cellId);
     {
       size_t oldsz = data.m_neighbours.size();
       data.m_neighbours.insert (data.m_neighbours.end(), read_neighbours->begin(), read_neighbours->end());
@@ -103,10 +113,10 @@ auto ReadCaloCrosstalkMap::readData (TFile& xtalkFile) const -> CrosstalkData
 
 std::span<const uint64_t>
 ReadCaloCrosstalkMap::getNeighbours(uint64_t aCellId) const {
-  return m_data->getNeighbours (m_geoTool->index (aCellId));
+  return m_data->getNeighbours (m_indexer->index (aCellId));
 }
 
 std::span<const double>
 ReadCaloCrosstalkMap::getCrosstalks(uint64_t aCellId) const {
-  return m_data->getCrosstalks (m_geoTool->index (aCellId));
+  return m_data->getCrosstalks (m_indexer->index (aCellId));
 }
