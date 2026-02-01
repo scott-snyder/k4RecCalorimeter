@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "b8fe7d2c201c6c2ec4e654cbd4fe7e31795cda3f",
+  "prev": "e26e7604c017eda84a877cc74e454a4abba2a55c",
   "head": "1631c704bac1ba297e04f4c48f7bb3459c30f0d6",
   "applied": [
     "depr",
@@ -36,11 +36,14 @@
     "idmapIndexer",
     "ecalbarrelIndexer",
     "caloCellIndexerSvc",
+    "more-efficient-data-storage",
+    "remove-gate-debug-verbose"
+  ],
+  "unapplied": [
     "move-check",
     "check-deprecated",
     "check-remove"
   ],
-  "unapplied": [],
   "hidden": [],
   "patches": {
     "calib2": {
@@ -109,6 +112,9 @@
     "layerIndex": {
       "oid": "89e9b6b7f27f0d6f920235a7cc2e514ec6f991b2"
     },
+    "more-efficient-data-storage": {
+      "oid": "17036ae8bc9f47b60d8edfd98d40180f479cde32"
+    },
     "move-check": {
       "oid": "db244fbfcbf03b6e5109024cdbb8f80ebb63b1d7"
     },
@@ -123,6 +129,9 @@
     },
     "noise3": {
       "oid": "f106656cf73cd360582edf9151ef1cd522d1db26"
+    },
+    "remove-gate-debug-verbose": {
+      "oid": "1631c704bac1ba297e04f4c48f7bb3459c30f0d6"
     },
     "repnoise": {
       "oid": "7144737c168139f281c99fd12776d82cec7382d4"
