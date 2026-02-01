@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "82790ef79e70fcd290310186a082132e173293ad",
+  "prev": "e5fe629002f6c20f81fbe843a23f67ff5a1ce571",
   "head": "50a8b8d87bc3a609e9d56d66982275329e088328",
   "applied": [
     "discrit-wip",
@@ -38,7 +38,7 @@
     "topoNoiseIndex-wip",
     "createCaloCells2-wip",
     "createTopoCluster-wip",
-    "cellposIndex-wip",
+    "cellposIndex",
     "noiseIndex-wip",
     "ecalIndex-wip",
     "dummyIndex-wip",
@@ -152,7 +152,7 @@
     "createTopoCluster-wip": {
       "oid": "36e4a0f321af293b73e8e4bbde04a8acc23ecc94"
     },
-    "cellposIndex-wip": {
+    "cellposIndex": {
       "oid": "69aeadf084558d3d14f0ec2d1e1b0be9d94a7b39"
     },
     "noiseIndex-wip": {
