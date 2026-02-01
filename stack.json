@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "b936e085bc72dd37012047c333bd568cee3d044b",
-  "head": "1631c704bac1ba297e04f4c48f7bb3459c30f0d6",
+  "prev": "7500584a5e8bee36a15d37b5efdf5e6b4ac7338b",
+  "head": "d2a9a5a909c3992f14e8b897002981fbb6a20610",
   "applied": [
     "depr",
     "testdir",
@@ -37,7 +37,8 @@
     "ecalbarrelIndexer",
     "caloCellIndexerSvc",
     "xtalkIndex",
-    "nodebug"
+    "nodebug",
+    "cellposIndex"
   ],
   "unapplied": [
     "move-check",
@@ -66,6 +67,9 @@
     },
     "cellPositionsConst2": {
       "oid": "ebed951be47e7ee015048c079141f9123b5ef49b"
+    },
+    "cellposIndex": {
+      "oid": "d2a9a5a909c3992f14e8b897002981fbb6a20610"
     },
     "cellsInConst": {
       "oid": "a47fd83da3d3ab2e3f1294d32aaf88ea9c96cbe4"
