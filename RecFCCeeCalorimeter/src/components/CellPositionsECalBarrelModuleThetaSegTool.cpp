@@ -11,12 +11,13 @@ DECLARE_COMPONENT(CellPositionsECalBarrelModuleThetaSegTool)
 StatusCode CellPositionsECalBarrelModuleThetaSegTool::initialize() {
   K4_GAUDI_CHECK( AlgTool::initialize() );
   K4_GAUDI_CHECK( m_geoSvc.retrieve() );
-  K4_GAUDI_CHECK( m_geoTool.retrieve() );
+  K4_GAUDI_CHECK( m_indexerSvc.retrieve() );
   K4_GAUDI_CHECK( m_constantsSvc.retrieve() );
 
   // get segmentation
+  dd4hep::Segmentation segmentation = m_geoSvc->getDetector()->readout(m_readoutName).segmentation();
   m_segmentation = dynamic_cast<dd4hep::DDSegmentation::FCCSWGridModuleThetaMerged_k4geo*>(
-      m_geoSvc->getDetector()->readout(m_readoutName).segmentation().segmentation());
+      segmentation.segmentation());
   if (m_segmentation == nullptr) {
     error() << "There is no module-theta segmentation!!!!" << endmsg;
     return StatusCode::FAILURE;
@@ -33,18 +34,21 @@ StatusCode CellPositionsECalBarrelModuleThetaSegTool::initialize() {
     }
   }
 
+  int detID = segmentation.detector()->id;
+  m_indexer = m_indexerSvc->indexer (detID);
+
   std::string dataKey = m_readoutName.value() + "-cellPositions";
   const PositionData* data = m_constantsSvc->getObj<PositionData> (dataKey);
   if (!data) {
     dd4hep::VolumeManager volman_glob = m_geoSvc->getDetector()->volumeManager();
-    dd4hep::VolumeManager volman = volman_glob.subdetector (m_geoTool->id());
+    dd4hep::VolumeManager volman = volman_glob.subdetector (detID);
 
-    const std::vector<uint64_t>& ids = m_geoTool->cellIDs();
+    std::span<const uint64_t> ids = m_indexer->cellIDs();
 
     PositionData positions;
     positions.resize (ids.size());
     for (uint64_t id : ids) {
-      unsigned index = m_geoTool->index (id);
+      unsigned index = m_indexer->index (id);
       dd4hep::DDSegmentation::CellID volumeId = m_segmentation->volumeID(id);
       dd4hep::VolumeManagerContext* vc = volman.lookupContext(volumeId);
       dd4hep::DDSegmentation::Vector3D inSeg = m_segmentation->position(id);
@@ -89,7 +93,7 @@ void CellPositionsECalBarrelModuleThetaSegTool::getPositions(const edm4hep::Calo
 dd4hep::Position CellPositionsECalBarrelModuleThetaSegTool::xyzPosition(const uint64_t& aCellId) const {
 
   // find position of volume corresponding to first of group of merged cells
-  unsigned index = m_geoTool->index (aCellId);
+  unsigned index = m_indexer->index (aCellId);
   if (index >= m_positions.size()) throw std::out_of_range ("CellPositionsECalBarrelModuleThetaSegTool::xyzPosition");
   return m_positions[index];
 }
