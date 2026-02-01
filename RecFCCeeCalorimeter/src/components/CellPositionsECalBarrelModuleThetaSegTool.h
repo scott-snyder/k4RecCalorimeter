@@ -9,7 +9,7 @@
 #include "k4FWCore/DataHandle.h"
 #include "k4Interface/ICellPositionsTool.h"
 #include "k4Interface/IGeoSvc.h"
-#include "k4Interface/ICalorimeterTool.h"
+#include "RecCaloCommon/ICaloCellIndexerSvc.h"
 #include "RecCaloCommon/ICaloCellConstantsSvc.h"
 
 // k4geo
@@ -58,7 +58,8 @@ public:
 private:
   /// Handle to the geometry service
   ServiceHandle<IGeoSvc> m_geoSvc { this, "GeoSvc", "GeoSvc" };
-  ToolHandle<ICalorimeterTool> m_geoTool{this, "CalorimeterTool", ""};
+  ServiceHandle<k4::recCalo::ICaloCellIndexerSvc> m_indexerSvc
+  { this, "CaloCellIndexerSvc", "k4::recCalo::CaloCellIndexerSvc", "" };
   ServiceHandle<k4::recCalo::ICaloCellConstantsSvc> m_constantsSvc
   { this, "CaloCellConstantsSvc", "k4::recCalo::CaloCellConstantsSvc", "" };
   /// Name of the electromagnetic calorimeter readout
@@ -68,5 +69,6 @@ private:
 
   using PositionData = std::vector<dd4hep::Position>;
   std::span<const dd4hep::Position> m_positions;
+  const k4::recCalo::ICaloIndexer* m_indexer = nullptr;
 };
 #endif /* RECCALORIMETER_CELLPOSITIONSECALBARRELMODULETHETASEGTOOL_H */
