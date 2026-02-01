@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "7500584a5e8bee36a15d37b5efdf5e6b4ac7338b",
-  "head": "d2a9a5a909c3992f14e8b897002981fbb6a20610",
+  "prev": "294349678569d1b4080abe67b8a6afe79aced8a2",
+  "head": "913973fe3f8f1eab82f39f3633cf36c9795cfd3e",
   "applied": [
     "depr",
     "testdir",
@@ -38,10 +38,10 @@
     "caloCellIndexerSvc",
     "xtalkIndex",
     "nodebug",
-    "cellposIndex"
+    "cellposIndex",
+    "move-check"
   ],
   "unapplied": [
-    "move-check",
     "check-deprecated",
     "check-remove"
   ],
@@ -117,7 +117,7 @@
       "oid": "89e9b6b7f27f0d6f920235a7cc2e514ec6f991b2"
     },
     "move-check": {
-      "oid": "db244fbfcbf03b6e5109024cdbb8f80ebb63b1d7"
+      "oid": "913973fe3f8f1eab82f39f3633cf36c9795cfd3e"
     },
     "nodebug": {
       "oid": "1631c704bac1ba297e04f4c48f7bb3459c30f0d6"
