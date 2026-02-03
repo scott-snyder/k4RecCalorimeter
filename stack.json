@@ -1,20 +1,18 @@
 {
   "version": 5,
-  "prev": "89e3356f0d8c191f3963320f3f72a68dfd6df88e",
-  "head": "ba9be753a16f29b75217067f2bf4e976877a007d",
+  "prev": "728011e06021e9ba04879f674a159177e2cd7aa5",
+  "head": "d2a9a5a909c3992f14e8b897002981fbb6a20610",
   "applied": [
     "depr",
     "testdir",
     "ci",
+    "sortnoise",
     "cellPositions",
     "xtalk",
     "cellPositionsConst2",
     "calib2",
     "geoConst2",
-    "repnoise"
-  ],
-  "unapplied": [
-    "sortnoise",
+    "repnoise",
     "hcal-tool",
     "hcal-seg",
     "hcal-seg-row",
@@ -40,7 +38,9 @@
     "caloCellIndexerSvc",
     "xtalkIndex",
     "nodebug",
-    "cellposIndex",
+    "cellposIndex"
+  ],
+  "unapplied": [
     "move-check",
     "check-deprecated",
     "check-remove"
@@ -48,7 +48,7 @@
   "hidden": [],
   "patches": {
     "calib2": {
-      "oid": "ec40b010235d116569b9cfb04e90525833828614"
+      "oid": "b6e94c0a08ccbbfdd0535f0e777746c6dfe0be94"
     },
     "caloCellConstantsSvc": {
       "oid": "5d569e7f02b822ef51af2c87232bb93dd3b6655c"
@@ -63,10 +63,10 @@
       "oid": "aa6164671841d29df736d5742b88ebc35d057634"
     },
     "cellPositions": {
-      "oid": "7d311354633896ca55b3bd0cc9de2e85f924f86b"
+      "oid": "4d8af8a2734c20f5eb39b0246f792e74f175eda2"
     },
     "cellPositionsConst2": {
-      "oid": "fb9a09e6747f6e6e2456eb9b58c311de2351085f"
+      "oid": "ebed951be47e7ee015048c079141f9123b5ef49b"
     },
     "cellposIndex": {
       "oid": "d2a9a5a909c3992f14e8b897002981fbb6a20610"
@@ -96,7 +96,7 @@
       "oid": "1be7344dbb896f02e63837e2cdd406d71649ac2a"
     },
     "geoConst2": {
-      "oid": "072dbe219f55acf3a804b20a88d7cf15d6d19b0d"
+      "oid": "6b000825dce276c3cde2a7e702abc9f7dc539952"
     },
     "hcal-seg": {
       "oid": "bb3b7360e0ec6d2f58cd7b7a050f9028dd90e98a"
@@ -135,7 +135,7 @@
       "oid": "f106656cf73cd360582edf9151ef1cd522d1db26"
     },
     "repnoise": {
-      "oid": "ba9be753a16f29b75217067f2bf4e976877a007d"
+      "oid": "7144737c168139f281c99fd12776d82cec7382d4"
     },
     "sortnoise": {
       "oid": "fb1bad0101070e938d2dc783981bb98fac4d7a10"
@@ -150,7 +150,7 @@
       "oid": "4158e6401ffdd329edcbe6fc72a80d391ccab24d"
     },
     "xtalk": {
-      "oid": "4c69532716ec42761602b5b4c2a5bbe7f343fd2a"
+      "oid": "b5ec1f4c730cc30d9af4a6ee5386c3cb577107ac"
     },
     "xtalkIndex": {
       "oid": "17036ae8bc9f47b60d8edfd98d40180f479cde32"
