@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "413c80e462ceb949e3302dbb28569770f00fb0b5",
-  "head": "c9c74d2ceac15592e9db6834cebd04a67b179c6d",
+  "prev": "45f13b520b58771eb831fedcfddf78b115f70027",
+  "head": "f8ca2d04e2b787c243a6c2b0551fe44228a29267",
   "applied": [
     "depr",
     "testdir",
@@ -39,12 +39,12 @@
     "cellposIndex",
     "noiseIndex",
     "move-check",
-    "check-deprecated"
+    "check-deprecated",
+    "check-remove"
   ],
   "unapplied": [
     "sortnoise",
-    "repnoise",
-    "check-remove"
+    "repnoise"
   ],
   "hidden": [],
   "patches": {
@@ -79,7 +79,7 @@
       "oid": "c9c74d2ceac15592e9db6834cebd04a67b179c6d"
     },
     "check-remove": {
-      "oid": "f2dae3f737bebbd7a3085402c2c420175923c116"
+      "oid": "f8ca2d04e2b787c243a6c2b0551fe44228a29267"
     },
     "ci": {
       "oid": "f92d050957cb01004854c80d78226a0240945f7f"
