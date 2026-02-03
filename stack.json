@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "c6fee66d503fa378d78c3d3556ecddf3fe47c493",
+  "prev": "aba924c29313c0e23c649768386ed90c9ab74ed1",
   "head": "d2a9a5a909c3992f14e8b897002981fbb6a20610",
   "applied": [
     "depr",
@@ -41,7 +41,6 @@
     "cellposIndex"
   ],
   "unapplied": [
-    "noiseIndex",
     "move-check",
     "check-deprecated",
     "check-remove"
@@ -134,9 +133,6 @@
     },
     "noise3": {
       "oid": "f106656cf73cd360582edf9151ef1cd522d1db26"
-    },
-    "noiseIndex": {
-      "oid": "d1d90832a5f634cf7a43e1d2702fc4fe23ccdf68"
     },
     "repnoise": {
       "oid": "7144737c168139f281c99fd12776d82cec7382d4"
