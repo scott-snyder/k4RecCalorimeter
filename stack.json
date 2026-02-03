@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "97f4f522bdabafce15d19d11ccaf6d3b56def7ba",
-  "head": "fb8938f3949218524f7d7230cfb183bd3633c1f5",
+  "prev": "372c971351d99ce21d6cb89731fc26ea9154aa44",
+  "head": "99dc8dd03d640c58d5ad44459fa82b4af9b6b558",
   "applied": [
     "depr",
     "testdir",
@@ -38,12 +38,12 @@
     "nodebug",
     "cellposIndex",
     "noiseIndex",
-    "sortnoise",
-    "move-check",
-    "check-deprecated",
-    "check-remove"
+    "sortnoise"
   ],
   "unapplied": [
+    "move-check",
+    "check-deprecated",
+    "check-remove",
     "repnoise"
   ],
   "hidden": [],
