@@ -13,7 +13,11 @@
 #include "k4Interface/ICellPositionsTool.h"
 #include "k4Interface/INoiseCaloCellsTool.h"
 #include "k4Interface/INoiseConstTool.h"
-#include "k4Interface/ICalorimeterTool.h"
+#include "RecCaloCommon/k4RecCalorimeter_check.h"
+#include "edm4hep/EventHeaderCollection.h"
+#include "k4FWCore/DataHandle.h"
+#include "CLHEP/Random/Ranlux64Engine.h"
+#include "CLHEP/Random/RandGauss.h"
 
 #include "ReadNoiseFromFileTool.h"
 
@@ -76,7 +80,7 @@ protected:
 
 private:
   template <typename C>
-  void addRandomCellNoiseT (C& aCells) const;
+  void addRandomCellNoiseT (C& aCells, CLHEP::RandGauss& r) const;
   template <typename C>
   void filterCellNoiseT (C& aCells) const;
 
@@ -103,6 +107,9 @@ private:
   /// Gaussian random number generator used for the generation of random noise hits
   Rndm::Numbers m_gauss;
 
+  mutable k4FWCore::DataHandle<edm4hep::EventHeaderCollection> m_header{"EventHeader", Gaudi::DataHandle::Reader, this};
+
+  void initEvent (CLHEP::Ranlux64Engine& e) const;
 };
 
 #endif /* RECFCCEECALORIMETER_NOISECALOCELLSVSTHETAFROMFILETOOL_H */
