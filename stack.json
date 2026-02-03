@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "3065adc7b8a3fd0af610624be276bc35e956fd4f",
-  "head": "7bec217a3f7f51789311a5bc4bd1448e71859008",
+  "prev": "522a211b5814f37619c8f06aa87cd580b3e80f64",
+  "head": "7ce4b73bd050a14763e4aee89d4c2b943944e40c",
   "applied": [
     "depr",
     "testdir",
@@ -39,11 +39,11 @@
     "cellposIndex",
     "noiseIndex",
     "sortnoise",
-    "repnoise"
+    "repnoise",
+    "move-check",
+    "check-deprecated"
   ],
   "unapplied": [
-    "move-check",
-    "check-deprecated",
     "check-remove"
   ],
   "hidden": [],
@@ -76,7 +76,7 @@
       "oid": "70b15602fd6ce89cfa14b46fae3d339e4052cda2"
     },
     "check-deprecated": {
-      "oid": "b3d88c06cda74bc8248f8fb05fcbc2d11efb42f7"
+      "oid": "7ce4b73bd050a14763e4aee89d4c2b943944e40c"
     },
     "check-remove": {
       "oid": "fb8938f3949218524f7d7230cfb183bd3633c1f5"
@@ -118,7 +118,7 @@
       "oid": "405013e4df7c7b4091e3725110d8e848f030b04f"
     },
     "move-check": {
-      "oid": "22061718497d25fbfab83c5ee17d30328c797b54"
+      "oid": "916726dfb243d916f675d1ab08e2af292deae136"
     },
     "nodebug": {
       "oid": "d29999aee35efc7abea0322a4ee36dd572d83381"

@@ -1,7 +1,7 @@
-Bottom: bb6c0822caf4b56e20c221088fc6ce0fb7a4306f
-Top:    c0c64da5966f3ead4fbc9f9a2b256fcdb3a2cd3b
+Bottom: a9468bb998ff3e7db94eb39b01c63028dfd02697
+Top:    25fe64325417acc40bb4751e302840711009ee08
 Author: sss <sss@karma>
-Date:   2026-02-03 17:21:50 -0500
+Date:   2026-02-03 18:26:47 -0500
 
 Warn that k4RecCalorimeter_check.h is deprecated in favor of k4_check.h
 from k4FWCore.
