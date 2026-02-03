@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "c30934c6f095126ff74b8835b1006d5b6853ccf7",
-  "head": "b48b4f2c9a6a0982350a9a7b5eb30543200221b7",
+  "prev": "3065adc7b8a3fd0af610624be276bc35e956fd4f",
+  "head": "7bec217a3f7f51789311a5bc4bd1448e71859008",
   "applied": [
     "depr",
     "testdir",
@@ -39,8 +39,7 @@
     "cellposIndex",
     "noiseIndex",
     "sortnoise",
-    "repnoise",
-    "refresh-temp"
+    "repnoise"
   ],
   "unapplied": [
     "move-check",
@@ -139,11 +138,8 @@
     "noiseIndex": {
       "oid": "756cd404a601deba4056ecc3bec2d33e6496bc30"
     },
-    "refresh-temp": {
-      "oid": "b48b4f2c9a6a0982350a9a7b5eb30543200221b7"
-    },
     "repnoise": {
-      "oid": "e0a6b0276344c62dfe34fe0ad62934f69e2c4164"
+      "oid": "7bec217a3f7f51789311a5bc4bd1448e71859008"
     },
     "sortnoise": {
       "oid": "99dc8dd03d640c58d5ad44459fa82b4af9b6b558"
