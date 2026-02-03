@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "489e3db8e38f380fc6d937377870c4ddbc847431",
-  "head": "6ae9eeec1c7aa1486f9fbec119269a658542f301",
+  "prev": "5dca71985611bf3be7c3d399ccb05a851a854808",
+  "head": "dbf14bfa326dccc964e859ea409b63310c9c04b5",
   "applied": [
     "depr",
     "testdir",
@@ -38,8 +38,7 @@
     "nodebug",
     "cellposIndex",
     "noiseIndex",
-    "move-check",
-    "refresh-temp"
+    "move-check"
   ],
   "unapplied": [
     "sortnoise",
@@ -119,7 +118,7 @@
       "oid": "405013e4df7c7b4091e3725110d8e848f030b04f"
     },
     "move-check": {
-      "oid": "be58daf21023d2bd5ce9184472331ed3d8d33c1b"
+      "oid": "dbf14bfa326dccc964e859ea409b63310c9c04b5"
     },
     "nodebug": {
       "oid": "d29999aee35efc7abea0322a4ee36dd572d83381"
@@ -138,9 +137,6 @@
     },
     "noiseIndex": {
       "oid": "756cd404a601deba4056ecc3bec2d33e6496bc30"
-    },
-    "refresh-temp": {
-      "oid": "6ae9eeec1c7aa1486f9fbec119269a658542f301"
     },
     "repnoise": {
       "oid": "7144737c168139f281c99fd12776d82cec7382d4"
