@@ -23,7 +23,11 @@ void NoiseCaloCellsFlatTool::addRandomCellNoiseT(C& aCells) const {
 }
 
 void NoiseCaloCellsFlatTool::addRandomCellNoise(std::unordered_map<uint64_t, double>& aCells) const {
-  addRandomCellNoiseT(aCells);
+  using p_t = std::pair<uint64_t, double>;
+  std::vector<p_t> cells (aCells.begin(), aCells.end());
+  std::ranges::sort (cells, [](const p_t& a, const p_t& b) { return a.first < b.first; });
+  addRandomCellNoiseT (aCells);
+  for (const p_t& p : cells) aCells[p.first] = p.second;
 }
 
 void NoiseCaloCellsFlatTool::addRandomCellNoise(std::vector<std::pair<uint64_t, double>>& aCells) const {
