@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "5b37c271de4e7fabaf25e3ffb374f532f0dbb916",
-  "head": "99dc8dd03d640c58d5ad44459fa82b4af9b6b558",
+  "prev": "db26a230681eec6943c7496cb7cab2342517a14a",
+  "head": "e0a6b0276344c62dfe34fe0ad62934f69e2c4164",
   "applied": [
     "depr",
     "testdir",
@@ -38,7 +38,8 @@
     "nodebug",
     "cellposIndex",
     "noiseIndex",
-    "sortnoise"
+    "sortnoise",
+    "repnoise"
   ],
   "unapplied": [
     "move-check",
@@ -136,6 +137,9 @@
     },
     "noiseIndex": {
       "oid": "756cd404a601deba4056ecc3bec2d33e6496bc30"
+    },
+    "repnoise": {
+      "oid": "e0a6b0276344c62dfe34fe0ad62934f69e2c4164"
     },
     "sortnoise": {
       "oid": "99dc8dd03d640c58d5ad44459fa82b4af9b6b558"
