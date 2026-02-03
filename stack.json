@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "45f13b520b58771eb831fedcfddf78b115f70027",
-  "head": "f8ca2d04e2b787c243a6c2b0551fe44228a29267",
+  "prev": "10a0b6e03fa3c135e52c3eb1969b72a5d5bb883c",
+  "head": "756cd404a601deba4056ecc3bec2d33e6496bc30",
   "applied": [
     "depr",
     "testdir",
@@ -37,12 +37,12 @@
     "xtalkIndex",
     "nodebug",
     "cellposIndex",
-    "noiseIndex",
-    "move-check",
-    "check-deprecated",
-    "check-remove"
+    "noiseIndex"
   ],
   "unapplied": [
+    "move-check",
+    "check-deprecated",
+    "check-remove",
     "sortnoise",
     "repnoise"
   ],
