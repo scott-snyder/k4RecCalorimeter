@@ -10,6 +10,7 @@
 // DD4hep
 #include "DD4hep/Detector.h"
 
+
 // ROOT
 #include "TFile.h"
 #include "TH1F.h"
@@ -42,24 +43,52 @@ StatusCode NoiseCaloCellsVsThetaFromFileTool::initialize() {
   return StatusCode::SUCCESS;
 }
 
+void NoiseCaloCellsVsThetaFromFileTool::initEvent(CLHEP::Ranlux64Engine& e) const
+{
+  const edm4hep::EventHeaderCollection* ehs = m_header.get();
+  edm4hep::EventHeader eh = ehs->at(0);
+  // FIXME: Use all bits of event number.
+  long seeds[] = {static_cast<long>(eh.getRunNumber()),
+                  static_cast<long>(eh.getEventNumber()),
+                  0x76439862,
+                  0};
+  if (seeds[0] == 0) seeds[0] = 0x7fffffff;
+  if (seeds[1] == 0) seeds[1] = 0x7fffffff;
+  e.setSeeds (seeds);
+}
+
 template <class C>
-void NoiseCaloCellsVsThetaFromFileTool::addRandomCellNoiseT(C& aCells) const {
+void NoiseCaloCellsVsThetaFromFileTool::addRandomCellNoiseT(C& aCells, CLHEP::RandGauss& r) const {
+  std::map<uint64_t, typename C::iterator> m;
+  for (auto i = aCells.begin(); i != aCells.end(); ++i) m[i->first] = i;
+  for (auto& p : m) {
+    p.second->second += getNoiseOffsetPerCell(p.first);
+    p.second->second += (getNoiseRMSPerCell(p.first) * r.fire());
+  }
+#if 0
   for (auto& p : aCells) {
     p.second += getNoiseOffsetPerCell(p.first);
-    p.second += (getNoiseRMSPerCell(p.first) * m_gauss.shoot());
+    p.second += (getNoiseRMSPerCell(p.first) * r.fire());
   }
+#endif
 }
 
 void NoiseCaloCellsVsThetaFromFileTool::addRandomCellNoise(std::unordered_map<uint64_t, double>& aCells) const {
+  CLHEP::Ranlux64Engine e;
+  initEvent(e);
+  CLHEP::RandGauss r(e);
   using p_t = std::pair<uint64_t, double>;
   std::vector<p_t> cells (aCells.begin(), aCells.end());
   std::ranges::sort (cells, [](const p_t& a, const p_t& b) { return a.first < b.first; });
-  addRandomCellNoiseT(cells);
+  addRandomCellNoiseT(cells, r);
   for (const p_t& p : cells) aCells[p.first] = p.second;
 }
 
 void NoiseCaloCellsVsThetaFromFileTool::addRandomCellNoise(std::vector<std::pair<uint64_t, double> >& aCells) const {
-  addRandomCellNoiseT (aCells);
+  CLHEP::Ranlux64Engine e;
+  initEvent(e);
+  CLHEP::RandGauss r(e);
+  addRandomCellNoiseT (aCells, r);
 }
 
 template <typename C>
