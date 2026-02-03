@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "7b1617cb621d710b941bbd2823d3114c9f40ed8b",
-  "head": "fc4b27b25b4968a960f64baf09331d56600bcff5",
+  "prev": "d42eda32567303bfe453f3c663bf0c84797595b4",
+  "head": "de5da56b19273951ca566c684b44d95a2f03b6a9",
   "applied": [
     "discrit-wip",
     "cellPositionsConst2",
@@ -42,8 +42,7 @@
     "noiseIndex-wip",
     "ecalIndex-wip",
     "dummyIndex-wip",
-    "diag-wip",
-    "refresh-temp"
+    "diag-wip"
   ],
   "unapplied": [],
   "hidden": [],
@@ -157,19 +156,16 @@
       "oid": "58ef88ea956029286a2d15b13f280b1e5d1bb8b6"
     },
     "noiseIndex-wip": {
-      "oid": "784e8444b3566c52ac9ab0037a9c82e20e37dc6c"
+      "oid": "7da77e831b497ee21415d80fcf5cd39bc0b5e4f9"
     },
     "ecalIndex-wip": {
-      "oid": "66cc54114c4eb41075da435886a584388fba4868"
+      "oid": "2ed7363c1e84e5f5e667364b91abaff4297e2e06"
     },
     "dummyIndex-wip": {
-      "oid": "05de2902a37c0e63abfd51427c1f99cb2def85f6"
+      "oid": "ff3038b0317d7d3567a7cb56903833455f45f594"
     },
     "diag-wip": {
-      "oid": "59633f605e49d3e260272272c65e3a6c51a295f9"
-    },
-    "refresh-temp": {
-      "oid": "fc4b27b25b4968a960f64baf09331d56600bcff5"
+      "oid": "de5da56b19273951ca566c684b44d95a2f03b6a9"
     }
   }
 }
