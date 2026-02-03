@@ -24,13 +24,18 @@ StatusCode ReadNoiseFromFileTool::initialize() {
   K4RECCALORIMETER_CHECK( AlgTool::initialize() );
 
   K4RECCALORIMETER_CHECK( m_geoSvc.retrieve() );
-  K4RECCALORIMETER_CHECK( m_geoTool.retrieve() );
+  K4RECCALORIMETER_CHECK( m_indexerSvc.retrieve() );
   K4RECCALORIMETER_CHECK( m_constantsSvc.retrieve() );
 
   // Take readout bitfield decoder from GeoSvc
-  m_decoder = m_geoSvc->getDetector()->readout(m_readoutName).idSpec().decoder();
+  dd4hep::Readout readout = m_geoSvc->getDetector()->readout(m_readoutName);
+  m_decoder = readout.idSpec().decoder();
 
   m_index_activeField = m_decoder->index(m_activeFieldName);
+
+  int detID = readout.segmentation().detector()->id;
+  m_indexer = m_indexerSvc->indexer (detID);
+  K4RECCALORIMETER_CHECK( m_indexer != nullptr );
 
   // get noise constants.
   m_data = m_constantsSvc->getObj<NoiseData> (m_noiseFileName);
@@ -121,13 +126,14 @@ StatusCode ReadNoiseFromFileTool::initNoiseFromFile(NoiseData& data) const
     }
   }
 
-  K4RECCALORIMETER_CHECK( initBinning (data));
+  K4RECCALORIMETER_CHECK( initBinning (data, *m_indexer));
 
   return StatusCode::SUCCESS;
 }
 
 
-StatusCode  ReadNoiseFromFileTool::initBinning (NoiseData& data) const
+StatusCode  ReadNoiseFromFileTool::initBinning (NoiseData& data,
+                                                const k4::recCalo::ICaloIndexer& indexer) const
 {
   /// PhiEta segmentation
   const auto* segmentation = 
@@ -138,7 +144,7 @@ StatusCode  ReadNoiseFromFileTool::initBinning (NoiseData& data) const
     return StatusCode::FAILURE;
   }
 
-  data.m_bins.resize (m_geoTool->cellIDs().size());
+  data.m_bins.resize (indexer.cellIDs().size());
 
   auto deltaEta = [] (TH1F* h) -> std::pair<int, double>
   {
@@ -151,8 +157,8 @@ StatusCode  ReadNoiseFromFileTool::initBinning (NoiseData& data) const
   auto [NbinsRMS, deltaEtaRMS] = deltaEta (&data.m_histoElecNoiseRMS.at(0));
   auto [NbinsOffset, deltaEtaOffset] = deltaEta (m_setNoiseOffset ? &data.m_histoElecNoiseOffset.at(0) : nullptr);
 
-  for (uint64_t id : m_geoTool->cellIDs()) {
-    unsigned ndx = m_geoTool->index (id);
+  for (uint64_t id : indexer.cellIDs()) {
+    unsigned ndx = indexer.index (id);
     double cellEta = segmentation->eta(id);
 
     {
@@ -182,7 +188,7 @@ StatusCode  ReadNoiseFromFileTool::initBinning (NoiseData& data) const
 
 double ReadNoiseFromFileTool::getNoiseRMSPerCell(uint64_t aCellId) const {
   // Get cell coordinates: bin and radial layer
-  unsigned ndx = m_geoTool->index (aCellId);
+  unsigned ndx = m_indexer->index (aCellId);
   int ibin = m_data->m_bins.at(ndx).first;
 
   unsigned cellLayer = m_decoder->get(aCellId, m_index_activeField);
@@ -226,7 +232,7 @@ double ReadNoiseFromFileTool::getNoiseOffsetPerCell(uint64_t aCellId) const {
     return 0.;
 
   // Get cell coordinates: bin and radial layer
-  unsigned ndx = m_geoTool->index (aCellId);
+  unsigned ndx = m_indexer->index (aCellId);
   int ibin = m_data->m_bins.at(ndx).second;
 
   unsigned cellLayer = m_decoder->get(aCellId, m_index_activeField);
@@ -267,7 +273,7 @@ std::pair<double, double>
 ReadNoiseFromFileTool::getNoisePerCell(uint64_t aCellId) const
 {
   // Get cell coordinates: bin and radial layer
-  unsigned ndx = m_geoTool->index (aCellId);
+  unsigned ndx = m_indexer->index (aCellId);
   const std::pair<unsigned, unsigned>& bins = m_data->m_bins.at(ndx);
 
   unsigned cellLayer = m_decoder->get(aCellId, m_index_activeField);

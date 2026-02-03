@@ -70,7 +70,8 @@ public:
 
 
 protected:
-  virtual StatusCode initBinning (NoiseData& data) const override;
+  virtual StatusCode initBinning (NoiseData& data,
+                                  const k4::recCalo::ICaloIndexer& indexer) const override;
 
 
 private:

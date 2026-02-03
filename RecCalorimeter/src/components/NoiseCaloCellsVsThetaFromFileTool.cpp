@@ -80,14 +80,15 @@ void NoiseCaloCellsVsThetaFromFileTool::filterCellNoise(std::vector<std::pair<ui
 }
 
 
-StatusCode NoiseCaloCellsVsThetaFromFileTool::initBinning (NoiseData& data) const
+StatusCode NoiseCaloCellsVsThetaFromFileTool::initBinning (NoiseData& data,
+                                                           const k4::recCalo::ICaloIndexer& indexer) const
 {
-  data.m_bins.resize (m_geoTool->cellIDs().size());
+  data.m_bins.resize (indexer.cellIDs().size());
 
   TH1F* h_rms = &data.m_histoElecNoiseRMS.at(0);
   TH1F* h_offset = m_setNoiseOffset ? &data.m_histoElecNoiseOffset.at(0) : nullptr;
-  for (uint64_t id : m_geoTool->cellIDs()) {
-    unsigned ndx = m_geoTool->index (id);
+  for (uint64_t id : indexer.cellIDs()) {
+    unsigned ndx = indexer.index (id);
     double cellTheta = m_cellPositionsTool->xyzPosition(id).Theta();
     int ibinRMS = h_rms->FindFixBin(cellTheta);
     int ibinOffset = h_offset ? h_offset->FindFixBin(cellTheta) : 0;

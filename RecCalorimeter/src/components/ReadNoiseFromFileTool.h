@@ -7,9 +7,9 @@
 
 // k4FWCore
 #include "k4FWCore/DataHandle.h"
-#include "k4Interface/ICalorimeterTool.h"
 #include "k4Interface/ICellPositionsTool.h"
 #include "k4Interface/INoiseConstTool.h"
+#include "RecCaloCommon/ICaloCellIndexerSvc.h"
 #include "RecCaloCommon/ICaloCellConstantsSvc.h"
 
 // k4geo
@@ -52,8 +52,6 @@ protected:
   Gaudi::Property<std::string> m_elecNoiseHistoName{this, "elecNoiseHistoName", "h_elecNoise_layer",
                                                     "Name of electronics noise histogram"};
 
-  ToolHandle<ICalorimeterTool> m_geoTool {this, "geometryTool", "" };
-  
   struct NoiseData {
     /// Histograms with pileup RMS (index in array - radial layer)
     std::vector<TH1F> m_histoPileupNoiseRMS;
@@ -69,7 +67,8 @@ protected:
     std::vector<std::pair<unsigned, unsigned> > m_bins;
   };
 
-  virtual StatusCode initBinning (NoiseData& data) const;
+  virtual StatusCode initBinning (NoiseData& data,
+                                  const k4::recCalo::ICaloIndexer& indexer) const;
 
 
 private:
@@ -107,10 +106,13 @@ private:
 
   /// Handle to the geometry service
   ServiceHandle<IGeoSvc> m_geoSvc { this, "GeoSvc", "GeoSvc" };
+  ServiceHandle<k4::recCalo::ICaloCellIndexerSvc> m_indexerSvc
+  { this, "CaloCellIndexerSvc", "k4::recCalo::CaloCellIndexerSvc", "" };
   ServiceHandle<k4::recCalo::ICaloCellConstantsSvc> m_constantsSvc
   { this, "CaloCellConstantsSvc", "k4::recCalo::CaloCellConstantsSvc", "" };
   // Decoder
   dd4hep::DDSegmentation::BitFieldCoder* m_decoder;
+  const k4::recCalo::ICaloIndexer* m_indexer = nullptr;
   int m_index_activeField = -1;
 };
 
