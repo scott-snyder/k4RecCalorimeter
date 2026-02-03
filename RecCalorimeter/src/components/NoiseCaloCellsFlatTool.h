@@ -5,6 +5,10 @@
 #include "GaudiKernel/AlgTool.h"
 #include "GaudiKernel/IRndmGenSvc.h"
 #include "GaudiKernel/RndmGenerators.h"
+#include "edm4hep/EventHeaderCollection.h"
+#include "k4FWCore/DataHandle.h"
+#include "CLHEP/Random/Ranlux64Engine.h"
+#include "CLHEP/Random/RandGauss.h"
 
 // k4FWCore
 #include "k4Interface/INoiseCaloCellsTool.h"
@@ -49,7 +53,7 @@ public:
 
 private:
   template <typename C>
-  void addRandomCellNoiseT (C& aCells) const;
+  void addRandomCellNoiseT (C& aCells, CLHEP::RandGauss& r) const;
   template <typename C>
   void filterCellNoiseT (C& aCells) const;
 
@@ -64,6 +68,10 @@ private:
   SmartIF<IRndmGenSvc> m_randSvc;
   /// Gaussian random number generator used for smearing with a constant resolution (m_sigma)
   Rndm::Numbers m_gauss;
+
+  mutable k4FWCore::DataHandle<edm4hep::EventHeaderCollection> m_header{"EventHeader", Gaudi::DataHandle::Reader, this};
+
+  void initEvent (CLHEP::Ranlux64Engine& e) const;
 };
 
 #endif /* RECCALORIMETER_NOISECALOCELLSFLATTOOL_H */
