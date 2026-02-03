@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "5dca71985611bf3be7c3d399ccb05a851a854808",
-  "head": "dbf14bfa326dccc964e859ea409b63310c9c04b5",
+  "prev": "64e652dc39637505f0385d11b015a5e8ec580a2d",
+  "head": "3eafc3e3c1678e2b9c6b5f47e4887a966420e886",
   "applied": [
     "depr",
     "testdir",
@@ -38,12 +38,12 @@
     "nodebug",
     "cellposIndex",
     "noiseIndex",
-    "move-check"
+    "move-check",
+    "check-deprecated"
   ],
   "unapplied": [
     "sortnoise",
     "repnoise",
-    "check-deprecated",
     "check-remove"
   ],
   "hidden": [],
@@ -76,7 +76,7 @@
       "oid": "70b15602fd6ce89cfa14b46fae3d339e4052cda2"
     },
     "check-deprecated": {
-      "oid": "c222538261ea9a60bb0b4ca08be682c9ff8ee0ad"
+      "oid": "3eafc3e3c1678e2b9c6b5f47e4887a966420e886"
     },
     "check-remove": {
       "oid": "f2dae3f737bebbd7a3085402c2c420175923c116"
