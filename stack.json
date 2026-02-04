@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "3cc35a6c83ef5c5164f62406e3f9919fc8e62186",
-  "head": "187aea2686fa9fcf4b4b08757ccce7a03d8f8bae",
+  "prev": "e38ad713ff0000fec03da30695331e33568fb2ca",
+  "head": "6b66bd610a270c41c97d260cac4fc4d0d3acaed2",
   "applied": [
     "discrit-wip",
     "cellPositionsConst2",
@@ -15,14 +15,14 @@
     "nocxx23",
     "nodebug",
     "discrit2-wip",
-    "propnames",
+    "propnames"
+  ],
+  "unapplied": [
     "cellids-wip",
     "caloToolInfo1",
     "caloToolInfo3",
     "subdetVolman",
-    "idmap"
-  ],
-  "unapplied": [
+    "idmap",
     "idmapIndexer",
     "layerIndex",
     "xtalkSpan1",
