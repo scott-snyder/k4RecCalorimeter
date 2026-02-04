@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "ac257f27ec76afd5609f288537b698d1046bd2dd",
-  "head": "4a77ac7992a093619b1d273c9b22b9cf3ad6c1d0",
+  "prev": "5f9c9e2dbb35b1ff65420112060b5aa79a4d0bb4",
+  "head": "7bec217a3f7f51789311a5bc4bd1448e71859008",
   "applied": [
     "depr",
     "testdir",
@@ -39,12 +39,13 @@
     "cellposIndex",
     "noiseIndex",
     "sortnoise",
-    "repnoise",
+    "repnoise"
+  ],
+  "unapplied": [
     "move-check",
     "check-deprecated",
     "check-remove"
   ],
-  "unapplied": [],
   "hidden": [],
   "patches": {
     "calib2": {
