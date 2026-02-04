@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "abbc1f3a01c6259a4dc783b5af84104521d73c52",
-  "head": "1253d23f964903df20f41ea512bb2f539e1ffefb",
+  "prev": "5cbdb66d3146f8aef0fe7c20aac69a06cbc80015",
+  "head": "3fc1cd9e1068181b02fa95cfd6f776564892048d",
   "applied": [
     "discrit-wip",
     "cellPositionsConst2",
@@ -34,11 +34,11 @@
     "cellsInConst",
     "ecalbarrelIndexer",
     "xtalkIndex",
-    "topoNoiseIndex-wip"
+    "topoNoiseIndex-wip",
+    "createCaloCells2"
   ],
   "unapplied": [
     "cellids-wip",
-    "createCaloCells2",
     "createTopoCluster-wip",
     "cellposIndex",
     "noiseIndex",
@@ -144,11 +144,11 @@
     "topoNoiseIndex-wip": {
       "oid": "1253d23f964903df20f41ea512bb2f539e1ffefb"
     },
+    "createCaloCells2": {
+      "oid": "3fc1cd9e1068181b02fa95cfd6f776564892048d"
+    },
     "cellids-wip": {
       "oid": "b5abc1a9e83071d20fc243f05534c4502aec15bc"
-    },
-    "createCaloCells2": {
-      "oid": "4af93110c5a6c9624ecd9e00369d3c6c230e009b"
     },
     "createTopoCluster-wip": {
       "oid": "9a25bff843fb40f27bff1208a4442785fbb71d19"
