@@ -52,15 +52,15 @@ StatusCode CreateCaloCells::initialize() {
     K4_GAUDI_CHECK( m_noiseTool.retrieve() );
     // Geometry settings
     K4_GAUDI_CHECK( m_geoTool.retrieve() );
+    K4_GAUDI_CHECK( m_indexerSvc.retrieve() );
+    m_indexer = m_indexerSvc->indexer (m_geoTool->id());
+  }
 
+  if (m_addCellNoise) {
     // Construct cell indices.
     {
       // Use the geoTool to get a collection of all CellIDs.
-      std::vector<size_t> cellIDs = m_geoTool->cellIDs();
-
-      // And index them.
-      for (size_t i = 0; size_t id : cellIDs)
-        m_cellsIndexMap[id] = i++;
+      m_cellIDs = m_geoTool->cellIDs();
     }
   }
   if (m_addPosition) {
@@ -93,15 +93,14 @@ StatusCode CreateCaloCells::execute(const EventContext&) const {
   const edm4hep::SimCalorimeterHitCollection* hits = m_hits.get();
   debug() << "Input Hit collection size: " << hits->size() << endmsg;
 
-  CellsInfo cells (m_cellsIndexMap.empty() ? 2048 :  m_cellsIndexMap.size());
-  CellsIndex cellsIndex (m_cellsIndexMap);
+  CellsInfo cells (m_addCellNoise ? m_cellIDs.size() : 2048);
+  CellsIndex cellsIndex (m_addCellNoise ? m_indexer : nullptr, m_cellIDs.size());
 
   // 0. Clear all cells
   if (m_addCellNoise) {
-    cells.m_cells.resize (m_cellsIndexMap.size());
-    for (const auto& p : m_cellsIndexMap) {
-      cells.m_cells.at(p.second).first = p.first;
-      cellsIndex.index(p.first) = p.second;
+    cells.m_cells.resize (m_cellIDs.size());
+    for (size_t i = 0; i < m_cellIDs.size(); i++) {
+      cells.m_cells[i].first = m_cellIDs[i];
     }
   }
 
@@ -123,32 +122,7 @@ StatusCode CreateCaloCells::execute(const EventContext&) const {
 
   // 2. Emulate cross-talk (if asked)
   if (m_addCrosstalk) {
-    // Derive the cross-talk contributions without affecting yet the nominal energy
-    // (one has to emulate crosstalk based on cells free from any cross-talk contributions)
-    CellsInfo cells_orig = cells;
-                                 // yet the nominal energy
-    // loop over cells with nominal energies
-    for (size_t jcell = 0; jcell < cells_orig.size(); ++jcell) {
-      uint64_t this_cellId = cells_orig.cellID(jcell);
-      double this_energy = cells_orig.energy(jcell);
-      auto vec_neighbours = m_crosstalksTool->getNeighbours(this_cellId); // a vector of neighbour IDs
-      auto vec_crosstalks = m_crosstalksTool->getCrosstalks(this_cellId); // a vector of crosstalk coefficients
-      // loop over crosstalk neighbours of the cell under study
-      for (unsigned int i_cell = 0; i_cell < vec_neighbours.size(); i_cell++) {
-        // signal transfer = energy deposit brought by EM shower hits * crosstalk coefficient
-        double signal_transfer = this_energy * vec_crosstalks[i_cell];
-        // for the cell under study, record the signal transfer that will be subtracted from its final cell energy
-        cells.energy(jcell) -= signal_transfer;
-        // for the crosstalk neighbour, record the signal transfer that will be added to its final cell energy
-        size_t& kcell = cellsIndex.index (vec_neighbours[i_cell]);
-        if (kcell == INVALID) {
-          kcell = cells.add (vec_neighbours[i_cell], signal_transfer);
-        }
-        else {
-          cells.energy(kcell) += signal_transfer;
-        }
-      }
-    }
+    addCrosstalk (cells, cellsIndex);
   }
 
   // 3. Calibrate simulation energy to EM scale
@@ -191,6 +165,8 @@ StatusCode CreateCaloCells::execute(const EventContext&) const {
 
   cellsIndex.sort (cells);
 
+  // This is actually kind of expensive --- hoist it out of the loop.
+  bool haveCellPos = m_cellPos.isEnabled();
   for (size_t icell = 0; icell < cells.size(); ++icell) {
     double energy = cells.energy(icell);
     if (energy == 0 && !m_addCellNoise) continue;
@@ -203,7 +179,7 @@ StatusCode CreateCaloCells::execute(const EventContext&) const {
 
     size_t ihit = cellsIndex.ihit(cellid);
 
-    if (m_cellPos.isEnabled() && (m_addPosition || ihit == INVALID)) {
+    if (haveCellPos && (m_addPosition || ihit == INVALID)) {
       // Recalculate cell position given cell using positioning tool.
       // We have the tool, and either the position isn't available
       // in the input, or we were requested to recalculate it.
@@ -257,3 +233,37 @@ StatusCode CreateCaloCells::execute(const EventContext&) const {
 
   return StatusCode::SUCCESS;
 }
+
+
+void CreateCaloCells::addCrosstalk (CellsInfo& cells,
+                                    CellsIndex& cellsIndex) const
+{
+  // Derive the cross-talk contributions without affecting yet the nominal energy
+  // (one has to emulate crosstalk based on cells free from any cross-talk contributions)
+  CellsInfo cells_orig = cells;
+  // yet the nominal energy
+  // loop over cells with nominal energies
+  for (size_t jcell = 0; jcell < cells_orig.size(); ++jcell) {
+    double this_energy = cells_orig.energy(jcell);
+    if (this_energy == 0) continue;
+    uint64_t this_cellId = cells_orig.cellID(jcell);
+    auto vec_neighbours = m_crosstalksTool->getNeighbours(this_cellId); // a vector of neighbour IDs
+    auto vec_crosstalks = m_crosstalksTool->getCrosstalks(this_cellId); // a vector of crosstalk coefficients
+    // loop over crosstalk neighbours of the cell under study
+    for (unsigned int i_cell = 0; i_cell < vec_neighbours.size(); i_cell++) {
+      // signal transfer = energy deposit brought by EM shower hits * crosstalk coefficient
+      double signal_transfer = this_energy * vec_crosstalks[i_cell];
+      // for the cell under study, record the signal transfer that will be subtracted from its final cell energy
+      cells.energy(jcell) -= signal_transfer;
+      // for the crosstalk neighbour, record the signal transfer that will be added to its final cell energy
+      size_t& kcell = cellsIndex.index (vec_neighbours[i_cell]);
+      if (kcell == INVALID) {
+        kcell = cells.add (vec_neighbours[i_cell], signal_transfer);
+      }
+      else {
+        cells.energy(kcell) += signal_transfer;
+      }
+    }
+  }
+}
+
