@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "63ca7cb77f8e345650cbb3e9973be53266563e65",
-  "head": "445693353e1e1ec23e2efbd647553d035a4e788b",
+  "prev": "abbc1f3a01c6259a4dc783b5af84104521d73c52",
+  "head": "1253d23f964903df20f41ea512bb2f539e1ffefb",
   "applied": [
     "discrit-wip",
     "cellPositionsConst2",
@@ -32,12 +32,12 @@
     "caloCellConstantsSvc",
     "caloCellIndexerSvc",
     "cellsInConst",
-    "ecalbarrelIndexer"
+    "ecalbarrelIndexer",
+    "xtalkIndex",
+    "topoNoiseIndex-wip"
   ],
   "unapplied": [
     "cellids-wip",
-    "xtalkIndex",
-    "topoNoiseIndex-wip",
     "createCaloCells2",
     "createTopoCluster-wip",
     "cellposIndex",
@@ -138,14 +138,14 @@
     "ecalbarrelIndexer": {
       "oid": "445693353e1e1ec23e2efbd647553d035a4e788b"
     },
-    "cellids-wip": {
-      "oid": "b5abc1a9e83071d20fc243f05534c4502aec15bc"
-    },
     "xtalkIndex": {
-      "oid": "59e877b3d27cd916e8b295de65ad20f48249e018"
+      "oid": "77db7d91c118657cdc062ce110c60d009fa03794"
     },
     "topoNoiseIndex-wip": {
-      "oid": "3ce0a7fd0a61cdaafef628c7a2d95c0af0f86dca"
+      "oid": "1253d23f964903df20f41ea512bb2f539e1ffefb"
+    },
+    "cellids-wip": {
+      "oid": "b5abc1a9e83071d20fc243f05534c4502aec15bc"
     },
     "createCaloCells2": {
       "oid": "4af93110c5a6c9624ecd9e00369d3c6c230e009b"
