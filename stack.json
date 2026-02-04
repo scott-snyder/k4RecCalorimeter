@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "c117c2e28ad959ddc6f61d9965f49e9aa5cff619",
-  "head": "b7a2508841cfa3ed00f29e152297c62fc5d1094e",
+  "prev": "3cc35a6c83ef5c5164f62406e3f9919fc8e62186",
+  "head": "187aea2686fa9fcf4b4b08757ccce7a03d8f8bae",
   "applied": [
     "discrit-wip",
     "cellPositionsConst2",
@@ -20,7 +20,9 @@
     "caloToolInfo1",
     "caloToolInfo3",
     "subdetVolman",
-    "idmap",
+    "idmap"
+  ],
+  "unapplied": [
     "idmapIndexer",
     "layerIndex",
     "xtalkSpan1",
@@ -44,7 +46,6 @@
     "dummyIndex-wip",
     "diag-wip"
   ],
-  "unapplied": [],
   "hidden": [],
   "patches": {
     "discrit-wip": {
