@@ -52,6 +52,8 @@ StatusCode CreateCaloCells::initialize() {
     K4_GAUDI_CHECK( m_noiseTool.retrieve() );
     // Geometry settings
     K4_GAUDI_CHECK( m_geoTool.retrieve() );
+    K4_GAUDI_CHECK( m_indexerSvc.retrieve() );
+    m_indexer = m_indexerSvc->indexer (m_geoTool->id());
   }
 
   if (m_addCellNoise) {
@@ -99,7 +101,7 @@ StatusCode CreateCaloCells::execute(const EventContext&) const {
   debug() << "Input Hit collection size: " << hits->size() << endmsg;
 
   CellsInfo cells (m_addCellNoise ? m_cellIDs.size() : 2048);
-  CellsIndex cellsIndex (m_addCellNoise ? m_geoTool.get() : nullptr, m_cellIDs.size());
+  CellsIndex cellsIndex (m_addCellNoise ? m_indexer : nullptr, m_cellIDs.size());
 
   // 0. Clear all cells
   if (m_addCellNoise) {

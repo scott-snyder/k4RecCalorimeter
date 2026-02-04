@@ -9,6 +9,7 @@
 #include "k4Interface/ICalorimeterTool.h"
 #include "k4Interface/INoiseCaloCellsTool.h"
 #include "k4Interface/ICellPositionsTool.h"
+#include "RecCaloCommon/ICaloCellIndexerSvc.h"
 
 // Gaudi
 #include "Gaudi/Algorithm.h"
@@ -103,8 +104,8 @@ private:
 
   struct CellsFullIndex
   {
-    CellsFullIndex (const ICalorimeterTool& geoTool, size_t ncells)
-      : m_geoTool (geoTool)
+    CellsFullIndex (const k4::recCalo::ICaloIndexer& indexer, size_t ncells)
+      : m_indexer (indexer)
     {
       m_indices.reserve (ncells);
       for (size_t i = 0; i < ncells; i++) {
@@ -114,11 +115,11 @@ private:
 
     CellsIndexPair_t& index (uint64_t cellid)
     {
-      unsigned ndx = m_geoTool.index (cellid);
+      unsigned ndx = m_indexer.index (cellid);
       return m_indices.at (ndx);
     }
 
-    const ICalorimeterTool& m_geoTool;
+    const k4::recCalo::ICaloIndexer& m_indexer;
     std::vector<CellsIndexPair_t> m_indices;
   };
 
@@ -146,10 +147,10 @@ private:
 
   struct CellsIndex
   {
-    CellsIndex (const ICalorimeterTool* geoTool, size_t ncells)
+    CellsIndex (const k4::recCalo::ICaloIndexer* indexer, size_t ncells)
     {
-      if (geoTool) {
-        m_indices.emplace<1> (*geoTool, ncells);
+      if (indexer) {
+        m_indices.emplace<1> (*indexer, ncells);
       }
       else {
         m_indices.emplace<2>();
@@ -250,8 +251,14 @@ private:
 
   /// Pointer to the geometry service
   ServiceHandle<IGeoSvc> m_geoSvc;
+
+  ServiceHandle<k4::recCalo::ICaloCellIndexerSvc> m_indexerSvc
+  { this, "CaloCellIndexerSvc", "k4::recCalo::CaloCellIndexerSvc", "" };
+
   dd4hep::VolumeManager m_volman;
   std::span<const uint64_t> m_cellIDs;
+
+  const k4::recCalo::ICaloIndexer* m_indexer = nullptr;
 };
 
 #endif /* RECCALORIMETER_CREATECALOCELLS_H */
