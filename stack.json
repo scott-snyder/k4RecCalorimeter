@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "4f40548c327a51dda2241b1c4226b80451acd1fe",
+  "prev": "2528dd80ba07d19804b4b629be6f43ef06928427",
   "head": "a813f39c0423b7d82e431f413d711a400c367b41",
   "applied": [
     "discrit-wip",
@@ -36,7 +36,7 @@
     "ecalbarrelIndexer",
     "xtalkIndex",
     "topoNoiseIndex-wip",
-    "createCaloCells2-wip",
+    "createCaloCells2",
     "createTopoCluster-wip",
     "cellposIndex",
     "noiseIndex",
@@ -146,7 +146,7 @@
     "topoNoiseIndex-wip": {
       "oid": "3ce0a7fd0a61cdaafef628c7a2d95c0af0f86dca"
     },
-    "createCaloCells2-wip": {
+    "createCaloCells2": {
       "oid": "7f671e44dcc7350620a86ae6ae3b1299330d2e7b"
     },
     "createTopoCluster-wip": {
