@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "0716bdec9d28e290704769ea33abc20bd306a25a",
+  "prev": "fac815b933958224be65c8395f4f6dee651d39f4",
   "head": "77aff147e94a3bcdcd1c08bb0de49426e9fd84df",
   "applied": [
     "discrit-wip",
@@ -42,10 +42,7 @@
     "diag-wip",
     "cellids-wip"
   ],
-  "unapplied": [
-    "ecalIndex-wip",
-    "dummyIndex-wip"
-  ],
+  "unapplied": [],
   "hidden": [],
   "patches": {
     "discrit-wip": {
@@ -161,12 +158,6 @@
     },
     "cellids-wip": {
       "oid": "77aff147e94a3bcdcd1c08bb0de49426e9fd84df"
-    },
-    "ecalIndex-wip": {
-      "oid": "239723c9e4665e8a5e39fb047a638e16a375a214"
-    },
-    "dummyIndex-wip": {
-      "oid": "466d16c5337a189477178df98ff505ac03a65bdb"
     }
   }
 }
