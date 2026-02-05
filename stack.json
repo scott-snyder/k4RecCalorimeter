@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "18e95887a7cf88b9a2d13e4e7586d4db76be143f",
-  "head": "bdfb4ca2876b87ead61688700bf6d2049e4e1c70",
+  "prev": "0716bdec9d28e290704769ea33abc20bd306a25a",
+  "head": "77aff147e94a3bcdcd1c08bb0de49426e9fd84df",
   "applied": [
     "discrit-wip",
     "cellPositionsConst2",
@@ -39,12 +39,13 @@
     "createTopoCluster-wip",
     "cellposIndex",
     "noiseIndex",
-    "ecalIndex-wip",
-    "dummyIndex-wip",
     "diag-wip",
     "cellids-wip"
   ],
-  "unapplied": [],
+  "unapplied": [
+    "ecalIndex-wip",
+    "dummyIndex-wip"
+  ],
   "hidden": [],
   "patches": {
     "discrit-wip": {
@@ -155,17 +156,17 @@
     "noiseIndex": {
       "oid": "62e3dff3dcf0ed8eaf46ac485344a0901b110b1b"
     },
+    "diag-wip": {
+      "oid": "362bf340863b7c6ee7ddd736a3dcdb40ef2e9a0d"
+    },
+    "cellids-wip": {
+      "oid": "77aff147e94a3bcdcd1c08bb0de49426e9fd84df"
+    },
     "ecalIndex-wip": {
       "oid": "239723c9e4665e8a5e39fb047a638e16a375a214"
     },
     "dummyIndex-wip": {
       "oid": "466d16c5337a189477178df98ff505ac03a65bdb"
-    },
-    "diag-wip": {
-      "oid": "6985598fb72d08d7f5133f175cb494891959cd05"
-    },
-    "cellids-wip": {
-      "oid": "bdfb4ca2876b87ead61688700bf6d2049e4e1c70"
     }
   }
 }
