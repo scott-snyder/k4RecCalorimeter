@@ -10,8 +10,11 @@ DECLARE_COMPONENT(TopoCaloNoisyCells)
 
 StatusCode TopoCaloNoisyCells::initialize() {
   K4RECCALORIMETER_CHECK( AlgTool::initialize() );
-  K4RECCALORIMETER_CHECK( m_geoTool.retrieve() );
   K4RECCALORIMETER_CHECK( m_constantsSvc.retrieve() );
+  K4RECCALORIMETER_CHECK( m_indexerSvc.retrieve() );
+
+  m_indexer = m_indexerSvc->indexer (m_detID);
+  K4RECCALORIMETER_CHECK( m_indexer != nullptr );
 
   m_data = m_constantsSvc->getObj<NoiseData> (m_fileName);
   if (!m_data) {
@@ -58,12 +61,11 @@ auto TopoCaloNoisyCells::readData (TFile& inFile) const -> NoiseData
                          &readNoisyCells); // would be better to call branch noiseRMS rather than noiseLevel
   tree->SetBranchAddress("noiseOffset", &readNoisyCellsOffset);
 
-  const ICalorimeterTool* geoTool = m_geoTool.get();
-  data.resize (geoTool->cellIDs().size());
+  data.resize (m_indexer->cellIDs().size());
 
   for (uint i = 0; i < tree->GetEntries(); i++) {
     tree->GetEntry(i);
-    unsigned ndx = geoTool->index (readCellId);
+    unsigned ndx = m_indexer->index (readCellId);
     data.at(ndx) = std::make_pair (readNoisyCells, readNoisyCellsOffset);
   }
   delete tree;
@@ -75,14 +77,14 @@ auto TopoCaloNoisyCells::readData (TFile& inFile) const -> NoiseData
 
 double TopoCaloNoisyCells::getNoiseRMSPerCell(uint64_t aCellId) const
 {
-  unsigned ndx = m_geoTool->index (aCellId);
+  unsigned ndx = m_indexer->index (aCellId);
   return m_data->at(ndx).first;
 }
 
 
 double TopoCaloNoisyCells::getNoiseOffsetPerCell(uint64_t aCellId) const
 {
-  unsigned ndx = m_geoTool->index (aCellId);
+  unsigned ndx = m_indexer->index (aCellId);
   return m_data->at(ndx).second;
 }
 
@@ -90,7 +92,7 @@ double TopoCaloNoisyCells::getNoiseOffsetPerCell(uint64_t aCellId) const
 std::pair<double, double>
 TopoCaloNoisyCells::getNoisePerCell(uint64_t aCellId) const
 {
-  unsigned ndx = m_geoTool->index (aCellId);
+  unsigned ndx = m_indexer->index (aCellId);
   return m_data->at(ndx);
 }
 

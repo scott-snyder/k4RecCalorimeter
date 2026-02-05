@@ -6,8 +6,8 @@
 
 // k4FWCore
 #include "k4Interface/INoiseConstTool.h"
-#include "k4Interface/ICalorimeterTool.h"
 #include "RecCaloCommon/ICaloCellConstantsSvc.h"
+#include "RecCaloCommon/ICaloCellIndexerSvc.h"
 #include <utility>
 
 class IGeoSvc;
@@ -54,13 +54,19 @@ private:
   /// Name
   Gaudi::Property<std::string> m_fileName{this, "fileName",
                                           "/afs/cern.ch/user/c/cneubuse/public/FCChh/cellNoise_map_segHcal.root"};
-  ToolHandle<ICalorimeterTool> m_geoTool{this, "geometryTool", ""};
   ServiceHandle<k4::recCalo::ICaloCellConstantsSvc> m_constantsSvc
   { this, "CaloCellConstantsSvc", "k4::recCalo::CaloCellConstantsSvc", "" };
+  ServiceHandle<k4::recCalo::ICaloCellIndexerSvc> m_indexerSvc
+  { this, "CaloCellIndexerSvc", "k4::recCalo::CaloCellIndexerSvc", "" };
+
+  /// xxx fixme
+  Gaudi::Property<int> m_detID {this, "DetID", 4};
 
   // rms, offset
   using NoiseData = std::vector<std::pair<double, double> >;
   const NoiseData* m_data = nullptr;
+
+  const k4::recCalo::ICaloIndexer* m_indexer = nullptr;
 
   NoiseData readData (TFile& inFile) const;
 };
