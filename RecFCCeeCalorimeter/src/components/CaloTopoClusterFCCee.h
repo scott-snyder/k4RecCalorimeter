@@ -19,7 +19,7 @@
 #include "k4Interface/ICaloReadNeighboursMap.h"
 #include "k4Interface/IGeoSvc.h"
 #include "k4Interface/INoiseConstTool.h"
-#include "k4Interface/ICalorimeterTool.h"
+#include "RecCaloCommon/ICaloCellIndexerSvc.h"
 
 // EDM4HEP
 namespace edm4hep {
@@ -164,6 +164,11 @@ private:
   // Utility functions
   inline bool cellIdInColl(const uint64_t cellId, const edm4hep::CalorimeterHitCollection& coll) const;
 
-  ToolHandle<ICalorimeterTool> m_geoTool{this, "geometryTool", ""};
+  /// xxx fixme
+  Gaudi::Property<int> m_detID { this, "DetID", 4 };
+  ServiceHandle<k4::recCalo::ICaloCellIndexerSvc> m_indexerSvc
+  { this, "CaloCellIndexerSvc", "k4::recCalo::CaloCellIndexerSvc", "" };
+
+  const k4::recCalo::ICaloIndexer* m_indexer = nullptr;
 };
 #endif /* RECFCCEECALORIMETER_CALOTOPOCLUSTERFCCEE_H */

@@ -36,7 +36,9 @@ StatusCode CaloTopoClusterFCCee::initialize() {
     return StatusCode::FAILURE;
   }
 
-  K4_GAUDI_CHECK( m_geoTool.retrieve() );
+  K4_GAUDI_CHECK( m_indexerSvc.retrieve() );
+  m_indexer = m_indexerSvc->indexer (m_detID);
+  K4_GAUDI_CHECK( m_indexer != nullptr );
 
   // create handles for input cell collections
   for (const auto& col : m_cellCollections) {
@@ -322,11 +324,11 @@ CaloTopoClusterFCCee::buildProtoClusters(const edm4hep::CalorimeterHitCollection
   // > 0: cell index + 1
   // < 0: -cluster index - 1
   std::vector<int32_t> cellsMap;
-  cellsMap.resize (m_geoTool->cellIDs().size());
+  cellsMap.resize (m_indexer->cellIDs().size());
   size_t ncells = allCells->size();
   for (size_t icell = 0; icell < ncells; ++icell) {
     // Could avoid this if we know that the container is complete and sorted
-    unsigned ndx = m_geoTool->index ((*allCells)[icell].getCellID());
+    unsigned ndx = m_indexer->index ((*allCells)[icell].getCellID());
     cellsMap.at(ndx) = icell+1;
   }
   
@@ -336,7 +338,7 @@ CaloTopoClusterFCCee::buildProtoClusters(const edm4hep::CalorimeterHitCollection
     seedCounter++;
     verbose() << "Looking at seed: " << seedCounter << endmsg;
     auto seedId = seedCell.getCellID();
-    unsigned ndx = m_geoTool->index(seedId);
+    unsigned ndx = m_indexer->index(seedId);
     if (cellsMap.at(ndx) < 0) {
       verbose() << "Seed is already assigned to another cluster!" << endmsg;
       continue;
@@ -428,7 +430,7 @@ std::vector<std::pair<uint64_t, uint32_t>> CaloTopoClusterFCCee::searchForNeighb
   verbose() << "For cluster: " << aClusterID << endmsg;
   // loop over neighbours
   for (const auto& neighbourID : neighboursVec) {
-    unsigned neighbourIndex = m_geoTool->index (neighbourID);
+    unsigned neighbourIndex = m_indexer->index (neighbourID);
     if (neighbourIndex == static_cast<unsigned>(-1)) continue;
 
     // If cell is hit.. and is not assigned to a cluster
@@ -476,7 +478,7 @@ std::vector<std::pair<uint64_t, uint32_t>> CaloTopoClusterFCCee::searchForNeighb
       }
       // Fill all cells into cluster, and assigned cells to new cluster
       for (const auto& cell : protoClusters[aClusterID]) {
-        unsigned ndx = m_geoTool->index (cell.getCellID());
+        unsigned ndx = m_indexer->index (cell.getCellID());
         cellsMap.at(ndx) = -clusterIDToMergeTo - 1;
         // make sure that already assigned cells are not added
         if (cellIdInColl(cell.getCellID(), protoClusters[clusterIDToMergeTo])) {
