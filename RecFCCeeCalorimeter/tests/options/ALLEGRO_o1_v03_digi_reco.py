@@ -186,6 +186,18 @@ calibEcalEndcap = CalibrateInLayersTool("CalibrateECalEndcap",
                                         readoutName=ecalEndcapReadoutName,
                                         layerFieldName="layer")
 
+# Indexing service.
+from Configurables import TubeLayerModuleThetaCaloTool, k4__recCalo__CaloCellIndexerSvc
+ecalBarrelGeometryTool = TubeLayerModuleThetaCaloTool("ecalBarrelGeometryTool",
+                                                      readoutName=ecalBarrelReadoutName,
+                                                      activeVolumeName="LAr_sensitive",
+                                                      activeFieldName="layer",
+                                                      activeVolumesNumber=ecalBarrelLayers,
+                                                      fieldNames=["system"],
+                                                      fieldValues=[IDs["ECAL_Barrel"]],
+                                                      OutputLevel=INFO)
+ExtSvc += [k4__recCalo__CaloCellIndexerSvc (GeoTools = [ecalBarrelGeometryTool])]
+
 if runHCal:
     from Configurables import CalibrateCaloHitsTool
     # HCAL barrel
