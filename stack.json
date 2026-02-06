@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "faf2d9145f328ff193884ed9efbea4c8db4a8cde",
-  "head": "d6ae1e4986d8de85c70c176eb1394d7f44169363",
+  "prev": "f63bb85e6a13472641a7c239e33bbf04a78b41b6",
+  "head": "24b195310e6a88ceec4b4d9187519d6b817714f3",
   "applied": [
     "depr",
     "testdir",
@@ -44,8 +44,7 @@
     "move-check",
     "check-deprecated",
     "check-remove",
-    "indexingConfig",
-    "refresh-temp"
+    "indexingConfig"
   ],
   "unapplied": [],
   "hidden": [],
@@ -120,7 +119,7 @@
       "oid": "00d96c82e4bb11a22ec13e43aa95da743522f120"
     },
     "indexingConfig": {
-      "oid": "dde880e753b09a598dc2a2a0fc802f5e76478fa2"
+      "oid": "24b195310e6a88ceec4b4d9187519d6b817714f3"
     },
     "layerIndex": {
       "oid": "ce6a2fb78f4ab476075179bc8f0c5eaa17e4e6e5"
@@ -145,9 +144,6 @@
     },
     "noiseIndex": {
       "oid": "4e7052be08ee4ad30860ff80621f9d914fc014b5"
-    },
-    "refresh-temp": {
-      "oid": "d6ae1e4986d8de85c70c176eb1394d7f44169363"
     },
     "repnoise": {
       "oid": "e0cc85bf8c451bca1862b3c7a6748e7b990d0dfb"
