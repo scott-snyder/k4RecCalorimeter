@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "178b49b29fac438122a7ae468a8b10bbe3be62c3",
-  "head": "eba21babdb0636622c105078b22317c93568282f",
+  "prev": "afbac8efe5a341900e562a26c880e51bd945ef6d",
+  "head": "56c25bdcc106c7c473500674f00e2615d1014aec",
   "applied": [
     "discrit-wip",
     "cellPositionsConst2",
@@ -33,7 +33,8 @@
     "caloCellIndexerSvc",
     "cellsInConst",
     "ecalbarrelIndexer",
-    "cellposIndex"
+    "cellposIndex",
+    "indexingConfig"
   ],
   "unapplied": [
     "xtalkIndex",
@@ -138,6 +139,9 @@
     },
     "cellposIndex": {
       "oid": "eba21babdb0636622c105078b22317c93568282f"
+    },
+    "indexingConfig": {
+      "oid": "56c25bdcc106c7c473500674f00e2615d1014aec"
     },
     "xtalkIndex": {
       "oid": "9bee1dbf23581e0df06fbe059523c22744bd0be7"
