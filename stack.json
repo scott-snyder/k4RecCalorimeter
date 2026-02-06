@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "fac815b933958224be65c8395f4f6dee651d39f4",
-  "head": "77aff147e94a3bcdcd1c08bb0de49426e9fd84df",
+  "prev": "82ab5241569be7578a33ac92587c34b22685f41d",
+  "head": "f86432dfb07d6e3d28b8780c129225a6d2aca334",
   "applied": [
     "discrit-wip",
     "cellPositionsConst2",
@@ -29,7 +29,9 @@
     "noise1b",
     "noise1c",
     "noise3",
-    "caloCellConstantsSvc",
+    "caloCellConstantsSvc"
+  ],
+  "unapplied": [
     "caloCellIndexerSvc",
     "cellsInConst",
     "ecalbarrelIndexer",
@@ -42,7 +44,6 @@
     "diag-wip",
     "cellids-wip"
   ],
-  "unapplied": [],
   "hidden": [],
   "patches": {
     "discrit-wip": {
