@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "e3aa339d8377c880876cfae45a92a0f5d7743eb1",
-  "head": "de5890b1031c4e29fb3aca62dcf4d63959fb5c8f",
+  "prev": "892b9d986d4a04f970cf00063350556e0aab9ad5",
+  "head": "dde880e753b09a598dc2a2a0fc802f5e76478fa2",
   "applied": [
     "depr",
     "testdir",
@@ -43,7 +43,8 @@
     "createCaloCells2",
     "move-check",
     "check-deprecated",
-    "check-remove"
+    "check-remove",
+    "indexingConfig"
   ],
   "unapplied": [],
   "hidden": [],
@@ -116,6 +117,9 @@
     },
     "idmapIndexer": {
       "oid": "00d96c82e4bb11a22ec13e43aa95da743522f120"
+    },
+    "indexingConfig": {
+      "oid": "dde880e753b09a598dc2a2a0fc802f5e76478fa2"
     },
     "layerIndex": {
       "oid": "ce6a2fb78f4ab476075179bc8f0c5eaa17e4e6e5"
