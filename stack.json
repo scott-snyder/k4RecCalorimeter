@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "82ab5241569be7578a33ac92587c34b22685f41d",
+  "prev": "3ec58849fdb3778cb9b4678ad472da939530c889",
   "head": "f86432dfb07d6e3d28b8780c129225a6d2aca334",
   "applied": [
     "discrit-wip",
@@ -32,7 +32,6 @@
     "caloCellConstantsSvc"
   ],
   "unapplied": [
-    "caloCellIndexerSvc",
     "cellsInConst",
     "ecalbarrelIndexer",
     "xtalkIndex",
@@ -126,9 +125,6 @@
     },
     "caloCellConstantsSvc": {
       "oid": "f86432dfb07d6e3d28b8780c129225a6d2aca334"
-    },
-    "caloCellIndexerSvc": {
-      "oid": "6e7f43f7aaf336eb2761bd775479daf8f5f2e2aa"
     },
     "cellsInConst": {
       "oid": "ef04d231379998382cf5841175f28474a939f10c"
