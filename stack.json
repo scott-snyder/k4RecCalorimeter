@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "29c8cd15021f48c04046b655ccf106f2e137950e",
-  "head": "0caa2d76325678272a35f07864172aa35d7da288",
+  "prev": "9e9707073619de7bc95e734431a7fe9571304480",
+  "head": "d094c0966ee9b91a615df23b602bc7dd3d27ecc4",
   "applied": [
     "depr",
     "testdir",
@@ -36,7 +36,8 @@
     "caloCellIndexerSvc",
     "xtalkIndex",
     "nodebug",
-    "cellposIndex"
+    "cellposIndex",
+    "indexingConfig"
   ],
   "unapplied": [
     "noiseIndex",
@@ -45,8 +46,7 @@
     "createCaloCells2",
     "move-check",
     "check-deprecated",
-    "check-remove",
-    "indexingConfig"
+    "check-remove"
   ],
   "hidden": [],
   "patches": {
@@ -120,7 +120,7 @@
       "oid": "00d96c82e4bb11a22ec13e43aa95da743522f120"
     },
     "indexingConfig": {
-      "oid": "24b195310e6a88ceec4b4d9187519d6b817714f3"
+      "oid": "d094c0966ee9b91a615df23b602bc7dd3d27ecc4"
     },
     "layerIndex": {
       "oid": "ce6a2fb78f4ab476075179bc8f0c5eaa17e4e6e5"
