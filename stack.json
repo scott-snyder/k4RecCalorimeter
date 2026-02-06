@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "f63bb85e6a13472641a7c239e33bbf04a78b41b6",
-  "head": "24b195310e6a88ceec4b4d9187519d6b817714f3",
+  "prev": "29c8cd15021f48c04046b655ccf106f2e137950e",
+  "head": "0caa2d76325678272a35f07864172aa35d7da288",
   "applied": [
     "depr",
     "testdir",
@@ -36,7 +36,9 @@
     "caloCellIndexerSvc",
     "xtalkIndex",
     "nodebug",
-    "cellposIndex",
+    "cellposIndex"
+  ],
+  "unapplied": [
     "noiseIndex",
     "sortnoise",
     "repnoise",
@@ -46,7 +48,6 @@
     "check-remove",
     "indexingConfig"
   ],
-  "unapplied": [],
   "hidden": [],
   "patches": {
     "calib2": {
