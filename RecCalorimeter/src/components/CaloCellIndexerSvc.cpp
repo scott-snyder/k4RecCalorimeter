@@ -47,13 +47,18 @@ StatusCode CaloCellIndexerSvc::initialize()
 /**
  * @brief Return indexer for a given subdetector.
  * @param detID Subdetector ID for the desired indexer.
+ * @param quiet If true, don't print an error if we don't find an indexer.
  *
  * Returns a pointer to the indexer or nullptr if there isn't one defined.
  */
-const k4::recCalo::ICaloIndexer* CaloCellIndexerSvc::indexer (int detID) const
+const k4::recCalo::ICaloIndexer* CaloCellIndexerSvc::indexer (int detID,
+                                                              bool quiet /*= false*/) const
 {
   if (static_cast<size_t>(detID) < m_indexers.size()) {
     return m_indexers[detID].get();
+  }
+  if (!quiet) {
+    error() << "Cannot find indexer for detID " << detID << endmsg;
   }
   return nullptr;
 }

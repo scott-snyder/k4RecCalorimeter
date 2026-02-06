@@ -45,10 +45,11 @@ public:
   /**
    * @brief Return indexer for a given subdetector.
    * @param detID Subdetector ID for the desired indexer.
+   * @param quiet If true, don't print an error if we don't find an indexer.
    *
    * Returns a pointer to the indexer or nullptr if there isn't one defined.
    */
-  const k4::recCalo::ICaloIndexer* indexer (int detID) const override;
+  const k4::recCalo::ICaloIndexer* indexer (int detID, bool quiet = false) const override;
 
 
 private:
