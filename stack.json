@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "757be879fa7e06b2fe289c84b77ec498ec0f7cf3",
-  "head": "9bee1dbf23581e0df06fbe059523c22744bd0be7",
+  "prev": "146df08f7227265de9a7a9bb825244ac522a8d78",
+  "head": "ee102f33f0a37d98ab7a323b6ffe30dda4c8f4d0",
   "applied": [
     "discrit-wip",
     "cellPositionsConst2",
@@ -32,10 +32,10 @@
     "caloCellConstantsSvc",
     "caloCellIndexerSvc",
     "cellsInConst",
-    "ecalbarrelIndexer",
-    "xtalkIndex"
+    "ecalbarrelIndexer"
   ],
   "unapplied": [
+    "xtalkIndex",
     "topoNoiseIndex-wip",
     "createCaloCells2",
     "createTopoCluster-wip",
