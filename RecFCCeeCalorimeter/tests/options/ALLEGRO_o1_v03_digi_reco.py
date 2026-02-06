@@ -186,6 +186,37 @@ calibEcalEndcap = CalibrateInLayersTool("CalibrateECalEndcap",
                                         readoutName=ecalEndcapReadoutName,
                                         layerFieldName="layer")
 
+# Indexing service.
+geotools = []
+from Configurables import TubeLayerModuleThetaCaloTool
+ecalBarrelGeometryTool = TubeLayerModuleThetaCaloTool("ecalBarrelGeometryTool",
+                                                      readoutName=ecalBarrelReadoutName,
+                                                      activeVolumeName="LAr_sensitive",
+                                                      activeFieldName="layer",
+                                                      activeVolumesNumber=ecalBarrelLayers,
+                                                      fieldNames=["system"],
+                                                      fieldValues=[IDs["ECAL_Barrel"]],
+                                                      OutputLevel=INFO)
+geotools += [ecalBarrelGeometryTool]
+
+from Configurables import ECalEndcapTurbineCaloTool
+ecalEndcapGeometryTool = ECalEndcapTurbineCaloTool ("ecalEndcapGeometryTool",
+                                                    readoutName=ecalEndcapReadoutName)
+geotools += [ecalEndcapGeometryTool]
+
+if runHCal:
+    from Configurables import HCalPhiThetaCaloTool
+    hcalBarrelGeometryTool = HCalPhiThetaCaloTool ("hcalBarrelGeometryTool",
+                                                   readoutName=hcalBarrelReadoutName)
+    geotools += [hcalBarrelGeometryTool]
+    hcalEndcapGeometryTool = HCalPhiThetaCaloTool ("hcalEndcapGeometryTool",
+                                                   readoutName=hcalEndcapReadoutName)
+    geotools += [hcalEndcapGeometryTool]
+    
+
+from Configurables import k4__recCalo__CaloCellIndexerSvc
+ExtSvc += [k4__recCalo__CaloCellIndexerSvc (GeoTools = geotools)]
+
 if runHCal:
     from Configurables import CalibrateCaloHitsTool
     # HCAL barrel
