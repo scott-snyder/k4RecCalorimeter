@@ -20,8 +20,6 @@ public:
 
 
   /** Return a new indexer object for this subdetector.
-   *
-   * Returns a null pointer if indexing is not implemented.
    */
   virtual std::unique_ptr<k4::recCalo::ICaloIndexer> indexer() const override final;
 
