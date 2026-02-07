@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "ac021400c573c44e5fc71f39f6a47132e2165f2a",
-  "head": "c1f403cefa764abb1e6fa47119f9493e0b9f7072",
+  "prev": "402aa04afbf6cf3246ff9bc2f9e90bef5d7e5a71",
+  "head": "206c264468eb35c66a1a0205671320560dc2b3ef",
   "applied": [
     "discrit-wip",
     "cellPositionsConst2",
@@ -34,6 +34,7 @@
     "caloCellIndexerSvc",
     "cellsInConst",
     "ecalbarrelIndexer",
+    "hcalIndexer",
     "cellposIndex",
     "indexingConfig",
     "xtalkIndex",
@@ -42,8 +43,7 @@
     "createTopoCluster-wip",
     "noiseIndex",
     "diag-wip",
-    "cellids-wip",
-    "hcalIndexer"
+    "cellids-wip"
   ],
   "unapplied": [],
   "hidden": [],
@@ -141,35 +141,35 @@
     "ecalbarrelIndexer": {
       "oid": "9beed896b6420b2c3910cfde03ff40903a386a79"
     },
+    "hcalIndexer": {
+      "oid": "cb307686b02ea4ffd9b72b5837c4703fedac0da9"
+    },
     "cellposIndex": {
-      "oid": "1e87fd089cb3b09df2534ccaf8d7fa80202c9668"
+      "oid": "1445022ee9a817eabbf38d11ae2b11b9ddcabe26"
     },
     "indexingConfig": {
-      "oid": "7d5d07435606c40ec3c33346c993f708e03ac796"
+      "oid": "5ff2f919dc140c79c89cc91b1c54b9465c2b9a81"
     },
     "xtalkIndex": {
-      "oid": "aa6060e36f3835b4e44508867a567bd953f2f6f2"
+      "oid": "beacae9a850983ae5e2b31ae49bf9d254e49f783"
     },
     "topoNoiseIndex-wip": {
-      "oid": "3d69f9d1cac95e83050347e897aa1c3812b64198"
+      "oid": "8ef96a651272e8e6eb19f586e67fa2ac6a2e0e43"
     },
     "createCaloCells2": {
-      "oid": "7f7df783a6a8fdf0cbd44c71af83e47166607541"
+      "oid": "cda7faa4f89423f16760f5b2b5bdec7888df0d8f"
     },
     "createTopoCluster-wip": {
-      "oid": "508fc74e06152f46984827cac6bb15efd8dcff7a"
+      "oid": "4010e495c2f107ff13f1e75257e36f51bab71c9e"
     },
     "noiseIndex": {
-      "oid": "12efd6d1eac3a5467c38d55c5bf8f162fbe2e48a"
+      "oid": "084ca7460a0d536dec8efcb6681304096021aff0"
     },
     "diag-wip": {
-      "oid": "db1ea6c3f2a7728a5ac0d2bfa77ae324bc656a4d"
+      "oid": "f7e464481cb2d11874481311afbc429fa823bbec"
     },
     "cellids-wip": {
-      "oid": "e7e659f2389ef09b4c3496ea9cbe3a7b49152aac"
-    },
-    "hcalIndexer": {
-      "oid": "c1f403cefa764abb1e6fa47119f9493e0b9f7072"
+      "oid": "206c264468eb35c66a1a0205671320560dc2b3ef"
     }
   }
 }
