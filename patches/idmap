@@ -1,0 +1,14 @@
+Bottom: a80015a54fb9cadca2be4c4f6fa4f5aaac5567c1
+Top:    392796ca64790d6fcbdd6adbad23a499f148a926
+Author: sss <sss@karma>
+Date:   2026-02-07 16:36:05 -0500
+
+Add IDMap for fast identifier lookup.
+
+This is a first step towards speeding up cell+cluster reconstruction,
+which for the Allegro Ecal barrel is very slow when all cells
+are present (when noise is added, for example).  A lot of the time is spent
+in looking up identifiers in maps.  As a step towards speeding this up,
+we introduce a trie-based data structure that is significantly faster
+than unordered_map for identifier lookups.  Upcoming changes will make use
+of this to actually speed up the reconstruction.

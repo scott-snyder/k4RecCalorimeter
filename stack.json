@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "c4dbf158855c41fd2efe779bec3ac56868f408f2",
-  "head": "a8b3195252cc6d8d4df45d4d4852c22b1e998168",
+  "prev": "f5a04ee33cb72572cf2a86a9f77963c4bc80b99e",
+  "head": "6bb3a03d098e05efa18667072d461b0ce7d9da54",
   "applied": [
     "depr",
     "testdir",
@@ -29,7 +29,8 @@
     "noise1c",
     "noise3",
     "caloCellConstantsSvc",
-    "cellsInConst"
+    "cellsInConst",
+    "idmap"
   ],
   "unapplied": [
     "idmapIndexer",
@@ -111,6 +112,9 @@
     },
     "hcal-tool": {
       "oid": "cf584578c65af723fca6c0ff54ed3048844fa9f9"
+    },
+    "idmap": {
+      "oid": "6bb3a03d098e05efa18667072d461b0ce7d9da54"
     },
     "idmapIndexer": {
       "oid": "00d96c82e4bb11a22ec13e43aa95da743522f120"
