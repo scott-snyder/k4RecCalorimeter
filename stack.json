@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "2e192a5e1f187236ee7213bd6f04d6b487b46c4d",
+  "prev": "d718cd4917d7ca3ae11595b1e14f6f350b9f99f5",
   "head": "c7ec1b31e570a0bcec944be3c0684001e30d0b51",
   "applied": [
     "depr",
@@ -35,7 +35,6 @@
     "multiIndexer"
   ],
   "unapplied": [
-    "ecalbarrelIndexer",
     "hcalIndexer",
     "caloCellIndexerSvc",
     "xtalkIndex",
@@ -99,9 +98,6 @@
     },
     "depr": {
       "oid": "fe9f176d3ca213e510a053026285c917ab96e3bd"
-    },
-    "ecalbarrelIndexer": {
-      "oid": "0ccbfb723c8f7582b947c63b90e15fdc8fd8efd3"
     },
     "geoConst2": {
       "oid": "ef4ea4819eeb40fbc09589d2611f9630f14ce00a"
