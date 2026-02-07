@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "f5a04ee33cb72572cf2a86a9f77963c4bc80b99e",
+  "prev": "0b782008133ace89b1dbedcd6ec3ed74839dbef3",
   "head": "6bb3a03d098e05efa18667072d461b0ce7d9da54",
   "applied": [
     "depr",
@@ -33,7 +33,6 @@
     "idmap"
   ],
   "unapplied": [
-    "idmapIndexer",
     "ecalbarrelIndexer",
     "caloCellIndexerSvc",
     "xtalkIndex",
@@ -115,9 +114,6 @@
     },
     "idmap": {
       "oid": "6bb3a03d098e05efa18667072d461b0ce7d9da54"
-    },
-    "idmapIndexer": {
-      "oid": "00d96c82e4bb11a22ec13e43aa95da743522f120"
     },
     "indexingConfig": {
       "oid": "d094c0966ee9b91a615df23b602bc7dd3d27ecc4"
