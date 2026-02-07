@@ -88,5 +88,5 @@ TubeLayerModuleThetaCaloTool::indexer() const
       Indexer_t::IDMap_t::makeDesc (*idSpec.field("module")) };
 
   // ALLEGRO Ecal requires ~ 15M for indexing.  Hint 16.
-  return std::make_unique<Indexer_t> (fields, cellIDs(), 16*1024*1024);
+  return std::make_unique<Indexer_t> (this->id(), fields, cellIDs(), 16*1024*1024);
 }
