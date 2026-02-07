@@ -45,6 +45,8 @@ StatusCode CaloCellIndexerSvcTestAlg::initialize()
 
   const ICaloIndexer* indexer = m_svc->indexer (m_detID);
   K4RECCALORIMETER_CHECK( indexer != nullptr );
+  K4RECCALORIMETER_CHECK( indexer->detIDs().size() == 1 );
+  K4RECCALORIMETER_CHECK( indexer->detIDs()[0] == m_detID );
 
   std::span<const uint64_t> ids = indexer->cellIDs();
   for (size_t i = 0; i < ids.size(); ++i) {

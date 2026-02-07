@@ -10,6 +10,7 @@
 #include "DD4hep/IDDescriptor.h"
 #include "boost/timer/timer.hpp"
 #include <vector>
+#include <algorithm>
 #include <map>
 #include <unordered_map>
 #include <algorithm>
@@ -23,6 +24,10 @@ using mapkey_t = uint64_t; // libc defines key_t...
 using mapkey_span = std::span<const mapkey_t>;
 
 using payload_t = uint32_t;
+
+
+// Helper to make list of IDS.
+#include "make_ecal_ids.icc"
 
 
 //************************************************************************
@@ -54,54 +59,6 @@ int randi_seed (uint32_t& seed, int rmax, int rmin = 0)
 }
 
 
-//************************************************************************
-// Helper to make a list of IDs for testing.
-// Hardcoded to match the set of Allegro ECal barrel IDs as of this writing.
-//
-
-const unsigned int numLayers = 11;
-const char* const descstr = "system:4,cryo:1,type:3,subtype:3,layer:8,module:11,theta:10";
-
-
-std::vector<mapkey_t> make_ids()
-{
-  std::vector<mapkey_t> ids;
-  ids.reserve (2041344);
-  dd4hep::IDDescriptor desc ("desc", descstr);
-  auto decoder = desc.decoder();
-
-  static const unsigned module_high = 1534;
-  static const unsigned module_step = 2;
-  static const unsigned theta_low[11] = { 8, 12, 12, 16, 20, 20, 24, 28, 32, 36, 40 };
-  static const unsigned theta_high[11] = { 788, 787, 784, 780, 776, 776, 772, 768, 764, 760, 756 };
-  static const unsigned theta_step[11] = { 4, 1, 4, 4, 4, 4, 4, 4, 4, 4, 4 };
-
-  size_t module_index = decoder->index ("module");
-  size_t theta_index  = decoder->index ("theta");
-
-  for (unsigned int ilayer = 0; ilayer < numLayers; ilayer++) {
-    mapkey_t id = 0;
-    decoder->set (id, "system", 4);
-    decoder->set (id, "cryo", 0);
-    decoder->set (id, "type", 0);
-    decoder->set (id, "subtype", 0);
-    decoder->set (id, "layer", ilayer);
-    decoder->set (id, theta_index, 0);
-    decoder->set (id, module_index, 0);
-
-    for (unsigned int mod = 0; mod <= module_high; mod += module_step) {
-      decoder->set (id, module_index, mod);
-      for (unsigned int theta = theta_low[ilayer]; theta <= theta_high[ilayer]; theta += theta_step[ilayer]) {
-        decoder->set (id, theta_index, theta);
-        ids.push_back (id);
-      }
-    }
-  }
-  std::ranges::sort (ids);
-  return ids;
-}
-
-
 //*******************************************************************
 // Basic test of map lookup.
 //
@@ -111,7 +68,7 @@ void test1 (mapkey_span ids)
 {
   using Map_t = k4::recCalo::IDMap<payload_t>;
   using FieldDesc_t = Map_t::FieldDesc_t;
-  dd4hep::IDDescriptor desc ("desc", descstr);
+  dd4hep::IDDescriptor desc ("desc", ecal_descstr);
 
   // Make the fields used by the map.
   std::vector<FieldDesc_t> fielddescs;
@@ -140,7 +97,7 @@ void test1 (mapkey_span ids)
   unsigned ntry = 0;
   for (size_t i = 0; i < 1000; i++) {
     mapkey_t id = ids[0];
-    decoder->set (id, layer_index, randi_seed (seed, numLayers + 2));
+    decoder->set (id, layer_index, randi_seed (seed, ecal_numLayers + 2));
     decoder->set (id, module_index, randi_seed (seed, nmodule));
     decoder->set (id, theta_index, randi_seed (seed, ntheta));
     if (!std::ranges::binary_search (ids, id)) {
@@ -182,7 +139,7 @@ template<class IDMAP>
 auto IDMapLookup<IDMAP>::fieldDescs() -> std::vector<FieldDesc_t>
 {
   std::vector<FieldDesc_t> fielddescs;
-  dd4hep::IDDescriptor desc ("desc", descstr);
+  dd4hep::IDDescriptor desc ("desc", ecal_descstr);
   auto pushdesc = [&] (const std::string s) {
     const dd4hep::BitFieldElement* bfe = desc.field (s);
     fielddescs.emplace_back (bfe->offset(), bfe->width());
@@ -546,7 +503,7 @@ size_t perftest (mapkey_span ids, size_t n)
 
 int main (int argc, char** argv)
 {
-  std::vector<mapkey_t> ids = make_ids();
+  std::vector<mapkey_t> ids = make_ecal_ids();
 
   if (argc >= 2 && std::string(argv[1]).starts_with ("--perf")) {
     size_t n = 0;
