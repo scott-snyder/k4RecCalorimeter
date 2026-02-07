@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "5769906911edde73777e2ec26bf71cbd23dd8ba6",
+  "prev": "e59723e750de309f218060e0f5158447ff7dc789",
   "head": "2cd8cebe7a9833c856a59388b719f2932065ada4",
   "applied": [
     "depr",
@@ -37,7 +37,6 @@
     "hcalIndexer"
   ],
   "unapplied": [
-    "caloCellIndexerSvc",
     "xtalkIndex",
     "nodebug",
     "cellposIndex",
@@ -57,9 +56,6 @@
     },
     "caloCellConstantsSvc": {
       "oid": "db588d8a67844d87c923c1f18843b04797d5bdcc"
-    },
-    "caloCellIndexerSvc": {
-      "oid": "5c2b354df7eccc005b03e7aca8223e0aac645899"
     },
     "caloToolInfo1": {
       "oid": "280237a62645c943904e236c76289e2c3f136442"
