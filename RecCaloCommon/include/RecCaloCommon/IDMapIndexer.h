@@ -1,7 +1,4 @@
 // This file's extension implies that it's C, but it's really -*- C++ -*-.
-/*
- * Copyright (C) 2002-2026 CERN for the benefit of the ATLAS collaboration.
- */
 /**
  * @file RecCaloCommon/IDMapIndexer.h
  * @author scott snyder <snyder@bnl.gov>
@@ -46,6 +43,7 @@ public:
 
   /**
    * @brief Constructor.
+   * @param detID ID of the detector that we index.
    * @param fields Set of fields to use from the identifiers.
    *               Must be sufficient to make identifiers unique.
    *               For best results, should be listed in order of increasing
@@ -57,7 +55,8 @@ public:
    *                in bytes, required by this mapping.  This will be
    *                used to reserve an appropriate size for the data vector.
    */
-  IDMapIndexer (std::span<const FieldDesc_t> fields,
+  IDMapIndexer (int detID,
+                std::span<const FieldDesc_t> fields,
                 std::span<const uint64_t> ids,
                 size_t sizeHint = 0);
 
@@ -76,10 +75,19 @@ public:
    */
   virtual std::span<const uint64_t> cellIDs() const override final;
 
+
+  /**
+   * @brief Return the IDs of the detector(s) that we index.
+   */
+  virtual std::span<const int> detIDs() const override final;
+
   
 private:
   /// The mapping.
   IDMap_t m_map;
+
+  /// The ID of the detector we index.
+  int m_detID;
 
   /// The set of cells that we index.
   std::span<const uint64_t> m_cellIDs;
@@ -87,12 +95,14 @@ private:
 
 
 template <unsigned NFIELDS>
-IDMapIndexer<NFIELDS>::IDMapIndexer (std::span<const FieldDesc_t> fields,
+IDMapIndexer<NFIELDS>::IDMapIndexer (int detID,
+                                     std::span<const FieldDesc_t> fields,
                                      std::span<const uint64_t> ids,
                                      size_t sizeHint /*= 0*/)
   : m_map (fields, INVALID,ids,
            [](size_t i) { return i; },
            sizeHint),
+    m_detID (detID),
     m_cellIDs (ids)
 {
 }
@@ -120,6 +130,18 @@ std::span<const uint64_t> IDMapIndexer<NFIELDS>::cellIDs() const
 }
 
 
+/**
+ * @brief Return the IDs of the detector(s) that we index.
+ */
+template <unsigned NFIELDS>
+inline
+std::span<const int> IDMapIndexer<NFIELDS>::detIDs() const
+{
+  return std::span<const int> (&m_detID, 1);
+}
+
+
 } // namespace k4::recCalo
+
 
 #endif // not RECCALOCOMMON_IDMAPINDEXER_H
