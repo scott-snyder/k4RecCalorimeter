@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "ec3e449c2e12acf6799a69b319f3f9c113ce38cd",
+  "prev": "c4dbf158855c41fd2efe779bec3ac56868f408f2",
   "head": "a8b3195252cc6d8d4df45d4d4852c22b1e998168",
   "applied": [
     "depr",
@@ -32,7 +32,6 @@
     "cellsInConst"
   ],
   "unapplied": [
-    "idmap",
     "idmapIndexer",
     "ecalbarrelIndexer",
     "caloCellIndexerSvc",
@@ -112,9 +111,6 @@
     },
     "hcal-tool": {
       "oid": "cf584578c65af723fca6c0ff54ed3048844fa9f9"
-    },
-    "idmap": {
-      "oid": "a2e04faaeeaf568bfbc1b5eb19f5aa67f1e4c8e4"
     },
     "idmapIndexer": {
       "oid": "00d96c82e4bb11a22ec13e43aa95da743522f120"
