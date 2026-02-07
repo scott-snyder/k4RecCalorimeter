@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "a1407b8bbfc7b3c71e9a17c4963ce86924dfc096",
-  "head": "d09441d5f259f41f75a47272572346ddbc85ebf6",
+  "prev": "9c99f7ab90b2ad4f5f24ce46a6c3cc9bba166df7",
+  "head": "cc5e0c48d6da731509346bd183572fa364fa23f9",
   "applied": [
     "discrit-wip",
     "cellPositionsConst2",
@@ -42,7 +42,8 @@
     "noiseIndex",
     "diag-wip",
     "cellids-wip",
-    "multiIndexer"
+    "multiIndexer",
+    "hcalIndexer"
   ],
   "unapplied": [],
   "hidden": [],
@@ -166,6 +167,9 @@
     },
     "multiIndexer": {
       "oid": "d09441d5f259f41f75a47272572346ddbc85ebf6"
+    },
+    "hcalIndexer": {
+      "oid": "cc5e0c48d6da731509346bd183572fa364fa23f9"
     }
   }
 }
