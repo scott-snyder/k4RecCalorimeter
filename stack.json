@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "e59723e750de309f218060e0f5158447ff7dc789",
-  "head": "2cd8cebe7a9833c856a59388b719f2932065ada4",
+  "prev": "2ea1b409f8294db10e7a1a270eff55096a008d54",
+  "head": "ae8c9282bbc5e4bb599bfeb9f25ae0f8ce0bc414",
   "applied": [
     "depr",
     "testdir",
@@ -34,7 +34,8 @@
     "idmapIndexer",
     "multiIndexer",
     "ecalbarrelIndexer",
-    "hcalIndexer"
+    "hcalIndexer",
+    "caloCellIndexerSvc"
   ],
   "unapplied": [
     "xtalkIndex",
@@ -56,6 +57,9 @@
     },
     "caloCellConstantsSvc": {
       "oid": "db588d8a67844d87c923c1f18843b04797d5bdcc"
+    },
+    "caloCellIndexerSvc": {
+      "oid": "ae8c9282bbc5e4bb599bfeb9f25ae0f8ce0bc414"
     },
     "caloToolInfo1": {
       "oid": "280237a62645c943904e236c76289e2c3f136442"
