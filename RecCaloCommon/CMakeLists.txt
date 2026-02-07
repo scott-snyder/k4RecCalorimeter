@@ -39,4 +39,12 @@ if(BUILD_TESTING)
     LINK DD4hep::DDCore k4FWCore::k4Interface k4FWCore::k4FWCore
     TEST)
   target_include_directories(IDMapIndexer_test.exe AFTER PUBLIC include)
+
+
+  gaudi_add_executable(MultiIndexer_test.exe
+    SOURCES tests/MultiIndexer_test.cpp
+    LINK DD4hep::DDCore k4FWCore::k4Interface k4FWCore::k4FWCore RecCaloCommon
+    TEST)
+  set_test_env(MultiIndexer_test.exe)
+  target_include_directories(MultiIndexer_test.exe AFTER PUBLIC include)
 endif()
