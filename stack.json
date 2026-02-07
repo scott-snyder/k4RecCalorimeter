@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "f7d8b5b5ddcd0a2e16b813f32464f406bdbf6a01",
-  "head": "000dac668dbe102076337697ce428f07e94c1a48",
+  "prev": "857fdd8626b425c894cb45d8e504539715231e5d",
+  "head": "12fb7313ed448c11fbf32f9d2b820f5cfdd8656a",
   "applied": [
     "depr",
     "testdir",
@@ -44,7 +44,8 @@
     "sortnoise",
     "repnoise",
     "createCaloCells2",
-    "move-check"
+    "move-check",
+    "refresh-temp"
   ],
   "unapplied": [
     "check-deprecated",
@@ -153,6 +154,9 @@
     },
     "noiseIndex": {
       "oid": "62fcf86e603d2b6bb17c294009e4b302a8b4da5d"
+    },
+    "refresh-temp": {
+      "oid": "12fb7313ed448c11fbf32f9d2b820f5cfdd8656a"
     },
     "repnoise": {
       "oid": "f4530834ffadce2e60d46a8547a1aeb8e22322c7"
