@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "7d9677385a903fa0b38240df1ae7ae9089508521",
-  "head": "0ccbfb723c8f7582b947c63b90e15fdc8fd8efd3",
+  "prev": "5769906911edde73777e2ec26bf71cbd23dd8ba6",
+  "head": "2cd8cebe7a9833c856a59388b719f2932065ada4",
   "applied": [
     "depr",
     "testdir",
@@ -33,7 +33,8 @@
     "idmap",
     "idmapIndexer",
     "multiIndexer",
-    "ecalbarrelIndexer"
+    "ecalbarrelIndexer",
+    "hcalIndexer"
   ],
   "unapplied": [
     "caloCellIndexerSvc",
@@ -113,6 +114,9 @@
     },
     "hcal-tool": {
       "oid": "cf584578c65af723fca6c0ff54ed3048844fa9f9"
+    },
+    "hcalIndexer": {
+      "oid": "2cd8cebe7a9833c856a59388b719f2932065ada4"
     },
     "idmap": {
       "oid": "6bb3a03d098e05efa18667072d461b0ce7d9da54"
