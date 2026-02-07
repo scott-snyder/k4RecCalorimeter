@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "d718cd4917d7ca3ae11595b1e14f6f350b9f99f5",
-  "head": "c7ec1b31e570a0bcec944be3c0684001e30d0b51",
+  "prev": "e427b5f74ee0d1ebef62b4d199b092b13b02fb22",
+  "head": "cbddb16b35960ebd45ab8627dfc7471e320ea8ae",
   "applied": [
     "depr",
     "testdir",
@@ -32,7 +32,8 @@
     "cellsInConst",
     "idmap",
     "idmapIndexer",
-    "multiIndexer"
+    "multiIndexer",
+    "ecalbarrelIndexer"
   ],
   "unapplied": [
     "hcalIndexer",
@@ -98,6 +99,9 @@
     },
     "depr": {
       "oid": "fe9f176d3ca213e510a053026285c917ab96e3bd"
+    },
+    "ecalbarrelIndexer": {
+      "oid": "cbddb16b35960ebd45ab8627dfc7471e320ea8ae"
     },
     "geoConst2": {
       "oid": "ef4ea4819eeb40fbc09589d2611f9630f14ce00a"
