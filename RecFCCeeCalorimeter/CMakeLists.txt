@@ -72,7 +72,9 @@ set_tests_properties(FCCeeCalo_DigitizationWhiteningFilter PROPERTIES FIXTURES_R
 
 if(BUILD_TESTING)
   gaudi_add_module( k4RecFCCeeCalorimeterTests
-                    SOURCES tests/src/TubeLayerModuleThetaCaloToolTestAlg.cpp
+                    SOURCES
+                    tests/src/TubeLayerModuleThetaCaloToolTestAlg.cpp
+                    tests/src/HCalPhiThetaCaloToolTestAlg.cpp
                     LINK k4FWCore::k4FWCore
                     k4FWCore::k4Interface
                     Gaudi::GaudiKernel
@@ -84,4 +86,10 @@ if(BUILD_TESTING)
             WORKING_DIRECTORY ${PROJECT_BINARY_DIR}/Testing/Temporary
           )
   set_test_env( TubeLayerModuleThetaCaloTool_test )
+
+  add_test( NAME HCalPhiThetaCaloTool_test
+            COMMAND k4run ${PROJECT_SOURCE_DIR}/RecFCCeeCalorimeter/tests/options/HCalPhiThetaCaloTool_test.py
+            WORKING_DIRECTORY ${PROJECT_BINARY_DIR}/Testing/Temporary
+        )
+  set_test_env( HCalPhiThetaCaloTool_test )
 endif()
