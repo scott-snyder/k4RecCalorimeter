@@ -1,4 +1,5 @@
 #include "HCalPhiThetaCaloTool.h"
+#include "RecCaloCommon/IDMapIndexer.h"
 #include "detectorSegmentations/FCCSWHCalPhiTheta_k4geo.h"
 #include "DD4hep/detail/DetectorInterna.h"
 #include <algorithm>
@@ -47,4 +48,29 @@ StatusCode HCalPhiThetaCaloTool::collectCells(std::vector<uint64_t>& cells) cons
   }
 
   return StatusCode::SUCCESS;
+}
+
+
+/** Return a new indexer object for this subdetector.
+ */
+std::unique_ptr<k4::recCalo::ICaloIndexer>
+HCalPhiThetaCaloTool::indexer() const
+{
+  const auto* seg =
+    dynamic_cast<const dd4hep::DDSegmentation::FCCSWHCalPhiTheta_k4geo*> (readout().segmentation().segmentation());
+  if (!seg) {
+    error() << "Unable to cast segmentation pointer!!!! Tool only applicable to FCCSWHCalPhiTheta_k4geo "
+               "segmentation."
+            << endmsg;
+    return nullptr;
+  }
+
+  using Indexer_t = k4::recCalo::IDMapIndexer<3>;
+  auto idSpec = readout().idSpec();
+  std::vector<Indexer_t::FieldDesc_t> fields
+    { Indexer_t::IDMap_t::makeDesc (*idSpec.field(seg->fieldNameLayer())),
+      Indexer_t::IDMap_t::makeDesc (*idSpec.field(seg->fieldNameTheta())),
+      Indexer_t::IDMap_t::makeDesc (*idSpec.field(seg->fieldNamePhi())) };
+
+  return std::make_unique<Indexer_t> (this->id(), fields, cellIDs());
 }
