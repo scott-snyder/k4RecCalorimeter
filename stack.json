@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "a3f61670d142c68e1e16b503926b81cf988b0013",
-  "head": "f4ebd4b1590f4707a2ad09aadf125b8db4077123",
+  "prev": "2e192a5e1f187236ee7213bd6f04d6b487b46c4d",
+  "head": "c7ec1b31e570a0bcec944be3c0684001e30d0b51",
   "applied": [
     "depr",
     "testdir",
@@ -32,7 +32,9 @@
     "cellsInConst",
     "idmap",
     "idmapIndexer",
-    "multiIndexer",
+    "multiIndexer"
+  ],
+  "unapplied": [
     "ecalbarrelIndexer",
     "hcalIndexer",
     "caloCellIndexerSvc",
@@ -43,9 +45,7 @@
     "noiseIndex",
     "sortnoise",
     "repnoise",
-    "createCaloCells2"
-  ],
-  "unapplied": [
+    "createCaloCells2",
     "move-check",
     "check-deprecated",
     "check-remove"
