@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "7953e864f3681ba8de378527a2d30d8e8b76b252",
-  "head": "361068bb67112fbb4b7e6fa8e0c6c18c8178fcd6",
+  "prev": "b5f9fb9429a85ac5d799563a06455b3a3569d0df",
+  "head": "ddd023019c8f6bfd6884b630aac334fb036f7672",
   "applied": [
     "discrit-wip",
     "cellPositionsConst2",
@@ -42,8 +42,7 @@
     "noiseIndex",
     "diag-wip",
     "cellids-wip",
-    "multiIndexer",
-    "refresh-temp"
+    "multiIndexer"
   ],
   "unapplied": [],
   "hidden": [],
@@ -130,46 +129,43 @@
       "oid": "f451815ff8eb135c499201e10c747b051d3ce36e"
     },
     "caloCellIndexerSvc": {
-      "oid": "984376a88cada20663e548386c490b81dd2e7637"
+      "oid": "7de0a8cd6028ae56f131b8b24c3a5958a7282c7f"
     },
     "cellsInConst": {
-      "oid": "ebc997a08555247658c45a4286f2fb4e84e169aa"
+      "oid": "af572c6f3d603e1de05bdbcbc6f06d5c35a88fc3"
     },
     "ecalbarrelIndexer": {
-      "oid": "c6243cc30f73323fc56638965bda6197e9274a5f"
+      "oid": "92952eac9d9df602305197a822a8dd6b044aca35"
     },
     "cellposIndex": {
-      "oid": "cafe85fb8fe484c308cff2056cc7429c3379f51a"
+      "oid": "f52d3c28df8babfb10d71912032821c2fd4c529f"
     },
     "indexingConfig": {
-      "oid": "9ff23e356f381098844aec6b59e56b67d7d74d08"
+      "oid": "3ef54e5cf97f7a75dd863c4d0929a9d3f617ce43"
     },
     "xtalkIndex": {
-      "oid": "f5ba53e66668c8fd8defde77971d6399197f127e"
+      "oid": "02a3494bb098513a8139ebce9895f1f8f669574d"
     },
     "topoNoiseIndex-wip": {
-      "oid": "a23ab3961c873c89e62c98e3429a5793fe85e73a"
+      "oid": "89c882a367d6ce6f3a58f7d75bb7e902ed0240d8"
     },
     "createCaloCells2": {
-      "oid": "42cfc88fe233e344369d24cd68a2ccedba8df115"
+      "oid": "08ef1b4759a74094804017f5ac2d25ad234026b4"
     },
     "createTopoCluster-wip": {
-      "oid": "e34c2d5b725131c8b88e1f3365f681afd3f9aeee"
+      "oid": "088ade35944e291e603ea74e8d434bef6989d51e"
     },
     "noiseIndex": {
-      "oid": "f7604705baadeb6c3207ad634f68e1f731a6d36a"
+      "oid": "7b9d9ad2695b7dfbb6f2a8d00e8bd78bd2f2a4a0"
     },
     "diag-wip": {
-      "oid": "4d5c1650d81aa1d9d79565398a0e6a533ea45cd4"
+      "oid": "20d6fed583836d176c4bed5ca6fd7b545b65e60c"
     },
     "cellids-wip": {
-      "oid": "d20643ea8a0cb2343cee9c81ac5ff747bf8b22cb"
+      "oid": "a45e0ca92b1b34bd9a163b7e1f1ce8b0cbd3ece7"
     },
     "multiIndexer": {
-      "oid": "f36951c370964d7c13da07d1458fe916cb774cc5"
-    },
-    "refresh-temp": {
-      "oid": "361068bb67112fbb4b7e6fa8e0c6c18c8178fcd6"
+      "oid": "ddd023019c8f6bfd6884b630aac334fb036f7672"
     }
   }
 }
