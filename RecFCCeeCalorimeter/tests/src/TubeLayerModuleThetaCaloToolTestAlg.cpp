@@ -1,6 +1,3 @@
-/*
- * Copyright (C) 2002-2026 CERN for the benefit of the ATLAS collaboration.
- */
 /**
  * @file RecFCCeeCalorimeter/tests/src/TubeLayerModuleThetaCaloToolTestAlg.cpp
  * @author scott snyder <snyder@bnl.gov>
@@ -40,20 +37,20 @@ DECLARE_COMPONENT(k4::recCalo::TubeLayerModuleThetaCaloToolTestAlg);
 StatusCode TubeLayerModuleThetaCaloToolTestAlg::initialize()
 {
   K4RECCALORIMETER_CHECK( m_tool.retrieve() );
-  assert (m_tool->readoutName() == "ECalBarrelModuleThetaMerged");
-  assert (m_tool->id() == 4);
+  K4RECCALORIMETER_CHECK( m_tool->readoutName() == "ECalBarrelModuleThetaMerged" );
+  K4RECCALORIMETER_CHECK( m_tool->id() == 4 );
 
   std::span<const uint64_t> ids = m_tool->cellIDs();
   size_t ncells = ids.size();
-  assert (ncells == 2041344);
+  K4RECCALORIMETER_CHECK( ncells == 2041344 );
 
   std::unique_ptr<k4::recCalo::ICaloIndexer> indexer = m_tool->indexer();
-  assert (indexer != nullptr);
+  K4RECCALORIMETER_CHECK( indexer != nullptr );
 
-  assert (indexer->cellIDs().size() == ncells);
+  K4RECCALORIMETER_CHECK( indexer->cellIDs().size() == ncells );
   for (size_t i = 0; i < ncells; i++) {
-    assert (ids[i] == indexer->cellIDs()[i]);
-    assert (indexer->index(ids[i]) == i);
+    K4RECCALORIMETER_CHECK( ids[i] == indexer->cellIDs()[i] );
+    K4RECCALORIMETER_CHECK( indexer->index(ids[i]) == i );
   }
 
   return StatusCode::SUCCESS;
@@ -67,4 +64,3 @@ StatusCode TubeLayerModuleThetaCaloToolTestAlg::execute()
 
 
 } // namespace k4::recCalo
-
