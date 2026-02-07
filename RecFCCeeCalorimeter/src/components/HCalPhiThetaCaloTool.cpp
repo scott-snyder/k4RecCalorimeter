@@ -1,8 +1,14 @@
+/**
+ * @file RecFCCeeCalorimeter/src/components/HCalPhiThetaCaloTool.cpp
+ * @author scott snyder <snyder@bnl.gov>
+ * @date Feb, 2026
+ * @brief Calorimeter tool for Allegro HCal.
+ */
+
 #include "HCalPhiThetaCaloTool.h"
+#include "RecCaloCommon/IDMapIndexer.h"
 #include "detectorSegmentations/FCCSWHCalPhiTheta_k4geo.h"
 #include "DD4hep/detail/DetectorInterna.h"
-#include <algorithm>
-#include <functional>
 
 
 DECLARE_COMPONENT(HCalPhiThetaCaloTool)
@@ -12,6 +18,7 @@ DECLARE_COMPONENT(HCalPhiThetaCaloTool)
  */
 StatusCode HCalPhiThetaCaloTool::collectCells(std::vector<uint64_t>& cells) const
 {
+  cells.reserve (readoutName() == "HCalBarrelReadout" ? 210944 : 80896);
   const auto* seg =
     dynamic_cast<const dd4hep::DDSegmentation::FCCSWHCalPhiTheta_k4geo*> (readout().segmentation().segmentation());
   if (!seg) {
@@ -47,4 +54,36 @@ StatusCode HCalPhiThetaCaloTool::collectCells(std::vector<uint64_t>& cells) cons
   }
 
   return StatusCode::SUCCESS;
+}
+
+
+/** Return a new indexer object for this subdetector.
+ */
+std::unique_ptr<ICaloIndexer> HCalPhiThetaCaloTool::indexer() const
+{
+  const auto* seg =
+    dynamic_cast<const dd4hep::DDSegmentation::FCCSWHCalPhiTheta_k4geo*> (readout().segmentation().segmentation());
+  if (!seg) {
+    error() << "Unable to cast segmentation pointer!!!! Tool only applicable to FCCSWHCalPhiTheta_k4geo "
+               "segmentation."
+            << endmsg;
+    return nullptr;
+  }
+
+  using Indexer_t = k4::recCalo::IDMapIndexer<3>;
+  dd4hep::IDDescriptor idSpec = readout().idSpec();
+  std::vector<Indexer_t::FieldDesc_t> fields
+    { Indexer_t::IDMap_t::makeDesc (*idSpec.field(seg->fieldNameLayer())),
+      Indexer_t::IDMap_t::makeDesc (*idSpec.field(seg->fieldNameTheta())),
+      Indexer_t::IDMap_t::makeDesc (*idSpec.field(seg->fieldNamePhi())) };
+
+  const dd4hep::BitFieldElement& sysField = *idSpec.field("system");
+  if (sysField.offset() != 0) {
+    throw std::runtime_error ("Bad system field offset; must be zero");
+  }
+
+  return std::make_unique<Indexer_t> (this->id(),
+                                      sysField.width(),
+                                      fields, cellIDs(),
+                                      900000);
 }
