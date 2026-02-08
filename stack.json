@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "2598e27abfdd8efb245c1e2799353642e0b1edf9",
-  "head": "6e30eaf6e3be0fb07dbb7e5f3267dc652296895f",
+  "prev": "09b875aceb47ced81a4519bc8350dd3fa8d2a850",
+  "head": "806916852f1747257ffb7cead5420d246a7f76b1",
   "applied": [
     "discrit-wip",
     "cellPositionsConst2",
@@ -37,7 +37,9 @@
     "hcalIndexer",
     "cellposIndex",
     "indexingConfig",
-    "xtalkIndex",
+    "xtalkIndex"
+  ],
+  "unapplied": [
     "topoNoiseIndex-wip",
     "createCaloCells2",
     "createTopoCluster",
@@ -45,7 +47,6 @@
     "diag-wip",
     "cellids-wip"
   ],
-  "unapplied": [],
   "hidden": [],
   "patches": {
     "discrit-wip": {
