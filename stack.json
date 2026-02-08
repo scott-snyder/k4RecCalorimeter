@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "d32acc89faadd073bab041435d697a16499e53ff",
-  "head": "345278c1471fac4623a78b08a145764bae652b21",
+  "prev": "b2080f1741fe0a2e294246e21a1c3673fb96f650",
+  "head": "6bb3a03d098e05efa18667072d461b0ce7d9da54",
   "applied": [
     "depr",
     "testdir",
@@ -25,14 +25,14 @@
     "xtalkSpan3",
     "xtalkSpan5",
     "noise1a",
-    "noise1b"
-  ],
-  "unapplied": [
+    "noise1b",
     "noise1c",
     "noise3",
     "caloCellConstantsSvc",
     "cellsInConst",
-    "idmap",
+    "idmap"
+  ],
+  "unapplied": [
     "idmapIndexer",
     "multiIndexer",
     "ecalbarrelIndexer",
