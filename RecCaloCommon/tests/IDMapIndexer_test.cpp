@@ -39,9 +39,11 @@ void test1 (mapkey_span ids)
       IDMap_t::makeDesc (*desc.field ("module")),
     };
 
-  Indexer_t map (4, fielddescs, ids);
+  Indexer_t map (4, 6, fielddescs, ids);
   assert (map.detIDs().size() == 1);
   assert (map.detIDs()[0] == 4);
+  assert (map.detIDBits() == 6);
+  assert (map.byteSize() > 100000);
 
   size_t ncell = ids.size();
   assert (map.cellIDs().size() == ncell);

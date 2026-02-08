@@ -44,6 +44,7 @@ public:
   /**
    * @brief Constructor.
    * @param detID ID of the detector that we index.
+   * @param detIDBits Number of bits in the cell IDs for the detector ID.
    * @param fields Set of fields to use from the identifiers.
    *               Must be sufficient to make identifiers unique.
    *               For best results, should be listed in order of increasing
@@ -56,6 +57,7 @@ public:
    *                used to reserve an appropriate size for the data vector.
    */
   IDMapIndexer (int detID,
+                size_t detIDBits,
                 std::span<const FieldDesc_t> fields,
                 std::span<const uint64_t> ids,
                 size_t sizeHint = 0);
@@ -81,6 +83,24 @@ public:
    */
   virtual std::span<const int> detIDs() const override final;
 
+
+  /**
+   * @brief Number of bits in the cell ID used for the detector ID.
+   */
+  virtual size_t detIDBits() const override final;
+
+
+  /**
+   * @brief Return the allocated size of the mapping data, in bytes.
+   */
+  size_t byteSize() const;
+
+
+  /**
+   * @brief Format some statistics on the mapping.
+   */
+  void printStats(std::ostream& s) const;
+
   
 private:
   /// The mapping.
@@ -89,6 +109,9 @@ private:
   /// The ID of the detector we index.
   int m_detID;
 
+  /// The number of bits in cell IDs for the detector ID.
+  size_t m_detIDBits;
+
   /// The set of cells that we index.
   std::span<const uint64_t> m_cellIDs;
 };
@@ -96,6 +119,7 @@ private:
 
 template <unsigned NFIELDS>
 IDMapIndexer<NFIELDS>::IDMapIndexer (int detID,
+                                     size_t detIDBits,
                                      std::span<const FieldDesc_t> fields,
                                      std::span<const uint64_t> ids,
                                      size_t sizeHint /*= 0*/)
@@ -103,6 +127,7 @@ IDMapIndexer<NFIELDS>::IDMapIndexer (int detID,
            [](size_t i) { return i; },
            sizeHint),
     m_detID (detID),
+    m_detIDBits (detIDBits),
     m_cellIDs (ids)
 {
 }
@@ -138,6 +163,39 @@ inline
 std::span<const int> IDMapIndexer<NFIELDS>::detIDs() const
 {
   return std::span<const int> (&m_detID, 1);
+}
+
+
+/**
+ * @brief Number of bits in the cell ID used for the detector ID.
+ */
+template <unsigned NFIELDS>
+inline
+size_t IDMapIndexer<NFIELDS>::detIDBits() const
+{
+  return m_detIDBits;
+}
+
+
+/**
+ * @brief Return the allocated size of the mapping data, in bytes.
+ */
+template <unsigned NFIELDS>
+inline
+size_t IDMapIndexer<NFIELDS>:: byteSize() const
+{
+  return m_map.byteSize();
+}
+
+
+/**
+ * @brief Format some statistics on the mapping.
+ */
+template <unsigned NFIELDS>
+inline
+void IDMapIndexer<NFIELDS>::printStats(std::ostream& s) const
+{
+  return m_map.printStats(s);
 }
 
 
