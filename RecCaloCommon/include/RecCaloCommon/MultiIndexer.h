@@ -78,6 +78,12 @@ public:
 
 
   /**
+   * @brief Number of bits in the cell ID used for the detector ID.
+   */
+  virtual size_t detIDBits() const override;
+
+
+  /**
    * @brief Exceptions thrown by the ctor.
    */
   class MultiIndexerException : public std::runtime_error
@@ -88,6 +94,9 @@ public:
 
 
 private:
+  /// Number of detector ID bits.
+  size_t m_detIDBits;
+
   /// Mask to extract the detector ID from a cell ID.
   uint64_t m_detIDMask;
 
@@ -138,6 +147,16 @@ inline
 std::span<const int> MultiIndexer::detIDs() const
 {
   return m_detIDs;
+}
+
+
+/**
+ * @brief Number of bits in the cell ID used for the detector ID.
+ */
+inline
+size_t MultiIndexer::detIDBits() const
+{
+  return m_detIDBits;
 }
 
 

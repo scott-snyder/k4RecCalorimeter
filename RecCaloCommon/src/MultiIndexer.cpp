@@ -34,6 +34,7 @@ class DummyIndexer : public ICaloIndexer
   { return std::span<const uint64_t>(); }
   virtual std::span<const int> detIDs() const override final
   { return std::span<const int>(); }
+  virtual size_t detIDBits() const override final { return 4; }
 };
 
 
@@ -43,6 +44,7 @@ class DummyIndexer : public ICaloIndexer
 MultiIndexer::MultiIndexer (size_t detIDBits,
                             std::span<const ICaloIndexer* const> indexers,
                             ICaloCellConstantsSvc& constsSvc)
+  : m_detIDBits (detIDBits)
 {
   // Check that the number of detector ID bits is reasonable.
   if (detIDBits < 1 || detIDBits > 8) {

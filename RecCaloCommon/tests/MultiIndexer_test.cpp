@@ -4,7 +4,6 @@
  * @date Feb, 2026
  * @brief Unit test for MultiIndexer.
  */
-// xxx check for errors during construction.
 
 #undef NDEBUG
 #include "RecCaloCommon/MultiIndexer.h"
@@ -13,8 +12,6 @@
 #include "DD4hep/IDDescriptor.h"
 #include <vector>
 #include <algorithm>
-
-
 
 
 using mapkey_t = uint64_t; // libc defines key_t...
@@ -85,8 +82,8 @@ void test1 (mapkey_span ecal_ids, mapkey_span hcal_ids)
       IDMap_t::makeDesc (*hcal_desc.field ("phi")),
     };
 
-  Indexer_t ecal_map (4, ecal_fielddescs, ecal_ids);
-  Indexer_t hcal_map (8, hcal_fielddescs, hcal_ids);
+  Indexer_t ecal_map (4, 4, ecal_fielddescs, ecal_ids);
+  Indexer_t hcal_map (8, 4, hcal_fielddescs, hcal_ids);
 
   DummyCellConstantsSvc constsSvc;
   std::vector<const k4::recCalo::ICaloIndexer*> indexers { &ecal_map, &hcal_map };
@@ -94,6 +91,7 @@ void test1 (mapkey_span ecal_ids, mapkey_span hcal_ids)
   assert (map.detIDs().size() == 2);
   assert (map.detIDs()[0] == 4);
   assert (map.detIDs()[1] == 8);
+  assert (map.detIDBits() == 4);
 
   std::span<const uint64_t> cell_ids = map.cellIDs();
   assert (cell_ids.size() == ecal_ids.size() + hcal_ids.size());
@@ -134,7 +132,7 @@ void test1 (mapkey_span ecal_ids, mapkey_span hcal_ids)
   EXPECT_EXCEPTION( "MultiIndexerException: bad indexer returns detIDs of size 2",
                     k4::recCalo::MultiIndexer map3 (4, indexers3, constsSvc) );
 
-  Indexer_t ecal_map4 (40, ecal_fielddescs, ecal_ids);
+  Indexer_t ecal_map4 (40, 10, ecal_fielddescs, ecal_ids);
   std::vector<const k4::recCalo::ICaloIndexer*> indexers4 { &ecal_map4 };
   EXPECT_EXCEPTION( "MultiIndexerException: bad indexer returns out-of-range detID 40",
                     k4::recCalo::MultiIndexer map4 (4, indexers4, constsSvc) );
