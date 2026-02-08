@@ -13,6 +13,7 @@
 
 #include "k4Interface/ICaloIndexer.h"
 #include "GaudiKernel/IInterface.h"
+#include <span>
 
 
 namespace k4::recCalo {
@@ -42,6 +43,17 @@ public:
    * Returns a pointer to the indexer or nullptr if there isn't one defined.
    */
   virtual const k4::recCalo::ICaloIndexer* indexer (int detID, bool quiet = false) const = 0;
+
+
+  /**
+   * @brief Return indexer for a given set of subdetectors.
+   * @param detIDs Subdetector IDs to index.
+   * @param quiet If true, don't print an error if we don't find an indexer.
+   *
+   * Returns a pointer to the indexer or nullptr if there isn't one defined.
+   */
+  virtual const k4::recCalo::ICaloIndexer* indexer (std::span<const int> detIDs,
+                                                    bool quiet = false) = 0;
 };
 
 

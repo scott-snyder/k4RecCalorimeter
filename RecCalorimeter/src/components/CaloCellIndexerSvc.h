@@ -11,10 +11,14 @@
 #define RECCALORIMETER_CALOCELLINDEXERSVC_H
 
 
-#include "k4Interface/ICalorimeterTool.h"
+#include "RecCaloCommon/ICaloCellConstantsSvc.h"
 #include "RecCaloCommon/ICaloCellIndexerSvc.h"
+#include "k4Interface/ICalorimeterTool.h"
 #include "GaudiKernel/Service.h"
 #include "GaudiKernel/ToolHandle.h"
+#include "GaudiKernel/ServiceHandle.h"
+#include <mutex>
+#include <climits>
 
 
 namespace k4::recCalo {
@@ -52,12 +56,31 @@ public:
   const k4::recCalo::ICaloIndexer* indexer (int detID, bool quiet = false) const override;
 
 
+  /**
+   * @brief Return indexer for a given set of subdetectors.
+   * @param detIDs Subdetector IDs to index.
+   * @param quiet If true, don't print an error if we don't find an indexer.
+   *
+   * Returns a pointer to the indexer or nullptr if there isn't one defined.
+   */
+  virtual const k4::recCalo::ICaloIndexer* indexer (std::span<const int> detIDs,
+                                                    bool quiet = false) override;
+
+
 private:
   ToolHandleArray<ICalorimeterTool> m_geoTools
   { this, "GeoTools", {} };
 
-  /// Indexer objects.
-  std::vector<std::unique_ptr<ICaloIndexer> > m_indexers;
+  ServiceHandle<k4::recCalo::ICaloCellConstantsSvc> m_constantsSvc
+  { this, "CaloCellConstantsSvc", "k4::recCalo::CaloCellConstantsSvc" };
+
+  /// Map from bit mask of detector IDs to indexer objects.
+  using mask_t = uint64_t;
+  constexpr static int MAX_DETID = sizeof(mask_t) * CHAR_BIT;
+  std::map<mask_t, std::unique_ptr<ICaloIndexer> > m_indexers;
+
+  /// Guard access to the map.
+  mutable std::recursive_mutex m_mutex;
 };
 
 
