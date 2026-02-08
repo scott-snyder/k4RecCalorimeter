@@ -68,8 +68,6 @@ auto TopoCaloNoisyCells::readData (TFile& inFile) const -> NoiseData
                          &readNoisyCells); // would be better to call branch noiseRMS rather than noiseLevel
   tree->SetBranchAddress("noiseOffset", &readNoisyCellsOffset);
 
-  data.m_noise.resize (data.m_indexer->cellIDs().size());
-
   // First find the set of detIDs in order to get the proper indexer.
   // Just use a vector, since we only expect a handful.
   std::vector<int> detIDs;
@@ -78,13 +76,15 @@ auto TopoCaloNoisyCells::readData (TFile& inFile) const -> NoiseData
   for (uint i = 0; i < tree->GetEntries(); i++) {
     tree->GetEntry(i);
     int detID = m_decoder->get (readCellId, m_indexSystem);
-    if (std::ranges::find (detIDs, detID) != detIDs.end()) {
+    if (std::ranges::find (detIDs, detID) == detIDs.end()) {
       detIDs.push_back (detID);
     }
   }
   std::ranges::sort (detIDs);
   data.m_indexer = m_indexerSvc->indexer (detIDs);
   if (!data.m_indexer) return data;
+
+  data.m_noise.resize (data.m_indexer->cellIDs().size());
 
   tree->SetBranchStatus ("*", 1);
   for (uint i = 0; i < tree->GetEntries(); i++) {
