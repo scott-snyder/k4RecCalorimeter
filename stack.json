@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "64a7aaf96720404b6d2a940283226fa7f639258e",
+  "prev": "75085470c543edbb599752d1f1bdc96b39d85849",
   "head": "674575288a9417b31fb3bea311839a4cd6e5a33a",
   "applied": [
     "depr",
@@ -45,7 +45,7 @@
     "repnoise",
     "createCaloCells2",
     "createTopoCluster",
-    "topoNoiseIndex-wip",
+    "topoNoiseIndex",
     "move-check",
     "check-deprecated",
     "check-remove"
@@ -173,7 +173,7 @@
     "timeout": {
       "oid": "5bfbafe763120cfbcab20a41ea824f25ce2922f7"
     },
-    "topoNoiseIndex-wip": {
+    "topoNoiseIndex": {
       "oid": "a5129a40c9f645e1acc1e18382b6b2b0624fd296"
     },
     "xtalk": {
