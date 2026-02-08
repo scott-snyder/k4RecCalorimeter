@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "d069b6e4a43a4362690642a7f6123a61b4ac0dde",
+  "prev": "5b447d0cb4da3979bf3e9c1745777a29f6bfd1a1",
   "head": "089544e6098452d037145a621605257edd39f079",
   "applied": [
     "discrit-wip",
@@ -40,7 +40,7 @@
     "xtalkIndex",
     "topoNoiseIndex-wip",
     "createCaloCells2",
-    "createTopoCluster-wip",
+    "createTopoCluster",
     "noiseIndex",
     "diag-wip",
     "cellids-wip"
@@ -159,7 +159,7 @@
     "createCaloCells2": {
       "oid": "dbb5c90613b100391d54816a1abbb948b48dde27"
     },
-    "createTopoCluster-wip": {
+    "createTopoCluster": {
       "oid": "a4f824071b58c284b69b6af8c57c7e44ca96de59"
     },
     "noiseIndex": {
