@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "42ddc0c02cfb579e28cf6c1afac7efd39dca4103",
+  "prev": "6f68b726a1c96c26ffd96275e05c15b53ae583a7",
   "head": "fbc76cfdf871d68abbd35d794c4277b73521907b",
   "applied": [
     "depr",
@@ -35,9 +35,6 @@
     "multiIndexer"
   ],
   "unapplied": [
-    "ecalbarrelIndexer",
-    "hcalIndexer",
-    "caloCellIndexerSvc",
     "xtalkIndex",
     "nodebug",
     "cellposIndex",
@@ -57,9 +54,6 @@
     },
     "caloCellConstantsSvc": {
       "oid": "db588d8a67844d87c923c1f18843b04797d5bdcc"
-    },
-    "caloCellIndexerSvc": {
-      "oid": "da37ab6ac14b25a2141ac2518225805c33da2c4b"
     },
     "caloToolInfo1": {
       "oid": "280237a62645c943904e236c76289e2c3f136442"
@@ -100,9 +94,6 @@
     "depr": {
       "oid": "fe9f176d3ca213e510a053026285c917ab96e3bd"
     },
-    "ecalbarrelIndexer": {
-      "oid": "cbddb16b35960ebd45ab8627dfc7471e320ea8ae"
-    },
     "geoConst2": {
       "oid": "ef4ea4819eeb40fbc09589d2611f9630f14ce00a"
     },
@@ -114,9 +105,6 @@
     },
     "hcal-tool": {
       "oid": "cf584578c65af723fca6c0ff54ed3048844fa9f9"
-    },
-    "hcalIndexer": {
-      "oid": "70e3c8ef15d86299fb2153a6553376b73d10f5af"
     },
     "idmap": {
       "oid": "6bb3a03d098e05efa18667072d461b0ce7d9da54"
