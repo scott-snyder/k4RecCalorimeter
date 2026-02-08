@@ -1,5 +1,5 @@
 #include "TopoCaloNoisyCells.h"
-#include "RecCaloCommon/k4RecCalorimeter_check.h"
+#include "k4FWCore/k4_check.h"
 
 #include "TBranch.h"
 #include "TFile.h"
@@ -9,12 +9,12 @@
 DECLARE_COMPONENT(TopoCaloNoisyCells)
 
 StatusCode TopoCaloNoisyCells::initialize() {
-  K4RECCALORIMETER_CHECK( AlgTool::initialize() );
-  K4RECCALORIMETER_CHECK( m_constantsSvc.retrieve() );
-  K4RECCALORIMETER_CHECK( m_indexerSvc.retrieve() );
+  K4_GAUDI_CHECK( AlgTool::initialize() );
+  K4_GAUDI_CHECK( m_constantsSvc.retrieve() );
+  K4_GAUDI_CHECK( m_indexerSvc.retrieve() );
 
   m_indexer = m_indexerSvc->indexer (m_detID);
-  K4RECCALORIMETER_CHECK( m_indexer != nullptr );
+  K4_GAUDI_CHECK( m_indexer != nullptr );
 
   m_data = m_constantsSvc->getObj<NoiseData> (m_fileName);
   if (!m_data) {
@@ -38,9 +38,9 @@ StatusCode TopoCaloNoisyCells::initialize() {
     }
 
     NoiseData data = readData (*inFile);
-    K4RECCALORIMETER_CHECK( m_constantsSvc->putObj (m_fileName, std::move (data)) );
+    K4_GAUDI_CHECK( m_constantsSvc->putObj (m_fileName, std::move (data)) );
     m_data = m_constantsSvc->getObj<NoiseData> (m_fileName);
-    K4RECCALORIMETER_CHECK( m_data != nullptr );
+    K4_GAUDI_CHECK( m_data != nullptr );
   }
 
   return StatusCode::SUCCESS;
