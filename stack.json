@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "d22e44346dacf8dfd82f964afeae89d3bafaf97f",
-  "head": "806916852f1747257ffb7cead5420d246a7f76b1",
+  "prev": "ad3c3443d855380247e7731a23bf5668e476dcb6",
+  "head": "7c35120a0309e3514526e9080643ab8c78aeb7d5",
   "applied": [
     "discrit-wip",
     "cellPositionsConst2",
@@ -37,7 +37,8 @@
     "hcalIndexer",
     "cellposIndex",
     "indexingConfig",
-    "xtalkIndex"
+    "xtalkIndex",
+    "topoNoiseIndex"
   ],
   "unapplied": [
     "createCaloCells2",
@@ -152,6 +153,9 @@
     },
     "xtalkIndex": {
       "oid": "806916852f1747257ffb7cead5420d246a7f76b1"
+    },
+    "topoNoiseIndex": {
+      "oid": "7c35120a0309e3514526e9080643ab8c78aeb7d5"
     },
     "createCaloCells2": {
       "oid": "dbb5c90613b100391d54816a1abbb948b48dde27"
