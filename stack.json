@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "3bd937076b97ccf97bb166ad14a3042ba72eaaac",
-  "head": "a1668c128aa0e23a076be82dcb8e01eaa7a2268a",
+  "prev": "e2aaf4657734fc117181ad29a79f385ba5bedf57",
+  "head": "6c2a58149ab00146a02a175cd13b71789ea393ea",
   "applied": [
     "discrit-wip",
     "cellPositionsConst2",
@@ -43,8 +43,7 @@
     "createTopoCluster-wip",
     "noiseIndex",
     "diag-wip",
-    "cellids-wip",
-    "refresh-temp"
+    "cellids-wip"
   ],
   "unapplied": [],
   "hidden": [],
@@ -101,79 +100,76 @@
       "oid": "18d65f10c117ca769a8221a5274b7075e6cea9b2"
     },
     "idmapIndexer": {
-      "oid": "18251ea98e4f8d556999bfa78796c0452e604b42"
+      "oid": "581c6db26e34841ca310d41136d8bb6f8d1430e8"
     },
     "multiIndexer": {
-      "oid": "95c61966e3e922dd17c60953d8d6caf854a55bf1"
+      "oid": "310454e7421b79c47391dc8d19611a835ee10ec8"
     },
     "layerIndex": {
-      "oid": "1cb535a8d61e611763087ffd7d9e86b514ff7bd3"
+      "oid": "957dc8a9f15b05926f0589c38e1058182960d6a5"
     },
     "xtalkSpan1": {
-      "oid": "51ce406ca31f99037c50decefd984dd6cc570abc"
+      "oid": "1fc13522177b48b5553751bf32f49d6032bc6a50"
     },
     "xtalkSpan3": {
-      "oid": "4cbdcabe5982e5b357bf2f36628e004e611fda8f"
+      "oid": "089e1827f0023d35f3f1e775c44b2292e0aae60d"
     },
     "xtalkSpan5": {
-      "oid": "8a90a2a02696a7259807574cde777582afc8e538"
+      "oid": "fa038498714e52fa3abb8f88464432ba05d951d7"
     },
     "noise1a": {
-      "oid": "8fc233f91b540af8353526463e9567121dcdb4be"
+      "oid": "ae636bd7d11d632beb5ac7dc0cac1c0a31187f7a"
     },
     "noise1b": {
-      "oid": "6434b15bdcae4664be5538389ee1f013d4189e53"
+      "oid": "bde8fc6684fc21fd9e066ca7bfd357b55787d433"
     },
     "noise1c": {
-      "oid": "c79c77f7b61fd8ab541329e56eb2b82f1e3775d3"
+      "oid": "28470d4615e1b39d885a2e0745688f0e54c24400"
     },
     "noise3": {
-      "oid": "e1114e6e93950eb8a4566ac46be8b169afeaa84a"
+      "oid": "89f56c930a0f26b81c2650a090bd95071b0862e7"
     },
     "caloCellConstantsSvc": {
-      "oid": "6d87573c2518c9b716aecd8fc6f81274408cc508"
+      "oid": "b61df9e9a21182827a61445aacf5c5a1ab9bc0fd"
     },
     "caloCellIndexerSvc": {
-      "oid": "2bc6c76f2428995bbe213d6d3a5300501451733f"
+      "oid": "c76ea9b83e94522767fcf0c777a6f5136a0f5a3d"
     },
     "cellsInConst": {
-      "oid": "91dc2caf57facb79b6f6db30bfd92d0d147c269b"
+      "oid": "4c6d43ce062c8a34a988efa46d227d74fb2befe1"
     },
     "ecalbarrelIndexer": {
-      "oid": "9beed896b6420b2c3910cfde03ff40903a386a79"
+      "oid": "b5d543fd7914a5fe8d1e0eb54bc197219f947d25"
     },
     "hcalIndexer": {
-      "oid": "cb307686b02ea4ffd9b72b5837c4703fedac0da9"
+      "oid": "a727173035dfb26a020e7cd7a81732dce9b0d3ba"
     },
     "cellposIndex": {
-      "oid": "1445022ee9a817eabbf38d11ae2b11b9ddcabe26"
+      "oid": "4dd949a78423208c6f1f6b0d98a80ecc3a319108"
     },
     "indexingConfig": {
-      "oid": "5ff2f919dc140c79c89cc91b1c54b9465c2b9a81"
+      "oid": "19ed97d41e1e8cf62a82d381223eb95d809cde8d"
     },
     "xtalkIndex": {
-      "oid": "beacae9a850983ae5e2b31ae49bf9d254e49f783"
+      "oid": "aaa96a907232df144f02c353a36501f0915af0bc"
     },
     "topoNoiseIndex-wip": {
-      "oid": "8ef96a651272e8e6eb19f586e67fa2ac6a2e0e43"
+      "oid": "6a755de2829459b4c8b2a21d840e6ad823655668"
     },
     "createCaloCells2": {
-      "oid": "cda7faa4f89423f16760f5b2b5bdec7888df0d8f"
+      "oid": "fea03e635fba461e02b0a3949eebaeb4a093ec26"
     },
     "createTopoCluster-wip": {
-      "oid": "4010e495c2f107ff13f1e75257e36f51bab71c9e"
+      "oid": "d9818e1b3ef55dd95155977ffdb0e78e4412996d"
     },
     "noiseIndex": {
-      "oid": "084ca7460a0d536dec8efcb6681304096021aff0"
+      "oid": "06c375e74026fbdd7e25b012d9cbf791d7bc3380"
     },
     "diag-wip": {
-      "oid": "f7e464481cb2d11874481311afbc429fa823bbec"
+      "oid": "244c8b0faf46b0b817262d72423fda148c616055"
     },
     "cellids-wip": {
-      "oid": "206c264468eb35c66a1a0205671320560dc2b3ef"
-    },
-    "refresh-temp": {
-      "oid": "a1668c128aa0e23a076be82dcb8e01eaa7a2268a"
+      "oid": "6c2a58149ab00146a02a175cd13b71789ea393ea"
     }
   }
 }
