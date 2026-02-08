@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "cd44519508c5c15522bda3398e79477fab0b3563",
-  "head": "89e22acbc56b28ccd42288ce95cdbee9c7688073",
+  "prev": "64a7aaf96720404b6d2a940283226fa7f639258e",
+  "head": "674575288a9417b31fb3bea311839a4cd6e5a33a",
   "applied": [
     "depr",
     "testdir",
@@ -47,11 +47,10 @@
     "createTopoCluster",
     "topoNoiseIndex-wip",
     "move-check",
-    "check-deprecated"
-  ],
-  "unapplied": [
+    "check-deprecated",
     "check-remove"
   ],
+  "unapplied": [],
   "hidden": [],
   "patches": {
     "calib2": {
@@ -85,7 +84,7 @@
       "oid": "89e22acbc56b28ccd42288ce95cdbee9c7688073"
     },
     "check-remove": {
-      "oid": "c3d9af3177fff580dc2ed652b5520362e2cfb76f"
+      "oid": "674575288a9417b31fb3bea311839a4cd6e5a33a"
     },
     "ci": {
       "oid": "e8cb38c1dfa0aab0151b22d56dd0fa8671a018f8"
