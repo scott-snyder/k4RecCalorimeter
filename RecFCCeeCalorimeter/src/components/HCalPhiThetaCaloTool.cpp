@@ -66,11 +66,19 @@ HCalPhiThetaCaloTool::indexer() const
   }
 
   using Indexer_t = k4::recCalo::IDMapIndexer<3>;
-  auto idSpec = readout().idSpec();
+  dd4hep::IDDescriptor idSpec = readout().idSpec();
   std::vector<Indexer_t::FieldDesc_t> fields
     { Indexer_t::IDMap_t::makeDesc (*idSpec.field(seg->fieldNameLayer())),
       Indexer_t::IDMap_t::makeDesc (*idSpec.field(seg->fieldNameTheta())),
       Indexer_t::IDMap_t::makeDesc (*idSpec.field(seg->fieldNamePhi())) };
 
-  return std::make_unique<Indexer_t> (this->id(), fields, cellIDs());
+  const dd4hep::BitFieldElement& sysField = *idSpec.field("system");
+  if (sysField.offset() != 0) {
+    throw std::runtime_error ("Bad system field offset; must be zero");
+  }
+
+  return std::make_unique<Indexer_t> (this->id(),
+                                      sysField.width(),
+                                      fields, cellIDs(),
+                                      900000);
 }
