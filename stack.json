@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "bc5b90cf9dcefb87f06fdf360b3fe1a9a20e5925",
-  "head": "937d479b550bf1e230982c5eed81211721d4967a",
+  "prev": "9ffaaea2d68bd0031a4ef6fb642391f2b6d8eabf",
+  "head": "9debeaec25bef5e01f446a77bcaf8d2a272f4c8d",
   "applied": [
     "discrit-wip",
     "cellPositionsConst2",
@@ -43,8 +43,7 @@
     "createTopoCluster-wip",
     "noiseIndex",
     "diag-wip",
-    "cellids-wip",
-    "refresh-temp"
+    "cellids-wip"
   ],
   "unapplied": [],
   "hidden": [],
@@ -143,37 +142,34 @@
       "oid": "c3daae4dc5cea7562d049df9c62f4e0ec17dc988"
     },
     "hcalIndexer": {
-      "oid": "f21005724dc1c0c9dfa00915b3308e8ff601e39e"
+      "oid": "8b48e32d21ebbd8fe9e42c45bcc67e958e9895ce"
     },
     "cellposIndex": {
-      "oid": "96e50440f3098675d6d11c5cd3a876f686c70ac0"
+      "oid": "8c30e5017ff9569a9bfa33b861e21d3b2a879788"
     },
     "indexingConfig": {
-      "oid": "124fc9a7478f59025ec522d1a904653a9e700e4b"
+      "oid": "98f864a3469d04caa46dda7adaaf9b705b409d4c"
     },
     "xtalkIndex": {
-      "oid": "25cf08f2115be39a4f913ea22399b46fde72d63e"
+      "oid": "53f7b3fa08ddb573237ba826287f9674fefb796a"
     },
     "topoNoiseIndex-wip": {
-      "oid": "ed7eab4f0921be7dff7641c3cffd9f553dd72379"
+      "oid": "3891139bd43d61e27ab16a4956f53c0ac3a6ff46"
     },
     "createCaloCells2": {
-      "oid": "d16b463f8216b714767b934b8616e9b4fa57404c"
+      "oid": "ef8b51899c2642294d55abce707b029a43357df0"
     },
     "createTopoCluster-wip": {
-      "oid": "994aebb36a3f091140e4a523a2c6181b3a4239d9"
+      "oid": "05e181819598d65540b7d036bea37e726b25583a"
     },
     "noiseIndex": {
-      "oid": "e41a701e56b2d051f3a0da7aa26cc16ea905f11e"
+      "oid": "ad7d2698d1ed9076c346eea5a571776a7985be89"
     },
     "diag-wip": {
-      "oid": "d5b8fc0c8d0aebba22f1b1fbd2345b0fc5a6519c"
+      "oid": "517eb2e844be3227bbb421b5f303f4fe81bbaad9"
     },
     "cellids-wip": {
-      "oid": "742afe79aa876285ee6aff7833e5e160f0ee30a3"
-    },
-    "refresh-temp": {
-      "oid": "937d479b550bf1e230982c5eed81211721d4967a"
+      "oid": "9debeaec25bef5e01f446a77bcaf8d2a272f4c8d"
     }
   }
 }
