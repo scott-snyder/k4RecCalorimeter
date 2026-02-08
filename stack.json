@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "17e93c0df2cd06a7e31a45a1d613c904889832fc",
+  "prev": "2856671f99fe02aebe9dc94388b510fd3c24e111",
   "head": "ace64c99b300b7e8760c69195df8dc4854cdbb43",
   "applied": [
     "depr",
@@ -34,7 +34,6 @@
     "idmapIndexer"
   ],
   "unapplied": [
-    "multiIndexer",
     "ecalbarrelIndexer",
     "hcalIndexer",
     "caloCellIndexerSvc",
@@ -132,9 +131,6 @@
     },
     "move-check": {
       "oid": "b50369887f4519253c0a14254d653de17cb4fad2"
-    },
-    "multiIndexer": {
-      "oid": "c7ec1b31e570a0bcec944be3c0684001e30d0b51"
     },
     "nodebug": {
       "oid": "66301d98579668a415a80c7e48b3b2b81b60d352"
