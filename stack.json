@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "9e6fd4b0adac5670795224a57fbf6ca108d2cbdb",
-  "head": "1d8c19e07f088931834eaff6cda236986d8dc30c",
+  "prev": "bb033d358c66aa6e9a7e9031e914ea3d44e68fcb",
+  "head": "161d1c21297b52d2ff6678cc783e89e86c9e1023",
   "applied": [
     "depr",
     "testdir",
@@ -43,12 +43,13 @@
     "noiseIndex",
     "sortnoise",
     "repnoise",
-    "createCaloCells2",
+    "createCaloCells2"
+  ],
+  "unapplied": [
     "move-check",
     "check-deprecated",
     "check-remove"
   ],
-  "unapplied": [],
   "hidden": [],
   "patches": {
     "calib2": {
