@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "2a85d86ff6507dfec355454819ff58a1d92dc698",
-  "head": "6bb3a03d098e05efa18667072d461b0ce7d9da54",
+  "prev": "17e93c0df2cd06a7e31a45a1d613c904889832fc",
+  "head": "ace64c99b300b7e8760c69195df8dc4854cdbb43",
   "applied": [
     "depr",
     "testdir",
@@ -30,7 +30,8 @@
     "noise3",
     "caloCellConstantsSvc",
     "cellsInConst",
-    "idmap"
+    "idmap",
+    "idmapIndexer"
   ],
   "unapplied": [
     "multiIndexer",
@@ -119,6 +120,9 @@
     },
     "idmap": {
       "oid": "6bb3a03d098e05efa18667072d461b0ce7d9da54"
+    },
+    "idmapIndexer": {
+      "oid": "ace64c99b300b7e8760c69195df8dc4854cdbb43"
     },
     "indexingConfig": {
       "oid": "7a6510a928b0ffc69b7b293b924c2f5694365e2c"
