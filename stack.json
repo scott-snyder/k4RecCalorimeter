@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "b4cb7b3996013d250ba74a339e522d51b55b1cdc",
-  "head": "9cfcc9a9681cfa9fcaca04e8ef748966624692e7",
+  "prev": "d32acc89faadd073bab041435d697a16499e53ff",
+  "head": "345278c1471fac4623a78b08a145764bae652b21",
   "applied": [
     "depr",
     "testdir",
@@ -25,7 +25,9 @@
     "xtalkSpan3",
     "xtalkSpan5",
     "noise1a",
-    "noise1b",
+    "noise1b"
+  ],
+  "unapplied": [
     "noise1c",
     "noise3",
     "caloCellConstantsSvc",
@@ -48,7 +50,6 @@
     "check-deprecated",
     "check-remove"
   ],
-  "unapplied": [],
   "hidden": [],
   "patches": {
     "calib2": {
