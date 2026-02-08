@@ -164,8 +164,6 @@ private:
   // Utility functions
   inline bool cellIdInColl(const uint64_t cellId, const edm4hep::CalorimeterHitCollection& coll) const;
 
-  /// xxx fixme
-  Gaudi::Property<int> m_detID { this, "DetID", 4 };
   ServiceHandle<k4::recCalo::ICaloCellIndexerSvc> m_indexerSvc
   { this, "CaloCellIndexerSvc", "k4::recCalo::CaloCellIndexerSvc", "" };
 
