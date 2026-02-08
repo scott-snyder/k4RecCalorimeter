@@ -1,10 +1,13 @@
 #include "TopoCaloNoisyCells.h"
 #include "RecCaloCommon/k4RecCalorimeter_check.h"
+#include "DDSegmentation/BitFieldCoder.h"
 
 #include "TBranch.h"
 #include "TFile.h"
 #include "TSystem.h"
 #include "TTree.h"
+
+#include <algorithm>
 
 DECLARE_COMPONENT(TopoCaloNoisyCells)
 
@@ -13,8 +16,9 @@ StatusCode TopoCaloNoisyCells::initialize() {
   K4RECCALORIMETER_CHECK( m_constantsSvc.retrieve() );
   K4RECCALORIMETER_CHECK( m_indexerSvc.retrieve() );
 
-  m_indexer = m_indexerSvc->indexer (m_detID);
-  K4RECCALORIMETER_CHECK( m_indexer != nullptr );
+  // setup system decoder
+  m_decoder = std::make_unique<dd4hep::DDSegmentation::BitFieldCoder>(m_systemEncoding);
+  m_indexSystem = m_decoder->index("system");
 
   m_data = m_constantsSvc->getObj<NoiseData> (m_fileName);
   if (!m_data) {
@@ -43,6 +47,9 @@ StatusCode TopoCaloNoisyCells::initialize() {
     K4RECCALORIMETER_CHECK( m_data != nullptr );
   }
 
+  m_indexer = m_data->m_indexer;
+  K4RECCALORIMETER_CHECK( m_indexer != nullptr );
+
   return StatusCode::SUCCESS;
 }
 
@@ -61,12 +68,29 @@ auto TopoCaloNoisyCells::readData (TFile& inFile) const -> NoiseData
                          &readNoisyCells); // would be better to call branch noiseRMS rather than noiseLevel
   tree->SetBranchAddress("noiseOffset", &readNoisyCellsOffset);
 
-  data.resize (m_indexer->cellIDs().size());
+  data.m_noise.resize (data.m_indexer->cellIDs().size());
 
+  // First find the set of detIDs in order to get the proper indexer.
+  // Just use a vector, since we only expect a handful.
+  std::vector<int> detIDs;
+  tree->SetBranchStatus ("*", 0);
+  tree->SetBranchStatus ("cellId", 1);
   for (uint i = 0; i < tree->GetEntries(); i++) {
     tree->GetEntry(i);
-    unsigned ndx = m_indexer->index (readCellId);
-    data.at(ndx) = std::make_pair (readNoisyCells, readNoisyCellsOffset);
+    int detID = m_decoder->get (readCellId, m_indexSystem);
+    if (std::ranges::find (detIDs, detID) != detIDs.end()) {
+      detIDs.push_back (detID);
+    }
+  }
+  std::ranges::sort (detIDs);
+  data.m_indexer = m_indexerSvc->indexer (detIDs);
+  if (!data.m_indexer) return data;
+
+  tree->SetBranchStatus ("*", 1);
+  for (uint i = 0; i < tree->GetEntries(); i++) {
+    tree->GetEntry(i);
+    unsigned ndx = data.m_indexer->index (readCellId);
+    data.m_noise.at(ndx) = std::make_pair (readNoisyCells, readNoisyCellsOffset);
   }
   delete tree;
   inFile.Close();
@@ -78,14 +102,14 @@ auto TopoCaloNoisyCells::readData (TFile& inFile) const -> NoiseData
 double TopoCaloNoisyCells::getNoiseRMSPerCell(uint64_t aCellId) const
 {
   unsigned ndx = m_indexer->index (aCellId);
-  return m_data->at(ndx).first;
+  return m_data->m_noise.at(ndx).first;
 }
 
 
 double TopoCaloNoisyCells::getNoiseOffsetPerCell(uint64_t aCellId) const
 {
   unsigned ndx = m_indexer->index (aCellId);
-  return m_data->at(ndx).second;
+  return m_data->m_noise.at(ndx).second;
 }
 
 
@@ -93,6 +117,6 @@ std::pair<double, double>
 TopoCaloNoisyCells::getNoisePerCell(uint64_t aCellId) const
 {
   unsigned ndx = m_indexer->index (aCellId);
-  return m_data->at(ndx);
+  return m_data->m_noise.at(ndx);
 }
 
