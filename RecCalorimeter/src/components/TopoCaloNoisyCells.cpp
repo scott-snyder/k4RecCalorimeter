@@ -1,5 +1,5 @@
 #include "TopoCaloNoisyCells.h"
-#include "RecCaloCommon/k4RecCalorimeter_check.h"
+#include "k4FWCore/k4_check.h"
 #include "DDSegmentation/BitFieldCoder.h"
 
 #include "TBranch.h"
@@ -12,9 +12,9 @@
 DECLARE_COMPONENT(TopoCaloNoisyCells)
 
 StatusCode TopoCaloNoisyCells::initialize() {
-  K4RECCALORIMETER_CHECK( AlgTool::initialize() );
-  K4RECCALORIMETER_CHECK( m_constantsSvc.retrieve() );
-  K4RECCALORIMETER_CHECK( m_indexerSvc.retrieve() );
+  K4_GAUDI_CHECK( AlgTool::initialize() );
+  K4_GAUDI_CHECK( m_constantsSvc.retrieve() );
+  K4_GAUDI_CHECK( m_indexerSvc.retrieve() );
 
   // setup system decoder
   m_decoder = std::make_unique<dd4hep::DDSegmentation::BitFieldCoder>(m_systemEncoding);
@@ -42,13 +42,13 @@ StatusCode TopoCaloNoisyCells::initialize() {
     }
 
     NoiseData data = readData (*inFile);
-    K4RECCALORIMETER_CHECK( m_constantsSvc->putObj (m_fileName, std::move (data)) );
+    K4_GAUDI_CHECK( m_constantsSvc->putObj (m_fileName, std::move (data)) );
     m_data = m_constantsSvc->getObj<NoiseData> (m_fileName);
-    K4RECCALORIMETER_CHECK( m_data != nullptr );
+    K4_GAUDI_CHECK( m_data != nullptr );
   }
 
   m_indexer = m_data->m_indexer;
-  K4RECCALORIMETER_CHECK( m_indexer != nullptr );
+  K4_GAUDI_CHECK( m_indexer != nullptr );
 
   return StatusCode::SUCCESS;
 }
