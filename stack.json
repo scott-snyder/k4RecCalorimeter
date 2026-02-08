@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "f42b8ba1f2b6d8ca20fab07bd4bb0c27ee6c1086",
-  "head": "68f27aaeca12f2bb2c3cb3a962ca65b1049c6f79",
+  "prev": "cde1b7209b43b6de081906c38bb59f97c107c177",
+  "head": "ef4726e5cf82ac5534ebb7dd74b307d4befc0972",
   "applied": [
     "depr",
     "testdir",
@@ -46,8 +46,7 @@
     "createCaloCells2",
     "createTopoCluster",
     "topoNoiseIndex-wip",
-    "move-check",
-    "refresh-temp"
+    "move-check"
   ],
   "unapplied": [
     "check-deprecated",
@@ -137,7 +136,7 @@
       "oid": "ce6a2fb78f4ab476075179bc8f0c5eaa17e4e6e5"
     },
     "move-check": {
-      "oid": "a51960d23f4f154821a4a079bea90c04a044ec44"
+      "oid": "ef4726e5cf82ac5534ebb7dd74b307d4befc0972"
     },
     "multiIndexer": {
       "oid": "fbc76cfdf871d68abbd35d794c4277b73521907b"
@@ -159,9 +158,6 @@
     },
     "noiseIndex": {
       "oid": "a56b7b7dc48e1f9a147c6399b821f5ad28c4ed87"
-    },
-    "refresh-temp": {
-      "oid": "68f27aaeca12f2bb2c3cb3a962ca65b1049c6f79"
     },
     "repnoise": {
       "oid": "7a9f73c12ac2c85151cff356825abd189fef60e5"
