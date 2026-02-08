@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "3867e618da87e9a0b0f5ebfff1d62ce11f0e201f",
-  "head": "c3d9af3177fff580dc2ed652b5520362e2cfb76f",
+  "prev": "183ca41ca77e668c85393eeb0728a8bb2c72d5f0",
+  "head": "f3e46517704762415a56930ff445a5b127275535",
   "applied": [
     "depr",
     "testdir",
@@ -45,12 +45,13 @@
     "repnoise",
     "createCaloCells2",
     "createTopoCluster",
-    "topoNoiseIndex-wip",
+    "topoNoiseIndex-wip"
+  ],
+  "unapplied": [
     "move-check",
     "check-deprecated",
     "check-remove"
   ],
-  "unapplied": [],
   "hidden": [],
   "patches": {
     "calib2": {
