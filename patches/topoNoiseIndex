@@ -1,6 +1,0 @@
-Bottom: 32e4115c775a510cda98ab9d94910cde05d79bd1
-Top:    a408027961426896c1d256573051d5b8f2208530
-Author: scott snyder <snyder@bnl.gov>
-Date:   2026-02-08 16:06:43 -0500
-
-More efficient data storage for TopoCaloNoisyCells.

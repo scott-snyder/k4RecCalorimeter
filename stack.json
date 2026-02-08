@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "a7ae8c16f5ee335b8480ef00957b762b20c0c0e8",
+  "prev": "360b51cc8b6b52f2f03c1be981fafb3b2a53b74a",
   "head": "161d1c21297b52d2ff6678cc783e89e86c9e1023",
   "applied": [
     "depr",
@@ -46,8 +46,6 @@
     "createCaloCells2"
   ],
   "unapplied": [
-    "createTopoCluster",
-    "topoNoiseIndex",
     "move-check",
     "check-deprecated",
     "check-remove"
@@ -95,9 +93,6 @@
     },
     "createCaloCells2": {
       "oid": "161d1c21297b52d2ff6678cc783e89e86c9e1023"
-    },
-    "createTopoCluster": {
-      "oid": "b5ab9809def37b9fcdc463aee957b4268739227b"
     },
     "cxx26": {
       "oid": "d07d253e19300a059bbd668582ba1bf73ad65c90"
@@ -173,9 +168,6 @@
     },
     "timeout": {
       "oid": "5bfbafe763120cfbcab20a41ea824f25ce2922f7"
-    },
-    "topoNoiseIndex": {
-      "oid": "a5129a40c9f645e1acc1e18382b6b2b0624fd296"
     },
     "xtalk": {
       "oid": "b96ac0c1ccb6f60eab2de3fb6daee172f38907c2"
