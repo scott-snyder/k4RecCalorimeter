@@ -37,7 +37,7 @@ StatusCode CaloTopoClusterFCCee::initialize() {
   }
 
   K4_GAUDI_CHECK( m_indexerSvc.retrieve() );
-  m_indexer = m_indexerSvc->indexer (m_detID);
+  m_indexer = m_indexerSvc->indexer (m_caloIDs.value());
   K4_GAUDI_CHECK( m_indexer != nullptr );
 
   // create handles for input cell collections
