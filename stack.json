@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "22cc5c9e78528a6d05a96c657137e4d45a115d4a",
-  "head": "dd361d0a4a44bf5f23b586a4fa10361785ebab65",
+  "prev": "1cb68a3ad97b4df3d8ce4c30a779b83179e51bbc",
+  "head": "2ece21945d7f85c140775893b224b1b725d75665",
   "applied": [
     "depr",
     "testdir",
@@ -45,11 +45,11 @@
     "repnoise",
     "createCaloCells2",
     "createTopoCluster",
-    "topoNoiseIndex"
+    "topoNoiseIndex",
+    "move-check",
+    "check-deprecated"
   ],
   "unapplied": [
-    "move-check",
-    "check-deprecated",
     "check-remove"
   ],
   "hidden": [],
@@ -82,7 +82,7 @@
       "oid": "a8b3195252cc6d8d4df45d4d4852c22b1e998168"
     },
     "check-deprecated": {
-      "oid": "89e22acbc56b28ccd42288ce95cdbee9c7688073"
+      "oid": "2ece21945d7f85c140775893b224b1b725d75665"
     },
     "check-remove": {
       "oid": "674575288a9417b31fb3bea311839a4cd6e5a33a"
@@ -136,7 +136,7 @@
       "oid": "ce6a2fb78f4ab476075179bc8f0c5eaa17e4e6e5"
     },
     "move-check": {
-      "oid": "061aa49c167650691532e428c65ac0e45e7a8b20"
+      "oid": "00dd7407adafd79f645b337881812949ee2bfc0b"
     },
     "multiIndexer": {
       "oid": "fbc76cfdf871d68abbd35d794c4277b73521907b"
