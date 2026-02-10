@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "fa8117e7dcbfae36c5bc8d3d9f13d84aead4b7a4",
-  "head": "44b12c9293eef65155b1f4be329ab63bec38ecab",
+  "prev": "4050474ae77205a0e6b237d148d36183eb905b8b",
+  "head": "1d331bd392acb49788193744cc9281a84ceb0b24",
   "applied": [
     "cellPositionsConst2",
     "calib2",
@@ -27,7 +27,11 @@
     "noise3",
     "caloCellConstantsSvc",
     "caloCellIndexerSvc",
-    "cellsInConst"
+    "cellsInConst",
+    "ecalbarrelIndexer",
+    "hcalIndexer",
+    "cellposIndex",
+    "indexingConfig"
   ],
   "unapplied": [
     "discrit-wip",
@@ -35,10 +39,6 @@
     "discrit2-wip",
     "propnames",
     "subdetVolman",
-    "ecalbarrelIndexer",
-    "hcalIndexer",
-    "cellposIndex",
-    "indexingConfig",
     "xtalkIndex",
     "topoNoiseIndex",
     "createCaloCells2",
@@ -124,6 +124,18 @@
     "cellsInConst": {
       "oid": "44b12c9293eef65155b1f4be329ab63bec38ecab"
     },
+    "ecalbarrelIndexer": {
+      "oid": "e213e6d4831aff5ed6d007bc61a57d4094231862"
+    },
+    "hcalIndexer": {
+      "oid": "12b19f8d901ae046592a975eeef3b011b8b022c2"
+    },
+    "cellposIndex": {
+      "oid": "6af1ecd67230eac8a382fe2a90ab2ed2c8d7e33e"
+    },
+    "indexingConfig": {
+      "oid": "1d331bd392acb49788193744cc9281a84ceb0b24"
+    },
     "discrit-wip": {
       "oid": "edcfce2f8a5803c9c32ffb2dba1b10decde2db86"
     },
@@ -138,18 +150,6 @@
     },
     "subdetVolman": {
       "oid": "83568fdbc43b71a3954ccaab82e63aa6811fd83f"
-    },
-    "ecalbarrelIndexer": {
-      "oid": "1d60e4b1dd24790263880ad622b2c29c271886b0"
-    },
-    "hcalIndexer": {
-      "oid": "44f1e0d5837ef197bfe54cef8fbfd130548660fb"
-    },
-    "cellposIndex": {
-      "oid": "7793be84703a51052a8bd7bfab822cb148df13e5"
-    },
-    "indexingConfig": {
-      "oid": "0bac5fa242aaae87864276007f8e19211e112953"
     },
     "xtalkIndex": {
       "oid": "806916852f1747257ffb7cead5420d246a7f76b1"
