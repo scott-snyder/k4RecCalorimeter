@@ -1,9 +1,8 @@
 {
   "version": 5,
-  "prev": "f44849b6ae7499068b63d83e39a1849750bdae5c",
-  "head": "135825ec6e78a52dd8f96b0b3589931a40c5e7e9",
-  "applied": [],
-  "unapplied": [
+  "prev": "28967ff5b2a1d00158cbef4fbc66d92d95c60309",
+  "head": "b125f1afbb0c86ab7e8aada1b646cc2ee44c312c",
+  "applied": [
     "discrit-wip",
     "cellPositionsConst2",
     "calib2",
@@ -11,7 +10,9 @@
     "cellPositions",
     "hcal-tool",
     "hcal-seg",
-    "hcal-seg-row",
+    "hcal-seg-row"
+  ],
+  "unapplied": [
     "createCaloCells",
     "nocxx23",
     "nodebug",
