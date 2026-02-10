@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "307bd8aff0c1705fce29a46ebd78a4f172bcd62f",
-  "head": "85fe8e6c9cc19fd2a0f512ec56050fd1178189f1",
+  "prev": "c50dd8352acb95aa0cc1346eeb8dc7ebc712f6b5",
+  "head": "28af790604cfc891f601a3d2f7fe160f1df7da76",
   "applied": [
     "cellPositionsConst2",
     "calib2",
@@ -19,10 +19,10 @@
     "layerIndex",
     "multiIndexer",
     "xtalkSpan1",
-    "xtalkSpan3",
-    "xtalkSpan5"
+    "xtalkSpan3"
   ],
   "unapplied": [
+    "xtalkSpan5",
     "discrit-wip",
     "createCaloCells",
     "discrit2-wip",
