@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "612fd64ea1c72414ed3844e8ea2ad7d655c020ab",
-  "head": "67f8e1655449974b9677c26deeb619fc7e43af78",
+  "prev": "77cca409be982797eed64518cb5eba915a36c8f4",
+  "head": "b20acda9676ecffa1e2b20b05a1b930e3f02279e",
   "applied": [
     "cellPositionsConst2",
     "calib2",
@@ -20,7 +20,11 @@
     "multiIndexer",
     "xtalkSpan1",
     "xtalkSpan3",
-    "xtalkSpan5"
+    "xtalkSpan5",
+    "noise1a",
+    "noise1b",
+    "noise1c",
+    "noise3"
   ],
   "unapplied": [
     "discrit-wip",
@@ -28,10 +32,6 @@
     "discrit2-wip",
     "propnames",
     "subdetVolman",
-    "noise1a",
-    "noise1b",
-    "noise1c",
-    "noise3",
     "caloCellConstantsSvc",
     "caloCellIndexerSvc",
     "cellsInConst",
@@ -103,6 +103,18 @@
     "xtalkSpan5": {
       "oid": "67f8e1655449974b9677c26deeb619fc7e43af78"
     },
+    "noise1a": {
+      "oid": "e9cf21ace44b613c37e099090ad55adf7f8e95a3"
+    },
+    "noise1b": {
+      "oid": "6120cb3852fe4c619afafae444b5ab42ddd6df55"
+    },
+    "noise1c": {
+      "oid": "843a26de3ea3023bf219b5b64ce31f611d41cd9f"
+    },
+    "noise3": {
+      "oid": "b20acda9676ecffa1e2b20b05a1b930e3f02279e"
+    },
     "discrit-wip": {
       "oid": "edcfce2f8a5803c9c32ffb2dba1b10decde2db86"
     },
@@ -117,18 +129,6 @@
     },
     "subdetVolman": {
       "oid": "83568fdbc43b71a3954ccaab82e63aa6811fd83f"
-    },
-    "noise1a": {
-      "oid": "31d7cce917285c659493d626e4202e6c59196806"
-    },
-    "noise1b": {
-      "oid": "0c2334845e8c3ce14c868ed4e1797bfb31ba06d1"
-    },
-    "noise1c": {
-      "oid": "bb1bbefe62adc0bf79582892988bb0ca132d8cd5"
-    },
-    "noise3": {
-      "oid": "677946aa29dc86b98dc8f005d283d4a8d8ae1e74"
     },
     "caloCellConstantsSvc": {
       "oid": "7d5c29d2f984309ecf43d7e7aaea338194b57b0c"
