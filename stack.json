@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "493d854a96e2c8832c3c48c534ec9da57e708237",
-  "head": "5c5babb576d8487cb3e313e0260be3acb0e047e0",
+  "prev": "52ba629040ee9abf40eafc5b875fc6632bb1ae33",
+  "head": "f235d7e696f0e7b7040253a84e445d16ec3fa5a9",
   "applied": [
     "cellPositionsConst2",
     "calib2",
@@ -38,12 +38,12 @@
     "noiseIndex",
     "subdetVolman",
     "createCaloCells",
-    "propnames"
+    "propnames",
+    "createCaloCells2"
   ],
   "unapplied": [
     "discrit-wip",
     "discrit2-wip",
-    "createCaloCells2",
     "diag-wip",
     "cellids-wip"
   ],
@@ -157,14 +157,14 @@
     "propnames": {
       "oid": "5c5babb576d8487cb3e313e0260be3acb0e047e0"
     },
+    "createCaloCells2": {
+      "oid": "f235d7e696f0e7b7040253a84e445d16ec3fa5a9"
+    },
     "discrit-wip": {
       "oid": "edcfce2f8a5803c9c32ffb2dba1b10decde2db86"
     },
     "discrit2-wip": {
       "oid": "c3bf6a6a2b61a293487efdb1534ae4ca33693f1a"
-    },
-    "createCaloCells2": {
-      "oid": "f49acc6f9e64e5b25fd4fb9dd3d64d5a24ccddb7"
     },
     "diag-wip": {
       "oid": "0938a7c74554a2c867c00015a578558804904ff0"
