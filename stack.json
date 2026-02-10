@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "a0b8ce9fa1faade0a70e37e37f7122da31fd0ee4",
-  "head": "bf6da374bb636e8275bc35511079bce809520c69",
+  "prev": "84913a4149354d9136cf546f6fa538af2b6dabce",
+  "head": "2abcc29d49c8c293b1ebdd7b80307fb8f3b57da3",
   "applied": [
     "cellPositionsConst2",
     "calib2",
@@ -18,7 +18,8 @@
     "idmapIndexer",
     "layerIndex",
     "multiIndexer",
-    "xtalkSpan1"
+    "xtalkSpan1",
+    "xtalkSpan3"
   ],
   "unapplied": [
     "discrit-wip",
@@ -26,7 +27,6 @@
     "discrit2-wip",
     "propnames",
     "subdetVolman",
-    "xtalkSpan3",
     "xtalkSpan5",
     "noise1a",
     "noise1b",
@@ -97,6 +97,9 @@
     "xtalkSpan1": {
       "oid": "bf6da374bb636e8275bc35511079bce809520c69"
     },
+    "xtalkSpan3": {
+      "oid": "2abcc29d49c8c293b1ebdd7b80307fb8f3b57da3"
+    },
     "discrit-wip": {
       "oid": "edcfce2f8a5803c9c32ffb2dba1b10decde2db86"
     },
@@ -111,9 +114,6 @@
     },
     "subdetVolman": {
       "oid": "83568fdbc43b71a3954ccaab82e63aa6811fd83f"
-    },
-    "xtalkSpan3": {
-      "oid": "29e0078e684f9d99938542d4620fd6c8183ef9f8"
     },
     "xtalkSpan5": {
       "oid": "87b3dd766a1e8608aa7af26fe8bd709aa4ddb54e"
