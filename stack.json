@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "d0082dd1133579ad1d2fe8769dbfb10bf5c661fc",
-  "head": "cb8feca2856aada507c5b47a68c0ca6065886489",
+  "prev": "b8777a9c2f873c2fc20b4c7883c973c55f30d428",
+  "head": "7bf813cbceabeca31236b8ee9ac406853a640a5c",
   "applied": [
     "subdetVolman",
     "cellPositionsConst2",
@@ -13,8 +13,7 @@
     "hcal-seg-row",
     "nocxx23",
     "nodebug",
-    "caloToolInfo1",
-    "refresh-temp"
+    "caloToolInfo1"
   ],
   "unapplied": [
     "caloToolInfo3",
@@ -81,10 +80,7 @@
       "oid": "93ca11f88a9ea83c45622e4a4f844e77e290ae3d"
     },
     "caloToolInfo1": {
-      "oid": "5a2cf22b1afb66796141c5d5ae93d73f5db06cbd"
-    },
-    "refresh-temp": {
-      "oid": "cb8feca2856aada507c5b47a68c0ca6065886489"
+      "oid": "7bf813cbceabeca31236b8ee9ac406853a640a5c"
     },
     "caloToolInfo3": {
       "oid": "510ae9ed44cfe51f4204bf357a16779b077bf1c7"
