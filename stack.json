@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "6efd3f15e2ac935b0d03f8c4fbd46eeaa9908c64",
-  "head": "d0223b4ab269f326adbb88940d341fffcf8cfd66",
+  "prev": "493d854a96e2c8832c3c48c534ec9da57e708237",
+  "head": "5c5babb576d8487cb3e313e0260be3acb0e047e0",
   "applied": [
     "cellPositionsConst2",
     "calib2",
@@ -37,12 +37,12 @@
     "createTopoCluster",
     "noiseIndex",
     "subdetVolman",
-    "createCaloCells"
+    "createCaloCells",
+    "propnames"
   ],
   "unapplied": [
     "discrit-wip",
     "discrit2-wip",
-    "propnames",
     "createCaloCells2",
     "diag-wip",
     "cellids-wip"
@@ -154,14 +154,14 @@
     "createCaloCells": {
       "oid": "d0223b4ab269f326adbb88940d341fffcf8cfd66"
     },
+    "propnames": {
+      "oid": "5c5babb576d8487cb3e313e0260be3acb0e047e0"
+    },
     "discrit-wip": {
       "oid": "edcfce2f8a5803c9c32ffb2dba1b10decde2db86"
     },
     "discrit2-wip": {
       "oid": "c3bf6a6a2b61a293487efdb1534ae4ca33693f1a"
-    },
-    "propnames": {
-      "oid": "6b66bd610a270c41c97d260cac4fc4d0d3acaed2"
     },
     "createCaloCells2": {
       "oid": "f49acc6f9e64e5b25fd4fb9dd3d64d5a24ccddb7"
