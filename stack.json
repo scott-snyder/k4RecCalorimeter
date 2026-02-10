@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "b8777a9c2f873c2fc20b4c7883c973c55f30d428",
-  "head": "7bf813cbceabeca31236b8ee9ac406853a640a5c",
+  "prev": "cd23553fa81c0b35e5fe09cea2968e41bbd48fbd",
+  "head": "745e13ad826f49045c4c04f8374cd9e313a3fcd2",
   "applied": [
     "subdetVolman",
     "cellPositionsConst2",
@@ -13,9 +13,7 @@
     "hcal-seg-row",
     "nocxx23",
     "nodebug",
-    "caloToolInfo1"
-  ],
-  "unapplied": [
+    "caloToolInfo1",
     "caloToolInfo3",
     "idmap",
     "idmapIndexer",
@@ -47,6 +45,7 @@
     "diag-wip",
     "cellids-wip"
   ],
+  "unapplied": [],
   "hidden": [],
   "patches": {
     "subdetVolman": {
@@ -83,94 +82,94 @@
       "oid": "7bf813cbceabeca31236b8ee9ac406853a640a5c"
     },
     "caloToolInfo3": {
-      "oid": "510ae9ed44cfe51f4204bf357a16779b077bf1c7"
+      "oid": "911fd241c39e8aae305081066dabd503ba7940af"
     },
     "idmap": {
-      "oid": "673847e549068e6305f5d202adf3f6b1d5089d5b"
+      "oid": "d82983efd995354c3111761ce004a56147f0bfd6"
     },
     "idmapIndexer": {
-      "oid": "8a5c0b65ea82f2a1a9cc796379de5c1638ee7e7f"
+      "oid": "823baa9cf69aee28d178572ecd47c5f51aac1a90"
     },
     "layerIndex": {
-      "oid": "9353bfaa61cdd62627b24c48489e003a93dbd221"
+      "oid": "d35a94b28fa4e49523570d115245d87278af4fa3"
     },
     "multiIndexer": {
-      "oid": "1ae6cde17d64d8ef09e03d91e917dc7a879b95bd"
+      "oid": "449f2505d253bbe10a4e9abba35cdecacae6fae9"
     },
     "xtalkSpan1": {
-      "oid": "bf6da374bb636e8275bc35511079bce809520c69"
+      "oid": "2b6f3b7419beb978d6f9ba7a72b9a56f7f5d6143"
     },
     "xtalkSpan3": {
-      "oid": "f11e452b6c5adcb8fc28803b1f62a607866ed245"
+      "oid": "5095d80d895cd9f350bd3d733c3ff17ce81cadfb"
     },
     "xtalkSpan5": {
-      "oid": "67f8e1655449974b9677c26deeb619fc7e43af78"
+      "oid": "7b9a82df27bf22b5284d98ab92eb70e9b484dd17"
     },
     "noise1a": {
-      "oid": "e9cf21ace44b613c37e099090ad55adf7f8e95a3"
+      "oid": "e3e025c2764adaeaa09bc2895a14fc7605a25f22"
     },
     "noise1b": {
-      "oid": "6120cb3852fe4c619afafae444b5ab42ddd6df55"
+      "oid": "30b701afb812e8f9b62cdb8ccf83be5797dec697"
     },
     "noise1c": {
-      "oid": "843a26de3ea3023bf219b5b64ce31f611d41cd9f"
+      "oid": "29224ad67e4cd6bc3b5f70136a288f0204d2aa52"
     },
     "noise3": {
-      "oid": "b20acda9676ecffa1e2b20b05a1b930e3f02279e"
+      "oid": "7dc1d3340fd5cc8514628bda70a4b1ca8b434f3f"
     },
     "caloCellConstantsSvc": {
-      "oid": "706e2f8ce2a1f8560e8951d03453ccedef70b3f5"
+      "oid": "f9e82e352a75cfe37b4c33b104ab1483f0c5587d"
     },
     "caloCellIndexerSvc": {
-      "oid": "05a57205aa39bf25bc4ae6ce487f91019816fb3c"
+      "oid": "d580ac6de4d72db20f078765bac39414fe5fef44"
     },
     "cellsInConst": {
-      "oid": "44b12c9293eef65155b1f4be329ab63bec38ecab"
+      "oid": "1bfc1597620902d3f077a9162f6589c0b2fb2aad"
     },
     "ecalbarrelIndexer": {
-      "oid": "e213e6d4831aff5ed6d007bc61a57d4094231862"
+      "oid": "59959a7c2e42d353e182ed9bb11c593a29cc994e"
     },
     "hcalIndexer": {
-      "oid": "12b19f8d901ae046592a975eeef3b011b8b022c2"
+      "oid": "50510503e9cca38621db3e8ef72fd8d753cf8e23"
     },
     "cellposIndex": {
-      "oid": "6af1ecd67230eac8a382fe2a90ab2ed2c8d7e33e"
+      "oid": "f2005e2903a8390d5b8f2ab2267a93c77d8d1f02"
     },
     "indexingConfig": {
-      "oid": "1d331bd392acb49788193744cc9281a84ceb0b24"
+      "oid": "e45548e5262ce21b2f897a7b97a0e7234551c0ad"
     },
     "xtalkIndex": {
-      "oid": "06489e58fd3fda30f7e1dead40e9feb4d80b7839"
+      "oid": "448797a51f4d0242da1abaf3808eae79d58e6654"
     },
     "topoNoiseIndex": {
-      "oid": "58e4883f7b8e4a5b4058dc59b591a3d139253310"
+      "oid": "93fa0e79cfb3d3cc4e26d510abd818be6138be71"
     },
     "createTopoCluster": {
-      "oid": "c955b5d4706840246fd2cba4f2fb5c500cf3ae60"
+      "oid": "8ed9c0aacc15a3bbd31e8f0e041e576933d909ad"
     },
     "noiseIndex": {
-      "oid": "52ee0a3c32d57418011708a489f8f66d83ad0fa1"
+      "oid": "9d9c86f5a3366a495a7b3a8ef5594d3eb702b404"
     },
     "createCaloCells": {
-      "oid": "d0223b4ab269f326adbb88940d341fffcf8cfd66"
+      "oid": "61e8d4635c57aba327363bf2adca213b4886f338"
     },
     "propnames": {
-      "oid": "5c5babb576d8487cb3e313e0260be3acb0e047e0"
+      "oid": "1ae0de3b87c90c97a973caee815b2ca11623b9a2"
     },
     "createCaloCells2": {
-      "oid": "5985e888d4967071c1ec20e7710ab1ea58593476"
+      "oid": "ccb761e1327c0da0687c25da2ac7ce31addafc7d"
     },
     "discrit-wip": {
-      "oid": "1af260f3df35e501c8daaaf8491c2da139e6e521"
+      "oid": "d7fd79673a23c171287a5d80a15a2251c300f7f8"
     },
     "discrit2-wip": {
-      "oid": "6d61a4209f38663542e1034b23ab5bd13a7fc6e1"
+      "oid": "82281a65c51b6fa727a60879849b7bd46a1b3746"
     },
     "diag-wip": {
-      "oid": "0b881fcaeaf7356e47c093aa06b408687a739a57"
+      "oid": "5f4b48b331116db6e54f2e2da12b018bef4a6af6"
     },
     "cellids-wip": {
-      "oid": "2956aad2ba18d7153af321cfcacb61f96b7a17a7"
+      "oid": "745e13ad826f49045c4c04f8374cd9e313a3fcd2"
     }
   }
 }
