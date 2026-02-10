@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "bc78f67792ac9acc7c3acdce63961e534a98b910",
-  "head": "f11e452b6c5adcb8fc28803b1f62a607866ed245",
+  "prev": "4763e6bd1a8d6e4a527e0e072dcf384c30000201",
+  "head": "6b9c43283ce7f6e389654d88b8343e020462316d",
   "applied": [
     "cellPositionsConst2",
     "calib2",
@@ -19,10 +19,10 @@
     "layerIndex",
     "multiIndexer",
     "xtalkSpan1",
-    "xtalkSpan3"
+    "xtalkSpan3",
+    "xtalkSpan5"
   ],
   "unapplied": [
-    "xtalkSpan5",
     "discrit-wip",
     "createCaloCells",
     "discrit2-wip",
@@ -101,7 +101,7 @@
       "oid": "f11e452b6c5adcb8fc28803b1f62a607866ed245"
     },
     "xtalkSpan5": {
-      "oid": "85fe8e6c9cc19fd2a0f512ec56050fd1178189f1"
+      "oid": "6b9c43283ce7f6e389654d88b8343e020462316d"
     },
     "discrit-wip": {
       "oid": "edcfce2f8a5803c9c32ffb2dba1b10decde2db86"
