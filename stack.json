@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "dbb30d3ae794a00bd250a27d001bb858929b5929",
-  "head": "28af790604cfc891f601a3d2f7fe160f1df7da76",
+  "prev": "18086521acc2af6400dfef9c7b5899df09de33d9",
+  "head": "836812b2a9e6e5ce53312997a943a1e8fa54e639",
   "applied": [
     "cellPositionsConst2",
     "calib2",
@@ -19,7 +19,8 @@
     "layerIndex",
     "multiIndexer",
     "xtalkSpan1",
-    "xtalkSpan3"
+    "xtalkSpan3",
+    "xtalkSpan5"
   ],
   "unapplied": [
     "discrit-wip",
@@ -27,7 +28,6 @@
     "discrit2-wip",
     "propnames",
     "subdetVolman",
-    "xtalkSpan5",
     "noise1a",
     "noise1b",
     "noise1c",
@@ -100,6 +100,9 @@
     "xtalkSpan3": {
       "oid": "28af790604cfc891f601a3d2f7fe160f1df7da76"
     },
+    "xtalkSpan5": {
+      "oid": "836812b2a9e6e5ce53312997a943a1e8fa54e639"
+    },
     "discrit-wip": {
       "oid": "edcfce2f8a5803c9c32ffb2dba1b10decde2db86"
     },
@@ -114,9 +117,6 @@
     },
     "subdetVolman": {
       "oid": "83568fdbc43b71a3954ccaab82e63aa6811fd83f"
-    },
-    "xtalkSpan5": {
-      "oid": "87b3dd766a1e8608aa7af26fe8bd709aa4ddb54e"
     },
     "noise1a": {
       "oid": "31d7cce917285c659493d626e4202e6c59196806"
