@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "77f031640d23c9a42f85a484a49a46a50460ea7d",
-  "head": "1e2f714aeca7038c73304de3b8bca0939ec2142e",
+  "prev": "bfb6a37a13c917a721ff3b23e087f319631f7a4d",
+  "head": "510ae9ed44cfe51f4204bf357a16779b077bf1c7",
   "applied": [
     "cellPositionsConst2",
     "calib2",
@@ -11,15 +11,15 @@
     "hcal-seg",
     "hcal-seg-row",
     "nocxx23",
-    "nodebug"
+    "nodebug",
+    "caloToolInfo1",
+    "caloToolInfo3"
   ],
   "unapplied": [
     "discrit-wip",
     "createCaloCells",
     "discrit2-wip",
     "propnames",
-    "caloToolInfo1",
-    "caloToolInfo3",
     "subdetVolman",
     "idmap",
     "idmapIndexer",
@@ -76,6 +76,12 @@
     "nodebug": {
       "oid": "1e2f714aeca7038c73304de3b8bca0939ec2142e"
     },
+    "caloToolInfo1": {
+      "oid": "b75a57100b92cda9140f45591a69c90f236528a8"
+    },
+    "caloToolInfo3": {
+      "oid": "510ae9ed44cfe51f4204bf357a16779b077bf1c7"
+    },
     "discrit-wip": {
       "oid": "edcfce2f8a5803c9c32ffb2dba1b10decde2db86"
     },
@@ -87,12 +93,6 @@
     },
     "propnames": {
       "oid": "6b66bd610a270c41c97d260cac4fc4d0d3acaed2"
-    },
-    "caloToolInfo1": {
-      "oid": "8e75f7984e6dbaf70b2be8bb5ca19c2c4ffc5985"
-    },
-    "caloToolInfo3": {
-      "oid": "7ba03f4fb75d8bfa22151032e787dee48e9b32b2"
     },
     "subdetVolman": {
       "oid": "83568fdbc43b71a3954ccaab82e63aa6811fd83f"
