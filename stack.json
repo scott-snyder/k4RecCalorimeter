@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "470efad264760c959dce4fb9e075d784674f53f9",
-  "head": "eaff3b910a48a5e68b4b6af2cd249e8109a31085",
+  "prev": "bc78f67792ac9acc7c3acdce63961e534a98b910",
+  "head": "f11e452b6c5adcb8fc28803b1f62a607866ed245",
   "applied": [
     "cellPositionsConst2",
     "calib2",
@@ -19,8 +19,7 @@
     "layerIndex",
     "multiIndexer",
     "xtalkSpan1",
-    "xtalkSpan3",
-    "refresh-temp"
+    "xtalkSpan3"
   ],
   "unapplied": [
     "xtalkSpan5",
@@ -99,10 +98,7 @@
       "oid": "bf6da374bb636e8275bc35511079bce809520c69"
     },
     "xtalkSpan3": {
-      "oid": "28af790604cfc891f601a3d2f7fe160f1df7da76"
-    },
-    "refresh-temp": {
-      "oid": "eaff3b910a48a5e68b4b6af2cd249e8109a31085"
+      "oid": "f11e452b6c5adcb8fc28803b1f62a607866ed245"
     },
     "xtalkSpan5": {
       "oid": "85fe8e6c9cc19fd2a0f512ec56050fd1178189f1"
