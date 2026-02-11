@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "3d872966d7f7f321b340bd320895932b63ecda50",
-  "head": "5cf8c3dab5c7e4bb80cb9a9e5dcc610987a6bb8e",
+  "prev": "cc8d9b9e1723b5a821b1dbc32f0dc4d504c06c2e",
+  "head": "f42f7df1d961cd4ed262392c5035c4345b46968a",
   "applied": [
     "testdir",
     "xtalk",
@@ -42,12 +42,12 @@
     "xtalkIndex",
     "topoNoiseIndex",
     "createTopoCluster",
-    "noiseIndex"
+    "noiseIndex",
+    "sortnoise",
+    "repnoise"
   ],
   "unapplied": [
     "createCaloCells",
-    "sortnoise",
-    "repnoise",
     "createCaloCells2",
     "move-check",
     "check-deprecated",
@@ -164,10 +164,10 @@
       "oid": "5cf8c3dab5c7e4bb80cb9a9e5dcc610987a6bb8e"
     },
     "repnoise": {
-      "oid": "7a9f73c12ac2c85151cff356825abd189fef60e5"
+      "oid": "f42f7df1d961cd4ed262392c5035c4345b46968a"
     },
     "sortnoise": {
-      "oid": "145d88e4b35b0ff1d8096c49d8f52402faf5951c"
+      "oid": "ebf24972a3cb427f58ce17f2cdd99e114145c61a"
     },
     "subdetVolman": {
       "oid": "a8521ed4aa9891c310f03fc3052261e1c5ae56a9"
