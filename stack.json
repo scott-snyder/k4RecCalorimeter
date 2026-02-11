@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "30f0bf088ed3ad3da866ed695347aba26e68e3da",
-  "head": "0596f5ed18df3f7c57adf5838eafbb78abdd9a91",
+  "prev": "4daa2b9d27719ed408fed2c4e9f33eadadaf77c6",
+  "head": "778b3651c3520fa6689418975558c06f7047ae7d",
   "applied": [
     "testdir",
     "xtalk",
@@ -36,13 +36,13 @@
     "caloCellIndexerSvc",
     "cellsInConst",
     "ecalbarrelIndexer",
-    "hcalIndexer"
+    "hcalIndexer",
+    "cellposIndex",
+    "indexingConfig"
   ],
   "unapplied": [
     "createCaloCells",
     "xtalkIndex",
-    "cellposIndex",
-    "indexingConfig",
     "noiseIndex",
     "sortnoise",
     "repnoise",
@@ -77,7 +77,7 @@
       "oid": "e01cda1cde5e14e421e66a25102f754bf4c62537"
     },
     "cellposIndex": {
-      "oid": "b54a7e9feaea9a57758c9fb4b755a8b9746a23fc"
+      "oid": "b5faa63f74a42212f7c2a3baf59b7550ad981f17"
     },
     "cellsInConst": {
       "oid": "b866f5dc7b88ab79f8403977558e34f12a4f8697"
@@ -131,7 +131,7 @@
       "oid": "42646a1ebf8b096d45bba0b65e4797905f799010"
     },
     "indexingConfig": {
-      "oid": "bc59fcfe32d61f232f053cbee59dc78769674cfe"
+      "oid": "778b3651c3520fa6689418975558c06f7047ae7d"
     },
     "layerIndex": {
       "oid": "0752ba6e123853f7ce43ee41b1954e59212cd2f5"
