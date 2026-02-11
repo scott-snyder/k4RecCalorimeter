@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "e965c39b0f585bf1f07abc83123e144e6ed55fcd",
-  "head": "597452a76b6cd3c934f891cdcd28436db4fa2ffc",
+  "prev": "44b5cb5ec719e400950391dba97f433ca61c11d1",
+  "head": "4aa3fe206c85a62e444b172c9eaefbff722c7c33",
   "applied": [
     "testdir",
     "xtalk",
@@ -40,10 +40,10 @@
     "cellposIndex",
     "indexingConfig",
     "xtalkIndex",
-    "topoNoiseIndex",
-    "noiseIndex"
+    "topoNoiseIndex"
   ],
   "unapplied": [
+    "noiseIndex",
     "createCaloCells",
     "sortnoise",
     "repnoise",
