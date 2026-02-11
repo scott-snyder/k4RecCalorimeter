@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "6c5419975cd3435d74c6c1062b367634fdd61b76",
-  "head": "c20a37aa376bf1f1022cad49972ea3557f1db85c",
+  "prev": "19896b7e6eaca8487f21d40fba291f974a493c6a",
+  "head": "829e44818e4e640a6461874d7d6a9e2a025b2920",
   "applied": [
     "testdir",
     "xtalk",
@@ -24,7 +24,10 @@
     "idmap",
     "idmapIndexer",
     "layerIndex",
-    "multiIndexer"
+    "multiIndexer",
+    "xtalkSpan1",
+    "xtalkSpan3",
+    "xtalkSpan5"
   ],
   "unapplied": [
     "createCaloCells",
@@ -183,6 +186,15 @@
     },
     "xtalkIndex": {
       "oid": "928fe6ffdc3e16a21bc0a0f02745fb41e05b41b2"
+    },
+    "xtalkSpan1": {
+      "oid": "e9c318f00b7acc47e1f662230a107597c5f887bf"
+    },
+    "xtalkSpan3": {
+      "oid": "c5093f579edd182dd636bbf2ea35c15c3315225d"
+    },
+    "xtalkSpan5": {
+      "oid": "829e44818e4e640a6461874d7d6a9e2a025b2920"
     }
   }
 }
