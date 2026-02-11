@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "e8bf1e8cf3ba39993ef2cdd2fbc87126b6cb3f25",
-  "head": "07476ae323fc0a7547ef00891cb902a627be7f4a",
+  "prev": "36b6ce39b42cbf3cc35daa270f5a4d5f9b8e3553",
+  "head": "78e701a27ccbe769f812d4b258b4564f1f42152b",
   "applied": [
     "testdir",
     "xtalk",
@@ -18,7 +18,9 @@
     "hcal-seg",
     "hcal-seg-row",
     "nocxx23",
-    "nodebug"
+    "nodebug",
+    "caloToolInfo2",
+    "caloToolInfo4"
   ],
   "unapplied": [
     "createCaloCells",
@@ -67,8 +69,14 @@
     "caloToolInfo1": {
       "oid": "280237a62645c943904e236c76289e2c3f136442"
     },
+    "caloToolInfo2": {
+      "oid": "fabe088d80223fd6555107eeb2ed4ef31e030edd"
+    },
     "caloToolInfo3": {
       "oid": "9a47fc96e43b3cdc989cfef7a55c6a59d3314383"
+    },
+    "caloToolInfo4": {
+      "oid": "78e701a27ccbe769f812d4b258b4564f1f42152b"
     },
     "cellPositions": {
       "oid": "ddc194044ffd4f3250b6e1db4bfa147c010ca585"
