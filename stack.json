@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "c854f91984b62c81370915a4aa34eedc64f93f66",
-  "head": "77746a641c20dd193540b299f8aa1f43f702f9c8",
+  "prev": "3d1ad16d9aba27d4336ab9aa5790b18638abb8b2",
+  "head": "d341a7f0ff9609c7a01b3265f3de98208ab5ab84",
   "applied": [
     "testdir",
     "xtalk",
@@ -47,7 +47,8 @@
     "repnoise",
     "caloType",
     "createCaloCells",
-    "propnames"
+    "propnames",
+    "createCaloCells2"
   ],
   "unapplied": [
     "move-check",
@@ -97,6 +98,9 @@
     },
     "createCaloCells": {
       "oid": "3222a05f917fa67f3a45132866068e695a6f2b7d"
+    },
+    "createCaloCells2": {
+      "oid": "d341a7f0ff9609c7a01b3265f3de98208ab5ab84"
     },
     "createTopoCluster": {
       "oid": "0ff685b748fb39685e769f759323c1175213bfdc"
