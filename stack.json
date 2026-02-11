@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "e28f5eb9d5e39d09003b37b68d0ef23759ac3cdf",
-  "head": "b866f5dc7b88ab79f8403977558e34f12a4f8697",
+  "prev": "30f0bf088ed3ad3da866ed695347aba26e68e3da",
+  "head": "0596f5ed18df3f7c57adf5838eafbb78abdd9a91",
   "applied": [
     "testdir",
     "xtalk",
@@ -34,12 +34,12 @@
     "noise3",
     "caloCellConstantsSvc",
     "caloCellIndexerSvc",
-    "cellsInConst"
+    "cellsInConst",
+    "ecalbarrelIndexer",
+    "hcalIndexer"
   ],
   "unapplied": [
     "createCaloCells",
-    "ecalbarrelIndexer",
-    "hcalIndexer",
     "xtalkIndex",
     "cellposIndex",
     "indexingConfig",
@@ -107,7 +107,7 @@
       "oid": "81c307d53c18eefc9ddb49a44150b020d9cd89ac"
     },
     "ecalbarrelIndexer": {
-      "oid": "f97e14eb68196420c2acae2a3f77b40a933cb679"
+      "oid": "c26a0096a2f1b6b4eac26040954bd7be6f1cd6d8"
     },
     "geoConst2": {
       "oid": "d19b64d80ca3f6e1ef2089a9e8adabe1574d35ec"
@@ -122,7 +122,7 @@
       "oid": "c5249e83f8fa26675ca81984965dcc62d827ef36"
     },
     "hcalIndexer": {
-      "oid": "edc4bec20c769f9cf073916f528207fa5861d60d"
+      "oid": "0596f5ed18df3f7c57adf5838eafbb78abdd9a91"
     },
     "idmap": {
       "oid": "d40f9bfd0d38f4cc360fcb473b56c1892ceab21a"
