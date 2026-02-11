@@ -1,11 +1,12 @@
 {
   "version": 5,
-  "prev": "038b0c3b127724ec18b965763db881781111e52c",
-  "head": "e0de30b573111369d0119613f1deb5c624282fe1",
-  "applied": [],
+  "prev": "b6c3497360906181fc55b12e77ca2e5d88e3a7af",
+  "head": "ca38307eeec26edc02cd6ac77f0c6af656bb9724",
+  "applied": [
+    "testdir"
+  ],
   "unapplied": [
     "depr",
-    "testdir",
     "ci",
     "cellPositions",
     "xtalk",
@@ -168,7 +169,7 @@
       "oid": "683c8b9a39c463177baa03fb7adb1cc4729a69c0"
     },
     "testdir": {
-      "oid": "99cff81bee5679a4cd687bb19defe44550c4dd69"
+      "oid": "ca38307eeec26edc02cd6ac77f0c6af656bb9724"
     },
     "timeout": {
       "oid": "5bfbafe763120cfbcab20a41ea824f25ce2922f7"
