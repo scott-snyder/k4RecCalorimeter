@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "4daa2b9d27719ed408fed2c4e9f33eadadaf77c6",
-  "head": "778b3651c3520fa6689418975558c06f7047ae7d",
+  "prev": "993520173682d64315d23c40829c15bb3438f8de",
+  "head": "4aa3fe206c85a62e444b172c9eaefbff722c7c33",
   "applied": [
     "testdir",
     "xtalk",
@@ -38,17 +38,17 @@
     "ecalbarrelIndexer",
     "hcalIndexer",
     "cellposIndex",
-    "indexingConfig"
+    "indexingConfig",
+    "xtalkIndex",
+    "topoNoiseIndex"
   ],
   "unapplied": [
     "createCaloCells",
-    "xtalkIndex",
     "noiseIndex",
     "sortnoise",
     "repnoise",
     "createCaloCells2",
     "createTopoCluster",
-    "topoNoiseIndex",
     "move-check",
     "check-deprecated",
     "check-remove"
@@ -179,13 +179,13 @@
       "oid": "a87d7963202d1ce20de85e3a438e8edf14dbf95a"
     },
     "topoNoiseIndex": {
-      "oid": "dd361d0a4a44bf5f23b586a4fa10361785ebab65"
+      "oid": "4aa3fe206c85a62e444b172c9eaefbff722c7c33"
     },
     "xtalk": {
       "oid": "b963bf47ad0260b2750de08c262ce6e5aa2c3b00"
     },
     "xtalkIndex": {
-      "oid": "928fe6ffdc3e16a21bc0a0f02745fb41e05b41b2"
+      "oid": "a4d10fb4d11236a807d285bb3f4446f9a4c4de82"
     },
     "xtalkSpan1": {
       "oid": "e9c318f00b7acc47e1f662230a107597c5f887bf"
