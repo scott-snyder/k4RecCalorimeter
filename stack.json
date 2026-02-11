@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "5119dc07824f282343806bd34045f35551d4f94b",
-  "head": "fac3e59a8c4350fde837bf141ad62e0cdcfd72e7",
+  "prev": "eecbfea3d31d9b1cf7e8de221e6deb90bb119022",
+  "head": "d3b9966066929ffe8a29c9e4235185434669b285",
   "applied": [
     "testdir",
     "xtalk",
@@ -13,12 +13,12 @@
     "depr",
     "ci",
     "timeout",
-    "cxx26"
-  ],
-  "unapplied": [
+    "cxx26",
     "hcal-tool",
     "hcal-seg",
-    "hcal-seg-row",
+    "hcal-seg-row"
+  ],
+  "unapplied": [
     "createCaloCells",
     "caloToolInfo1",
     "caloToolInfo3",
@@ -112,13 +112,13 @@
       "oid": "d19b64d80ca3f6e1ef2089a9e8adabe1574d35ec"
     },
     "hcal-seg": {
-      "oid": "2b11844797a82a5e99835185e57af088d8d7009e"
+      "oid": "1a02d309bdee4f5612f18dbb9f277894ae54667d"
     },
     "hcal-seg-row": {
-      "oid": "3e74f6a5f2b30aebe79ead32d29fbe57a8f3ac50"
+      "oid": "d3b9966066929ffe8a29c9e4235185434669b285"
     },
     "hcal-tool": {
-      "oid": "cf584578c65af723fca6c0ff54ed3048844fa9f9"
+      "oid": "c5249e83f8fa26675ca81984965dcc62d827ef36"
     },
     "hcalIndexer": {
       "oid": "edc4bec20c769f9cf073916f528207fa5861d60d"
