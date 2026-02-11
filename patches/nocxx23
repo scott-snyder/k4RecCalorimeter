@@ -1,0 +1,6 @@
+Bottom: a994b013db8b218ea95a3a8b78b9381d470f20f2
+Top:    f4816a6c6611a2567357670198fccef6826f14ca
+Author: scott snyder <snyder@bnl.gov>
+Date:   2026-02-11 05:12:04 -0500
+
+Don't rely on cxx23.

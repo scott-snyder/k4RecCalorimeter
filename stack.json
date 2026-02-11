@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "eecbfea3d31d9b1cf7e8de221e6deb90bb119022",
-  "head": "d3b9966066929ffe8a29c9e4235185434669b285",
+  "prev": "68f8ec460907e9658b7c58252252a0d80a2f2e9f",
+  "head": "c4711f5ab1bad5edef41748cdf21071156a27794",
   "applied": [
     "testdir",
     "xtalk",
@@ -16,7 +16,8 @@
     "cxx26",
     "hcal-tool",
     "hcal-seg",
-    "hcal-seg-row"
+    "hcal-seg-row",
+    "nocxx23"
   ],
   "unapplied": [
     "createCaloCells",
@@ -140,6 +141,9 @@
     },
     "multiIndexer": {
       "oid": "fbc76cfdf871d68abbd35d794c4277b73521907b"
+    },
+    "nocxx23": {
+      "oid": "c4711f5ab1bad5edef41748cdf21071156a27794"
     },
     "nodebug": {
       "oid": "dc2300d16a93b25b2feba84c2cf099d82ad82488"
