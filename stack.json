@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "dffd283e0a130fb2e473cef8ce17ea050ab979d7",
-  "head": "81c307d53c18eefc9ddb49a44150b020d9cd89ac",
+  "prev": "68fec4c9a5024d93c8e94b900a330ae97e38794a",
+  "head": "45ed853c594ecea4c4db8d0a57d8a287f7e11d64",
   "applied": [
     "testdir",
     "xtalk",
@@ -10,10 +10,10 @@
     "calib2",
     "geoConst2",
     "cellPositions",
-    "depr"
+    "depr",
+    "ci"
   ],
   "unapplied": [
-    "ci",
     "hcal-tool",
     "hcal-seg",
     "hcal-seg-row",
@@ -88,7 +88,7 @@
       "oid": "ed59d55e96012865658c4e9b0cd4574b42740b36"
     },
     "ci": {
-      "oid": "e8cb38c1dfa0aab0151b22d56dd0fa8671a018f8"
+      "oid": "45ed853c594ecea4c4db8d0a57d8a287f7e11d64"
     },
     "createCaloCells": {
       "oid": "2b7f3a4a843b6056cac6cb9ef7d25d19bf5650f9"
