@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "6c85c34c4a7316687ea3c4298f4f0d40320a53b6",
+  "prev": "40d8b8a76a8a3500fdc8d30a9f7731bbfd990c26",
   "head": "b963bf47ad0260b2750de08c262ce6e5aa2c3b00",
   "applied": [
     "testdir",
@@ -21,7 +21,6 @@
     "cxx26",
     "caloToolInfo1",
     "caloToolInfo3",
-    "subdetVolman",
     "layerIndex",
     "xtalkSpan1",
     "xtalkSpan3",
@@ -164,9 +163,6 @@
     },
     "sortnoise": {
       "oid": "145d88e4b35b0ff1d8096c49d8f52402faf5951c"
-    },
-    "subdetVolman": {
-      "oid": "683c8b9a39c463177baa03fb7adb1cc4729a69c0"
     },
     "testdir": {
       "oid": "ca38307eeec26edc02cd6ac77f0c6af656bb9724"
