@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "19896b7e6eaca8487f21d40fba291f974a493c6a",
-  "head": "829e44818e4e640a6461874d7d6a9e2a025b2920",
+  "prev": "5321342a519045f7a4cdf81892388d12cc2e6f5a",
+  "head": "adb0fb79ccecd4301d934b2157e103bd58ec8327",
   "applied": [
     "testdir",
     "xtalk",
@@ -27,14 +27,14 @@
     "multiIndexer",
     "xtalkSpan1",
     "xtalkSpan3",
-    "xtalkSpan5"
-  ],
-  "unapplied": [
-    "createCaloCells",
+    "xtalkSpan5",
     "noise1a",
     "noise1b",
     "noise1c",
-    "noise3",
+    "noise3"
+  ],
+  "unapplied": [
+    "createCaloCells",
     "caloCellConstantsSvc",
     "cellsInConst",
     "ecalbarrelIndexer",
@@ -149,16 +149,16 @@
       "oid": "07476ae323fc0a7547ef00891cb902a627be7f4a"
     },
     "noise1a": {
-      "oid": "75266cae6e4db7eff2e205b7ce4de8a261b9f31c"
+      "oid": "a467722beec0f0ad32043e4149ef63128da314b9"
     },
     "noise1b": {
-      "oid": "345278c1471fac4623a78b08a145764bae652b21"
+      "oid": "994bd4bda56d2587cc5a58f2d00b638a262d4c4e"
     },
     "noise1c": {
-      "oid": "0fed84f3cb3baa5c8d73ec969eb1d326602d4a10"
+      "oid": "38fc8fdb3e932f44b817b0d589eeed5a40502c6d"
     },
     "noise3": {
-      "oid": "ea9b905942d5cbe82c31a5aa38e7ca961a2bd1bf"
+      "oid": "adb0fb79ccecd4301d934b2157e103bd58ec8327"
     },
     "noiseIndex": {
       "oid": "a56b7b7dc48e1f9a147c6399b821f5ad28c4ed87"
