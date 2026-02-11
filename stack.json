@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "44a6cb45444f7b1d8ffc4dbcd1d835d47d5f036d",
+  "prev": "43eae929276f5ee227434639d20592d76d210d9a",
   "head": "eb94d27063e1f6067ab6e2bd15e9451aade38b3f",
   "applied": [
     "testdir",
@@ -48,7 +48,6 @@
     "caloType"
   ],
   "unapplied": [
-    "createCaloCells",
     "createCaloCells2",
     "move-check",
     "check-deprecated",
@@ -94,9 +93,6 @@
     },
     "ci": {
       "oid": "45ed853c594ecea4c4db8d0a57d8a287f7e11d64"
-    },
-    "createCaloCells": {
-      "oid": "2b7f3a4a843b6056cac6cb9ef7d25d19bf5650f9"
     },
     "createCaloCells2": {
       "oid": "161d1c21297b52d2ff6678cc783e89e86c9e1023"
