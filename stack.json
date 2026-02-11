@@ -1,18 +1,18 @@
 {
   "version": 5,
-  "prev": "0ab971cab2652b1ba4debe6ec1e2090d2b6bb913",
-  "head": "e01cda1cde5e14e421e66a25102f754bf4c62537",
+  "prev": "76fafde64c375d2a99c0e9c79b4c6fdc903a5db7",
+  "head": "4c9f97a82a56f98c543549242ac0229f6b94bb9c",
   "applied": [
     "testdir",
     "xtalk",
     "subdetVolman",
-    "cellPositionsConst2"
+    "cellPositionsConst2",
+    "calib2"
   ],
   "unapplied": [
     "depr",
     "ci",
     "cellPositions",
-    "calib2",
     "geoConst2",
     "hcal-tool",
     "hcal-seg",
@@ -55,7 +55,7 @@
   "hidden": [],
   "patches": {
     "calib2": {
-      "oid": "0ccde2a58f5db6d066be038ae85a46388b0548ed"
+      "oid": "4c9f97a82a56f98c543549242ac0229f6b94bb9c"
     },
     "caloCellConstantsSvc": {
       "oid": "db588d8a67844d87c923c1f18843b04797d5bdcc"
