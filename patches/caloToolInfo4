@@ -1,6 +1,0 @@
-Bottom: db4a31cd8c7c71f3f8e73fc3a00a0411ea88e6e9
-Top:    3d35411ab3e63442396aff77eec18e102c6f25e5
-Author: sss <sss@karma>
-Date:   2026-02-11 05:13:05 -0500
-
-(Re-)add override keywords in CalorimeterToolBase.h.
