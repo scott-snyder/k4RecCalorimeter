@@ -1,19 +1,19 @@
 {
   "version": 5,
-  "prev": "76fafde64c375d2a99c0e9c79b4c6fdc903a5db7",
-  "head": "4c9f97a82a56f98c543549242ac0229f6b94bb9c",
+  "prev": "a0ae9af0905685a0f1376e755e6cbef61a919696",
+  "head": "ddc194044ffd4f3250b6e1db4bfa147c010ca585",
   "applied": [
     "testdir",
     "xtalk",
     "subdetVolman",
     "cellPositionsConst2",
-    "calib2"
+    "calib2",
+    "geoConst2",
+    "cellPositions"
   ],
   "unapplied": [
     "depr",
     "ci",
-    "cellPositions",
-    "geoConst2",
     "hcal-tool",
     "hcal-seg",
     "hcal-seg-row",
@@ -70,7 +70,7 @@
       "oid": "9a47fc96e43b3cdc989cfef7a55c6a59d3314383"
     },
     "cellPositions": {
-      "oid": "5b1094afa2b09002337c90ca0f181fa5afea8eb8"
+      "oid": "ddc194044ffd4f3250b6e1db4bfa147c010ca585"
     },
     "cellPositionsConst2": {
       "oid": "e01cda1cde5e14e421e66a25102f754bf4c62537"
@@ -109,7 +109,7 @@
       "oid": "f97e14eb68196420c2acae2a3f77b40a933cb679"
     },
     "geoConst2": {
-      "oid": "ef4ea4819eeb40fbc09589d2611f9630f14ce00a"
+      "oid": "d19b64d80ca3f6e1ef2089a9e8adabe1574d35ec"
     },
     "hcal-seg": {
       "oid": "2b11844797a82a5e99835185e57af088d8d7009e"
