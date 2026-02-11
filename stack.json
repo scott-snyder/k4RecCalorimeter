@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "d57ec3c1aaff1380a37a1224bf9bf6e3c0778391",
+  "prev": "c854f91984b62c81370915a4aa34eedc64f93f66",
   "head": "77746a641c20dd193540b299f8aa1f43f702f9c8",
   "applied": [
     "testdir",
@@ -50,7 +50,6 @@
     "propnames"
   ],
   "unapplied": [
-    "createCaloCells2",
     "move-check",
     "check-deprecated",
     "check-remove"
@@ -98,9 +97,6 @@
     },
     "createCaloCells": {
       "oid": "3222a05f917fa67f3a45132866068e695a6f2b7d"
-    },
-    "createCaloCells2": {
-      "oid": "161d1c21297b52d2ff6678cc783e89e86c9e1023"
     },
     "createTopoCluster": {
       "oid": "0ff685b748fb39685e769f759323c1175213bfdc"
