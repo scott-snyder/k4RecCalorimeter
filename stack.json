@@ -1,10 +1,11 @@
 {
   "version": 5,
-  "prev": "40d8b8a76a8a3500fdc8d30a9f7731bbfd990c26",
-  "head": "b963bf47ad0260b2750de08c262ce6e5aa2c3b00",
+  "prev": "94a46316ef281b1711978a4db6ec5b9df75efa49",
+  "head": "a8521ed4aa9891c310f03fc3052261e1c5ae56a9",
   "applied": [
     "testdir",
-    "xtalk"
+    "xtalk",
+    "subdetVolman"
   ],
   "unapplied": [
     "depr",
@@ -163,6 +164,9 @@
     },
     "sortnoise": {
       "oid": "145d88e4b35b0ff1d8096c49d8f52402faf5951c"
+    },
+    "subdetVolman": {
+      "oid": "a8521ed4aa9891c310f03fc3052261e1c5ae56a9"
     },
     "testdir": {
       "oid": "ca38307eeec26edc02cd6ac77f0c6af656bb9724"
