@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "5321342a519045f7a4cdf81892388d12cc2e6f5a",
-  "head": "adb0fb79ccecd4301d934b2157e103bd58ec8327",
+  "prev": "e28f5eb9d5e39d09003b37b68d0ef23759ac3cdf",
+  "head": "b866f5dc7b88ab79f8403977558e34f12a4f8697",
   "applied": [
     "testdir",
     "xtalk",
@@ -31,15 +31,15 @@
     "noise1a",
     "noise1b",
     "noise1c",
-    "noise3"
+    "noise3",
+    "caloCellConstantsSvc",
+    "caloCellIndexerSvc",
+    "cellsInConst"
   ],
   "unapplied": [
     "createCaloCells",
-    "caloCellConstantsSvc",
-    "cellsInConst",
     "ecalbarrelIndexer",
     "hcalIndexer",
-    "caloCellIndexerSvc",
     "xtalkIndex",
     "cellposIndex",
     "indexingConfig",
@@ -59,10 +59,10 @@
       "oid": "4c9f97a82a56f98c543549242ac0229f6b94bb9c"
     },
     "caloCellConstantsSvc": {
-      "oid": "db588d8a67844d87c923c1f18843b04797d5bdcc"
+      "oid": "71bc68ecd6b1f640d557e6992ca65d8b1acfc189"
     },
     "caloCellIndexerSvc": {
-      "oid": "36578363a1bb88b9633b6c9d479f80f67ba15aad"
+      "oid": "e57a3f44e067503137620484f656c0c638b4248d"
     },
     "caloToolInfo1": {
       "oid": "c7e21f1b08f73fcaa1ecdf89fe28640d2ac2e9e7"
@@ -80,7 +80,7 @@
       "oid": "b54a7e9feaea9a57758c9fb4b755a8b9746a23fc"
     },
     "cellsInConst": {
-      "oid": "a8b3195252cc6d8d4df45d4d4852c22b1e998168"
+      "oid": "b866f5dc7b88ab79f8403977558e34f12a4f8697"
     },
     "check-deprecated": {
       "oid": "2ece21945d7f85c140775893b224b1b725d75665"
