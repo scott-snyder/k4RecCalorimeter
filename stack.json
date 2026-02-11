@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "cc8d9b9e1723b5a821b1dbc32f0dc4d504c06c2e",
-  "head": "f42f7df1d961cd4ed262392c5035c4345b46968a",
+  "prev": "44a6cb45444f7b1d8ffc4dbcd1d835d47d5f036d",
+  "head": "eb94d27063e1f6067ab6e2bd15e9451aade38b3f",
   "applied": [
     "testdir",
     "xtalk",
@@ -44,7 +44,8 @@
     "createTopoCluster",
     "noiseIndex",
     "sortnoise",
-    "repnoise"
+    "repnoise",
+    "caloType"
   ],
   "unapplied": [
     "createCaloCells",
@@ -69,6 +70,9 @@
     },
     "caloToolInfo3": {
       "oid": "bf8dc5a34edb1d419efc500081a9da119a1242ec"
+    },
+    "caloType": {
+      "oid": "eb94d27063e1f6067ab6e2bd15e9451aade38b3f"
     },
     "cellPositions": {
       "oid": "ddc194044ffd4f3250b6e1db4bfa147c010ca585"
