@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "c852fb2b96923d8bddad5c80913c3b96e65f774c",
-  "head": "1abf85ebeb5bf716253840eb71c9553b0d407532",
+  "prev": "1ab9361e9d2372e519916b500b1f7bbc8f95f6b0",
+  "head": "e8975c1318eadf0c08480a8395c51430efa9755e",
   "applied": [
     "subdetVolman",
     "cellPositionsConst2",
@@ -40,8 +40,7 @@
     "caloType",
     "createCaloCells",
     "propnames",
-    "createCaloCells2",
-    "refresh-temp"
+    "createCaloCells2"
   ],
   "unapplied": [
     "discrit-wip",
@@ -163,10 +162,7 @@
       "oid": "d963937ac6b70af82346a50c81cc44c99a94eb9a"
     },
     "createCaloCells2": {
-      "oid": "0f55dac8c5895dfacb4e4d285fa318dffa775908"
-    },
-    "refresh-temp": {
-      "oid": "1abf85ebeb5bf716253840eb71c9553b0d407532"
+      "oid": "e8975c1318eadf0c08480a8395c51430efa9755e"
     },
     "discrit-wip": {
       "oid": "d7fd79673a23c171287a5d80a15a2251c300f7f8"
