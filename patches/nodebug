@@ -1,0 +1,9 @@
+Bottom: f4816a6c6611a2567357670198fccef6826f14ca
+Top:    b56327ea1b55ea2444a3f94965b25646a33faec1
+Author: scott snyder <snyder@bnl.gov>
+Date:   2026-02-11 05:12:37 -0500
+
+Remove/gate debug()/verbose() calls.
+
+Even if debug messages are suppressed, calling debug()<<... can take
+significant time when it's used on a hot path.  Remove some of those calls.
