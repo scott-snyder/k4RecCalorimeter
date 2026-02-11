@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "a0ae9af0905685a0f1376e755e6cbef61a919696",
-  "head": "ddc194044ffd4f3250b6e1db4bfa147c010ca585",
+  "prev": "dffd283e0a130fb2e473cef8ce17ea050ab979d7",
+  "head": "81c307d53c18eefc9ddb49a44150b020d9cd89ac",
   "applied": [
     "testdir",
     "xtalk",
@@ -9,10 +9,10 @@
     "cellPositionsConst2",
     "calib2",
     "geoConst2",
-    "cellPositions"
+    "cellPositions",
+    "depr"
   ],
   "unapplied": [
-    "depr",
     "ci",
     "hcal-tool",
     "hcal-seg",
@@ -103,7 +103,7 @@
       "oid": "d07d253e19300a059bbd668582ba1bf73ad65c90"
     },
     "depr": {
-      "oid": "fe9f176d3ca213e510a053026285c917ab96e3bd"
+      "oid": "81c307d53c18eefc9ddb49a44150b020d9cd89ac"
     },
     "ecalbarrelIndexer": {
       "oid": "f97e14eb68196420c2acae2a3f77b40a933cb679"
