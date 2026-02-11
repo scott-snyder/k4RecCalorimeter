@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "b71e6c3b28de57485d4e1095f90a084dee8bcb0b",
-  "head": "bf8dc5a34edb1d419efc500081a9da119a1242ec",
+  "prev": "3849e8054827cbb2f44d9e324214c77af8421007",
+  "head": "42646a1ebf8b096d45bba0b65e4797905f799010",
   "applied": [
     "testdir",
     "xtalk",
@@ -20,7 +20,9 @@
     "nocxx23",
     "nodebug",
     "caloToolInfo1",
-    "caloToolInfo3"
+    "caloToolInfo3",
+    "idmap",
+    "idmapIndexer"
   ],
   "unapplied": [
     "createCaloCells",
@@ -34,8 +36,6 @@
     "noise3",
     "caloCellConstantsSvc",
     "cellsInConst",
-    "idmap",
-    "idmapIndexer",
     "multiIndexer",
     "ecalbarrelIndexer",
     "hcalIndexer",
@@ -125,10 +125,10 @@
       "oid": "edc4bec20c769f9cf073916f528207fa5861d60d"
     },
     "idmap": {
-      "oid": "6bb3a03d098e05efa18667072d461b0ce7d9da54"
+      "oid": "d40f9bfd0d38f4cc360fcb473b56c1892ceab21a"
     },
     "idmapIndexer": {
-      "oid": "ace64c99b300b7e8760c69195df8dc4854cdbb43"
+      "oid": "42646a1ebf8b096d45bba0b65e4797905f799010"
     },
     "indexingConfig": {
       "oid": "bc59fcfe32d61f232f053cbee59dc78769674cfe"
