@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "5a92f1505e069427eb388d15915e03c2fe0f77f5",
+  "prev": "3f845b95b7fa34210c87ce2671e15999ffa1d19e",
   "head": "c4711f5ab1bad5edef41748cdf21071156a27794",
   "applied": [
     "testdir",
@@ -40,7 +40,6 @@
     "hcalIndexer",
     "caloCellIndexerSvc",
     "xtalkIndex",
-    "nodebug",
     "cellposIndex",
     "indexingConfig",
     "noiseIndex",
@@ -144,9 +143,6 @@
     },
     "nocxx23": {
       "oid": "c4711f5ab1bad5edef41748cdf21071156a27794"
-    },
-    "nodebug": {
-      "oid": "dc2300d16a93b25b2feba84c2cf099d82ad82488"
     },
     "noise1a": {
       "oid": "75266cae6e4db7eff2e205b7ce4de8a261b9f31c"
