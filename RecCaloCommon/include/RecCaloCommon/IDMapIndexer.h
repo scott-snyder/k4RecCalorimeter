@@ -13,6 +13,7 @@
 
 #include "RecCaloCommon/IDMap.h"
 #include "k4Interface/ICaloIndexer.h"
+#include <stdexcept>
 
 
 namespace k4::recCalo {
@@ -55,6 +56,11 @@ public:
    * param sizeHint If non-zero, this is an estimate of the total size,
    *                in bytes, required by this mapping.  This will be
    *                used to reserve an appropriate size for the data vector.
+   *
+   * All entries in @c ids should be identical once the fields described
+   * in @c fields have been masked off; that is, any additional fields must
+   * be identical for all ids.  When we try to find an index, we first check
+   * that the extra bits match what we expect.
    */
   IDMapIndexer (int detID,
                 size_t detIDBits,
@@ -106,6 +112,9 @@ private:
   /// The mapping.
   IDMap_t m_map;
 
+  uint64_t m_otherFieldsMask;
+  uint64_t m_otherFieldsVal;
+
   /// The ID of the detector we index.
   int m_detID;
 
@@ -123,13 +132,30 @@ IDMapIndexer<NFIELDS>::IDMapIndexer (int detID,
                                      std::span<const FieldDesc_t> fields,
                                      std::span<const uint64_t> ids,
                                      size_t sizeHint /*= 0*/)
-  : m_map (fields, INVALID,ids,
+  : m_map (fields, INVALID, ids,
            [](size_t i) { return i; },
            sizeHint),
     m_detID (detID),
     m_detIDBits (detIDBits),
     m_cellIDs (ids)
 {
+  m_otherFieldsMask = ~ static_cast<uint64_t>(0);
+  for (const FieldDesc_t& f : fields) {
+    unsigned offset = f.first;
+    unsigned width = f.second;
+    uint64_t fmask = (static_cast<uint64_t>(1) << width) - 1;
+    m_otherFieldsMask &= ~ (fmask << offset);
+  }
+
+  m_otherFieldsVal = 0;
+  if (ids.size() > 0) {
+    m_otherFieldsVal = ids[0] & m_otherFieldsMask;
+    for (uint64_t id : ids) {
+      if ((id & m_otherFieldsMask) != m_otherFieldsVal) {
+        throw std::runtime_error ("IDMapIndexer: Inconsistent ID list");
+      }
+    }
+  }
 }
 
 
@@ -140,6 +166,7 @@ template <unsigned NFIELDS>
 inline
 auto IDMapIndexer<NFIELDS>::index (uint64_t id) const -> index_t
 {
+  if ((id & m_otherFieldsMask) != m_otherFieldsVal) return INVALID;
   return m_map.lookup (id);
 }
 

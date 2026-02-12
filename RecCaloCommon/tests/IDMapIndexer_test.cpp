@@ -22,6 +22,18 @@ using mapkey_span = std::span<const mapkey_t>;
 #include "make_ecal_ids.icc"
 
 
+#define EXPECT_EXCEPTION(EXC, CODE) do { \
+  bool caught = false;                   \
+  try {                                  \
+    CODE;                                \
+  }                                      \
+  catch (const EXC&) {                   \
+    caught = true;                       \
+  }                                      \
+  assert (caught);                       \
+} while(0)
+
+
 //************************************************************************
 
 
@@ -52,6 +64,11 @@ void test1 (mapkey_span ids)
     assert (map.index(ids[i]) == i);
   }
   assert (map.index (0) == Indexer_t::INVALID);
+  assert (map.index (ids[0]+1) == Indexer_t::INVALID);
+
+  std::vector<mapkey_t> ids2 (ids.begin(), ids.end());
+  ids2[10] += 1;
+  EXPECT_EXCEPTION( std::runtime_error, Indexer_t map2 (4, 6, fielddescs, ids2) );
 }
 
 
