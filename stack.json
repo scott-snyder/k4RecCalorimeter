@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "3f8f67ce0b11d180443b440d9a6c553cf6dc31fb",
-  "head": "ecc4606aef3595219f26a184c07bfe3356110bfa",
+  "prev": "12e4c018d4d7b30cf22115f6fc736bee505f05f8",
+  "head": "e09e66a0f8cc9aba30e3c196a0f2507e1d9fe51f",
   "applied": [
     "testdir",
     "xtalk",
@@ -49,8 +49,7 @@
     "createCaloCells",
     "propnames",
     "createCaloCells2",
-    "createCaloCells3",
-    "refresh-temp"
+    "createCaloCells3"
   ],
   "unapplied": [
     "move-check",
@@ -105,7 +104,7 @@
       "oid": "d341a7f0ff9609c7a01b3265f3de98208ab5ab84"
     },
     "createCaloCells3": {
-      "oid": "2990b2fd174dbe1906ffdfd4bf6a1a0d518a07e0"
+      "oid": "e09e66a0f8cc9aba30e3c196a0f2507e1d9fe51f"
     },
     "createTopoCluster": {
       "oid": "0ff685b748fb39685e769f759323c1175213bfdc"
@@ -175,9 +174,6 @@
     },
     "propnames": {
       "oid": "77746a641c20dd193540b299f8aa1f43f702f9c8"
-    },
-    "refresh-temp": {
-      "oid": "ecc4606aef3595219f26a184c07bfe3356110bfa"
     },
     "repnoise": {
       "oid": "f42f7df1d961cd4ed262392c5035c4345b46968a"
