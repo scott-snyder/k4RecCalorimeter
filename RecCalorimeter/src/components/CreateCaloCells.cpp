@@ -7,7 +7,7 @@
 
 // k4FWCore
 #include "k4Interface/IGeoSvc.h"
-#include "k4FWCore/k4_check.h"
+#include "RecCaloCommon/k4RecCalorimeter_check.h"
 
 // DD4hep
 #include "DD4hep/DetType.h"
@@ -18,7 +18,168 @@
 // edm4hep
 #include "edm4hep/CalorimeterHit.h"
 
+#include <stdexcept>
+#include <algorithm>
+
+
 DECLARE_COMPONENT(CreateCaloCells)
+
+
+/**
+ * @brief Constructor.
+ * @param full If true, we initialize for all cells.
+ * @param cellids List of all possible cell ids.  Only used in full mode.
+ * @param indexer Helper to convert from cell id to the indix within
+ *                @c cellids.  Only used in full mode.
+ */
+CreateCaloCells::CaloCells::CaloCells (bool full,
+                                       std::span<const uint64_t> cellids,
+                                       const k4::recCalo::ICaloIndexer* indexer)
+  : m_mode (full ? FULL : SPARSE),
+    m_indexer (indexer)
+{
+  if (full) {
+    // Full mode: initialize @c m_cells with all cell ids, and resize
+    // @c m_ihits for call cells.
+    m_cells.reserve (cellids.size());
+    for (uint64_t id : cellids) m_cells.emplace_back (id, 0);
+    m_ihits.resize (cellids.size(), INVALID_IHIT);
+  }
+  else {
+    // Sparse mode.  Don't fill in anything yet, but reserve some space
+    // for cells.
+    m_cells.reserve (2000);
+  }
+}
+
+
+/**
+ * @brief Return the index within @c m_cells for a given cell id.
+ * @param cellid The cell id to find.
+ *
+ * May return INVALID_ICELL if the cell id doesn't exist in the container.
+ * Will throw if we have a filtered full container.
+ */
+auto CreateCaloCells::CaloCells::indexByID (uint64_t cellid) -> index_t
+{
+  if (m_mode == FULL) {
+    return m_indexer->index (cellid);
+  }
+  else if (m_mode == SPARSE) {
+    return m_indices.try_emplace (cellid, std::make_pair (INVALID_ICELL, INVALID_IHIT)).first->second.first;
+  }
+  throw std::runtime_error ("indexByID used on filtered cells");
+}
+
+
+/**
+ * @brief Return a @c CaloCell wrapper for a given cell id, adding
+ *        the cell if needed.
+ * @param cellid The cell id to find.
+ *
+ * May add a new cell.
+ * Will throw if we have a filtered full container.
+ */
+auto CreateCaloCells::CaloCells::cellByID (uint64_t cellid) -> CaloCell
+{
+  if (m_mode == FULL) {
+    index_t icell =  m_indexer->index (cellid);
+    if (icell == INVALID_ICELL) [[unlikely]] {
+      throw std::out_of_range ("cellByID");
+    }
+    return CaloCell (m_cells[icell].first, m_cells[icell].second,
+                     m_ihits[icell]);
+  }
+
+  else if (m_mode == SPARSE) {
+    auto& p = m_indices.try_emplace (cellid, std::make_pair (INVALID_ICELL, INVALID_IHIT) ).first->second;
+    if (p.first == INVALID_ICELL) {
+      // Add a new cell.
+      p.first = m_cells.size();
+      m_cells.emplace_back (cellid, 0);
+      p.second = INVALID_IHIT;
+    }
+    index_t icell = p.first;
+    return CaloCell (m_cells[icell].first, m_cells[icell].second, p.second);
+  }
+
+  std::abort();
+}
+
+
+/**
+ * @brief Return a @c CaloCell wrapper for a given either the
+ *        cell id or the index within @c m_cells.
+ * @param icell Index within @c m_cells, or @c INVALID_CELL.
+ * @param cellid The cell id to find.
+ *
+ * Uses @c icell for a @c FULL container, otherwise @c cellid.
+ */
+inline
+auto CreateCaloCells::CaloCells::cellByIndexOrID (index_t icell, uint64_t cellid) -> CaloCell
+{
+  if (m_mode == FULL)
+    return CaloCell (m_cells[icell].first, m_cells[icell].second,
+                     m_ihits[icell]);
+  return cellByID (cellid);
+}
+
+
+/**
+ * @brief Return hit index for a given cell in @c m_cells.
+ * @param icell Index of the cell in @c m_cells.
+ *
+ * Returns the corresponding hit index, or @c INVALID_IHIT.
+ */
+size_t CreateCaloCells::CaloCells::ihitByIndex (index_t icell) const
+{
+  if (m_mode == FULL) {
+    return m_ihits[icell];
+  }
+
+  else if (m_mode == SPARSE) {
+    auto it = m_indices.find (m_cells[icell].first);
+    if (it == m_indices.end()) return INVALID_IHIT;
+    return it->second.second;
+  }
+
+  // Filtered
+  index_t jcell = m_indexer->index (m_cells[icell].first);
+  if (jcell == INVALID_ICELL) return INVALID_IHIT;
+  return m_ihits[jcell];
+}
+
+
+/**
+ * @brief Sort the sells in order of increasing cell id.
+ */
+void CreateCaloCells::CaloCells::sort()
+{
+  if (m_mode != SPARSE) return;
+
+  std::ranges::sort (m_cells);
+
+  // Then reset indices if we've 
+  index_t ncells = m_cells.size();
+  for (index_t icell = 0; icell < ncells; ++icell) {
+    size_t cellID = m_cells[icell].first;
+    m_indices[cellID].first = icell;
+  }
+}
+
+
+/**
+ * @brief Called after filtering.
+ * @param orig_size The container size before filtering.
+ */
+void CreateCaloCells::CaloCells::afterFilter (size_t orig_size)
+{
+  // If we've filtered a full container, change start to FILTERED.
+  if (m_mode == FULL && m_cells.size() != orig_size)
+    m_mode = FILTERED;
+}
+
+                                       
 
 CreateCaloCells::CreateCaloCells(const std::string& name, ISvcLocator* svcLoc)
     : Gaudi::Algorithm(name, svcLoc), m_geoSvc("GeoSvc", name) {
@@ -32,7 +193,7 @@ CreateCaloCells::CreateCaloCells(const std::string& name, ISvcLocator* svcLoc)
 }
 
 StatusCode CreateCaloCells::initialize() {
-  K4_GAUDI_CHECK( Gaudi::Algorithm::initialize() );
+  K4RECCALORIMETER_CHECK( Gaudi::Algorithm::initialize() );
 
   info() << "CreateCaloCells initialized" << endmsg;
   info() << "do calibration : " << m_doCellCalibration << endmsg;
@@ -43,21 +204,21 @@ StatusCode CreateCaloCells::initialize() {
 
 
   // Initialization of tools
+  K4RECCALORIMETER_CHECK( m_indexerSvc.retrieve() );
+
   // Cell crosstalk tool
   if (m_addCrosstalk) {
-    K4_GAUDI_CHECK( m_crosstalksTool.retrieve() );
+    K4RECCALORIMETER_CHECK( m_crosstalksTool.retrieve() );
   }
   // Calibrate Geant4 energy to EM scale tool
   if (m_doCellCalibration) {
-    K4_GAUDI_CHECK( m_calibTool.retrieve() );
+    K4RECCALORIMETER_CHECK( m_calibTool.retrieve() );
   }
   // Cell noise tool
   if (m_addCellNoise || m_filterCellNoise) {
-    K4_GAUDI_CHECK( m_noiseTool.retrieve() );
+    K4RECCALORIMETER_CHECK( m_noiseTool.retrieve() );
     // Geometry settings
-    K4_GAUDI_CHECK( m_geoTool.retrieve() );
-    K4_GAUDI_CHECK( m_indexerSvc.retrieve() );
-    m_indexer = m_indexerSvc->indexer (m_geoTool->id());
+    K4RECCALORIMETER_CHECK( m_geoTool.retrieve() );
   }
 
   if (m_addCellNoise) {
@@ -77,12 +238,12 @@ StatusCode CreateCaloCells::initialize() {
   }
 
   if (m_cellPos.isEnabled()) {
-    K4_GAUDI_CHECK( m_cellPos.retrieve() );
+    K4RECCALORIMETER_CHECK( m_cellPos.retrieve() );
   }
 
   // Copy over the CellIDEncoding string from the input collection to the output collection
   auto hitsEncoding = m_hitsCellIDEncoding.get_optional();
-  K4_GAUDI_CHECK( hitsEncoding.has_value() );
+  K4RECCALORIMETER_CHECK( hitsEncoding.has_value() );
   m_cellsCellIDEncoding.put(hitsEncoding.value());
 
   m_decoder = dd4hep::DDSegmentation::BitFieldCoder(hitsEncoding.value());
@@ -105,6 +266,7 @@ StatusCode CreateCaloCells::execute(const EventContext&) const {
   debug() << "Input Hit collection size: " << hits->size() << endmsg;
 
   // Find calorimeter type.
+  const k4::recCalo::ICaloIndexer* indexer = nullptr;
   int calotype = 0;
   if (!hits->empty()) {
     uint64_t cellid = hits->begin()->getCellID();
@@ -113,30 +275,35 @@ StatusCode CreateCaloCells::execute(const EventContext&) const {
     if (calotype == 0) {
       error() << "detector id " << detid << " is not a calorimeter" << endmsg;
     }
-  }
-
-  CellsInfo cells (m_addCellNoise ? m_cellIDs.size() : 2048);
-  CellsIndex cellsIndex (m_addCellNoise ? m_indexer : nullptr, m_cellIDs.size());
-
-  // 0. Clear all cells
-  if (m_addCellNoise) {
-    cells.m_cells.resize (m_cellIDs.size());
-    for (size_t i = 0; i < m_cellIDs.size(); i++) {
-      cells.m_cells[i].first = m_cellIDs[i];
+    indexer = m_indexerSvc->indexer (detid, !m_addCellNoise);
+    if (m_addCellNoise) {
+      if (!indexer) {
+        error() << "Cannot find indexer for detid " << detid << endmsg;
+        return StatusCode::FAILURE;
+      }
     }
   }
+
+
+  // 0. Clear all cells
+  CaloCells cells (m_addCellNoise, m_cellIDs, indexer);
 
   // 1. Merge energy deposits into cells
   // If running with noise map already was prepared. Otherwise it is being
   // created below
   for (size_t ihit = 0; const auto& hit : *hits) {
-    verbose() << "CellID : " << hit.getCellID() << endmsg;
-    size_t& icell = cellsIndex.index (hit.getCellID(), ihit);
-    if (icell == INVALID) {
-      icell = cells.add (hit.getCellID(), hit.getEnergy());
+    // If we have an indexer, check that the cell ID is valid; skip if not.
+    // This can happen, for example, if we've made the cryostat active.
+    uint64_t cellid = hit.getCellID();
+    index_t cellIndex = CaloCells::INVALID_ICELL;
+    if (indexer) {
+      cellIndex = indexer->index (cellid);
     }
-    else {
-      cells.energy(icell) += hit.getEnergy();
+    if (cellIndex != CaloCells::INVALID_ICELL || !indexer) {
+      // Add the new cell if needed and accumulate energy.
+      CaloCell cell = cells.cellByIndexOrID (cellIndex, cellid);
+      cell.energy += hit.getEnergy();
+      if (cell.ihit == CaloCells::INVALID_IHIT) cell.ihit = ihit;
     }
     ++ihit;
   }
@@ -144,7 +311,7 @@ StatusCode CreateCaloCells::execute(const EventContext&) const {
 
   // 2. Emulate cross-talk (if asked)
   if (m_addCrosstalk) {
-    addCrosstalk (cells, cellsIndex);
+    addCrosstalk (cells);
   }
 
   // 3. Calibrate simulation energy to EM scale
@@ -159,29 +326,34 @@ StatusCode CreateCaloCells::execute(const EventContext&) const {
 
   // 5. Filter cells
   if (m_filterCellNoise) {
+    size_t orig_size = cells.size();
     m_noiseTool->filterCellNoise(cells.m_cells);
+    cells.afterFilter (orig_size);
   }
 
   // 6. Copy information to CaloHitCollection
   edm4hep::CalorimeterHitCollection* edmCellsCollection = new edm4hep::CalorimeterHitCollection();
 
-  cellsIndex.sort (cells);
+  // Make sure cells are sorted.  (A no-op if we have all cells; they'll
+  // already be sorted in that case.)
+  cells.sort();
 
   // This is actually kind of expensive --- hoist it out of the loop.
   bool haveCellPos = m_cellPos.isEnabled();
-  for (size_t icell = 0; icell < cells.size(); ++icell) {
-    double energy = cells.energy(icell);
+
+  for (index_t icell = 0; icell < cells.size(); ++icell) {
+    double energy = cells.m_cells[icell].second;
     if (energy == 0 && !m_addCellNoise) continue;
     auto newCell = edmCellsCollection->create();
     newCell.setEnergy(energy);
-    uint64_t cellid = cells.cellID(icell);
+    uint64_t cellid = cells.m_cells[icell].first;
     newCell.setCellID(cellid);
 
     static constexpr double inv_mm = 1 / dd4hep::mm;
 
-    size_t ihit = cellsIndex.ihit(cellid);
+    size_t ihit = cells.ihitByIndex (icell);
 
-    if (haveCellPos && (m_addPosition || ihit == INVALID)) {
+    if (haveCellPos && (m_addPosition || ihit == CaloCells::INVALID_IHIT)) {
       // Recalculate cell position given cell using positioning tool.
       // We have the tool, and either the position isn't available
       // in the input, or we were requested to recalculate it.
@@ -208,7 +380,7 @@ StatusCode CreateCaloCells::execute(const EventContext&) const {
       newCell.setPosition(position);
     }
 
-    else if (ihit != INVALID) {
+    else if (ihit != CaloCells::INVALID_IHIT) {
       // This cell was present in the input.  Take the position from there.
       newCell.setPosition((*hits)[ihit].getPosition());
     }
@@ -222,12 +394,13 @@ StatusCode CreateCaloCells::execute(const EventContext&) const {
   // create hits<->cell links
   edm4hep::CaloHitSimCaloHitLinkCollection* edmCellHitLinksCollection = new edm4hep::CaloHitSimCaloHitLinkCollection();
   for (const auto& hit : *hits) {
-    auto hitID = hit.getCellID();
-    size_t icell = cellsIndex.index(hitID);
-    // create Sim<->Reco hit associations
-    auto link = edmCellHitLinksCollection->create();
-    link.setFrom((*edmCellsCollection)[icell]);
-    link.setTo(hit);
+    index_t icell = cells.indexByID (hit.getCellID());
+    if (icell != CaloCells::INVALID_ICELL) {
+      // create Sim<->Reco hit associations
+      auto link = edmCellHitLinksCollection->create();
+      link.setFrom((*edmCellsCollection)[icell]);
+      link.setTo(hit);
+    }
   }
 
   // push the CaloHitCollection to event store
@@ -280,18 +453,17 @@ void CreateCaloCells::findCaloTypes()
 }
 
 
-void CreateCaloCells::addCrosstalk (CellsInfo& cells,
-                                    CellsIndex& cellsIndex) const
+void CreateCaloCells::addCrosstalk (CaloCells& cells) const
 {
   // Derive the cross-talk contributions without affecting yet the nominal energy
   // (one has to emulate crosstalk based on cells free from any cross-talk contributions)
-  CellsInfo cells_orig = cells;
+  CaloCells::CellData_t cells_orig = cells.m_cells;
   // yet the nominal energy
   // loop over cells with nominal energies
   for (size_t jcell = 0; jcell < cells_orig.size(); ++jcell) {
-    double this_energy = cells_orig.energy(jcell);
+    double this_energy = cells_orig[jcell].second;
     if (this_energy == 0) continue;
-    uint64_t this_cellId = cells_orig.cellID(jcell);
+    uint64_t this_cellId = cells.m_cells[jcell].first;
     auto vec_neighbours = m_crosstalksTool->getNeighbours(this_cellId); // a span of neighbour IDs
     auto vec_crosstalks = m_crosstalksTool->getCrosstalks(this_cellId); // a span of crosstalk coefficients
     // loop over crosstalk neighbours of the cell under study
@@ -299,15 +471,10 @@ void CreateCaloCells::addCrosstalk (CellsInfo& cells,
       // signal transfer = energy deposit brought by EM shower hits * crosstalk coefficient
       double signal_transfer = this_energy * vec_crosstalks[i_cell];
       // for the cell under study, record the signal transfer that will be subtracted from its final cell energy
-      cells.energy(jcell) -= signal_transfer;
+      cells.m_cells[jcell].second -= signal_transfer;
       // for the crosstalk neighbour, record the signal transfer that will be added to its final cell energy
-      size_t& kcell = cellsIndex.index (vec_neighbours[i_cell]);
-      if (kcell == INVALID) {
-        kcell = cells.add (vec_neighbours[i_cell], signal_transfer);
-      }
-      else {
-        cells.energy(kcell) += signal_transfer;
-      }
+      CaloCell other_cell = cells.cellByID (vec_neighbours[i_cell]);
+      other_cell.energy += signal_transfer;
     }
   }
 }
