@@ -224,7 +224,7 @@ createEcalBarrelCells = CreateCaloCells(
     addCrosstalk=False,
     addCellNoise=False,
     filterCellNoise=False,
-    addPosition=True,
+    addPosition=False,
     OutputLevel=INFO,
     hits=ecalBarrelReadoutName,
     cells=ecalBarrelCellsName,
@@ -281,6 +281,11 @@ createEcalEndcapPositionedCells.hits.Path = ecalEndcapCellsName
 createEcalEndcapPositionedCells.positionedHits.Path = ecalEndcapPositionedCellsName
 
 if runHCal:
+    from Configurables import CellPositionsHCalPhiThetaSegTool
+    hcalBarrelCellPosTool = CellPositionsHCalPhiThetaSegTool('hcalBarrelCellPosTool',
+                                                             readoutName=hcalBarrelReadoutName,
+                                                             detectorName='HCalBarrel')
+
     # Create cells in HCal
     # 1 - merge hits into cells with the default readout
     hcalBarrelCellsName = "HCalBarrelCells"
@@ -290,7 +295,7 @@ if runHCal:
         calibTool=calibHcells,
         addCellNoise=False,
         filterCellNoise=False,
-        addPosition=True,
+        addPosition=False,
         hits=hcalBarrelReadoutName,
         cells=hcalBarrelCellsName,
         OutputLevel=INFO,
