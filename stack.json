@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "c654853a7b6e3424939e1db69c0af39544a13e32",
+  "prev": "670a64f1af231c1c59d56d914831e3a27b685c32",
   "head": "ac380f1489b00e90686259ca451d21c423570e6c",
   "applied": [
     "testdir",
@@ -46,7 +46,7 @@
     "sortnoise",
     "repnoise",
     "caloType",
-    "more-efficienct-calorimeter"
+    "createCaloCells"
   ],
   "unapplied": [
     "move-check",
@@ -94,6 +94,9 @@
     "ci": {
       "oid": "45ed853c594ecea4c4db8d0a57d8a287f7e11d64"
     },
+    "createCaloCells": {
+      "oid": "ac380f1489b00e90686259ca451d21c423570e6c"
+    },
     "createTopoCluster": {
       "oid": "0ff685b748fb39685e769f759323c1175213bfdc"
     },
@@ -132,9 +135,6 @@
     },
     "layerIndex": {
       "oid": "0752ba6e123853f7ce43ee41b1954e59212cd2f5"
-    },
-    "more-efficienct-calorimeter": {
-      "oid": "ac380f1489b00e90686259ca451d21c423570e6c"
     },
     "move-check": {
       "oid": "e8c06714dc540ce11b45fe01d78c3e7dfc80e535"
