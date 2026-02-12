@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "59367c7c5c3a2fbbab4eea56f2bd5874faaae3aa",
+  "prev": "960fedab3f22a8a942c9574a861e58ff8fd44879",
   "head": "d82983efd995354c3111761ce004a56147f0bfd6",
   "applied": [
     "subdetVolman",
@@ -18,7 +18,6 @@
     "idmap"
   ],
   "unapplied": [
-    "idmapIndexer",
     "layerIndex",
     "multiIndexer",
     "xtalkSpan1",
@@ -86,9 +85,6 @@
     },
     "idmap": {
       "oid": "d82983efd995354c3111761ce004a56147f0bfd6"
-    },
-    "idmapIndexer": {
-      "oid": "823baa9cf69aee28d178572ecd47c5f51aac1a90"
     },
     "layerIndex": {
       "oid": "d35a94b28fa4e49523570d115245d87278af4fa3"
