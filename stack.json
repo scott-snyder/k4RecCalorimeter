@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "3dc133dd1a57977513840ac2af64beec3c1fb091",
-  "head": "7e3ca04a897bc3bb3c1a9451c0fdd080bea55d2f",
+  "prev": "6f2a9b57a03ef82aba9b27529578792cde1c7bb8",
+  "head": "7fea1b1caa9c2aa1f6c283a3ff6deac9c7e11b2a",
   "applied": [
     "subdetVolman",
     "cellPositionsConst2",
@@ -37,7 +37,9 @@
     "topoNoiseIndex",
     "createTopoCluster",
     "noiseIndex",
-    "caloType",
+    "caloType"
+  ],
+  "unapplied": [
     "createCaloCells",
     "propnames",
     "createCaloCells2",
@@ -46,7 +48,6 @@
     "diag-wip",
     "cellids-wip"
   ],
-  "unapplied": [],
   "hidden": [],
   "patches": {
     "subdetVolman": {
