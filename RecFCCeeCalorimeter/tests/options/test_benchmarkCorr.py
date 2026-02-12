@@ -161,11 +161,11 @@ from Configurables import CreateCaloCells
 createEcalBarrelCells = CreateCaloCells("CreateECalBarrelCells",
                                         doCellCalibration=True,
                                         calibTool=calibEcalBarrel,
-                                        crosstalksTool=readCrosstalkMap,
+                                        crosstalkTool=readCrosstalkMap,
                                         addCrosstalk=False,
                                         addCellNoise=False,
                                         filterCellNoise=False,
-                                        addPosition=True,
+                                        addPosition=False,
                                         OutputLevel=INFO,
                                         hits=ecalBarrelReadoutName,
                                         cells=ecalBarrelCellsName)
@@ -222,6 +222,11 @@ createEcalEndcapPositionedCells.hits.Path = ecalEndcapCellsName
 createEcalEndcapPositionedCells.positionedHits.Path = ecalEndcapPositionedCellsName
 
 if runHCal:
+    from Configurables import CellPositionsHCalPhiThetaSegTool
+    hcalBarrelCellPosTool = CellPositionsHCalPhiThetaSegTool('hcalBarrelCellPosTool',
+                                                             readoutName=hcalBarrelReadoutName,
+                                                             detectorName='HCalBarrel')
+
     # Create cells in HCal
     # 1 - merge hits into cells with the default readout
     hcalBarrelCellsName = "HCalBarrelCells"
@@ -233,6 +238,7 @@ if runHCal:
                                             addPosition=True,
                                             hits=hcalBarrelReadoutName,
                                             cells=hcalBarrelCellsName,
+                                            positionsTool = hcalBarrelCellPosTool,
                                             OutputLevel=INFO)
     TopAlg += [createHcalBarrelCells]
 
