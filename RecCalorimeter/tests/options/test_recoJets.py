@@ -117,11 +117,11 @@ from Configurables import CreateCaloCells
 createEcalBarrelCells = CreateCaloCells("CreateECalBarrelCells",
                                         doCellCalibration=True,
                                         calibTool=calibEcalBarrel,
-                                        crosstalksTool=None,
+                                        crosstalkTool=None,
                                         addCrosstalk=False,
                                         addCellNoise=False,
                                         filterCellNoise=False,
-                                        addPosition=True,
+                                        addPosition=False,
                                         OutputLevel=INFO,
                                         hits=ecalBarrelReadoutName,
                                         cells=ecalBarrelCellsName)
