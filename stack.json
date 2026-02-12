@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "84c2995d147e71e73c1ab7c5bac67a2e19ea41b0",
-  "head": "d341a7f0ff9609c7a01b3265f3de98208ab5ab84",
+  "prev": "7777931636114bf2c13237214138cf4cfa186a56",
+  "head": "2990b2fd174dbe1906ffdfd4bf6a1a0d518a07e0",
   "applied": [
     "testdir",
     "xtalk",
@@ -48,13 +48,13 @@
     "caloType",
     "createCaloCells",
     "propnames",
-    "createCaloCells2"
+    "createCaloCells2",
+    "createCaloCells3"
   ],
   "unapplied": [
     "move-check",
     "check-deprecated",
-    "check-remove",
-    "createCaloCells3"
+    "check-remove"
   ],
   "hidden": [],
   "patches": {
@@ -104,7 +104,7 @@
       "oid": "d341a7f0ff9609c7a01b3265f3de98208ab5ab84"
     },
     "createCaloCells3": {
-      "oid": "072eb5a54438a59f65c4e7ab073e14bc093ee242"
+      "oid": "2990b2fd174dbe1906ffdfd4bf6a1a0d518a07e0"
     },
     "createTopoCluster": {
       "oid": "0ff685b748fb39685e769f759323c1175213bfdc"
