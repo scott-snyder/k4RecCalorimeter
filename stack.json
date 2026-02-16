@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "34e3cb9adcdb0075790c365dfc51eb39f95b51e8",
+  "prev": "40f239bf7b1ec4c0199d07e3c2f03c4b0d0dcb49",
   "head": "0d640798f425a439391988f0f842d3e7913ab203",
   "applied": [
     "subdetVolman",
@@ -20,7 +20,6 @@
     "layerIndex"
   ],
   "unapplied": [
-    "multiIndexer",
     "xtalkSpan1",
     "xtalkSpan3",
     "xtalkSpan5",
@@ -93,9 +92,6 @@
     },
     "layerIndex": {
       "oid": "0d640798f425a439391988f0f842d3e7913ab203"
-    },
-    "multiIndexer": {
-      "oid": "2ef24164e0c3e0d2765025a5816f0780be62adae"
     },
     "xtalkSpan1": {
       "oid": "d1e13bba3134210dfdce66be0209ff64ac8e44da"
