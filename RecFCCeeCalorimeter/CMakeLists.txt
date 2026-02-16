@@ -67,6 +67,7 @@ gaudi_add_module(k4RecFCCeeCalorimeterTests
                  SOURCES
                  tests/src/TubeLayerModuleThetaCaloToolTestAlg.cpp
                  tests/src/HCalPhiThetaCaloToolTestAlg.cpp
+                 tests/src/ECalEndcapTurbineCaloToolTestAlg.cpp
                  LINK k4FWCore::k4FWCore
                       k4FWCore::k4Interface
                       Gaudi::GaudiKernel
