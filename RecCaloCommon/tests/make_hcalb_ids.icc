@@ -1,5 +1,5 @@
 /**
- * @file RecCaloCommon/tests/make_h_ids.cpp
+ * @file RecCaloCommon/tests/make_hcalb_ids.cpp
  * @author scott snyder <snyder@bnl.gov>
  * @date Feb, 2026
  * @brief Helper to make a list of IDs for testing.
@@ -7,19 +7,19 @@
  */
 
 
-const unsigned int hcal_numLayers = 13;
-const char* const hcal_descstr = "system:4,layer:5,row:9,theta:9,phi:10";
+const unsigned int hcalb_numLayers = 13;
+const char* const hcalb_descstr = "system:4,layer:5,row:9,theta:9,phi:10";
 
 
-std::vector<mapkey_t> make_hcal_ids()
+std::vector<mapkey_t> make_hcalb_ids()
 {
   std::vector<mapkey_t> ids;
   ids.reserve (210944);
-  dd4hep::IDDescriptor desc ("desc", hcal_descstr);
+  dd4hep::IDDescriptor desc ("desc", hcalb_descstr);
   auto decoder = desc.decoder();
 
   static const unsigned nphi = 256;
-  static const std::pair<unsigned, unsigned> thetas[hcal_numLayers] = {
+  static const std::pair<unsigned, unsigned> thetas[hcalb_numLayers] = {
     { 1, 70 }, // 0
     { 1, 70 }, // 1
     { 2, 69 }, // 2
@@ -38,7 +38,7 @@ std::vector<mapkey_t> make_hcal_ids()
   size_t phi_index = decoder->index ("phi");
   size_t theta_index  = decoder->index ("theta");
 
-  for (unsigned int ilayer = 0; ilayer < hcal_numLayers; ilayer++) {
+  for (unsigned int ilayer = 0; ilayer < hcalb_numLayers; ilayer++) {
     mapkey_t id = 0;
     decoder->set (id, "system", 8);
     decoder->set (id, "layer", ilayer);

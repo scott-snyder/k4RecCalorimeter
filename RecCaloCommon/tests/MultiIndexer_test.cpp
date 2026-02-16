@@ -19,8 +19,8 @@ using mapkey_span = std::span<const mapkey_t>;
 
 
 // Helpers to make lists of IDS.
-#include "make_ecal_ids.icc"
-#include "make_hcal_ids.icc"
+#include "make_ecalb_ids.icc"
+#include "make_hcalb_ids.icc"
 
 
 class DummyCellConstantsSvc : public k4::recCalo::ICaloCellConstantsSvc
@@ -60,33 +60,33 @@ bool DummyCellConstantsSvc::putAnyObj (const std::string& key, std::any&& obj)
 //************************************************************************
 
 
-void test1 (mapkey_span ecal_ids, mapkey_span hcal_ids)
+void test1 (mapkey_span ecalb_ids, mapkey_span hcalb_ids)
 {
   using Indexer_t = k4::recCalo::IDMapIndexer<3>;
   using IDMap_t = Indexer_t::IDMap_t;
   using FieldDesc_t = Indexer_t::FieldDesc_t;
 
-  dd4hep::IDDescriptor ecal_desc ("desc", ecal_descstr);
-  std::vector<FieldDesc_t> ecal_fielddescs
+  dd4hep::IDDescriptor ecalb_desc ("desc", ecalb_descstr);
+  std::vector<FieldDesc_t> ecalb_fielddescs
     {
-      IDMap_t::makeDesc (*ecal_desc.field ("layer")),
-      IDMap_t::makeDesc (*ecal_desc.field ("theta")),
-      IDMap_t::makeDesc (*ecal_desc.field ("module")),
+      IDMap_t::makeDesc (*ecalb_desc.field ("layer")),
+      IDMap_t::makeDesc (*ecalb_desc.field ("theta")),
+      IDMap_t::makeDesc (*ecalb_desc.field ("module")),
     };
 
-  dd4hep::IDDescriptor hcal_desc ("desc", hcal_descstr);
-  std::vector<FieldDesc_t> hcal_fielddescs
+  dd4hep::IDDescriptor hcalb_desc ("desc", hcalb_descstr);
+  std::vector<FieldDesc_t> hcalb_fielddescs
     {
-      IDMap_t::makeDesc (*hcal_desc.field ("layer")),
-      IDMap_t::makeDesc (*hcal_desc.field ("theta")),
-      IDMap_t::makeDesc (*hcal_desc.field ("phi")),
+      IDMap_t::makeDesc (*hcalb_desc.field ("layer")),
+      IDMap_t::makeDesc (*hcalb_desc.field ("theta")),
+      IDMap_t::makeDesc (*hcalb_desc.field ("phi")),
     };
 
-  Indexer_t ecal_map (4, 4, ecal_fielddescs, ecal_ids);
-  Indexer_t hcal_map (8, 4, hcal_fielddescs, hcal_ids);
+  Indexer_t ecalb_map (4, 4, ecalb_fielddescs, ecalb_ids);
+  Indexer_t hcalb_map (8, 4, hcalb_fielddescs, hcalb_ids);
 
   DummyCellConstantsSvc constsSvc;
-  std::vector<const k4::recCalo::ICaloIndexer*> indexers { &ecal_map, &hcal_map };
+  std::vector<const k4::recCalo::ICaloIndexer*> indexers { &ecalb_map, &hcalb_map };
   k4::recCalo::MultiIndexer map (4, indexers, constsSvc);
   assert (map.detIDs().size() == 2);
   assert (map.detIDs()[0] == 4);
@@ -94,9 +94,9 @@ void test1 (mapkey_span ecal_ids, mapkey_span hcal_ids)
   assert (map.detIDBits() == 4);
 
   std::span<const uint64_t> cell_ids = map.cellIDs();
-  assert (cell_ids.size() == ecal_ids.size() + hcal_ids.size());
-  assert (std::equal (ecal_ids.begin(), ecal_ids.end(), cell_ids.begin()));
-  assert (std::equal (hcal_ids.begin(), hcal_ids.end(), cell_ids.begin() + ecal_ids.size()));
+  assert (cell_ids.size() == ecalb_ids.size() + hcalb_ids.size());
+  assert (std::equal (ecalb_ids.begin(), ecalb_ids.end(), cell_ids.begin()));
+  assert (std::equal (hcalb_ids.begin(), hcalb_ids.end(), cell_ids.begin() + ecalb_ids.size()));
 
   size_t ncell = cell_ids.size();
   for (size_t i = 0; i < ncell; i++) {
@@ -132,8 +132,8 @@ void test1 (mapkey_span ecal_ids, mapkey_span hcal_ids)
   EXPECT_EXCEPTION( "MultiIndexerException: bad indexer returns detIDs of size 2",
                     k4::recCalo::MultiIndexer map3 (4, indexers3, constsSvc) );
 
-  Indexer_t ecal_map4 (40, 10, ecal_fielddescs, ecal_ids);
-  std::vector<const k4::recCalo::ICaloIndexer*> indexers4 { &ecal_map4 };
+  Indexer_t ecalb_map4 (40, 10, ecalb_fielddescs, ecalb_ids);
+  std::vector<const k4::recCalo::ICaloIndexer*> indexers4 { &ecalb_map4 };
   EXPECT_EXCEPTION( "MultiIndexerException: bad indexer returns out-of-range detID 40",
                     k4::recCalo::MultiIndexer map4 (4, indexers4, constsSvc) );
 }
@@ -141,8 +141,8 @@ void test1 (mapkey_span ecal_ids, mapkey_span hcal_ids)
 
 int main()
 {
-  std::vector<mapkey_t> ecal_ids = make_ecal_ids();
-  std::vector<mapkey_t> hcal_ids = make_hcal_ids();
-  test1 (ecal_ids, hcal_ids);
+  std::vector<mapkey_t> ecalb_ids = make_ecalb_ids();
+  std::vector<mapkey_t> hcalb_ids = make_hcalb_ids();
+  test1 (ecalb_ids, hcalb_ids);
   return 0;
 }
