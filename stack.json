@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "169dd3efec1e7c20086bafa74a7aeaf9dd4d9e1c",
-  "head": "81aa8eec3833189e00e1030e24612d93268e46bc",
+  "prev": "58278132aead5d33a130c6cfcb868c9b0c80993c",
+  "head": "782bc8ef118bb6b26f531fa173ec86c47f2606ba",
   "applied": [
     "subdetVolman",
     "cellPositionsConst2",
@@ -26,11 +26,11 @@
     "noise1b",
     "noise1c",
     "noise3",
-    "caloCellConstantsSvc"
+    "caloCellConstantsSvc",
+    "caloCellIndexerSvc",
+    "cellsInConst"
   ],
   "unapplied": [
-    "caloCellIndexerSvc",
-    "cellsInConst",
     "ecalbarrelIndexer",
     "hcalIndexer",
     "cellposIndex",
@@ -122,10 +122,10 @@
       "oid": "81aa8eec3833189e00e1030e24612d93268e46bc"
     },
     "caloCellIndexerSvc": {
-      "oid": "e8647b977ba998e20986a3ee192e38c8a35bed75"
+      "oid": "95477322f555226079f97282dca25304e244e4a9"
     },
     "cellsInConst": {
-      "oid": "69d1d5e42e37f2d54606932715e85c5fcc198647"
+      "oid": "782bc8ef118bb6b26f531fa173ec86c47f2606ba"
     },
     "ecalbarrelIndexer": {
       "oid": "3c67a6aedc195d1242da9b0ca9b76f237eb8a277"
