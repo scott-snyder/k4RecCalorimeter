@@ -1,3 +1,12 @@
+// This file's extension implies that it's C, but it's really -*- C++ -*-.
+/**
+ * @file RecFCCeeCalorimeter/src/components/HCalPhiThetaCaloTool.h
+ * @author scott snyder <snyder@bnl.gov>
+ * @date Feb, 2026
+ * @brief Calorimeter tool for Allegro HCal.
+ */
+
+
 #ifndef RECFCCEECALORIMETER_HCALPHITHETACALOTOOL_H
 #define RECFCCEECALORIMETER_HCALPHITHETACALOTOOL_H
 
@@ -5,7 +14,7 @@
 
 /** @class HCalPhiThetaCaloTool
  *
- *  Generate all cell IDs for HCal.
+ *  Manage IDs for HCal.
  */
 class HCalPhiThetaCaloTool : public CalorimeterToolBase
 {
