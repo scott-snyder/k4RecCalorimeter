@@ -76,6 +76,7 @@ if(BUILD_TESTING)
                     SOURCES
                     tests/src/TubeLayerModuleThetaCaloToolTestAlg.cpp
                     tests/src/HCalPhiThetaCaloToolTestAlg.cpp
+                    tests/src/ECalEndcapTurbineCaloToolTestAlg.cpp
                     LINK k4FWCore::k4FWCore
                     k4FWCore::k4Interface
                     Gaudi::GaudiKernel
@@ -88,9 +89,15 @@ if(BUILD_TESTING)
           )
   set_test_env(TubeLayerModuleThetaCaloTool_test)
 
-  add_test(NAME HCalPhiThetaCaloTool_test
-          COMMAND k4run ${PROJECT_SOURCE_DIR}/RecFCCeeCalorimeter/tests/options/HCalPhiThetaCaloTool_test.py
-          WORKING_DIRECTORY ${PROJECT_BINARY_DIR}/Testing/Temporary
+  add_test( NAME HCalPhiThetaCaloTool_test
+            COMMAND k4run ${PROJECT_SOURCE_DIR}/RecFCCeeCalorimeter/tests/options/HCalPhiThetaCaloTool_test.py
+            WORKING_DIRECTORY ${PROJECT_BINARY_DIR}/Testing/Temporary
         )
   set_test_env(HCalPhiThetaCaloTool_test)
+
+  add_test( NAME ECalEndcapTurbineCaloTool_test
+            COMMAND k4run ${PROJECT_SOURCE_DIR}/RecFCCeeCalorimeter/tests/options/ECalEndcapTurbineCaloTool_test.py
+            WORKING_DIRECTORY ${PROJECT_BINARY_DIR}/Testing/Temporary
+          )
+  set_test_env(ECalEndcapTurbineCaloTool_test)
 endif()
