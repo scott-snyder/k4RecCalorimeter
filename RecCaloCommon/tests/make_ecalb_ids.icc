@@ -1,5 +1,5 @@
 /**
- * @file RecCaloCommon/tests/make_ecal_ids.cpp
+ * @file RecCaloCommon/tests/make_ecalb_ids.cpp
  * @author scott snyder <snyder@bnl.gov>
  * @date Feb, 2026
  * @brief Helper to make a list of IDs for testing.
@@ -7,15 +7,15 @@
  */
 
 
-const unsigned int ecal_numLayers = 11;
-const char* const ecal_descstr = "system:4,cryo:1,type:3,subtype:3,layer:8,module:11,theta:10";
+const unsigned int ecalb_numLayers = 11;
+const char* const ecalb_descstr = "system:4,cryo:1,type:3,subtype:3,layer:8,module:11,theta:10";
 
 
-std::vector<mapkey_t> make_ecal_ids()
+std::vector<mapkey_t> make_ecalb_ids()
 {
   std::vector<mapkey_t> ids;
   ids.reserve (2041344);
-  dd4hep::IDDescriptor desc ("desc", ecal_descstr);
+  dd4hep::IDDescriptor desc ("desc", ecalb_descstr);
   auto decoder = desc.decoder();
 
   static const unsigned module_high = 1534;
@@ -27,7 +27,7 @@ std::vector<mapkey_t> make_ecal_ids()
   size_t module_index = decoder->index ("module");
   size_t theta_index  = decoder->index ("theta");
 
-  for (unsigned int ilayer = 0; ilayer < ecal_numLayers; ilayer++) {
+  for (unsigned int ilayer = 0; ilayer < ecalb_numLayers; ilayer++) {
     mapkey_t id = 0;
     decoder->set (id, "system", 4);
     decoder->set (id, "cryo", 0);

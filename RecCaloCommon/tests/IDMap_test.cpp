@@ -26,8 +26,9 @@ using mapkey_span = std::span<const mapkey_t>;
 using payload_t = uint32_t;
 
 
-// Helper to make list of IDS.
-#include "make_ecal_ids.icc"
+// Helpers to make lists of IDS.
+#include "make_ecalb_ids.icc"
+#include "make_ecale_ids.icc"
 
 
 //************************************************************************
@@ -68,7 +69,7 @@ void test1 (mapkey_span ids)
 {
   using Map_t = k4::recCalo::IDMap<payload_t>;
   using FieldDesc_t = Map_t::FieldDesc_t;
-  dd4hep::IDDescriptor desc ("desc", ecal_descstr);
+  dd4hep::IDDescriptor desc ("desc", ecalb_descstr);
 
   // Make the fields used by the map.
   std::vector<FieldDesc_t> fielddescs;
@@ -97,7 +98,7 @@ void test1 (mapkey_span ids)
   unsigned ntry = 0;
   for (size_t i = 0; i < 1000; i++) {
     mapkey_t id = ids[0];
-    decoder->set (id, layer_index, randi_seed (seed, ecal_numLayers + 2));
+    decoder->set (id, layer_index, randi_seed (seed, ecalb_numLayers + 2));
     decoder->set (id, module_index, randi_seed (seed, nmodule));
     decoder->set (id, theta_index, randi_seed (seed, ntheta));
     if (!std::ranges::binary_search (ids, id)) {
@@ -113,39 +114,75 @@ void test1 (mapkey_span ids)
 // Run performance tests comparing IDMap with other map types.
 
 
-// -- IDMap test jig
+// -- IDMap test jigs
 
+
+using FieldDesc_t = k4::recCalo::IDMap<payload_t>::FieldDesc_t;
 
 template<class IDMAP>
-class IDMapLookup
+class IDMapLookupB
   : public IDMAP
 {
 public:
   constexpr static payload_t INVALID = static_cast<payload_t> (-1);
   using FieldDesc_t = typename IDMAP::FieldDesc_t;
-  IDMapLookup (mapkey_span ids);
   static std::vector<FieldDesc_t> fieldDescs();
+  IDMapLookupB (mapkey_span ids)
+    : IDMAP (fieldDescs(), INVALID, ids, [](size_t i) { return i; })
+  { }
 };
 
 
 template<class IDMAP>
-IDMapLookup<IDMAP>::IDMapLookup (mapkey_span ids)
-  : IDMAP (fieldDescs(), INVALID,ids, [](size_t i) { return i; })
-{
-}
-
-
-template<class IDMAP>
-auto IDMapLookup<IDMAP>::fieldDescs() -> std::vector<FieldDesc_t>
+auto IDMapLookupB<IDMAP>::fieldDescs() -> std::vector<FieldDesc_t>
 {
   std::vector<FieldDesc_t> fielddescs;
-  dd4hep::IDDescriptor desc ("desc", ecal_descstr);
+  dd4hep::IDDescriptor desc ("desc", ecalb_descstr);
   auto pushdesc = [&] (const std::string s) {
     const dd4hep::BitFieldElement* bfe = desc.field (s);
     fielddescs.emplace_back (bfe->offset(), bfe->width());
   };
   pushdesc ("layer");
   pushdesc ("theta");
+  pushdesc ("module");
+  return fielddescs;
+}
+
+
+template<class IDMAP>
+class IDMapLookupE
+  : public IDMAP
+{
+public:
+  constexpr static payload_t INVALID = static_cast<payload_t> (-1);
+  using FieldDesc_t = typename IDMAP::FieldDesc_t;
+  static std::vector<FieldDesc_t> fieldDescs();
+  IDMapLookupE (mapkey_span ids)
+    : IDMAP (fieldDescs(), INVALID, ids, [](size_t i) { return i; })
+  { }
+};
+
+
+template<class IDMAP>
+auto IDMapLookupE<IDMAP>::fieldDescs() -> std::vector<FieldDesc_t>
+{
+  std::vector<FieldDesc_t> fielddescs;
+  dd4hep::IDDescriptor desc ("desc", ecale_descstr);
+  auto pushdesc = [&] (const std::string s) {
+    const dd4hep::BitFieldElement* bfe = desc.field (s);
+    fielddescs.emplace_back (bfe->offset(), bfe->width());
+  };
+
+
+  // Combine side+wheel into a single field.
+  const dd4hep::BitFieldElement* bfe_side = desc.field ("side");
+  const dd4hep::BitFieldElement* bfe_wheel = desc.field ("wheel");
+  fielddescs.emplace_back (std::min(bfe_side->offset(), bfe_wheel->offset()),
+                           bfe_side->width() + bfe_wheel->width());
+                                    
+
+  pushdesc ("z");
+  pushdesc ("rho");
   pushdesc ("module");
   return fielddescs;
 }
@@ -482,18 +519,26 @@ size_t dotest (const char* name, mapkey_span ids, size_t n)
 }
 
 
-size_t perftest (mapkey_span ids, size_t n)
+size_t perftest (bool barrel, mapkey_span ids, size_t n)
 {
   using IDMap_t = k4::recCalo::IDMap<payload_t>;
-  using IDMapN_t = k4::recCalo::IDMapN<payload_t, 3>;
+  using IDMap3_t = k4::recCalo::IDMapN<payload_t, 3>;
+  using IDMap4_t = k4::recCalo::IDMapN<payload_t, 4>;
 
   size_t ret = 0;  // To prevent tests from being optimized away...
   ret += dotest<TesterBase> ("null", ids, n);
-  ret += dotest<Tester<IDMapLookup<IDMap_t> > > ("IDMap", ids, n);
-  ret += dotest<Tester<IDMapLookup<IDMapN_t> > > ("IDMapN", ids, n);
+  if (barrel) {
+    ret += dotest<Tester<IDMapLookupB<IDMap_t> > > ("IDMapB", ids, n);
+    ret += dotest<Tester<IDMapLookupB<IDMap3_t> > > ("IDMapB3", ids, n);
+  }
+  else {
+    ret += dotest<Tester<IDMapLookupE<IDMap_t> > > ("IDMapE", ids, n);
+    ret += dotest<Tester<IDMapLookupE<IDMap4_t> > > ("IDMapE4", ids, n);
+  }
   ret += dotest<Tester<MapLookup> > ("std::map", ids, n);
   ret += dotest<Tester<UOMapLookup> > ("std::unordered_map", ids, n);
-  ret += dotest<Tester<ArrLookup> > ("simple array", ids, n);
+  if (barrel)
+    ret += dotest<Tester<ArrLookup> > ("simple array", ids, n);
   return ret;
 }
 
@@ -503,16 +548,25 @@ size_t perftest (mapkey_span ids, size_t n)
 
 int main (int argc, char** argv)
 {
-  std::vector<mapkey_t> ids = make_ecal_ids();
+  std::vector<mapkey_t> ecale_ids = make_ecale_ids();
 
   if (argc >= 2 && std::string(argv[1]).starts_with ("--perf")) {
     size_t n = 0;
     if (argc >= 3) n = atoi (argv[2]);
     if (n == 0) n = 100;
-    perftest (ids, n);
+    if (std::string(argv[1]).starts_with ("--perf-endcap")) {
+      std::vector<mapkey_t> ids = make_ecale_ids();
+      perftest (false, ids, n);
+    }
+    else {
+      std::vector<mapkey_t> ids = make_ecalb_ids();
+      perftest (true, ids, n);
+    }
   }
-  else
+  else {
+    std::vector<mapkey_t> ids = make_ecalb_ids();
     test1 (ids);
+  }
 
   return 0;
 }
