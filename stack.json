@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "5c08c9b7532e371e3323a9cb6d495878f008f77c",
+  "prev": "357f50f43b4ed9751522c1ed6d25e97fdb948f15",
   "head": "4bfe732ca1f967b629476b06a4367636ec83e8b5",
   "applied": [
     "subdetVolman",
@@ -32,7 +32,6 @@
     "ecalbarrelIndexer"
   ],
   "unapplied": [
-    "hcalIndexer",
     "cellposIndex",
     "indexingConfig",
     "xtalkIndex",
@@ -129,9 +128,6 @@
     },
     "ecalbarrelIndexer": {
       "oid": "4bfe732ca1f967b629476b06a4367636ec83e8b5"
-    },
-    "hcalIndexer": {
-      "oid": "1080ad68b30120a3518dc33df3b5504f62c964c1"
     },
     "cellposIndex": {
       "oid": "50947595f873d3f464d06f2d0cce853a03ea3ee7"
