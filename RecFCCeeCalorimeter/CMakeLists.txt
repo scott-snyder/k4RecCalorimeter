@@ -83,3 +83,8 @@ add_test(NAME HCalPhiThetaCaloTool_test
          COMMAND k4run ${PROJECT_SOURCE_DIR}/RecFCCeeCalorimeter/tests/options/HCalPhiThetaCaloTool_test.py
          WORKING_DIRECTORY ${PROJECT_BINARY_DIR}/Testing/Temporary
 )
+
+add_test(NAME ECalEndcapTurbineCaloTool_test
+         COMMAND k4run ${PROJECT_SOURCE_DIR}/RecFCCeeCalorimeter/tests/options/ECalEndcapTurbineCaloTool_test.py
+         WORKING_DIRECTORY ${PROJECT_BINARY_DIR}/Testing/Temporary
+)
