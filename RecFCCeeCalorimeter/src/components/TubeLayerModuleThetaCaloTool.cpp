@@ -16,6 +16,8 @@ DECLARE_COMPONENT(TubeLayerModuleThetaCaloTool)
 
 StatusCode TubeLayerModuleThetaCaloTool::collectCells(std::vector<uint64_t>& cells) const
 {
+  cells.reserve (2041344);
+
   // Get the total number of active volumes in the geometry
   unsigned int numLayers = m_activeVolumesNumber;
   info() << "Number of active layers " << numLayers << endmsg;
