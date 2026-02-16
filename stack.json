@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "c240d6aaaf8f342b7ad049305927ac2726fde9cb",
-  "head": "e474d2690846ceb0432dba3b0600274f2b066319",
+  "prev": "c3984a2e3b0da57e8041deb3552dacc09ecbca2c",
+  "head": "9e82e17504ee0c906aa3aa675348180b31d4e863",
   "applied": [
     "subdetVolman",
     "cellPositionsConst2",
@@ -31,7 +31,8 @@
     "cellsInConst",
     "ecalbarrelIndexer",
     "hcalIndexer",
-    "cellposIndex"
+    "cellposIndex",
+    "ecalendcapTool"
   ],
   "unapplied": [
     "indexingConfig",
@@ -135,6 +136,9 @@
     },
     "cellposIndex": {
       "oid": "e474d2690846ceb0432dba3b0600274f2b066319"
+    },
+    "ecalendcapTool": {
+      "oid": "9e82e17504ee0c906aa3aa675348180b31d4e863"
     },
     "indexingConfig": {
       "oid": "1d178a34e967ba593a9f668b68fff03bc69e2395"
