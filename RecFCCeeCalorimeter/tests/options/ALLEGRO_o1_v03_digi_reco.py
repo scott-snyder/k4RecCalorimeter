@@ -187,7 +187,8 @@ calibEcalEndcap = CalibrateInLayersTool("CalibrateECalEndcap",
                                         layerFieldName="layer")
 
 # Indexing service.
-from Configurables import TubeLayerModuleThetaCaloTool, k4__recCalo__CaloCellIndexerSvc
+geotools = []
+from Configurables import TubeLayerModuleThetaCaloTool
 ecalBarrelGeometryTool = TubeLayerModuleThetaCaloTool("ecalBarrelGeometryTool",
                                                       readoutName=ecalBarrelReadoutName,
                                                       activeVolumeName="LAr_sensitive",
@@ -196,7 +197,25 @@ ecalBarrelGeometryTool = TubeLayerModuleThetaCaloTool("ecalBarrelGeometryTool",
                                                       fieldNames=["system"],
                                                       fieldValues=[IDs["ECAL_Barrel"]],
                                                       OutputLevel=INFO)
-ExtSvc += [k4__recCalo__CaloCellIndexerSvc (GeoTools = [ecalBarrelGeometryTool])]
+geotools += [ecalBarrelGeometryTool]
+
+from Configurables import ECalEndcapTurbineCaloTool
+ecalEndcapGeometryTool = ECalEndcapTurbineCaloTool ("ecalEndcapGeometryTool",
+                                                    readoutName=ecalEndcapReadoutName)
+geotools += [ecalEndcapGeometryTool]
+
+if runHCal:
+    from Configurables import HCalPhiThetaCaloTool
+    hcalBarrelGeometryTool = HCalPhiThetaCaloTool ("hcalBarrelGeometryTool",
+                                                   readoutName=hcalBarrelReadoutName)
+    geotools += [hcalBarrelGeometryTool]
+    hcalEndcapGeometryTool = HCalPhiThetaCaloTool ("hcalEndcapGeometryTool",
+                                                   readoutName=hcalEndcapReadoutName)
+    geotools += [hcalEndcapGeometryTool]
+    
+
+from Configurables import k4__recCalo__CaloCellIndexerSvc
+ExtSvc += [k4__recCalo__CaloCellIndexerSvc (GeoTools = geotools)]
 
 if runHCal:
     from Configurables import CalibrateCaloHitsTool
