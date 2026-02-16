@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "58278132aead5d33a130c6cfcb868c9b0c80993c",
+  "prev": "574b7845e0068121335269d0e0d34604b6b72ef8",
   "head": "782bc8ef118bb6b26f531fa173ec86c47f2606ba",
   "applied": [
     "subdetVolman",
@@ -31,7 +31,6 @@
     "cellsInConst"
   ],
   "unapplied": [
-    "ecalbarrelIndexer",
     "hcalIndexer",
     "cellposIndex",
     "indexingConfig",
@@ -126,9 +125,6 @@
     },
     "cellsInConst": {
       "oid": "782bc8ef118bb6b26f531fa173ec86c47f2606ba"
-    },
-    "ecalbarrelIndexer": {
-      "oid": "3c67a6aedc195d1242da9b0ca9b76f237eb8a277"
     },
     "hcalIndexer": {
       "oid": "1080ad68b30120a3518dc33df3b5504f62c964c1"
