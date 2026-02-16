@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "8a6d89657f4e6a0d2dd008c924c1bad4928acfa7",
-  "head": "567152c00f9aa68121c3c5a8382645a2110eb260",
+  "prev": "ef1784fb508a7f8968c6be63c08031f5b1bb16a0",
+  "head": "7f75466a1ea106169a2b71bb003c2a3e788c83f0",
   "applied": [
     "testdir",
     "xtalk",
@@ -46,12 +46,13 @@
     "sortnoise",
     "repnoise",
     "caloType",
-    "createCaloCells",
+    "createCaloCells"
+  ],
+  "unapplied": [
     "move-check",
     "check-deprecated",
     "check-remove"
   ],
-  "unapplied": [],
   "hidden": [],
   "patches": {
     "calib2": {
