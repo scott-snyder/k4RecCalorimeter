@@ -37,8 +37,6 @@ StatusCode CaloTopoClusterFCCee::initialize() {
   }
 
   K4_GAUDI_CHECK( m_indexerSvc.retrieve() );
-  m_indexer = m_indexerSvc->indexer (m_caloIDs.value());
-  K4_GAUDI_CHECK( m_indexer != nullptr );
 
   // create handles for input cell collections
   for (const auto& col : m_cellCollections) {
@@ -128,39 +126,47 @@ StatusCode CaloTopoClusterFCCee::execute(const EventContext&) const {
   }
 
   // Get input collection with calorimeter cells
-  if (m_cellCollectionHandles.size() != 1) std::abort();
-  const edm4hep::CalorimeterHitCollection* inCells = m_cellCollectionHandles[0]->get();
-  
-#if 0
-  edm4hep::CalorimeterHitCollection* inCells = new edm4hep::CalorimeterHitCollection();
+  std::vector<int> caloIDs;
+  edm4hep::CalorimeterHitCollection inCells;
   for (size_t ih = 0; ih < m_cellCollectionHandles.size(); ih++) {
     verbose() << "Processing collection " << ih << endmsg;
     const edm4hep::CalorimeterHitCollection* coll = m_cellCollectionHandles[ih]->get();
     for (const auto& hit : *coll) {
+      int caloID = m_decoder->get(hit.getCellID(), m_indexSystem);
+      if (std::ranges::find (caloIDs, caloID) == caloIDs.end()) {
+        caloIDs.push_back (caloID);
+      }
       auto newCell = hit.clone();
       newCell.setType(0); // topoclustering will set the type of clustered cells to 1-2-3 depending whether they are
                           // seed/neighbours/last neighbours
       // note that this overwrites the type information from the digitiser, which encodes calorimeter type / layout /
       // layer
-      inCells->push_back(newCell);
+      inCells.push_back(newCell);
     }
   }
-#endif
-  if (inCells->empty()) {
+  if (inCells.empty()) {
     debug() << "No active cells, skipping event..." << endmsg;
     return StatusCode::SUCCESS;
   }
 
-  debug() << "Number of active cells                               : " << inCells->size() << endmsg;
+  const k4::recCalo::ICaloIndexer* indexer = m_indexerSvc->indexer (caloIDs);
+  if (indexer == nullptr) {
+    error() << "Can't find indexer for detector IDs";
+    for (int id : caloIDs) error() << " " << id;
+    error() << "." << endmsg;
+    return StatusCode::FAILURE;
+  }
+
+  debug() << "Number of active cells                               : " << inCells.size() << endmsg;
 
   // Find seeds
-  edm4hep::CalorimeterHitCollection seedCells = findSeeds(inCells);
+  edm4hep::CalorimeterHitCollection seedCells = findSeeds(&inCells);
   debug() << "Number of seeds found                                : " << seedCells.size() << endmsg;
 
   // Build protoclusters (find neighbouring cells)
   std::map<uint32_t, edm4hep::CalorimeterHitCollection> protoClusters;
   {
-    StatusCode sc = buildProtoClusters(seedCells, inCells, protoClusters);
+    StatusCode sc = buildProtoClusters(*indexer, seedCells, &inCells, protoClusters);
     if (sc.isFailure()) {
       error() << "Unable to build the protoclusters!" << endmsg;
       return StatusCode::FAILURE;
@@ -262,11 +268,10 @@ StatusCode CaloTopoClusterFCCee::execute(const EventContext&) const {
   debug() << "Total energy of clusters above threshold:                           " << checkTotEnergyAboveThreshold
           << endmsg;
   if(m_createClusterCellCollection){
-    debug() << "Leftover cells :                                    " << inCells->size() - outClusterCells->size()
+    debug() << "Leftover cells :                                    " << inCells.size() - outClusterCells->size()
             << endmsg;
   }
 
-  //delete inCells;
   return StatusCode::SUCCESS;
 }
 
@@ -314,7 +319,8 @@ CaloTopoClusterFCCee::findSeeds(const edm4hep::CalorimeterHitCollection* allCell
 }
 
 StatusCode
-CaloTopoClusterFCCee::buildProtoClusters(const edm4hep::CalorimeterHitCollection& seedCells,
+CaloTopoClusterFCCee::buildProtoClusters(const k4::recCalo::ICaloIndexer& indexer,
+                                         const edm4hep::CalorimeterHitCollection& seedCells,
                                          const edm4hep::CalorimeterHitCollection* allCells,
                                          std::map<uint32_t, edm4hep::CalorimeterHitCollection>& protoClusters) const {
 
@@ -324,11 +330,11 @@ CaloTopoClusterFCCee::buildProtoClusters(const edm4hep::CalorimeterHitCollection
   // > 0: cell index + 1
   // < 0: -cluster index - 1
   std::vector<int32_t> cellsMap;
-  cellsMap.resize (m_indexer->cellIDs().size());
+  cellsMap.resize (indexer.cellIDs().size());
   size_t ncells = allCells->size();
   for (size_t icell = 0; icell < ncells; ++icell) {
     // Could avoid this if we know that the container is complete and sorted
-    unsigned ndx = m_indexer->index ((*allCells)[icell].getCellID());
+    unsigned ndx = indexer.index ((*allCells)[icell].getCellID());
     cellsMap.at(ndx) = icell+1;
   }
   
@@ -338,7 +344,7 @@ CaloTopoClusterFCCee::buildProtoClusters(const edm4hep::CalorimeterHitCollection
     seedCounter++;
     verbose() << "Looking at seed: " << seedCounter << endmsg;
     auto seedId = seedCell.getCellID();
-    unsigned ndx = m_indexer->index(seedId);
+    unsigned ndx = indexer.index(seedId);
     if (cellsMap.at(ndx) < 0) {
       verbose() << "Seed is already assigned to another cluster!" << endmsg;
       continue;
@@ -354,7 +360,7 @@ CaloTopoClusterFCCee::buildProtoClusters(const edm4hep::CalorimeterHitCollection
 
     std::vector<std::vector<std::pair<uint64_t, uint32_t>>> nextNeighbours(100);
     nextNeighbours[0] =
-        searchForNeighbours(seedId, clusterId, m_neighbourSigma, cellsMap, *allCells, protoClusters, true);
+        searchForNeighbours(indexer, seedId, clusterId, m_neighbourSigma, cellsMap, *allCells, protoClusters, true);
 
     // first loop over seeds neighbours
     verbose() << "Found " << nextNeighbours[0].size() << " neighbours.." << endmsg;
@@ -370,7 +376,7 @@ CaloTopoClusterFCCee::buildProtoClusters(const edm4hep::CalorimeterHitCollection
           return StatusCode::FAILURE;
         }
         verbose() << "Next neighbours assigned to cluster ID: " << clusterId << endmsg;
-        auto additionalNeighbours = searchForNeighbours(id.first, clusterId, m_neighbourSigma, cellsMap, *allCells,
+        auto additionalNeighbours = searchForNeighbours(indexer, id.first, clusterId, m_neighbourSigma, cellsMap, *allCells,
                                                         protoClusters, true);
         nextNeighbours[it].insert(nextNeighbours[it].end(), additionalNeighbours.begin(), additionalNeighbours.end());
       }
@@ -384,7 +390,7 @@ CaloTopoClusterFCCee::buildProtoClusters(const edm4hep::CalorimeterHitCollection
         if (cell.getType() <= 2) {
           verbose() << "Add neighbours of " << cell.getCellID()
                     << " in last round with thr = " << m_lastNeighbourSigma.value() << " x sigma." << endmsg;
-          auto lastNeighours = searchForNeighbours(cell.getCellID(), clusterId, m_lastNeighbourSigma, cellsMap, *allCells,
+          auto lastNeighours = searchForNeighbours(indexer, cell.getCellID(), clusterId, m_lastNeighbourSigma, cellsMap, *allCells,
                                                    protoClusters, false);
         }
       }
@@ -395,6 +401,7 @@ CaloTopoClusterFCCee::buildProtoClusters(const edm4hep::CalorimeterHitCollection
 }
 
 std::vector<std::pair<uint64_t, uint32_t>> CaloTopoClusterFCCee::searchForNeighbours(
+    const k4::recCalo::ICaloIndexer& indexer,
     const uint64_t aCellId, uint& aClusterID, int aNumSigma,
     std::vector<int32_t>& cellsMap,
     const edm4hep::CalorimeterHitCollection& allCells,
@@ -430,7 +437,7 @@ std::vector<std::pair<uint64_t, uint32_t>> CaloTopoClusterFCCee::searchForNeighb
   verbose() << "For cluster: " << aClusterID << endmsg;
   // loop over neighbours
   for (const auto& neighbourID : neighboursVec) {
-    unsigned neighbourIndex = m_indexer->index (neighbourID);
+    unsigned neighbourIndex = indexer.index (neighbourID);
     if (neighbourIndex == static_cast<unsigned>(-1)) continue;
 
     // If cell is hit.. and is not assigned to a cluster
@@ -478,7 +485,7 @@ std::vector<std::pair<uint64_t, uint32_t>> CaloTopoClusterFCCee::searchForNeighb
       }
       // Fill all cells into cluster, and assigned cells to new cluster
       for (const auto& cell : protoClusters[aClusterID]) {
-        unsigned ndx = m_indexer->index (cell.getCellID());
+        unsigned ndx = indexer.index (cell.getCellID());
         cellsMap.at(ndx) = -clusterIDToMergeTo - 1;
         // make sure that already assigned cells are not added
         if (cellIdInColl(cell.getCellID(), protoClusters[clusterIDToMergeTo])) {

@@ -79,7 +79,8 @@ public:
    *   @param[in] protoClusters, map that is filled with clusterID pointing to the associated cells, in a pair of
    * clsuter index and cell collection
    */
-  StatusCode buildProtoClusters(const edm4hep::CalorimeterHitCollection& seedCells,
+  StatusCode buildProtoClusters(const k4::recCalo::ICaloIndexer& indexer,
+                                const edm4hep::CalorimeterHitCollection& seedCells,
                                 const edm4hep::CalorimeterHitCollection* allCells,
                                 std::map<uint32_t, edm4hep::CalorimeterHitCollection>& protoClusters) const;
   /** Search for neighbours and add them to preClusterCollection
@@ -95,6 +96,7 @@ public:
    * CaloTopoClusterFCCee::buildingProtoCluster. return vector of pairs with cellID and energy of found neighbours.
    */
   std::vector<std::pair<uint64_t, uint32_t>> searchForNeighbours(
+      const k4::recCalo::ICaloIndexer& indexer,
       const uint64_t aCellId, uint32_t& aClusterID, const int aNumSigma,
       std::vector<int32_t>& cellsMap,
       const edm4hep::CalorimeterHitCollection& allCells,
@@ -168,7 +170,5 @@ private:
   Gaudi::Property<int> m_detID { this, "DetID", 4 };
   ServiceHandle<k4::recCalo::ICaloCellIndexerSvc> m_indexerSvc
   { this, "CaloCellIndexerSvc", "k4::recCalo::CaloCellIndexerSvc", "" };
-
-  const k4::recCalo::ICaloIndexer* m_indexer = nullptr;
 };
 #endif /* RECFCCEECALORIMETER_CALOTOPOCLUSTERFCCEE_H */
