@@ -18,8 +18,9 @@ using mapkey_t = uint64_t; // libc defines key_t...
 using mapkey_span = std::span<const mapkey_t>;
 
 
-// Helper to make list of IDS.
-#include "make_ecal_ids.icc"
+// Helper to make lists of IDS.
+#include "make_ecalb_ids.icc"
+#include "make_ecale_ids.icc"
 
 
 #define EXPECT_EXCEPTION(EXC, CODE) do { \
@@ -37,21 +38,24 @@ using mapkey_span = std::span<const mapkey_t>;
 //************************************************************************
 
 
-void test1 (mapkey_span ids)
+// ecal barrel
+void test1()
 {
+  std::vector<mapkey_t> ids = make_ecalb_ids();
+
   using Indexer_t = k4::recCalo::IDMapIndexer<3>;
   using IDMap_t = Indexer_t::IDMap_t;
   using FieldDesc_t = Indexer_t::FieldDesc_t;
-  dd4hep::IDDescriptor desc ("desc", ecal_descstr);
+  dd4hep::IDDescriptor desc ("desc", ecalb_descstr);
 
-  std::vector<FieldDesc_t> fielddescs
+  std::vector<FieldDesc_t> fieldDescs
     {
       IDMap_t::makeDesc (*desc.field ("layer")),
       IDMap_t::makeDesc (*desc.field ("theta")),
       IDMap_t::makeDesc (*desc.field ("module")),
     };
 
-  Indexer_t map (4, 6, fielddescs, ids);
+  Indexer_t map (4, 6, fieldDescs, ids);
   assert (map.detIDs().size() == 1);
   assert (map.detIDs()[0] == 4);
   assert (map.detIDBits() == 6);
@@ -68,13 +72,52 @@ void test1 (mapkey_span ids)
 
   std::vector<mapkey_t> ids2 (ids.begin(), ids.end());
   ids2[10] += 1;
-  EXPECT_EXCEPTION( std::runtime_error, Indexer_t map2 (4, 6, fielddescs, ids2) );
+  EXPECT_EXCEPTION( std::runtime_error, Indexer_t map2 (4, 6, fieldDescs, ids2) );
+}
+
+
+// ecal endcap.  Here we need to ignore the layers field.
+void test2()
+{
+  std::vector<mapkey_t> ids = make_ecale_ids();
+
+  using Indexer_t = k4::recCalo::IDMapIndexer<4>;
+  using IDMap_t = Indexer_t::IDMap_t;
+  using FieldDesc_t = Indexer_t::FieldDesc_t;
+  dd4hep::IDDescriptor desc ("desc", ecale_descstr);
+
+  const dd4hep::BitFieldElement* bfe_side = desc.field ("side");
+  const dd4hep::BitFieldElement* bfe_wheel = desc.field ("wheel");
+
+  std::vector<FieldDesc_t> fieldDescs
+    { FieldDesc_t (std::min(bfe_side->offset(), bfe_wheel->offset()),
+                   bfe_side->width() + bfe_wheel->width()),
+      IDMap_t::makeDesc (*desc.field("rho")),
+      IDMap_t::makeDesc (*desc.field("z")),
+      IDMap_t::makeDesc (*desc.field("module"))
+    };
+  std::vector<FieldDesc_t> ignoredDescs
+    { IDMap_t::makeDesc (*desc.field("layer"))
+    };
+
+  Indexer_t map (4, 6, fieldDescs, ids, 0, ignoredDescs);
+  assert (map.detIDs().size() == 1);
+  assert (map.detIDs()[0] == 4);
+  assert (map.detIDBits() == 6);
+  assert (map.byteSize() > 100000);
+
+  size_t ncell = ids.size();
+  assert (map.cellIDs().size() == ncell);
+  for (size_t i = 0; i < ncell; i++) {
+    assert (map.cellIDs()[i] == ids[i]);
+    assert (map.index(ids[i]) == i);
+  }
 }
 
 
 int main()
 {
-  std::vector<mapkey_t> ids = make_ecal_ids();
-  test1 (ids);
+  test1();
+  test2();
   return 0;
 }

@@ -47,7 +47,8 @@ public:
    * @param detID ID of the detector that we index.
    * @param detIDBits Number of bits in the cell IDs for the detector ID.
    * @param fields Set of fields to use from the identifiers.
-   *               Must be sufficient to make identifiers unique.
+   *               Must be sufficient, along with @c ignoredFields,
+   *               to make identifiers unique.
    *               For best results, should be listed in order of increasing
    *               bit width.
    *               The size must be exactly @c NFIELDS.
@@ -56,17 +57,20 @@ public:
    * param sizeHint If non-zero, this is an estimate of the total size,
    *                in bytes, required by this mapping.  This will be
    *                used to reserve an appropriate size for the data vector.
+   * @param ignoredFields Additional fields to ignore in order to make
+   *               the identifiers unique.
    *
    * All entries in @c ids should be identical once the fields described
-   * in @c fields have been masked off; that is, any additional fields must
-   * be identical for all ids.  When we try to find an index, we first check
-   * that the extra bits match what we expect.
+   * in @c fields and @c ignoredFields have been masked off; that is, any
+   * additional fields must be identical for all ids.  When we try to find
+   * an index, we first check that the extra bits match what we expect.
    */
   IDMapIndexer (int detID,
                 size_t detIDBits,
                 std::span<const FieldDesc_t> fields,
                 std::span<const uint64_t> ids,
-                size_t sizeHint = 0);
+                size_t sizeHint = 0,
+                std::span<const FieldDesc_t> ignoredFields = {});
 
 
   /**
@@ -126,12 +130,17 @@ private:
 };
 
 
+/**
+ * @brief Constructor.
+ */
 template <unsigned NFIELDS>
 IDMapIndexer<NFIELDS>::IDMapIndexer (int detID,
                                      size_t detIDBits,
                                      std::span<const FieldDesc_t> fields,
                                      std::span<const uint64_t> ids,
-                                     size_t sizeHint /*= 0*/)
+                                     size_t sizeHint /*= 0*/,
+                                     std::span<const FieldDesc_t> ignoredFields /* = {}*/)
+                                     
   : m_map (fields, INVALID, ids,
            [](size_t i) { return i; },
            sizeHint),
@@ -140,12 +149,16 @@ IDMapIndexer<NFIELDS>::IDMapIndexer (int detID,
     m_cellIDs (ids)
 {
   m_otherFieldsMask = ~ static_cast<uint64_t>(0);
-  for (const FieldDesc_t& f : fields) {
-    unsigned offset = f.first;
-    unsigned width = f.second;
-    uint64_t fmask = (static_cast<uint64_t>(1) << width) - 1;
-    m_otherFieldsMask &= ~ (fmask << offset);
-  }
+  auto unmaskFields = [&] (std::span<const FieldDesc_t> ff) {
+    for (const FieldDesc_t& f : ff) {
+      unsigned offset = f.first;
+      unsigned width = f.second;
+      uint64_t fmask = (static_cast<uint64_t>(1) << width) - 1;
+      m_otherFieldsMask &= ~ (fmask << offset);
+    }
+  };
+  unmaskFields (fields);
+  unmaskFields (ignoredFields);
 
   m_otherFieldsVal = 0;
   if (ids.size() > 0) {
