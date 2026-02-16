@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "b28e7f0d79b722ad75f7a2acaa4650bc44032be5",
-  "head": "823902c2c88f222c40331c3fdc4774d8bbf54e23",
+  "prev": "8873ea4eb49423e0b94be5cca02e2f77330ce061",
+  "head": "ab230a187f6618a082edfa18d49cf1314fd5ec9c",
   "applied": [
     "testdir",
     "xtalk",
@@ -47,7 +47,8 @@
     "repnoise",
     "caloType",
     "createCaloCells",
-    "ecalendcapTool"
+    "ecalendcapTool",
+    "refresh-temp"
   ],
   "unapplied": [
     "move-check",
@@ -166,6 +167,9 @@
     },
     "noiseIndex": {
       "oid": "04711caab06ef6e70a8e0a6354ea8aa4ca91925e"
+    },
+    "refresh-temp": {
+      "oid": "ab230a187f6618a082edfa18d49cf1314fd5ec9c"
     },
     "repnoise": {
       "oid": "03958079fb9303068d81ea72af83464713ec892c"
