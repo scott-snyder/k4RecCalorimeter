@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "94d61aa3670bb27e6e3311c131cefd98a73442a6",
-  "head": "39494f5577d4441cdc98e33f9a41110a4e767005",
+  "prev": "a19f82078b2bd611cac8ab0edb5a38e6668d1ff6",
+  "head": "eca27a51adf82b826e5225d6d71d6fe751cc066f",
   "applied": [
     "subdetVolman",
     "cellPositionsConst2",
@@ -36,9 +36,7 @@
     "indexingConfig",
     "xtalkIndex",
     "topoNoiseIndex",
-    "createTopoCluster"
-  ],
-  "unapplied": [
+    "createTopoCluster",
     "noiseIndex",
     "caloType",
     "createCaloCells",
@@ -48,6 +46,7 @@
     "cellids-wip",
     "testdir"
   ],
+  "unapplied": [],
   "hidden": [],
   "patches": {
     "subdetVolman": {
@@ -153,28 +152,28 @@
       "oid": "39494f5577d4441cdc98e33f9a41110a4e767005"
     },
     "noiseIndex": {
-      "oid": "7fe784c80911bbb7aceced51c613819d00abcb79"
+      "oid": "0ae9d7d9990cb8fe5557eb6d7331278678fef808"
     },
     "caloType": {
-      "oid": "202b1a5bd74198b7cc294ce4ee1beb0d81e7e044"
+      "oid": "f8dad2df5c31d6c65b4ddd6a5a91dce3fafacbb9"
     },
     "createCaloCells": {
-      "oid": "fb8f1056917b0de67dfdbe3ce6c6a2c5f59a715e"
+      "oid": "93e46b1ddbcacaa7feb308cf204c77daf5e7e7d8"
     },
     "discrit-wip": {
-      "oid": "f7590a5ad970ee73a7a47db01c11167f57e67f77"
+      "oid": "b2e1c2e7c7aab02dd2e063cece0be2fd7bcebc64"
     },
     "discrit2-wip": {
-      "oid": "36fefe71c7a37a2ee35b5a00061eee752a82a46e"
+      "oid": "1ad4635f209a8a35b2cc33cf650e1cf5510b33f9"
     },
     "diag-wip": {
-      "oid": "7a5ced355c7870b73c9f155995920c620c570d08"
+      "oid": "6042de2dd71de54c129f98be34dd8d961e120f90"
     },
     "cellids-wip": {
-      "oid": "adf5933ae45c25c3be3176d230a4de63f721e4e8"
+      "oid": "f23a371d8a7f7fc635194c65ea47630d986598e9"
     },
     "testdir": {
-      "oid": "d0886b77d9740195dc066b9ff107f1626bd941ec"
+      "oid": "eca27a51adf82b826e5225d6d71d6fe751cc066f"
     }
   }
 }
