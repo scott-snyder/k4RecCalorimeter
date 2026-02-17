@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "67e38f0b77df1cfc0bd0e6ae19cd633c112763bc",
-  "head": "ff2c0d1f5de02657970f7c9f272eccadbb7f47e4",
+  "prev": "da61b8dcf26a962489e17f6ddc28b9dce86e7542",
+  "head": "ecca451782394df4f2b5161bb6073f4499f459d1",
   "applied": [
     "testdir",
     "xtalk",
@@ -39,10 +39,10 @@
     "hcalIndexer",
     "ecalendcapTool",
     "cellposIndex",
-    "indexingConfig"
+    "indexingConfig",
+    "xtalkIndex"
   ],
   "unapplied": [
-    "xtalkIndex",
     "topoNoiseIndex",
     "createTopoCluster",
     "noiseIndex",
@@ -189,7 +189,7 @@
       "oid": "b963bf47ad0260b2750de08c262ce6e5aa2c3b00"
     },
     "xtalkIndex": {
-      "oid": "e7ff267721e74f871c7042a95fcaa8b0c308c7b9"
+      "oid": "ecca451782394df4f2b5161bb6073f4499f459d1"
     },
     "xtalkSpan1": {
       "oid": "c5b6094e30fded521c972f4ef04311b1710dfe56"
