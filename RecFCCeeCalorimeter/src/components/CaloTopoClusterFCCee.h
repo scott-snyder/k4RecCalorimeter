@@ -100,6 +100,9 @@ private:
     {
       if (m_indexer) {
         unsigned ndx = m_indexer->index (cellid);
+        // Neighbour tool may return invalid cells...
+        if (ndx == k4::recCalo::ICaloIndexer::INVALID)
+          return m_zero;
         return m_cellVec.at(ndx);
       }
       else {
