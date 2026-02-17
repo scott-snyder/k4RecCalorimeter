@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "7362a7108717b461f1bb85ee43f9f16e88294078",
-  "head": "8e74c60e94d04d0a7ae7fdb44446b186356310d8",
+  "prev": "40511950523a2599dd57a49668c1c5911af3ae50",
+  "head": "a1f7664ca88128139173ddd77ef1337acf2709cd",
   "applied": [
     "testdir",
     "xtalk",
@@ -38,7 +38,9 @@
     "ecalbarrelIndexer",
     "hcalIndexer",
     "ecalendcapTool",
-    "cellposIndex",
+    "cellposIndex"
+  ],
+  "unapplied": [
     "indexingConfig",
     "xtalkIndex",
     "topoNoiseIndex",
@@ -52,7 +54,6 @@
     "check-deprecated",
     "check-remove"
   ],
-  "unapplied": [],
   "hidden": [],
   "patches": {
     "calib2": {
