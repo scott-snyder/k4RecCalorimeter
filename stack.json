@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "40511950523a2599dd57a49668c1c5911af3ae50",
+  "prev": "3babb237b91b08d19c76fb4614d03335ee1ad877",
   "head": "a1f7664ca88128139173ddd77ef1337acf2709cd",
   "applied": [
     "testdir",
@@ -41,7 +41,6 @@
     "cellposIndex"
   ],
   "unapplied": [
-    "indexingConfig",
     "xtalkIndex",
     "topoNoiseIndex",
     "createTopoCluster",
@@ -133,9 +132,6 @@
     },
     "idmapIndexer": {
       "oid": "3381b9b536e05e55697ce26e942375d728b89801"
-    },
-    "indexingConfig": {
-      "oid": "83c7b21c5afd0a38665682bdce5ecf8828a02b1e"
     },
     "layerIndex": {
       "oid": "7c09d80257ccb6f65b17c8486476f02c92fcbfa8"
