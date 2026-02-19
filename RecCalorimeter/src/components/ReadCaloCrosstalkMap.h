@@ -79,7 +79,7 @@ private:
   };
 
   const CrosstalkData* m_data = nullptr;
-  const k4::recCalo::ICaloIndexer* m_indexer = nullptr;
+  const ICaloIndexer* m_indexer = nullptr;
 
   CrosstalkData readData (TFile& xtalkFile) const;
 };
