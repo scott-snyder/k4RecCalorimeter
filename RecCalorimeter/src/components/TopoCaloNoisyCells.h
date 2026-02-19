@@ -73,11 +73,11 @@ private:
   struct NoiseData {
     // rms, offset
     std::vector<std::pair<double, double> > m_noise;
-    const k4::recCalo::ICaloIndexer* m_indexer;
+    const ICaloIndexer* m_indexer;
   };
   const NoiseData* m_data = nullptr;
 
-  const k4::recCalo::ICaloIndexer* m_indexer = nullptr;
+  const ICaloIndexer* m_indexer = nullptr;
   std::unique_ptr<dd4hep::DDSegmentation::BitFieldCoder> m_decoder;
   int m_indexSystem = -1;
 
