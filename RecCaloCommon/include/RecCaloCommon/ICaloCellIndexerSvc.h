@@ -42,7 +42,7 @@ public:
    *
    * Returns a pointer to the indexer or nullptr if there isn't one defined.
    */
-  virtual const k4::recCalo::ICaloIndexer* indexer (int detID, bool quiet = false) const = 0;
+  virtual const ICaloIndexer* indexer (int detID, bool quiet = false) const = 0;
 
 
   /**
@@ -52,8 +52,8 @@ public:
    *
    * Returns a pointer to the indexer or nullptr if there isn't one defined.
    */
-  virtual const k4::recCalo::ICaloIndexer* indexer (std::span<const int> detIDs,
-                                                    bool quiet = false) = 0;
+  virtual const ICaloIndexer* indexer (std::span<const int> detIDs,
+                                       bool quiet = false) = 0;
 };
 
 
