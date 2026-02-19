@@ -153,8 +153,7 @@ StatusCode CaloTopoClusterFCCee::execute(const EventContext&) const {
 
   // Try to find an indexer object.  Ok if null --- we'll fall back
   // to using an unordered_map.
-  const k4::recCalo::ICaloIndexer* indexer = m_indexerSvc->indexer (caloIDs, true);
-
+  const ICaloIndexer* indexer = m_indexerSvc->indexer (caloIDs, true);
   debug() << "Number of active cells                               : " << inCells.size() << endmsg;
 
   // Find seeds
@@ -318,7 +317,7 @@ CaloTopoClusterFCCee::findSeeds(const edm4hep::CalorimeterHitCollection* allCell
 
 
 CaloTopoClusterFCCee::CellsMap::CellsMap (const edm4hep::CalorimeterHitCollection& allCells,
-                                          const k4::recCalo::ICaloIndexer* indexer)
+                                          const ICaloIndexer* indexer)
 {
   size_t ncells = allCells.size();
   if (indexer && ncells > 0.01 * indexer->cellIDs().size()) {
@@ -338,7 +337,7 @@ CaloTopoClusterFCCee::CellsMap::CellsMap (const edm4hep::CalorimeterHitCollectio
 
 
 StatusCode
-CaloTopoClusterFCCee::buildProtoClusters(const k4::recCalo::ICaloIndexer* indexer,
+CaloTopoClusterFCCee::buildProtoClusters(const ICaloIndexer* indexer,
                                          const edm4hep::CalorimeterHitCollection& seedCells,
                                          const edm4hep::CalorimeterHitCollection* allCells,
                                          std::map<uint32_t, edm4hep::CalorimeterHitCollection>& protoClusters) const {

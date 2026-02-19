@@ -88,7 +88,7 @@ private:
      *                or nullptr if one is not available.
      */
     CellsMap (const edm4hep::CalorimeterHitCollection& allCells,
-              const k4::recCalo::ICaloIndexer* indexer);
+              const ICaloIndexer* indexer);
 
 
     /**
@@ -101,7 +101,7 @@ private:
       if (m_indexer) {
         unsigned ndx = m_indexer->index (cellid);
         // Neighbour tool may return invalid cells...
-        if (ndx == k4::recCalo::ICaloIndexer::INVALID)
+        if (ndx == ICaloIndexer::INVALID)
           return m_zero;
         return m_cellVec.at(ndx);
       }
@@ -123,7 +123,7 @@ private:
 
     /// Indexer object.  If this is non-null, we're using the full
     /// representation.
-    const k4::recCalo::ICaloIndexer* m_indexer = nullptr;
+    const ICaloIndexer* m_indexer = nullptr;
 
     /// Vector of cell states for the full representation.
     std::vector<int32_t> m_cellVec;
@@ -149,7 +149,7 @@ private:
    *   @param[in] protoClusters, map that is filled with clusterID pointing to the associated cells, in a pair of
    * clsuter index and cell collection
    */
-  StatusCode buildProtoClusters(const k4::recCalo::ICaloIndexer* indexer,
+  StatusCode buildProtoClusters(const ICaloIndexer* indexer,
                                 const edm4hep::CalorimeterHitCollection& seedCells,
                                 const edm4hep::CalorimeterHitCollection* allCells,
                                 std::map<uint32_t, edm4hep::CalorimeterHitCollection>& protoClusters) const;
