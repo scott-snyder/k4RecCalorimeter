@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "4b85d2267eb9691089e41cba3a1ef336bb991883",
-  "head": "dc8ddb9ad07a8ae8ef3c2ed18a0b92e520d649ba",
+  "prev": "ae4ba3617793d455bc027927cad68eab0e88c3c7",
+  "head": "c242296dbbc996af9fc32802bac9606f875ef324",
   "applied": [
     "testdir",
     "xtalk",
@@ -47,8 +47,7 @@
     "sortnoise",
     "repnoise",
     "caloType",
-    "createCaloCells",
-    "refresh-temp"
+    "createCaloCells"
   ],
   "unapplied": [
     "move-check",
@@ -97,7 +96,7 @@
       "oid": "45ed853c594ecea4c4db8d0a57d8a287f7e11d64"
     },
     "createCaloCells": {
-      "oid": "cefeb2f5c31d7e0b04808b644fc877c8f7e40d4e"
+      "oid": "c242296dbbc996af9fc32802bac9606f875ef324"
     },
     "createTopoCluster": {
       "oid": "b4ee8a0a8389b0066dac0efa3a14f0e739c42033"
@@ -167,9 +166,6 @@
     },
     "noiseIndex": {
       "oid": "9fcf423f60d39e1fcc88108277a91d4cfa9ba475"
-    },
-    "refresh-temp": {
-      "oid": "dc8ddb9ad07a8ae8ef3c2ed18a0b92e520d649ba"
     },
     "repnoise": {
       "oid": "40518c5825aa37142949c9156b46f4e4713b63c7"
