@@ -86,7 +86,7 @@ void test1 (mapkey_span ecalb_ids, mapkey_span hcalb_ids)
   Indexer_t hcalb_map (8, 4, hcalb_fielddescs, hcalb_ids);
 
   DummyCellConstantsSvc constsSvc;
-  std::vector<const k4::recCalo::ICaloIndexer*> indexers { &ecalb_map, &hcalb_map };
+  std::vector<const ICaloIndexer*> indexers { &ecalb_map, &hcalb_map };
   k4::recCalo::MultiIndexer map (4, indexers, constsSvc);
   assert (map.detIDs().size() == 2);
   assert (map.detIDs()[0] == 4);
@@ -128,12 +128,12 @@ void test1 (mapkey_span ecalb_ids, mapkey_span hcalb_ids)
   EXPECT_EXCEPTION( "MultiIndexerException: detIDBits 40 out of range; should be between 1 and 8",
                     k4::recCalo::MultiIndexer map2 (40, indexers, constsSvc) );
 
-  std::vector<const k4::recCalo::ICaloIndexer*> indexers3 { &map };
+  std::vector<const ICaloIndexer*> indexers3 { &map };
   EXPECT_EXCEPTION( "MultiIndexerException: bad indexer returns detIDs of size 2",
                     k4::recCalo::MultiIndexer map3 (4, indexers3, constsSvc) );
 
   Indexer_t ecalb_map4 (40, 10, ecalb_fielddescs, ecalb_ids);
-  std::vector<const k4::recCalo::ICaloIndexer*> indexers4 { &ecalb_map4 };
+  std::vector<const ICaloIndexer*> indexers4 { &ecalb_map4 };
   EXPECT_EXCEPTION( "MultiIndexerException: bad indexer returns out-of-range detID 40",
                     k4::recCalo::MultiIndexer map4 (4, indexers4, constsSvc) );
 }
