@@ -114,7 +114,7 @@ void NoiseCaloCellsVsThetaFromFileTool::filterCellNoise(std::vector<std::pair<ui
 
 
 StatusCode NoiseCaloCellsVsThetaFromFileTool::initBinning (NoiseData& data,
-                                                           const k4::recCalo::ICaloIndexer& indexer) const
+                                                           const ICaloIndexer& indexer) const
 {
   data.m_bins.resize (indexer.cellIDs().size());
 
