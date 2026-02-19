@@ -30,7 +30,7 @@ StatusCode CaloCellIndexerSvc::initialize()
 
   // Make indexers for all tools that support it.
   for (ToolHandle<ICalorimeterTool>& tool : m_geoTools) {
-    std::unique_ptr<k4::recCalo::ICaloIndexer> indexer = tool->indexer();
+    std::unique_ptr<ICaloIndexer> indexer = tool->indexer();
     if (indexer) {
       int detid = tool->id();
       if (detid > MAX_DETID) {
@@ -57,8 +57,8 @@ StatusCode CaloCellIndexerSvc::initialize()
  *
  * Returns a pointer to the indexer or nullptr if there isn't one defined.
  */
-const k4::recCalo::ICaloIndexer*
-CaloCellIndexerSvc::indexer (int detID, bool quiet /*= false*/) const
+const ICaloIndexer* CaloCellIndexerSvc::indexer (int detID,
+                                                 bool quiet /*= false*/) const
 {
   std::lock_guard lock (m_mutex);
 
@@ -81,9 +81,8 @@ CaloCellIndexerSvc::indexer (int detID, bool quiet /*= false*/) const
 /**
  * @brief Return indexer for a given set of subdetectors.
  */
-const k4::recCalo::ICaloIndexer*
-CaloCellIndexerSvc::indexer (std::span<const int> detIDs,
-                             bool quiet /*= false*/)
+const ICaloIndexer* CaloCellIndexerSvc::indexer (std::span<const int> detIDs,
+                                                 bool quiet /*= false*/)
 {
   // Degenerate cases
   if (detIDs.empty()) return nullptr;

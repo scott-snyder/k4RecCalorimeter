@@ -53,7 +53,7 @@ public:
    *
    * Returns a pointer to the indexer or nullptr if there isn't one defined.
    */
-  const k4::recCalo::ICaloIndexer* indexer (int detID, bool quiet = false) const override;
+  const ICaloIndexer* indexer (int detID, bool quiet = false) const override;
 
 
   /**
@@ -63,8 +63,8 @@ public:
    *
    * Returns a pointer to the indexer or nullptr if there isn't one defined.
    */
-  virtual const k4::recCalo::ICaloIndexer* indexer (std::span<const int> detIDs,
-                                                    bool quiet = false) override;
+  virtual const ICaloIndexer* indexer (std::span<const int> detIDs,
+                                       bool quiet = false) override;
 
 
 private:
