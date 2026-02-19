@@ -85,8 +85,7 @@ StatusCode ECalEndcapTurbineCaloTool::collectCells(std::vector<uint64_t>& cells)
 
 /** Return a new indexer object for this subdetector.
  */
-std::unique_ptr<k4::recCalo::ICaloIndexer>
-ECalEndcapTurbineCaloTool::indexer() const
+std::unique_ptr<ICaloIndexer> ECalEndcapTurbineCaloTool::indexer() const
 {
   const auto* seg =
     dynamic_cast<const dd4hep::DDSegmentation::FCCSWEndcapTurbine_k4geo*> (readout().segmentation().segmentation());
