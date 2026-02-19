@@ -44,7 +44,7 @@ StatusCode TubeLayerModuleThetaCaloToolTestAlg::initialize()
   size_t ncells = ids.size();
   K4RECCALORIMETER_CHECK( ncells == 2041344 );
 
-  std::unique_ptr<k4::recCalo::ICaloIndexer> indexer = m_tool->indexer();
+  std::unique_ptr<ICaloIndexer> indexer = m_tool->indexer();
   K4RECCALORIMETER_CHECK( indexer != nullptr );
   K4RECCALORIMETER_CHECK( indexer->detIDBits() == 4 );
 
