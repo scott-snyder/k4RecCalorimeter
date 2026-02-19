@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "5facbee091395c8b59c90b9901354389f7c4fc28",
-  "head": "5fb219b457e9483f8496086a990cbecbadcfef37",
+  "prev": "9afd38e489dc380a083b421faad662e5a7a41723",
+  "head": "cc1cd003c3ebae7f2e0ea9ac08b5d1b1bb5e1268",
   "applied": [
     "testdir",
     "xtalk",
@@ -49,11 +49,10 @@
     "createCaloCells",
     "ci",
     "move-check",
-    "check-deprecated"
-  ],
-  "unapplied": [
+    "check-deprecated",
     "check-remove"
   ],
+  "unapplied": [],
   "hidden": [],
   "patches": {
     "calib2": {
@@ -90,7 +89,7 @@
       "oid": "5fb219b457e9483f8496086a990cbecbadcfef37"
     },
     "check-remove": {
-      "oid": "7c6300579eef679219bc09180627a45ecbf9157d"
+      "oid": "cc1cd003c3ebae7f2e0ea9ac08b5d1b1bb5e1268"
     },
     "ci": {
       "oid": "40e3ce76215559ea16539a12e824285fc6c8c2c6"
