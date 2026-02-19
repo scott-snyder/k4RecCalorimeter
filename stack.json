@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "41f28b75e7cff48d923a9aba039383e7ed091bd3",
-  "head": "08eaf49b48defa384c3e13840c134119a5b3a954",
+  "prev": "95be1fc6cfbc18f9a99bb630032e1c09e520b186",
+  "head": "71e5081acb266f5c489c87bd529dc3adbd5b3503",
   "applied": [
     "testdir",
     "xtalk",
@@ -48,10 +48,10 @@
     "caloType",
     "createCaloCells",
     "ci",
-    "move-check",
-    "check-deprecated"
+    "move-check"
   ],
   "unapplied": [
+    "check-deprecated",
     "check-remove"
   ],
   "hidden": [],
