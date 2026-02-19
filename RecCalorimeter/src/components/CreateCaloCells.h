@@ -65,7 +65,7 @@ public:
 
 private:
   /// Index of a cell in the container.
-  using index_t = k4::recCalo::ICaloIndexer::index_t;
+  using index_t = ICaloIndexer::index_t;
 
   // Forward declaration.
   class CaloCells;
@@ -131,7 +131,7 @@ private:
   {
   public:
     /// Invalid cell index.
-    constexpr static index_t INVALID_ICELL = k4::recCalo::ICaloIndexer::INVALID;
+    constexpr static index_t INVALID_ICELL = ICaloIndexer::INVALID;
 
     /// Invalid hit index.
     constexpr static size_t INVALID_IHIT = static_cast<size_t> (-1);
@@ -146,7 +146,7 @@ private:
      */
     CaloCells (bool full,
                std::span<const uint64_t> cellids,
-               const k4::recCalo::ICaloIndexer* indexer);
+               const ICaloIndexer* indexer);
 
 
     /**
@@ -222,7 +222,7 @@ private:
 
     /// Helper to map from cell id to index within cell id list.
     // Only used in FULL/FILTERED modes.
-    const k4::recCalo::ICaloIndexer* m_indexer = nullptr;
+    const ICaloIndexer* m_indexer = nullptr;
 
     /// Vector of cellid, energy pairs per cell.
     // In FULL mode, all cellids are present in sorted order.
@@ -299,7 +299,7 @@ private:
   std::span<const uint64_t> m_cellIDs;
 
   /// Mapper from cell id to index within m_cellIDs.
-  const k4::recCalo::ICaloIndexer* m_indexer = nullptr;
+  const ICaloIndexer* m_indexer = nullptr;
 
   /// Indexed by system ID, giving the calorimeter type word.
   /// Non-calorimeter system IDs are set to 0.

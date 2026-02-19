@@ -34,7 +34,7 @@ DECLARE_COMPONENT(CreateCaloCells)
  */
 CreateCaloCells::CaloCells::CaloCells (bool full,
                                        std::span<const uint64_t> cellids,
-                                       const k4::recCalo::ICaloIndexer* indexer)
+                                       const ICaloIndexer* indexer)
   : m_mode (full ? FULL : SPARSE),
     m_indexer (indexer)
 {
@@ -266,7 +266,7 @@ StatusCode CreateCaloCells::execute(const EventContext&) const {
   debug() << "Input Hit collection size: " << hits->size() << endmsg;
 
   // Find calorimeter type.
-  const k4::recCalo::ICaloIndexer* indexer = nullptr;
+  const ICaloIndexer* indexer = nullptr;
   int calotype = 0;
   if (!hits->empty()) {
     uint64_t cellid = hits->begin()->getCellID();
