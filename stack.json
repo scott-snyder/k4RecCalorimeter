@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "dc78ac9cdc6f1b644d4052525a48e1f747a15fb0",
-  "head": "5d0a7762d325f41e571eaa87db348acad7325254",
+  "prev": "e313c6e70b7781673744e93b271e648f45407e61",
+  "head": "cefeb2f5c31d7e0b04808b644fc877c8f7e40d4e",
   "applied": [
     "testdir",
     "xtalk",
@@ -47,8 +47,7 @@
     "sortnoise",
     "repnoise",
     "caloType",
-    "createCaloCells",
-    "refresh-temp"
+    "createCaloCells"
   ],
   "unapplied": [
     "move-check",
@@ -64,7 +63,7 @@
       "oid": "ef52a0f255fd9ad687348552a631727d226f9d49"
     },
     "caloCellIndexerSvc": {
-      "oid": "4a1cd80ff9edbde369bd85726fe37521cbeb5a1d"
+      "oid": "377488a14e750b7ff3e90b9f6ba087c063fbe190"
     },
     "caloToolInfo1": {
       "oid": "c7e21f1b08f73fcaa1ecdf89fe28640d2ac2e9e7"
@@ -73,7 +72,7 @@
       "oid": "bf8dc5a34edb1d419efc500081a9da119a1242ec"
     },
     "caloType": {
-      "oid": "c9ed3dd98a18b84acf8b77b90886d3601c964169"
+      "oid": "116a1e40c4ef24094ac6385681918f4291427b8e"
     },
     "cellPositions": {
       "oid": "ddc194044ffd4f3250b6e1db4bfa147c010ca585"
@@ -82,10 +81,10 @@
       "oid": "e01cda1cde5e14e421e66a25102f754bf4c62537"
     },
     "cellposIndex": {
-      "oid": "705e6637e0e2aff0342dbd06715908a8d092ca09"
+      "oid": "4967b844cbe0c2a2eec88a1b4bd4c001ca39ada1"
     },
     "cellsInConst": {
-      "oid": "96f7b00296795e795ff9b5ae8223bfb688f914c5"
+      "oid": "d646e9864f22c8b36f5177b2dcab43d64713156b"
     },
     "check-deprecated": {
       "oid": "a05d5748ac5dbdc71d4900889552f1667709c2b7"
@@ -97,10 +96,10 @@
       "oid": "45ed853c594ecea4c4db8d0a57d8a287f7e11d64"
     },
     "createCaloCells": {
-      "oid": "fb42c484d295175d99e4a83d1e99e4ee230da9aa"
+      "oid": "cefeb2f5c31d7e0b04808b644fc877c8f7e40d4e"
     },
     "createTopoCluster": {
-      "oid": "6c9b5a122ba5586c3d49bcc0e5b199d096d2061e"
+      "oid": "b4ee8a0a8389b0066dac0efa3a14f0e739c42033"
     },
     "cxx26": {
       "oid": "fac3e59a8c4350fde837bf141ad62e0cdcfd72e7"
@@ -109,10 +108,10 @@
       "oid": "81c307d53c18eefc9ddb49a44150b020d9cd89ac"
     },
     "ecalbarrelIndexer": {
-      "oid": "d70d208ee596ec1c53e5cafca494f39c75dda841"
+      "oid": "cb6f5768f4962b952ae92318dbb4a8a599ead6f3"
     },
     "ecalendcapTool": {
-      "oid": "d8374112eca002d3e321a8622d3ae15076a7916f"
+      "oid": "d6e7180e685b125d9fe3b40cb9e08edf3c8abaad"
     },
     "geoConst2": {
       "oid": "d19b64d80ca3f6e1ef2089a9e8adabe1574d35ec"
@@ -127,7 +126,7 @@
       "oid": "c5249e83f8fa26675ca81984965dcc62d827ef36"
     },
     "hcalIndexer": {
-      "oid": "118c40ecc30c23271bd1f8d46897a101d0f4567d"
+      "oid": "980399e056318cd4903c68b275791a5199248c32"
     },
     "idmap": {
       "oid": "966d223497edaff1d48afcdc511e1a918daa9255"
@@ -136,7 +135,7 @@
       "oid": "3381b9b536e05e55697ce26e942375d728b89801"
     },
     "indexingConfig": {
-      "oid": "b89c16ff587eff96e29a3e1c29abe4970f810264"
+      "oid": "3d2bb1daef52c549d8ffda3f0873ada2ca3632bd"
     },
     "layerIndex": {
       "oid": "7c09d80257ccb6f65b17c8486476f02c92fcbfa8"
@@ -166,16 +165,13 @@
       "oid": "bf525cc3220108e23143536d69fff9462c01b566"
     },
     "noiseIndex": {
-      "oid": "31266beed2d41c4f7daa5380194a964a9e1c1c76"
-    },
-    "refresh-temp": {
-      "oid": "5d0a7762d325f41e571eaa87db348acad7325254"
+      "oid": "9fcf423f60d39e1fcc88108277a91d4cfa9ba475"
     },
     "repnoise": {
-      "oid": "6d6ed854a1e2e437d8294f745884ee5f12686066"
+      "oid": "40518c5825aa37142949c9156b46f4e4713b63c7"
     },
     "sortnoise": {
-      "oid": "d5834c933b75bed2570541ab55d54ada9fdb138c"
+      "oid": "7576b20533ccc2356f4b744f1d717d4e6bcaa3a6"
     },
     "subdetVolman": {
       "oid": "a8521ed4aa9891c310f03fc3052261e1c5ae56a9"
@@ -187,13 +183,13 @@
       "oid": "a87d7963202d1ce20de85e3a438e8edf14dbf95a"
     },
     "topoNoiseIndex": {
-      "oid": "32599564f4f43fd0fc39de95d4919ef058e81f16"
+      "oid": "78e0124f78a07d72a135bed2153ef4dca884cd71"
     },
     "xtalk": {
       "oid": "b963bf47ad0260b2750de08c262ce6e5aa2c3b00"
     },
     "xtalkIndex": {
-      "oid": "c45b34a3ec344c368b5d42792b5d180b5c49502c"
+      "oid": "7ac4c1d9505807430381a260f697b8f2be956de7"
     },
     "xtalkSpan1": {
       "oid": "0fed04eb4d152ce3ab730422c913f3483fcf3c46"
