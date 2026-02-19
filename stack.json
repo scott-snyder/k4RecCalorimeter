@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "3352b5b3ed80bbc198dbfe6ad594040f3c681908",
-  "head": "e905faa93fe01970751d84bffccbd438ab7a5e1c",
+  "prev": "545ba82183d5dab4b2d9e570624844571fcf0526",
+  "head": "acdf89edd29e2c9cf8b62daf36b6b7ce7c190885",
   "applied": [
     "testdir",
     "xtalk",
@@ -47,7 +47,8 @@
     "sortnoise",
     "repnoise",
     "caloType",
-    "createCaloCells"
+    "createCaloCells",
+    "refresh-temp"
   ],
   "unapplied": [
     "move-check",
@@ -166,6 +167,9 @@
     },
     "noiseIndex": {
       "oid": "ac99608a8075812d7f198ef080a2055d7ac6d3a6"
+    },
+    "refresh-temp": {
+      "oid": "acdf89edd29e2c9cf8b62daf36b6b7ce7c190885"
     },
     "repnoise": {
       "oid": "9c4ea46b3070af901e74ee911ffff0771f443015"
