@@ -59,8 +59,7 @@ StatusCode HCalPhiThetaCaloTool::collectCells(std::vector<uint64_t>& cells) cons
 
 /** Return a new indexer object for this subdetector.
  */
-std::unique_ptr<k4::recCalo::ICaloIndexer>
-HCalPhiThetaCaloTool::indexer() const
+std::unique_ptr<ICaloIndexer> HCalPhiThetaCaloTool::indexer() const
 {
   const auto* seg =
     dynamic_cast<const dd4hep::DDSegmentation::FCCSWHCalPhiTheta_k4geo*> (readout().segmentation().segmentation());

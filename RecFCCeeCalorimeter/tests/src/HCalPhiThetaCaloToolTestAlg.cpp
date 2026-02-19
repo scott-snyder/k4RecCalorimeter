@@ -62,7 +62,7 @@ StatusCode HCalPhiThetaCaloToolTestAlg::testTool (const ICalorimeterTool& tool,
   size_t ncells = ids.size();
   K4RECCALORIMETER_CHECK (ncells == exp_ncells);
 
-  std::unique_ptr<k4::recCalo::ICaloIndexer> indexer = tool.indexer();
+  std::unique_ptr<ICaloIndexer> indexer = tool.indexer();
   K4RECCALORIMETER_CHECK (indexer != nullptr);
   K4RECCALORIMETER_CHECK( indexer->detIDBits() == 4 );
 
