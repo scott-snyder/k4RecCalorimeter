@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "701c1b4a5b72425e937bc5912dcfba0c505d1075",
-  "head": "0895512c064e5acba0402a5bd5b2cb100caa4ee4",
+  "prev": "0f8bae885be711675e2df9200be53b6127781a12",
+  "head": "beb3fd5d33c18bdaf407a34510d5f3b85929c7a4",
   "applied": [
     "testdir",
     "xtalk",
@@ -46,11 +46,11 @@
     "sortnoise",
     "repnoise",
     "caloType",
-    "createCaloCells"
+    "createCaloCells",
+    "ci",
+    "move-check"
   ],
   "unapplied": [
-    "ci",
-    "move-check",
     "check-deprecated",
     "check-remove"
   ],
@@ -93,7 +93,7 @@
       "oid": "7c6300579eef679219bc09180627a45ecbf9157d"
     },
     "ci": {
-      "oid": "45ed853c594ecea4c4db8d0a57d8a287f7e11d64"
+      "oid": "40e3ce76215559ea16539a12e824285fc6c8c2c6"
     },
     "createCaloCells": {
       "oid": "0895512c064e5acba0402a5bd5b2cb100caa4ee4"
@@ -141,7 +141,7 @@
       "oid": "f26d4e406b1b1559f0ccf852922ea1e6f828f5b8"
     },
     "move-check": {
-      "oid": "ee01fa4822f5913bf51d6d4159fac357452e51aa"
+      "oid": "beb3fd5d33c18bdaf407a34510d5f3b85929c7a4"
     },
     "multiIndexer": {
       "oid": "47b42575fcdbcac49a4c93e29fb175f0f1c0da15"
