@@ -133,7 +133,7 @@ StatusCode ReadNoiseFromFileTool::initNoiseFromFile(NoiseData& data) const
 
 
 StatusCode  ReadNoiseFromFileTool::initBinning (NoiseData& data,
-                                                const k4::recCalo::ICaloIndexer& indexer) const
+                                                const ICaloIndexer& indexer) const
 {
   /// PhiEta segmentation
   const auto* segmentation = 

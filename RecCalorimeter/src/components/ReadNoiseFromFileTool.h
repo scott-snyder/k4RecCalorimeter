@@ -68,7 +68,7 @@ protected:
   };
 
   virtual StatusCode initBinning (NoiseData& data,
-                                  const k4::recCalo::ICaloIndexer& indexer) const;
+                                  const ICaloIndexer& indexer) const;
 
 
 private:
@@ -112,7 +112,7 @@ private:
   { this, "CaloCellConstantsSvc", "k4::recCalo::CaloCellConstantsSvc", "" };
   // Decoder
   dd4hep::DDSegmentation::BitFieldCoder* m_decoder;
-  const k4::recCalo::ICaloIndexer* m_indexer = nullptr;
+  const ICaloIndexer* m_indexer = nullptr;
   int m_index_activeField = -1;
 };
 
