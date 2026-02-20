@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "1a46705350631e564bdd459126b39b4aaa64dbaa",
-  "head": "7c7c258165fc1a552723115c6bd1a89c97538d9f",
+  "prev": "981b6db7a486d836ba579f60a352418f533d37b1",
+  "head": "7aef7b48e2c259f1348f8543a2a80b552ce97785",
   "applied": [
     "cxx26",
     "depr",
@@ -42,13 +42,13 @@
     "indexingConfig",
     "xtalkIndex",
     "topoNoiseIndex",
-    "createTopoCluster"
-  ],
-  "unapplied": [
+    "createTopoCluster",
     "noiseIndex",
     "sortnoise",
     "repnoise",
-    "createCaloCells",
+    "createCaloCells"
+  ],
+  "unapplied": [
     "ci",
     "move-check",
     "check-deprecated",
@@ -96,7 +96,7 @@
       "oid": "40e3ce76215559ea16539a12e824285fc6c8c2c6"
     },
     "createCaloCells": {
-      "oid": "0895512c064e5acba0402a5bd5b2cb100caa4ee4"
+      "oid": "7aef7b48e2c259f1348f8543a2a80b552ce97785"
     },
     "createTopoCluster": {
       "oid": "7c7c258165fc1a552723115c6bd1a89c97538d9f"
@@ -165,13 +165,13 @@
       "oid": "e51df3c1b2645f06d8de6b486edf6d79a9cfb61e"
     },
     "noiseIndex": {
-      "oid": "65103da46df877cfeab1ffc48cd786cbb07f7485"
+      "oid": "98bb6a83c4e9b381476a154504bcedf18b39cae2"
     },
     "repnoise": {
-      "oid": "68f6bb502b769212a960f95f6018b733db32277f"
+      "oid": "8db0d95aa5c6f6be949668f464a712dc0f6b4481"
     },
     "sortnoise": {
-      "oid": "1022fc167ee972abd2535e4b57b49ac05552f3dc"
+      "oid": "a8631ae9865720930c4cfd3e2bb038d9ac30e813"
     },
     "subdetVolman": {
       "oid": "c09212977b8ce4e5e8f0836d087dbfd1abe34fab"
