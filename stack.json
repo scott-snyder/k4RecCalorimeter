@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "b013b0b1ed70d008e8cb5ba2979edf51b9a3e3f1",
-  "head": "5dc67fe512f99db475b3c01c6d7369131b53cd67",
+  "prev": "55abefc2ce10c0dea5d93c56bf6589c19c2d573f",
+  "head": "65c0a46706de4022bfd4d2977e13da8aba072c12",
   "applied": [
     "cxx26",
     "depr",
@@ -10,10 +10,10 @@
     "noise1a",
     "noise1b",
     "noise1c",
-    "calib2",
-    "subdetVolman"
+    "calib2"
   ],
   "unapplied": [
+    "subdetVolman",
     "testdir",
     "xtalk",
     "cellPositionsConst2",
