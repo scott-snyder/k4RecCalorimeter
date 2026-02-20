@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "55abefc2ce10c0dea5d93c56bf6589c19c2d573f",
-  "head": "65c0a46706de4022bfd4d2977e13da8aba072c12",
+  "prev": "4782591b89d8dc651df8fef30d72833cc917757f",
+  "head": "79a7ee805a78dcfe9e8ea2754bae6c3722ed87a2",
   "applied": [
     "cxx26",
     "depr",
@@ -10,13 +10,13 @@
     "noise1a",
     "noise1b",
     "noise1c",
-    "calib2"
+    "calib2",
+    "cellPositionsConst2"
   ],
   "unapplied": [
     "subdetVolman",
     "testdir",
     "xtalk",
-    "cellPositionsConst2",
     "geoConst2",
     "cellPositions",
     "timeout",
@@ -78,7 +78,7 @@
       "oid": "ddc194044ffd4f3250b6e1db4bfa147c010ca585"
     },
     "cellPositionsConst2": {
-      "oid": "e01cda1cde5e14e421e66a25102f754bf4c62537"
+      "oid": "79a7ee805a78dcfe9e8ea2754bae6c3722ed87a2"
     },
     "cellposIndex": {
       "oid": "15fe534c7d1ceece14d09d831d0cb6e8f900df1d"
