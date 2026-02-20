@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "681a46068c86722742fa6a7ebaae101e214138a8",
-  "head": "c2106e2b8163a34512ed17748fe678921b9f30c1",
+  "prev": "f4b870b6c181cf806c69e44c8c044f871243dc8d",
+  "head": "98da643465fbdd0acc76f28e09688c3e531edd0a",
   "applied": [
     "cxx26",
     "depr",
@@ -49,7 +49,8 @@
     "createCaloCells",
     "move-check",
     "check-deprecated",
-    "check-remove"
+    "check-remove",
+    "refresh-temp"
   ],
   "unapplied": [
     "ci"
@@ -166,6 +167,9 @@
     },
     "noiseIndex": {
       "oid": "13e9e42a0eb10c55c7f72f3fe18c95b581bec9da"
+    },
+    "refresh-temp": {
+      "oid": "98da643465fbdd0acc76f28e09688c3e531edd0a"
     },
     "repnoise": {
       "oid": "68c0df1cf0476e8cfffc564ad3dc4c85289bed93"
