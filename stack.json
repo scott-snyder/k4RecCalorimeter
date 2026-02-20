@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "7d903724483d1e91543c1a96f856113a18d0c210",
-  "head": "0b25ce3ce72905e3e0cf88415bcd2c268029bf6b",
+  "prev": "755388483fc7e133e7aff750e4f70189aff35975",
+  "head": "54169a2e96b3fbeff3f3742b299948a163eb980e",
   "applied": [
     "cxx26",
     "depr",
@@ -16,7 +16,8 @@
     "nodebug",
     "caloToolInfo1",
     "idmap",
-    "caloCellConstantsSvc"
+    "caloCellConstantsSvc",
+    "caloType"
   ],
   "unapplied": [
     "subdetVolman",
@@ -47,7 +48,6 @@
     "noiseIndex",
     "sortnoise",
     "repnoise",
-    "caloType",
     "createCaloCells",
     "ci",
     "move-check",
@@ -72,7 +72,7 @@
       "oid": "de33e5aee450aea195a0189b10e973787c673fab"
     },
     "caloType": {
-      "oid": "b7a1a50f83d332c1a6bdcbd71f0325cc5bfc446d"
+      "oid": "54169a2e96b3fbeff3f3742b299948a163eb980e"
     },
     "cellPositions": {
       "oid": "6e022ff68c3760d3af9e6f1fe5a49541a82d2d41"
