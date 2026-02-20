@@ -1,7 +1,7 @@
-Bottom: eda27f1eb3540d4afd3f71d56f7361f933dd7940
-Top:    596ff1284098c5ed989e8577ad06f9461075c69f
+Bottom: 279f071e44db4846d5141a2e2ae97a9280f28c62
+Top:    a52b9f43aa9a749d57fe885ab1e33964db7019d5
 Author: sss <sss@karma>
-Date:   2026-02-19 17:14:01 -0500
+Date:   2026-02-20 16:01:41 -0500
 
 Adjust HCal positioning tool for updates in HCal segmentation.
 
