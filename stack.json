@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "c45f5812595f40209af43294ae3cad0cd636a278",
-  "head": "b6b4565d110a999259d06ee459696c57ba97002c",
+  "prev": "af890fa8dc6a8dc079ea0fb341fcfa9f684a0638",
+  "head": "751dee6f6fe1fa626bd642f91c0b7682c4fd8a99",
   "applied": [
     "cxx26",
     "depr",
@@ -14,8 +14,7 @@
     "cellPositionsConst2",
     "cellPositions",
     "nodebug",
-    "caloToolInfo1",
-    "refresh-temp"
+    "caloToolInfo1"
   ],
   "unapplied": [
     "subdetVolman",
@@ -67,7 +66,7 @@
       "oid": "13afb510b6288da8b0c14e56a4f52df12d34bdd1"
     },
     "caloToolInfo1": {
-      "oid": "e4440ebcb9f6e6729fa6bd9b969a2f64f7964460"
+      "oid": "751dee6f6fe1fa626bd642f91c0b7682c4fd8a99"
     },
     "caloToolInfo3": {
       "oid": "de33e5aee450aea195a0189b10e973787c673fab"
@@ -167,9 +166,6 @@
     },
     "noiseIndex": {
       "oid": "65103da46df877cfeab1ffc48cd786cbb07f7485"
-    },
-    "refresh-temp": {
-      "oid": "b6b4565d110a999259d06ee459696c57ba97002c"
     },
     "repnoise": {
       "oid": "68f6bb502b769212a960f95f6018b733db32277f"
