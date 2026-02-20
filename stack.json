@@ -1,8 +1,10 @@
 {
   "version": 5,
-  "prev": "2ac797853723297d0ed55de90a8fbd9a3d1db6a6",
-  "head": "e0de30b573111369d0119613f1deb5c624282fe1",
-  "applied": [],
+  "prev": "ba32f9417226c2abadd73a93364a01caa3a5623f",
+  "head": "477be32fab46e4b79aba385f34ed8f728a7850e5",
+  "applied": [
+    "cxx26"
+  ],
   "unapplied": [
     "testdir",
     "xtalk",
@@ -13,7 +15,6 @@
     "cellPositions",
     "depr",
     "timeout",
-    "cxx26",
     "hcal-tool",
     "hcal-seg",
     "hcal-seg-row",
@@ -101,7 +102,7 @@
       "oid": "3a47917999b23bf9cd9208f820b04892be001ac4"
     },
     "cxx26": {
-      "oid": "dc0e95c3ee3eec4ebac8ed74fc0e3b23e68c94b6"
+      "oid": "477be32fab46e4b79aba385f34ed8f728a7850e5"
     },
     "depr": {
       "oid": "81c307d53c18eefc9ddb49a44150b020d9cd89ac"
