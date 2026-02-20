@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "5e346f91aa65f41e18a46471efb01e6800118b30",
-  "head": "44a6af1bcb0151858b24f8c370743137f5954897",
+  "prev": "4e92f51e2093d33e0cb462831e55afe7fa26bc17",
+  "head": "65c0a46706de4022bfd4d2977e13da8aba072c12",
   "applied": [
     "cxx26",
     "depr",
@@ -9,14 +9,14 @@
     "xtalkSpan1",
     "noise1a",
     "noise1b",
-    "noise1c"
+    "noise1c",
+    "calib2"
   ],
   "unapplied": [
     "testdir",
     "xtalk",
     "subdetVolman",
     "cellPositionsConst2",
-    "calib2",
     "geoConst2",
     "cellPositions",
     "timeout",
@@ -57,7 +57,7 @@
   "hidden": [],
   "patches": {
     "calib2": {
-      "oid": "4c9f97a82a56f98c543549242ac0229f6b94bb9c"
+      "oid": "65c0a46706de4022bfd4d2977e13da8aba072c12"
     },
     "caloCellConstantsSvc": {
       "oid": "d01493ccef69d7611f5be6b57b845b3fc0eae050"
