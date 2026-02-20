@@ -1,17 +1,17 @@
 {
   "version": 5,
-  "prev": "ddb6c9bc55f2c6246dedfb17bbf0222ebe914793",
-  "head": "4e341aff962694ccb4b0471bf6ff6c1977fb14ae",
+  "prev": "5e346f91aa65f41e18a46471efb01e6800118b30",
+  "head": "44a6af1bcb0151858b24f8c370743137f5954897",
   "applied": [
     "cxx26",
     "depr",
     "layerIndex",
     "xtalkSpan1",
     "noise1a",
-    "noise1b"
+    "noise1b",
+    "noise1c"
   ],
   "unapplied": [
-    "noise1c",
     "testdir",
     "xtalk",
     "subdetVolman",
@@ -159,7 +159,7 @@
       "oid": "4e341aff962694ccb4b0471bf6ff6c1977fb14ae"
     },
     "noise1c": {
-      "oid": "a15e607281edaf788d4cb3e055be83f6cf25b79e"
+      "oid": "44a6af1bcb0151858b24f8c370743137f5954897"
     },
     "noise3": {
       "oid": "3b46a3012093acf9d4695ebc2d6e0ebf082704b4"
