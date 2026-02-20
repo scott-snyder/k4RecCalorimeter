@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "b44a8243491b54771a35c21a4553a123af84402d",
-  "head": "e7894b2d6eccc3ae1c4676f30295c9656e0a4ce3",
+  "prev": "15846097a7b99a1b54f5bed86e1cd99ad8390ed6",
+  "head": "7aef7b48e2c259f1348f8543a2a80b552ce97785",
   "applied": [
     "cxx26",
     "depr",
@@ -46,12 +46,12 @@
     "noiseIndex",
     "sortnoise",
     "repnoise",
-    "createCaloCells",
-    "move-check",
-    "check-deprecated",
-    "check-remove"
+    "createCaloCells"
   ],
   "unapplied": [
+    "move-check",
+    "check-deprecated",
+    "check-remove",
     "ci"
   ],
   "hidden": [],
