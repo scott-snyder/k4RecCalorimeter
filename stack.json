@@ -1,17 +1,17 @@
 {
   "version": 5,
-  "prev": "c6d5a4cfb58b8e348d5246275e40f7dda59ac25f",
-  "head": "1f0b9ff0d9e6041b8bf89589cf0af7f98832caf4",
+  "prev": "f388bcc1a2f757cfbcf728ecc5ec96a11b60adce",
+  "head": "47273d8da9de9f7894ce5ade267c2b99f28dc181",
   "applied": [
     "cxx26",
     "depr",
     "layerIndex",
-    "xtalkSpan1"
+    "xtalkSpan1",
+    "noise1a"
   ],
   "unapplied": [
     "noise1c",
     "noise1b",
-    "noise1a",
     "testdir",
     "xtalk",
     "subdetVolman",
