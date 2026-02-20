@@ -1,10 +1,11 @@
 {
   "version": 5,
-  "prev": "1a9c937ee604cfce1148c47f3410211ae5d947ad",
-  "head": "d6882d4935fdcda3a7363863fd46e4cf1030c5ed",
+  "prev": "1fc4f41a6fea77e37bc7b1e7775e7c5ae99ef9b4",
+  "head": "18baf1e152b955d1f73259c1074a85164cbe8b52",
   "applied": [
     "cxx26",
-    "depr"
+    "depr",
+    "layerIndex"
   ],
   "unapplied": [
     "testdir",
@@ -24,7 +25,6 @@
     "caloToolInfo3",
     "idmap",
     "idmapIndexer",
-    "layerIndex",
     "multiIndexer",
     "xtalkSpan1",
     "xtalkSpan3",
@@ -138,7 +138,7 @@
       "oid": "1c1e539ab2b85b68dc0c29ed5a869723e99d207c"
     },
     "layerIndex": {
-      "oid": "f26d4e406b1b1559f0ccf852922ea1e6f828f5b8"
+      "oid": "18baf1e152b955d1f73259c1074a85164cbe8b52"
     },
     "move-check": {
       "oid": "b7e76a56f5890dbc804e81341bb26692d0718a16"
