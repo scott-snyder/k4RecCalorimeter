@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "755388483fc7e133e7aff750e4f70189aff35975",
-  "head": "54169a2e96b3fbeff3f3742b299948a163eb980e",
+  "prev": "bb4654b3a16dfae0c6df3294adc84aca5abb115b",
+  "head": "1fad99f41eca0c4532247af5cc2ecdc249754d0e",
   "applied": [
     "cxx26",
     "depr",
@@ -17,10 +17,10 @@
     "caloToolInfo1",
     "idmap",
     "caloCellConstantsSvc",
-    "caloType"
+    "caloType",
+    "subdetVolman"
   ],
   "unapplied": [
-    "subdetVolman",
     "testdir",
     "xtalk",
     "geoConst2",
@@ -174,7 +174,7 @@
       "oid": "1022fc167ee972abd2535e4b57b49ac05552f3dc"
     },
     "subdetVolman": {
-      "oid": "5dc67fe512f99db475b3c01c6d7369131b53cd67"
+      "oid": "1fad99f41eca0c4532247af5cc2ecdc249754d0e"
     },
     "testdir": {
       "oid": "ca38307eeec26edc02cd6ac77f0c6af656bb9724"
