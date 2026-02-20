@@ -1,11 +1,12 @@
 {
   "version": 5,
-  "prev": "1fc4f41a6fea77e37bc7b1e7775e7c5ae99ef9b4",
-  "head": "18baf1e152b955d1f73259c1074a85164cbe8b52",
+  "prev": "12427fb7142e4c7f6319d3253a9bfc75508bb9e6",
+  "head": "1f0b9ff0d9e6041b8bf89589cf0af7f98832caf4",
   "applied": [
     "cxx26",
     "depr",
-    "layerIndex"
+    "layerIndex",
+    "xtalkSpan1"
   ],
   "unapplied": [
     "testdir",
@@ -26,7 +27,6 @@
     "idmap",
     "idmapIndexer",
     "multiIndexer",
-    "xtalkSpan1",
     "xtalkSpan3",
     "xtalkSpan5",
     "noise1a",
@@ -192,7 +192,7 @@
       "oid": "ca197716e18281d001b008e3f8c956fb1221c851"
     },
     "xtalkSpan1": {
-      "oid": "40b570300780f3e7459fae87c7e6b5f0df3d1f53"
+      "oid": "1f0b9ff0d9e6041b8bf89589cf0af7f98832caf4"
     },
     "xtalkSpan3": {
       "oid": "4e9529666e78052354297b3e2052a9d5fcc56c56"
