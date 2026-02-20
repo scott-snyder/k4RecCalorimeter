@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "8e9e9526dc2e089e4e02d88147827b41ee0f2259",
-  "head": "6f92a1a9e4b0c28c091e6fe6a02e2569dce256b4",
+  "prev": "ece1cb0b88af2a739264928a78511f9208279019",
+  "head": "4e5d4d9ad12148bf80f29de47020308e2a2537f0",
   "applied": [
     "cxx26",
     "depr",
@@ -46,8 +46,7 @@
     "noiseIndex",
     "sortnoise",
     "repnoise",
-    "createCaloCells",
-    "refresh-temp"
+    "createCaloCells"
   ],
   "unapplied": [
     "move-check",
@@ -97,7 +96,7 @@
       "oid": "40e3ce76215559ea16539a12e824285fc6c8c2c6"
     },
     "createCaloCells": {
-      "oid": "7aef7b48e2c259f1348f8543a2a80b552ce97785"
+      "oid": "4e5d4d9ad12148bf80f29de47020308e2a2537f0"
     },
     "createTopoCluster": {
       "oid": "7c7c258165fc1a552723115c6bd1a89c97538d9f"
@@ -168,11 +167,8 @@
     "noiseIndex": {
       "oid": "98bb6a83c4e9b381476a154504bcedf18b39cae2"
     },
-    "refresh-temp": {
-      "oid": "6f92a1a9e4b0c28c091e6fe6a02e2569dce256b4"
-    },
     "repnoise": {
-      "oid": "8db0d95aa5c6f6be949668f464a712dc0f6b4481"
+      "oid": "fa1f3c7f617c6453e32aa4c2e3c912970762876a"
     },
     "sortnoise": {
       "oid": "a8631ae9865720930c4cfd3e2bb038d9ac30e813"
