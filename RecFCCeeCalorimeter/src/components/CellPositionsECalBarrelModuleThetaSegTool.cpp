@@ -2,15 +2,15 @@
 
 // EDM
 #include "edm4hep/CalorimeterHitCollection.h"
-#include "k4FWCore/k4_check.h"
+#include "RecCaloCommon/k4RecCalorimeter_check.h"
 
 #include <cmath>
 
 DECLARE_COMPONENT(CellPositionsECalBarrelModuleThetaSegTool)
 
 StatusCode CellPositionsECalBarrelModuleThetaSegTool::initialize() {
-  K4_GAUDI_CHECK( AlgTool::initialize() );
-  K4_GAUDI_CHECK( m_geoSvc.retrieve() );
+  K4RECCALORIMETER_CHECK( AlgTool::initialize() );
+  K4RECCALORIMETER_CHECK( m_geoSvc.retrieve() );
 
   // get segmentation
   m_segmentation = dynamic_cast<dd4hep::DDSegmentation::FCCSWGridModuleThetaMerged_k4geo*>(
