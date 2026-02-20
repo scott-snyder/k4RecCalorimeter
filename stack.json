@@ -1,12 +1,13 @@
 {
   "version": 5,
-  "prev": "a4ae281365623b474e7bc96f46db3fa963c90c01",
-  "head": "1f0b9ff0d9e6041b8bf89589cf0af7f98832caf4",
+  "prev": "e34900f0fa9f68dd58d7647766f8072770aaa790",
+  "head": "ca644189b16ebfc7feac35ed8fe82eb1ec3689e6",
   "applied": [
     "cxx26",
     "depr",
     "layerIndex",
-    "xtalkSpan1"
+    "xtalkSpan1",
+    "noise1b"
   ],
   "unapplied": [
     "noise1a",
@@ -30,7 +31,6 @@
     "multiIndexer",
     "xtalkSpan3",
     "xtalkSpan5",
-    "noise1b",
     "noise1c",
     "noise3",
     "caloCellConstantsSvc",
@@ -156,7 +156,7 @@
       "oid": "47273d8da9de9f7894ce5ade267c2b99f28dc181"
     },
     "noise1b": {
-      "oid": "748b6fbe6647e7072ca2b829c6cc4a53fb228798"
+      "oid": "ca644189b16ebfc7feac35ed8fe82eb1ec3689e6"
     },
     "noise1c": {
       "oid": "b01f8c81adec1cc2b01d19eacbc30c0df61cd684"
