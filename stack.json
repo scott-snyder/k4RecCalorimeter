@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "462116958e517bab8720682a2375744b2759ae33",
-  "head": "e51df3c1b2645f06d8de6b486edf6d79a9cfb61e",
+  "prev": "b8a34edcc0fbbb22026c47655a1618c866164b12",
+  "head": "9818d4794eb21fef860b7e8836c8c3bbc5e655ef",
   "applied": [
     "cxx26",
     "depr",
@@ -32,14 +32,14 @@
     "multiIndexer",
     "xtalkSpan3",
     "xtalkSpan5",
-    "noise3"
-  ],
-  "unapplied": [
+    "noise3",
     "caloCellIndexerSvc",
     "cellsInConst",
     "ecalbarrelIndexer",
     "hcalIndexer",
-    "ecalendcapTool",
+    "ecalendcapTool"
+  ],
+  "unapplied": [
     "cellposIndex",
     "indexingConfig",
     "xtalkIndex",
@@ -63,7 +63,7 @@
       "oid": "0b25ce3ce72905e3e0cf88415bcd2c268029bf6b"
     },
     "caloCellIndexerSvc": {
-      "oid": "13afb510b6288da8b0c14e56a4f52df12d34bdd1"
+      "oid": "4935994f0509f2b97fcb2ca36f4dadf64260c94e"
     },
     "caloToolInfo1": {
       "oid": "751dee6f6fe1fa626bd642f91c0b7682c4fd8a99"
@@ -84,7 +84,7 @@
       "oid": "15fe534c7d1ceece14d09d831d0cb6e8f900df1d"
     },
     "cellsInConst": {
-      "oid": "0403a6500b16394af80c9cca8a107045e81e767e"
+      "oid": "404e8fb2b59573e37f4c0374b1f66563f75d6486"
     },
     "check-deprecated": {
       "oid": "5fb219b457e9483f8496086a990cbecbadcfef37"
@@ -108,10 +108,10 @@
       "oid": "d6882d4935fdcda3a7363863fd46e4cf1030c5ed"
     },
     "ecalbarrelIndexer": {
-      "oid": "c68c2ed3c43c5ccb1fd110843e7d9e8edcca7e43"
+      "oid": "1a0eb3d861a8e447868b17a1244102b4bf15020c"
     },
     "ecalendcapTool": {
-      "oid": "8656c20f91ca0d84b9bedd0a264fa085b3e708f5"
+      "oid": "9818d4794eb21fef860b7e8836c8c3bbc5e655ef"
     },
     "geoConst2": {
       "oid": "501ba0f2830c4039bb2cfbdab4258ab9435aee54"
@@ -126,7 +126,7 @@
       "oid": "841cf521ee6b59e98298889aa3d96f96f18f84a5"
     },
     "hcalIndexer": {
-      "oid": "185b0314d69025810e41440fcc35ebdff6525386"
+      "oid": "07177deef8546dae34003096b7516e3edbc23d88"
     },
     "idmap": {
       "oid": "503a71012aa2b9d4605dc6df6c4f3adc4696fc78"
