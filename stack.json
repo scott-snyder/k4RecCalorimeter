@@ -1,10 +1,12 @@
 {
   "version": 5,
-  "prev": "e597ca82ff1b2a4201feef9d1958fb32466d525f",
-  "head": "d6882d4935fdcda3a7363863fd46e4cf1030c5ed",
+  "prev": "3a1a396b55ec4599d51faaf0a5b273856b75dfd6",
+  "head": "b354eaf93f31e6ed3f4174a2fa4a94134aad42e2",
   "applied": [
     "cxx26",
-    "depr"
+    "depr",
+    "testdir",
+    "xtalk"
   ],
   "unapplied": [
     "layerIndex",
@@ -22,8 +24,6 @@
     "caloType",
     "hcal-tool",
     "subdetVolman",
-    "testdir",
-    "xtalk",
     "geoConst2",
     "timeout",
     "hcal-seg",
@@ -177,7 +177,7 @@
       "oid": "c09212977b8ce4e5e8f0836d087dbfd1abe34fab"
     },
     "testdir": {
-      "oid": "7e11181142ed6ebd591bd487c81da8b0d3e5a42f"
+      "oid": "2eb1fe4f812deb2d4d798d5e48552c05bbddde31"
     },
     "timeout": {
       "oid": "6ea8751eb1c27d99cd93b870db5fab5a3f866452"
@@ -186,7 +186,7 @@
       "oid": "3faafc12fe8fcd3f1cc04d6a67f44fce44c0864b"
     },
     "xtalk": {
-      "oid": "148aa98dad38ef8454703a75753f19c172d6b411"
+      "oid": "b354eaf93f31e6ed3f4174a2fa4a94134aad42e2"
     },
     "xtalkIndex": {
       "oid": "c516ca7acf69f2d5fd9f6fe4167e7da2648fd64c"
