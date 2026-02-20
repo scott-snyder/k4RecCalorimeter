@@ -13,7 +13,7 @@
 #include "k4Interface/ICellPositionsTool.h"
 #include "k4Interface/INoiseCaloCellsTool.h"
 #include "k4Interface/INoiseConstTool.h"
-#include "k4FWCore/k4_check.h"
+#include "RecCaloCommon/k4RecCalorimeter_check.h"
 #include "edm4hep/EventHeaderCollection.h"
 #include "k4FWCore/DataHandle.h"
 #include "CLHEP/Random/Ranlux64Engine.h"
