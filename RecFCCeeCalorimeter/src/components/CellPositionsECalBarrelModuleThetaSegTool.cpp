@@ -2,17 +2,17 @@
 
 // EDM
 #include "edm4hep/CalorimeterHitCollection.h"
-#include "RecCaloCommon/k4RecCalorimeter_check.h"
+#include "k4FWCore/k4_check.h"
 
 #include <cmath>
 
 DECLARE_COMPONENT(CellPositionsECalBarrelModuleThetaSegTool)
 
 StatusCode CellPositionsECalBarrelModuleThetaSegTool::initialize() {
-  K4RECCALORIMETER_CHECK( AlgTool::initialize() );
-  K4RECCALORIMETER_CHECK( m_geoSvc.retrieve() );
-  K4RECCALORIMETER_CHECK( m_indexerSvc.retrieve() );
-  K4RECCALORIMETER_CHECK( m_constantsSvc.retrieve() );
+  K4_GAUDI_CHECK( AlgTool::initialize() );
+  K4_GAUDI_CHECK( m_geoSvc.retrieve() );
+  K4_GAUDI_CHECK( m_indexerSvc.retrieve() );
+  K4_GAUDI_CHECK( m_constantsSvc.retrieve() );
 
   // get segmentation
   dd4hep::Segmentation segmentation = m_geoSvc->getDetector()->readout(m_readoutName).segmentation();
@@ -54,9 +54,9 @@ StatusCode CellPositionsECalBarrelModuleThetaSegTool::initialize() {
       dd4hep::DDSegmentation::Vector3D inSeg = m_segmentation->position(id);
       positions.at(index) = vc->localToWorld(dd4hep::Position(inSeg));
     }
-    K4RECCALORIMETER_CHECK( m_constantsSvc->putObj (dataKey, std::move (positions)) );
+    K4_GAUDI_CHECK( m_constantsSvc->putObj (dataKey, std::move (positions)) );
     data = m_constantsSvc->getObj<PositionData> (dataKey);
-    K4RECCALORIMETER_CHECK( data != nullptr );
+    K4_GAUDI_CHECK( data != nullptr );
   }
   m_positions = *data;
   return StatusCode::SUCCESS;

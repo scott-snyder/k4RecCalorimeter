@@ -8,7 +8,7 @@
 
 #include "CaloCellPositionsTool.h"
 #include "k4Interface/IGeoSvc.h"
-#include "RecCaloCommon/k4RecCalorimeter_check.h"
+#include "k4FWCore/k4_check.h"
 #include "edm4hep/CalorimeterHitCollection.h"
 #include "DD4hep/Detector.h"
 #include "DD4hep/Readout.h"
@@ -21,7 +21,7 @@ DECLARE_COMPONENT(CaloCellPositionsTool)
  */
 StatusCode CaloCellPositionsTool::initialize()
 {
-  K4RECCALORIMETER_CHECK( base_class::initialize() );
+  K4_GAUDI_CHECK( base_class::initialize() );
 
   SmartIF<IGeoSvc> geoSvc = service<IGeoSvc>("GeoSvc");
   if (!geoSvc) {

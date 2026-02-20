@@ -1,13 +1,13 @@
 #include "CellPositionsDummyTool.h"
-#include "RecCaloCommon/k4RecCalorimeter_check.h"
+#include "k4FWCore/k4_check.h"
 
 #include "edm4hep/CalorimeterHitCollection.h"
 
 DECLARE_COMPONENT(CellPositionsDummyTool)
 
 StatusCode CellPositionsDummyTool::initialize() {
-  K4RECCALORIMETER_CHECK( AlgTool::initialize() );
-  K4RECCALORIMETER_CHECK( m_geoSvc.retrieve() );
+  K4_GAUDI_CHECK( AlgTool::initialize() );
+  K4_GAUDI_CHECK( m_geoSvc.retrieve() );
   return StatusCode::SUCCESS;
 }
 
