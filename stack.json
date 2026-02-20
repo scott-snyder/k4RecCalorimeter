@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "fc1c7d9146597f4e4438dafc992f4c50377d927f",
-  "head": "99548f3ccd8fe2f618520c51f37fba64ea0cfa5a",
+  "prev": "e7a0e1ee18365bf7799572ee8daa8c271a388634",
+  "head": "543212c85f46ea36b5d022b90a694306e78d927f",
   "applied": [
     "cxx26",
     "depr",
@@ -22,10 +22,10 @@
     "testdir",
     "xtalk",
     "geoConst2",
-    "timeout"
+    "timeout",
+    "hcal-tool"
   ],
   "unapplied": [
-    "hcal-tool",
     "hcal-seg",
     "hcal-seg-row",
     "nocxx23",
@@ -123,7 +123,7 @@
       "oid": "3c968295bccaacf3e653a76a6899f6077a9b40c5"
     },
     "hcal-tool": {
-      "oid": "d807f0be01b7361188c0859e5d5a6aba03e16233"
+      "oid": "543212c85f46ea36b5d022b90a694306e78d927f"
     },
     "hcalIndexer": {
       "oid": "185b0314d69025810e41440fcc35ebdff6525386"
