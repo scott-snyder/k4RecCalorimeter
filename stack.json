@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "cb092ca417591be3909343f23797a99a585cdedf",
-  "head": "89978e84e776c2cca5b0f6ca7081a5c2b9f23bdc",
+  "prev": "0425271b8167188ec7e4f7204d9facea8eb8de6f",
+  "head": "17298b09a659d3be2d39bfe056dde9912a567d3a",
   "applied": [
     "layerIndex",
     "xtalkSpan1",
@@ -23,10 +23,10 @@
     "hcal-seg",
     "hcal-seg-row",
     "nocxx23",
-    "caloToolInfo3"
+    "caloToolInfo3",
+    "idmapIndexer"
   ],
   "unapplied": [
-    "idmapIndexer",
     "multiIndexer",
     "xtalkSpan3",
     "xtalkSpan5",
@@ -114,7 +114,7 @@
       "oid": "89978e84e776c2cca5b0f6ca7081a5c2b9f23bdc"
     },
     "idmapIndexer": {
-      "oid": "883b5996bb0e38ff0963d7e764dbf7e360e4e607"
+      "oid": "17298b09a659d3be2d39bfe056dde9912a567d3a"
     },
     "multiIndexer": {
       "oid": "23597a51eaa2ddd61021567c49bfa8f2d7e06350"
