@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "a2b68256081e051f97baee2bc44a8100e35cd3dd",
-  "head": "288aa8262a788cc9ca3a52312913e06939d697f6",
+  "prev": "574e05cfbcc9d601057dd2ec893abb1536fbef95",
+  "head": "2ce8214afd659b45ecbc0e1fc1afc8c9045779c9",
   "applied": [
     "layerIndex",
     "xtalkSpan1",
@@ -12,8 +12,7 @@
     "cellPositionsConst2",
     "cellPositions",
     "nodebug",
-    "caloToolInfo1",
-    "refresh-temp"
+    "caloToolInfo1"
   ],
   "unapplied": [
     "subdetVolman",
@@ -79,10 +78,7 @@
       "oid": "ad9a94390bd4c4d6daa6b0dff5d6caefaba298f6"
     },
     "caloToolInfo1": {
-      "oid": "a6d5d26900bdd47ad7f3cf2c9c2f3fe1f1cffa59"
-    },
-    "refresh-temp": {
-      "oid": "288aa8262a788cc9ca3a52312913e06939d697f6"
+      "oid": "2ce8214afd659b45ecbc0e1fc1afc8c9045779c9"
     },
     "subdetVolman": {
       "oid": "d908ef7082bbed1aa6cf38c752f4b37324616927"
