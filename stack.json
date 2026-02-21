@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "870dedb3ecaa51448e32a4dc17a0f6e0fe722300",
-  "head": "1a1d5f68727db1eb00346e56389f94e2c9a38cdd",
+  "prev": "9f9b81b7712bff85eabc8fa4800ab99aeedeba11",
+  "head": "33657aa10f7bc1fed9fdfd5a1fd890c581a07592",
   "applied": [
     "layerIndex",
     "xtalkSpan1",
@@ -9,7 +9,8 @@
     "noise1b",
     "noise1c",
     "calib2",
-    "cellPositionsConst2"
+    "cellPositionsConst2",
+    "cellPositions"
   ],
   "unapplied": [
     "subdetVolman",
@@ -69,6 +70,9 @@
     },
     "cellPositionsConst2": {
       "oid": "1a1d5f68727db1eb00346e56389f94e2c9a38cdd"
+    },
+    "cellPositions": {
+      "oid": "33657aa10f7bc1fed9fdfd5a1fd890c581a07592"
     },
     "subdetVolman": {
       "oid": "d908ef7082bbed1aa6cf38c752f4b37324616927"
