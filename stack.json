@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "d3aafd28064bcea8c188ac9dbcb5361ac4bf4843",
-  "head": "b07be6d5d43b16c8674aa7fa2455c9c1583a358c",
+  "prev": "7fc7d872c1d914d4a30bd375d12b6765bbea4f0a",
+  "head": "d186642d99bcfc7ccb771d4473e9a5ba363be1fa",
   "applied": [
     "layerIndex",
     "xtalkSpan1",
@@ -14,7 +14,8 @@
     "nodebug",
     "caloToolInfo1",
     "idmap",
-    "caloCellConstantsSvc"
+    "caloCellConstantsSvc",
+    "caloType"
   ],
   "unapplied": [
     "subdetVolman",
@@ -40,7 +41,6 @@
     "topoNoiseIndex",
     "createTopoCluster",
     "noiseIndex",
-    "caloType",
     "createCaloCells",
     "discrit-wip",
     "discrit2-wip",
@@ -85,6 +85,9 @@
     },
     "caloCellConstantsSvc": {
       "oid": "b07be6d5d43b16c8674aa7fa2455c9c1583a358c"
+    },
+    "caloType": {
+      "oid": "d186642d99bcfc7ccb771d4473e9a5ba363be1fa"
     },
     "subdetVolman": {
       "oid": "d908ef7082bbed1aa6cf38c752f4b37324616927"
@@ -154,9 +157,6 @@
     },
     "noiseIndex": {
       "oid": "ae351c2b596fc3aa5f5b4eb7171db7eab6098fb9"
-    },
-    "caloType": {
-      "oid": "1b5097f175d2f29d2cf21a66b48052e3dbace167"
     },
     "createCaloCells": {
       "oid": "de04602550c75f4dd6febab45400800dedd0ea96"
