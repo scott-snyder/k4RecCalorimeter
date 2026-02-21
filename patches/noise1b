@@ -1,7 +1,7 @@
-Bottom: 286f25e73859af06ed326463ae3247f52233a804
-Top:    668a6c0ad47b17ea50075fbfbf8380ca470f648d
+Bottom: f46b00e76b92cba7d8e6c2f9d3a1dda71890932b
+Top:    55a183f50610884cc10facc35f3a8212300b485e
 Author: sss <sss@karma>
-Date:   2026-02-20 04:30:46 -0500
+Date:   2026-02-21 16:09:16 -0500
 
 Adding a method to INoiseConstTool to return both RMS/offset.
 
