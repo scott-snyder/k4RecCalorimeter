@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "cb89c844402b2c2cd9a7b5092e81d94b44345d4f",
+  "prev": "e8644bfe589b5910c0b352c78a338c8e1a57d4f7",
   "head": "6744ddd477eab9d99b00eb9475b8e7e7b0c09bb3",
   "applied": [
     "layerIndex",
@@ -41,7 +41,6 @@
     "createTopoCluster"
   ],
   "unapplied": [
-    "noiseIndex",
     "createCaloCells",
     "discrit-wip",
     "discrit2-wip",
@@ -157,9 +156,6 @@
     },
     "createTopoCluster": {
       "oid": "6744ddd477eab9d99b00eb9475b8e7e7b0c09bb3"
-    },
-    "noiseIndex": {
-      "oid": "ae351c2b596fc3aa5f5b4eb7171db7eab6098fb9"
     },
     "createCaloCells": {
       "oid": "de04602550c75f4dd6febab45400800dedd0ea96"
