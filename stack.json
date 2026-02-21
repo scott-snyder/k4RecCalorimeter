@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "2211faa41d84ceee997764ead6b1ecdff29998ec",
-  "head": "0fdf6b2000c7caf78df51d9aa97b5d04a1630c43",
+  "prev": "cfc77380279112580df7a90f1b93ab3a0ac5d93a",
+  "head": "d93d3d90e05afd2ca707b4cb2b8597f673f1cfcb",
   "applied": [
     "layerIndex",
     "xtalkSpan1",
@@ -18,10 +18,10 @@
     "caloType",
     "hcal-tool",
     "subdetVolman",
-    "testdir"
+    "testdir",
+    "geoConst2"
   ],
   "unapplied": [
-    "geoConst2",
     "hcal-seg",
     "hcal-seg-row",
     "nocxx23",
@@ -99,7 +99,7 @@
       "oid": "0fdf6b2000c7caf78df51d9aa97b5d04a1630c43"
     },
     "geoConst2": {
-      "oid": "8c60c6c257f110206e251fd5fc3aefbde65c970c"
+      "oid": "d93d3d90e05afd2ca707b4cb2b8597f673f1cfcb"
     },
     "hcal-seg": {
       "oid": "0e74baf051b7d465d6f5acf028c5f888caf73a6f"
