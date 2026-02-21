@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "7fc7d872c1d914d4a30bd375d12b6765bbea4f0a",
-  "head": "d186642d99bcfc7ccb771d4473e9a5ba363be1fa",
+  "prev": "f54d63ce851500b773a80cda1f5b29f5e9c5f37e",
+  "head": "feac6f21a32fb376c7d5ffb3047e3e7859708c14",
   "applied": [
     "layerIndex",
     "xtalkSpan1",
@@ -15,12 +15,12 @@
     "caloToolInfo1",
     "idmap",
     "caloCellConstantsSvc",
-    "caloType"
+    "caloType",
+    "hcal-tool"
   ],
   "unapplied": [
     "subdetVolman",
     "geoConst2",
-    "hcal-tool",
     "hcal-seg",
     "hcal-seg-row",
     "nocxx23",
@@ -89,14 +89,14 @@
     "caloType": {
       "oid": "d186642d99bcfc7ccb771d4473e9a5ba363be1fa"
     },
+    "hcal-tool": {
+      "oid": "feac6f21a32fb376c7d5ffb3047e3e7859708c14"
+    },
     "subdetVolman": {
       "oid": "d908ef7082bbed1aa6cf38c752f4b37324616927"
     },
     "geoConst2": {
       "oid": "8c60c6c257f110206e251fd5fc3aefbde65c970c"
-    },
-    "hcal-tool": {
-      "oid": "c982c9661cb89180503707d98fe18b80c232aef0"
     },
     "hcal-seg": {
       "oid": "0e74baf051b7d465d6f5acf028c5f888caf73a6f"
