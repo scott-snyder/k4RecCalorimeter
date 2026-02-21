@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "cdb8d71e94505f74c141821c6831d49b5f70489a",
+  "prev": "92cfaa381505e2f44b8e78b708a2a0fc154b2487",
   "head": "d94a682ebb8f36e7412bd5863dcb549a92a2a165",
   "applied": [
     "layerIndex",
@@ -42,7 +42,6 @@
     "noiseIndex"
   ],
   "unapplied": [
-    "createCaloCells",
     "discrit-wip",
     "discrit2-wip",
     "diag-wip",
@@ -160,9 +159,6 @@
     },
     "noiseIndex": {
       "oid": "d94a682ebb8f36e7412bd5863dcb549a92a2a165"
-    },
-    "createCaloCells": {
-      "oid": "de04602550c75f4dd6febab45400800dedd0ea96"
     },
     "discrit-wip": {
       "oid": "a70cead916f0dc64a52083edbae7fba44bb38149"
