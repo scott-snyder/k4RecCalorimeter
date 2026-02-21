@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "bfd560b89351f2ca7b048f3b458098cc1fe8e92c",
+  "prev": "88cd9ab5d88c107f6a00639deeec06c6582d25df",
   "head": "c8a5a52aee013835d58a23f4784de3eeb3185e8d",
   "applied": [
     "layerIndex",
@@ -12,7 +12,6 @@
   ],
   "unapplied": [
     "subdetVolman",
-    "cellPositionsConst2",
     "geoConst2",
     "cellPositions",
     "hcal-tool",
@@ -70,9 +69,6 @@
     },
     "subdetVolman": {
       "oid": "d908ef7082bbed1aa6cf38c752f4b37324616927"
-    },
-    "cellPositionsConst2": {
-      "oid": "3b38b1ca434bed60f6aba74c9c2448b9d27d4e2a"
     },
     "geoConst2": {
       "oid": "8c60c6c257f110206e251fd5fc3aefbde65c970c"
