@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "c07c5ac89d439e43b4b1982e2b5ae2fb4e5401e9",
-  "head": "9a77a3bcee1eb5e04c5f6ddc6a2c3edadcfc8df4",
+  "prev": "d3aafd28064bcea8c188ac9dbcb5361ac4bf4843",
+  "head": "b07be6d5d43b16c8674aa7fa2455c9c1583a358c",
   "applied": [
     "layerIndex",
     "xtalkSpan1",
@@ -13,7 +13,8 @@
     "cellPositions",
     "nodebug",
     "caloToolInfo1",
-    "idmap"
+    "idmap",
+    "caloCellConstantsSvc"
   ],
   "unapplied": [
     "subdetVolman",
@@ -28,7 +29,6 @@
     "xtalkSpan3",
     "xtalkSpan5",
     "noise3",
-    "caloCellConstantsSvc",
     "caloCellIndexerSvc",
     "cellsInConst",
     "ecalbarrelIndexer",
@@ -83,6 +83,9 @@
     "idmap": {
       "oid": "9a77a3bcee1eb5e04c5f6ddc6a2c3edadcfc8df4"
     },
+    "caloCellConstantsSvc": {
+      "oid": "b07be6d5d43b16c8674aa7fa2455c9c1583a358c"
+    },
     "subdetVolman": {
       "oid": "d908ef7082bbed1aa6cf38c752f4b37324616927"
     },
@@ -118,9 +121,6 @@
     },
     "noise3": {
       "oid": "6a3788c894a9f43cd02f94b36fb6a2d2e638c89d"
-    },
-    "caloCellConstantsSvc": {
-      "oid": "81aa8eec3833189e00e1030e24612d93268e46bc"
     },
     "caloCellIndexerSvc": {
       "oid": "95477322f555226079f97282dca25304e244e4a9"
