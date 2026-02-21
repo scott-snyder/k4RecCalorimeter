@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "8505e723b32770c9aaf4e7cede4d9e871b59fedb",
-  "head": "3da2417b8af744fd038efe217212e50995dce705",
+  "prev": "cb092ca417591be3909343f23797a99a585cdedf",
+  "head": "89978e84e776c2cca5b0f6ca7081a5c2b9f23bdc",
   "applied": [
     "layerIndex",
     "xtalkSpan1",
@@ -22,10 +22,10 @@
     "geoConst2",
     "hcal-seg",
     "hcal-seg-row",
-    "nocxx23"
+    "nocxx23",
+    "caloToolInfo3"
   ],
   "unapplied": [
-    "caloToolInfo3",
     "idmapIndexer",
     "multiIndexer",
     "xtalkSpan3",
@@ -111,7 +111,7 @@
       "oid": "3da2417b8af744fd038efe217212e50995dce705"
     },
     "caloToolInfo3": {
-      "oid": "911fd241c39e8aae305081066dabd503ba7940af"
+      "oid": "89978e84e776c2cca5b0f6ca7081a5c2b9f23bdc"
     },
     "idmapIndexer": {
       "oid": "883b5996bb0e38ff0963d7e764dbf7e360e4e607"
