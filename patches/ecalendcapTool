@@ -1,0 +1,9 @@
+Bottom: 89c5d2637eccfa9de61ddf9215593a70f47abab8
+Top:    ab732eb1d7d2a7f339281df237d47d398cef5438
+Author: sss <sss@karma>
+Date:   2026-02-16 11:35:40 -0500
+
+Add implementation of ICalorimeterTool for Allegro ECal endcap.
+
+Add ECalEndcapTurbineCaloTool, implementing ICalorimeterTool for the
+Allegro ecal endcap.
