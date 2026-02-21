@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "0425271b8167188ec7e4f7204d9facea8eb8de6f",
+  "prev": "b1a59ac376619b2408b9ac649a7efd5f9be2be94",
   "head": "17298b09a659d3be2d39bfe056dde9912a567d3a",
   "applied": [
     "layerIndex",
@@ -27,7 +27,6 @@
     "idmapIndexer"
   ],
   "unapplied": [
-    "multiIndexer",
     "xtalkSpan3",
     "xtalkSpan5",
     "noise3",
@@ -115,9 +114,6 @@
     },
     "idmapIndexer": {
       "oid": "17298b09a659d3be2d39bfe056dde9912a567d3a"
-    },
-    "multiIndexer": {
-      "oid": "23597a51eaa2ddd61021567c49bfa8f2d7e06350"
     },
     "xtalkSpan3": {
       "oid": "68c38bf6a559b006287f88e5cbd8a86e5f83bb19"
