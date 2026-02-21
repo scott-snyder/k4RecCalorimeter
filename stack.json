@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "80c13128f7c798a020525e784a8dd1fd027d3a4a",
-  "head": "14d24264d10d4678d6ea8e5df7abf85d425d3faa",
+  "prev": "2211faa41d84ceee997764ead6b1ecdff29998ec",
+  "head": "0fdf6b2000c7caf78df51d9aa97b5d04a1630c43",
   "applied": [
     "layerIndex",
     "xtalkSpan1",
@@ -17,7 +17,8 @@
     "caloCellConstantsSvc",
     "caloType",
     "hcal-tool",
-    "subdetVolman"
+    "subdetVolman",
+    "testdir"
   ],
   "unapplied": [
     "geoConst2",
@@ -45,8 +46,7 @@
     "discrit-wip",
     "discrit2-wip",
     "diag-wip",
-    "cellids-wip",
-    "testdir"
+    "cellids-wip"
   ],
   "hidden": [],
   "patches": {
@@ -94,6 +94,9 @@
     },
     "subdetVolman": {
       "oid": "14d24264d10d4678d6ea8e5df7abf85d425d3faa"
+    },
+    "testdir": {
+      "oid": "0fdf6b2000c7caf78df51d9aa97b5d04a1630c43"
     },
     "geoConst2": {
       "oid": "8c60c6c257f110206e251fd5fc3aefbde65c970c"
@@ -172,9 +175,6 @@
     },
     "cellids-wip": {
       "oid": "9ce3b3e8ecec9fbd33b75beeef41f1453146fa67"
-    },
-    "testdir": {
-      "oid": "7f64b32e251df9e845e94b03bec51e1ab9263ded"
     }
   }
 }
