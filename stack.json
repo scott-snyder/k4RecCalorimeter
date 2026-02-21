@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "48564be9ff645323e96c2d5e023cb8d353a9008c",
+  "prev": "a40e0875743bb21ed2c64a8f472b8bf91d249e98",
   "head": "ad9a94390bd4c4d6daa6b0dff5d6caefaba298f6",
   "applied": [
     "layerIndex",
@@ -20,7 +20,6 @@
     "hcal-seg",
     "hcal-seg-row",
     "nocxx23",
-    "caloToolInfo1",
     "caloToolInfo3",
     "idmap",
     "idmapIndexer",
@@ -94,9 +93,6 @@
     },
     "nocxx23": {
       "oid": "83dfbfa879718b4478d29b1846b59878082a6007"
-    },
-    "caloToolInfo1": {
-      "oid": "7bf813cbceabeca31236b8ee9ac406853a640a5c"
     },
     "caloToolInfo3": {
       "oid": "911fd241c39e8aae305081066dabd503ba7940af"
