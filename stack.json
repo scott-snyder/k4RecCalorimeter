@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "11021b769930d6463699e890d5e5bfda866f0b65",
-  "head": "0e57a90f27e67996a89a1b7432aa1b3196bf0da2",
+  "prev": "6fbcad059a47f5680fe4e7935b9d31851e4d52e0",
+  "head": "f4b892e288fccc3a2e9b7467e0e9167c2639b6d0",
   "applied": [
     "cxx26",
     "depr",
@@ -15,10 +15,10 @@
     "calib2",
     "cellPositionsConst2",
     "cellPositions",
-    "nodebug"
+    "nodebug",
+    "caloToolInfo1"
   ],
   "unapplied": [
-    "caloToolInfo1",
     "idmap",
     "caloCellConstantsSvc",
     "caloType",
@@ -66,7 +66,7 @@
       "oid": "4935994f0509f2b97fcb2ca36f4dadf64260c94e"
     },
     "caloToolInfo1": {
-      "oid": "751dee6f6fe1fa626bd642f91c0b7682c4fd8a99"
+      "oid": "f4b892e288fccc3a2e9b7467e0e9167c2639b6d0"
     },
     "caloToolInfo3": {
       "oid": "83d69fdbfa1461b54e815465eaad9803a02d00e0"
