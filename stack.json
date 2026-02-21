@@ -1,11 +1,12 @@
 {
   "version": 5,
-  "prev": "f77bea5fcca81c2f10ac9f21a7e8deb07e784070",
-  "head": "9c484ccf6c6faf1ffd29a7342ae457236a5a0672",
+  "prev": "7c95d52e0166084e9d1e558789c57385bfd50c80",
+  "head": "ddda60c4747020ee80cb191e7174a782e8d79509",
   "applied": [
     "layerIndex",
     "xtalkSpan1",
-    "noise1a"
+    "noise1a",
+    "noise1b"
   ],
   "unapplied": [
     "subdetVolman",
@@ -25,7 +26,6 @@
     "multiIndexer",
     "xtalkSpan3",
     "xtalkSpan5",
-    "noise1b",
     "noise1c",
     "noise3",
     "caloCellConstantsSvc",
@@ -58,6 +58,9 @@
     },
     "noise1a": {
       "oid": "9c484ccf6c6faf1ffd29a7342ae457236a5a0672"
+    },
+    "noise1b": {
+      "oid": "ddda60c4747020ee80cb191e7174a782e8d79509"
     },
     "subdetVolman": {
       "oid": "d908ef7082bbed1aa6cf38c752f4b37324616927"
@@ -109,9 +112,6 @@
     },
     "xtalkSpan5": {
       "oid": "5962f7f5ba63c372e9a742810771ca140d2fdd29"
-    },
-    "noise1b": {
-      "oid": "6c3ff6dcdfc48be428a39abf632ab72107d344d6"
     },
     "noise1c": {
       "oid": "ed0188539b43bbb45a4b291cbf09f767b1282319"
