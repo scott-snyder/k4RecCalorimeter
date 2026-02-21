@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "e8644bfe589b5910c0b352c78a338c8e1a57d4f7",
-  "head": "6744ddd477eab9d99b00eb9475b8e7e7b0c09bb3",
+  "prev": "cdb8d71e94505f74c141821c6831d49b5f70489a",
+  "head": "d94a682ebb8f36e7412bd5863dcb549a92a2a165",
   "applied": [
     "layerIndex",
     "xtalkSpan1",
@@ -38,7 +38,8 @@
     "indexingConfig",
     "xtalkIndex",
     "topoNoiseIndex",
-    "createTopoCluster"
+    "createTopoCluster",
+    "noiseIndex"
   ],
   "unapplied": [
     "createCaloCells",
@@ -156,6 +157,9 @@
     },
     "createTopoCluster": {
       "oid": "6744ddd477eab9d99b00eb9475b8e7e7b0c09bb3"
+    },
+    "noiseIndex": {
+      "oid": "d94a682ebb8f36e7412bd5863dcb549a92a2a165"
     },
     "createCaloCells": {
       "oid": "de04602550c75f4dd6febab45400800dedd0ea96"
