@@ -1,10 +1,11 @@
 {
   "version": 5,
-  "prev": "768a661055c7ac649c62ceaa2a84e8e38b454347",
-  "head": "1125e569117d6c37dc4a0ab0499187668afd5e69",
+  "prev": "f77bea5fcca81c2f10ac9f21a7e8deb07e784070",
+  "head": "9c484ccf6c6faf1ffd29a7342ae457236a5a0672",
   "applied": [
     "layerIndex",
-    "xtalkSpan1"
+    "xtalkSpan1",
+    "noise1a"
   ],
   "unapplied": [
     "subdetVolman",
@@ -24,7 +25,6 @@
     "multiIndexer",
     "xtalkSpan3",
     "xtalkSpan5",
-    "noise1a",
     "noise1b",
     "noise1c",
     "noise3",
@@ -55,6 +55,9 @@
     },
     "xtalkSpan1": {
       "oid": "1125e569117d6c37dc4a0ab0499187668afd5e69"
+    },
+    "noise1a": {
+      "oid": "9c484ccf6c6faf1ffd29a7342ae457236a5a0672"
     },
     "subdetVolman": {
       "oid": "d908ef7082bbed1aa6cf38c752f4b37324616927"
@@ -106,9 +109,6 @@
     },
     "xtalkSpan5": {
       "oid": "5962f7f5ba63c372e9a742810771ca140d2fdd29"
-    },
-    "noise1a": {
-      "oid": "1b7db82b6e724c0ac86b3cf66d1855cec877495f"
     },
     "noise1b": {
       "oid": "6c3ff6dcdfc48be428a39abf632ab72107d344d6"
