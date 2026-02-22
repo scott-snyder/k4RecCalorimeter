@@ -1,14 +1,14 @@
 {
   "version": 5,
-  "prev": "33ef981b63158ecc07deb8dd24bb5581477c5f05",
-  "head": "e676ed69f8d89aeb709a7d1e8f0eac942697c3f0",
+  "prev": "5edc352166684b4ffe72ea0bea5798ccda7cfa9b",
+  "head": "9c484ccf6c6faf1ffd29a7342ae457236a5a0672",
   "applied": [
     "layerIndex",
     "xtalkSpan1",
-    "noise1a",
-    "noise1b"
+    "noise1a"
   ],
   "unapplied": [
+    "noise1b",
     "noise1c",
     "calib2",
     "cellPositionsConst2",
