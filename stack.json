@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "d5e038987146cc7bcdecf6ede0a64ccf54810b12",
-  "head": "75afbc3c7ffaa9249165e8d0d1ce27a142e9308d",
+  "prev": "ef012bf732c920c837dda4f750690ef09a600bea",
+  "head": "e3aef426b9af6adc2525f7036b483939bd9f873d",
   "applied": [
     "cxx26",
     "depr",
@@ -39,15 +39,15 @@
     "hcalIndexer",
     "ecalendcapTool",
     "cellposIndex",
-    "indexingConfig"
-  ],
-  "unapplied": [
+    "indexingConfig",
     "xtalkIndex",
     "topoNoiseIndex",
     "createTopoCluster",
     "noiseIndex",
     "sortnoise",
-    "repnoise",
+    "repnoise"
+  ],
+  "unapplied": [
     "createCaloCells",
     "move-check",
     "check-deprecated",
@@ -99,7 +99,7 @@
       "oid": "934edd11cd4be3b4097cdfee99cbeb27d4f63064"
     },
     "createTopoCluster": {
-      "oid": "f9f212efbb0090c9508a793e2cf0e624ee816548"
+      "oid": "c9464443b158d1a59be6719f33a0954ba75c51f5"
     },
     "cxx26": {
       "oid": "477be32fab46e4b79aba385f34ed8f728a7850e5"
@@ -165,13 +165,13 @@
       "oid": "3bab109e1aa1c9789b3bf50580efec8893b3768d"
     },
     "noiseIndex": {
-      "oid": "24c6e707c3420ed76137a15cc398cc6c6aa19302"
+      "oid": "523c224b5466e42d6e5f5963a30cb0b58d265621"
     },
     "repnoise": {
-      "oid": "e184eb44512789794857959c923c738a9eeff919"
+      "oid": "e3aef426b9af6adc2525f7036b483939bd9f873d"
     },
     "sortnoise": {
-      "oid": "a66ac5354e7428ff7ed688a1692a8958e78309ae"
+      "oid": "58002f4e0c1a1534b661c666a7f91ae11c95898d"
     },
     "subdetVolman": {
       "oid": "a6cadcc5f8953f1b8bc5f2d1000f1def642a866e"
@@ -183,13 +183,13 @@
       "oid": "eec7fb905e324e177305fe8611530543813023e1"
     },
     "topoNoiseIndex": {
-      "oid": "9b18d8a7de5fdf3e613b6dd99934b1cb31e80982"
+      "oid": "f0b504f0d2e1852cc9bce00a3592c81799433b75"
     },
     "xtalk": {
       "oid": "b354eaf93f31e6ed3f4174a2fa4a94134aad42e2"
     },
     "xtalkIndex": {
-      "oid": "cc624a7a90cc1cc0f152b4c401e1d5fd161b817c"
+      "oid": "cdf52f9708fab4aeb1e8dc32e1bbc67e18915df4"
     },
     "xtalkSpan1": {
       "oid": "905dcfb7f1fb11a4b89eaeed2295763a501ad4cc"
