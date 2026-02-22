@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "52a436dcaa37044404c83309c93dba0abcb164c5",
+  "prev": "da585f03dd014044016582b098c95b122a6154ea",
   "head": "0e57a90f27e67996a89a1b7432aa1b3196bf0da2",
   "applied": [
     "cxx26",
@@ -18,7 +18,6 @@
     "nodebug"
   ],
   "unapplied": [
-    "caloToolInfo1",
     "idmap",
     "caloCellConstantsSvc",
     "caloType",
@@ -64,9 +63,6 @@
     },
     "caloCellIndexerSvc": {
       "oid": "3c4398faebe4c63d9bc7292c78dde69fea2b9eca"
-    },
-    "caloToolInfo1": {
-      "oid": "f4b892e288fccc3a2e9b7467e0e9167c2639b6d0"
     },
     "caloToolInfo3": {
       "oid": "84f39e2c193bf28e1fef0e38742270724fb70576"
