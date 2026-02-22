@@ -1,0 +1,11 @@
+Bottom: 60b85a8ed9f35620afb91f03f73c218e888db35a
+Top:    d6b86dc6371c5bc05f65fb78aa3dbfb51999043f
+Author: sss <sss@karma>
+Date:   2025-04-11 13:45:58 -0400
+
+Remove non-const methods of ICellPositionsTool.
+
+Now that the ICellPositionsTool interface class has been updated, we can remove
+the non-const methods from its derived classes (and add override keywords).
+
+Also some modernization / clean up.
