@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "77d05e16a4aeaa385b16efa1ea7f5affa36670cc",
-  "head": "ae9f9902fc4b838ce69a372c843dedf245271019",
+  "prev": "085ff8f08483cd627f003b108b8bc27ffd8ed3fc",
+  "head": "51d67b8f3c9a346b276854fcff62e5d3c13daf88",
   "applied": [
     "cxx26",
     "depr",
@@ -46,12 +46,12 @@
     "noiseIndex",
     "sortnoise",
     "repnoise",
-    "createCaloCells"
-  ],
-  "unapplied": [
+    "createCaloCells",
     "move-check",
     "check-deprecated",
-    "check-remove",
+    "check-remove"
+  ],
+  "unapplied": [
     "ci"
   ],
   "hidden": [],
@@ -87,10 +87,10 @@
       "oid": "e89a7aca0fbaf9e71618f86ee84d81149cf3de29"
     },
     "check-deprecated": {
-      "oid": "8d984cd4484b357a22af6b42792c6d9e9606fb54"
+      "oid": "a7cd548ea3f3946b6e3657b2d9e4e50450720072"
     },
     "check-remove": {
-      "oid": "f595125f73a21382211a86dcbd6bca407a6a6fd7"
+      "oid": "51d67b8f3c9a346b276854fcff62e5d3c13daf88"
     },
     "ci": {
       "oid": "2a26005ab99389c7dadc5f090d48aff7531c1101"
@@ -141,7 +141,7 @@
       "oid": "9a297195c9835f9d31b444582326c62361222b28"
     },
     "move-check": {
-      "oid": "aff6c042890c2be333050864338efdbd36007f7d"
+      "oid": "9ceca77d5869ea64eca69759af33bf352ed2dfe2"
     },
     "multiIndexer": {
       "oid": "81125f6ea6c9dc27a520f6147f22b036deed66e2"
