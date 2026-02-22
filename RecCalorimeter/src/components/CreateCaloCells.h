@@ -257,7 +257,8 @@ private:
   /// Handle for the calorimeter cells noise tool
   ToolHandle<INoiseCaloCellsTool> m_noiseTool{"NoiseCaloCellsFlatTool", this};
   /// Handle for the geometry tool
-  ToolHandle<ICalorimeterTool> m_geoTool{"TubeLayerPhiEtaCaloTool", this};
+  ToolHandle<ICalorimeterTool> m_geoTool
+    { this, "geometryTool", "", };
   ToolHandle<ICellPositionsTool> m_cellPos
     { this, "positionsTool", "", "Cell positions tool.  If defaulted, position based on volume only." };
 
@@ -295,9 +296,6 @@ private:
 
   ServiceHandle<k4::recCalo::ICaloCellIndexerSvc> m_indexerSvc
   { this, "CaloCellIndexerSvc", "k4::recCalo::CaloCellIndexerSvc", "" };
-
-  /// Volume manager for our subdetector.
-  dd4hep::VolumeManager m_volman;
 
   /// List of all cell ids for our subdetector.
   std::span<const uint64_t> m_cellIDs;
