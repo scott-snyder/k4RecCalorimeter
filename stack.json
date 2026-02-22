@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "bc0ab4d40fc82a0d77265b5adde6fedca4db1863",
+  "prev": "733f34310652487906f678e8dca0cb4c9e90a341",
   "head": "10cf2e5599229094016fd321dabddf1ee15ce071",
   "applied": [
     "layerIndex",
@@ -11,7 +11,6 @@
     "calib2"
   ],
   "unapplied": [
-    "cellPositionsConst2",
     "cellPositions",
     "nodebug",
     "caloToolInfo1",
@@ -68,9 +67,6 @@
     },
     "calib2": {
       "oid": "10cf2e5599229094016fd321dabddf1ee15ce071"
-    },
-    "cellPositionsConst2": {
-      "oid": "6f1757efefe0d880c0dcf59c5143bd886649c8e0"
     },
     "cellPositions": {
       "oid": "ce6ddc52a643717c0cfafb6f15f594d018916f6c"
