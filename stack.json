@@ -1,8 +1,9 @@
 {
   "version": 5,
-  "prev": "6f634cd51e5b349ced5d0cad28b60ed5ed39b701",
-  "head": "8a699d5f72333d8bf4cef8dc6387b32dd3745ab7",
-  "applied": [
+  "prev": "d433290a5fbc37dfed0abf9cdd4da926f8912dc7",
+  "head": "e0de30b573111369d0119613f1deb5c624282fe1",
+  "applied": [],
+  "unapplied": [
     "cxx26",
     "depr",
     "testdir",
@@ -50,9 +51,7 @@
     "nodefgeotool",
     "move-check",
     "check-deprecated",
-    "check-remove"
-  ],
-  "unapplied": [
+    "check-remove",
     "ci"
   ],
   "hidden": [],
