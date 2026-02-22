@@ -282,4 +282,3 @@ ReadNoiseFromFileTool::getNoisePerCell(uint64_t aCellId) const
   double offset = m_setNoiseOffset ? getNoiseOffsetPerCell(bins.second, cellLayer) : 0;
   return std::make_pair (rms, offset);
 }
-
