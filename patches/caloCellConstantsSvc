@@ -1,7 +1,7 @@
-Bottom: eb26352329ca9152e1fd23105670c1092a536c31
-Top:    73894f5874aa971769e5d1e4a040b782de3abcfc
+Bottom: 6217036ea78b50648a8e58d44518646536dba7b6
+Top:    e9e24a19c1cde429cb4235fa3dda4597a2da90a8
 Author: sss <sss@karma>
-Date:   2026-02-22 15:17:46 -0500
+Date:   2026-02-22 16:04:29 -0500
 
 Numerous tools deal with constants defined for each calorimeter cell.
 For highly-granular calorimeters with many cells, such as the Allegro
