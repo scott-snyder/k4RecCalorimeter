@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "813a620817a3b0ab96e8ada19844d04c1935ccf2",
-  "head": "ff834fa89220418c9ab6a9c0e8ede7965204227b",
+  "prev": "5913771e8f52c7f4f2260eb0e9904f4bb3c582cf",
+  "head": "2ce8214afd659b45ecbc0e1fc1afc8c9045779c9",
   "applied": [
     "layerIndex",
     "xtalkSpan1",
@@ -12,7 +12,9 @@
     "cellPositionsConst2",
     "cellPositions",
     "nodebug",
-    "caloToolInfo1",
+    "caloToolInfo1"
+  ],
+  "unapplied": [
     "idmap",
     "caloCellConstantsSvc",
     "caloType",
@@ -49,7 +51,6 @@
     "createCaloCells2",
     "nodefgeotool"
   ],
-  "unapplied": [],
   "hidden": [],
   "patches": {
     "layerIndex": {
