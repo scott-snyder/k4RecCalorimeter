@@ -44,9 +44,6 @@ private:
   // rms, offset
   std::vector<std::pair<double, double> > m_noise;
 
-  std::map<uint, double> m_systemNoiseRMSMap;
-  std::map<uint, double> m_systemNoiseOffsetMap;
-
   /// List of subdetector names (they must match what is defined in DectDimension)
   Gaudi::Property<std::vector<std::string>> m_detectors{
       this,
