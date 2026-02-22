@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "91ca9aa233630007d432bc20be134f1d211c735d",
-  "head": "30f1eb888d611008c39d1f2b155a9b0c3d01c3b3",
+  "prev": "31368a262830acef76aaaff2e0f69e902b445617",
+  "head": "d7b6938b1e3905a9abba650a372f887985c62029",
   "applied": [
     "cxx26",
     "depr",
@@ -13,8 +13,7 @@
     "noise1b",
     "noise1c",
     "calib2",
-    "cellPositionsConst2",
-    "refresh-temp"
+    "cellPositionsConst2"
   ],
   "unapplied": [
     "cellPositions",
@@ -80,7 +79,7 @@
       "oid": "e9dc6a8cfa6cd3885bbe447f34e2d028882dd888"
     },
     "cellPositionsConst2": {
-      "oid": "77fac27fa4f42c44107e65534f096d90c4283c02"
+      "oid": "d7b6938b1e3905a9abba650a372f887985c62029"
     },
     "cellposIndex": {
       "oid": "d8df9e28a85148b4e6e9a1b00e99e00fd7ae2bce"
@@ -171,9 +170,6 @@
     },
     "noiseIndex": {
       "oid": "2b1178ea9c97bc34abc169f5a5569fc0dd7cd531"
-    },
-    "refresh-temp": {
-      "oid": "30f1eb888d611008c39d1f2b155a9b0c3d01c3b3"
     },
     "repnoise": {
       "oid": "dae1352ee20e2ff61db7f401a53b66e82374b7cb"
