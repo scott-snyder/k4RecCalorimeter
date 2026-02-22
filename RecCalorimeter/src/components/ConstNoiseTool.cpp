@@ -35,8 +35,12 @@ StatusCode ConstNoiseTool::initialize() {
   for (size_t iDet = 0; iDet < m_detectors.size(); iDet++) {
     std::string detName = "DetID_" + m_detectors[iDet];
     try {
-      size_t detID = m_geoSvc->getDetector()->constant<int>(detName);
-      if (m_noise.size() <= detID) m_noise.resize (detID+1);
+      int detID = m_geoSvc->getDetector()->constant<int>(detName);
+      if (detID < 0) {
+        error() << "Bad detector ID " << detID << endmsg;
+        return StatusCode::FAILURE;
+      }
+      if (static_cast<int>(m_noise.size()) <= detID) m_noise.resize (detID+1);
       m_noise[detID].first = m_detectorsNoiseRMS[iDet];
       debug() << "Set noise RMS for detector " << detName << " (ID=" << detID << ") to: " << m_detectorsNoiseRMS[iDet]
               << endmsg;
