@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "d29a893bedb63ff74facdb0380a82061565cb90f",
-  "head": "4e666fa645db8b30a514dae0ef87c4b49d92b64f",
+  "prev": "f675ddfeb447de6a4fbdd8a51142d6baf02d092c",
+  "head": "389c8e8a60d1dc6367155836e90659e18b604710",
   "applied": [
     "cxx26",
     "depr",
@@ -12,10 +12,10 @@
     "noise1a",
     "noise1b",
     "noise1c",
-    "calib2"
+    "calib2",
+    "cellPositionsConst2"
   ],
   "unapplied": [
-    "cellPositionsConst2",
     "cellPositions",
     "nodebug",
     "caloToolInfo1",
