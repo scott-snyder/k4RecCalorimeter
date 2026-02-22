@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "a4bcdaa26a4aace89fd4913c4c2c79a25c41d92e",
-  "head": "9fe789ddb2def4e58030ff64b0eb48b01dfce516",
+  "prev": "e7e339c45d64ef7fd3641355107a71c98d704053",
+  "head": "545b327e823ace89e7e69d47c3083eadaf284dbe",
   "applied": [
     "cxx26",
     "depr",
@@ -47,12 +47,12 @@
     "sortnoise",
     "repnoise",
     "createCaloCells",
-    "nodefgeotool"
-  ],
-  "unapplied": [
+    "nodefgeotool",
     "move-check",
     "check-deprecated",
-    "check-remove",
+    "check-remove"
+  ],
+  "unapplied": [
     "ci"
   ],
   "hidden": [],
@@ -88,10 +88,10 @@
       "oid": "e89a7aca0fbaf9e71618f86ee84d81149cf3de29"
     },
     "check-deprecated": {
-      "oid": "a7cd548ea3f3946b6e3657b2d9e4e50450720072"
+      "oid": "816da98dc8856dd0c4ea7bb1716ba49d054e9737"
     },
     "check-remove": {
-      "oid": "51d67b8f3c9a346b276854fcff62e5d3c13daf88"
+      "oid": "545b327e823ace89e7e69d47c3083eadaf284dbe"
     },
     "ci": {
       "oid": "2a26005ab99389c7dadc5f090d48aff7531c1101"
@@ -142,7 +142,7 @@
       "oid": "9a297195c9835f9d31b444582326c62361222b28"
     },
     "move-check": {
-      "oid": "9ceca77d5869ea64eca69759af33bf352ed2dfe2"
+      "oid": "7494eccae8ff85468b89160fcaa4f899c30083b6"
     },
     "multiIndexer": {
       "oid": "81125f6ea6c9dc27a520f6147f22b036deed66e2"
