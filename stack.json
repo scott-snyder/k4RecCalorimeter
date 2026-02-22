@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "626684c601f36b6847c634d75df64f0345381448",
-  "head": "416de61488a7ad88f5f7782e0a70ce8992f5a9a7",
+  "prev": "83dc1f08347cf532c5f5c9b1ad17dc180fa59dad",
+  "head": "a59054f3904c0b40a674f33c2ee7998d9250d9b5",
   "applied": [
     "cxx26",
     "depr",
@@ -47,10 +47,10 @@
     "sortnoise",
     "repnoise",
     "createCaloCells",
-    "nodefgeotool"
+    "nodefgeotool",
+    "move-check"
   ],
   "unapplied": [
-    "move-check",
     "check-deprecated",
     "check-remove",
     "ci"
@@ -142,7 +142,7 @@
       "oid": "9a297195c9835f9d31b444582326c62361222b28"
     },
     "move-check": {
-      "oid": "ce71f1396fc5316d8bcc77f5ce7fbc88b6f421f5"
+      "oid": "a59054f3904c0b40a674f33c2ee7998d9250d9b5"
     },
     "multiIndexer": {
       "oid": "ceeec8ec9e95cf6d7b4fdabb220b1e646091e662"
