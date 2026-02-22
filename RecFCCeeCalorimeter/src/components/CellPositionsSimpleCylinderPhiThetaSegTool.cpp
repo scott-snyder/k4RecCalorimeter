@@ -1,5 +1,5 @@
 #include "CellPositionsSimpleCylinderPhiThetaSegTool.h"
-#include "RecCaloCommon/k4RecCalorimeter_check.h"
+#include "RecCaloCommon/GaudiChecks.h"
 
 // EDM4hep
 #include "edm4hep/CalorimeterHitCollection.h"
@@ -12,8 +12,8 @@ DECLARE_COMPONENT(CellPositionsSimpleCylinderPhiThetaSegTool)
 StatusCode CellPositionsSimpleCylinderPhiThetaSegTool::initialize() {
 
   // base class initialization
-  K4RECCALORIMETER_CHECK( AlgTool::initialize() );
-  K4RECCALORIMETER_CHECK( m_geoSvc.retrieve() );
+  K4_GAUDI_CHECK( AlgTool::initialize() );
+  K4_GAUDI_CHECK( m_geoSvc.retrieve() );
 
   // get the detector
   const dd4hep::Detector* detector = m_geoSvc->getDetector();
