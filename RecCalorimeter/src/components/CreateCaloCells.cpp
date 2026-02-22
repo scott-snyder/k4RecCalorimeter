@@ -187,7 +187,6 @@ CreateCaloCells::CreateCaloCells(const std::string& name, ISvcLocator* svcLoc)
 
   declareProperty("calibTool", m_calibTool, "Handle for tool to calibrate Geant4 energy to EM scale tool");
   declareProperty("noiseTool", m_noiseTool, "Handle for the calorimeter cells noise tool");
-  declareProperty("geometryTool", m_geoTool, "Handle for the geometry tool");
 }
 
 StatusCode CreateCaloCells::initialize() {
@@ -233,14 +232,6 @@ StatusCode CreateCaloCells::initialize() {
       }
     }
   }
-  if (m_addPosition) {
-    dd4hep::VolumeManager vman_glob = m_geoSvc->getDetector()->volumeManager();
-    int id = m_geoTool->id();
-    if (id >= 0)
-      m_volman = vman_glob.subdetector (id);
-    else
-      m_volman = vman_glob;
-  }
 
   if (m_cellPos.isEnabled()) {
     K4RECCALORIMETER_CHECK( m_cellPos.retrieve() );
@@ -273,9 +264,12 @@ StatusCode CreateCaloCells::execute(const EventContext&) const {
   // Find calorimeter type.
   const ICaloIndexer* indexer = nullptr;
   int calotype = 0;
+  unsigned detid = 0;
+  dd4hep::VolumeManager volman;
+
   if (!hits->empty()) {
     uint64_t cellid = hits->begin()->getCellID();
-    unsigned detid = m_decoder.get (cellid, m_systemIndex);
+    detid = m_decoder.get (cellid, m_systemIndex);
     if (detid < m_caloTypes.size()) calotype = m_caloTypes[detid];
     if (calotype == 0) {
       error() << "detector id " << detid << " is not a calorimeter" << endmsg;
@@ -287,8 +281,12 @@ StatusCode CreateCaloCells::execute(const EventContext&) const {
         return StatusCode::FAILURE;
       }
     }
-  }
 
+    if (m_addPosition) {
+      dd4hep::VolumeManager vman_glob = m_geoSvc->getDetector()->volumeManager();
+      volman = vman_glob.subdetector (detid);
+    }
+  }
 
   // 0. Clear all cells
   CaloCells cells (m_addCellNoise, m_cellIDs, indexer);
@@ -396,7 +394,7 @@ StatusCode CreateCaloCells::execute(const EventContext&) const {
       if (const dd4hep::DDSegmentation::Segmentation* seg = m_geoTool->segmentation()) {
         volid = seg->volumeID (volid);
       }
-      auto detelement = m_volman.lookupDetElement(volid);
+      auto detelement = volman.lookupDetElement(volid);
       double inLocal[] = {0, 0, 0};
       const auto outGlobal = detelement.nominal().localToWorld(inLocal);
       edm4hep::Vector3f position = edm4hep::Vector3f(outGlobal.X() * inv_mm,
