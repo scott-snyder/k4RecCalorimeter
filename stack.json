@@ -1,11 +1,12 @@
 {
   "version": 5,
-  "prev": "32e702f315dc72bea1aafce727961ccf8afe7cbd",
-  "head": "9c484ccf6c6faf1ffd29a7342ae457236a5a0672",
+  "prev": "e16ced46baaf22bcbad465359a0e85ab6ae212fd",
+  "head": "e676ed69f8d89aeb709a7d1e8f0eac942697c3f0",
   "applied": [
     "layerIndex",
     "xtalkSpan1",
-    "noise1a"
+    "noise1a",
+    "noise1b"
   ],
   "unapplied": [
     "noise1c",
@@ -58,6 +59,9 @@
     },
     "noise1a": {
       "oid": "9c484ccf6c6faf1ffd29a7342ae457236a5a0672"
+    },
+    "noise1b": {
+      "oid": "e676ed69f8d89aeb709a7d1e8f0eac942697c3f0"
     },
     "noise1c": {
       "oid": "d749b8d2623703e1e4a342a5bf916ba2b3a6bb84"
