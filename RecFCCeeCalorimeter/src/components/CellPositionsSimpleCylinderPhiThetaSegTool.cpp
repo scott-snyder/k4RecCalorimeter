@@ -1,5 +1,5 @@
 #include "CellPositionsSimpleCylinderPhiThetaSegTool.h"
-#include "RecCaloCommon/GaudiChecks.h"
+#include "k4FWCore/GaudiChecks.h"
 
 // EDM4hep
 #include "edm4hep/CalorimeterHitCollection.h"

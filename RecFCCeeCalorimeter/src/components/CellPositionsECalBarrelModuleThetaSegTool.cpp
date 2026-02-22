@@ -2,7 +2,7 @@
 
 // EDM
 #include "edm4hep/CalorimeterHitCollection.h"
-#include "RecCaloCommon/GaudiChecks.h"
+#include "k4FWCore/GaudiChecks.h"
 
 #include <cmath>
 

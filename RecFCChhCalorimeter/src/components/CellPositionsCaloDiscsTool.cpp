@@ -1,7 +1,7 @@
 #include "CellPositionsCaloDiscsTool.h"
-#include "RecCaloCommon/GaudiChecks.h"
+#include "k4FWCore/GaudiChecks.h"
 
-#Include "edm4hep/CalorimeterHitCollection.h"
+#include "edm4hep/CalorimeterHitCollection.h"
 
 DECLARE_COMPONENT(CellPositionsCaloDiscsTool)
 
