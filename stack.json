@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "5edc352166684b4ffe72ea0bea5798ccda7cfa9b",
+  "prev": "1e9744d63f9ce998182a3c718f12eb0aec4ec8d4",
   "head": "9c484ccf6c6faf1ffd29a7342ae457236a5a0672",
   "applied": [
     "layerIndex",
@@ -8,7 +8,6 @@
     "noise1a"
   ],
   "unapplied": [
-    "noise1b",
     "noise1c",
     "calib2",
     "cellPositionsConst2",
@@ -59,9 +58,6 @@
     },
     "noise1a": {
       "oid": "9c484ccf6c6faf1ffd29a7342ae457236a5a0672"
-    },
-    "noise1b": {
-      "oid": "e676ed69f8d89aeb709a7d1e8f0eac942697c3f0"
     },
     "noise1c": {
       "oid": "b7397d8536dded8927bc77411e4b3d90ccd539b4"
