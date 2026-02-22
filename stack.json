@@ -1,12 +1,14 @@
 {
   "version": 5,
-  "prev": "1a31b69565045b0ae1e48a6dc17dacc80784545c",
-  "head": "cf089bcf4942cc31fd978a082f00f3de7243c647",
+  "prev": "33ef981b63158ecc07deb8dd24bb5581477c5f05",
+  "head": "e676ed69f8d89aeb709a7d1e8f0eac942697c3f0",
   "applied": [
     "layerIndex",
     "xtalkSpan1",
     "noise1a",
-    "noise1b",
+    "noise1b"
+  ],
+  "unapplied": [
     "noise1c",
     "calib2",
     "cellPositionsConst2",
@@ -47,7 +49,6 @@
     "diag-wip",
     "cellids-wip"
   ],
-  "unapplied": [],
   "hidden": [],
   "patches": {
     "layerIndex": {
