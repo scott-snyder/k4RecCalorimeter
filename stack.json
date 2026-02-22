@@ -1,14 +1,15 @@
 {
   "version": 5,
-  "prev": "733f34310652487906f678e8dca0cb4c9e90a341",
-  "head": "10cf2e5599229094016fd321dabddf1ee15ce071",
+  "prev": "d8c8ed0fad488a442b70aa5f1273743b3015493b",
+  "head": "db70d46881b7cdea3f4a9168091ce2d08ec50573",
   "applied": [
     "layerIndex",
     "xtalkSpan1",
     "noise1a",
     "noise1b",
     "noise1c",
-    "calib2"
+    "calib2",
+    "cellPositionsConst2"
   ],
   "unapplied": [
     "cellPositions",
@@ -67,6 +68,9 @@
     },
     "calib2": {
       "oid": "10cf2e5599229094016fd321dabddf1ee15ce071"
+    },
+    "cellPositionsConst2": {
+      "oid": "db70d46881b7cdea3f4a9168091ce2d08ec50573"
     },
     "cellPositions": {
       "oid": "ce6ddc52a643717c0cfafb6f15f594d018916f6c"
