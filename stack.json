@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "36962f514fde8ce007e78c9f329b1981c6b223eb",
-  "head": "add6a565b222e6abeb91774d68c7691e58d41af8",
+  "prev": "6d34a73df9f180908dd03d4d42a03cb44e9c0fd3",
+  "head": "92e2ff70387fd7a83a59f0a17956c50a862a3017",
   "applied": [
     "cxx26",
     "depr",
@@ -13,8 +13,7 @@
     "noise1b",
     "noise1c",
     "calib2",
-    "cellPositionsConst2",
-    "refresh-temp"
+    "cellPositionsConst2"
   ],
   "unapplied": [
     "cellPositions",
@@ -80,7 +79,7 @@
       "oid": "d873ad008e269b081b11a499b8f1e186c4d312f8"
     },
     "cellPositionsConst2": {
-      "oid": "389c8e8a60d1dc6367155836e90659e18b604710"
+      "oid": "92e2ff70387fd7a83a59f0a17956c50a862a3017"
     },
     "cellposIndex": {
       "oid": "96346d1b6ee6a9eb9decf73afca57b624592fb06"
@@ -171,9 +170,6 @@
     },
     "noiseIndex": {
       "oid": "d783db1ee88abd810fb1e4298266711d8481cbff"
-    },
-    "refresh-temp": {
-      "oid": "add6a565b222e6abeb91774d68c7691e58d41af8"
     },
     "repnoise": {
       "oid": "6c49588f89a60fd95b6d23e81819f4259260c59c"
