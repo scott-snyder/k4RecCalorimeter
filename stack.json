@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "0ac4d80ecbc1bdb62099df47d08eb850fa3e8b7f",
-  "head": "cbcf9a0feda078b12c6695e20c94c85304aea277",
+  "prev": "59d2946477becc888d6ebde8ea72822f2d37d43f",
+  "head": "4c7d6d11d88e138327ba8beabfd876bfacec214e",
   "applied": [
     "cxx26",
     "depr",
@@ -23,7 +23,9 @@
     "caloType",
     "hcal-tool",
     "subdetVolman",
-    "geoConst2",
+    "geoConst2"
+  ],
+  "unapplied": [
     "timeout",
     "hcal-seg",
     "hcal-seg-row",
@@ -33,9 +35,7 @@
     "multiIndexer",
     "xtalkSpan3",
     "xtalkSpan5",
-    "noise3"
-  ],
-  "unapplied": [
+    "noise3",
     "caloCellIndexerSvc",
     "cellsInConst",
     "ecalbarrelIndexer",
