@@ -1,7 +1,9 @@
 Bottom: 95c830db030bdd59a1a96249cbddd240c1e7cc9b
 Top:    b08cfc47a09a10c2288d0fd421eff0fbac3c566e
 Author: sss <sss@karma>
-Date:   2026-02-23 11:26:55 -0500
+Date:   2026-02-23 11:27:27 -0500
+
+Add CaloCellConstantsSvc.
 
 Numerous tools deal with constants defined for each calorimeter cell.
 For highly-granular calorimeters with many cells, such as the Allegro

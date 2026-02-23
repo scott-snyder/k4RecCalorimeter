@@ -1,7 +1,7 @@
 Bottom: dd77ff8c55c4257cc42f5b2c0393603217f11440
 Top:    c0ed0a460a7950f090c5766fa0cd9edd52c96d39
 Author: sss <sss@karma>
-Date:   2026-02-23 11:26:55 -0500
+Date:   2026-02-23 11:27:27 -0500
 
 Add implementation of ICalorimeterTool for Allegro HCal.
 
