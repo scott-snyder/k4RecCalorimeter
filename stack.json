@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "4dd7eaf6ed6ae314ced9994e80cda9bf17738d1c",
-  "head": "17e0630938fe2adc805a511903f94f27d45240f7",
+  "prev": "56f63d6ca0832b4013e123055cebfec34930748c",
+  "head": "2319882dec9882a115182a3d73e38aaad1a1d290",
   "applied": [
     "layerIndex",
     "xtalkSpan1",
@@ -14,7 +14,9 @@
     "cellPositions",
     "nodebug",
     "caloToolInfo1",
-    "idmap",
+    "idmap"
+  ],
+  "unapplied": [
     "caloCellConstantsSvc",
     "caloType",
     "hcal-tool",
@@ -48,7 +50,6 @@
     "diag-wip",
     "cellids-wip"
   ],
-  "unapplied": [],
   "hidden": [],
   "patches": {
     "layerIndex": {
