@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "56f63d6ca0832b4013e123055cebfec34930748c",
-  "head": "2319882dec9882a115182a3d73e38aaad1a1d290",
+  "prev": "cf94c11b664b72e67f0ea8829caee0c3dd1c9463",
+  "head": "b998725624a1ce02cb627f630075a1f154374574",
   "applied": [
     "layerIndex",
     "xtalkSpan1",
@@ -13,10 +13,10 @@
     "subdetVolman2",
     "cellPositions",
     "nodebug",
-    "caloToolInfo1",
-    "idmap"
+    "caloToolInfo1"
   ],
   "unapplied": [
+    "idmap",
     "caloCellConstantsSvc",
     "caloType",
     "hcal-tool",
