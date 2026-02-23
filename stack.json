@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "0a232e3287800ec491e34a92a817535c67b05ed9",
-  "head": "b914ae1911b5dd07579ed7ea4c213c9be9bb0f36",
+  "prev": "0ac4d80ecbc1bdb62099df47d08eb850fa3e8b7f",
+  "head": "cbcf9a0feda078b12c6695e20c94c85304aea277",
   "applied": [
     "cxx26",
     "depr",
@@ -33,7 +33,9 @@
     "multiIndexer",
     "xtalkSpan3",
     "xtalkSpan5",
-    "noise3",
+    "noise3"
+  ],
+  "unapplied": [
     "caloCellIndexerSvc",
     "cellsInConst",
     "ecalbarrelIndexer",
@@ -48,9 +50,7 @@
     "sortnoise",
     "repnoise",
     "createCaloCells",
-    "nodefgeotool"
-  ],
-  "unapplied": [
+    "nodefgeotool",
     "move-check",
     "check-deprecated",
     "check-remove",
