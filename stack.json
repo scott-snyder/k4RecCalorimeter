@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "1c7043cc7f0809489a3ffb8f849d9d985e82a11e",
-  "head": "bb581d6d1b7068b6f5774a4bb19dbd6998cd20a2",
+  "prev": "b8fa39b8403a4d1531c472290f3b02bd0f069a78",
+  "head": "8949713e6397ec0e2f629fea4214d504e959b54b",
   "applied": [
     "layerIndex",
     "xtalkSpan1",
@@ -10,10 +10,10 @@
     "noise1c",
     "calib2",
     "cellPositionsConst2",
-    "subdetVolman2",
-    "cellPositions"
+    "subdetVolman2"
   ],
   "unapplied": [
+    "cellPositions",
     "nodebug",
     "caloToolInfo1",
     "idmap",
