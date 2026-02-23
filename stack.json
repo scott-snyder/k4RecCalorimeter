@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "4c6425cd28383d990a3485e4417297163972926f",
-  "head": "b998725624a1ce02cb627f630075a1f154374574",
+  "prev": "bee0b50af884c7b1d4df2f524746f8f3ecda58af",
+  "head": "c93bd32311f0fb79d7290c4319230167713e708b",
   "applied": [
     "layerIndex",
     "xtalkSpan1",
@@ -13,7 +13,8 @@
     "subdetVolman2",
     "cellPositions",
     "nodebug",
-    "caloToolInfo1"
+    "caloToolInfo1",
+    "idmap"
   ],
   "unapplied": [
     "caloCellConstantsSvc",
@@ -83,6 +84,9 @@
     },
     "caloToolInfo1": {
       "oid": "b998725624a1ce02cb627f630075a1f154374574"
+    },
+    "idmap": {
+      "oid": "c93bd32311f0fb79d7290c4319230167713e708b"
     },
     "caloCellConstantsSvc": {
       "oid": "03821032080a96ffc20caeb1a77c9e6d0a68f1c3"
