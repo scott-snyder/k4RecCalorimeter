@@ -29,9 +29,8 @@ StatusCode CaloCellPositionsTool::initialize()
   m_decoder = m_segmentation.decoder();
   m_layerFieldIdx = m_decoder->index(m_layerFieldName);
 
-  const dd4hep::DetElementObject& de = m_segmentation.detector();
   dd4hep::VolumeManager vman_glob = m_geoSvc->getDetector()->volumeManager();
-  m_volman = vman_glob.subdetector (de.id);
+  m_volman = vman_glob.subdetector (m_segmentation.detector()->id);
 
   return StatusCode::SUCCESS;
 }
