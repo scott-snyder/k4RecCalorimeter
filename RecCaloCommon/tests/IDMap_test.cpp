@@ -179,7 +179,7 @@ auto IDMapLookupE<IDMAP>::fieldDescs() -> std::vector<FieldDesc_t>
   const dd4hep::BitFieldElement* bfe_wheel = desc.field ("wheel");
   fielddescs.emplace_back (std::min(bfe_side->offset(), bfe_wheel->offset()),
                            bfe_side->width() + bfe_wheel->width());
-                                    
+
 
   pushdesc ("z");
   pushdesc ("rho");

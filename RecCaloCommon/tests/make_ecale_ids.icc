@@ -94,7 +94,7 @@ std::vector<mapkey_t> make_ecale_ids()
       }
     }
   }
-  
+
   std::ranges::sort (ids);
   return ids;
 }
