@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "090e727f7c79de719cc970567c56eb8689bd88bc",
+  "prev": "d2032168e010834e4340b55b20e3ccafe5ff9fe7",
   "head": "c93bd32311f0fb79d7290c4319230167713e708b",
   "applied": [
     "layerIndex",
@@ -17,7 +17,6 @@
     "idmap"
   ],
   "unapplied": [
-    "caloCellConstantsSvc",
     "caloType",
     "hcal-tool",
     "subdetVolman",
@@ -87,9 +86,6 @@
     },
     "idmap": {
       "oid": "c93bd32311f0fb79d7290c4319230167713e708b"
-    },
-    "caloCellConstantsSvc": {
-      "oid": "0a938aef812ba13d287b30fb08e848a622f9ab31"
     },
     "caloType": {
       "oid": "602f203efae23ddc9e5e9fda03537220ab6d5b58"
