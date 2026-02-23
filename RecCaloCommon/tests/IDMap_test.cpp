@@ -67,7 +67,7 @@ int randi_seed (uint32_t& seed, int rmax, int rmin = 0)
 
 void test1 (mapkey_span ids)
 {
-  using Map_t = k4::recCalo::IDMap<payload_t>;
+  using Map_t = k4RecCalo::IDMap<payload_t>;
   using FieldDesc_t = Map_t::FieldDesc_t;
   dd4hep::IDDescriptor desc ("desc", ecalb_descstr);
 
@@ -117,7 +117,7 @@ void test1 (mapkey_span ids)
 // -- IDMap test jigs
 
 
-using FieldDesc_t = k4::recCalo::IDMap<payload_t>::FieldDesc_t;
+using FieldDesc_t = k4RecCalo::IDMap<payload_t>::FieldDesc_t;
 
 template<class IDMAP>
 class IDMapLookupB
@@ -521,9 +521,9 @@ size_t dotest (const char* name, mapkey_span ids, size_t n)
 
 size_t perftest (bool barrel, mapkey_span ids, size_t n)
 {
-  using IDMap_t = k4::recCalo::IDMap<payload_t>;
-  using IDMap3_t = k4::recCalo::IDMapN<payload_t, 3>;
-  using IDMap4_t = k4::recCalo::IDMapN<payload_t, 4>;
+  using IDMap_t = k4RecCalo::IDMap<payload_t>;
+  using IDMap3_t = k4RecCalo::IDMapN<payload_t, 3>;
+  using IDMap4_t = k4RecCalo::IDMapN<payload_t, 4>;
 
   size_t ret = 0;  // To prevent tests from being optimized away...
   ret += dotest<TesterBase> ("null", ids, n);

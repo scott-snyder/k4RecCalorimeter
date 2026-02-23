@@ -185,7 +185,7 @@
 #include <iostream>
 
 
-namespace k4::recCalo {
+namespace k4RecCalo {
 
 
 // Check if a type is usable as a payload.
@@ -659,7 +659,7 @@ void IDMap<PAYLOAD>::insert (key_t k, payload_t v)
 }
 
 
-} // namespace k4::recCalo
+} // namespace k4RecCalo
 
 
 #endif // not RECCALOCOMMON_IDMAP_H
