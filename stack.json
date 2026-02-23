@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "a2865adc5654108531a6b7d94a2c8ca9f84b27bb",
-  "head": "6a7f82db8b57b5ca4a9d4a213cf276330ad83ee3",
+  "prev": "ee39d3738a794037daf0df3d43252c782bea5631",
+  "head": "fb66cb0d3945fa9bfb2f0c9ac8c5771994db2a1d",
   "applied": [
     "cxx26",
     "depr",
@@ -14,7 +14,9 @@
     "noise1c",
     "calib2",
     "cellPositionsConst2",
-    "subdetVolman2",
+    "subdetVolman2"
+  ],
+  "unapplied": [
     "cellPositions",
     "nodebug",
     "caloToolInfo1",
@@ -51,9 +53,7 @@
     "nodefgeotool",
     "move-check",
     "check-deprecated",
-    "check-remove"
-  ],
-  "unapplied": [
+    "check-remove",
     "ci"
   ],
   "hidden": [],
