@@ -12,7 +12,9 @@
 
 
 #include "GaudiKernel/AlgTool.h"
+#include "GaudiKernel/ServiceHandle.h"
 #include "k4Interface/ICellPositionsTool.h"
+#include "k4Interface/IGeoSvc.h"
 #include "DD4hep/Segmentations.h"
 #include "DD4hep/Volumes.h"
 
@@ -48,6 +50,9 @@ private:
   { this, "readoutName", "", "Name of the readout for this detector" };
   Gaudi::Property<std::string> m_layerFieldName
   { this, "layerFieldName", "layer", "Name of the decoder field for layer" };
+
+  ServiceHandle<IGeoSvc> m_geoSvc
+  { this, "GeoSvc", "GeoSvc", "Geometry service" };
 
   // DD4hep volume manager.
   dd4hep::VolumeManager m_volman;

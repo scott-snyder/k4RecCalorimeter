@@ -7,7 +7,6 @@
 
 
 #include "CaloCellPositionsTool.h"
-#include "k4Interface/IGeoSvc.h"
 #include "k4FWCore/GaudiChecks.h"
 #include "edm4hep/CalorimeterHitCollection.h"
 #include "DD4hep/Detector.h"
@@ -22,13 +21,9 @@ DECLARE_COMPONENT(CaloCellPositionsTool)
 StatusCode CaloCellPositionsTool::initialize()
 {
   K4_GAUDI_CHECK( base_class::initialize() );
+  K4_GAUDI_CHECK( m_geoSvc.retrieve() );
 
-  SmartIF<IGeoSvc> geoSvc = service<IGeoSvc>("GeoSvc");
-  if (!geoSvc) {
-    error() << "Unable to locate Geometry service." << endmsg;
-    return StatusCode::FAILURE;
-  }
-  dd4hep::Readout readout = geoSvc->getDetector()->readout(m_readoutName);
+  dd4hep::Readout readout = m_geoSvc->getDetector()->readout(m_readoutName);
   m_segmentation = readout.segmentation();
   m_decoder = m_segmentation.decoder();
   m_layerFieldIdx = m_decoder->index(m_layerFieldName);
