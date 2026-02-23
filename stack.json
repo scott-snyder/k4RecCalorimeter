@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "6f8d567c7637af2a3752b586aac25b1d1437bd10",
-  "head": "c526d640664ed9c669c656579a33973a80f5ea8c",
+  "prev": "1c7043cc7f0809489a3ffb8f849d9d985e82a11e",
+  "head": "bb581d6d1b7068b6f5774a4bb19dbd6998cd20a2",
   "applied": [
     "layerIndex",
     "xtalkSpan1",
@@ -11,7 +11,9 @@
     "calib2",
     "cellPositionsConst2",
     "subdetVolman2",
-    "cellPositions",
+    "cellPositions"
+  ],
+  "unapplied": [
     "nodebug",
     "caloToolInfo1",
     "idmap",
@@ -48,7 +50,6 @@
     "diag-wip",
     "cellids-wip"
   ],
-  "unapplied": [],
   "hidden": [],
   "patches": {
     "layerIndex": {
