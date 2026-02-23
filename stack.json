@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "a82a3429a99b9638492c22b276f46ce5c3a97198",
-  "head": "d57f498a3ff88a86eb3f3d55130598bf2776d998",
+  "prev": "f31e48393aed5a6ba1a0aaab138c58cab5cb88ee",
+  "head": "e258d29170cd76d1c85639164492f35835bdb114",
   "applied": [
     "cxx26",
     "depr",
@@ -19,8 +19,7 @@
     "nodebug",
     "caloToolInfo1",
     "idmap",
-    "idmap_ns",
-    "refresh-temp"
+    "idmap_ns"
   ],
   "unapplied": [
     "caloCellConstantsSvc",
@@ -139,7 +138,7 @@
       "oid": "511ead4cb15a942ff9c99ca0db4b2a12c3b8b249"
     },
     "idmap_ns": {
-      "oid": "82cc4965271b18f7d44571401ff5f100e6350bd8"
+      "oid": "e258d29170cd76d1c85639164492f35835bdb114"
     },
     "indexingConfig": {
       "oid": "c118429221d21fbbcc88ef5ed1a92fbe38c5dd55"
@@ -176,9 +175,6 @@
     },
     "noiseIndex": {
       "oid": "7d6a7f7386aef5a5ab088e21254f2a41a52cb3e0"
-    },
-    "refresh-temp": {
-      "oid": "d57f498a3ff88a86eb3f3d55130598bf2776d998"
     },
     "repnoise": {
       "oid": "878698154873dccd241d43fa592908cdf2a857ad"
