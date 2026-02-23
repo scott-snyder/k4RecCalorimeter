@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "14d68e56a9d4a93a0b9000df43874d7a170058ff",
-  "head": "3dba52e61f993325e8d6d4138a739333cc8cdb45",
+  "prev": "33863ccb256727ff51d95ae5d4e223e2ae604234",
+  "head": "394de1e6e02f0c3930d3456f89c91697808ec664",
   "applied": [
     "cxx26",
     "depr",
@@ -15,8 +15,7 @@
     "calib2",
     "cellPositionsConst2",
     "subdetVolman2",
-    "cellPositions",
-    "refresh-temp"
+    "cellPositions"
   ],
   "unapplied": [
     "nodebug",
@@ -78,7 +77,7 @@
       "oid": "895fb69f5a4c4eb282a8c0bb55b749305cbb1d5e"
     },
     "cellPositions": {
-      "oid": "7c6eefcd317ed30570b33ab24f518233742d8ed5"
+      "oid": "394de1e6e02f0c3930d3456f89c91697808ec664"
     },
     "cellPositionsConst2": {
       "oid": "d7b6938b1e3905a9abba650a372f887985c62029"
@@ -172,9 +171,6 @@
     },
     "noiseIndex": {
       "oid": "4aa71ff6bc9a1205b40eaf41abe3814eee259955"
-    },
-    "refresh-temp": {
-      "oid": "3dba52e61f993325e8d6d4138a739333cc8cdb45"
     },
     "repnoise": {
       "oid": "460c1b9025cef8225d35bd78665c9635e2d3ade3"
