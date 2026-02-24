@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "0bacd1b78893fdaf73dd6787e16369e6e524617c",
-  "head": "f84ad78d2f02cc1815d53302434ea20d33aaf911",
+  "prev": "21c53a885333be9cab0b004c0bbf4aea3d908b1f",
+  "head": "03945bd225315337f4a64405a3cedd86853efb57",
   "applied": [
     "cxx26",
     "depr",
@@ -20,7 +20,6 @@
     "idmap",
     "caloCellConstantsSvc",
     "ci",
-    "test-wip",
     "testenv"
   ],
   "unapplied": [
@@ -182,14 +181,11 @@
     "subdetVolman2": {
       "oid": "ccd0142befccc2d0e6fd025fd92390ba896780ba"
     },
-    "test-wip": {
-      "oid": "655a244f14162be2cc861cd2a7a7b840ec8d47cd"
-    },
     "testdir": {
       "oid": "a95fc426e07ded20188c12b94e062aa9fa065193"
     },
     "testenv": {
-      "oid": "f84ad78d2f02cc1815d53302434ea20d33aaf911"
+      "oid": "03945bd225315337f4a64405a3cedd86853efb57"
     },
     "timeout": {
       "oid": "55b80cbb77c39b5d3459001eeb62a13ec0fd05a6"
