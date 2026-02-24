@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "03b958cb9cea050863cbcc53721f250e8d340ffb",
-  "head": "7548d3b0f8a3740cb08044f62ba28b4d0b887126",
+  "prev": "2c3d703e869bc42d1ab07e7dc4b9c9d097b47918",
+  "head": "5419f40e918d6fa940dbdbe1becbb81f9dc37ccd",
   "applied": [
     "xtalkSpan1",
     "noise1a",
@@ -12,7 +12,9 @@
     "subdetVolman2",
     "cellPositions",
     "nodebug",
-    "caloToolInfo1",
+    "caloToolInfo1"
+  ],
+  "unapplied": [
     "idmap",
     "caloCellConstantsSvc",
     "caloType",
@@ -32,9 +34,7 @@
     "caloCellIndexerSvc",
     "cellsInConst",
     "ecalbarrelIndexer",
-    "hcalIndexer"
-  ],
-  "unapplied": [
+    "hcalIndexer",
     "cellposIndex",
     "ecalendcapTool",
     "indexingConfig",
