@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "303e6fab78689bf7e045ef46d8c9eb8df7d658e0",
-  "head": "1eb399f464fbb9970280846c07c937cf8461e7e4",
+  "prev": "6024d37f4102bb0cef0eb6b119ffcc3a94af0cd4",
+  "head": "99829fd6471c9613d850fc591aeecf66814167cb",
   "applied": [
     "cxx26",
     "depr",
@@ -18,7 +18,8 @@
     "nodebug",
     "caloToolInfo1",
     "idmap",
-    "caloCellConstantsSvc"
+    "caloCellConstantsSvc",
+    "ci"
   ],
   "unapplied": [
     "caloType",
@@ -52,8 +53,7 @@
     "nodefgeotool",
     "move-check",
     "check-deprecated",
-    "check-remove",
-    "ci"
+    "check-remove"
   ],
   "hidden": [],
   "patches": {
@@ -94,7 +94,7 @@
       "oid": "98a1c304c272181e797fc3a88a8fabdf8513ede7"
     },
     "ci": {
-      "oid": "9c93c495c763560013769f786897beaf52bff9c2"
+      "oid": "99829fd6471c9613d850fc591aeecf66814167cb"
     },
     "createCaloCells": {
       "oid": "418c4d0a462bdc570e4d5337e13b3f9db7bf1cd7"
