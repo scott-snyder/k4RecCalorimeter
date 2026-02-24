@@ -23,4 +23,3 @@ for p in os.environ['LD_LIBRARY_PATH'].split(':'):
 import Configurables as C
 appmgr = C.ApplicationMgr()
 appmgr.TopAlg += [C.k4__recCalo__CaloCellConstantsSvcTestAlg()]
-sys.exit(1)
