@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "983ee2408b8e27dde31b2475769fb267572bc60f",
-  "head": "8d49eaa8d7b3d0a5a4db2d994fa21dee58b4e846",
+  "prev": "774b69616ced0dd8e076484b369ada8921366e25",
+  "head": "9c33a84ac2e6b2843f8ba3934c88342ef8cb44ef",
   "applied": [
     "xtalkSpan1",
     "noise1a",
@@ -13,7 +13,8 @@
     "cellPositions",
     "nodebug",
     "caloToolInfo1",
-    "idmap"
+    "idmap",
+    "caloCellConstantsSvc"
   ],
   "unapplied": [
     "caloType",
@@ -82,6 +83,9 @@
     },
     "idmap": {
       "oid": "8d49eaa8d7b3d0a5a4db2d994fa21dee58b4e846"
+    },
+    "caloCellConstantsSvc": {
+      "oid": "9c33a84ac2e6b2843f8ba3934c88342ef8cb44ef"
     },
     "caloType": {
       "oid": "3e7d33b32f67a229d3dac13fb0edf6951653d74c"
