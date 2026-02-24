@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "434e04817af2fca3ffe5a0852ef8688a2a1c326b",
-  "head": "7ac289e87b3aaa9ce31c57ed9930c007c5ce4c8c",
+  "prev": "2e651cd83afed9f94abc2a876141feeeff6f5764",
+  "head": "20b4c181b017a563346e91986747feb44717c298",
   "applied": [
     "cxx26",
     "depr",
@@ -34,8 +34,7 @@
     "xtalkSpan3",
     "xtalkSpan5",
     "noise3",
-    "caloCellIndexerSvc",
-    "refresh-temp"
+    "caloCellIndexerSvc"
   ],
   "unapplied": [
     "cellsInConst",
@@ -65,7 +64,7 @@
       "oid": "d0da2c31222fd35004fde9904a4dbb74076e1f30"
     },
     "caloCellIndexerSvc": {
-      "oid": "0eb44aec5aa5e3c5d8ed69145869d821937ae4ca"
+      "oid": "20b4c181b017a563346e91986747feb44717c298"
     },
     "caloToolInfo1": {
       "oid": "a329f1cc62d905849d91da0a529c4ce336a077ef"
@@ -168,9 +167,6 @@
     },
     "noiseIndex": {
       "oid": "789041a47c15e540c9532cc362ea6f7618a45913"
-    },
-    "refresh-temp": {
-      "oid": "7ac289e87b3aaa9ce31c57ed9930c007c5ce4c8c"
     },
     "repnoise": {
       "oid": "5a89537bba8ad9c7957cb691fdcddc904fbbaa96"
