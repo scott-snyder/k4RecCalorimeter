@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "84207de85b9d389d13cf87e9fb877d8b81a001e6",
-  "head": "1834befe24feb56f9d78479c11219590e80734ce",
+  "prev": "b318055946a3014fc02eec0fe265851b3724022e",
+  "head": "ed49262792bf1eaea4b0e75b8e5006e15983ecdf",
   "applied": [
     "cxx26",
     "depr",
@@ -21,8 +21,7 @@
     "caloCellConstantsSvc",
     "ci",
     "test-wip",
-    "testenv",
-    "refresh-temp"
+    "testenv"
   ],
   "unapplied": [
     "caloType",
@@ -171,9 +170,6 @@
     "noiseIndex": {
       "oid": "789041a47c15e540c9532cc362ea6f7618a45913"
     },
-    "refresh-temp": {
-      "oid": "1834befe24feb56f9d78479c11219590e80734ce"
-    },
     "repnoise": {
       "oid": "5a89537bba8ad9c7957cb691fdcddc904fbbaa96"
     },
@@ -187,13 +183,13 @@
       "oid": "ccd0142befccc2d0e6fd025fd92390ba896780ba"
     },
     "test-wip": {
-      "oid": "4a8705a04c27e190d187479710ccb54c79675ee4"
+      "oid": "655a244f14162be2cc861cd2a7a7b840ec8d47cd"
     },
     "testdir": {
       "oid": "a95fc426e07ded20188c12b94e062aa9fa065193"
     },
     "testenv": {
-      "oid": "9f50dd63ae8da8a91e449b74fed89fc7a4756d22"
+      "oid": "ed49262792bf1eaea4b0e75b8e5006e15983ecdf"
     },
     "timeout": {
       "oid": "55b80cbb77c39b5d3459001eeb62a13ec0fd05a6"
