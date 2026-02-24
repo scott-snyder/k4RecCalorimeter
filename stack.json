@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "b396b1cc67a846db116e9df1faef1761b32d0faf",
-  "head": "56376106e21f74bdb94cb444ed107cc68585d70b",
+  "prev": "6c8815571fdfca20b18a0e23e2222c793fb32ae6",
+  "head": "87b0cc30044a76f45e466211d2cf7a33e9bf1597",
   "applied": [
     "cxx26",
     "depr",
@@ -17,7 +17,9 @@
     "cellPositions",
     "nodebug",
     "caloToolInfo1",
-    "idmap",
+    "idmap"
+  ],
+  "unapplied": [
     "caloCellConstantsSvc",
     "caloType",
     "hcal-tool",
@@ -27,9 +29,7 @@
     "hcal-seg",
     "hcal-seg-row",
     "nocxx23",
-    "caloToolInfo3"
-  ],
-  "unapplied": [
+    "caloToolInfo3",
     "idmapIndexer",
     "multiIndexer",
     "xtalkSpan3",
