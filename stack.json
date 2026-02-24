@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "f4c2ef4179789c15026e917b0a6875472275c25c",
+  "prev": "b14f084c6aa52283ed5c871de5b3339e8f885b0a",
   "head": "d0da2c31222fd35004fde9904a4dbb74076e1f30",
   "applied": [
     "cxx26",
@@ -18,7 +18,7 @@
     "nodebug",
     "caloToolInfo1",
     "idmap",
-    "add-calocellconstantssvc"
+    "caloCellConstantsSvc"
   ],
   "unapplied": [
     "ci",
@@ -57,11 +57,11 @@
   ],
   "hidden": [],
   "patches": {
-    "add-calocellconstantssvc": {
-      "oid": "d0da2c31222fd35004fde9904a4dbb74076e1f30"
-    },
     "calib2": {
       "oid": "ca0ea0163cf97a6a0b3e89e0a77a8f6c7e9e22a6"
+    },
+    "caloCellConstantsSvc": {
+      "oid": "d0da2c31222fd35004fde9904a4dbb74076e1f30"
     },
     "caloCellIndexerSvc": {
       "oid": "e44933b4102e3219158e912e86d94d08091fab7a"
