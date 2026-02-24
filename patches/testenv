@@ -1,6 +1,0 @@
-Bottom: b08cfc47a09a10c2288d0fd421eff0fbac3c566e
-Top:    8e0df3ec73ec256aa3994a94c5b887dbe9ca2bcc
-Author: sss <sss@karma>
-Date:   2026-02-24 10:00:28 -0500
-
-Fix test environment setting.

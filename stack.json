@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "7b9fad439711351c26ea5d402f6121e08c492d24",
-  "head": "7ff3fbf17ad1bfc9c7f3ed05444a1598cfeae239",
+  "prev": "f4c2ef4179789c15026e917b0a6875472275c25c",
+  "head": "d0da2c31222fd35004fde9904a4dbb74076e1f30",
   "applied": [
     "cxx26",
     "depr",
@@ -18,8 +18,7 @@
     "nodebug",
     "caloToolInfo1",
     "idmap",
-    "caloCellConstantsSvc",
-    "testenv"
+    "add-calocellconstantssvc"
   ],
   "unapplied": [
     "ci",
@@ -58,11 +57,11 @@
   ],
   "hidden": [],
   "patches": {
+    "add-calocellconstantssvc": {
+      "oid": "d0da2c31222fd35004fde9904a4dbb74076e1f30"
+    },
     "calib2": {
       "oid": "ca0ea0163cf97a6a0b3e89e0a77a8f6c7e9e22a6"
-    },
-    "caloCellConstantsSvc": {
-      "oid": "1eb399f464fbb9970280846c07c937cf8461e7e4"
     },
     "caloCellIndexerSvc": {
       "oid": "e44933b4102e3219158e912e86d94d08091fab7a"
@@ -183,9 +182,6 @@
     },
     "testdir": {
       "oid": "a95fc426e07ded20188c12b94e062aa9fa065193"
-    },
-    "testenv": {
-      "oid": "7ff3fbf17ad1bfc9c7f3ed05444a1598cfeae239"
     },
     "timeout": {
       "oid": "55b80cbb77c39b5d3459001eeb62a13ec0fd05a6"
