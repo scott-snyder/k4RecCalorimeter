@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "b382241acbd2d85141bbd648a83bc7b7e81f13e5",
-  "head": "8ee8cfb0f418f24bbb43c7f7adbf094fbda3a13e",
+  "prev": "070890f121cb7ba8646a4f578386d51ff8a00741",
+  "head": "db7ec9316ace1d6d7ba58e94a059c07c5b8673f9",
   "applied": [
     "cxx26",
     "depr",
@@ -48,11 +48,11 @@
     "repnoise",
     "createCaloCells",
     "nodefgeotool",
-    "move-check"
+    "move-check",
+    "check-deprecated",
+    "check-remove"
   ],
   "unapplied": [
-    "check-deprecated",
-    "check-remove",
     "ci"
   ],
   "hidden": [],
@@ -88,10 +88,10 @@
       "oid": "f4f46f1f0f7eb0cafa185ce1c1ef72e09bbad119"
     },
     "check-deprecated": {
-      "oid": "4039e99eaa6cae9be33435ef9b01a809868ec28c"
+      "oid": "37af30dc62efcd2973d27e70e42b8e836cd401ef"
     },
     "check-remove": {
-      "oid": "681873c6eb89849efc9efc54bedce1fbbdabd92c"
+      "oid": "db7ec9316ace1d6d7ba58e94a059c07c5b8673f9"
     },
     "ci": {
       "oid": "b94df46832d2d8835fb0ab6946681cafa575a793"
