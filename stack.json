@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "9d7ebdc76704f15cf111d8d7e58e40a41bca8b4c",
-  "head": "9c93c495c763560013769f786897beaf52bff9c2",
+  "prev": "b396b1cc67a846db116e9df1faef1761b32d0faf",
+  "head": "56376106e21f74bdb94cb444ed107cc68585d70b",
   "applied": [
     "cxx26",
     "depr",
@@ -27,7 +27,9 @@
     "hcal-seg",
     "hcal-seg-row",
     "nocxx23",
-    "caloToolInfo3",
+    "caloToolInfo3"
+  ],
+  "unapplied": [
     "idmapIndexer",
     "multiIndexer",
     "xtalkSpan3",
@@ -53,7 +55,6 @@
     "check-remove",
     "ci"
   ],
-  "unapplied": [],
   "hidden": [],
   "patches": {
     "calib2": {
