@@ -6,6 +6,8 @@
 #
 
 import os, sys
+print ('--- cwd ' + os.getcwd())
+print ('--- LD_LIBRARY_PATH ' + os.environ['LD_LIBRARY_PATH'], flush=True)
 for p in os.environ['LD_LIBRARY_PATH'].split(':'):
     print('--- path ' + p, flush=True)
     os.system ('ls ' + p)
