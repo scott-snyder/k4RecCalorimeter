@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "0c12e45ed0ff9b05310722b21eb31ab7402cdda8",
-  "head": "f6623d79761610884e07a9df461d6c4152547edb",
+  "prev": "a3f23b99fc9eb0973cd6fcc54c82de0be7f48faf",
+  "head": "4df8d8e875fbfbe375568ccd74d2b200f2ce90cb",
   "applied": [
     "cxx26",
     "depr",
@@ -20,8 +20,7 @@
     "idmap",
     "caloCellConstantsSvc",
     "ci",
-    "test-wip",
-    "refresh-temp"
+    "test-wip"
   ],
   "unapplied": [
     "caloType",
@@ -170,9 +169,6 @@
     "noiseIndex": {
       "oid": "789041a47c15e540c9532cc362ea6f7618a45913"
     },
-    "refresh-temp": {
-      "oid": "f6623d79761610884e07a9df461d6c4152547edb"
-    },
     "repnoise": {
       "oid": "5a89537bba8ad9c7957cb691fdcddc904fbbaa96"
     },
@@ -186,7 +182,7 @@
       "oid": "ccd0142befccc2d0e6fd025fd92390ba896780ba"
     },
     "test-wip": {
-      "oid": "38cd7ab6caa16989f5bb29e47429bc24bd77e45c"
+      "oid": "4df8d8e875fbfbe375568ccd74d2b200f2ce90cb"
     },
     "testdir": {
       "oid": "a95fc426e07ded20188c12b94e062aa9fa065193"
