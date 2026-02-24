@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "64ad7ffecfe50c1487983d9718ada68c876d4d25",
-  "head": "0eb44aec5aa5e3c5d8ed69145869d821937ae4ca",
+  "prev": "434e04817af2fca3ffe5a0852ef8688a2a1c326b",
+  "head": "7ac289e87b3aaa9ce31c57ed9930c007c5ce4c8c",
   "applied": [
     "cxx26",
     "depr",
@@ -34,7 +34,8 @@
     "xtalkSpan3",
     "xtalkSpan5",
     "noise3",
-    "caloCellIndexerSvc"
+    "caloCellIndexerSvc",
+    "refresh-temp"
   ],
   "unapplied": [
     "cellsInConst",
@@ -167,6 +168,9 @@
     },
     "noiseIndex": {
       "oid": "789041a47c15e540c9532cc362ea6f7618a45913"
+    },
+    "refresh-temp": {
+      "oid": "7ac289e87b3aaa9ce31c57ed9930c007c5ce4c8c"
     },
     "repnoise": {
       "oid": "5a89537bba8ad9c7957cb691fdcddc904fbbaa96"
