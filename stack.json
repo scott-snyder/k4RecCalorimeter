@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "3896cb138360c843931e26dc7fb9c4d9944f1696",
-  "head": "e7f28e3ab1647e2ef5081ca03ba01c22f241eadb",
+  "prev": "1c83c1f54a596091dbad79723fe27fd936801ab7",
+  "head": "ca72a599d6337c292ce0896ccdda84b9e65f7519",
   "applied": [
     "cxx26",
     "depr",
@@ -21,10 +21,10 @@
     "caloCellConstantsSvc",
     "ci",
     "test-wip",
-    "testenv",
     "refresh-temp"
   ],
   "unapplied": [
+    "testenv",
     "caloType",
     "hcal-tool",
     "subdetVolman",
@@ -172,7 +172,7 @@
       "oid": "789041a47c15e540c9532cc362ea6f7618a45913"
     },
     "refresh-temp": {
-      "oid": "e7f28e3ab1647e2ef5081ca03ba01c22f241eadb"
+      "oid": "ca72a599d6337c292ce0896ccdda84b9e65f7519"
     },
     "repnoise": {
       "oid": "5a89537bba8ad9c7957cb691fdcddc904fbbaa96"
