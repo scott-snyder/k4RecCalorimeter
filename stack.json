@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "fd17f281eb4621d3c6882158763ec2a73b318747",
-  "head": "27829600ebcad2ef322bb2bd102ce9e1025494d1",
+  "prev": "03b958cb9cea050863cbcc53721f250e8d340ffb",
+  "head": "7548d3b0f8a3740cb08044f62ba28b4d0b887126",
   "applied": [
     "xtalkSpan1",
     "noise1a",
@@ -32,7 +32,9 @@
     "caloCellIndexerSvc",
     "cellsInConst",
     "ecalbarrelIndexer",
-    "hcalIndexer",
+    "hcalIndexer"
+  ],
+  "unapplied": [
     "cellposIndex",
     "ecalendcapTool",
     "indexingConfig",
@@ -47,7 +49,6 @@
     "diag-wip",
     "cellids-wip"
   ],
-  "unapplied": [],
   "hidden": [],
   "patches": {
     "xtalkSpan1": {
