@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "2111de03676a93c976ed0dc6282eb7105722be41",
-  "head": "9f50dd63ae8da8a91e449b74fed89fc7a4756d22",
+  "prev": "84207de85b9d389d13cf87e9fb877d8b81a001e6",
+  "head": "1834befe24feb56f9d78479c11219590e80734ce",
   "applied": [
     "cxx26",
     "depr",
@@ -21,7 +21,8 @@
     "caloCellConstantsSvc",
     "ci",
     "test-wip",
-    "testenv"
+    "testenv",
+    "refresh-temp"
   ],
   "unapplied": [
     "caloType",
@@ -169,6 +170,9 @@
     },
     "noiseIndex": {
       "oid": "789041a47c15e540c9532cc362ea6f7618a45913"
+    },
+    "refresh-temp": {
+      "oid": "1834befe24feb56f9d78479c11219590e80734ce"
     },
     "repnoise": {
       "oid": "5a89537bba8ad9c7957cb691fdcddc904fbbaa96"
