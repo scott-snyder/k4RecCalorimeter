@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "e83e04eb8c236c086010b9c2a3538dd96351932d",
-  "head": "f2e8c9299b7117b3b2c7456e3f4c56672aec5f9b",
+  "prev": "1a8bb9a809307b519a462d471576d303cd4e6b4f",
+  "head": "2e0cb99f6c8f4f7601dbbce3127bc9ba93d3ffa6",
   "applied": [
     "cxx26",
     "depr",
@@ -39,9 +39,7 @@
     "ecalbarrelIndexer",
     "hcalIndexer",
     "ecalendcapTool",
-    "cellposIndex"
-  ],
-  "unapplied": [
+    "cellposIndex",
     "indexingConfig",
     "xtalkIndex",
     "topoNoiseIndex",
@@ -56,6 +54,7 @@
     "check-remove",
     "ci"
   ],
+  "unapplied": [],
   "hidden": [],
   "patches": {
     "calib2": {
@@ -89,19 +88,19 @@
       "oid": "a77711c9ca640d778bdd2f40cd137fc4aa334e67"
     },
     "check-deprecated": {
-      "oid": "37af30dc62efcd2973d27e70e42b8e836cd401ef"
+      "oid": "7c6ad59bab6c45c3f7758bedf87906180afe58fe"
     },
     "check-remove": {
-      "oid": "db7ec9316ace1d6d7ba58e94a059c07c5b8673f9"
+      "oid": "ec5f3fea2b1fc7a3993c6d4c7f5077fe121c964f"
     },
     "ci": {
-      "oid": "b94df46832d2d8835fb0ab6946681cafa575a793"
+      "oid": "2e0cb99f6c8f4f7601dbbce3127bc9ba93d3ffa6"
     },
     "createCaloCells": {
-      "oid": "89ea3507400cf4766bd502beb94e4501dda9f746"
+      "oid": "f51d3272c7d2036dafd079cfc47b73b4a2b79f2c"
     },
     "createTopoCluster": {
-      "oid": "55cbdfafbed5a2e6e516bbb3debe8bc625b5e176"
+      "oid": "f59c1ce040112e317011d8e5c4ab9c8ea04df971"
     },
     "cxx26": {
       "oid": "4c686864a0ee73b12ec511ca4d5fa1d7afbb4e30"
@@ -137,10 +136,10 @@
       "oid": "cd0e4463db526e4335cf3eaa924c08cb2ecc5348"
     },
     "indexingConfig": {
-      "oid": "30ed67e9fde9487d44e510f4d52c6e962bf850b8"
+      "oid": "62a31ffe91e1a7f5a5185358ee8d2a904e8db8c4"
     },
     "move-check": {
-      "oid": "8ee8cfb0f418f24bbb43c7f7adbf094fbda3a13e"
+      "oid": "c048a40818561dcd9457cbc473c003c29b032f8b"
     },
     "multiIndexer": {
       "oid": "e6e6c65aa3435d49504d15f30bc57fd0bf2d698d"
@@ -155,7 +154,7 @@
       "oid": "2271da61fc6ca2f8c742b45ec678c0016f84ef1c"
     },
     "nodefgeotool": {
-      "oid": "2ac0e897b185c62444eaa71795919c24de62a259"
+      "oid": "32b30b84eb8c4eace9406e0da4cc02587e1b54ed"
     },
     "noise1a": {
       "oid": "72aba8af379323da70576b72a50e33df22e89179"
@@ -170,13 +169,13 @@
       "oid": "ad4030245c04ada3a74d0bb5466af040377c9b7f"
     },
     "noiseIndex": {
-      "oid": "efc98136c43daae3d154b87e61abf55009c99afa"
+      "oid": "80c4a290ab2a676a02048a15c0652ff72fd839c6"
     },
     "repnoise": {
-      "oid": "0b24f8f482364c3e6e56fd41edebe040be9ff45b"
+      "oid": "19a2eba1838d1b511b65a28616bd60a6db812a4a"
     },
     "sortnoise": {
-      "oid": "c8c9e3a8d389e68b929a56ba4fa2c258db06fbdd"
+      "oid": "10de3ecb89e91aae8aa7c7821f7d23b46cd4dccc"
     },
     "subdetVolman": {
       "oid": "8cd27d638cac867c44ad448a20d86fd512768127"
@@ -191,13 +190,13 @@
       "oid": "80687f044e6f84af1968783a8fdcdff22970b381"
     },
     "topoNoiseIndex": {
-      "oid": "4321e6166556917d926942b7c118ef3d37cf7d38"
+      "oid": "2795c0bda4f7e374c37291fd70e9ac88bfe32176"
     },
     "xtalk": {
       "oid": "292b60a74d7894e25a0c794c40ec439d428b6bba"
     },
     "xtalkIndex": {
-      "oid": "f78a4b9230a64a437fbf3e895600f91928ecdb25"
+      "oid": "672da874881b28dcaa623da21aa34e60b6daa47b"
     },
     "xtalkSpan1": {
       "oid": "e206b820ec338c077e89e85db1a2334435ecd21b"
