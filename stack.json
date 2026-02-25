@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "88b02f0996076376e9120b66e2fea5c0e4514df0",
-  "head": "d442facfd9e59c983b60e0806151edc18848ac4d",
+  "prev": "a6f27a0ca8c3c535e7ede652c6d8ca6531675377",
+  "head": "31c92180d4de8c82a4f18c324915a38a57beb0a3",
   "applied": [
     "cxx26",
     "depr",
@@ -16,7 +16,8 @@
     "subdetVolman2",
     "cellPositions",
     "nodebug",
-    "nodebug2"
+    "nodebug2",
+    "refresh-temp"
   ],
   "unapplied": [
     "caloToolInfo1",
@@ -171,6 +172,9 @@
     },
     "noiseIndex": {
       "oid": "efc98136c43daae3d154b87e61abf55009c99afa"
+    },
+    "refresh-temp": {
+      "oid": "31c92180d4de8c82a4f18c324915a38a57beb0a3"
     },
     "repnoise": {
       "oid": "0b24f8f482364c3e6e56fd41edebe040be9ff45b"
