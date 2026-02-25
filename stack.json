@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "4269bd0c7e6463f939214130ac2ea55ac3553bc5",
-  "head": "127b13ec63480dc9f956d8330aab2b72598cd28d",
+  "prev": "07d283ec603eff2a914523fa7b6624ac449a4e27",
+  "head": "3c568ae0c4479207749b0ce08268fab77238209c",
   "applied": [
     "testdir",
     "k4geo-noclone",
@@ -35,9 +35,7 @@
     "cellsInConst",
     "ecalbarrelIndexer",
     "hcalIndexer",
-    "cellposIndex"
-  ],
-  "unapplied": [
+    "cellposIndex",
     "ecalendcapTool",
     "indexingConfig",
     "xtalkIndex",
@@ -51,6 +49,7 @@
     "diag-wip",
     "cellids-wip"
   ],
+  "unapplied": [],
   "hidden": [],
   "patches": {
     "testdir": {
@@ -153,40 +152,40 @@
       "oid": "127b13ec63480dc9f956d8330aab2b72598cd28d"
     },
     "ecalendcapTool": {
-      "oid": "4c997736896fa3c250ba648be074b1f0387d8722"
+      "oid": "e32733cbdcc2da1ad2e834fc0b79c82f6bbec060"
     },
     "indexingConfig": {
-      "oid": "b79ae70af4dd6b16d33c8d1dd86c33134d4c0029"
+      "oid": "aed9cfeb45a904e642dedf5bd0828ea7b85f68e1"
     },
     "xtalkIndex": {
-      "oid": "c955863720f384b23f8182c3ef2bc6a2be8aa604"
+      "oid": "56819d1e8ff38ef79bd958f54db28f05048d6510"
     },
     "topoNoiseIndex": {
-      "oid": "5a9d97a63d4041a765811d3341f9496f129becb5"
+      "oid": "68a8f386ee1f81a61dcea8f7009c669c9051ee78"
     },
     "createTopoCluster": {
-      "oid": "a41f8213c5e1fb31fb98dd665af10e64e598d4a9"
+      "oid": "4740101065ae1a0442faf97f527b069873c6e8e4"
     },
     "noiseIndex": {
-      "oid": "8eeab5324e86e370454c335ac3d88ef992ed00ae"
+      "oid": "e303c713535697a3daf3bff7f933c619d09936c6"
     },
     "createCaloCells": {
-      "oid": "1b5d69cdb31dd517f786653d758752d936919cf1"
+      "oid": "6d8ebfd45e22070f9166d34dc6a902dfdbddb7d3"
     },
     "nodefgeotool": {
-      "oid": "414767a355790524a321594f0e2a4b08c85a0854"
+      "oid": "52742eb681fdd8edc04932882e7f5d7282285b89"
     },
     "discrit-wip": {
-      "oid": "035fc3a706a591e7f5d25f4d1903458229c52089"
+      "oid": "f4d71ab58aec49b473826456c4bd8078dce87c0d"
     },
     "discrit2-wip": {
-      "oid": "46034176f9f0778764a6074e03da02f63a6c7633"
+      "oid": "ec14f2fee7c5dfa5df4d046ec0e269be28ecd3a7"
     },
     "diag-wip": {
-      "oid": "96d8a76804d085788de17103e7e26e52b3aa874d"
+      "oid": "dea8b2275dcc1a618fed551a22b4661823881e93"
     },
     "cellids-wip": {
-      "oid": "b5d5d8adf029d808e90e29226084678282158c66"
+      "oid": "3c568ae0c4479207749b0ce08268fab77238209c"
     }
   }
 }
