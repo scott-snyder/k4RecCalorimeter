@@ -1,6 +1,10 @@
 Bottom: d6e0a89745276b80c928ad05611ed22577102b60
 Top:    7edc2fa4a52516b46c2552148f55c1e610e60c4a
 Author: sss <sss@karma>
-Date:   2026-02-25 15:35:30 -0500
+Date:   2026-02-25 17:24:03 -0500
 
 Fix test directories.
+
+Should run tests with the working directory set to something under
+${PROJECT_BINARY_DIR}, not ${PROJECT_SOURCE_DIR}.  Otherwise we end up
+dropping litter in the source directory.
