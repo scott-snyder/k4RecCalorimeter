@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "a6f27a0ca8c3c535e7ede652c6d8ca6531675377",
-  "head": "31c92180d4de8c82a4f18c324915a38a57beb0a3",
+  "prev": "6e0fc8cce2183c47e0d721aede95247961b27326",
+  "head": "2271da61fc6ca2f8c742b45ec678c0016f84ef1c",
   "applied": [
     "cxx26",
     "depr",
@@ -16,8 +16,7 @@
     "subdetVolman2",
     "cellPositions",
     "nodebug",
-    "nodebug2",
-    "refresh-temp"
+    "nodebug2"
   ],
   "unapplied": [
     "caloToolInfo1",
@@ -153,7 +152,7 @@
       "oid": "b8953e7a8ac5526ccda1262d2823bb3cdd517507"
     },
     "nodebug2": {
-      "oid": "d442facfd9e59c983b60e0806151edc18848ac4d"
+      "oid": "2271da61fc6ca2f8c742b45ec678c0016f84ef1c"
     },
     "nodefgeotool": {
       "oid": "2ac0e897b185c62444eaa71795919c24de62a259"
@@ -172,9 +171,6 @@
     },
     "noiseIndex": {
       "oid": "efc98136c43daae3d154b87e61abf55009c99afa"
-    },
-    "refresh-temp": {
-      "oid": "31c92180d4de8c82a4f18c324915a38a57beb0a3"
     },
     "repnoise": {
       "oid": "0b24f8f482364c3e6e56fd41edebe040be9ff45b"
