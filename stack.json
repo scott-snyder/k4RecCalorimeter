@@ -1,13 +1,13 @@
 {
   "version": 5,
-  "prev": "7b4ba919eae35cf11f7ce76de6cb9b24e217e3aa",
-  "head": "7ac4a596a73803d41b35eec5021d0ccf1102a1d8",
+  "prev": "bd36deb450916e75d8a89209a1a35cb393dc5f38",
+  "head": "a95fc426e07ded20188c12b94e062aa9fa065193",
   "applied": [
     "cxx26",
-    "depr"
+    "depr",
+    "testdir"
   ],
   "unapplied": [
-    "testdir",
     "xtalk",
     "xtalkSpan1",
     "noise1a",
