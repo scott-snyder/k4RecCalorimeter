@@ -1,7 +1,7 @@
 Bottom: e4e04bde436fef2fd0e8082325b290b005fe6e8b
-Top:    29dc92f55468036e18f45fe96ef99137ebe8029a
-Author: scott snyder <snyder@bnl.gov>
-Date:   2026-02-25 15:37:51 -0500
+Top:    d7f59b504e45c2024b213793259e782a24a5f3c9
+Author: sss <sss@karma>
+Date:   2026-02-25 17:19:28 -0500
 
 Remove/gate debug()/verbose() calls.
 
