@@ -1,11 +1,12 @@
 {
   "version": 5,
-  "prev": "aa23056cef865abc06ee188c4ec7d8ee9a37546c",
-  "head": "ec657c4631d9dc4f76533fef75e6ee873709de72",
+  "prev": "e1f92cbd55e6865583ec1115ef04165acd0fa3af",
+  "head": "fe0fc520caf1bc67e5d4616c997497cc35e54ddd",
   "applied": [
     "cxx26",
     "depr",
-    "testdir"
+    "testdir",
+    "k4geo-noclone"
   ],
   "unapplied": [
     "xtalk",
@@ -138,6 +139,9 @@
     },
     "indexingConfig": {
       "oid": "6baf2974585b714b4e32785d8e57845fe36e6589"
+    },
+    "k4geo-noclone": {
+      "oid": "fe0fc520caf1bc67e5d4616c997497cc35e54ddd"
     },
     "move-check": {
       "oid": "814fe2b7b8b6f83565aa6ca70aa403773d2c1324"
