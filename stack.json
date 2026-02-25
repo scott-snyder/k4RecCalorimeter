@@ -1,9 +1,10 @@
 {
   "version": 5,
-  "prev": "2aa9ee6cef95a8724f2e90160492c9725c804440",
-  "head": "a20155792dc78b27ace75806e22764428e1db2e1",
+  "prev": "3cff159ac2ef5476d9366a590f20401ab2e62867",
+  "head": "0863e64f6c7e95c1e9b30afe4c2d1e6da0273607",
   "applied": [
-    "testdir"
+    "testdir",
+    "k4geo-noclone"
   ],
   "unapplied": [
     "xtalkSpan1",
@@ -53,6 +54,9 @@
   "patches": {
     "testdir": {
       "oid": "a20155792dc78b27ace75806e22764428e1db2e1"
+    },
+    "k4geo-noclone": {
+      "oid": "0863e64f6c7e95c1e9b30afe4c2d1e6da0273607"
     },
     "xtalkSpan1": {
       "oid": "e594d457da2885121a6279de540ada079cd62dea"
