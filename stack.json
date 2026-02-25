@@ -1,12 +1,12 @@
 {
   "version": 5,
-  "prev": "1cbc7f90212fab050733cfa43a57ba0403566628",
-  "head": "4c686864a0ee73b12ec511ca4d5fa1d7afbb4e30",
+  "prev": "7b4ba919eae35cf11f7ce76de6cb9b24e217e3aa",
+  "head": "7ac4a596a73803d41b35eec5021d0ccf1102a1d8",
   "applied": [
-    "cxx26"
+    "cxx26",
+    "depr"
   ],
   "unapplied": [
-    "depr",
     "testdir",
     "xtalk",
     "xtalkSpan1",
