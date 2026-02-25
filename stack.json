@@ -1,8 +1,10 @@
 {
   "version": 5,
-  "prev": "04bd308781b9df0be64d61649fd840072e444827",
-  "head": "e2a3a9bc420dde0f23d660561d95c49e852595ac",
-  "applied": [],
+  "prev": "2aa9ee6cef95a8724f2e90160492c9725c804440",
+  "head": "a20155792dc78b27ace75806e22764428e1db2e1",
+  "applied": [
+    "testdir"
+  ],
   "unapplied": [
     "xtalkSpan1",
     "noise1a",
@@ -49,6 +51,9 @@
   ],
   "hidden": [],
   "patches": {
+    "testdir": {
+      "oid": "a20155792dc78b27ace75806e22764428e1db2e1"
+    },
     "xtalkSpan1": {
       "oid": "e594d457da2885121a6279de540ada079cd62dea"
     },
