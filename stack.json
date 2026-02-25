@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "675d5447238b8af3001f7abc2ae6f4c274bc13a5",
+  "prev": "04bd308781b9df0be64d61649fd840072e444827",
   "head": "e2a3a9bc420dde0f23d660561d95c49e852595ac",
   "applied": [],
   "unapplied": [
@@ -19,7 +19,6 @@
     "caloType",
     "hcal-tool",
     "subdetVolman",
-    "testdir",
     "geoConst2",
     "hcal-seg",
     "hcal-seg-row",
@@ -94,9 +93,6 @@
     },
     "subdetVolman": {
       "oid": "ba1f39b82d40c554240276f4b548879b427c97ac"
-    },
-    "testdir": {
-      "oid": "71492929984bc80611c1ac29dc61219dfd3803ce"
     },
     "geoConst2": {
       "oid": "2b7a2622e462374f2ceb1c025af3187f354dfa64"
