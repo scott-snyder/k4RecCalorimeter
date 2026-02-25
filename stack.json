@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "3a33249ed51854f938e47b454236ab3d887fb1e4",
+  "prev": "2534da6583e14b659b28b12bfb31539a9810dabd",
   "head": "177f2b3b0ccc8df14aa21cd3cdc0b58b34409940",
   "applied": [
     "testdir",
@@ -37,7 +37,6 @@
     "hcalIndexer"
   ],
   "unapplied": [
-    "cellposIndex",
     "ecalendcapTool",
     "indexingConfig",
     "xtalkIndex",
@@ -148,9 +147,6 @@
     },
     "hcalIndexer": {
       "oid": "177f2b3b0ccc8df14aa21cd3cdc0b58b34409940"
-    },
-    "cellposIndex": {
-      "oid": "cf94b216d25c3b9e35e8cadee3b79b47f6c5d386"
     },
     "ecalendcapTool": {
       "oid": "4c997736896fa3c250ba648be074b1f0387d8722"
