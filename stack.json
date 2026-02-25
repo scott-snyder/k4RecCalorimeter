@@ -1,9 +1,8 @@
 {
   "version": 5,
-  "prev": "547cde230d0e78856a0b52ce4249662e6e3a8f8f",
-  "head": "e2a3a9bc420dde0f23d660561d95c49e852595ac",
-  "applied": [],
-  "unapplied": [
+  "prev": "a87e26cc4fe260951a28faeca2477dae620f8257",
+  "head": "6b13fdc9ba9245345cc2b65d35016edf2b97bcf7",
+  "applied": [
     "testdir",
     "k4geo-noclone",
     "xtalkSpan1",
@@ -13,7 +12,9 @@
     "calib2",
     "cellPositionsConst2",
     "subdetVolman2",
-    "cellPositions",
+    "cellPositions"
+  ],
+  "unapplied": [
     "nodebug",
     "nodebug2",
     "caloToolInfo1",
