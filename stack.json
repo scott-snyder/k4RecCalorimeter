@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "4ace02496ecb18157a027648eb1825f2b05631ba",
+  "prev": "25bca0662c9a1e972811c338748a63d48c038efe",
   "head": "a9b910ada1e0fb1ab56e110206d1724ca9bebeab",
   "applied": [
     "cxx26",
@@ -16,7 +16,7 @@
     "cellPositionsConst2",
     "subdetVolman2",
     "cellPositions",
-    "remove-gate-debug-verbose"
+    "nodebug"
   ],
   "unapplied": [
     "caloToolInfo1",
@@ -151,6 +151,9 @@
     "nocxx23": {
       "oid": "796b8d065019e3cf176ec06a8dbded00fcec5a34"
     },
+    "nodebug": {
+      "oid": "a9b910ada1e0fb1ab56e110206d1724ca9bebeab"
+    },
     "nodefgeotool": {
       "oid": "79d0d48cbb2e92f016558c273c3a4a4ad360de6f"
     },
@@ -168,9 +171,6 @@
     },
     "noiseIndex": {
       "oid": "61d22018b496817f501d4113d393c4970d8cb9eb"
-    },
-    "remove-gate-debug-verbose": {
-      "oid": "a9b910ada1e0fb1ab56e110206d1724ca9bebeab"
     },
     "repnoise": {
       "oid": "62f7b80f85dcf336987d34e6781ac59d894ba9c2"
