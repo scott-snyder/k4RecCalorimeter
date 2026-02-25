@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "1a8bb9a809307b519a462d471576d303cd4e6b4f",
-  "head": "2e0cb99f6c8f4f7601dbbce3127bc9ba93d3ffa6",
+  "prev": "6e5cf955e912b3a435ff34f5f5eb6b56b392d703",
+  "head": "ec5f3fea2b1fc7a3993c6d4c7f5077fe121c964f",
   "applied": [
     "cxx26",
     "depr",
@@ -51,10 +51,11 @@
     "nodefgeotool",
     "move-check",
     "check-deprecated",
-    "check-remove",
+    "check-remove"
+  ],
+  "unapplied": [
     "ci"
   ],
-  "unapplied": [],
   "hidden": [],
   "patches": {
     "calib2": {
