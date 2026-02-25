@@ -1,9 +1,8 @@
 {
   "version": 5,
-  "prev": "987a8c9fcb3f6c8f96645c8142cc838dd6392d25",
-  "head": "e2a3a9bc420dde0f23d660561d95c49e852595ac",
-  "applied": [],
-  "unapplied": [
+  "prev": "d23e3ab1d4afccb24347647b813c56b4e1ea801c",
+  "head": "b8953e7a8ac5526ccda1262d2823bb3cdd517507",
+  "applied": [
     "cxx26",
     "depr",
     "testdir",
@@ -16,7 +15,9 @@
     "cellPositionsConst2",
     "subdetVolman2",
     "cellPositions",
-    "nodebug",
+    "nodebug"
+  ],
+  "unapplied": [
     "caloToolInfo1",
     "idmap",
     "caloCellConstantsSvc",
