@@ -52,9 +52,10 @@ StatusCode CellPositionsECalBarrelModuleThetaSegTool::initialize() {
       dd4hep::DDSegmentation::CellID volumeId = m_segmentation->volumeID(id);
       dd4hep::VolumeManagerContext* vc = volman.lookupContext(volumeId);
       dd4hep::DDSegmentation::Vector3D inSeg = m_segmentation->position(id);
-      positions.at(index) = vc->localToWorld(dd4hep::Position(inSeg));
+      dd4hep::Position outSeg = vc->localToWorld(dd4hep::Position(inSeg));
+      positions.at(index) = outSeg;
       if (this->msgLevel(MSG::DEBUG)) { [[unlikely]]
-        debug() << "cellID: " << aCellId << endmsg;
+        debug() << "cellID: " << id << endmsg;
         debug() << "volumeID: " << volumeId << endmsg;
         debug() << "Local position of cell (mm) : \t" << inSeg.x() / dd4hep::mm << "\t" << inSeg.y() / dd4hep::mm << "\t"
                 << inSeg.z() / dd4hep::mm << endmsg;
