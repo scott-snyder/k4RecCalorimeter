@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "8f493675883fa4761730c18710ffa82fa7000e74",
-  "head": "6b13fdc9ba9245345cc2b65d35016edf2b97bcf7",
+  "prev": "7ee0293d32cd7ae8b70aa062a0542663c142a6f7",
+  "head": "fef261cec32e73ee9e911733fe19d2c225e4a3be",
   "applied": [
     "testdir",
     "k4geo-noclone",
@@ -12,7 +12,8 @@
     "calib2",
     "cellPositionsConst2",
     "subdetVolman2",
-    "cellPositions"
+    "cellPositions",
+    "nodebug"
   ],
   "unapplied": [
     "caloToolInfo1",
@@ -80,6 +81,9 @@
     },
     "cellPositions": {
       "oid": "6b13fdc9ba9245345cc2b65d35016edf2b97bcf7"
+    },
+    "nodebug": {
+      "oid": "fef261cec32e73ee9e911733fe19d2c225e4a3be"
     },
     "caloToolInfo1": {
       "oid": "5419f40e918d6fa940dbdbe1becbb81f9dc37ccd"
