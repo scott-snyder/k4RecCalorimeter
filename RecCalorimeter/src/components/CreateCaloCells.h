@@ -296,9 +296,6 @@ private:
   /// List of all cell ids for our subdetector.
   std::span<const uint64_t> m_cellIDs;
 
-  /// Mapper from cell id to index within m_cellIDs.
-  const ICaloIndexer* m_indexer = nullptr;
-
   /// Indexed by system ID, giving the calorimeter type word.
   /// Non-calorimeter system IDs are set to 0.
   /// We record this for all system IDs since we build this during
