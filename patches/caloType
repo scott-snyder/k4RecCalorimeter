@@ -1,8 +1,0 @@
-Bottom: 260dc0dd53f93c34e8a7a208187bae989fc522b2
-Top:    260dc0dd53f93c34e8a7a208187bae989fc522b2
-Author: scott snyder <snyder@bnl.gov>
-Date:   2026-03-04 16:13:54 -0500
-
-Extend CreateCaloCells to fill in type word.
-
-Also remove some unused properties.
