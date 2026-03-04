@@ -1,5 +1,5 @@
 #include "ReadCaloCrosstalkMap.h"
-#include "k4FWCore/k4_check.h"
+#include "k4FWCore/GaudiChecks.h"
 #include "k4Interface/IGeoSvc.h"
 #include "DD4hep/Detector.h"
 

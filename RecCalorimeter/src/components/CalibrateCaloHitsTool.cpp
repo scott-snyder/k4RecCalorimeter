@@ -1,5 +1,5 @@
 #include "CalibrateCaloHitsTool.h"
-#include "k4FWCore/k4_check.h"
+#include "k4FWCore/GaudiChecks.h"
 
 DECLARE_COMPONENT(CalibrateCaloHitsTool)
 

@@ -2,7 +2,7 @@
 
 // k4FWCore
 #include "k4Interface/IGeoSvc.h"
-#include "k4FWCore/k4_check.h"
+#include "k4FWCore/GaudiChecks.h"
 
 // DD4hep
 #include "DD4hep/Detector.h"

@@ -1,5 +1,5 @@
 #include "NoiseCaloCellsVsThetaFromFileTool.h"
-#include "k4FWCore/k4_check.h"
+#include "k4FWCore/GaudiChecks.h"
 
 // k4geo
 #include "detectorCommon/DetUtils_k4geo.h"

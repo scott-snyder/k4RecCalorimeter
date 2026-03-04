@@ -7,7 +7,7 @@
 
 
 #include "CaloCellIndexerSvc.h"
-#include "k4FWCore/k4_check.h"
+#include "k4FWCore/GaudiChecks.h"
 #include "RecCaloCommon/MultiIndexer.h"
 
 

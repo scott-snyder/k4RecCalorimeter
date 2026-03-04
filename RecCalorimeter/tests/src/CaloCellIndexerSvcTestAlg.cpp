@@ -7,7 +7,7 @@
 
 
 #include "RecCaloCommon/ICaloCellIndexerSvc.h"
-#include "k4FWCore/k4_check.h"
+#include "k4FWCore/GaudiChecks.h"
 #include "GaudiKernel/Algorithm.h"
 #include "GaudiKernel/ServiceHandle.h"
 #include <span>

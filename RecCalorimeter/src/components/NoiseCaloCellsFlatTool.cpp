@@ -1,5 +1,5 @@
 #include "NoiseCaloCellsFlatTool.h"
-#include "k4FWCore/k4_check.h"
+#include "k4FWCore/GaudiChecks.h"
 #include <GaudiKernel/StatusCode.h>
 
 DECLARE_COMPONENT(NoiseCaloCellsFlatTool)

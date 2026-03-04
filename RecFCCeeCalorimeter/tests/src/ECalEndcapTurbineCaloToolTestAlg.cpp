@@ -7,7 +7,7 @@
 
 #undef NDEBUG
 #include "k4Interface/ICalorimeterTool.h"
-#include "k4FWCore/k4_check.h"
+#include "k4FWCore/GaudiChecks.h"
 #include "GaudiKernel/Algorithm.h"
 #include "GaudiKernel/ToolHandle.h"
 #include <span>
