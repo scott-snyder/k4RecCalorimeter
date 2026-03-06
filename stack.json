@@ -1,11 +1,13 @@
 {
   "version": 5,
-  "prev": "3f0edcf0e2d01afd4ce6e3f72dd0637a0f415f01",
-  "head": "980b99d84c82fb2683eba927e1ff044f786e159f",
+  "prev": "6f0285e312aaa150bfcba208d0c74a484bdd2e82",
+  "head": "0c905f8fe6863b06b5d85ead413a8390d1af5706",
   "applied": [
     "depr",
     "k4geo-noclone",
-    "xtalk",
+    "xtalk"
+  ],
+  "unapplied": [
     "xtalkSpan1",
     "noise1a",
     "noise1b",
@@ -45,9 +47,7 @@
     "nodefgeotool",
     "move-check",
     "check-deprecated",
-    "check-remove"
-  ],
-  "unapplied": [
+    "check-remove",
     "ci",
     "hcal-seg",
     "hcal-seg-row"
