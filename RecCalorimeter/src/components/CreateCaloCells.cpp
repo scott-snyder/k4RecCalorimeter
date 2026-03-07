@@ -232,6 +232,10 @@ StatusCode CreateCaloCells::initialize() {
     K4_GAUDI_CHECK( m_cellPos.retrieve() );
   }
 
+  if (m_addPosition & !m_cellPos.isEnabled()) {
+    K4_GAUDI_CHECK( m_geoTool.retrieve() );
+  }
+
   // Copy over the CellIDEncoding string from the input collection to the output collection
   auto hitsEncoding = m_hitsCellIDEncoding.get_optional();
   K4_GAUDI_CHECK( hitsEncoding.has_value() );
