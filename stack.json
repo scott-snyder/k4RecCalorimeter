@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "ffec9465269b983a668705c1dd57f9b652751a4d",
-  "head": "daa273be9d6bd8f32d7b2497a372e9c0149a619d",
+  "prev": "487418df29df4cb0ae2215c483c92cd61dc459c2",
+  "head": "171f4d392cfe837fe4350cab2d28c38579b4f422",
   "applied": [
     "k4geo-noclone",
     "xtalkSpan1",
@@ -33,16 +33,16 @@
     "indexingConfig",
     "xtalkIndex",
     "topoNoiseIndex",
-    "createTopoCluster",
+    "createTopoCluster"
+  ],
+  "unapplied": [
     "noiseIndex",
     "createCaloCells",
     "nodefgeotool",
     "discrit-wip",
     "discrit2-wip",
     "diag-wip",
-    "cellids-wip"
-  ],
-  "unapplied": [
+    "cellids-wip",
     "hcal-seg",
     "hcal-seg-row",
     "nocxx23"
