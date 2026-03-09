@@ -1,11 +1,8 @@
 {
   "version": 5,
-  "prev": "1aad952d8189c2da2f0eccd716080bb7d82f771b",
-  "head": "4faf99aadea062f8efdbe7c3b0d915a8bfbdc0ed",
-  "applied": [
-    "testdir",
-    "k4geo-noclone"
-  ],
+  "prev": "b7baa019555a8fcbcf78c573d65c9f1062732f20",
+  "head": "e2823f330bcd329e052ab7a622e6995cd9e1e029",
+  "applied": [],
   "unapplied": [
     "xtalkSpan1",
     "noise1a",
@@ -53,12 +50,6 @@
     "nocxx23"
   ],
   "patches": {
-    "testdir": {
-      "oid": "8b18109b7ecb9af71ca8cc006b52602c35f2c223"
-    },
-    "k4geo-noclone": {
-      "oid": "4faf99aadea062f8efdbe7c3b0d915a8bfbdc0ed"
-    },
     "xtalkSpan1": {
       "oid": "0175d50e728d5880baf3a4e73ebba695d9dd2da1"
     },
