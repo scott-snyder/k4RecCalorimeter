@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "0f1a914ff2c2d036782e503631cc7da9906e1315",
+  "prev": "f6a41cb2be99d688b483d12e1aa1a606723d18d2",
   "head": "e2823f330bcd329e052ab7a622e6995cd9e1e029",
   "applied": [],
   "unapplied": [
@@ -22,9 +22,6 @@
     "hcal-tool",
     "subdetVolman",
     "geoConst2",
-    "hcal-seg",
-    "hcal-seg-row",
-    "nocxx23",
     "caloToolInfo3",
     "idmapIndexer",
     "multiIndexer",
@@ -49,7 +46,11 @@
     "diag-wip",
     "cellids-wip"
   ],
-  "hidden": [],
+  "hidden": [
+    "hcal-seg",
+    "hcal-seg-row",
+    "nocxx23"
+  ],
   "patches": {
     "testdir": {
       "oid": "a20155792dc78b27ace75806e22764428e1db2e1"
@@ -104,15 +105,6 @@
     },
     "geoConst2": {
       "oid": "19439e002fdd013bdf02a2abea68d98af12696b0"
-    },
-    "hcal-seg": {
-      "oid": "464d815793d5c3c58e85b7920bcc1c343fbac07f"
-    },
-    "hcal-seg-row": {
-      "oid": "836d8d8ea4b18a1bebed6435b373ec3b72a8a6f4"
-    },
-    "nocxx23": {
-      "oid": "00008601dbe362eaa9705a4fced6781071991c48"
     },
     "caloToolInfo3": {
       "oid": "5016ee9e2f41a11122e6c4ee968c848aef8b3d40"
@@ -182,6 +174,15 @@
     },
     "cellids-wip": {
       "oid": "2206a4791d5914d43bf0f638a6cfa27b9355c712"
+    },
+    "hcal-seg": {
+      "oid": "464d815793d5c3c58e85b7920bcc1c343fbac07f"
+    },
+    "hcal-seg-row": {
+      "oid": "836d8d8ea4b18a1bebed6435b373ec3b72a8a6f4"
+    },
+    "nocxx23": {
+      "oid": "00008601dbe362eaa9705a4fced6781071991c48"
     }
   }
 }
