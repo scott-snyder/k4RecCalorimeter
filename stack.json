@@ -1,8 +1,9 @@
 {
   "version": 5,
-  "prev": "ef617c243040092ef74b6f405b0a180232366387",
-  "head": "2206a4791d5914d43bf0f638a6cfa27b9355c712",
-  "applied": [
+  "prev": "4a4a58cf6898c5a3323f29fd2018fc9d78b60341",
+  "head": "e2a3a9bc420dde0f23d660561d95c49e852595ac",
+  "applied": [],
+  "unapplied": [
     "testdir",
     "k4geo-noclone",
     "xtalkSpan1",
@@ -48,7 +49,6 @@
     "diag-wip",
     "cellids-wip"
   ],
-  "unapplied": [],
   "hidden": [],
   "patches": {
     "testdir": {
