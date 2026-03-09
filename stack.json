@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "f04e7fb605397ab2c09c2a7f294cf185e0e74d69",
-  "head": "265bdfd77deeb896548eff010e81292c44eccddf",
+  "prev": "368fd0a1198ac36509af422b67ef6e8c2e8ca341",
+  "head": "4d6cab180ed218c49858a5be80df87e581894bd2",
   "applied": [
     "depr",
     "k4geo-noclone",
@@ -42,11 +42,11 @@
     "sortnoise",
     "repnoise",
     "createCaloCells",
-    "nodefgeotool"
+    "nodefgeotool",
+    "check-deprecated"
   ],
   "unapplied": [
     "move-check",
-    "check-deprecated",
     "check-remove",
     "ci",
     "hcal-seg",
@@ -82,7 +82,7 @@
       "oid": "9d404d0e63514570ad51064d3538b289de9e806c"
     },
     "check-deprecated": {
-      "oid": "97713b2718d45ba9dbf39533f117676ea595dc9b"
+      "oid": "4d6cab180ed218c49858a5be80df87e581894bd2"
     },
     "check-remove": {
       "oid": "0941afa9f3b44ef8070d7eae18f43fdab2f4dcdb"
