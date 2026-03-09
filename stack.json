@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "e6e4ed6bd02cdb36f291516928d6824e17cd9cec",
-  "head": "a43f1720061d2db4100a13eda4fac1da98f23990",
+  "prev": "edd2b2a8b0ef1ae06bd37fa5b5fbf8202dc15708",
+  "head": "daa273be9d6bd8f32d7b2497a372e9c0149a619d",
   "applied": [
     "k4geo-noclone",
     "xtalkSpan1",
@@ -12,11 +12,9 @@
     "cellPositionsConst2",
     "subdetVolman2",
     "cellPositions",
-    "nodebug",
     "caloToolInfo1",
     "idmap",
     "caloCellConstantsSvc",
-    "caloType",
     "hcal-tool",
     "subdetVolman",
     "geoConst2",
@@ -78,98 +76,92 @@
     "cellPositions": {
       "oid": "019db2afdf4f1691a6c64f89a0e640213fdbe942"
     },
-    "nodebug": {
-      "oid": "faed1067a2b203d93ac53e2b7d3d7008c36c3a71"
-    },
     "caloToolInfo1": {
-      "oid": "96cb55d062e722e52830891961c3c1325ccf3215"
+      "oid": "4a602916bd0cf47567627372a36b2fc064bbc2ee"
     },
     "idmap": {
-      "oid": "3874a5df70960179182dca4bbd1f751f81dd1380"
+      "oid": "93079c54c4712250fcfb5b599ddb9e8692443c75"
     },
     "caloCellConstantsSvc": {
-      "oid": "92ed44b4c465b52e9bb72f1f811480382f6fb694"
-    },
-    "caloType": {
-      "oid": "14676e86927026d59ce984a24736f16684d6b368"
+      "oid": "8be072e35744f4eae3255c201e9589fd13393276"
     },
     "hcal-tool": {
-      "oid": "40db1172d40ff540d542682e8e087cadd1cdb026"
+      "oid": "3e0e92e423665ea670dfc06182b84fe7d2716dfa"
     },
     "subdetVolman": {
-      "oid": "72b1c86a693483b11a85eab5626a32549c47c9e8"
+      "oid": "f445cd2d5f26d5235dca9b7d64d8ce644216289d"
     },
     "geoConst2": {
-      "oid": "cfc5b47a5614339fa36acf5b9782e974a3ec5c09"
+      "oid": "f1c58a9ec38ecf7e04711e33966ddb7d67802127"
     },
     "caloToolInfo3": {
-      "oid": "1880caa649c6b597f3b49b4e5d60b77fee7fb3a4"
+      "oid": "b4bc4fb4bf2764af58282a7ef11a47a3f4a38b22"
     },
     "idmapIndexer": {
-      "oid": "13ead9c2a441932c5cb47c275c85ebb4456303c1"
+      "oid": "487fd8e7e194a3f9fb9e38127843b571c99b212f"
     },
     "multiIndexer": {
-      "oid": "4dea0d7ee165f1bcc47ffb56232534115d548b05"
+      "oid": "d874f4664c2f5fc717821b750586cab9431d92d2"
     },
     "xtalkSpan3": {
-      "oid": "a090ebf09201134039e7951d7c1687aab6e40552"
+      "oid": "9ccc7da2f1ce394922cc6e09aa398916e7caf83d"
     },
     "xtalkSpan5": {
-      "oid": "855409ef0496338d480a327a681fab5f7c5b7220"
+      "oid": "3c025badb0b40d39a7a4f0e22bd3d1c6fe133f8f"
     },
     "noise3": {
-      "oid": "59220848892b91a5fde0b88cdfa800132d5c4e9c"
+      "oid": "cd7e2aa038705a59b22aa252e0ec828fe4f8a0a3"
     },
     "caloCellIndexerSvc": {
-      "oid": "f9c6a233c504d3315a9d470125e1a63e0e535593"
+      "oid": "14ac76f9251825432da7b0629d5f3b5238b627d7"
     },
     "cellsInConst": {
-      "oid": "bca112094fa6160c944443c84c654998315feb31"
+      "oid": "fc277abe1751a55ab333ff2fbdba1d6b5879839b"
     },
     "ecalbarrelIndexer": {
-      "oid": "44d7e39136e28de0cf21bacf866d7780d737fe8d"
+      "oid": "4be274d80c91e370a84d421533b7445cffcfa05d"
     },
     "hcalIndexer": {
-      "oid": "58bf59a29da074b310c5aef49dac878800da9584"
+      "oid": "8289ae5ac717c4056c325ca236db90baa62804ad"
     },
     "cellposIndex": {
-      "oid": "32bd6788ad680fde3d9fce06d2b9c7d3afbf19f3"
+      "oid": "a42a9ac3d97759b7944ebac48f96e2d4503ad2bb"
     },
     "ecalendcapTool": {
-      "oid": "0a9204a75ff5ec4056086b25eb9a0564d65c0c90"
+      "oid": "c1586fee29a7cfc51756a57a2d8452d6c6981899"
     },
     "indexingConfig": {
-      "oid": "b5d823d4ae00715da3995ba5283a1be650bc0cca"
+      "oid": "0bf7cb4b2b3de4d626a029974d4b69bc65fc02e9"
     },
     "xtalkIndex": {
-      "oid": "ed3d6d77d4ea753cbb16e5422bba98946abf8a88"
+      "oid": "f61a7136df54a89b70e2510ee1f0c4cc84b603b0"
     },
     "topoNoiseIndex": {
-      "oid": "3cf5c418c3d5452f02c24cbaef6c681d7789eea2"
+      "oid": "25308424b970a17eed91b97621da67c17de61668"
     },
     "createTopoCluster": {
-      "oid": "8c3846e11537fd2986046f13f3b050e8a79a9d1b"
+      "oid": "171f4d392cfe837fe4350cab2d28c38579b4f422"
     },
     "noiseIndex": {
-      "oid": "d5aa235e630ad2a42d022c3c4a4016f9c8281656"
+      "oid": "61f635e46c5027c90c2e6c2530b1ef5fb827f7b3"
     },
     "createCaloCells": {
-      "oid": "edb4b17c16bdf2167aff446f63a81f2abc249529"
+      "oid": "e44893e003c3022ded20342b02f0ff575cae20d2"
     },
     "nodefgeotool": {
-      "oid": "c9d908cf5a72c93d45ed04270c6bd5b3c94e25fa"
+      "oid": "8bd81fea11f031dda7077eaa170d07d649361c06"
     },
     "discrit-wip": {
-      "oid": "06e828166a16c363befe743f906763413b870b5f"
+      "oid": "78944d2b64c164aac757cee7d7f97c46f9981686"
     },
     "discrit2-wip": {
-      "oid": "0b2a4e87cc1f18bb1664fa7cf1fb009007989d95"
+      "oid": "63ed884b8e7a05a7d787c581ed1bb51b60d0e93f"
     },
     "diag-wip": {
-      "oid": "1594c9846ddf8dacdc2cdbe6ce21787f0872dce9"
+      "oid": "9b38beae177ab1302e3f92b685cd87d8689d80a5"
     },
     "cellids-wip": {
-      "oid": "a43f1720061d2db4100a13eda4fac1da98f23990"
+      "oid": "daa273be9d6bd8f32d7b2497a372e9c0149a619d"
     },
     "hcal-seg": {
       "oid": "464d815793d5c3c58e85b7920bcc1c343fbac07f"

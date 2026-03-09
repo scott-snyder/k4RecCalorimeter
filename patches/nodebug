@@ -1,9 +1,0 @@
-Bottom: a9d41787edfeaec2dddc1fca8cdd328ed9852a41
-Top:    a9d41787edfeaec2dddc1fca8cdd328ed9852a41
-Author: sss <sss@karma>
-Date:   2026-02-25 17:19:28 -0500
-
-Remove/gate debug()/verbose() calls.
-
-Even if debug messages are suppressed, calling debug()<<... can take
-significant time when it's used on a hot path.  Remove some of those calls.
