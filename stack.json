@@ -1,11 +1,13 @@
 {
   "version": 5,
-  "prev": "23b4382c545f912081f508df91b8680862de2b99",
-  "head": "3adccd5cbde204aba7378b776b2752b9e463894f",
+  "prev": "486fc696aa582b903a7b5b3a55a2f05f9cbdf1fe",
+  "head": "0c905f8fe6863b06b5d85ead413a8390d1af5706",
   "applied": [
     "depr",
     "k4geo-noclone",
-    "xtalk",
+    "xtalk"
+  ],
+  "unapplied": [
     "xtalkSpan1",
     "noise1a",
     "noise1b",
@@ -46,9 +48,7 @@
     "move-check",
     "check-deprecated",
     "check-remove",
-    "hcal-seg"
-  ],
-  "unapplied": [
+    "hcal-seg",
     "ci",
     "hcal-seg-row"
   ],
