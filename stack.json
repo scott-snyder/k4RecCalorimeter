@@ -1,12 +1,13 @@
 {
   "version": 5,
-  "prev": "cc17648a7661854a8409acd1e9e94a1b97cd13ea",
-  "head": "a8bc54f894f2908b6b8236c4d7cdcc270a7ca3a5",
+  "prev": "ebae248398ae4de409d2baca26afa9e594876dac",
+  "head": "4e261617de048f8313caf769e3523714c84b89fe",
   "applied": [
     "depr",
     "k4geo-noclone",
     "xtalk",
-    "update-calo-neighbours-and"
+    "update-calo-neighbours-and",
+    "hcal-seg-row"
   ],
   "unapplied": [
     "hcal-seg",
@@ -50,8 +51,7 @@
     "move-check",
     "check-deprecated",
     "check-remove",
-    "ci",
-    "hcal-seg-row"
+    "ci"
   ],
   "hidden": [],
   "patches": {
@@ -113,7 +113,7 @@
       "oid": "f7e75acf6211fd4579a1cc099bddc6ad9c3917fb"
     },
     "hcal-seg-row": {
-      "oid": "7213fafc608b5e90c5727c8ca15f3d24172d9a6b"
+      "oid": "4e261617de048f8313caf769e3523714c84b89fe"
     },
     "hcal-tool": {
       "oid": "db2a5b50fe4ad14d923e5ced6755e1f17d16762a"
