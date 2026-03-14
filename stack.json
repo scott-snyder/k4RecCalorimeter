@@ -1,14 +1,14 @@
 {
   "version": 5,
-  "prev": "3dbfbf3bf3ea1c4203aeeb9cb6999ad89fdc28cc",
-  "head": "f7e75acf6211fd4579a1cc099bddc6ad9c3917fb",
+  "prev": "2b17babd86bf8ec35551e5f207f194bba532801c",
+  "head": "0c905f8fe6863b06b5d85ead413a8390d1af5706",
   "applied": [
     "depr",
     "k4geo-noclone",
-    "xtalk",
-    "hcal-seg"
+    "xtalk"
   ],
   "unapplied": [
+    "hcal-seg",
     "xtalkSpan1",
     "noise1a",
     "noise1b",
