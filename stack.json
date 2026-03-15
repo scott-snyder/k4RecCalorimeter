@@ -1,13 +1,14 @@
 {
   "version": 5,
-  "prev": "25fc4703019b4aec3da1597063fa3306ad0393b5",
-  "head": "fb1808aa8fa27886804b10c71436f645988cdff8",
+  "prev": "a1324ae69e627afcb2a73e17c7506cf0b842aebe",
+  "head": "18be06c96c50949115a4df2963a08bff42e9266f",
   "applied": [
     "depr",
     "k4geo-noclone",
     "xtalk",
     "update-calo-neighbours-and",
-    "hcal-seg"
+    "hcal-seg",
+    "refresh-temp"
   ],
   "unapplied": [
     "hcal-seg-row",
@@ -159,6 +160,9 @@
     },
     "noiseIndex": {
       "oid": "afe5fe6829f734b364286f1060cf40d1add3451b"
+    },
+    "refresh-temp": {
+      "oid": "18be06c96c50949115a4df2963a08bff42e9266f"
     },
     "repnoise": {
       "oid": "e05d322a0397e11243a2ae0be539bfd354898563"
