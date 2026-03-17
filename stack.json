@@ -1,16 +1,16 @@
 {
   "version": 5,
-  "prev": "a359106d9e2fb4e77a99ec8d23816e66e38b0c7c",
-  "head": "ea87a2d057b267864a28dd5ae1de0b5efaabf503",
+  "prev": "bf6d3ea5c36c0e01f0dbc5cc5b343173fb1e7c79",
+  "head": "a8bc54f894f2908b6b8236c4d7cdcc270a7ca3a5",
   "applied": [
     "depr",
     "k4geo-noclone",
     "xtalk",
-    "update-calo-neighbours-and",
-    "hcal-seg",
-    "hcal-seg-row"
+    "update-calo-neighbours-and"
   ],
   "unapplied": [
+    "hcal-seg",
+    "hcal-seg-row",
     "xtalkSpan1",
     "noise1a",
     "noise1b",
