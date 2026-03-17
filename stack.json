@@ -1,12 +1,13 @@
 {
   "version": 5,
-  "prev": "bf6d3ea5c36c0e01f0dbc5cc5b343173fb1e7c79",
-  "head": "a8bc54f894f2908b6b8236c4d7cdcc270a7ca3a5",
+  "prev": "0b952cae3e88d1a5e6a95fcb06c0fadb36b1c9e9",
+  "head": "81254f740f0b02b9b16fd2339e14da67568c259f",
   "applied": [
     "depr",
     "k4geo-noclone",
     "xtalk",
-    "update-calo-neighbours-and"
+    "update-calo-neighbours-and",
+    "idmap"
   ],
   "unapplied": [
     "hcal-seg",
@@ -20,7 +21,6 @@
     "subdetVolman2",
     "cellPositions",
     "caloToolInfo1",
-    "idmap",
     "caloCellConstantsSvc",
     "hcal-tool",
     "subdetVolman",
@@ -122,7 +122,7 @@
       "oid": "66c31281e1dc701459600fee0a7cc2f4382cbd17"
     },
     "idmap": {
-      "oid": "1e0081b8be6498a99c94d99824ea28e19c9b0d83"
+      "oid": "81254f740f0b02b9b16fd2339e14da67568c259f"
     },
     "idmapIndexer": {
       "oid": "1642a6c888bc2a5337341ee1230cb2f09e4bfe83"
