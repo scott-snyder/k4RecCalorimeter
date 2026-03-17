@@ -1,13 +1,14 @@
 {
   "version": 5,
-  "prev": "0b952cae3e88d1a5e6a95fcb06c0fadb36b1c9e9",
-  "head": "81254f740f0b02b9b16fd2339e14da67568c259f",
+  "prev": "a310ad16454edc7f6f51ef688533857c6bdbb63e",
+  "head": "f95c620c010fd724ad7abaf7150b0da7c2a95fe6",
   "applied": [
     "depr",
     "k4geo-noclone",
     "xtalk",
     "update-calo-neighbours-and",
-    "idmap"
+    "idmap",
+    "idmapIndexer"
   ],
   "unapplied": [
     "hcal-seg",
@@ -28,7 +29,6 @@
     "timeout",
     "nocxx23",
     "caloToolInfo3",
-    "idmapIndexer",
     "multiIndexer",
     "xtalkSpan3",
     "xtalkSpan5",
@@ -125,7 +125,7 @@
       "oid": "81254f740f0b02b9b16fd2339e14da67568c259f"
     },
     "idmapIndexer": {
-      "oid": "1642a6c888bc2a5337341ee1230cb2f09e4bfe83"
+      "oid": "f95c620c010fd724ad7abaf7150b0da7c2a95fe6"
     },
     "indexingConfig": {
       "oid": "c4599bb2ceba7c28851bc82a22a1783e21fdd158"
