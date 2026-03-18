@@ -1,16 +1,15 @@
 {
   "version": 5,
-  "prev": "a310ad16454edc7f6f51ef688533857c6bdbb63e",
-  "head": "f95c620c010fd724ad7abaf7150b0da7c2a95fe6",
-  "applied": [
+  "prev": "e9238dc23392c7e57938f502436f0090ba60b406",
+  "head": "e2823f330bcd329e052ab7a622e6995cd9e1e029",
+  "applied": [],
+  "unapplied": [
     "depr",
     "k4geo-noclone",
     "xtalk",
     "update-calo-neighbours-and",
     "idmap",
-    "idmapIndexer"
-  ],
-  "unapplied": [
+    "idmapIndexer",
     "hcal-seg",
     "hcal-seg-row",
     "xtalkSpan1",
