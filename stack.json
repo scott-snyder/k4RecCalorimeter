@@ -1,11 +1,13 @@
 {
   "version": 5,
-  "prev": "08dacb677e8b0f33110efb7d8207fd35c8670e09",
-  "head": "8c2d58e3d9fe5dcfe71fb697a81df02a8f920c31",
+  "prev": "334ef587a12febd9d0e511681bb4230f32872c21",
+  "head": "207f3574e8fa1379b662cd13222cd28f1d578de6",
   "applied": [
     "depr",
     "k4geo-noclone",
-    "xtalk",
+    "xtalk"
+  ],
+  "unapplied": [
     "idmap",
     "idmapIndexer",
     "subdetVolman2",
@@ -38,9 +40,7 @@
     "hcal-seg-row",
     "move-check",
     "check-deprecated",
-    "check-remove"
-  ],
-  "unapplied": [
+    "check-remove",
     "ci"
   ],
   "hidden": [],
