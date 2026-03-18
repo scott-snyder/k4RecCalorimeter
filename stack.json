@@ -1,15 +1,13 @@
 {
   "version": 5,
-  "prev": "412e60bb060dc627e8fa7bf1bea5f76c4ded2b3d",
-  "head": "df9897e7d39f4a3070064d32652a4884d04ffe65",
+  "prev": "bf78b38e491f2860444b3b20dbd242fbc536cef7",
+  "head": "6b00c47fc75a195b7f873c4fb29c7e40a163491f",
   "applied": [
     "depr",
     "k4geo-noclone",
     "xtalk",
     "idmap",
-    "idmapIndexer",
-    "calib2",
-    "cellPositionsConst2"
+    "idmapIndexer"
   ],
   "unapplied": [
     "hcal-seg",
@@ -50,9 +48,6 @@
   ],
   "hidden": [],
   "patches": {
-    "calib2": {
-      "oid": "b537e41edac95b284813e2059e3cfa5055bdc317"
-    },
     "caloCellConstantsSvc": {
       "oid": "edc59861a5e5f8c460b21b4f68c2f5d7aa420dcb"
     },
@@ -67,9 +62,6 @@
     },
     "cellPositions": {
       "oid": "f1cd8c2bb857ca3abdc19fa60d4e9340c09be1ff"
-    },
-    "cellPositionsConst2": {
-      "oid": "df9897e7d39f4a3070064d32652a4884d04ffe65"
     },
     "cellposIndex": {
       "oid": "9be3e10a1555990208548552fd469683f34e7eb3"
