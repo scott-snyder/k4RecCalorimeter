@@ -1,11 +1,12 @@
 {
   "version": 5,
-  "prev": "d9068e2206473aa57875d99cff94efc406b9f74b",
-  "head": "a37e06a5a38b8d8b3a9172019f7075cdd01d2528",
+  "prev": "6fe83aba1bd1f69da121be5ab132fc969e5522bf",
+  "head": "1522a92fe7ba05dd871553c79731e86a09dc4fde",
   "applied": [
     "k4geo-noclone",
     "subdetVolman2",
-    "cellPositions"
+    "cellPositions",
+    "idmap"
   ],
   "unapplied": [
     "caloCellConstantsSvc",
@@ -49,6 +50,9 @@
     },
     "cellPositions": {
       "oid": "a37e06a5a38b8d8b3a9172019f7075cdd01d2528"
+    },
+    "idmap": {
+      "oid": "1522a92fe7ba05dd871553c79731e86a09dc4fde"
     },
     "caloCellConstantsSvc": {
       "oid": "8be072e35744f4eae3255c201e9589fd13393276"
