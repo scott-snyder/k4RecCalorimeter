@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "7617fe5913862fdc19419af8cba134f8ade159d3",
-  "head": "6b044f2e7c7dfd792ca9afb6eb99e60d080c2b80",
+  "prev": "57b5f2ebea146e4f63b1cbdcafb21d57cdd0f7d3",
+  "head": "0437c1ac93ba970259fd68e3b34f36db38af3ac5",
   "applied": [
     "depr",
     "k4geo-noclone",
@@ -9,12 +9,12 @@
     "idmap",
     "idmapIndexer",
     "subdetVolman2",
-    "cellPositions"
+    "cellPositions",
+    "caloToolInfo1"
   ],
   "unapplied": [
     "hcal-seg",
     "hcal-seg-row",
-    "caloToolInfo1",
     "caloCellConstantsSvc",
     "hcal-tool",
     "subdetVolman",
@@ -55,7 +55,7 @@
       "oid": "aa49bcdf2c7284de2c54171b8ea8be6ad3e96f3e"
     },
     "caloToolInfo1": {
-      "oid": "0871c6fba7dbeac336af3a7f8a3dacf1595df83a"
+      "oid": "0437c1ac93ba970259fd68e3b34f36db38af3ac5"
     },
     "caloToolInfo3": {
       "oid": "0e61d41965eafa94c653ba21b6c93ec0c933e0c2"
