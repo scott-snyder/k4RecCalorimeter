@@ -1,13 +1,9 @@
 {
   "version": 5,
-  "prev": "05a875f4ce4422dbea6d3e14ddab8e4a2ae603f2",
-  "head": "65ff3b95a917d0e9cec2f66d0e870841bc266bb9",
+  "prev": "25169e5d55fc19ef1338465b5429caac5ef3a423",
+  "head": "46cf0c42497da228bd5aa19ddf7c8072051d070e",
   "applied": [
-    "k4geo-noclone",
-    "xtalkSpan1",
-    "noise1a",
-    "noise1b",
-    "noise1c"
+    "k4geo-noclone"
   ],
   "unapplied": [
     "calib2",
@@ -51,18 +47,6 @@
   "patches": {
     "k4geo-noclone": {
       "oid": "46cf0c42497da228bd5aa19ddf7c8072051d070e"
-    },
-    "xtalkSpan1": {
-      "oid": "42ee48bf87264fb33d863410e1c21365f1134d87"
-    },
-    "noise1a": {
-      "oid": "1c6bbf36e4816993199f6a0ce50eed7a273090b9"
-    },
-    "noise1b": {
-      "oid": "dbe449f1f0bf6e939ad528c9820b66f676b174b5"
-    },
-    "noise1c": {
-      "oid": "65ff3b95a917d0e9cec2f66d0e870841bc266bb9"
     },
     "calib2": {
       "oid": "dd2ac828897602bfe59fba8198b612e4a13d626e"
