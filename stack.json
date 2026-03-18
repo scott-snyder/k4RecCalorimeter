@@ -1,18 +1,18 @@
 {
   "version": 5,
-  "prev": "bb4c5999e12cb960eca4da1cb5ac5021b2fe9b49",
-  "head": "6b00c47fc75a195b7f873c4fb29c7e40a163491f",
+  "prev": "630f96c16b73dbccedf7a7f7c22ab5b55d063684",
+  "head": "aefe40eca14cd44f30ceff308666c9d226bad639",
   "applied": [
     "depr",
     "k4geo-noclone",
     "xtalk",
     "idmap",
-    "idmapIndexer"
+    "idmapIndexer",
+    "xtalkSpan1"
   ],
   "unapplied": [
     "hcal-seg",
     "hcal-seg-row",
-    "xtalkSpan1",
     "noise1a",
     "noise1b",
     "noise1c",
@@ -184,7 +184,7 @@
       "oid": "6b26a0428d932272902e879d8c8a48b11bbe804b"
     },
     "xtalkSpan1": {
-      "oid": "bffab668990da2b85cbc14f2515f9cc5e6761e3c"
+      "oid": "aefe40eca14cd44f30ceff308666c9d226bad639"
     },
     "xtalkSpan3": {
       "oid": "bcd3979bcffe0bce653da5ca659f8225f653e833"
