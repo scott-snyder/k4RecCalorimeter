@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "9edbf821f352afcee38b343c98fce624c4bd5d86",
-  "head": "0f0c7a15ffa08acc8bbc525f9a1c5144c16e9f13",
+  "prev": "ea7a53b6139a94b72c9dd7f8826294caf2be8ba0",
+  "head": "f38aec765e355fbc988eec9e4281af2572d1f663",
   "applied": [
     "k4geo-noclone",
     "subdetVolman2",
@@ -33,12 +33,9 @@
     "discrit-wip",
     "discrit2-wip",
     "diag-wip",
-    "cellids-wip",
-    "hcal-seg"
+    "cellids-wip"
   ],
-  "unapplied": [
-    "hcal-seg-row"
-  ],
+  "unapplied": [],
   "hidden": [],
   "patches": {
     "k4geo-noclone": {
@@ -133,12 +130,6 @@
     },
     "cellids-wip": {
       "oid": "f38aec765e355fbc988eec9e4281af2572d1f663"
-    },
-    "hcal-seg": {
-      "oid": "0f0c7a15ffa08acc8bbc525f9a1c5144c16e9f13"
-    },
-    "hcal-seg-row": {
-      "oid": "836d8d8ea4b18a1bebed6435b373ec3b72a8a6f4"
     }
   }
 }
