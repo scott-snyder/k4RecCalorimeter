@@ -1,15 +1,13 @@
 {
   "version": 5,
-  "prev": "b650e2c144b002fce35c8b362bcba850f278d7d7",
-  "head": "28f7537c56ee64d17be4a5395c86ff81119b9d3f",
+  "prev": "f799d1559b6c2168d754b65aaa78f6190599d14c",
+  "head": "6b00c47fc75a195b7f873c4fb29c7e40a163491f",
   "applied": [
     "depr",
     "k4geo-noclone",
     "xtalk",
     "idmap",
-    "idmapIndexer",
-    "noise1b",
-    "noise1c"
+    "idmapIndexer"
   ],
   "unapplied": [
     "hcal-seg",
@@ -141,12 +139,6 @@
     },
     "nodefgeotool": {
       "oid": "265bdfd77deeb896548eff010e81292c44eccddf"
-    },
-    "noise1b": {
-      "oid": "c0c15ae5ef47fb0c1ab27e718a2eaadfe6e87ae0"
-    },
-    "noise1c": {
-      "oid": "28f7537c56ee64d17be4a5395c86ff81119b9d3f"
     },
     "noise3": {
       "oid": "aa1da68120729457530edbee1a4373f8c35c7e5f"
