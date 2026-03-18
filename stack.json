@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "9861842ab8bd3f0042bf846ea85710052e2ed016",
-  "head": "7ffe922c3df45718fa4e32e2096ca9fa7c976c93",
+  "prev": "08dacb677e8b0f33110efb7d8207fd35c8670e09",
+  "head": "8c2d58e3d9fe5dcfe71fb697a81df02a8f920c31",
   "applied": [
     "depr",
     "k4geo-noclone",
@@ -38,10 +38,11 @@
     "hcal-seg-row",
     "move-check",
     "check-deprecated",
-    "check-remove",
+    "check-remove"
+  ],
+  "unapplied": [
     "ci"
   ],
-  "unapplied": [],
   "hidden": [],
   "patches": {
     "caloCellIndexerSvc": {
