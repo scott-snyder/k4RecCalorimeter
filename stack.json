@@ -1,11 +1,9 @@
 {
   "version": 5,
-  "prev": "a9b862934d05403de8bd09fdaa18f74b4a3d7aec",
-  "head": "0f3b1369c5d711b3e0dce98d4e9e256620c4f2ae",
+  "prev": "2ccabdbcdd811810aaa0159a8dd2dc94b2f2d930",
+  "head": "ad099c3e7d360c6a1bacafb177e73abcdb2314e0",
   "applied": [
     "k4geo-noclone",
-    "calib2",
-    "cellPositionsConst2",
     "subdetVolman2"
   ],
   "unapplied": [
@@ -48,14 +46,8 @@
     "k4geo-noclone": {
       "oid": "46cf0c42497da228bd5aa19ddf7c8072051d070e"
     },
-    "calib2": {
-      "oid": "d2acd3eafc6c3f99b1fd78fe140c2356b0322452"
-    },
-    "cellPositionsConst2": {
-      "oid": "188a1e4ad256778c1b3e4d0438a04e5019bc1988"
-    },
     "subdetVolman2": {
-      "oid": "0f3b1369c5d711b3e0dce98d4e9e256620c4f2ae"
+      "oid": "ad099c3e7d360c6a1bacafb177e73abcdb2314e0"
     },
     "cellPositions": {
       "oid": "019db2afdf4f1691a6c64f89a0e640213fdbe942"
