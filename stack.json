@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "09ecae716d5fda00ce351cee4163f784b1c925b7",
-  "head": "a649b9e04659ff1d15a80ce62c273b3324011944",
+  "prev": "434afb939215541a51f4b95426a526578793f742",
+  "head": "f1764c384e635492e2105a81171ad2e015f27e0c",
   "applied": [
     "k4geo-noclone",
     "subdetVolman2",
@@ -34,7 +34,8 @@
     "discrit2-wip",
     "diag-wip",
     "cellids-wip",
-    "hcal-seg"
+    "hcal-seg",
+    "hcal-seg-row"
   ],
   "unapplied": [],
   "hidden": [],
@@ -134,6 +135,9 @@
     },
     "hcal-seg": {
       "oid": "a649b9e04659ff1d15a80ce62c273b3324011944"
+    },
+    "hcal-seg-row": {
+      "oid": "f1764c384e635492e2105a81171ad2e015f27e0c"
     }
   }
 }
