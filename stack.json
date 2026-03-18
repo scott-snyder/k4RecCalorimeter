@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "d6cf22b10fd6688b7e3b45845f776a006127e63d",
-  "head": "1a10226be29771a27c8d5f8a3280b6f348e6f616",
+  "prev": "f507eea4bfcdbd6aa6f17b7d6eebf95bc9c129aa",
+  "head": "5bf8e6630516357b31cf0271eea516b99cec3d6b",
   "applied": [
     "depr",
     "k4geo-noclone",
@@ -33,13 +33,13 @@
     "createTopoCluster",
     "noiseIndex",
     "sortnoise",
-    "repnoise"
+    "repnoise",
+    "createCaloCells",
+    "nodefgeotool"
   ],
   "unapplied": [
     "hcal-seg",
     "hcal-seg-row",
-    "createCaloCells",
-    "nodefgeotool",
     "move-check",
     "check-deprecated",
     "check-remove",
@@ -75,7 +75,7 @@
       "oid": "2827899b993c7c4ad1d4400a11802af15d750715"
     },
     "createCaloCells": {
-      "oid": "35df6205c3895db2488ec95bd476b035d946a566"
+      "oid": "10b48502f6b022b4c99a66bbdeaae0cd60dbccb0"
     },
     "createTopoCluster": {
       "oid": "0cc6d5df99fece5b69cb1b6b057158f1c291747a"
@@ -126,7 +126,7 @@
       "oid": "439e1a735dde99c3485519dce7334b49a54bdde0"
     },
     "nodefgeotool": {
-      "oid": "265bdfd77deeb896548eff010e81292c44eccddf"
+      "oid": "5bf8e6630516357b31cf0271eea516b99cec3d6b"
     },
     "noise3": {
       "oid": "45ef446bf7346ab46fe1bda641c9c4064498fe68"
