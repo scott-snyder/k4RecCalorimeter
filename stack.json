@@ -1,14 +1,14 @@
 {
   "version": 5,
-  "prev": "59fdfe21a13cb34c4b1f39f8e1985918942fe7c3",
-  "head": "6ab51901767ef491011f57710834f4c038d4ec50",
+  "prev": "dfbffae72930e3234c70272cee839872c945a5cc",
+  "head": "b23d8c1ed4b6cbf233843d3b71d341704590df06",
   "applied": [
     "depr",
     "k4geo-noclone",
-    "xtalk"
+    "xtalk",
+    "update-calo-neighbours-and"
   ],
   "unapplied": [
-    "update-calo-neighbours-and",
     "idmap",
     "idmapIndexer",
     "hcal-seg",
@@ -179,7 +179,7 @@
       "oid": "fa6989da1d44effdedeccc0365cd37407251856e"
     },
     "update-calo-neighbours-and": {
-      "oid": "a8bc54f894f2908b6b8236c4d7cdcc270a7ca3a5"
+      "oid": "b23d8c1ed4b6cbf233843d3b71d341704590df06"
     },
     "xtalk": {
       "oid": "6ab51901767ef491011f57710834f4c038d4ec50"
