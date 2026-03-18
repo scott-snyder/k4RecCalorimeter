@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "a2861767a7ef0748a0b081118d742b1aa0f14248",
-  "head": "949651a03851efbfd7e60f63aac2fcecd6053fc7",
+  "prev": "b58bcfa8eb13e350bffa32c7d34cbbd28710a5c2",
+  "head": "45ef446bf7346ab46fe1bda641c9c4064498fe68",
   "applied": [
     "depr",
     "k4geo-noclone",
@@ -17,14 +17,14 @@
     "timeout",
     "nocxx23",
     "caloToolInfo3",
-    "multiIndexer"
+    "multiIndexer",
+    "xtalkSpan3",
+    "xtalkSpan5",
+    "noise3"
   ],
   "unapplied": [
     "hcal-seg",
     "hcal-seg-row",
-    "xtalkSpan3",
-    "xtalkSpan5",
-    "noise3",
     "caloCellIndexerSvc",
     "cellsInConst",
     "ecalbarrelIndexer",
@@ -129,7 +129,7 @@
       "oid": "265bdfd77deeb896548eff010e81292c44eccddf"
     },
     "noise3": {
-      "oid": "aa1da68120729457530edbee1a4373f8c35c7e5f"
+      "oid": "45ef446bf7346ab46fe1bda641c9c4064498fe68"
     },
     "noiseIndex": {
       "oid": "afe5fe6829f734b364286f1060cf40d1add3451b"
@@ -159,10 +159,10 @@
       "oid": "6b26a0428d932272902e879d8c8a48b11bbe804b"
     },
     "xtalkSpan3": {
-      "oid": "bcd3979bcffe0bce653da5ca659f8225f653e833"
+      "oid": "7ac73eb73baf42d88ca6dfedf39dfb74ba192c43"
     },
     "xtalkSpan5": {
-      "oid": "187ffeab266868a17b38c8f02c9c1f5661771d86"
+      "oid": "f7d175d7a6788c425ea3cc13ababdfd38e06cfcc"
     }
   }
 }
