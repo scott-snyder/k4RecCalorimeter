@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "5d5671bdbf99bd5654647d2c3aff136d76ef8590",
-  "head": "0cc6d5df99fece5b69cb1b6b057158f1c291747a",
+  "prev": "d6cf22b10fd6688b7e3b45845f776a006127e63d",
+  "head": "1a10226be29771a27c8d5f8a3280b6f348e6f616",
   "applied": [
     "depr",
     "k4geo-noclone",
@@ -30,14 +30,14 @@
     "indexingConfig",
     "xtalkIndex",
     "topoNoiseIndex",
-    "createTopoCluster"
+    "createTopoCluster",
+    "noiseIndex",
+    "sortnoise",
+    "repnoise"
   ],
   "unapplied": [
     "hcal-seg",
     "hcal-seg-row",
-    "noiseIndex",
-    "sortnoise",
-    "repnoise",
     "createCaloCells",
     "nodefgeotool",
     "move-check",
@@ -132,13 +132,13 @@
       "oid": "45ef446bf7346ab46fe1bda641c9c4064498fe68"
     },
     "noiseIndex": {
-      "oid": "afe5fe6829f734b364286f1060cf40d1add3451b"
+      "oid": "f0fd7169d5c74ac7ba72787202894f71c01336c2"
     },
     "repnoise": {
-      "oid": "e05d322a0397e11243a2ae0be539bfd354898563"
+      "oid": "1a10226be29771a27c8d5f8a3280b6f348e6f616"
     },
     "sortnoise": {
-      "oid": "ed7118875448f4646df6a1276116bdaaba42a49a"
+      "oid": "1262262cd0982b33f3f3fe059523ac9f530e17ec"
     },
     "subdetVolman": {
       "oid": "bbd68c4f504ae7d1a22dc098a4966f804cf2f820"
