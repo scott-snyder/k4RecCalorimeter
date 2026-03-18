@@ -1,12 +1,13 @@
 {
   "version": 5,
-  "prev": "50729f17fbb50eb805d184711a499f84ad34cc16",
-  "head": "6ca5f66be10d21a9731829c900b5ce49bacb3ad3",
+  "prev": "d42b7dcb66e79e43a55538eca64c11b52a11880d",
+  "head": "a7f0c5e3e33c13b871af23485f0912b1abd1b098",
   "applied": [
     "depr",
     "k4geo-noclone",
     "xtalk",
-    "idmap"
+    "idmap",
+    "idmap-typos"
   ],
   "unapplied": [
     "idmapIndexer",
@@ -106,6 +107,9 @@
     },
     "idmap": {
       "oid": "6ca5f66be10d21a9731829c900b5ce49bacb3ad3"
+    },
+    "idmap-typos": {
+      "oid": "a7f0c5e3e33c13b871af23485f0912b1abd1b098"
     },
     "idmapIndexer": {
       "oid": "6b00c47fc75a195b7f873c4fb29c7e40a163491f"
