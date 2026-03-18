@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "871e36b822831ba0be097d6e27c8a60cdcfba6c0",
-  "head": "6eefa44873faa76a501338953b31bdcd28c85959",
+  "prev": "25a3afc6ba66769dea7c81b145232f65326d6fc4",
+  "head": "5bf8e6630516357b31cf0271eea516b99cec3d6b",
   "applied": [
     "depr",
     "k4geo-noclone",
@@ -35,11 +35,11 @@
     "sortnoise",
     "repnoise",
     "createCaloCells",
-    "nodefgeotool",
-    "hcal-seg",
-    "hcal-seg-row"
+    "nodefgeotool"
   ],
   "unapplied": [
+    "hcal-seg",
+    "hcal-seg-row",
     "move-check",
     "check-deprecated",
     "check-remove",
