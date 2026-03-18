@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "f507eea4bfcdbd6aa6f17b7d6eebf95bc9c129aa",
-  "head": "5bf8e6630516357b31cf0271eea516b99cec3d6b",
+  "prev": "871e36b822831ba0be097d6e27c8a60cdcfba6c0",
+  "head": "6eefa44873faa76a501338953b31bdcd28c85959",
   "applied": [
     "depr",
     "k4geo-noclone",
@@ -35,11 +35,11 @@
     "sortnoise",
     "repnoise",
     "createCaloCells",
-    "nodefgeotool"
+    "nodefgeotool",
+    "hcal-seg",
+    "hcal-seg-row"
   ],
   "unapplied": [
-    "hcal-seg",
-    "hcal-seg-row",
     "move-check",
     "check-deprecated",
     "check-remove",
@@ -93,10 +93,10 @@
       "oid": "fb355fbab9c1a98a9fc778aa35edf8f7a6307754"
     },
     "hcal-seg": {
-      "oid": "5fe830bc09ab0ce0047e9f12ee4b63aaa55d5c7f"
+      "oid": "91d5c6383e6a395852c2d84e646670636999703a"
     },
     "hcal-seg-row": {
-      "oid": "ea87a2d057b267864a28dd5ae1de0b5efaabf503"
+      "oid": "6eefa44873faa76a501338953b31bdcd28c85959"
     },
     "hcal-tool": {
       "oid": "1d06f5994f553b8f320c53e48bedb7c83ac81f26"
