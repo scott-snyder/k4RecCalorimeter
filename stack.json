@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "0c1f090b7382fdfd68ec00b57cdc96899f1ee036",
-  "head": "66ac6e5ee4b52e02b77e8f0c5774003067986e89",
+  "prev": "73f3a201e35b4d82d40e5203f601c415e16b94b3",
+  "head": "4c83ffc05867e9a7fb75093e6f4fd69e2c302f9b",
   "applied": [
     "depr",
     "k4geo-noclone",
@@ -24,13 +24,13 @@
     "caloCellIndexerSvc",
     "cellsInConst",
     "ecalbarrelIndexer",
-    "hcalIndexer"
+    "hcalIndexer",
+    "ecalendcapTool",
+    "cellposIndex"
   ],
   "unapplied": [
     "hcal-seg",
     "hcal-seg-row",
-    "ecalendcapTool",
-    "cellposIndex",
     "indexingConfig",
     "xtalkIndex",
     "topoNoiseIndex",
@@ -60,7 +60,7 @@
       "oid": "6b044f2e7c7dfd792ca9afb6eb99e60d080c2b80"
     },
     "cellposIndex": {
-      "oid": "9be3e10a1555990208548552fd469683f34e7eb3"
+      "oid": "4c83ffc05867e9a7fb75093e6f4fd69e2c302f9b"
     },
     "cellsInConst": {
       "oid": "fda09ea3b6229bd5679253a1f8425c304f19c5c0"
@@ -87,7 +87,7 @@
       "oid": "ebec54d67b81f4ce7199cac7094a893fb039c5d9"
     },
     "ecalendcapTool": {
-      "oid": "9442f7f5b74e0131420129bbc79a6db914fd7a0c"
+      "oid": "6ab6ea340b41539f7b79c926cee392614b10b1d5"
     },
     "geoConst2": {
       "oid": "fb355fbab9c1a98a9fc778aa35edf8f7a6307754"
