@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "e78708352190c607274d45d0217a20d3d1f6e061",
-  "head": "0437c1ac93ba970259fd68e3b34f36db38af3ac5",
+  "prev": "984a074c34bdc3156ac40714d2b260c3b2efca8b",
+  "head": "1d06f5994f553b8f320c53e48bedb7c83ac81f26",
   "applied": [
     "depr",
     "k4geo-noclone",
@@ -10,12 +10,12 @@
     "idmapIndexer",
     "subdetVolman2",
     "cellPositions",
-    "caloToolInfo1"
+    "caloToolInfo1",
+    "hcal-tool"
   ],
   "unapplied": [
     "hcal-seg",
     "hcal-seg-row",
-    "hcal-tool",
     "subdetVolman",
     "geoConst2",
     "timeout",
@@ -99,7 +99,7 @@
       "oid": "ea87a2d057b267864a28dd5ae1de0b5efaabf503"
     },
     "hcal-tool": {
-      "oid": "db2a5b50fe4ad14d923e5ced6755e1f17d16762a"
+      "oid": "1d06f5994f553b8f320c53e48bedb7c83ac81f26"
     },
     "hcalIndexer": {
       "oid": "66c31281e1dc701459600fee0a7cc2f4382cbd17"
