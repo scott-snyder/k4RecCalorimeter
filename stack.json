@@ -1,14 +1,14 @@
 {
   "version": 5,
-  "prev": "ad7de2cf4071ebe50ad1b9a0574d114d1be53e17",
-  "head": "9a229f255a0839331635f5e76992fed303f484ee",
+  "prev": "96d6dac2b58aa10c94eb059876bd5d4cf03684e0",
+  "head": "207f3574e8fa1379b662cd13222cd28f1d578de6",
   "applied": [
     "depr",
     "k4geo-noclone",
-    "xtalk",
-    "ci"
+    "xtalk"
   ],
   "unapplied": [
+    "ci",
     "idmap",
     "idmapIndexer",
     "subdetVolman2",
