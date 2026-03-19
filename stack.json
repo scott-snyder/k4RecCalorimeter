@@ -1,11 +1,13 @@
 {
   "version": 5,
-  "prev": "35ebfde091b81af85c2473f098e7c70db7d2e380",
-  "head": "574feec9250eaacda4dfd5dd37c477e40d907a38",
+  "prev": "32d7eb5ff6230f30a377a1df55d446011a201da1",
+  "head": "207f3574e8fa1379b662cd13222cd28f1d578de6",
   "applied": [
     "depr",
     "k4geo-noclone",
-    "xtalk",
+    "xtalk"
+  ],
+  "unapplied": [
     "idmap",
     "idmapIndexer",
     "subdetVolman2",
@@ -33,9 +35,7 @@
     "sortnoise",
     "repnoise",
     "createCaloCells",
-    "nodefgeotool"
-  ],
-  "unapplied": [
+    "nodefgeotool",
     "hcal-seg",
     "hcal-seg-row",
     "move-check",
