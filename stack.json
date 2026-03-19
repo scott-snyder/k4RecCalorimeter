@@ -1,15 +1,15 @@
 {
   "version": 5,
-  "prev": "e10fd0f48f25965cdb63ce77b2ca2090752e64b9",
-  "head": "7b60ce24e5e49eecb1cbad384d58f88d132dfeed",
+  "prev": "814ca86d8f7c55b3b3eb37a45d4f05589a103477",
+  "head": "c0e3c560c8c0c889aefa053320786b38afe5571b",
   "applied": [
     "depr",
     "k4geo-noclone",
     "xtalk",
-    "noise3"
+    "noise3",
+    "ci"
   ],
   "unapplied": [
-    "ci",
     "idmap",
     "idmapIndexer",
     "subdetVolman2",
@@ -64,7 +64,7 @@
       "oid": "8c2d58e3d9fe5dcfe71fb697a81df02a8f920c31"
     },
     "ci": {
-      "oid": "9a229f255a0839331635f5e76992fed303f484ee"
+      "oid": "c0e3c560c8c0c889aefa053320786b38afe5571b"
     },
     "createCaloCells": {
       "oid": "406ef35baf08c151f5f6b90df35de37ee92ceb18"
