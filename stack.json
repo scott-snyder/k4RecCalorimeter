@@ -1,11 +1,12 @@
 {
   "version": 5,
-  "prev": "96d6dac2b58aa10c94eb059876bd5d4cf03684e0",
-  "head": "207f3574e8fa1379b662cd13222cd28f1d578de6",
+  "prev": "e10fd0f48f25965cdb63ce77b2ca2090752e64b9",
+  "head": "7b60ce24e5e49eecb1cbad384d58f88d132dfeed",
   "applied": [
     "depr",
     "k4geo-noclone",
-    "xtalk"
+    "xtalk",
+    "noise3"
   ],
   "unapplied": [
     "ci",
@@ -21,7 +22,6 @@
     "multiIndexer",
     "xtalkSpan3",
     "xtalkSpan5",
-    "noise3",
     "caloCellIndexerSvc",
     "cellsInConst",
     "ecalbarrelIndexer",
@@ -121,7 +121,7 @@
       "oid": "574feec9250eaacda4dfd5dd37c477e40d907a38"
     },
     "noise3": {
-      "oid": "72efee4398f1c59982a44520806728e21766438b"
+      "oid": "7b60ce24e5e49eecb1cbad384d58f88d132dfeed"
     },
     "noiseIndex": {
       "oid": "b09f1d3382709da427441ff0a3ff6108000abd1a"
