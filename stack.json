@@ -1,15 +1,16 @@
 {
   "version": 5,
-  "prev": "98a6df018ef36cc6e15bccedfffde5bebd1be401",
-  "head": "7324df595b2b6660aa5deeeb8e969e3840abd887",
+  "prev": "aabcd53ab1abb92796232d63c822fdcef9b94ff4",
+  "head": "39fda6a8d53898add469dc0667b46a81115b8a86",
   "applied": [
     "depr",
-    "xtalk"
+    "xtalk",
+    "k4geo-noclone",
+    "cellsInConst"
   ],
   "unapplied": [
     "noise3",
     "ci",
-    "k4geo-noclone",
     "idmap",
     "idmapIndexer",
     "subdetVolman2",
@@ -23,7 +24,6 @@
     "xtalkSpan3",
     "xtalkSpan5",
     "caloCellIndexerSvc",
-    "cellsInConst",
     "ecalbarrelIndexer",
     "hcalIndexer",
     "ecalendcapTool",
@@ -55,7 +55,7 @@
       "oid": "1893befef7ce2e8a6312efa6e597c7a5559a8795"
     },
     "cellsInConst": {
-      "oid": "c3f9709dfd67f334ac3194c0cf7d8e07495bce0b"
+      "oid": "39fda6a8d53898add469dc0667b46a81115b8a86"
     },
     "check-deprecated": {
       "oid": "3d93973ebc8e3740e4b0394063d487a5eca95cca"
@@ -106,7 +106,7 @@
       "oid": "4e0053df119f863af8a154dd50d485f4cb48e490"
     },
     "k4geo-noclone": {
-      "oid": "a31d3ac8887815e51d2ab0125af1eca39bf43172"
+      "oid": "3013ff9f8c9d2d0a9177bf4c9bb1d2c1ebd279f6"
     },
     "move-check": {
       "oid": "efae9dd8a5654349fcfceb6d14b28da2bd067ab9"
