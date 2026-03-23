@@ -1,14 +1,14 @@
 {
   "version": 5,
-  "prev": "9077225ee8332b5edd298c82b7e227c4fd8986a5",
-  "head": "23766bc179ad0b140a83b4877400584448e77639",
+  "prev": "98a6df018ef36cc6e15bccedfffde5bebd1be401",
+  "head": "7324df595b2b6660aa5deeeb8e969e3840abd887",
   "applied": [
     "depr",
-    "xtalk",
-    "noise3",
-    "ci"
+    "xtalk"
   ],
   "unapplied": [
+    "noise3",
+    "ci",
     "k4geo-noclone",
     "idmap",
     "idmapIndexer",
