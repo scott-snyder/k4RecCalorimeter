@@ -91,8 +91,8 @@ private:
   /// Resolved detector readout.
   dd4hep::Readout m_readout;
 
-  // The vector of cells is stored in the constants service.
-  // it the first time it is needed.
+  // Pointer to the vector of cells.  The vector itself is stored in the
+  // constants service; we create it if it's not already there.
   const std::vector<uint64_t>* m_cells;
 };
 

@@ -100,6 +100,8 @@ int CalorimeterToolBase::id() const
 }
 
 
+/** Create the list of cells and store with the constants service.
+ */
 StatusCode CalorimeterToolBase::makeCells()
 {
   int detid = id();
@@ -116,15 +118,11 @@ StatusCode CalorimeterToolBase::makeCells()
 
   std::vector<uint64_t> cells;
   if (detid >= 0) {
-    if (collectCells(cells).isSuccess()) {
-      // Sort and make unique.
-      std::ranges::sort(cells);
-      const auto ret = std::ranges::unique(cells);
-      cells.erase(ret.begin(), ret.end());
-    }
-    else {
-      cells.clear();
-    }
+    K4_GAUDI_CHECK( collectCells(cells) );
+    // Sort and make unique.
+    std::ranges::sort(cells);
+    const auto ret = std::ranges::unique(cells);
+    cells.erase(ret.begin(), ret.end());
   }
 
   K4_GAUDI_CHECK( m_constantsSvc->putObj (keyName, std::move(cells)) );
