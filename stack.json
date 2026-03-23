@@ -1,14 +1,12 @@
 {
   "version": 5,
-  "prev": "52bd107292ae5a28b9c3f9b42a16a878c65d2ca7",
-  "head": "3b127c4f60579504eb99615fec17dd675759bbef",
+  "prev": "df76c0ef23ddd0f19114d115d61592c6be1b84ea",
+  "head": "d1831776d9f77e1e98cbcec31009011f99779505",
   "applied": [
     "depr",
     "xtalk",
     "k4geo-noclone",
-    "cellsInConst"
-  ],
-  "unapplied": [
+    "cellsInConst",
     "noise3",
     "ci",
     "idmap",
@@ -43,6 +41,7 @@
     "check-deprecated",
     "check-remove"
   ],
+  "unapplied": [],
   "hidden": [],
   "patches": {
     "caloCellIndexerSvc": {
