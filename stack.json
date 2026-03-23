@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "29de49a739cf03d9269306521d2c5a672d2b5df9",
-  "head": "23bca4f888fdbde8d2c358fceea84f54396ce5ae",
+  "prev": "6d7333bdba0345726ed99667e47451b43a6d81e0",
+  "head": "3b127c4f60579504eb99615fec17dd675759bbef",
   "applied": [
     "depr",
     "xtalk",
@@ -55,7 +55,7 @@
       "oid": "1893befef7ce2e8a6312efa6e597c7a5559a8795"
     },
     "cellsInConst": {
-      "oid": "23bca4f888fdbde8d2c358fceea84f54396ce5ae"
+      "oid": "3b127c4f60579504eb99615fec17dd675759bbef"
     },
     "check-deprecated": {
       "oid": "3d93973ebc8e3740e4b0394063d487a5eca95cca"
