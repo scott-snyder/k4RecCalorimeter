@@ -1,15 +1,15 @@
 {
   "version": 5,
-  "prev": "fc7ac616be038c01be1045b31de29b05d42f3c4f",
-  "head": "2107f188fbc66b888555b9789fb84380ba79c48c",
+  "prev": "aba5e6d538967218cc797db30a019297cb78c72c",
+  "head": "3013ff9f8c9d2d0a9177bf4c9bb1d2c1ebd279f6",
   "applied": [
     "depr",
     "xtalk",
-    "k4geo-noclone",
-    "cellsInConst",
-    "nodefgeotool"
+    "k4geo-noclone"
   ],
   "unapplied": [
+    "cellsInConst",
+    "nodefgeotool",
     "noise3",
     "ci",
     "idmap",
