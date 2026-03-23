@@ -1,9 +1,10 @@
 {
   "version": 5,
-  "prev": "5c47ae40af1c46dccc0d6e6f6fa81021f7fc8732",
-  "head": "05595e4086d4f723dc81bb6c4a1c92177cadba49",
+  "prev": "3d6fb6d3090adcafe625307c12a72d5f0b1e6abb",
+  "head": "3db3e2c1016ec7f7cc6ab00451d762a3586f3495",
   "applied": [
-    "k4geo-noclone"
+    "k4geo-noclone",
+    "noise3"
   ],
   "unapplied": [
     "subdetVolman2",
@@ -17,7 +18,6 @@
     "multiIndexer",
     "xtalkSpan3",
     "xtalkSpan5",
-    "noise3",
     "caloCellIndexerSvc",
     "cellsInConst",
     "ecalbarrelIndexer",
@@ -42,6 +42,9 @@
   "patches": {
     "k4geo-noclone": {
       "oid": "05595e4086d4f723dc81bb6c4a1c92177cadba49"
+    },
+    "noise3": {
+      "oid": "3db3e2c1016ec7f7cc6ab00451d762a3586f3495"
     },
     "subdetVolman2": {
       "oid": "b70ddb4ad202c4e0a2a2c30614b41ed29efbe770"
@@ -75,9 +78,6 @@
     },
     "xtalkSpan5": {
       "oid": "ad14f885fefdc689bd11230be9aabdfb36699ca9"
-    },
-    "noise3": {
-      "oid": "abc9dd77c6f991cbbbed7623b9cb3c8a6f56375e"
     },
     "caloCellIndexerSvc": {
       "oid": "bc5e66a83917565ee815d2dca7b4a8373c39b959"
