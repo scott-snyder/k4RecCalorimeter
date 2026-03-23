@@ -1,18 +1,18 @@
 {
   "version": 5,
-  "prev": "52cb1576f07d1207038e643cbe08618bad067e49",
-  "head": "ce843fc7c5a1f59dd2cee437d41d0997f5e656d1",
+  "prev": "f37bd064d28e1dd4e0d03add54d09583159296d4",
+  "head": "5ea7cc6728a0de677df83e7493517e0976a4351a",
   "applied": [
     "depr",
     "xtalk",
     "k4geo-noclone",
     "timeout",
-    "nodefgeotool"
+    "nodefgeotool",
+    "ci"
   ],
   "unapplied": [
     "cellsInConst",
     "noise3",
-    "ci",
     "idmap",
     "idmapIndexer",
     "subdetVolman2",
@@ -64,7 +64,7 @@
       "oid": "d1831776d9f77e1e98cbcec31009011f99779505"
     },
     "ci": {
-      "oid": "c43483c4dbad5d2ed10ffd1bdd4d6f46375137fd"
+      "oid": "5ea7cc6728a0de677df83e7493517e0976a4351a"
     },
     "createCaloCells": {
       "oid": "5032b680c65eb1e7c254a177d2c573e59688c369"
