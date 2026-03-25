@@ -1,14 +1,15 @@
 {
   "version": 5,
-  "prev": "b96bdbad3defb50d050a922fee7113ac06a140ec",
-  "head": "f27b695e73ab633da8b6d509fdbde669d68e1f4c",
+  "prev": "407e53249ac9d636e22d7d0c60c57212525756df",
+  "head": "ef3a540c2ab71b68cdd9ca94be553f15b176c220",
   "applied": [
     "depr",
     "xtalk",
     "timeout",
     "hcal-seg",
     "hcal-seg-row",
-    "dbg-wip"
+    "dbg-wip",
+    "refresh-temp"
   ],
   "unapplied": [
     "dump-wip",
@@ -133,6 +134,9 @@
     },
     "noiseIndex": {
       "oid": "bee315e6db8ec07b528d3a256ea36cf1c5c8e93d"
+    },
+    "refresh-temp": {
+      "oid": "ef3a540c2ab71b68cdd9ca94be553f15b176c220"
     },
     "repnoise": {
       "oid": "5d5300d8e2eff92d422a9ed221c9e1b96fe70073"
