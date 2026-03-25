@@ -1,16 +1,16 @@
 {
   "version": 5,
-  "prev": "9e88d55b13becc2810979b1b84a080dfcc9e2206",
-  "head": "48ef0adffa9a7c9ff9fb4f792a03b47c8b78fc92",
+  "prev": "ffe7253689ae1968456485c7ca5a4008cafabc57",
+  "head": "ff8120586ac80d18f90cdb2d28140fd0e6b03349",
   "applied": [
     "depr",
     "xtalk",
-    "timeout",
-    "hcal-seg",
-    "hcal-seg-row",
-    "dump-wip"
+    "timeout"
   ],
   "unapplied": [
+    "hcal-seg",
+    "hcal-seg-row",
+    "dump-wip",
     "nodefgeotool",
     "ci",
     "k4geo-noclone",
