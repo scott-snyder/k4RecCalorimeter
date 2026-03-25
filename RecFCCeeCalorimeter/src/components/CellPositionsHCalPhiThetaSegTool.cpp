@@ -1,3 +1,4 @@
+#pragma GCC optimize "-O0"
 #include "CellPositionsHCalPhiThetaSegTool.h"
 #include "k4FWCore/GaudiChecks.h"
 
@@ -141,6 +142,35 @@ void CellPositionsHCalPhiThetaSegTool::getPositions(const edm4hep::CalorimeterHi
 }
 
 dd4hep::Position CellPositionsHCalPhiThetaSegTool::xyzPosition(const uint64_t& aCellId) const {
+  static bool first = true;
+  if (first && (aCellId&15)==9)
+  {
+    first = false;
+    const dd4hep::Detector* detector = m_geoSvc->getDetector();
+    dd4hep::VolumeManager vman_glob = detector->volumeManager();
+    dd4hep::VolumeManager volman = vman_glob.subdetector (9);
+    uint64_t vid = 0x61ae29;
+    for (unsigned r = 0; r < 19; ++r) {
+      vid &= ~ (0xff << 21);
+      vid |= (r << 21);
+      dd4hep::VolumeManagerContext* vc = volman.lookupContext(vid);
+      dd4hep::Position volPos = vc->localToWorld(dd4hep::Position(0,0,0));
+      if (vc) {
+        std::cout << std::format("aaa1a v {:x} r {} z {:.1f}\n",
+                                 vid, r, volPos.Z());
+      }
+    }
+
+    uint64_t cid = 0x1f4081ae09;
+    for (unsigned r = 1; r < 7; ++r) {
+      cid &= ~ (0xff << 21);
+      cid |= (r << 21);
+      dd4hep::Position cellpos = xyzPosition (cid);
+      std::cout << std::format("aaa1b v {:x} r {} z {:.1f}\n",
+                               cid, r, cellpos.Z());
+    }
+  }
+
 
   if (m_segmentationType == "FCCSWHCalPhiTheta_k4geo" ||
       m_segmentationType == "FCCSWHCalPhiRow_k4geo")
