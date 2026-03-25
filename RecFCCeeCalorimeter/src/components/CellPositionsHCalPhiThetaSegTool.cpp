@@ -149,6 +149,21 @@ dd4hep::Position CellPositionsHCalPhiThetaSegTool::xyzPosition(const uint64_t& a
     dd4hep::VolumeManagerContext* vc = m_volman.lookupContext(volumeId);
     dd4hep::DDSegmentation::Vector3D inSeg = m_segmentation->position(aCellId);
     dd4hep::Position outSeg = vc->localToWorld(dd4hep::Position(inSeg));
+    if (m_segmentationType == "FCCSWHCalPhiRow_k4geo" && (aCellId&15) == 9 && outSeg.Z() > 0) {
+      dd4hep::Position volPos = vc->localToWorld(dd4hep::Position(0,0,0));
+      std::cout << std::format ("aaa2 c 0x{:x} l{} pl{:3d} r{} v 0x{:7x} l{} pl{:3d} r{}; {:.1f}+{:.1f}={:.1f}\n",
+                                aCellId,
+                                (aCellId>>7)&0x3f,
+                                (aCellId>>13)&0xff,
+                                (aCellId>>21)&0xff,
+                                volumeId,
+                                (volumeId>>7)&0x3f,
+                                (volumeId>>13)&0xff,
+                                (volumeId>>21)&0xff,
+                                inSeg.Z,
+                                volPos.Z(),
+                                outSeg.Z());
+    }
     return outSeg;
   }
 
