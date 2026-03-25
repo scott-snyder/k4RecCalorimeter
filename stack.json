@@ -1,16 +1,16 @@
 {
   "version": 5,
-  "prev": "244cc48fdd62e60fd419df852075ef44ac60b255",
-  "head": "ff8120586ac80d18f90cdb2d28140fd0e6b03349",
+  "prev": "f097ad574ad16492a4c5fa47335bfb4a394508e2",
+  "head": "42379a368432faaaa2861b3b14cb0e6e21c606d5",
   "applied": [
     "depr",
     "xtalk",
-    "timeout"
+    "timeout",
+    "hcal-seg",
+    "hcal-seg-row"
   ],
   "unapplied": [
     "dbg-wip",
-    "hcal-seg",
-    "hcal-seg-row",
     "dump-wip",
     "nodefgeotool",
     "ci",
