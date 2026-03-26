@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "89139ed8c577e748b786a487b0a3364d2df74789",
-  "head": "5cc761a5a778eeadc7be09c9fc574d4a222db106",
+  "prev": "8b3100b3195f21819285cfba01fe6c7e5c1918aa",
+  "head": "993f683abc005ed1ba85e005d2e9c58fc3992a9f",
   "applied": [
     "depr",
     "xtalk",
@@ -16,12 +16,12 @@
     "idmap",
     "idmapIndexer",
     "subdetVolman2",
-    "hcal-tool"
+    "hcal-tool",
+    "nocxx23"
   ],
   "unapplied": [
     "subdetVolman",
     "geoConst2",
-    "nocxx23",
     "caloToolInfo3",
     "multiIndexer",
     "xtalkSpan3",
@@ -118,7 +118,7 @@
       "oid": "26612ed70f0020aa442a885cb61435bf90a1de96"
     },
     "nocxx23": {
-      "oid": "20ee3bd238762d1a8e2a6a17a4a14ae5e590245b"
+      "oid": "993f683abc005ed1ba85e005d2e9c58fc3992a9f"
     },
     "nodefgeotool": {
       "oid": "18997cfe954f840c4d412aaca042ccb77a22fff0"
