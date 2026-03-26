@@ -1,11 +1,12 @@
 {
   "version": 5,
-  "prev": "f89421d390d14bcf4275166cd68525d67c0bb7e6",
-  "head": "47b3ec8ea72cc5dfbaac9b94a5490a8a85beaff0",
+  "prev": "26b628ba7e226b2b3a4da99921d11343308f189b",
+  "head": "140950a9e7d7611739565dca0dd82b0cc995d762",
   "applied": [
     "k4geo-noclone",
     "subdetVolman2",
-    "idmap"
+    "idmap",
+    "hcal-tool"
   ],
   "unapplied": [
     "subdetVolman",
@@ -45,6 +46,9 @@
     },
     "idmap": {
       "oid": "47b3ec8ea72cc5dfbaac9b94a5490a8a85beaff0"
+    },
+    "hcal-tool": {
+      "oid": "140950a9e7d7611739565dca0dd82b0cc995d762"
     },
     "subdetVolman": {
       "oid": "17e11a58b997e998be30c4c37b34a6ea6e536d58"
