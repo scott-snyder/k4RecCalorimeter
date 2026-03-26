@@ -1,7 +1,7 @@
 Bottom: aea547c73ac8ff0ce5b6840ffd922bd0c217d27d
 Top:    3648809fbc1df2083aae34bb0d7427cc1714c763
 Author: sss <sss@karma>
-Date:   2026-03-26 16:48:08 -0400
+Date:   2026-03-26 16:50:44 -0400
 
 Remove non-const methods of ICalorimeterTool
 
