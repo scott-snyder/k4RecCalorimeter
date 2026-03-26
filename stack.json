@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "91bfa1cacf55f730442c23512723b87ecdf5b2b1",
+  "prev": "e1b7aa79d249f6b93e87654657a5a8acc940d292",
   "head": "3505729632dd2d56c8c78dcb32f3ecd571145214",
   "applied": [
     "depr",
@@ -16,7 +16,7 @@
     "idmap",
     "idmapIndexer",
     "subdetVolman2",
-    "add-implementation-of"
+    "hcal-tool"
   ],
   "unapplied": [
     "subdetVolman",
@@ -44,9 +44,6 @@
   ],
   "hidden": [],
   "patches": {
-    "add-implementation-of": {
-      "oid": "3505729632dd2d56c8c78dcb32f3ecd571145214"
-    },
     "caloCellIndexerSvc": {
       "oid": "9162255df4d428a959e04b2d37a1584b2c1aef27"
     },
@@ -94,6 +91,9 @@
     },
     "hcal-seg-row": {
       "oid": "1de8899744c356977dabc84d0450ba2e85b00d53"
+    },
+    "hcal-tool": {
+      "oid": "3505729632dd2d56c8c78dcb32f3ecd571145214"
     },
     "hcalIndexer": {
       "oid": "62d4fa4310d592c2f20a6e25d568c1f11ce23cdd"
