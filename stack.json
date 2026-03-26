@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "e1f96fe1d83a2340f67100eb8d24a09081532b9c",
+  "prev": "f89421d390d14bcf4275166cd68525d67c0bb7e6",
   "head": "47b3ec8ea72cc5dfbaac9b94a5490a8a85beaff0",
   "applied": [
     "k4geo-noclone",
@@ -8,10 +8,8 @@
     "idmap"
   ],
   "unapplied": [
-    "hcal-tool",
     "subdetVolman",
     "geoConst2",
-    "nocxx23",
     "caloToolInfo3",
     "idmapIndexer",
     "multiIndexer",
@@ -48,17 +46,11 @@
     "idmap": {
       "oid": "47b3ec8ea72cc5dfbaac9b94a5490a8a85beaff0"
     },
-    "hcal-tool": {
-      "oid": "fd8507cb2b85b2fd7671d9df3fb1ba848d4b97b7"
-    },
     "subdetVolman": {
       "oid": "17e11a58b997e998be30c4c37b34a6ea6e536d58"
     },
     "geoConst2": {
       "oid": "f40d59bb9cf6b7f7fba15da58e7d0f31d65a66b0"
-    },
-    "nocxx23": {
-      "oid": "27624251d0998cd64c96b39a182a9141889004a1"
     },
     "caloToolInfo3": {
       "oid": "eea40a35f6cab0d5af2676978e432fa0a1622c69"
