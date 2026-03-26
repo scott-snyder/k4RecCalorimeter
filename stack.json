@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "accb492884d0bb55ce7922ce63db7408dcc4dfd7",
-  "head": "637b664a9b2bdf0939160184c14847df4d3c39bf",
+  "prev": "35e13405d62af06fc884ef8ca3e98d501e3aff28",
+  "head": "20ee3bd238762d1a8e2a6a17a4a14ae5e590245b",
   "applied": [
     "depr",
     "xtalk",
@@ -19,7 +19,9 @@
     "hcal-tool",
     "subdetVolman",
     "geoConst2",
-    "nocxx23",
+    "nocxx23"
+  ],
+  "unapplied": [
     "caloToolInfo3",
     "multiIndexer",
     "xtalkSpan3",
@@ -41,7 +43,6 @@
     "check-deprecated",
     "check-remove"
   ],
-  "unapplied": [],
   "hidden": [],
   "patches": {
     "caloCellIndexerSvc": {
