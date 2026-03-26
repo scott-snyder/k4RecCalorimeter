@@ -1,15 +1,15 @@
 {
   "version": 5,
-  "prev": "b8f2aacf04414296e9421f73e0a4a4dc0b5d7ee6",
-  "head": "42379a368432faaaa2861b3b14cb0e6e21c606d5",
+  "prev": "ff961491c7b345c12255c3c6489c18b94b20cd74",
+  "head": "ff8120586ac80d18f90cdb2d28140fd0e6b03349",
   "applied": [
     "depr",
     "xtalk",
-    "timeout",
-    "hcal-seg",
-    "hcal-seg-row"
+    "timeout"
   ],
   "unapplied": [
+    "hcal-seg",
+    "hcal-seg-row",
     "dump-wip",
     "nodefgeotool",
     "ci",
