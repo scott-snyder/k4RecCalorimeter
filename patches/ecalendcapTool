@@ -1,7 +1,7 @@
-Bottom: 2285f5b4ccdba701229d9b0f3e8ba9f026046922
-Top:    832a4576c1ead29ff446dbdb47415277bdd32366
+Bottom: c84e7e0c2077b660c69f6a30a3d3c1f73f6ee9ca
+Top:    e2807d63262a64c1628677966a2ec42b5921c08b
 Author: sss <sss@karma>
-Date:   2026-03-26 16:56:38 -0400
+Date:   2026-03-27 15:58:05 -0400
 
 Add implementation of ICalorimeterTool for Allegro ECal endcap.
 
