@@ -24,17 +24,16 @@
 // Gaudi
 #include "GaudiKernel/IAlgTool.h"
 
+
+namespace k4::recCalo {
+
+
 /** @class ICaloReadCrosstalkMap k4Interface/include/k4Interface/ICaloReadCrosstalkMap.h ICaloReadCrosstalkMap.h
  *
  *  Interface to the service reading the crosstalk map for ALLEGRO ECAL barrel.
  *
  *  @author Zhibo Wu
  */
-
-
-namespace k4::recCalo {
-
-
 class ICaloReadCrosstalkMap : virtual public IAlgTool {
 public:
   using CellID = dd4hep::DDSegmentation::CellID;
