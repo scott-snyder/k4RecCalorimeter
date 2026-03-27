@@ -1,14 +1,13 @@
 {
   "version": 5,
-  "prev": "a33660d542e4c5b529771b4b50a9a283f4a47992",
-  "head": "d4a027502633daf28295bed33e1e5782b0626025",
+  "prev": "d28404da526896028885cc274941112c726acb10",
+  "head": "94c50a81493f097ad38fda569ac4cdfeb5a2f013",
   "applied": [
     "depr",
     "xtalk",
     "timeout",
     "nodefgeotool",
-    "ICellPositionsTool",
-    "refresh-temp"
+    "ICellPositionsTool"
   ],
   "unapplied": [
     "hcal-seg",
@@ -48,7 +47,7 @@
   ],
   "patches": {
     "ICellPositionsTool": {
-      "oid": "39bd7158e758ec75c88846d00cc915cc2d23ba1e"
+      "oid": "94c50a81493f097ad38fda569ac4cdfeb5a2f013"
     },
     "caloCellIndexerSvc": {
       "oid": "a74865fd5b3eb092a3a171886c84a7b9403c84e4"
@@ -127,9 +126,6 @@
     },
     "noiseIndex": {
       "oid": "b7f91ab39e009899804d4e49725014ac1ffe4195"
-    },
-    "refresh-temp": {
-      "oid": "d4a027502633daf28295bed33e1e5782b0626025"
     },
     "repnoise": {
       "oid": "3e6d555bfd8dc25fbec79157421317086d68c46c"
