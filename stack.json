@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "9a2481116bd0971261eb00344225726ad12c4581",
-  "head": "69328b0722120a9e716461a828d39de269184f82",
+  "prev": "2bdc7adff29d72c7b40e54f36b87f0d98968b65a",
+  "head": "24742d7b6572d629f73a1d438a6fe0bbbad5d725",
   "applied": [
     "k4geo-noclone",
     "nodefgeotool",
@@ -25,7 +25,8 @@
     "hcal-tool",
     "ecalbarrelIndexer",
     "hcalIndexer",
-    "ecalendcapTool"
+    "ecalendcapTool",
+    "caloCellIndexerSvc"
   ],
   "unapplied": [
     "subdetVolman2",
@@ -108,6 +109,9 @@
     },
     "ecalendcapTool": {
       "oid": "69328b0722120a9e716461a828d39de269184f82"
+    },
+    "caloCellIndexerSvc": {
+      "oid": "24742d7b6572d629f73a1d438a6fe0bbbad5d725"
     },
     "subdetVolman2": {
       "oid": "3a4162e41f0500cb608eff834f8c9c0d2a67c5d1"
