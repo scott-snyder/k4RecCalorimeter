@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "989ef47a8d343ffb24bee8cb6f434d98dfa59e65",
+  "prev": "173045380de8e97aa102589ae4b5af6d14336935",
   "head": "f3230130d5b0bb64103e3a1c1167a8100d12b5e8",
   "applied": [
     "k4geo-noclone",
@@ -22,11 +22,8 @@
   ],
   "unapplied": [
     "subdetVolman2",
-    "idmap",
     "hcal-tool",
     "subdetVolman",
-    "idmapIndexer",
-    "multiIndexer",
     "caloCellIndexerSvc",
     "ecalbarrelIndexer",
     "hcalIndexer",
@@ -96,20 +93,11 @@
     "subdetVolman2": {
       "oid": "3a4162e41f0500cb608eff834f8c9c0d2a67c5d1"
     },
-    "idmap": {
-      "oid": "47b3ec8ea72cc5dfbaac9b94a5490a8a85beaff0"
-    },
     "hcal-tool": {
       "oid": "140950a9e7d7611739565dca0dd82b0cc995d762"
     },
     "subdetVolman": {
       "oid": "ce0184ca13df5739e4ca3c0f83326adb7776eb1d"
-    },
-    "idmapIndexer": {
-      "oid": "9adae589f5a852e581431b6fc1ba5cdb56f8d5dd"
-    },
-    "multiIndexer": {
-      "oid": "15ca9c44a93609e048addf658c1f8219510b986c"
     },
     "caloCellIndexerSvc": {
       "oid": "7ac427baae6caa539db316c3042e6dc43da71523"
