@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "27d442914a049dda2e9585beda42ddef90538721",
-  "head": "bbdc0d07a3fee80eeb97abd459fd40f166d3e857",
+  "prev": "fd2a0e401dfc28af7a35c47a999ae94b77043b9f",
+  "head": "7124c666c3e2af5528e759c8b8a91acf2e401a72",
   "applied": [
     "k4geo-noclone",
     "nodefgeotool",
@@ -38,11 +38,10 @@
     "subdetVolman",
     "discrit-wip",
     "discrit2-wip",
-    "diag-wip"
-  ],
-  "unapplied": [
+    "diag-wip",
     "cellids-wip"
   ],
+  "unapplied": [],
   "hidden": [],
   "patches": {
     "k4geo-noclone": {
@@ -154,7 +153,7 @@
       "oid": "bbdc0d07a3fee80eeb97abd459fd40f166d3e857"
     },
     "cellids-wip": {
-      "oid": "a822375961b49c767d0a3012152f18e811923da0"
+      "oid": "7124c666c3e2af5528e759c8b8a91acf2e401a72"
     }
   }
 }
