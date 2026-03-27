@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "89bde506a28d9de1440b8979f51f9fe5aec4f01a",
-  "head": "5e7e0cb446734ab914da29af84791dd292f3f2f9",
+  "prev": "9eb593bb53ef5db26bbfc574fa6f104aea342ba7",
+  "head": "16f1ad9a8ae5af673e3a02e650e559b434558f4a",
   "applied": [
     "depr",
     "xtalk",
@@ -17,9 +17,7 @@
     "ICaloCreateMap",
     "ITopoClusterInputTool",
     "ITowerTools",
-    "geoConst2",
-    "caloToolInfo3",
-    "caloToolInfo2"
+    "caloToolInfo"
   ],
   "unapplied": [
     "hcal-seg",
@@ -89,11 +87,8 @@
     "caloCellIndexerSvc": {
       "oid": "a74865fd5b3eb092a3a171886c84a7b9403c84e4"
     },
-    "caloToolInfo2": {
-      "oid": "5e7e0cb446734ab914da29af84791dd292f3f2f9"
-    },
-    "caloToolInfo3": {
-      "oid": "f1c8781a5a3da0ce2d1deba8f6081accd0842fdf"
+    "caloToolInfo": {
+      "oid": "16f1ad9a8ae5af673e3a02e650e559b434558f4a"
     },
     "cellposIndex": {
       "oid": "9a10d2212bd7bfa4a407c4cdc910ad9aecc55525"
@@ -127,9 +122,6 @@
     },
     "ecalendcapTool": {
       "oid": "ced9da27da6dec5981818f03b56297efedfe6329"
-    },
-    "geoConst2": {
-      "oid": "13a5201191225f6b0a0a5b16cc640dc82e4937c6"
     },
     "hcal-seg": {
       "oid": "a502d8df4551c557315b3fc0e6651720ce99b026"

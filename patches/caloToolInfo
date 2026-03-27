@@ -1,10 +1,12 @@
 Bottom: de55eac875bee9972a71b370709f610bd1085f6f
-Top:    754116c48a920f9f30786528f3b2056f9ab073ed
+Top:    ec51c8c36fde6132ac150a42321209dcdd78f57d
 Author: sss <sss@karma>
-Date:   2026-03-27 15:24:08 -0400
+Date:   2026-03-27 15:28:21 -0400
 
 Remove non-const methods of ICalorimeterTool
 
 Now that the ICalorimeterTool interface class
 has been updated, we can remove the non-const methods from its
 derived classes (and add override keywords).
+
+(Re-)add override keywords in CalorimeterToolBase.h.
