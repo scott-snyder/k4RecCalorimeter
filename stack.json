@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "bb1c720ffb287849bd4655919ae08be35d28e08a",
+  "prev": "5a090aec9574d0b07e161853b5e4662cc5c7e8eb",
   "head": "115e16c308a558794ababfb3377967d31822b3ce",
   "applied": [
     "k4geo-noclone",
@@ -25,13 +25,9 @@
   ],
   "unapplied": [
     "subdetVolman2",
-    "hcal-tool",
     "subdetVolman",
     "caloCellIndexerSvc",
-    "ecalbarrelIndexer",
-    "hcalIndexer",
     "cellposIndex",
-    "ecalendcapTool",
     "indexingConfig",
     "xtalkIndex",
     "topoNoiseIndex",
@@ -105,26 +101,14 @@
     "subdetVolman2": {
       "oid": "3a4162e41f0500cb608eff834f8c9c0d2a67c5d1"
     },
-    "hcal-tool": {
-      "oid": "140950a9e7d7611739565dca0dd82b0cc995d762"
-    },
     "subdetVolman": {
       "oid": "ce0184ca13df5739e4ca3c0f83326adb7776eb1d"
     },
     "caloCellIndexerSvc": {
       "oid": "7ac427baae6caa539db316c3042e6dc43da71523"
     },
-    "ecalbarrelIndexer": {
-      "oid": "f42dcd4c251ebb0704a155d847fc53b71cbf0613"
-    },
-    "hcalIndexer": {
-      "oid": "a75456a42e42f54889276dffb642436bc9d0874e"
-    },
     "cellposIndex": {
       "oid": "eff1b588e13d6fca5727c87f6bb117d8424b2c93"
-    },
-    "ecalendcapTool": {
-      "oid": "d974820b098700296af9cb02f6422f45daf7925e"
     },
     "indexingConfig": {
       "oid": "1e21f1fb856121b9230b92bd9460bc96c15f8f5d"
