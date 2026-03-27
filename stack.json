@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "8bda3b3787c148c2c07e67f4ba206b0a4af85ce5",
-  "head": "9d211ff1b5b6c38fcdcc6a8b7a62a208f9bfb2ea",
+  "prev": "0813eb8b46463e8eb4db1de3a07fa119ab773d58",
+  "head": "d9bb8eef587dca1607eb65aac9c47d2573a92847",
   "applied": [
     "depr",
     "xtalk",
@@ -17,7 +17,8 @@
     "ICaloCreateMap",
     "ITopoClusterInputTool",
     "ITowerTools",
-    "caloToolInfo"
+    "caloToolInfo",
+    "xtalkSpan3"
   ],
   "unapplied": [
     "hcal-seg",
@@ -31,7 +32,6 @@
     "hcal-tool",
     "subdetVolman",
     "multiIndexer",
-    "xtalkSpan3",
     "xtalkSpan5",
     "caloCellIndexerSvc",
     "ecalbarrelIndexer",
@@ -184,7 +184,7 @@
       "oid": "5fef6da748d200a720f0bb3cb2e0707bf94787bf"
     },
     "xtalkSpan3": {
-      "oid": "4ea473530c17a0b5c843509bf6d38843327fb223"
+      "oid": "d9bb8eef587dca1607eb65aac9c47d2573a92847"
     },
     "xtalkSpan5": {
       "oid": "1cd5ba2830ea25d8cfbf95173e65aa36bd0d67a6"
