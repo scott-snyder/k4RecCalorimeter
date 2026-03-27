@@ -1,11 +1,12 @@
 {
   "version": 5,
-  "prev": "9bc9f5e16bb63358e2f642d068ebdb36582026b1",
-  "head": "0ba5480a38dd7454fa72ad809009d5e5be3fa11a",
+  "prev": "41d459dfbee96a7c0fe9e6b2d576f1dda3b0c6a3",
+  "head": "02144ade2f4af45c4efa2db69899ec55f53664da",
   "applied": [
     "k4geo-noclone",
     "nodefgeotool",
-    "ICellPositionsTool"
+    "ICellPositionsTool",
+    "ICalorimeterTool"
   ],
   "unapplied": [
     "subdetVolman2",
@@ -47,6 +48,9 @@
     },
     "ICellPositionsTool": {
       "oid": "0ba5480a38dd7454fa72ad809009d5e5be3fa11a"
+    },
+    "ICalorimeterTool": {
+      "oid": "02144ade2f4af45c4efa2db69899ec55f53664da"
     },
     "subdetVolman2": {
       "oid": "3a4162e41f0500cb608eff834f8c9c0d2a67c5d1"
