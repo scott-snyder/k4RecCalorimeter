@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "633377338b3697aba10b6c9f6a5bbf27be5fbaf1",
-  "head": "3e15b25573df2a7e091bdc003adaf354db9e0ff2",
+  "prev": "dd6e88b49232fa082a2206762fc26ebbd240a256",
+  "head": "af405733e16f885bd5838b24bce9e3829e48b790",
   "applied": [
     "k4geo-noclone",
     "nodefgeotool",
@@ -30,7 +30,8 @@
     "cellposIndex",
     "indexingConfig",
     "xtalkIndex",
-    "topoNoiseIndex"
+    "topoNoiseIndex",
+    "noiseIndex"
   ],
   "unapplied": [
     "discrit-wip",
@@ -123,6 +124,9 @@
     },
     "topoNoiseIndex": {
       "oid": "3e15b25573df2a7e091bdc003adaf354db9e0ff2"
+    },
+    "noiseIndex": {
+      "oid": "af405733e16f885bd5838b24bce9e3829e48b790"
     },
     "discrit-wip": {
       "oid": "4c46d50ecd5c5488f370066f89eec6c91d60e956"
