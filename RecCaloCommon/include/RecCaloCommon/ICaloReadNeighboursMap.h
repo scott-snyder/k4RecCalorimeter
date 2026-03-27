@@ -24,17 +24,16 @@
 // Gaudi
 #include "GaudiKernel/IAlgTool.h"
 
+
+namespace k4::recCalo {
+
+
 /** @class ICaloReadNeighboursMap RecInterface/RecInterface/ICaloReadNeighboursMap.h ICaloReadNeighboursMap.h
  *
  *  Interface to the service creating a map for the calorimetry.
  *
  *  @author Anna Zaborowska
  */
-
-
-namespace k4::recCalo {
-
-
 class ICaloReadNeighboursMap : virtual public IAlgTool {
 public:
   using CellID = dd4hep::DDSegmentation::CellID;
