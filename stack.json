@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "37c19fb994ec79e32166eef0c5a92f7e11a65e83",
-  "head": "6d1183933f408dd33d052638197ef036ed8f4035",
+  "prev": "de3788e78b001fce10ec1066988ecbe3c79297a8",
+  "head": "e6e0b6a58152adcc6a168102f794cfef61b561bc",
   "applied": [
     "depr",
     "xtalk",
@@ -19,7 +19,8 @@
     "ITowerTools",
     "caloToolInfo",
     "xtalkSpan3",
-    "xtalkSpan5"
+    "xtalkSpan5",
+    "xtalkSpan6"
   ],
   "unapplied": [
     "hcal-seg",
@@ -188,6 +189,9 @@
     },
     "xtalkSpan5": {
       "oid": "6d1183933f408dd33d052638197ef036ed8f4035"
+    },
+    "xtalkSpan6": {
+      "oid": "e6e0b6a58152adcc6a168102f794cfef61b561bc"
     }
   }
 }
