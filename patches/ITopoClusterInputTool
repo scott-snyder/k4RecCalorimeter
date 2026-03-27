@@ -1,0 +1,6 @@
+Bottom: 521f06bfb51ea555c740ce46966e40623db100a9
+Top:    521f06bfb51ea555c740ce46966e40623db100a9
+Author: sss <sss@karma>
+Date:   2026-03-27 14:26:51 -0400
+
+Move ITopoClusterInputTool here from k4FWCore.
