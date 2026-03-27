@@ -1,0 +1,6 @@
+Bottom: 3a010e436146134e930da1176619e0e46f427f9c
+Top:    3a010e436146134e930da1176619e0e46f427f9c
+Author: sss <sss@karma>
+Date:   2026-03-27 15:04:16 -0400
+
+Move ITowerTool and ITowerToolThetaModule here from k4FWCore.

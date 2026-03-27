@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "4a85c581b796d286e04a1e6af1427ad81e7b646a",
-  "head": "a24ac9b6dfcdb5ec74919ce2630fba73e8b453d1",
+  "prev": "bdb9dbd09dd2c0091da02ca3d3daef9ced00d6f0",
+  "head": "3fd27961da9d6b27385002c850b3dad26bedd525",
   "applied": [
     "depr",
     "xtalk",
@@ -15,7 +15,8 @@
     "ICaloReadNeighboursMap",
     "ICaloIndexer",
     "ICaloCreateMap",
-    "ITopoClusterInputTool"
+    "ITopoClusterInputTool",
+    "ITowerTools"
   ],
   "unapplied": [
     "hcal-seg",
@@ -80,6 +81,9 @@
     },
     "ITopoClusterInputTool": {
       "oid": "a24ac9b6dfcdb5ec74919ce2630fba73e8b453d1"
+    },
+    "ITowerTools": {
+      "oid": "3fd27961da9d6b27385002c850b3dad26bedd525"
     },
     "caloCellIndexerSvc": {
       "oid": "a74865fd5b3eb092a3a171886c84a7b9403c84e4"
