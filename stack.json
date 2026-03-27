@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "b02b0eedf391b9fc9172cef971e45b9d97fabb86",
-  "head": "d7f54892b5b75cbda79be055969c4779edeb2220",
+  "prev": "77af849635f63464115c8f70dc3b770207ad79b6",
+  "head": "99d9cd73664765dc1aafd9dc26d516fdcb03748a",
   "applied": [
     "depr",
     "xtalk",
@@ -12,8 +12,7 @@
     "INoiseTools",
     "ICalibrateCaloHitsTool",
     "ICaloReadCrosstalkMap",
-    "ICaloReadNeighboursMap",
-    "refresh-temp"
+    "ICaloReadNeighboursMap"
   ],
   "unapplied": [
     "hcal-seg",
@@ -56,10 +55,10 @@
       "oid": "fbf8a52f094e9f5200c6620c60848d51afa6a11c"
     },
     "ICaloReadCrosstalkMap": {
-      "oid": "c99618c9556f3afb040bba05a4a271e6f3556669"
+      "oid": "86f62c165de9363bba5c2d95beaa3a9cc41459df"
     },
     "ICaloReadNeighboursMap": {
-      "oid": "3ca22265256724fbfcd1d2f1f2102bcae1c453f4"
+      "oid": "99d9cd73664765dc1aafd9dc26d516fdcb03748a"
     },
     "ICalorimeterTool": {
       "oid": "5f3947f29a932a6aa57439a4deaf3276e5a325c6"
@@ -147,9 +146,6 @@
     },
     "noiseIndex": {
       "oid": "b7f91ab39e009899804d4e49725014ac1ffe4195"
-    },
-    "refresh-temp": {
-      "oid": "d7f54892b5b75cbda79be055969c4779edeb2220"
     },
     "repnoise": {
       "oid": "3e6d555bfd8dc25fbec79157421317086d68c46c"
