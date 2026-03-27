@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "d584931ba0e68d6ce669e701d11e51457d21419f",
-  "head": "0be750702d62b4c9818c64ea811e06b7fd38b27f",
+  "prev": "e272cea798853267cf36e283ccd35ef0b4cc2c34",
+  "head": "2c0382922323ab9269b68a3971e1353485b9b59f",
   "applied": [
     "depr",
     "xtalk",
@@ -16,12 +16,12 @@
     "ICaloIndexer",
     "ICaloCreateMap",
     "ITopoClusterInputTool",
-    "ITowerTools"
+    "ITowerTools",
+    "hcal-seg"
   ],
   "unapplied": [
     "caloToolInfo",
     "xtalkSpan",
-    "hcal-seg",
     "hcal-seg-row",
     "k4geo-noclone",
     "dump-wip",
@@ -123,7 +123,7 @@
       "oid": "ced9da27da6dec5981818f03b56297efedfe6329"
     },
     "hcal-seg": {
-      "oid": "a502d8df4551c557315b3fc0e6651720ce99b026"
+      "oid": "2c0382922323ab9269b68a3971e1353485b9b59f"
     },
     "hcal-seg-row": {
       "oid": "1de8899744c356977dabc84d0450ba2e85b00d53"
