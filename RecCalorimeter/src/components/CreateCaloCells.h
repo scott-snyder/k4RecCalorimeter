@@ -6,7 +6,7 @@
 
 // Interfaces
 #include "RecCaloCommon/ICalibrateCaloHitsTool.h"
-#include "k4Interface/ICaloReadCrosstalkMap.h"
+#include "RecCaloCommon/ICaloReadCrosstalkMap.h"
 #include "RecCaloCommon/ICalorimeterTool.h"
 #include "RecCaloCommon/INoiseCaloCellsTool.h"
 
@@ -66,7 +66,7 @@ private:
   void findCaloTypes();
 
   /// Handle for the calorimeter cells crosstalk tool
-  mutable ToolHandle<ICaloReadCrosstalkMap> m_crosstalksTool{"ReadCaloCrosstalkMap", this};
+  mutable ToolHandle<k4::recCalo::ICaloReadCrosstalkMap> m_crosstalksTool{"ReadCaloCrosstalkMap", this};
   /// Handle for tool to calibrate Geant4 energy to EM scale tool
   mutable ToolHandle<k4::recCalo::ICalibrateCaloHitsTool> m_calibTool{"CalibrateCaloHitsTool", this};
   /// Handle for the calorimeter cells noise tool
