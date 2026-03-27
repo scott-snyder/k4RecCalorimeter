@@ -1,18 +1,18 @@
 {
   "version": 5,
-  "prev": "038e58909e52f08c6c1852fb759b53f85101fd6c",
-  "head": "eec1a5f32d496387d8f87395d92f6d2f51a60109",
+  "prev": "c9ff39caccf59cbba3557ba9fb52bff27ba353ad",
+  "head": "0b052e31927ff098df9c44a491c16ee9a56f6595",
   "applied": [
     "depr",
     "xtalk",
     "timeout",
-    "nodefgeotool"
+    "nodefgeotool",
+    "ICellPositionsTool"
   ],
   "unapplied": [
     "hcal-seg",
     "hcal-seg-row",
     "k4geo-noclone",
-    "ICellPositionsTool",
     "dump-wip",
     "cellsInConst",
     "idmap",
@@ -47,7 +47,7 @@
   ],
   "patches": {
     "ICellPositionsTool": {
-      "oid": "f155ba49928a719caacc132f593117cb32205adc"
+      "oid": "0b052e31927ff098df9c44a491c16ee9a56f6595"
     },
     "caloCellIndexerSvc": {
       "oid": "a74865fd5b3eb092a3a171886c84a7b9403c84e4"
