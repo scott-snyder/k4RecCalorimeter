@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "bf5d191ad8f2e0fd7acee46afe8ed03fa3506787",
-  "head": "73bfd101c5d05c0bf94e09ee311b155f4716ff87",
+  "prev": "48d4b2077adc9321d035683ad122e10dd778f74f",
+  "head": "9598a9eea35ea9f1cc97a54cfbf70546ef41d47c",
   "applied": [
     "k4geo-noclone",
     "nodefgeotool",
@@ -14,7 +14,8 @@
     "ICaloIndexer",
     "ICaloCreateMap",
     "ITowerTools",
-    "hcal-seg"
+    "hcal-seg",
+    "hcal-seg-row"
   ],
   "unapplied": [
     "subdetVolman2",
@@ -81,6 +82,9 @@
     },
     "hcal-seg": {
       "oid": "73bfd101c5d05c0bf94e09ee311b155f4716ff87"
+    },
+    "hcal-seg-row": {
+      "oid": "9598a9eea35ea9f1cc97a54cfbf70546ef41d47c"
     },
     "subdetVolman2": {
       "oid": "3a4162e41f0500cb608eff834f8c9c0d2a67c5d1"
