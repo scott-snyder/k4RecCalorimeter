@@ -1,0 +1,6 @@
+Bottom: 6faa70f83ddecbae163bb58cde62ccb3a030b604
+Top:    b3fe9b8301ee5998d3e5a69fd7ec90a435ce8fcd
+Author: sss <sss@karma>
+Date:   2026-03-27 11:38:53 -0400
+
+Move INoiseCaloCellsTool and INoiesContTool here from k4FWCore.
