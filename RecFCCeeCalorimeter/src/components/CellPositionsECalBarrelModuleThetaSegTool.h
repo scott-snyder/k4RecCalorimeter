@@ -69,6 +69,6 @@ private:
 
   using PositionData = std::vector<dd4hep::Position>;
   std::span<const dd4hep::Position> m_positions;
-  const ICaloIndexer* m_indexer = nullptr;
+  const k4::recCalo::ICaloIndexer* m_indexer = nullptr;
 };
 #endif /* RECCALORIMETER_CELLPOSITIONSECALBARRELMODULETHETASEGTOOL_H */
