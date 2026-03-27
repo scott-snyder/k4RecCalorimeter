@@ -1,9 +1,10 @@
 {
   "version": 5,
-  "prev": "cf8aeda5d55123e448058a146c0ad39cd19078b1",
-  "head": "e9715bbcb56b4298f9f930eb99b120eff02ae65f",
+  "prev": "f2a27ef644cad072a44795a955e641546325ad6f",
+  "head": "cc23d4e4d74851962ab7972af55b5fc75869f83f",
   "applied": [
-    "k4geo-noclone"
+    "k4geo-noclone",
+    "nodefgeotool"
   ],
   "unapplied": [
     "subdetVolman2",
@@ -39,6 +40,9 @@
   "patches": {
     "k4geo-noclone": {
       "oid": "e9715bbcb56b4298f9f930eb99b120eff02ae65f"
+    },
+    "nodefgeotool": {
+      "oid": "cc23d4e4d74851962ab7972af55b5fc75869f83f"
     },
     "subdetVolman2": {
       "oid": "3a4162e41f0500cb608eff834f8c9c0d2a67c5d1"
