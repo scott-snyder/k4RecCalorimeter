@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "4e9827823e721388b2b29ea2571efb61f69ae830",
+  "prev": "9a2481116bd0971261eb00344225726ad12c4581",
   "head": "69328b0722120a9e716461a828d39de269184f82",
   "applied": [
     "k4geo-noclone",
@@ -30,11 +30,6 @@
   "unapplied": [
     "subdetVolman2",
     "subdetVolman",
-    "caloCellIndexerSvc",
-    "cellposIndex",
-    "indexingConfig",
-    "xtalkIndex",
-    "topoNoiseIndex",
     "createTopoCluster",
     "noiseIndex",
     "createCaloCells",
@@ -119,21 +114,6 @@
     },
     "subdetVolman": {
       "oid": "ce0184ca13df5739e4ca3c0f83326adb7776eb1d"
-    },
-    "caloCellIndexerSvc": {
-      "oid": "7ac427baae6caa539db316c3042e6dc43da71523"
-    },
-    "cellposIndex": {
-      "oid": "eff1b588e13d6fca5727c87f6bb117d8424b2c93"
-    },
-    "indexingConfig": {
-      "oid": "1e21f1fb856121b9230b92bd9460bc96c15f8f5d"
-    },
-    "xtalkIndex": {
-      "oid": "df96ecab096573fd11f63bccd22242b734381d5d"
-    },
-    "topoNoiseIndex": {
-      "oid": "23c516dfca84dd63b008567106087a84047c2c3f"
     },
     "createTopoCluster": {
       "oid": "9021cad663ce4b8b3fe1629284e873578be985ca"
