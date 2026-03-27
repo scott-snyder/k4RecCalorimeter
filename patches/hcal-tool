@@ -1,0 +1,9 @@
+Bottom: be1fca1ebb14f3de2ff1066d19a9882c93fb849a
+Top:    65d523289971f863149926922d72bb0eb310f8fd
+Author: sss <sss@karma>
+Date:   2026-03-26 16:52:09 -0400
+
+Add implementation of ICalorimeterTool for Allegro HCal.
+
+Add HCalPhiThetaCaloTool, implementing ICalorimeterTool for the
+Allegro HCal (with theta segmentation).
