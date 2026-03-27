@@ -6,7 +6,7 @@
  */
 
 #undef NDEBUG
-#include "k4Interface/ICalorimeterTool.h"
+#include "RecCaloCommon/ICalorimeterTool.h"
 #include "RecCaloCommon/k4RecCalorimeter_check.h"
 #include "GaudiKernel/Algorithm.h"
 #include "GaudiKernel/ToolHandle.h"
@@ -26,11 +26,11 @@ class HCalPhiThetaCaloToolTestAlg
   virtual StatusCode execute() override;
 
 private:
-  StatusCode testTool (const ICalorimeterTool& tool, size_t exp_ncells) const;
+  StatusCode testTool (const k4::recCalo::ICalorimeterTool& tool, size_t exp_ncells) const;
 
-  ToolHandle<ICalorimeterTool> m_barrelTool
+  ToolHandle<k4::recCalo::ICalorimeterTool> m_barrelTool
   { this, "HCalBarrelTool", "HCalPhiThetaCaloTool", "" };
-  ToolHandle<ICalorimeterTool> m_endcapTool
+  ToolHandle<k4::recCalo::ICalorimeterTool> m_endcapTool
   { this, "HCalEndcapTool", "HCalPhiThetaCaloTool", "" };
 };
 
@@ -55,7 +55,7 @@ StatusCode HCalPhiThetaCaloToolTestAlg::initialize()
 }
 
 
-StatusCode HCalPhiThetaCaloToolTestAlg::testTool (const ICalorimeterTool& tool,
+StatusCode HCalPhiThetaCaloToolTestAlg::testTool (const k4::recCalo::ICalorimeterTool& tool,
                                                   size_t exp_ncells) const
 {
   std::span<const uint64_t> ids = tool.cellIDs();
