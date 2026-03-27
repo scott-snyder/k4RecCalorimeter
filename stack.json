@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "820651dd296da6e3cd3b9e11f94cb9c8214209d9",
-  "head": "dbeaaa1c2f05b6c00ca6a86dbce92efe51089d32",
+  "prev": "efbcdd6a706896809cab65e522de9fae208ea385",
+  "head": "a2178a70f5900d1400419c23e6d3c29188564a1c",
   "applied": [
     "depr",
     "xtalk",
@@ -19,7 +19,8 @@
     "ITowerTools",
     "caloToolInfo",
     "xtalkSpan3",
-    "xtalkSpan5"
+    "xtalkSpan5",
+    "refresh-temp"
   ],
   "unapplied": [
     "hcal-seg",
@@ -158,6 +159,9 @@
     },
     "noiseIndex": {
       "oid": "b7f91ab39e009899804d4e49725014ac1ffe4195"
+    },
+    "refresh-temp": {
+      "oid": "a2178a70f5900d1400419c23e6d3c29188564a1c"
     },
     "repnoise": {
       "oid": "3e6d555bfd8dc25fbec79157421317086d68c46c"
