@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "ee971a0eef8450f92800e334b92cfa2551e82198",
-  "head": "0505047d9014ca3ffb6fc39899a36d3cc8076371",
+  "prev": "4207fabc8a558c258b9659bb183e827d2e007bfd",
+  "head": "c04fa561fc1401a4a30027361c4665f91d6e3aa0",
   "applied": [
     "depr",
     "xtalk",
@@ -17,7 +17,8 @@
     "ICaloCreateMap",
     "ITopoClusterInputTool",
     "ITowerTools",
-    "geoConst2"
+    "geoConst2",
+    "caloToolInfo3"
   ],
   "unapplied": [
     "hcal-seg",
@@ -30,7 +31,6 @@
     "subdetVolman2",
     "hcal-tool",
     "subdetVolman",
-    "caloToolInfo3",
     "multiIndexer",
     "xtalkSpan3",
     "xtalkSpan5",
@@ -89,7 +89,7 @@
       "oid": "a74865fd5b3eb092a3a171886c84a7b9403c84e4"
     },
     "caloToolInfo3": {
-      "oid": "12d7b61c0ac150c3690b45e86b9f2b8f68486351"
+      "oid": "c04fa561fc1401a4a30027361c4665f91d6e3aa0"
     },
     "cellposIndex": {
       "oid": "9a10d2212bd7bfa4a407c4cdc910ad9aecc55525"
