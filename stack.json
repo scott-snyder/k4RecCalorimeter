@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "e1f6a5dfc506f959ca7af169e8082f0dc62183d0",
+  "prev": "c2a7f7aae02b88d40138dc76d81f341c47f23d22",
   "head": "a69c0e969d606d2b0aa0acfe1388752c941be584",
   "applied": [
     "k4geo-noclone",
@@ -27,7 +27,6 @@
     "idmapIndexer",
     "multiIndexer",
     "caloCellIndexerSvc",
-    "cellsInConst",
     "ecalbarrelIndexer",
     "hcalIndexer",
     "cellposIndex",
@@ -110,9 +109,6 @@
     },
     "caloCellIndexerSvc": {
       "oid": "7ac427baae6caa539db316c3042e6dc43da71523"
-    },
-    "cellsInConst": {
-      "oid": "5313909f035dc45f7eb285fa1f3246c4eeb72eee"
     },
     "ecalbarrelIndexer": {
       "oid": "f42dcd4c251ebb0704a155d847fc53b71cbf0613"
