@@ -1,5 +1,5 @@
 #include "ReadNoiseFromFileTool.h"
-#include "RecCaloCommon/k4RecCalorimeter_check.h"
+#include "k4FWCore/GaudiChecks.h"
 
 // k4geo
 #include "detectorCommon/DetUtils_k4geo.h"
@@ -21,11 +21,11 @@
 DECLARE_COMPONENT(ReadNoiseFromFileTool)
 
 StatusCode ReadNoiseFromFileTool::initialize() {
-  K4RECCALORIMETER_CHECK( AlgTool::initialize() );
+  K4_GAUDI_CHECK( AlgTool::initialize() );
 
-  K4RECCALORIMETER_CHECK( m_geoSvc.retrieve() );
-  K4RECCALORIMETER_CHECK( m_indexerSvc.retrieve() );
-  K4RECCALORIMETER_CHECK( m_constantsSvc.retrieve() );
+  K4_GAUDI_CHECK( m_geoSvc.retrieve() );
+  K4_GAUDI_CHECK( m_indexerSvc.retrieve() );
+  K4_GAUDI_CHECK( m_constantsSvc.retrieve() );
 
   // Take readout bitfield decoder from GeoSvc
   dd4hep::Readout readout = m_geoSvc->getDetector()->readout(m_readoutName);
@@ -35,16 +35,16 @@ StatusCode ReadNoiseFromFileTool::initialize() {
 
   int detID = readout.segmentation().detector()->id;
   m_indexer = m_indexerSvc->indexer (detID);
-  K4RECCALORIMETER_CHECK( m_indexer != nullptr );
+  K4_GAUDI_CHECK( m_indexer != nullptr );
 
   // get noise constants.
   m_data = m_constantsSvc->getObj<NoiseData> (m_noiseFileName);
   if (!m_data) {
     NoiseData noise;
-    K4RECCALORIMETER_CHECK( ReadNoiseFromFileTool::initNoiseFromFile(noise) );
-    K4RECCALORIMETER_CHECK( m_constantsSvc->putObj (m_noiseFileName, std::move (noise)) );
+    K4_GAUDI_CHECK( ReadNoiseFromFileTool::initNoiseFromFile(noise) );
+    K4_GAUDI_CHECK( m_constantsSvc->putObj (m_noiseFileName, std::move (noise)) );
     m_data = m_constantsSvc->getObj<NoiseData> (m_noiseFileName);
-    K4RECCALORIMETER_CHECK( m_data != nullptr );
+    K4_GAUDI_CHECK( m_data != nullptr );
   }
 
   return StatusCode::SUCCESS;
@@ -126,7 +126,7 @@ StatusCode ReadNoiseFromFileTool::initNoiseFromFile(NoiseData& data) const
     }
   }
 
-  K4RECCALORIMETER_CHECK( initBinning (data, *m_indexer));
+  K4_GAUDI_CHECK( initBinning (data, *m_indexer));
 
   return StatusCode::SUCCESS;
 }
