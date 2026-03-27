@@ -13,7 +13,6 @@
 
 // Interfaces
 #include "k4Interface/ICaloReadNeighboursMap.h"
-#include "k4Interface/ICalorimeterTool.h"
 #include "RecCaloCommon/ICellPositionsTool.h"
 #include "k4Interface/INoiseConstTool.h"
 #include "k4Interface/ITopoClusterInputTool.h"
