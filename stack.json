@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "ff593fdb5635e77692712c1373afce53aee54f03",
-  "head": "87899cb6e6c789a892fd080f8eb5631068bee8b6",
+  "prev": "673d185935be0fa8a6959c0855f870cd912a6c5c",
+  "head": "36bceb4d6340f3b23e63d18deb555d1190571098",
   "applied": [
     "depr",
     "xtalk",
@@ -28,8 +28,7 @@
     "hcal-tool",
     "ecalbarrelIndexer",
     "hcalIndexer",
-    "ecalendcapTool",
-    "refresh-temp"
+    "ecalendcapTool"
   ],
   "unapplied": [
     "k4geo-noclone",
@@ -117,7 +116,7 @@
       "oid": "470eabbc461c1dc0033e28df1231ad610fe07a98"
     },
     "ecalendcapTool": {
-      "oid": "2847efd0bdf248605d68a7a140c331472446a0db"
+      "oid": "36bceb4d6340f3b23e63d18deb555d1190571098"
     },
     "hcal-seg": {
       "oid": "2cb19aa9dcac9844f4407bb62e240141f4555070"
@@ -154,9 +153,6 @@
     },
     "noiseIndex": {
       "oid": "b7f91ab39e009899804d4e49725014ac1ffe4195"
-    },
-    "refresh-temp": {
-      "oid": "87899cb6e6c789a892fd080f8eb5631068bee8b6"
     },
     "repnoise": {
       "oid": "3e6d555bfd8dc25fbec79157421317086d68c46c"
