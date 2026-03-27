@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "9435a830eabac7865bb157c6dca49bcaec1b5bb1",
-  "head": "647c408ab3210ff199c36d7a28d2f25d88a8f7a6",
+  "prev": "2b900a230444f64b6909b58150b55a4004e7cb93",
+  "head": "63770bc6ce288febb9b7f60f7dfd9ca25ca8f052",
   "applied": [
     "depr",
     "xtalk",
@@ -13,7 +13,8 @@
     "ICalibrateCaloHitsTool",
     "ICaloReadCrosstalkMap",
     "ICaloReadNeighboursMap",
-    "ICaloIndexer"
+    "ICaloIndexer",
+    "ICaloCreateMap"
   ],
   "unapplied": [
     "hcal-seg",
@@ -54,6 +55,9 @@
   "patches": {
     "ICalibrateCaloHitsTool": {
       "oid": "fbf8a52f094e9f5200c6620c60848d51afa6a11c"
+    },
+    "ICaloCreateMap": {
+      "oid": "63770bc6ce288febb9b7f60f7dfd9ca25ca8f052"
     },
     "ICaloIndexer": {
       "oid": "647c408ab3210ff199c36d7a28d2f25d88a8f7a6"
