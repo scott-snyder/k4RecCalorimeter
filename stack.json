@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "efbcdd6a706896809cab65e522de9fae208ea385",
-  "head": "a2178a70f5900d1400419c23e6d3c29188564a1c",
+  "prev": "e269df82b14a9f38ef6eb48de615f3eb83cc563f",
+  "head": "b7e71920cd8e60f9ebb934bc658fec3ebb28196a",
   "applied": [
     "depr",
     "xtalk",
@@ -19,8 +19,7 @@
     "ITowerTools",
     "caloToolInfo",
     "xtalkSpan3",
-    "xtalkSpan5",
-    "refresh-temp"
+    "xtalkSpan5"
   ],
   "unapplied": [
     "hcal-seg",
@@ -59,16 +58,16 @@
       "oid": "3957593addaa8e21a526dd3fe2bcb8d57dfc5836"
     },
     "ICaloCreateMap": {
-      "oid": "4d76e9db26ecc87371adc03845e9d1c2eeb4ed44"
+      "oid": "83c88c733d72b74a1d470de5a8d901446dcf17ca"
     },
     "ICaloIndexer": {
-      "oid": "668cebc0b4280f5918fc83fcf5143650a4d94316"
+      "oid": "abeb7cbab8cf634617cbb695e34128f2a5936bbf"
     },
     "ICaloReadCrosstalkMap": {
-      "oid": "a8356c50df6c06423e0cb9ef67f8dac171cbe379"
+      "oid": "86f0107aa1fee66ecb325880360287abb6ae1f94"
     },
     "ICaloReadNeighboursMap": {
-      "oid": "193646a69d848ac3544269b95f96b21aaade25b2"
+      "oid": "eced879f913e5c4db636a5fe1614152aa3c2bade"
     },
     "ICalorimeterTool": {
       "oid": "003f655369fa6a743fe3ef1ee16cef6b6757ac80"
@@ -80,16 +79,16 @@
       "oid": "0d33d46c8a23c20a2af1609ecab29965564482d4"
     },
     "ITopoClusterInputTool": {
-      "oid": "0dcce6c65ff74b1dddc46f5d69cacb5c073d1c64"
+      "oid": "a06f44b49c0c196c524b19b208256783b5706780"
     },
     "ITowerTools": {
-      "oid": "ff640dff84fa300c460b32ea9cdbb27406e3bfbb"
+      "oid": "05f4700bba12be84f03fde629963fc2f15598130"
     },
     "caloCellIndexerSvc": {
       "oid": "a74865fd5b3eb092a3a171886c84a7b9403c84e4"
     },
     "caloToolInfo": {
-      "oid": "9d211ff1b5b6c38fcdcc6a8b7a62a208f9bfb2ea"
+      "oid": "59bd8110e38ce28a71d5395e20c4dca78d6acb22"
     },
     "cellposIndex": {
       "oid": "9a10d2212bd7bfa4a407c4cdc910ad9aecc55525"
@@ -160,9 +159,6 @@
     "noiseIndex": {
       "oid": "b7f91ab39e009899804d4e49725014ac1ffe4195"
     },
-    "refresh-temp": {
-      "oid": "a2178a70f5900d1400419c23e6d3c29188564a1c"
-    },
     "repnoise": {
       "oid": "3e6d555bfd8dc25fbec79157421317086d68c46c"
     },
@@ -188,10 +184,10 @@
       "oid": "5fef6da748d200a720f0bb3cb2e0707bf94787bf"
     },
     "xtalkSpan3": {
-      "oid": "763cc138edeae031999a0fabde32d16130ebddee"
+      "oid": "570cae936d74ef463e0d23c08f1d01a354d0c14b"
     },
     "xtalkSpan5": {
-      "oid": "dbeaaa1c2f05b6c00ca6a86dbce92efe51089d32"
+      "oid": "b7e71920cd8e60f9ebb934bc658fec3ebb28196a"
     }
   }
 }
