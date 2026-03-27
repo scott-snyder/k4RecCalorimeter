@@ -1,13 +1,14 @@
 {
   "version": 5,
-  "prev": "ad353f50a0155380972642e007a414641b6db5f0",
-  "head": "7a93065ee01811884de7b2d4aefc2e888cdd9a8e",
+  "prev": "190108a5828ec04bdbae1e383f119e51cdfcb26c",
+  "head": "3710075db3ead091aefb31c44d144e12e419bb5d",
   "applied": [
     "depr",
     "xtalk",
     "timeout",
     "nodefgeotool",
-    "ICellPositionsTool"
+    "ICellPositionsTool",
+    "ICalorimeterTool"
   ],
   "unapplied": [
     "hcal-seg",
@@ -46,6 +47,9 @@
     "ci"
   ],
   "patches": {
+    "ICalorimeterTool": {
+      "oid": "3710075db3ead091aefb31c44d144e12e419bb5d"
+    },
     "ICellPositionsTool": {
       "oid": "7a93065ee01811884de7b2d4aefc2e888cdd9a8e"
     },

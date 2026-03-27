@@ -1,0 +1,6 @@
+Bottom: 6319c149d70ced6cf4064ce1d375f074bd6886a4
+Top:    6319c149d70ced6cf4064ce1d375f074bd6886a4
+Author: sss <sss@karma>
+Date:   2026-03-27 11:07:28 -0400
+
+Move ICalorimeterTool here from k4FWCore.
