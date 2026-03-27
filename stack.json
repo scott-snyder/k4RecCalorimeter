@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "cde48e05b2658c9292985e6d61e6d067e2e40f3a",
-  "head": "8482f4bb7bbef8c87a74466863053a751f754dc3",
+  "prev": "ee971a0eef8450f92800e334b92cfa2551e82198",
+  "head": "0505047d9014ca3ffb6fc39899a36d3cc8076371",
   "applied": [
     "depr",
     "xtalk",
@@ -17,8 +17,7 @@
     "ICaloCreateMap",
     "ITopoClusterInputTool",
     "ITowerTools",
-    "geoConst2",
-    "refresh-temp"
+    "geoConst2"
   ],
   "unapplied": [
     "hcal-seg",
@@ -126,7 +125,7 @@
       "oid": "ced9da27da6dec5981818f03b56297efedfe6329"
     },
     "geoConst2": {
-      "oid": "b45070cec7e590800c21b46ad8bfa8c18f816662"
+      "oid": "0505047d9014ca3ffb6fc39899a36d3cc8076371"
     },
     "hcal-seg": {
       "oid": "a502d8df4551c557315b3fc0e6651720ce99b026"
@@ -163,9 +162,6 @@
     },
     "noiseIndex": {
       "oid": "b7f91ab39e009899804d4e49725014ac1ffe4195"
-    },
-    "refresh-temp": {
-      "oid": "8482f4bb7bbef8c87a74466863053a751f754dc3"
     },
     "repnoise": {
       "oid": "3e6d555bfd8dc25fbec79157421317086d68c46c"
