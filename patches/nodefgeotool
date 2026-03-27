@@ -1,6 +1,0 @@
-Bottom: 3181935c0214541120df73d19e83d484cfb6b4c6
-Top:    4b6b59c5417bf00f5d549219cf1ab5b6551f45e3
-Author: scott snyder <snyder@bnl.gov>
-Date:   2026-02-21 22:58:20 -0500
-
-Don't have a default for the geo tool.
