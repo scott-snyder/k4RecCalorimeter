@@ -12,7 +12,7 @@
 
 
 #include "RecCaloCommon/ICaloCellConstantsSvc.h"
-#include "k4Interface/ICaloIndexer.h"
+#include "RecCaloCommon/ICaloIndexer.h"
 #include <vector>
 #include <stdexcept>
 
