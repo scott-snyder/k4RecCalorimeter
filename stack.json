@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "32c7c22176c8243faa8210079fe018de8a37b990",
+  "prev": "e1f6a5dfc506f959ca7af169e8082f0dc62183d0",
   "head": "a69c0e969d606d2b0aa0acfe1388752c941be584",
   "applied": [
     "k4geo-noclone",
@@ -26,8 +26,6 @@
     "subdetVolman",
     "idmapIndexer",
     "multiIndexer",
-    "xtalkSpan3",
-    "xtalkSpan5",
     "caloCellIndexerSvc",
     "cellsInConst",
     "ecalbarrelIndexer",
@@ -109,12 +107,6 @@
     },
     "multiIndexer": {
       "oid": "15ca9c44a93609e048addf658c1f8219510b986c"
-    },
-    "xtalkSpan3": {
-      "oid": "ee2f4ee4bb7f3a498c49cdcfa07feaad395678fe"
-    },
-    "xtalkSpan5": {
-      "oid": "5170fcf5a6529497c301f3f3868518d082fbb139"
     },
     "caloCellIndexerSvc": {
       "oid": "7ac427baae6caa539db316c3042e6dc43da71523"
