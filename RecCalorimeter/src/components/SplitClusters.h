@@ -7,7 +7,6 @@
 // Interfaces
 #include "k4Interface/ICaloReadNeighboursMap.h"
 #include "RecCaloCommon/ICellPositionsTool.h"
-#include "k4Interface/INoiseConstTool.h"
 
 // DD4hep
 #include "DDSegmentation/Segmentation.h"
