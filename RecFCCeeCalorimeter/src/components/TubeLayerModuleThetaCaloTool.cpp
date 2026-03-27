@@ -81,7 +81,8 @@ StatusCode TubeLayerModuleThetaCaloTool::collectCells(std::vector<CellID>& cells
 
 /** Return a new indexer object for this subdetector.
  */
-std::unique_ptr<ICaloIndexer> TubeLayerModuleThetaCaloTool::indexer() const
+std::unique_ptr<k4::recCalo::ICaloIndexer>
+TubeLayerModuleThetaCaloTool::indexer() const
 {
   using Indexer_t = k4::recCalo::IDMapIndexer<3>;
   dd4hep::IDDescriptor idSpec = readout().idSpec();
