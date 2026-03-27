@@ -1,13 +1,14 @@
 {
   "version": 5,
-  "prev": "53fba7992ee6e84e345b8d609511b76270602ec4",
-  "head": "1ceb7bad7deb621a6d7ffc0b3e026b296d111396",
+  "prev": "04beebb86032849e6d4d481a77886aa92a02c8f1",
+  "head": "f79e50f75f7844453f70c807d713d904416b4284",
   "applied": [
     "k4geo-noclone",
     "nodefgeotool",
     "ICellPositionsTool",
     "ICalorimeterTool",
-    "INoiseTools"
+    "INoiseTools",
+    "ICalibrateCaloHitsTool"
   ],
   "unapplied": [
     "subdetVolman2",
@@ -55,6 +56,9 @@
     },
     "INoiseTools": {
       "oid": "1ceb7bad7deb621a6d7ffc0b3e026b296d111396"
+    },
+    "ICalibrateCaloHitsTool": {
+      "oid": "f79e50f75f7844453f70c807d713d904416b4284"
     },
     "subdetVolman2": {
       "oid": "3a4162e41f0500cb608eff834f8c9c0d2a67c5d1"
