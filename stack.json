@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "485a07f41db39468053153cbfa47abfacc63824c",
-  "head": "be13c32746ac6088c4266c36ddf456a2667ba572",
+  "prev": "a33576036c454f980d000ad8fb35aeefff2a762f",
+  "head": "f155ba49928a719caacc132f593117cb32205adc",
   "applied": [
     "depr",
     "xtalk",
@@ -10,8 +10,7 @@
     "hcal-seg-row",
     "nodefgeotool",
     "k4geo-noclone",
-    "ICellPositionsTool",
-    "refresh-temp"
+    "ICellPositionsTool"
   ],
   "unapplied": [
     "dump-wip",
@@ -48,7 +47,7 @@
   ],
   "patches": {
     "ICellPositionsTool": {
-      "oid": "de8024057b0cfa6a1398568c2c42f1cf61fb298f"
+      "oid": "f155ba49928a719caacc132f593117cb32205adc"
     },
     "caloCellIndexerSvc": {
       "oid": "a74865fd5b3eb092a3a171886c84a7b9403c84e4"
@@ -127,9 +126,6 @@
     },
     "noiseIndex": {
       "oid": "b7f91ab39e009899804d4e49725014ac1ffe4195"
-    },
-    "refresh-temp": {
-      "oid": "be13c32746ac6088c4266c36ddf456a2667ba572"
     },
     "repnoise": {
       "oid": "3e6d555bfd8dc25fbec79157421317086d68c46c"
