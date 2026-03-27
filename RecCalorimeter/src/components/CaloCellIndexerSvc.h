@@ -13,7 +13,7 @@
 
 #include "RecCaloCommon/ICaloCellConstantsSvc.h"
 #include "RecCaloCommon/ICaloCellIndexerSvc.h"
-#include "k4Interface/ICalorimeterTool.h"
+#include "RecCaloCommon/ICalorimeterTool.h"
 #include "GaudiKernel/Service.h"
 #include "GaudiKernel/ToolHandle.h"
 #include "GaudiKernel/ServiceHandle.h"

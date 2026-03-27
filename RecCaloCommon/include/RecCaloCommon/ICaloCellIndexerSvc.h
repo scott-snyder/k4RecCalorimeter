@@ -11,7 +11,7 @@
 #define RECCALOCOMMON_ICALOCELLINDEXERSVC_H
 
 
-#include "k4Interface/ICaloIndexer.h"
+#include "RecCaloCommon/ICaloIndexer.h"
 #include "GaudiKernel/IInterface.h"
 #include <span>
 
