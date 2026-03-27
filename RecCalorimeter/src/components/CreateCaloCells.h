@@ -6,7 +6,7 @@
 #include "k4FWCore/MetaDataHandle.h"
 
 // Interfaces
-#include "k4Interface/ICalibrateCaloHitsTool.h"
+#include "RecCaloCommon/ICalibrateCaloHitsTool.h"
 #include "k4Interface/ICaloReadCrosstalkMap.h"
 #include "RecCaloCommon/ICalorimeterTool.h"
 #include "RecCaloCommon/INoiseCaloCellsTool.h"
@@ -69,7 +69,7 @@ private:
   /// Handle for the calorimeter cells crosstalk tool
   mutable ToolHandle<ICaloReadCrosstalkMap> m_crosstalksTool{"ReadCaloCrosstalkMap", this};
   /// Handle for tool to calibrate Geant4 energy to EM scale tool
-  mutable ToolHandle<ICalibrateCaloHitsTool> m_calibTool{"CalibrateCaloHitsTool", this};
+  mutable ToolHandle<k4::recCalo::ICalibrateCaloHitsTool> m_calibTool{"CalibrateCaloHitsTool", this};
   /// Handle for the calorimeter cells noise tool
   mutable ToolHandle<k4::recCalo::INoiseCaloCellsTool> m_noiseTool{"NoiseCaloCellsFlatTool", this};
   /// Handle for the geometry tool
