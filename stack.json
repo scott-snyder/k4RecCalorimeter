@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "898ad32dd5a489b2170948a9929b5dfdb17968d7",
-  "head": "22526bfc43b628cb5c39793f04af63aef2cc36c2",
+  "prev": "c8ce0f8be1249591fe5ad822200bcbd0748cefe2",
+  "head": "e9807f0fa2f833a720437dc49c2e560e11603eea",
   "applied": [
     "depr",
     "xtalk",
@@ -33,8 +33,7 @@
     "cellposIndex",
     "indexingConfig",
     "xtalkIndex",
-    "topoNoiseIndex",
-    "refresh-temp"
+    "topoNoiseIndex"
   ],
   "unapplied": [
     "k4geo-noclone",
@@ -155,9 +154,6 @@
     "noiseIndex": {
       "oid": "b7f91ab39e009899804d4e49725014ac1ffe4195"
     },
-    "refresh-temp": {
-      "oid": "22526bfc43b628cb5c39793f04af63aef2cc36c2"
-    },
     "repnoise": {
       "oid": "3e6d555bfd8dc25fbec79157421317086d68c46c"
     },
@@ -174,7 +170,7 @@
       "oid": "34b19c40a323cb190831399de9e73042b62f8597"
     },
     "topoNoiseIndex": {
-      "oid": "e0ea105be54a4f0218f9206e0954ba46f07d7abf"
+      "oid": "e9807f0fa2f833a720437dc49c2e560e11603eea"
     },
     "xtalk": {
       "oid": "e1805dde17640c1eec6ab7e02b38b2412d1ff09a"
