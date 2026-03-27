@@ -5,7 +5,6 @@
 
 // k4FWCore
 #include "k4FWCore/DataHandle.h"
-#include "k4FWCore/MetaDataHandle.h"
 
 // Interfaces
 #include "k4Interface/ICalibrateCaloHitsTool.h"
