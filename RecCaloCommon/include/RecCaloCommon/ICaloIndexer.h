@@ -43,6 +43,8 @@ namespace k4::recCalo {
  */
 class ICaloIndexer {
 public:
+  using CellID = dd4hep::DDSegmentation::CellID;
+
   /// Index type.
   using index_t = uint32_t;
   static constexpr index_t INVALID = static_cast<index_t>(-1);

@@ -19,7 +19,7 @@
 #ifndef RECCALOCOMMON_ICALORIMETERTOOL_H
 #define RECCALOCOMMON_ICALORIMETERTOOL_H
 
-#include "k4Interface/ICaloIndexer.h"
+#include "RecCaloCommon/ICaloIndexer.h"
 
 #include "DDSegmentation/BitFieldCoder.h" // CellID
 
@@ -55,7 +55,7 @@ public:
    *
    * Returns a null pointer if indexing is not implemented.
    */
-  virtual std::unique_ptr<ICaloIndexer> indexer() const { return nullptr; }
+  virtual std::unique_ptr<k4::recCalo::ICaloIndexer> indexer() const { return nullptr; }
 };
 
 
