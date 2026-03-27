@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "c2a7f7aae02b88d40138dc76d81f341c47f23d22",
-  "head": "a69c0e969d606d2b0aa0acfe1388752c941be584",
+  "prev": "989ef47a8d343ffb24bee8cb6f434d98dfa59e65",
+  "head": "f3230130d5b0bb64103e3a1c1167a8100d12b5e8",
   "applied": [
     "k4geo-noclone",
     "nodefgeotool",
@@ -17,7 +17,8 @@
     "hcal-seg",
     "hcal-seg-row",
     "caloToolInfo",
-    "xtalkSpan"
+    "xtalkSpan",
+    "cellsInConst"
   ],
   "unapplied": [
     "subdetVolman2",
@@ -88,6 +89,9 @@
     },
     "xtalkSpan": {
       "oid": "a69c0e969d606d2b0aa0acfe1388752c941be584"
+    },
+    "cellsInConst": {
+      "oid": "f3230130d5b0bb64103e3a1c1167a8100d12b5e8"
     },
     "subdetVolman2": {
       "oid": "3a4162e41f0500cb608eff834f8c9c0d2a67c5d1"
