@@ -1,6 +1,6 @@
-Bottom: 1c1d0fbcbf0b3eb45fdfc796231f2403c231ad44
-Top:    81aac7da60db21b2c248f73fb84e0c6b329fc87e
+Bottom: 3f7a7c6719facb4154932453b067c247080f5bd3
+Top:    652e9661a98f2ae36ea3517c6f5dc4cb9250ae3f
 Author: sss <sss@karma>
-Date:   2026-03-27 14:26:40 -0400
+Date:   2026-03-27 15:24:08 -0400
 
 Move ICaloReadNeighboursMap here from k4FWCore.

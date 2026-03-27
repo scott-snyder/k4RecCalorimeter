@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "c3ad134338d4c6de80dc121621b06e66756b0a03",
-  "head": "2890eeed92693fc82ba92198a6dd69d1b883e453",
+  "prev": "56e63fcea3b0a58ca06e68a9b4f1b105c3fd1092",
+  "head": "f1c8781a5a3da0ce2d1deba8f6081accd0842fdf",
   "applied": [
     "depr",
     "xtalk",
@@ -18,8 +18,7 @@
     "ITopoClusterInputTool",
     "ITowerTools",
     "geoConst2",
-    "caloToolInfo3",
-    "refresh-temp"
+    "caloToolInfo3"
   ],
   "unapplied": [
     "hcal-seg",
@@ -57,40 +56,40 @@
   ],
   "patches": {
     "ICalibrateCaloHitsTool": {
-      "oid": "fbf8a52f094e9f5200c6620c60848d51afa6a11c"
+      "oid": "3957593addaa8e21a526dd3fe2bcb8d57dfc5836"
     },
     "ICaloCreateMap": {
-      "oid": "1723e273e34ad34f05a8ea05f16798b5cd0b6488"
+      "oid": "4d76e9db26ecc87371adc03845e9d1c2eeb4ed44"
     },
     "ICaloIndexer": {
-      "oid": "75fe35b4ef10ad618bc71b10f178fbbf8ad8555d"
+      "oid": "668cebc0b4280f5918fc83fcf5143650a4d94316"
     },
     "ICaloReadCrosstalkMap": {
-      "oid": "86f62c165de9363bba5c2d95beaa3a9cc41459df"
+      "oid": "a8356c50df6c06423e0cb9ef67f8dac171cbe379"
     },
     "ICaloReadNeighboursMap": {
-      "oid": "f95d88552d723a63565c3f7dbc78d784e80aa35a"
+      "oid": "193646a69d848ac3544269b95f96b21aaade25b2"
     },
     "ICalorimeterTool": {
-      "oid": "5f3947f29a932a6aa57439a4deaf3276e5a325c6"
+      "oid": "003f655369fa6a743fe3ef1ee16cef6b6757ac80"
     },
     "ICellPositionsTool": {
       "oid": "7a93065ee01811884de7b2d4aefc2e888cdd9a8e"
     },
     "INoiseTools": {
-      "oid": "03de1d81965940d1ebd021cbe0b4dbc65a586e08"
+      "oid": "0d33d46c8a23c20a2af1609ecab29965564482d4"
     },
     "ITopoClusterInputTool": {
-      "oid": "a24ac9b6dfcdb5ec74919ce2630fba73e8b453d1"
+      "oid": "0dcce6c65ff74b1dddc46f5d69cacb5c073d1c64"
     },
     "ITowerTools": {
-      "oid": "6aa1f4a3fabcdfa15fcd18d531fc318d85956179"
+      "oid": "ff640dff84fa300c460b32ea9cdbb27406e3bfbb"
     },
     "caloCellIndexerSvc": {
       "oid": "a74865fd5b3eb092a3a171886c84a7b9403c84e4"
     },
     "caloToolInfo3": {
-      "oid": "c04fa561fc1401a4a30027361c4665f91d6e3aa0"
+      "oid": "f1c8781a5a3da0ce2d1deba8f6081accd0842fdf"
     },
     "cellposIndex": {
       "oid": "9a10d2212bd7bfa4a407c4cdc910ad9aecc55525"
@@ -126,7 +125,7 @@
       "oid": "ced9da27da6dec5981818f03b56297efedfe6329"
     },
     "geoConst2": {
-      "oid": "0505047d9014ca3ffb6fc39899a36d3cc8076371"
+      "oid": "13a5201191225f6b0a0a5b16cc640dc82e4937c6"
     },
     "hcal-seg": {
       "oid": "a502d8df4551c557315b3fc0e6651720ce99b026"
@@ -163,9 +162,6 @@
     },
     "noiseIndex": {
       "oid": "b7f91ab39e009899804d4e49725014ac1ffe4195"
-    },
-    "refresh-temp": {
-      "oid": "2890eeed92693fc82ba92198a6dd69d1b883e453"
     },
     "repnoise": {
       "oid": "3e6d555bfd8dc25fbec79157421317086d68c46c"
