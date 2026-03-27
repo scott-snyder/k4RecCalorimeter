@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "80db00127f1e5742c02ba9d5b12e8ef209f6c40a",
-  "head": "c512e62cbaae64ce66197b21da5efcdccc987cd6",
+  "prev": "8c81df39bffcc86de8de0824c98ec9e752616d85",
+  "head": "9911c372c24e85d71bb44642005369bc66803fb9",
   "applied": [
     "depr",
     "xtalk",
@@ -9,7 +9,8 @@
     "nodefgeotool",
     "ICellPositionsTool",
     "ICalorimeterTool",
-    "INoiseTools"
+    "INoiseTools",
+    "refresh-temp"
   ],
   "unapplied": [
     "hcal-seg",
@@ -134,6 +135,9 @@
     },
     "noiseIndex": {
       "oid": "b7f91ab39e009899804d4e49725014ac1ffe4195"
+    },
+    "refresh-temp": {
+      "oid": "9911c372c24e85d71bb44642005369bc66803fb9"
     },
     "repnoise": {
       "oid": "3e6d555bfd8dc25fbec79157421317086d68c46c"
