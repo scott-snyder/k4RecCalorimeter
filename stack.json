@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "1c866715817d3e9f9a91e210f35f978336f74098",
-  "head": "f91d99377ce3c89d046a1a6ecc86d6b938a02244",
+  "prev": "d7aff133fb2250daac297fd1884e42630533ea60",
+  "head": "3e15b25573df2a7e091bdc003adaf354db9e0ff2",
   "applied": [
     "k4geo-noclone",
     "nodefgeotool",
@@ -29,7 +29,8 @@
     "caloCellIndexerSvc",
     "cellposIndex",
     "indexingConfig",
-    "xtalkIndex"
+    "xtalkIndex",
+    "topoNoiseIndex"
   ],
   "unapplied": [
     "subdetVolman2",
@@ -124,6 +125,9 @@
     },
     "xtalkIndex": {
       "oid": "f91d99377ce3c89d046a1a6ecc86d6b938a02244"
+    },
+    "topoNoiseIndex": {
+      "oid": "3e15b25573df2a7e091bdc003adaf354db9e0ff2"
     },
     "subdetVolman2": {
       "oid": "3a4162e41f0500cb608eff834f8c9c0d2a67c5d1"
