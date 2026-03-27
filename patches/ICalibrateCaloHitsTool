@@ -1,0 +1,6 @@
+Bottom: af26ea5b436a39bdaa924c69dbcf564c51b8e5ca
+Top:    af26ea5b436a39bdaa924c69dbcf564c51b8e5ca
+Author: sss <sss@karma>
+Date:   2026-03-27 12:59:09 -0400
+
+Move ICalibrateCaloHitsTool here from k4FWCore.

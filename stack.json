@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "1131e43f50faf8f0f4b7b1e66ea4b636e8870a03",
-  "head": "03de1d81965940d1ebd021cbe0b4dbc65a586e08",
+  "prev": "df7f7adefae9bcc033ebf3af7a93c91d77bc1af7",
+  "head": "63d064a403548bc35866ba7d034bb64d34107275",
   "applied": [
     "depr",
     "xtalk",
@@ -9,7 +9,8 @@
     "nodefgeotool",
     "ICellPositionsTool",
     "ICalorimeterTool",
-    "INoiseTools"
+    "INoiseTools",
+    "ICalibrateCaloHitsTool"
   ],
   "unapplied": [
     "hcal-seg",
@@ -48,6 +49,9 @@
     "ci"
   ],
   "patches": {
+    "ICalibrateCaloHitsTool": {
+      "oid": "63d064a403548bc35866ba7d034bb64d34107275"
+    },
     "ICalorimeterTool": {
       "oid": "5f3947f29a932a6aa57439a4deaf3276e5a325c6"
     },
