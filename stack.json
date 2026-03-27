@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "7bcc2c047a50afb2b8885917daf11ac483e7ed20",
-  "head": "f7bd9e3203b23e7d0147b499e169284b9ce13c9c",
+  "prev": "24016b7381b743c0237f2f219d73bef640ff104b",
+  "head": "a2379ee2b0a1bdd80cd37c0850b7edee4945f8e9",
   "applied": [
     "depr",
     "xtalk",
@@ -27,7 +27,8 @@
     "multiIndexer",
     "hcal-tool",
     "ecalbarrelIndexer",
-    "hcalIndexer"
+    "hcalIndexer",
+    "refresh-temp"
   ],
   "unapplied": [
     "k4geo-noclone",
@@ -153,6 +154,9 @@
     },
     "noiseIndex": {
       "oid": "b7f91ab39e009899804d4e49725014ac1ffe4195"
+    },
+    "refresh-temp": {
+      "oid": "a2379ee2b0a1bdd80cd37c0850b7edee4945f8e9"
     },
     "repnoise": {
       "oid": "3e6d555bfd8dc25fbec79157421317086d68c46c"
