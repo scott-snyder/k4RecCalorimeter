@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "09dec6d72fb121ee3ab7d47fa42d44952d113b29",
-  "head": "63610bd61bebed83274d45312a04a2c1adccd3cf",
+  "prev": "63a6090d08377e34086323464c225f3c140b2b99",
+  "head": "0c0498587700a40644ef61e8ef6dc4a2c06626ca",
   "applied": [
     "depr",
     "xtalk",
@@ -18,9 +18,7 @@
     "ITopoClusterInputTool",
     "ITowerTools",
     "caloToolInfo",
-    "xtalkSpan3",
-    "xtalkSpan5",
-    "xtalkSpan6"
+    "xtalkSpan"
   ],
   "unapplied": [
     "hcal-seg",
@@ -184,14 +182,8 @@
     "xtalkIndex": {
       "oid": "5fef6da748d200a720f0bb3cb2e0707bf94787bf"
     },
-    "xtalkSpan3": {
-      "oid": "d855c5f6aebe0b1a20198000ff5446524846c3dd"
-    },
-    "xtalkSpan5": {
-      "oid": "6d1183933f408dd33d052638197ef036ed8f4035"
-    },
-    "xtalkSpan6": {
-      "oid": "63610bd61bebed83274d45312a04a2c1adccd3cf"
+    "xtalkSpan": {
+      "oid": "0c0498587700a40644ef61e8ef6dc4a2c06626ca"
     }
   }
 }
