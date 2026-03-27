@@ -5,7 +5,7 @@
 #include "k4FWCore/DataHandle.h"
 
 // Interfaces
-#include "k4Interface/ICalibrateCaloHitsTool.h"
+#include "RecCaloCommon/ICalibrateCaloHitsTool.h"
 #include "RecCaloCommon/ICalorimeterTool.h"
 #include "RecCaloCommon/INoiseCaloCellsTool.h"
 
@@ -61,7 +61,7 @@ public:
 
 private:
   /// Handle for tool to calibrate Geant4 energy to EM scale tool
-  mutable ToolHandle<ICalibrateCaloHitsTool> m_calibTool{"CalibrateCaloHitsTool", this};
+  mutable ToolHandle<k4::recCalo::ICalibrateCaloHitsTool> m_calibTool{"CalibrateCaloHitsTool", this};
   /// Handle for the calorimeter cells noise tool
   mutable ToolHandle<k4::recCalo::INoiseCaloCellsTool> m_noiseTool{"NoiseCaloCellsFlatTool", this};
   /// Handle for the geometry tool
