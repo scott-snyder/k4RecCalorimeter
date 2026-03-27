@@ -15,7 +15,7 @@
 
 // Key4HEP
 #include "k4FWCore/DataHandle.h"
-#include "k4Interface/ICaloReadNeighboursMap.h"
+#include "RecCaloCommon/ICaloReadNeighboursMap.h"
 #include "k4Interface/IGeoSvc.h"
 #include "RecCaloCommon/INoiseConstTool.h"
 
@@ -120,7 +120,7 @@ private:
   /// Handle for the cells noise tool
   mutable ToolHandle<k4::recCalo::INoiseConstTool> m_noiseTool{"TopoCaloNoisyCells", this};
   /// Handle for neighbours tool
-  mutable ToolHandle<ICaloReadNeighboursMap> m_neighboursTool{"TopoCaloNeighbours", this};
+  mutable ToolHandle<k4::recCalo::ICaloReadNeighboursMap> m_neighboursTool{"TopoCaloNeighbours", this};
   // flag to use a pre-calculated neighbor map
   Gaudi::Property<bool> m_useNeighborMap{this, "useNeighborMap", true, "use pre-calculated neighbor map"};
   // use GeoSvc when the neighbor map is not present
