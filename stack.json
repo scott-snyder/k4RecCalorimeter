@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "cc8f0ed841fb3af543f2d324a7f7ea6646cbf1f5",
-  "head": "6a78494ed607db6cef164f407e39970dee0e1983",
+  "prev": "539a9f8aeb7e2e12b9aefd8e29bd5c2be299e166",
+  "head": "7cb7a75b8bc30413073c25bb0bbbc7a39f171240",
   "applied": [
     "depr",
     "xtalk",
@@ -14,8 +14,7 @@
     "ICaloReadCrosstalkMap",
     "ICaloReadNeighboursMap",
     "ICaloIndexer",
-    "ICaloCreateMap",
-    "refresh-temp"
+    "ICaloCreateMap"
   ],
   "unapplied": [
     "hcal-seg",
@@ -58,7 +57,7 @@
       "oid": "fbf8a52f094e9f5200c6620c60848d51afa6a11c"
     },
     "ICaloCreateMap": {
-      "oid": "63770bc6ce288febb9b7f60f7dfd9ca25ca8f052"
+      "oid": "7cb7a75b8bc30413073c25bb0bbbc7a39f171240"
     },
     "ICaloIndexer": {
       "oid": "647c408ab3210ff199c36d7a28d2f25d88a8f7a6"
@@ -155,9 +154,6 @@
     },
     "noiseIndex": {
       "oid": "b7f91ab39e009899804d4e49725014ac1ffe4195"
-    },
-    "refresh-temp": {
-      "oid": "6a78494ed607db6cef164f407e39970dee0e1983"
     },
     "repnoise": {
       "oid": "3e6d555bfd8dc25fbec79157421317086d68c46c"
