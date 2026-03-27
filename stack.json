@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "5e741674cfe1fc2aa24ef42a27fe8ee961ada0f7",
-  "head": "dcc19cf1963a389bc59a5ae103808a6041bcbb14",
+  "prev": "6ea96517a4e9a2363bec8427dcf146a2032e63a0",
+  "head": "d72baf84ec862cb1a4572a53aa001b124b02588a",
   "applied": [
     "depr",
     "xtalk",
@@ -18,10 +18,10 @@
     "ITopoClusterInputTool",
     "ITowerTools",
     "hcal-seg",
-    "hcal-seg-row"
+    "hcal-seg-row",
+    "caloToolInfo"
   ],
   "unapplied": [
-    "caloToolInfo",
     "xtalkSpan",
     "k4geo-noclone",
     "cellsInConst",
@@ -86,7 +86,7 @@
       "oid": "a74865fd5b3eb092a3a171886c84a7b9403c84e4"
     },
     "caloToolInfo": {
-      "oid": "bd36f52bed08bb7b7090d55c98f67c7aedad842d"
+      "oid": "d72baf84ec862cb1a4572a53aa001b124b02588a"
     },
     "cellposIndex": {
       "oid": "9a10d2212bd7bfa4a407c4cdc910ad9aecc55525"
