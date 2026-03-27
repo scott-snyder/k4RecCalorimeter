@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "a58883f0179564672cabeedd4a89ae3abd167a2a",
-  "head": "802e06908ca11704b062e330736c3225bd3982b5",
+  "prev": "fe44ebff38631f298b9a568aba21176a768871a1",
+  "head": "5144b3190803bbe18c15c906ebb0a6d4d118e3a3",
   "applied": [
     "k4geo-noclone",
     "nodefgeotool",
@@ -11,7 +11,8 @@
     "ICalibrateCaloHitsTool",
     "ICaloReadCrosstalkMap",
     "ICaloReadNeighboursMap",
-    "ICaloIndexer"
+    "ICaloIndexer",
+    "ICaloCreateMap"
   ],
   "unapplied": [
     "subdetVolman2",
@@ -71,6 +72,9 @@
     },
     "ICaloIndexer": {
       "oid": "802e06908ca11704b062e330736c3225bd3982b5"
+    },
+    "ICaloCreateMap": {
+      "oid": "5144b3190803bbe18c15c906ebb0a6d4d118e3a3"
     },
     "subdetVolman2": {
       "oid": "3a4162e41f0500cb608eff834f8c9c0d2a67c5d1"
