@@ -1,13 +1,15 @@
 {
   "version": 5,
-  "prev": "5acd89f9761f60ebacfecea7250f553d5f4f14de",
-  "head": "5fb568b8ac9728f27a3a2e42bd5760ecb596544a",
+  "prev": "3a609a6ba5e4124388d32fd5541ef4ab6707f57c",
+  "head": "1de8899744c356977dabc84d0450ba2e85b00d53",
   "applied": [
     "depr",
     "xtalk",
     "timeout",
     "hcal-seg",
-    "hcal-seg-row",
+    "hcal-seg-row"
+  ],
+  "unapplied": [
     "dump-wip",
     "nodefgeotool",
     "k4geo-noclone",
@@ -39,7 +41,6 @@
     "check-deprecated",
     "check-remove"
   ],
-  "unapplied": [],
   "hidden": [
     "ci"
   ],
