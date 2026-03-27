@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "a209329f57c1ee998fe8299dec7e59f2e6e98e44",
+  "prev": "8b0711a6852690975c9a903911ab442b36dba76b",
   "head": "b3ede707b902f48a71bf21ff82b9f91ffb66ec34",
   "applied": [
     "k4geo-noclone",
@@ -41,9 +41,7 @@
     "discrit-wip",
     "discrit2-wip",
     "diag-wip",
-    "cellids-wip",
-    "hcal-seg",
-    "hcal-seg-row"
+    "cellids-wip"
   ],
   "hidden": [],
   "patches": {
@@ -157,12 +155,6 @@
     },
     "cellids-wip": {
       "oid": "a822375961b49c767d0a3012152f18e811923da0"
-    },
-    "hcal-seg": {
-      "oid": "99c15a30e63048b6338e1abd88ef17de09ebc0fe"
-    },
-    "hcal-seg-row": {
-      "oid": "23aee14d22fb440e6a49318a5da1fa03320fb0d2"
     }
   }
 }
