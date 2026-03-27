@@ -1,18 +1,18 @@
 {
   "version": 5,
-  "prev": "3a609a6ba5e4124388d32fd5541ef4ab6707f57c",
-  "head": "1de8899744c356977dabc84d0450ba2e85b00d53",
+  "prev": "df528126c72014b36818aa607a07fd43435cdfbb",
+  "head": "82187fbc907ff644a57d4fe4777d913180fd3e68",
   "applied": [
     "depr",
     "xtalk",
     "timeout",
     "hcal-seg",
-    "hcal-seg-row"
+    "hcal-seg-row",
+    "nodefgeotool",
+    "k4geo-noclone"
   ],
   "unapplied": [
     "dump-wip",
-    "nodefgeotool",
-    "k4geo-noclone",
     "cellsInConst",
     "idmap",
     "idmapIndexer",
@@ -109,7 +109,7 @@
       "oid": "56a41e131a17aaf484c699833544829f6ae16031"
     },
     "k4geo-noclone": {
-      "oid": "a81851db1edfde6cb20de6639fd0340a34bc08ae"
+      "oid": "82187fbc907ff644a57d4fe4777d913180fd3e68"
     },
     "move-check": {
       "oid": "14f671297c873695c767f7dbe05c504a1a514a45"
@@ -118,7 +118,7 @@
       "oid": "00c13a3bdc53115cac2358ef5eca32250fb7c95b"
     },
     "nodefgeotool": {
-      "oid": "18997cfe954f840c4d412aaca042ccb77a22fff0"
+      "oid": "3d74e64535d11cf48625972cac06e4e02c97d519"
     },
     "noiseIndex": {
       "oid": "b7f91ab39e009899804d4e49725014ac1ffe4195"
