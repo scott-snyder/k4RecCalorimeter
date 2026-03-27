@@ -26,7 +26,7 @@ namespace k4::recCalo {
  * based on @c IDMap with a fixed number of fields.
  */
 template <unsigned NFIELDS>
-class IDMapIndexer : public k4::recCalo::ICaloIndexer
+class IDMapIndexer : public ICaloIndexer
 {
 public:
   /// Type of an index.
