@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "59f90f0596bb56c03c2c80d95d74ac328fda770e",
-  "head": "6feb424a659baff3f08065869921e0c1c4812bc5",
+  "prev": "3a1a8fa274d491970cd9feadd157f6d08de28836",
+  "head": "2844d3ffa9fca8905f6f3e2ba871bbd03d23fffe",
   "applied": [
     "depr",
     "xtalk",
@@ -32,8 +32,7 @@
     "caloCellIndexerSvc",
     "cellposIndex",
     "indexingConfig",
-    "xtalkIndex",
-    "refresh-temp"
+    "xtalkIndex"
   ],
   "unapplied": [
     "k4geo-noclone",
@@ -155,9 +154,6 @@
     "noiseIndex": {
       "oid": "b7f91ab39e009899804d4e49725014ac1ffe4195"
     },
-    "refresh-temp": {
-      "oid": "6feb424a659baff3f08065869921e0c1c4812bc5"
-    },
     "repnoise": {
       "oid": "3e6d555bfd8dc25fbec79157421317086d68c46c"
     },
@@ -180,7 +176,7 @@
       "oid": "e1805dde17640c1eec6ab7e02b38b2412d1ff09a"
     },
     "xtalkIndex": {
-      "oid": "89c9f8761628e38e814f6f1a8351fe116126dbe6"
+      "oid": "2844d3ffa9fca8905f6f3e2ba871bbd03d23fffe"
     },
     "xtalkSpan": {
       "oid": "dfa8559ab9a47b1d7ab92d2e978069560fa7310a"
