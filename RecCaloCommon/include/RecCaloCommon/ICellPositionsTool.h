@@ -24,7 +24,7 @@
 
 // DD4hep
 #include "DD4hep/Detector.h"
-#include "DDSegmentation/BitFieldCoder.h"
+#include "DDSegmentation/BitFieldCoder.h" // CellID
 
 namespace edm4hep {
 class CalorimeterHit;
