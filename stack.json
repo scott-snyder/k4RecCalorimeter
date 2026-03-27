@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "520ff38995a3ee11aeb596c6b157fbbbf1dfdca9",
-  "head": "dd4594355cb0c11d478a7bc7b4e83a561b37439b",
+  "prev": "ff126639dd6ffa203633b5a54f9845d30d24c597",
+  "head": "0dbcc1cac85640c90d4d95547bde30f9a01e293a",
   "applied": [
     "depr",
     "xtalk",
@@ -21,7 +21,8 @@
     "hcal-seg-row",
     "caloToolInfo",
     "xtalkSpan",
-    "cellsInConst"
+    "cellsInConst",
+    "refresh-temp"
   ],
   "unapplied": [
     "k4geo-noclone",
@@ -153,6 +154,9 @@
     },
     "noiseIndex": {
       "oid": "b7f91ab39e009899804d4e49725014ac1ffe4195"
+    },
+    "refresh-temp": {
+      "oid": "0dbcc1cac85640c90d4d95547bde30f9a01e293a"
     },
     "repnoise": {
       "oid": "3e6d555bfd8dc25fbec79157421317086d68c46c"
