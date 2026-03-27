@@ -140,7 +140,7 @@ void CellPositionsHCalPhiThetaSegTool::getPositions(const edm4hep::CalorimeterHi
   debug() << "Output positions collection size: " << outputColl.size() << endmsg;
 }
 
-dd4hep::Position CellPositionsHCalPhiThetaSegTool::xyzPosition(const uint64_t& aCellId) const {
+dd4hep::Position CellPositionsHCalPhiThetaSegTool::xyzPosition(const CellID aCellId) const {
 
   if (m_segmentationType == "FCCSWHCalPhiTheta_k4geo" ||
       m_segmentationType == "FCCSWHCalPhiRow_k4geo")
@@ -175,10 +175,8 @@ dd4hep::Position CellPositionsHCalPhiThetaSegTool::xyzPosition(const uint64_t& a
   return outSeg;
 }
 
-int CellPositionsHCalPhiThetaSegTool::layerId(const uint64_t& aCellId) const {
-  int layer;
-  layer = m_decoder->get(aCellId, "layer");
-  return layer;
+int CellPositionsHCalPhiThetaSegTool::layerId(const CellID aCellId) const {
+  return m_decoder->get(aCellId, "layer");
 }
 
 // calculate layer radii from LayeredCalorimeterData extension
