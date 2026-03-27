@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "3bfcd78ca9505bf281487089ce7f8ab65e84663d",
-  "head": "acc2a82404173c0681cded50f963582b6f69ab34",
+  "prev": "1c313fe5487b12d6fc9e2b64abb45e9dedce8898",
+  "head": "2cb19aa9dcac9844f4407bb62e240141f4555070",
   "applied": [
     "depr",
     "xtalk",
@@ -17,8 +17,7 @@
     "ICaloCreateMap",
     "ITopoClusterInputTool",
     "ITowerTools",
-    "hcal-seg",
-    "refresh-temp"
+    "hcal-seg"
   ],
   "unapplied": [
     "caloToolInfo",
@@ -124,7 +123,7 @@
       "oid": "ced9da27da6dec5981818f03b56297efedfe6329"
     },
     "hcal-seg": {
-      "oid": "2c0382922323ab9269b68a3971e1353485b9b59f"
+      "oid": "2cb19aa9dcac9844f4407bb62e240141f4555070"
     },
     "hcal-seg-row": {
       "oid": "1de8899744c356977dabc84d0450ba2e85b00d53"
@@ -158,9 +157,6 @@
     },
     "noiseIndex": {
       "oid": "b7f91ab39e009899804d4e49725014ac1ffe4195"
-    },
-    "refresh-temp": {
-      "oid": "acc2a82404173c0681cded50f963582b6f69ab34"
     },
     "repnoise": {
       "oid": "3e6d555bfd8dc25fbec79157421317086d68c46c"
