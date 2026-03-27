@@ -4,7 +4,7 @@
 // Gaudi
 #include "GaudiKernel/Service.h"
 #include "k4Interface/ICaloCreateMap.h"
-#include "k4Interface/INoiseConstTool.h"
+#include "RecCaloCommon/INoiseConstTool.h"
 
 class IGeoSvc;
 
@@ -37,10 +37,10 @@ private:
   SmartIF<IGeoSvc> m_geoSvc;
 
   /// Handle for the cells noise tool in ECal
-  ToolHandle<INoiseConstTool> m_ecalBarrelNoiseTool{"ReadNoiseFromFileTool", this};
+  ToolHandle<k4::recCalo::INoiseConstTool> m_ecalBarrelNoiseTool{"ReadNoiseFromFileTool", this};
   Gaudi::Property<uint> m_ecalBarrelSysId{this, "ecalBarrelSysId", 5};
   /// Handle for the cells noise tool in HCal
-  ToolHandle<INoiseConstTool> m_hcalBarrelNoiseTool{"ReadNoiseFromFileTool", this};
+  ToolHandle<k4::recCalo::INoiseConstTool> m_hcalBarrelNoiseTool{"ReadNoiseFromFileTool", this};
   Gaudi::Property<uint> m_hcalBarrelSysId{this, "hcalBarrelSysId", 8};
 
   /// Names of the detector readout for volumes with eta-phi segmentation
