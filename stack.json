@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "0515949c54e0f100c7d4a45b11aaea45f5233305",
-  "head": "9ecac725b0b481395028eaa682ed1f3633e29cd4",
+  "prev": "114ae6dd914547c746fa91748d1196e8d683539b",
+  "head": "23aee14d22fb440e6a49318a5da1fa03320fb0d2",
   "applied": [
     "k4geo-noclone",
     "subdetVolman2",
@@ -25,9 +25,7 @@
     "topoNoiseIndex",
     "createTopoCluster",
     "noiseIndex",
-    "createCaloCells"
-  ],
-  "unapplied": [
+    "createCaloCells",
     "nodefgeotool",
     "discrit-wip",
     "discrit2-wip",
@@ -36,6 +34,7 @@
     "hcal-seg",
     "hcal-seg-row"
   ],
+  "unapplied": [],
   "hidden": [],
   "patches": {
     "k4geo-noclone": {
@@ -108,25 +107,25 @@
       "oid": "9ecac725b0b481395028eaa682ed1f3633e29cd4"
     },
     "nodefgeotool": {
-      "oid": "6ab296adeccde6684562924a17aa50f9474fe4de"
+      "oid": "6ce6b462670556259b23cbdab5fafee470bc4e7f"
     },
     "discrit-wip": {
-      "oid": "146ffc6ee5ebfca4feef24d71425d10e6dd4f1d4"
+      "oid": "4c46d50ecd5c5488f370066f89eec6c91d60e956"
     },
     "discrit2-wip": {
-      "oid": "293b4ae4320a5ca90567add1b67a83cdefbff234"
+      "oid": "f49a28e866b187eef8a9b7d4df040d3548fa336e"
     },
     "diag-wip": {
-      "oid": "9e2175688e86a97c17850c785e1cca8b200e7d98"
+      "oid": "ae3d88da7294f2515b87d079376f2ec199a84221"
     },
     "cellids-wip": {
-      "oid": "76a4eb67b18978db3c2545b042ce85aa86a2b840"
+      "oid": "a822375961b49c767d0a3012152f18e811923da0"
     },
     "hcal-seg": {
-      "oid": "7918a84139d9b213b80e0ff0aae9e1be3cd7fe75"
+      "oid": "99c15a30e63048b6338e1abd88ef17de09ebc0fe"
     },
     "hcal-seg-row": {
-      "oid": "377ce1b2733ffeb602131199dc52d40c825188d6"
+      "oid": "23aee14d22fb440e6a49318a5da1fa03320fb0d2"
     }
   }
 }
