@@ -12,7 +12,7 @@
 
 
 #include "RecCaloCommon/IDMap.h"
-#include "k4Interface/ICaloIndexer.h"
+#include "RecCaloCommon/ICaloIndexer.h"
 #include <stdexcept>
 
 
@@ -26,7 +26,7 @@ namespace k4::recCalo {
  * based on @c IDMap with a fixed number of fields.
  */
 template <unsigned NFIELDS>
-class IDMapIndexer : public ICaloIndexer
+class IDMapIndexer : public k4::recCalo::ICaloIndexer
 {
 public:
   /// Type of an index.
