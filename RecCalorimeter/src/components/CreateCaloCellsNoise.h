@@ -3,8 +3,10 @@
 
 // k4FWCore
 #include "k4FWCore/DataHandle.h"
+
+// Interfaces
 #include "k4Interface/ICalibrateCaloHitsTool.h"
-#include "k4Interface/ICalorimeterTool.h"
+#include "RecCaloCommon/ICalorimeterTool.h"
 #include "k4Interface/INoiseCaloCellsTool.h"
 
 // Gaudi
@@ -63,7 +65,7 @@ private:
   /// Handle for the calorimeter cells noise tool
   mutable ToolHandle<INoiseCaloCellsTool> m_noiseTool{"NoiseCaloCellsFlatTool", this};
   /// Handle for the geometry tool
-  ToolHandle<ICalorimeterTool> m_geoTool{"TubeLayerPhiEtaCaloTool", this};
+  ToolHandle<k4::recCalo::ICalorimeterTool> m_geoTool{"TubeLayerPhiEtaCaloTool", this};
 
   /// Calibrate to EM scale?
   Gaudi::Property<bool> m_doCellCalibration{this, "doCellCalibration", true, "Calibrate to EM scale?"};
