@@ -16,8 +16,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-#ifndef RECINTERFACE_ICALOREADNEIGHBOURSMAP_H
-#define RECINTERFACE_ICALOREADNEIGHBOURSMAP_H
+#ifndef RECCALOCOMMON_ICALOREADNEIGHBOURSMAP_H
+#define RECCALOCOMMON_ICALOREADNEIGHBOURSMAP_H
 
 #include "DDSegmentation/BitFieldCoder.h" // CellID
 
@@ -48,4 +48,4 @@ public:
 } // namespace k4::recCalo
 
 
-#endif /* RECINTERFACE_ICALOREADNEIGHBOURSMAP_H */
+#endif /* RECCALOCOMMON_ICALOREADNEIGHBOURSMAP_H */
