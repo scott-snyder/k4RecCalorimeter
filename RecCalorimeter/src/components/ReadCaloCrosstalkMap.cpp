@@ -66,34 +66,14 @@ StatusCode ReadCaloCrosstalkMap::initialize() {
 }
 
 auto
-ReadCaloCrosstalkMap::getNeighbours(CellID aCellId) const -> const std::vector<CellID>&
-{
-  auto it = m_mapNeighbours.find(aCellId);
-  if (it != m_mapNeighbours.end()) {
-    return it->second;
-  }
-  static const std::vector<CellID> empty;
-  return empty;
-}
-
-auto
 ReadCaloCrosstalkMap::getNeighboursSpan(CellID aCellId) const -> std::span<const CellID>
+
 {
   auto it = m_mapNeighbours.find(aCellId);
   if (it != m_mapNeighbours.end()) {
     return it->second;
   }
   return std::span<const CellID>();
-}
-
-const std::vector<double>&
-ReadCaloCrosstalkMap::getCrosstalks(CellID aCellId) const {
-  auto it = m_mapCrosstalks.find(aCellId);
-  if (it != m_mapCrosstalks.end()) {
-    return it->second;
-  }
-  static const std::vector<double> empty;
-  return empty;
 }
 
 std::span<const double>
