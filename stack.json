@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "183349e96767da5d37154d4b32594dbb7898d31c",
-  "head": "8c781b00b1a293c2a108cf9252ef286ad4b03b0f",
+  "prev": "825e59862b5d5189dc6038b785dfd33253974ae5",
+  "head": "42e7369a07f79440fe91f7d76589a23efc4df1c5",
   "applied": [
     "depr",
     "xtalk",
@@ -40,11 +40,11 @@
     "subdetVolman2",
     "subdetVolman",
     "sortnoise",
-    "repnoise"
+    "repnoise",
+    "move-check"
   ],
   "unapplied": [
     "k4geo-noclone",
-    "move-check",
     "check-deprecated",
     "check-remove"
   ],
@@ -143,7 +143,7 @@
       "oid": "82187fbc907ff644a57d4fe4777d913180fd3e68"
     },
     "move-check": {
-      "oid": "14f671297c873695c767f7dbe05c504a1a514a45"
+      "oid": "42e7369a07f79440fe91f7d76589a23efc4df1c5"
     },
     "multiIndexer": {
       "oid": "0d659a17ed49b22dbbe574961d7680d4ec730cc2"
