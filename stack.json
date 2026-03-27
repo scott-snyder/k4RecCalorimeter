@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "f5b8e3223e4d6a97c298772fc16e53edb7254b26",
-  "head": "ca35e0eb044c24b451050a913b7c42e098956f50",
+  "prev": "89758d23ef83d14e72bd88eaf11c6a7301c54d37",
+  "head": "0e2531c6c96c3ed3821312dd924e7be850fbb02e",
   "applied": [
     "depr",
     "xtalk",
@@ -29,8 +29,7 @@
     "ecalbarrelIndexer",
     "hcalIndexer",
     "ecalendcapTool",
-    "caloCellIndexerSvc",
-    "refresh-temp"
+    "caloCellIndexerSvc"
   ],
   "unapplied": [
     "k4geo-noclone",
@@ -84,7 +83,7 @@
       "oid": "0be750702d62b4c9818c64ea811e06b7fd38b27f"
     },
     "caloCellIndexerSvc": {
-      "oid": "390f0aa42e1879aa1b7d108d3a491dfde4ceaa5e"
+      "oid": "0e2531c6c96c3ed3821312dd924e7be850fbb02e"
     },
     "caloToolInfo": {
       "oid": "d72baf84ec862cb1a4572a53aa001b124b02588a"
@@ -154,9 +153,6 @@
     },
     "noiseIndex": {
       "oid": "b7f91ab39e009899804d4e49725014ac1ffe4195"
-    },
-    "refresh-temp": {
-      "oid": "ca35e0eb044c24b451050a913b7c42e098956f50"
     },
     "repnoise": {
       "oid": "3e6d555bfd8dc25fbec79157421317086d68c46c"
