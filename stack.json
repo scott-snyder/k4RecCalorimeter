@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "4207fabc8a558c258b9659bb183e827d2e007bfd",
-  "head": "c04fa561fc1401a4a30027361c4665f91d6e3aa0",
+  "prev": "c3ad134338d4c6de80dc121621b06e66756b0a03",
+  "head": "2890eeed92693fc82ba92198a6dd69d1b883e453",
   "applied": [
     "depr",
     "xtalk",
@@ -18,7 +18,8 @@
     "ITopoClusterInputTool",
     "ITowerTools",
     "geoConst2",
-    "caloToolInfo3"
+    "caloToolInfo3",
+    "refresh-temp"
   ],
   "unapplied": [
     "hcal-seg",
@@ -162,6 +163,9 @@
     },
     "noiseIndex": {
       "oid": "b7f91ab39e009899804d4e49725014ac1ffe4195"
+    },
+    "refresh-temp": {
+      "oid": "2890eeed92693fc82ba92198a6dd69d1b883e453"
     },
     "repnoise": {
       "oid": "3e6d555bfd8dc25fbec79157421317086d68c46c"
