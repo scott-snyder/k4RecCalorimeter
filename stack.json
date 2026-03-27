@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "f9c58ba2fe35f7fc05e89eaee1ca710890e578e7",
-  "head": "761cd2cad814141aa0e25e03c7aaf70b977b975e",
+  "prev": "27d442914a049dda2e9585beda42ddef90538721",
+  "head": "bbdc0d07a3fee80eeb97abd459fd40f166d3e857",
   "applied": [
     "k4geo-noclone",
     "nodefgeotool",
@@ -37,10 +37,10 @@
     "subdetVolman2",
     "subdetVolman",
     "discrit-wip",
-    "discrit2-wip"
+    "discrit2-wip",
+    "diag-wip"
   ],
   "unapplied": [
-    "diag-wip",
     "cellids-wip"
   ],
   "hidden": [],
@@ -151,7 +151,7 @@
       "oid": "761cd2cad814141aa0e25e03c7aaf70b977b975e"
     },
     "diag-wip": {
-      "oid": "ae3d88da7294f2515b87d079376f2ec199a84221"
+      "oid": "bbdc0d07a3fee80eeb97abd459fd40f166d3e857"
     },
     "cellids-wip": {
       "oid": "a822375961b49c767d0a3012152f18e811923da0"
