@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "df7f7adefae9bcc033ebf3af7a93c91d77bc1af7",
-  "head": "63d064a403548bc35866ba7d034bb64d34107275",
+  "prev": "ceece5c4f2dbabce9230fcb29324725f61628f72",
+  "head": "c6aaab128a2fb4522ad180aafda0d094773c7f06",
   "applied": [
     "depr",
     "xtalk",
@@ -10,7 +10,8 @@
     "ICellPositionsTool",
     "ICalorimeterTool",
     "INoiseTools",
-    "ICalibrateCaloHitsTool"
+    "ICalibrateCaloHitsTool",
+    "refresh-temp"
   ],
   "unapplied": [
     "hcal-seg",
@@ -138,6 +139,9 @@
     },
     "noiseIndex": {
       "oid": "b7f91ab39e009899804d4e49725014ac1ffe4195"
+    },
+    "refresh-temp": {
+      "oid": "c6aaab128a2fb4522ad180aafda0d094773c7f06"
     },
     "repnoise": {
       "oid": "3e6d555bfd8dc25fbec79157421317086d68c46c"
