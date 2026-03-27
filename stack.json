@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "0b5cf403ba4b3a772b7930275f29eabfc21ee1fa",
-  "head": "763cc138edeae031999a0fabde32d16130ebddee",
+  "prev": "480365d501af83b68ace15ff01fadb1fc16c9de7",
+  "head": "a0dc3fb24e0580019aeace221a1efd4f7f8df399",
   "applied": [
     "depr",
     "xtalk",
@@ -18,7 +18,8 @@
     "ITopoClusterInputTool",
     "ITowerTools",
     "caloToolInfo",
-    "xtalkSpan3"
+    "xtalkSpan3",
+    "xtalkSpan5"
   ],
   "unapplied": [
     "hcal-seg",
@@ -32,7 +33,6 @@
     "hcal-tool",
     "subdetVolman",
     "multiIndexer",
-    "xtalkSpan5",
     "caloCellIndexerSvc",
     "ecalbarrelIndexer",
     "hcalIndexer",
@@ -187,7 +187,7 @@
       "oid": "763cc138edeae031999a0fabde32d16130ebddee"
     },
     "xtalkSpan5": {
-      "oid": "1cd5ba2830ea25d8cfbf95173e65aa36bd0d67a6"
+      "oid": "a0dc3fb24e0580019aeace221a1efd4f7f8df399"
     }
   }
 }
