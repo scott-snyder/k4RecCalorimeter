@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "4c7813c3377f716d0698dc2082126afde937b23f",
-  "head": "8914815951889f2c0b4901417d43df5038f2d176",
+  "prev": "59fa2e38f704692eadba9da4359c307cb48a75c8",
+  "head": "5b247a69c65e4c854f625bb228d1338b462683af",
   "applied": [
     "k4geo-noclone",
     "nodefgeotool",
@@ -22,7 +22,8 @@
     "idmap",
     "idmapIndexer",
     "multiIndexer",
-    "hcal-tool"
+    "hcal-tool",
+    "ecalbarrelIndexer"
   ],
   "unapplied": [
     "subdetVolman2",
@@ -101,6 +102,9 @@
     },
     "hcal-tool": {
       "oid": "8914815951889f2c0b4901417d43df5038f2d176"
+    },
+    "ecalbarrelIndexer": {
+      "oid": "5b247a69c65e4c854f625bb228d1338b462683af"
     },
     "subdetVolman2": {
       "oid": "3a4162e41f0500cb608eff834f8c9c0d2a67c5d1"
