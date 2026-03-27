@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "825e59862b5d5189dc6038b785dfd33253974ae5",
-  "head": "42e7369a07f79440fe91f7d76589a23efc4df1c5",
+  "prev": "2e7b05aaf5a973ca8c76a9a814a1b080f0df2625",
+  "head": "269604d2723d259ecc8baecded2abfb345099c19",
   "applied": [
     "depr",
     "xtalk",
@@ -41,7 +41,8 @@
     "subdetVolman",
     "sortnoise",
     "repnoise",
-    "move-check"
+    "move-check",
+    "refresh-temp"
   ],
   "unapplied": [
     "k4geo-noclone",
@@ -153,6 +154,9 @@
     },
     "noiseIndex": {
       "oid": "279d94d1902831f5b40fa4db03d911a25053f650"
+    },
+    "refresh-temp": {
+      "oid": "269604d2723d259ecc8baecded2abfb345099c19"
     },
     "repnoise": {
       "oid": "8c781b00b1a293c2a108cf9252ef286ad4b03b0f"
