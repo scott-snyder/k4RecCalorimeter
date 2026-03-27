@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "0bdb9f2b3fa7849aea0762899c6ccf4d605da6ab",
-  "head": "02d632c15befc2b2227a41f1b0d83b93fb74c656",
+  "prev": "d8d42087fde8e6fe5cced829799bfe98639f3b13",
+  "head": "5c4992cf11bbdfd5baf5f956c7d21e9a2fe88ba5",
   "applied": [
     "depr",
     "xtalk",
@@ -11,7 +11,8 @@
     "ICalorimeterTool",
     "INoiseTools",
     "ICalibrateCaloHitsTool",
-    "ICaloReadCrosstalkMap"
+    "ICaloReadCrosstalkMap",
+    "refresh-temp"
   ],
   "unapplied": [
     "hcal-seg",
@@ -142,6 +143,9 @@
     },
     "noiseIndex": {
       "oid": "b7f91ab39e009899804d4e49725014ac1ffe4195"
+    },
+    "refresh-temp": {
+      "oid": "5c4992cf11bbdfd5baf5f956c7d21e9a2fe88ba5"
     },
     "repnoise": {
       "oid": "3e6d555bfd8dc25fbec79157421317086d68c46c"
