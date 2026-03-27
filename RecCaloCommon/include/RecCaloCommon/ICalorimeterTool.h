@@ -28,17 +28,16 @@
 
 #include <memory>
 
+
+namespace k4::recCalo {
+
+
 /** @class ICalorimeterTool RecInterface/RecInterface/ICalorimeterTool.h ICalorimeterTool.h
  *
  *  Abstract interface to calorimeter geometry tool
  *
  *  @author Anna Zaborowska
  */
-
-
-namespace k4::recCalo {
-
-
 class ICalorimeterTool : virtual public IAlgTool {
 public:
   using CellID = dd4hep::DDSegmentation::CellID;
