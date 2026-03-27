@@ -31,7 +31,7 @@ public:
 
   /** Return a new indexer object for this subdetector.
    */
-  virtual std::unique_ptr<ICaloIndexer> indexer() const override final;
+  virtual std::unique_ptr<k4::recCalo::ICaloIndexer> indexer() const override final;
 
 
 protected:

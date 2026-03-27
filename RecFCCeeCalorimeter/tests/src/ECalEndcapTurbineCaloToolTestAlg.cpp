@@ -6,7 +6,7 @@
  */
 
 #undef NDEBUG
-#include "k4Interface/ICalorimeterTool.h"
+#include "RecCaloCommon/ICalorimeterTool.h"
 #include "RecCaloCommon/k4RecCalorimeter_check.h"
 #include "GaudiKernel/Algorithm.h"
 #include "GaudiKernel/ToolHandle.h"
@@ -26,7 +26,7 @@ class ECalEndcapTurbineCaloToolTestAlg
   virtual StatusCode execute() override;
 
 private:
-  ToolHandle<ICalorimeterTool> m_tool
+  ToolHandle<k4::recCalo::ICalorimeterTool> m_tool
   { this, "ECalEndcapTurbineTool", "ECalEndcapTurbineCaloTool", "" };
 };
 
