@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "a29a4d2b2cbc8f38e08c1c8f38988ab47b4b36a4",
-  "head": "03a1ac305d3fe4d8666c29e5b348d84cbe8e5442",
+  "prev": "2f8e8d0b10f654fda3b5c336990381ea75b1bf3c",
+  "head": "19897c729695184ae8538c2c3341740f759513a3",
   "applied": [
     "depr",
     "xtalk",
@@ -19,7 +19,8 @@
     "ITowerTools",
     "geoConst2",
     "caloToolInfo3",
-    "caloToolInfo2"
+    "caloToolInfo2",
+    "refresh-temp"
   ],
   "unapplied": [
     "hcal-seg",
@@ -166,6 +167,9 @@
     },
     "noiseIndex": {
       "oid": "b7f91ab39e009899804d4e49725014ac1ffe4195"
+    },
+    "refresh-temp": {
+      "oid": "19897c729695184ae8538c2c3341740f759513a3"
     },
     "repnoise": {
       "oid": "3e6d555bfd8dc25fbec79157421317086d68c46c"
