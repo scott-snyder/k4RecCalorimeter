@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "62afdabb92ecfdd2eafc2e007685f16ccc9d0f1d",
-  "head": "2df0871882f5a332275eff3dd2309ece04dc7735",
+  "prev": "09dec6d72fb121ee3ab7d47fa42d44952d113b29",
+  "head": "63610bd61bebed83274d45312a04a2c1adccd3cf",
   "applied": [
     "depr",
     "xtalk",
@@ -20,8 +20,7 @@
     "caloToolInfo",
     "xtalkSpan3",
     "xtalkSpan5",
-    "xtalkSpan6",
-    "refresh-temp"
+    "xtalkSpan6"
   ],
   "unapplied": [
     "hcal-seg",
@@ -161,9 +160,6 @@
     "noiseIndex": {
       "oid": "b7f91ab39e009899804d4e49725014ac1ffe4195"
     },
-    "refresh-temp": {
-      "oid": "2df0871882f5a332275eff3dd2309ece04dc7735"
-    },
     "repnoise": {
       "oid": "3e6d555bfd8dc25fbec79157421317086d68c46c"
     },
@@ -195,7 +191,7 @@
       "oid": "6d1183933f408dd33d052638197ef036ed8f4035"
     },
     "xtalkSpan6": {
-      "oid": "e6e0b6a58152adcc6a168102f794cfef61b561bc"
+      "oid": "63610bd61bebed83274d45312a04a2c1adccd3cf"
     }
   }
 }
