@@ -13,7 +13,7 @@
 // Interfaces
 #include "k4Interface/ICaloReadNeighboursMap.h"
 #include "RecCaloCommon/ICellPositionsTool.h"
-#include "k4Interface/INoiseConstTool.h"
+#include "RecCaloCommon/INoiseConstTool.h"
 #include "k4Interface/ITopoClusterInputTool.h"
 
 class IGeoSvc;
@@ -113,7 +113,7 @@ private:
   /// Handle for the input tool
   mutable ToolHandle<ITopoClusterInputTool> m_inputTool{"TopoClusterInput", this};
   /// Handle for the cells noise tool
-  mutable ToolHandle<INoiseConstTool> m_noiseTool{"TopoCaloNoisyCells", this};
+  mutable ToolHandle<k4::recCalo::INoiseConstTool> m_noiseTool{"TopoCaloNoisyCells", this};
   /// Handle for neighbours tool
   mutable ToolHandle<ICaloReadNeighboursMap> m_neighboursTool{"TopoCaloNeighbours", this};
   /// Handle for tool to get positions in ECal Barrel
