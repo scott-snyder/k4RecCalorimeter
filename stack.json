@@ -1,14 +1,15 @@
 {
   "version": 5,
-  "prev": "190108a5828ec04bdbae1e383f119e51cdfcb26c",
-  "head": "3710075db3ead091aefb31c44d144e12e419bb5d",
+  "prev": "dc906fd7f56c8dc8323d99f1ed86e2784c2fe746",
+  "head": "67cb92f2a5001c811ead9a1fd0d6de677c5c4faf",
   "applied": [
     "depr",
     "xtalk",
     "timeout",
     "nodefgeotool",
     "ICellPositionsTool",
-    "ICalorimeterTool"
+    "ICalorimeterTool",
+    "refresh-temp"
   ],
   "unapplied": [
     "hcal-seg",
@@ -130,6 +131,9 @@
     },
     "noiseIndex": {
       "oid": "b7f91ab39e009899804d4e49725014ac1ffe4195"
+    },
+    "refresh-temp": {
+      "oid": "67cb92f2a5001c811ead9a1fd0d6de677c5c4faf"
     },
     "repnoise": {
       "oid": "3e6d555bfd8dc25fbec79157421317086d68c46c"
