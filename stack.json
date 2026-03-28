@@ -1,11 +1,12 @@
 {
   "version": 5,
-  "prev": "61cb2b4b470125af90392af9b27eb6889db5e55a",
-  "head": "34b19c40a323cb190831399de9e73042b62f8597",
+  "prev": "7b0935dc076c25137a2f9a880581ae97f1cbfafe",
+  "head": "c7315ec708866488278590ec9d846bd16323cb0f",
   "applied": [
     "depr",
     "xtalk",
-    "timeout"
+    "timeout",
+    "ICaloReadNeighboursMap"
   ],
   "unapplied": [
     "ICellPositionsTool",
@@ -14,7 +15,6 @@
     "INoiseTools",
     "ICalibrateCaloHitsTool",
     "ICaloReadCrosstalkMap",
-    "ICaloReadNeighboursMap",
     "ICaloIndexer",
     "ICaloCreateMap",
     "ITopoClusterInputTool",
@@ -65,7 +65,7 @@
       "oid": "96c369476b6d6160f72bc78f832834587ba0c687"
     },
     "ICaloReadNeighboursMap": {
-      "oid": "a4e7de910773a03d41ea5a3f9977e1b3ef44c040"
+      "oid": "c7315ec708866488278590ec9d846bd16323cb0f"
     },
     "ICalorimeterTool": {
       "oid": "003f655369fa6a743fe3ef1ee16cef6b6757ac80"
