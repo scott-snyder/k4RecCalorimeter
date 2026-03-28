@@ -1,16 +1,16 @@
 {
   "version": 5,
-  "prev": "400c7bcc7728c0c1ab91d8cfb16ec016481e186a",
-  "head": "34b19c40a323cb190831399de9e73042b62f8597",
+  "prev": "659604dc7aafd9d1d0a5a06a0772e783650733e0",
+  "head": "b54f6269563f31b8138a7ce9f5629473857f60e6",
   "applied": [
     "depr",
     "xtalk",
-    "timeout"
+    "timeout",
+    "ICalorimeterTool"
   ],
   "unapplied": [
     "ICellPositionsTool",
     "nodefgeotool",
-    "ICalorimeterTool",
     "INoiseTools",
     "ICalibrateCaloHitsTool",
     "ICaloReadCrosstalkMap",
@@ -68,7 +68,7 @@
       "oid": "a4e7de910773a03d41ea5a3f9977e1b3ef44c040"
     },
     "ICalorimeterTool": {
-      "oid": "003f655369fa6a743fe3ef1ee16cef6b6757ac80"
+      "oid": "b54f6269563f31b8138a7ce9f5629473857f60e6"
     },
     "ICellPositionsTool": {
       "oid": "c1663e48f27514dea09677bfd5e231715c0ea03c"
