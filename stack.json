@@ -1,13 +1,12 @@
 {
   "version": 5,
-  "prev": "2d37b2f47a10aafb71099ceea6915792ca5f5a21",
-  "head": "0a9e1e296bf95551361a721532ac996d68b0e931",
+  "prev": "946c28783027334deb903daa8f251656c8c4a856",
+  "head": "3a2c552e0201eed1efe827c4f160a2f46cba55b7",
   "applied": [
     "depr",
     "xtalk",
     "timeout",
-    "roname",
-    "refresh-temp"
+    "roname"
   ],
   "unapplied": [
     "ICellPositionsTool",
@@ -156,14 +155,11 @@
     "noiseIndex": {
       "oid": "279d94d1902831f5b40fa4db03d911a25053f650"
     },
-    "refresh-temp": {
-      "oid": "0a9e1e296bf95551361a721532ac996d68b0e931"
-    },
     "repnoise": {
       "oid": "8c781b00b1a293c2a108cf9252ef286ad4b03b0f"
     },
     "roname": {
-      "oid": "fac0fffd723414ff0eb9453174e340116829e29a"
+      "oid": "3a2c552e0201eed1efe827c4f160a2f46cba55b7"
     },
     "sortnoise": {
       "oid": "c867ea819c75fafd54ab7f33640c3c1780031f90"
