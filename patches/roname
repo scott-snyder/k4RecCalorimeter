@@ -1,0 +1,9 @@
+Bottom: 87d39c3dc37bb55483ea399a99530bf855a8e2e6
+Top:    87d39c3dc37bb55483ea399a99530bf855a8e2e6
+Author: sss <sss@karma>
+Date:   2026-04-01 17:05:55 -0400
+
+Better error messages from positioning tools.
+
+Include the readout name in error messages saying that we can't convert
+to the proper segmentation.
