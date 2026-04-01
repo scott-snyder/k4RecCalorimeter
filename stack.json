@@ -1,12 +1,13 @@
 {
   "version": 5,
-  "prev": "946c28783027334deb903daa8f251656c8c4a856",
-  "head": "3a2c552e0201eed1efe827c4f160a2f46cba55b7",
+  "prev": "aca4e514f27cd2fa0f6044ccf74d0445470584e7",
+  "head": "155e20816bc30c0212782d5291d4cd1c7525b490",
   "applied": [
     "depr",
     "xtalk",
     "timeout",
-    "roname"
+    "roname",
+    "FCChh"
   ],
   "unapplied": [
     "ICellPositionsTool",
@@ -53,6 +54,9 @@
     "ci"
   ],
   "patches": {
+    "FCChh": {
+      "oid": "155e20816bc30c0212782d5291d4cd1c7525b490"
+    },
     "ICalibrateCaloHitsTool": {
       "oid": "3957593addaa8e21a526dd3fe2bcb8d57dfc5836"
     },
