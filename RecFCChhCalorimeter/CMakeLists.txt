@@ -41,6 +41,12 @@ add_test(NAME FCChhBaselineCellPositions
 set_test_env(FCChhBaselineCellPositions)
 set_tests_properties(FCChhBaselineCellPositions PROPERTIES FIXTURES_REQUIRED FCChhBaseline_digi_files)
 
+add_test(NAME FCChh_recocells
+         COMMAND ${PROJECT_SOURCE_DIR}/RecFCChhCalorimeter/tests/options/test_FCChh_recocells.sh
+         WORKING_DIRECTORY ${PROJECT_BINARY_DIR}/Testing/Temporary
+)
+set_test_env(FCChh_recocells)
+
 #
 #gaudi_add_test(buildingCellNoiseMap
 #               WORKING_DIRECTORY ${PROJECT_SOURCE_DIR}
