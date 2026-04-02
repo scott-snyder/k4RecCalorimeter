@@ -1,14 +1,13 @@
 {
   "version": 5,
-  "prev": "5cb954b668ae6bc5cc2d6c835480dc87d38eaf69",
-  "head": "373ace7e25d3fa46b7bc863304112939cfff957e",
+  "prev": "b8a927d13c41ba304ef6db97ba650779c497cdd8",
+  "head": "f18cd142fd95a1b366c67fa88b0505c22ccc5203",
   "applied": [
     "depr",
     "xtalk",
     "timeout",
     "roname",
-    "FCChh",
-    "refresh-temp"
+    "FCChh"
   ],
   "unapplied": [
     "ICellPositionsTool",
@@ -56,7 +55,7 @@
   ],
   "patches": {
     "FCChh": {
-      "oid": "155e20816bc30c0212782d5291d4cd1c7525b490"
+      "oid": "f18cd142fd95a1b366c67fa88b0505c22ccc5203"
     },
     "ICalibrateCaloHitsTool": {
       "oid": "3957593addaa8e21a526dd3fe2bcb8d57dfc5836"
@@ -159,9 +158,6 @@
     },
     "noiseIndex": {
       "oid": "279d94d1902831f5b40fa4db03d911a25053f650"
-    },
-    "refresh-temp": {
-      "oid": "373ace7e25d3fa46b7bc863304112939cfff957e"
     },
     "repnoise": {
       "oid": "8c781b00b1a293c2a108cf9252ef286ad4b03b0f"
