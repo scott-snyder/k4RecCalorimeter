@@ -232,7 +232,7 @@ StatusCode CreateCaloCells::initialize() {
     K4_GAUDI_CHECK( m_cellPos.retrieve() );
   }
 
-  if (m_addPosition & !m_cellPos.isEnabled()) {
+  if (m_addPosition && !m_cellPos.isEnabled()) {
     K4_GAUDI_CHECK( m_geoTool.retrieve() );
   }
 
