@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "a4babce716ee0d6fd361ed7c05f56a262b3f1737",
-  "head": "bd7bc8698003ebae2fa5039eb29797bce659219b",
+  "prev": "aa5a71ac485c180e20a900311cc491998934f1a9",
+  "head": "39589e110586814be8a0fa7138699ec3cd2e6999",
   "applied": [
     "xtalk",
     "timeout",
@@ -9,7 +9,9 @@
     "roname",
     "FCChh",
     "nodefgeotool",
-    "ICellPositionsTool",
+    "ICellPositionsTool"
+  ],
+  "unapplied": [
     "ICalorimeterTool",
     "INoiseTools",
     "ICalibrateCaloHitsTool",
@@ -48,7 +50,6 @@
     "check-remove",
     "k4geo-noclone"
   ],
-  "unapplied": [],
   "hidden": [
     "ci"
   ],
