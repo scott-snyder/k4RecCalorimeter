@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "a4e2e62c344d5f2a256427947a9b9f2f9ee4f85f",
-  "head": "9a759ee100cca3d86ab2b3593e6b6499a9c67566",
+  "prev": "33280ee87447616dbc6060dd5b3aa6dd292783c3",
+  "head": "bdd4306f153b9711364109f492a6b26e3f37964c",
   "applied": [
     "xtalk",
     "timeout",
@@ -43,8 +43,7 @@
     "subdetVolman",
     "sortnoise",
     "repnoise",
-    "move-check",
-    "refresh-temp"
+    "move-check"
   ],
   "unapplied": [
     "check-deprecated",
@@ -149,7 +148,7 @@
       "oid": "191a50d639533b4e2c5e93532d4ff7d92d1b73b1"
     },
     "move-check": {
-      "oid": "b1b17f19194e5070aa0f3c56a1e4693bb63fc52b"
+      "oid": "bdd4306f153b9711364109f492a6b26e3f37964c"
     },
     "multiIndexer": {
       "oid": "f1e29ec4d6e96f623fcfea8ee97d1fe4ba70239c"
@@ -159,9 +158,6 @@
     },
     "noiseIndex": {
       "oid": "ad74a3daf2cb03bf7078c846003e3e5131db8e0f"
-    },
-    "refresh-temp": {
-      "oid": "9a759ee100cca3d86ab2b3593e6b6499a9c67566"
     },
     "repnoise": {
       "oid": "31d35f0fec7697b584baaa7aaeb029eae8060c2b"
