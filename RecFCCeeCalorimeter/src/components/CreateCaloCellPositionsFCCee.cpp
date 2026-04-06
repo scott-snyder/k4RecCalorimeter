@@ -2,6 +2,7 @@
 
 // k4FWCore
 #include "k4Interface/IGeoSvc.h"
+#include "k4FWCore/MetadataUtils.h"
 
 // k4geo
 #include "detectorCommon/DetUtils_k4geo.h"
@@ -34,11 +35,15 @@ StatusCode CreateCaloCellPositionsFCCee::initialize() {
   }
 
   // Copy over the CellIDEncoding string from the input collection to the output collection
-  std::string hitsEncoding = m_hitsCellIDEncoding.get("");
+  std::string inEncodingName = podio::collMetadataParamName(m_hits.objKey(), edm4hep::labels::CellIDEncoding);
+  auto hitsEncoding =
+    k4FWCore::getParameter<std::string>(inEncodingName, this).value_or("");
   if (hitsEncoding == "") {
     warning() << "Missing cellID encoding for input collection" << endmsg;
   }
-  m_positionedHitsCellIDEncoding.put(hitsEncoding);
+
+  std::string outEncodingName = podio::collMetadataParamName(m_positionedHits.objKey(), edm4hep::labels::CellIDEncoding);
+  k4FWCore::putParameter (outEncodingName, hitsEncoding, this);
 
   return StatusCode::SUCCESS;
 }
