@@ -8,6 +8,8 @@
 #include <unordered_set>
 #include <vector>
 
+#include "k4FWCore/MetadataUtils.h"
+
 // k4geo
 #include "detectorCommon/DetUtils_k4geo.h"
 
@@ -88,7 +90,9 @@ StatusCode CaloTopoClusterFCCee::initialize() {
 
   // initialise the list of metadata for the clusters
   std::vector<std::string> shapeParameterNames = {"dR_over_E"};
-  m_shapeParametersHandle.put(shapeParameterNames);
+
+  std::string outParameterName = podio::collMetadataParamName(m_clusterCollection.objKey(), edm4hep::labels::ShapeParameterNames);
+  k4FWCore::putParameter (outParameterName, shapeParameterNames, this);
 
   if (m_createClusterCellCollection) {
     std::vector<int> IDs;
@@ -102,8 +106,11 @@ StatusCode CaloTopoClusterFCCee::initialize() {
     }
 
     if (IDs.size()==colls.size()) {
-      m_caloIDsMetaData.put(IDs);
-      m_cellsMetaData.put(colls);
+      std::string systemIDsName = podio::collMetadataParamName(m_clusterCollection.objKey(), "inputSystemIDs");
+      k4FWCore::putParameter (systemIDsName, IDs, this);
+
+      std::string cellCollectionsName = podio::collMetadataParamName(m_clusterCollection.objKey(), "inputCellCollections");
+      k4FWCore::putParameter (cellCollectionsName, colls, this);
     } else {
       warning() << "Sizes of input cell and systemID collections of tower tool are different, no metadata written" << endmsg;
     }
