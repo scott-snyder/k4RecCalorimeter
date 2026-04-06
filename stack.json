@@ -1,10 +1,12 @@
 {
   "version": 5,
-  "prev": "12f29d4f84ab12bba509a978785efa0b24c6c205",
-  "head": "fa3285352c39e92ecf3f32be8653a4be238b833c",
+  "prev": "72de83265d5cdb603e033b28fd9fd7973915bd8a",
+  "head": "b094ada39120b745b3a556341ceb0fe87cbf5ffb",
   "applied": [
     "xtalk",
-    "timeout",
+    "timeout"
+  ],
+  "unapplied": [
     "mdutils",
     "roname",
     "FCChh",
@@ -44,9 +46,7 @@
     "sortnoise",
     "repnoise",
     "move-check",
-    "check-deprecated"
-  ],
-  "unapplied": [
+    "check-deprecated",
     "check-remove",
     "k4geo-noclone"
   ],
