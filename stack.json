@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "83171d3a11ed2a7d59c794a11ddd5d443c9746f0",
-  "head": "a6f793b627ad5c2911311c6e3ee8e82bdbc4d21a",
+  "prev": "543d6401d71aad54a1b89e4193b22d15f277989f",
+  "head": "a503b57a24d5e63572430b491d7360a378af864c",
   "applied": [
     "xtalk",
     "timeout",
@@ -9,7 +9,8 @@
     "roname",
     "FCChh",
     "nodefgeotool",
-    "ICellPositionsTool"
+    "ICellPositionsTool",
+    "refresh-temp"
   ],
   "unapplied": [
     "ICalorimeterTool",
@@ -158,6 +159,9 @@
     },
     "noiseIndex": {
       "oid": "dbad697489d77944f3088d5ac6b13077f0316872"
+    },
+    "refresh-temp": {
+      "oid": "a503b57a24d5e63572430b491d7360a378af864c"
     },
     "repnoise": {
       "oid": "16dda9a4d5059c9667976c5eb6fd22ea121de821"
