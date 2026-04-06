@@ -5,7 +5,6 @@
 
 // Key4HEP
 #include "k4FWCore/DataHandle.h"
-#include "k4FWCore/MetaDataHandle.h"
 
 // Gaudi
 #include "GaudiKernel/Algorithm.h"
@@ -91,12 +90,6 @@ private:
   /// Handle for corrected (output) calorimeter clusters collection
   mutable k4FWCore::DataHandle<edm4hep::ClusterCollection> m_outClusters{"outClusters", Gaudi::DataHandle::Writer,
                                                                          this};
-
-  /// Handles for the cluster shower shape metadata to read and to write
-  k4FWCore::MetaDataHandle<std::vector<std::string>> m_inShapeParameterHandle{
-      m_inClusters, edm4hep::labels::ShapeParameterNames, Gaudi::DataHandle::Reader};
-  k4FWCore::MetaDataHandle<std::vector<std::string>> m_outShapeParameterHandle{
-      m_outClusters, edm4hep::labels::ShapeParameterNames, Gaudi::DataHandle::Writer};
 
   /// Pointer to the geometry service
   ServiceHandle<IGeoSvc> m_geoSvc;
