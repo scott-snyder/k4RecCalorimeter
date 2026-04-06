@@ -5,7 +5,6 @@
 
 // Key4HEP
 #include "k4FWCore/DataHandle.h"
-#include "k4FWCore/MetaDataHandle.h"
 class IGeoSvc;
 
 // Gaudi
@@ -52,12 +51,6 @@ private:
   /// Handle for output clusters
   mutable k4FWCore::DataHandle<edm4hep::ClusterCollection> m_outClusters{"outClusters", Gaudi::DataHandle::Writer,
                                                                          this};
-  /// Handle for the cluster shape metadata to read and to write
-  k4FWCore::MetaDataHandle<std::vector<std::string>> m_inShapeParameterHandle{
-      m_inClusters, edm4hep::labels::ShapeParameterNames, Gaudi::DataHandle::Reader};
-  k4FWCore::MetaDataHandle<std::vector<std::string>> m_showerShapeHandle{
-      m_outClusters, edm4hep::labels::ShapeParameterNames, Gaudi::DataHandle::Writer};
-
   /// Pointer to the geometry service
   ServiceHandle<IGeoSvc> m_geoSvc;
   /// ID of the detectors
