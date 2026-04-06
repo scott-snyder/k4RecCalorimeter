@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "ec8abea0d9fa358cd875f43c3f9220eb925dc4f1",
-  "head": "02d95d4604e40dc6067fe5df812697a2afb70622",
+  "prev": "ed33df4116663181fde30c1deb3b86c4d8a76db8",
+  "head": "9fcb9dd26141161a81089efe84879f99b88c80b7",
   "applied": [
     "xtalk",
     "timeout",
@@ -38,7 +38,8 @@
     "topoNoiseIndex",
     "noiseIndex",
     "createTopoCluster",
-    "createCaloCells"
+    "createCaloCells",
+    "refresh-temp"
   ],
   "unapplied": [
     "subdetVolman2",
@@ -158,6 +159,9 @@
     },
     "noiseIndex": {
       "oid": "ad74a3daf2cb03bf7078c846003e3e5131db8e0f"
+    },
+    "refresh-temp": {
+      "oid": "9fcb9dd26141161a81089efe84879f99b88c80b7"
     },
     "repnoise": {
       "oid": "31d35f0fec7697b584baaa7aaeb029eae8060c2b"
