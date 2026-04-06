@@ -2,6 +2,7 @@
 
 // k4FWCore
 #include "k4Interface/IGeoSvc.h"
+#include "k4FWCore/MetadataUtils.h"
 
 // edm4hep
 #include "edm4hep/ClusterCollection.h"
@@ -115,7 +116,10 @@ StatusCode AugmentClustersFCCee::initialize() {
 
   // initialise the list of metadata for the clusters
   // append to the metadata of the input clusters (if any)
-  std::vector<std::string> showerShapeDecorations = m_inShapeParameterHandle.get({});
+  std::string inParameterName = podio::collMetadataParamName(m_inClusters.objKey(), edm4hep::labels::ShapeParameterNames);
+  auto showerShapeDecorations =
+    k4FWCore::getParameter<std::vector<std::string> >(inParameterName, this).value_or({});
+
   for (size_t k = 0; k < m_detectorNames.size(); k++) {
     const char* detector = m_detectorNames[k].c_str();
     for (unsigned layer = 0; layer < m_numLayers[k]; layer++) {
@@ -144,7 +148,8 @@ StatusCode AugmentClustersFCCee::initialize() {
   showerShapeDecorations.push_back("mass");   // cluster invariant mass assuming massless constituents
   showerShapeDecorations.push_back("ncells"); // number of cells in cluster with E>0
 
-  m_showerShapeHandle.put(showerShapeDecorations);
+  std::string outParameterName = podio::collMetadataParamName(m_outClusters.objKey(), edm4hep::labels::ShapeParameterNames);
+  k4FWCore::putParameter (outParameterName, showerShapeDecorations, this);
 
   return StatusCode::SUCCESS;
 }
