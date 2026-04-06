@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "95df683c6b8795e8b6da42f790c1b05c27b0b029",
-  "head": "0874332b2921335b269c4ec648fd3f9f9cdd733c",
+  "prev": "23495b3aa6d8c0f07fc0646ac84522a668a82f22",
+  "head": "6ee2a5ddb0028fb1b317d1ff729f0787a96d5249",
   "applied": [
     "xtalk",
     "timeout",
@@ -14,7 +14,8 @@
     "INoiseTools",
     "ICalibrateCaloHitsTool",
     "ICaloReadCrosstalkMap",
-    "ICaloReadNeighboursMap"
+    "ICaloReadNeighboursMap",
+    "refresh-temp"
   ],
   "unapplied": [
     "ICaloIndexer",
@@ -158,6 +159,9 @@
     },
     "noiseIndex": {
       "oid": "dbad697489d77944f3088d5ac6b13077f0316872"
+    },
+    "refresh-temp": {
+      "oid": "6ee2a5ddb0028fb1b317d1ff729f0787a96d5249"
     },
     "repnoise": {
       "oid": "16dda9a4d5059c9667976c5eb6fd22ea121de821"
