@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "455be33e568b15debd7635dfad4de3835ad5408b",
-  "head": "2cf3fca9fc89e010bb93ff3eba5cccc8536dd2d8",
+  "prev": "12f29d4f84ab12bba509a978785efa0b24c6c205",
+  "head": "fa3285352c39e92ecf3f32be8653a4be238b833c",
   "applied": [
     "xtalk",
     "timeout",
@@ -44,11 +44,12 @@
     "sortnoise",
     "repnoise",
     "move-check",
-    "check-deprecated",
+    "check-deprecated"
+  ],
+  "unapplied": [
     "check-remove",
     "k4geo-noclone"
   ],
-  "unapplied": [],
   "hidden": [
     "ci"
   ],
