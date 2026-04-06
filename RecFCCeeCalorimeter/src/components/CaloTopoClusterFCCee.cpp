@@ -8,6 +8,7 @@
 #include <unordered_set>
 #include <vector>
 
+#include "k4FWCore/MetadataUtils.h"
 #include "RecCaloCommon/k4RecCalorimeter_check.h"
 
 // k4geo
