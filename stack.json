@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "fb198cfdb67f7da7c1e5c53948e9c6887e142da4",
-  "head": "651ddaca49ae2bd99038d1b9cb9f61e19e74d80a",
+  "prev": "0b279ba369e3ff1afb20d0d40211b6390cd743b4",
+  "head": "eff663bdf076f3619d22c0afac085ff032b00259",
   "applied": [
     "xtalk",
     "timeout",
@@ -18,7 +18,8 @@
     "ICaloIndexer",
     "ICaloCreateMap",
     "ITopoClusterInputTool",
-    "ITowerTools"
+    "ITowerTools",
+    "refresh-temp"
   ],
   "unapplied": [
     "hcal-seg",
@@ -158,6 +159,9 @@
     },
     "noiseIndex": {
       "oid": "dbad697489d77944f3088d5ac6b13077f0316872"
+    },
+    "refresh-temp": {
+      "oid": "eff663bdf076f3619d22c0afac085ff032b00259"
     },
     "repnoise": {
       "oid": "16dda9a4d5059c9667976c5eb6fd22ea121de821"
