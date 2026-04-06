@@ -2,6 +2,7 @@
 
 // Key4HEP
 #include "k4Interface/IGeoSvc.h"
+#include "k4FWCore/MetadataUtils.h"
 
 // FCC Detectors
 #include "detectorCommon/DetUtils_k4geo.h"
@@ -77,9 +78,14 @@ StatusCode CalibrateCaloClusters::initialize() {
 
   // read from the metadata the names of the shape parameters in the input clusters and append the total raw energy to
   // the output
-  std::vector<std::string> shapeParameters = m_inShapeParameterHandle.get({});
+  std::string inParameterName = podio::collMetadataParamName(m_inClusters.objKey(), edm4hep::labels::ShapeParameterNames);
+  auto shapeParameters =
+    k4FWCore::getParameter<std::vector<std::string> >(inParameterName, this).value_or(std::vector<std::string>());
+
   shapeParameters.push_back("rawE");
-  m_outShapeParameterHandle.put(shapeParameters);
+
+  std::string outParameterName = podio::collMetadataParamName(m_outClusters.objKey(), edm4hep::labels::ShapeParameterNames);
+  k4FWCore::putParameter (outParameterName, shapeParameters, this);
 
   // check if the shape parameters contain the inputs needed for the calibration
   m_inputPositionsInShapeParameters.clear();
