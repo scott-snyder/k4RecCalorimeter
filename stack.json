@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "371f276dd1e072dcdfdd12b95ff33fab4bb8e8a1",
-  "head": "fa92343269e6dfcdadbdb362aadc7c6f0f2fae22",
+  "prev": "95df683c6b8795e8b6da42f790c1b05c27b0b029",
+  "head": "0874332b2921335b269c4ec648fd3f9f9cdd733c",
   "applied": [
     "xtalk",
     "timeout",
@@ -10,13 +10,13 @@
     "FCChh",
     "nodefgeotool",
     "ICellPositionsTool",
-    "ICalorimeterTool"
-  ],
-  "unapplied": [
+    "ICalorimeterTool",
     "INoiseTools",
     "ICalibrateCaloHitsTool",
     "ICaloReadCrosstalkMap",
-    "ICaloReadNeighboursMap",
+    "ICaloReadNeighboursMap"
+  ],
+  "unapplied": [
     "ICaloIndexer",
     "ICaloCreateMap",
     "ITopoClusterInputTool",
@@ -58,7 +58,7 @@
       "oid": "b17be9675134a6e27666af00923d1010e54325d7"
     },
     "ICalibrateCaloHitsTool": {
-      "oid": "535a00ac912be62bef4d52acd800285b98b593cd"
+      "oid": "d57b2d9d6a29ed3b9cd6127f1a515831cbdc8311"
     },
     "ICaloCreateMap": {
       "oid": "de7228aeaa865960338ddd6a140d7cba9b0f5d55"
@@ -67,10 +67,10 @@
       "oid": "28564811142102f122f63d47fd4126faddec66b6"
     },
     "ICaloReadCrosstalkMap": {
-      "oid": "5694c87e2c19d5e19bfd4c6a124ef45b00f2a55b"
+      "oid": "945ec33a08e7a8831b384efd270ba9751a65f3b4"
     },
     "ICaloReadNeighboursMap": {
-      "oid": "44a451e90975127544f428157bf3ae634a33a5ba"
+      "oid": "0874332b2921335b269c4ec648fd3f9f9cdd733c"
     },
     "ICalorimeterTool": {
       "oid": "fa92343269e6dfcdadbdb362aadc7c6f0f2fae22"
@@ -79,7 +79,7 @@
       "oid": "39589e110586814be8a0fa7138699ec3cd2e6999"
     },
     "INoiseTools": {
-      "oid": "9a2272adac0afa3a12fde212c70c240f70a0a31b"
+      "oid": "ad9625e088fea06c385786525e315a25c88a44fe"
     },
     "ITopoClusterInputTool": {
       "oid": "0185eeb7be0a2b8f009b258d174ed03f24fc3771"
