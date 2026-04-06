@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "8b20254b9c01f62d5e9fad3b0ca4a1f926b6a690",
-  "head": "37cb1794b9dbd5a541ee282900ffa7bce633b065",
+  "prev": "ec8abea0d9fa358cd875f43c3f9220eb925dc4f1",
+  "head": "02d95d4604e40dc6067fe5df812697a2afb70622",
   "applied": [
     "xtalk",
     "timeout",
@@ -37,10 +37,10 @@
     "xtalkIndex",
     "topoNoiseIndex",
     "noiseIndex",
-    "createTopoCluster"
+    "createTopoCluster",
+    "createCaloCells"
   ],
   "unapplied": [
-    "createCaloCells",
     "subdetVolman2",
     "subdetVolman",
     "sortnoise",
