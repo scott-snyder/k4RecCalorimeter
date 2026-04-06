@@ -5,6 +5,7 @@
 
 // k4FWCore
 #include "k4Interface/IGeoSvc.h"
+#include "k4FWCore/MetadataUtils.h"
 #include "k4FWCore/GaudiChecks.h"
 
 // DD4hep
