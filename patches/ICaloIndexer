@@ -1,6 +1,6 @@
-Bottom: 5b1ad45cc0fa34a3d985b08bf80f620eab4ee55b
-Top:    48fa1c6263bf34e62f952a75981eb9d37dd4f983
+Bottom: d05693daf1d52cfddb5f3ceba5a8042167ac29d7
+Top:    11e39361a98e0f3ac52ee58837f6e45b04b7fbc0
 Author: sss <sss@karma>
-Date:   2026-04-05 23:31:54 -0400
+Date:   2026-04-06 08:28:42 -0400
 
 Move ICaloIndexer here from k4FWCore.

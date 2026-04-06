@@ -1,6 +1,6 @@
-Bottom: 7481089111c34f57d8c3b99a836cccefb35113c9
-Top:    e04ae27be69dadbc2d4f03c49f1f35ae919c3185
+Bottom: 8d5f2c5f0e738688d4c2db9eb533395b0f85aad9
+Top:    673db01371adb0d8bdefca08ff62b6096d5911fa
 Author: sss <sss@karma>
-Date:   2026-04-05 23:31:12 -0400
+Date:   2026-04-06 08:28:42 -0400
 
 Move ICalibrateCaloHitsTool here from k4FWCore.
