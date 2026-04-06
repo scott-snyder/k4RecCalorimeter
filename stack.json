@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "00d04428250d6f5846d7c740d2b1d3bfa73f8faf",
-  "head": "f17bd4f37033f1f932d13766cf283aa15d827e77",
+  "prev": "fb198cfdb67f7da7c1e5c53948e9c6887e142da4",
+  "head": "651ddaca49ae2bd99038d1b9cb9f61e19e74d80a",
   "applied": [
     "xtalk",
     "timeout",
@@ -14,13 +14,13 @@
     "INoiseTools",
     "ICalibrateCaloHitsTool",
     "ICaloReadCrosstalkMap",
-    "ICaloReadNeighboursMap"
-  ],
-  "unapplied": [
+    "ICaloReadNeighboursMap",
     "ICaloIndexer",
     "ICaloCreateMap",
     "ITopoClusterInputTool",
-    "ITowerTools",
+    "ITowerTools"
+  ],
+  "unapplied": [
     "hcal-seg",
     "hcal-seg-row",
     "caloToolInfo",
@@ -61,10 +61,10 @@
       "oid": "d57b2d9d6a29ed3b9cd6127f1a515831cbdc8311"
     },
     "ICaloCreateMap": {
-      "oid": "de7228aeaa865960338ddd6a140d7cba9b0f5d55"
+      "oid": "4adce03abea23e4caaf986eecb030f898d7dde87"
     },
     "ICaloIndexer": {
-      "oid": "28564811142102f122f63d47fd4126faddec66b6"
+      "oid": "96466c6c782d16d0063204319379aac22ddaf3fb"
     },
     "ICaloReadCrosstalkMap": {
       "oid": "945ec33a08e7a8831b384efd270ba9751a65f3b4"
@@ -82,10 +82,10 @@
       "oid": "ad9625e088fea06c385786525e315a25c88a44fe"
     },
     "ITopoClusterInputTool": {
-      "oid": "0185eeb7be0a2b8f009b258d174ed03f24fc3771"
+      "oid": "b06f5f43f5a79c7c931c1c121e98f4cc97905903"
     },
     "ITowerTools": {
-      "oid": "f942f59645945aa193629e7bfd78420816b2a763"
+      "oid": "651ddaca49ae2bd99038d1b9cb9f61e19e74d80a"
     },
     "caloCellIndexerSvc": {
       "oid": "8f622327bb9e1ddac5ed4491adecdb5fa52ed84a"
