@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "205c0ff8c6c71ab449675be2d0cc783ec3c292e1",
+  "prev": "4dcf1591effd7c1a6689b44b989d70f8232b9367",
   "head": "191a50d639533b4e2c5e93532d4ff7d92d1b73b1",
   "applied": [
     "xtalk",
@@ -8,7 +8,6 @@
     "mdutils"
   ],
   "unapplied": [
-    "depr",
     "roname",
     "FCChh",
     "nodefgeotool",
@@ -114,9 +113,6 @@
     },
     "createTopoCluster": {
       "oid": "1e24a549af66b53693d5d197693f2874e559962b"
-    },
-    "depr": {
-      "oid": "ca82287ae217689a8785e2697627ef2ccafa5260"
     },
     "ecalbarrelIndexer": {
       "oid": "f8dc2b9073bf5f8d701bc37fc7dcf932ed18f718"
