@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "52293691c40466afc2faf01bd0a4002a71a4594e",
+  "prev": "346454372d411eb2d49fa7999d77a140dc8a15a9",
   "head": "fb0b1c2aaa071470a820604e43f98cb487efc8e5",
   "applied": [
     "xtalk",
@@ -47,11 +47,10 @@
     "repnoise",
     "move-check",
     "check-deprecated",
-    "check-remove"
-  ],
-  "hidden": [
+    "check-remove",
     "ci"
   ],
+  "hidden": [],
   "patches": {
     "FCChh": {
       "oid": "fb0b1c2aaa071470a820604e43f98cb487efc8e5"
