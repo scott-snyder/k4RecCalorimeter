@@ -1,14 +1,13 @@
 {
   "version": 5,
-  "prev": "b79bc51702f3eb03b80a838a2576f9abf530943e",
-  "head": "c2e93a37b5c7ed376734f677f419f7f079c45f02",
+  "prev": "f9157847a2dda3cdac622065ca289dba71c09e9b",
+  "head": "0c70803dc9e10215ace100336661e27f40aa9741",
   "applied": [
     "xtalk",
     "ICaloCreateMap",
     "ITopoClusterInputTool",
     "ICaloReadNeighboursMap",
-    "ITowerTools",
-    "refresh-temp"
+    "ITowerTools"
   ],
   "unapplied": [
     "mdutils",
@@ -80,7 +79,7 @@
       "oid": "a6a73ef7f437a298885b735d5321fc9ad2fc5f8f"
     },
     "ITowerTools": {
-      "oid": "3013d107e9b613a61ed0e0dbe4e0b3310fe753a5"
+      "oid": "0c70803dc9e10215ace100336661e27f40aa9741"
     },
     "caloCellIndexerSvc": {
       "oid": "f091765735d93b01eaac4370be5547c2a730bac0"
@@ -153,9 +152,6 @@
     },
     "noiseIndex": {
       "oid": "30ad2d893bffd307f6d84726d6cdcbedbbd495cd"
-    },
-    "refresh-temp": {
-      "oid": "c2e93a37b5c7ed376734f677f419f7f079c45f02"
     },
     "repnoise": {
       "oid": "d8b7aa8c0eb1150454ee8d82cf0073508b172f62"
