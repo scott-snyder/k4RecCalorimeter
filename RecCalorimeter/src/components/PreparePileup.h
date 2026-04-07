@@ -3,10 +3,9 @@
 
 // Key4HEP
 #include "k4FWCore/DataHandle.h"
-#include "k4Interface/ICalorimeterTool.h"
 
 // Interfaces
-#include "RecCaloCommon/ICalorimeterTool.h"
+#include "k4Interface/ICalorimeterTool.h"
 #include "RecCaloCommon/ITowerTool.h"
 class IGeoSvc;
 
