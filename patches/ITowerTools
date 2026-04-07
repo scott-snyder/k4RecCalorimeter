@@ -1,6 +1,6 @@
 Bottom: 29e76c09eb7d4189e7bce9299102d1fd1c6eed27
 Top:    c7e36ce55ad42804dd5d2479d79556885eb17fa1
 Author: sss <sss@karma>
-Date:   2026-04-06 11:06:01 -0400
+Date:   2026-04-07 13:42:05 -0400
 
 Move ITowerTool and ITowerToolThetaModule here from k4FWCore.
