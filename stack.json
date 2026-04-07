@@ -1,13 +1,12 @@
 {
   "version": 5,
-  "prev": "0d97ef727a3722fc8a6fca5c2fcb4778312e3fe7",
-  "head": "3724b843ebfc1875e3ffe4fcb882b83c8d76bc6c",
+  "prev": "70ee57a631713c710aa1a34931a488072c106aa6",
+  "head": "0521f4ee011428f6ad8b156404d1131036fa053a",
   "applied": [
     "xtalk",
     "timeout",
     "FCChh",
-    "mdutils",
-    "ICalibrateCaloHitsTool"
+    "mdutils"
   ],
   "unapplied": [
     "ci",
@@ -15,6 +14,7 @@
     "nodefgeotool",
     "ICalorimeterTool",
     "INoiseTools",
+    "ICalibrateCaloHitsTool",
     "ICaloReadCrosstalkMap",
     "ICaloReadNeighboursMap",
     "ICaloIndexer",
@@ -55,7 +55,7 @@
       "oid": "fb0b1c2aaa071470a820604e43f98cb487efc8e5"
     },
     "ICalibrateCaloHitsTool": {
-      "oid": "3724b843ebfc1875e3ffe4fcb882b83c8d76bc6c"
+      "oid": "a38aae01a8acc52d59233ac3b7df18c935b4051f"
     },
     "ICaloCreateMap": {
       "oid": "32e0f78a1e2e5814de39a4784b6e737b94ac4c69"
