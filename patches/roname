@@ -1,9 +1,0 @@
-Bottom: ba262a2cb7fbf9053cc7404aa70812a2bcb402eb
-Top:    ba262a2cb7fbf9053cc7404aa70812a2bcb402eb
-Author: sss <sss@karma>
-Date:   2026-04-07 13:26:42 -0400
-
-Better error messages from positioning tools.
-
-Include the readout name in error messages saying that we can't convert
-to the proper segmentation.

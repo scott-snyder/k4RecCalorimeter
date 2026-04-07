@@ -1,6 +1,6 @@
 Bottom: 16f4b19b1ded98cfc8affa5a44e34451d01ae170
 Top:    22ba9a0e8e1fbb835625367948d16dce1d16b436
 Author: sss <sss@karma>
-Date:   2026-04-07 13:42:05 -0400
+Date:   2026-04-07 13:42:56 -0400
 
 Move ICalorimeterTool here from k4FWCore.
