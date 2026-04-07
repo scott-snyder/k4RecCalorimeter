@@ -1,10 +1,11 @@
 {
   "version": 5,
-  "prev": "0b59e244334f96adf10a3bde157db972f31bd473",
-  "head": "68052cc84cdf9ec3942c4460a29aa6d6f5dee240",
+  "prev": "1927d898aa70e0272348a60acdeff00bf6b5e085",
+  "head": "f9d83a4e1b3278ca06f360645f396754e6d12208",
   "applied": [
     "xtalk",
-    "ICaloReadNeighboursMap"
+    "ICaloReadNeighboursMap",
+    "refresh-temp"
   ],
   "unapplied": [
     "timeout",
@@ -152,6 +153,9 @@
     },
     "noiseIndex": {
       "oid": "30ad2d893bffd307f6d84726d6cdcbedbbd495cd"
+    },
+    "refresh-temp": {
+      "oid": "f9d83a4e1b3278ca06f360645f396754e6d12208"
     },
     "repnoise": {
       "oid": "d8b7aa8c0eb1150454ee8d82cf0073508b172f62"
