@@ -1,14 +1,15 @@
 {
   "version": 5,
-  "prev": "907a5abcc2a9a66d5c011b804b27c9d1373c2199",
-  "head": "385dffdad37125c1001f83345a3836a289c183af",
+  "prev": "a662dc297a71cf84430be75f8c39fc206746b20d",
+  "head": "2d51eadf0c51b0f481884665ba871d16cc2a0498",
   "applied": [
     "xtalk",
     "ITowerTools",
     "ICaloCreateMap",
     "ITopoClusterInputTool",
     "ICaloReadNeighboursMap",
-    "mdutils"
+    "mdutils",
+    "refresh-temp"
   ],
   "unapplied": [
     "timeout",
@@ -152,6 +153,9 @@
     },
     "noiseIndex": {
       "oid": "30ad2d893bffd307f6d84726d6cdcbedbbd495cd"
+    },
+    "refresh-temp": {
+      "oid": "2d51eadf0c51b0f481884665ba871d16cc2a0498"
     },
     "repnoise": {
       "oid": "d8b7aa8c0eb1150454ee8d82cf0073508b172f62"
