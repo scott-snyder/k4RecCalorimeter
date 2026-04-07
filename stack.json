@@ -1,11 +1,12 @@
 {
   "version": 5,
-  "prev": "346454372d411eb2d49fa7999d77a140dc8a15a9",
-  "head": "fb0b1c2aaa071470a820604e43f98cb487efc8e5",
+  "prev": "cfba5959302d5355bb58d9835c09b8d7ce0211f3",
+  "head": "755bc8ef44f4761b2ed638420dae1b89bc28896a",
   "applied": [
     "xtalk",
     "timeout",
-    "FCChh"
+    "FCChh",
+    "ci"
   ],
   "unapplied": [
     "k4geo-noclone",
@@ -47,8 +48,7 @@
     "repnoise",
     "move-check",
     "check-deprecated",
-    "check-remove",
-    "ci"
+    "check-remove"
   ],
   "hidden": [],
   "patches": {
@@ -104,7 +104,7 @@
       "oid": "a803841caa46b38b1b0eeb7b521a3ef03344fdb0"
     },
     "ci": {
-      "oid": "a397d9fcf67904265e6972c5a9ff1d9b0dc66942"
+      "oid": "755bc8ef44f4761b2ed638420dae1b89bc28896a"
     },
     "createCaloCells": {
       "oid": "7e2e6b4aee017dcec8d511125b4b4ea670de04b4"
