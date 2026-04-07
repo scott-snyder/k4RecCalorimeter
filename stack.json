@@ -1,15 +1,15 @@
 {
   "version": 5,
-  "prev": "239a89131580cc670d18d60e5afd87d223aa5b3b",
-  "head": "f9f640bb7d6ad287713a2098ec6eb9d725b0718f",
+  "prev": "3bcb120ecbf5196a8e8f2b9b76f6e11db2df19e1",
+  "head": "df91456f3378f171fa088e876ee85a71a46ee95f",
   "applied": [
-    "xtalk"
+    "xtalk",
+    "ITowerTools"
   ],
   "unapplied": [
     "ICaloCreateMap",
     "ITopoClusterInputTool",
     "ICaloReadNeighboursMap",
-    "ITowerTools",
     "mdutils",
     "timeout",
     "FCChh",
@@ -79,7 +79,7 @@
       "oid": "a6a73ef7f437a298885b735d5321fc9ad2fc5f8f"
     },
     "ITowerTools": {
-      "oid": "5021e9a108a8fa2a054d7a2628ddf5d32cf94b56"
+      "oid": "df91456f3378f171fa088e876ee85a71a46ee95f"
     },
     "caloCellIndexerSvc": {
       "oid": "f091765735d93b01eaac4370be5547c2a730bac0"
