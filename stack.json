@@ -1,13 +1,12 @@
 {
   "version": 5,
-  "prev": "6731c8d6ba89d43b47029e51384a4d6b65a1fb79",
-  "head": "fa575e5889236202d9cb6c7c52b61af32a03c61f",
+  "prev": "c83b077b034ecab9808456007cbfdcb8359f3f6f",
+  "head": "0521f4ee011428f6ad8b156404d1131036fa053a",
   "applied": [
     "xtalk",
     "timeout",
     "FCChh",
-    "mdutils",
-    "ICellPositionsTool"
+    "mdutils"
   ],
   "unapplied": [
     "ci",
@@ -72,9 +71,6 @@
     },
     "ICalorimeterTool": {
       "oid": "5fd17a8f01e64f7a7bb4d1fd1e003e6cee0417e2"
-    },
-    "ICellPositionsTool": {
-      "oid": "fa575e5889236202d9cb6c7c52b61af32a03c61f"
     },
     "INoiseTools": {
       "oid": "1e4d754105a116448d5d9dd9b958756b95385b73"
@@ -143,7 +139,7 @@
       "oid": "0d8b107ac1940d2de06d12e48b2d2fbe27c01a50"
     },
     "mdutils": {
-      "oid": "9f4c09a0fc4225c34440fe05da961958ccd20466"
+      "oid": "0521f4ee011428f6ad8b156404d1131036fa053a"
     },
     "move-check": {
       "oid": "e8a1c82ed0ee579bb159f985af6d9c008c89e2ec"

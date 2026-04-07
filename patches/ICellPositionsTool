@@ -1,6 +1,0 @@
-Bottom: af326f33ec96ef76ba803856e8d902cfef62ed39
-Top:    a30dc6c4409cba2b2de35fd2e271570f0220791e
-Author: sss <sss@karma>
-Date:   2026-04-07 14:30:24 -0400
-
-Move ICellPositions tool here from k4FWCore.
