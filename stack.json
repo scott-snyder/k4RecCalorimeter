@@ -1,10 +1,11 @@
 {
   "version": 5,
-  "prev": "a2868ef9584e6e4d33074bdfe0c223a7799a0abb",
-  "head": "1666f39cc1230316370537727c39e89904c6fde7",
+  "prev": "f466ae6efcd953c5dbd60125f18b53ada07f3b02",
+  "head": "aea3ed1b8a4eab2b2658a068938bb24cf519a148",
   "applied": [
     "xtalk",
-    "ITopoClusterInputTool"
+    "ITopoClusterInputTool",
+    "ci"
   ],
   "unapplied": [
     "mdutils",
@@ -14,7 +15,6 @@
     "ICaloReadNeighboursMap",
     "timeout",
     "FCChh",
-    "ci",
     "k4geo-noclone",
     "nodefgeotool",
     "ICalorimeterTool",
@@ -100,7 +100,7 @@
       "oid": "a803841caa46b38b1b0eeb7b521a3ef03344fdb0"
     },
     "ci": {
-      "oid": "755bc8ef44f4761b2ed638420dae1b89bc28896a"
+      "oid": "aea3ed1b8a4eab2b2658a068938bb24cf519a148"
     },
     "createCaloCells": {
       "oid": "7e2e6b4aee017dcec8d511125b4b4ea670de04b4"
