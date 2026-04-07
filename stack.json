@@ -1,11 +1,10 @@
 {
   "version": 5,
-  "prev": "e8433b29887af4b314f068240431ca201c9ead7a",
-  "head": "8de945be56f9f0f6ea8fe0ab9e4b93e67d622c24",
+  "prev": "5c609b63356faddc5e1b373e418090c78a27f535",
+  "head": "cac8bf8e0b814301d117aec5f7158529d1fbdc53",
   "applied": [
     "xtalk",
-    "ITopoClusterInputTool",
-    "refresh-temp"
+    "ITopoClusterInputTool"
   ],
   "unapplied": [
     "ci",
@@ -77,7 +76,7 @@
       "oid": "1e4d754105a116448d5d9dd9b958756b95385b73"
     },
     "ITopoClusterInputTool": {
-      "oid": "1666f39cc1230316370537727c39e89904c6fde7"
+      "oid": "cac8bf8e0b814301d117aec5f7158529d1fbdc53"
     },
     "ITowerTools": {
       "oid": "159acf186278d860082d8b5415a6ed74826094ab"
@@ -153,9 +152,6 @@
     },
     "noiseIndex": {
       "oid": "30ad2d893bffd307f6d84726d6cdcbedbbd495cd"
-    },
-    "refresh-temp": {
-      "oid": "8de945be56f9f0f6ea8fe0ab9e4b93e67d622c24"
     },
     "repnoise": {
       "oid": "d8b7aa8c0eb1150454ee8d82cf0073508b172f62"
