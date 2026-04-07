@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "79286f3c404fc26447316d3aa4031614453e0805",
-  "head": "4d79284e8d39ea7731372f6efcb1fcd0f104965e",
+  "prev": "19194f344c247540abbd58edf08b0c49ef1eb0fa",
+  "head": "74984fcd729e9302f80b8a7a11d8edf57fc2fbca",
   "applied": [
     "xtalk",
     "ICaloReadCrosstalkMap",
@@ -9,8 +9,7 @@
     "ICaloCreateMap",
     "ITopoClusterInputTool",
     "ICaloReadNeighboursMap",
-    "mdutils",
-    "refresh-temp"
+    "mdutils"
   ],
   "unapplied": [
     "timeout",
@@ -140,7 +139,7 @@
       "oid": "0d8b107ac1940d2de06d12e48b2d2fbe27c01a50"
     },
     "mdutils": {
-      "oid": "2d730a4da3523665dbafb7e2635f1f31aebc4351"
+      "oid": "74984fcd729e9302f80b8a7a11d8edf57fc2fbca"
     },
     "move-check": {
       "oid": "e8a1c82ed0ee579bb159f985af6d9c008c89e2ec"
@@ -153,9 +152,6 @@
     },
     "noiseIndex": {
       "oid": "30ad2d893bffd307f6d84726d6cdcbedbbd495cd"
-    },
-    "refresh-temp": {
-      "oid": "4d79284e8d39ea7731372f6efcb1fcd0f104965e"
     },
     "repnoise": {
       "oid": "d8b7aa8c0eb1150454ee8d82cf0073508b172f62"
