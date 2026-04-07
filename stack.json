@@ -1,11 +1,10 @@
 {
   "version": 5,
-  "prev": "1927d898aa70e0272348a60acdeff00bf6b5e085",
-  "head": "f9d83a4e1b3278ca06f360645f396754e6d12208",
+  "prev": "16f38db46bbc75fe8cb6c136802f70e504180158",
+  "head": "418d78fa0443219edfa2e1860778368b3c67e06b",
   "applied": [
     "xtalk",
-    "ICaloReadNeighboursMap",
-    "refresh-temp"
+    "ICaloReadNeighboursMap"
   ],
   "unapplied": [
     "timeout",
@@ -68,7 +67,7 @@
       "oid": "6504b09e453f64921fab9ac59c512ddd7141311a"
     },
     "ICaloReadNeighboursMap": {
-      "oid": "68052cc84cdf9ec3942c4460a29aa6d6f5dee240"
+      "oid": "418d78fa0443219edfa2e1860778368b3c67e06b"
     },
     "ICalorimeterTool": {
       "oid": "5fd17a8f01e64f7a7bb4d1fd1e003e6cee0417e2"
@@ -153,9 +152,6 @@
     },
     "noiseIndex": {
       "oid": "30ad2d893bffd307f6d84726d6cdcbedbbd495cd"
-    },
-    "refresh-temp": {
-      "oid": "f9d83a4e1b3278ca06f360645f396754e6d12208"
     },
     "repnoise": {
       "oid": "d8b7aa8c0eb1150454ee8d82cf0073508b172f62"
