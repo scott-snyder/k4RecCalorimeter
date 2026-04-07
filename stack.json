@@ -1,19 +1,19 @@
 {
   "version": 5,
-  "prev": "6dfec21365d859bc78c73e69e93b0008eac783e7",
-  "head": "54419fe67411b811d1679e9fc651d98f5f160411",
+  "prev": "a82730f97b02491ebb23caffebbfd639df5f8616",
+  "head": "0521f4ee011428f6ad8b156404d1131036fa053a",
   "applied": [
     "xtalk",
     "timeout",
     "FCChh",
-    "mdutils",
-    "INoiseTools"
+    "mdutils"
   ],
   "unapplied": [
     "ci",
     "k4geo-noclone",
     "nodefgeotool",
     "ICalorimeterTool",
+    "INoiseTools",
     "ICalibrateCaloHitsTool",
     "ICaloReadCrosstalkMap",
     "ICaloReadNeighboursMap",
@@ -73,7 +73,7 @@
       "oid": "5fd17a8f01e64f7a7bb4d1fd1e003e6cee0417e2"
     },
     "INoiseTools": {
-      "oid": "54419fe67411b811d1679e9fc651d98f5f160411"
+      "oid": "1e4d754105a116448d5d9dd9b958756b95385b73"
     },
     "ITopoClusterInputTool": {
       "oid": "28f158e16bbc12502bac5077e83a1d4070cad1ff"
