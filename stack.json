@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "4984a267490af777606752ffd8b135b6e8cd8cef",
-  "head": "a06f4ab315db5961c77788cd10f5e804a658da0b",
+  "prev": "78c804e19d70b81462046b742dce2599d89ee64e",
+  "head": "f1d9abde54b29f28b22e30f3c52bf779506b1861",
   "applied": [
     "xtalk",
     "timeout",
@@ -17,12 +17,12 @@
     "hcal-seg-row",
     "caloToolInfo",
     "xtalkSpan",
-    "cellsInConst"
+    "cellsInConst",
+    "idmap"
   ],
   "unapplied": [
     "ci",
     "k4geo-noclone",
-    "idmap",
     "idmapIndexer",
     "multiIndexer",
     "hcal-tool",
@@ -111,7 +111,7 @@
       "oid": "a2736cfa2228b62a433b73d9a38f69b416162438"
     },
     "idmap": {
-      "oid": "6efec6bf93197bb65df131ff4648feadd02557a2"
+      "oid": "f1d9abde54b29f28b22e30f3c52bf779506b1861"
     },
     "idmapIndexer": {
       "oid": "a3cea8f1ec91a4730d48b3ab8b69fd7ae9e669a3"
