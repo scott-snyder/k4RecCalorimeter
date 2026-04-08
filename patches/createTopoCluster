@@ -1,6 +1,6 @@
-Bottom: 4cb8c9233b8b83b14b5fb83c6d17bcce8ff95f3a
-Top:    70e26fe89f052e6941692d4bff73f2018a38dd79
+Bottom: f55f1c203485f194037b67f18cc4bd7a743487ab
+Top:    33de2001e9436ea1f029a155ecfe2db1a3db5e75
 Author: scott snyder <snyder@bnl.gov>
-Date:   2026-04-08 09:14:43 -0400
+Date:   2026-04-08 09:25:51 -0400
 
 topo clustering speedups
