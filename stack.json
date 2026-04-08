@@ -1,20 +1,20 @@
 {
   "version": 5,
-  "prev": "9b996aff25e3cdd11de9adcefd2df33129326737",
-  "head": "e3b080d3b58993977fa5519e15338f7d5cff832b",
+  "prev": "6e7c93443c8822697bd16ff3c44219052be1d12a",
+  "head": "25efbfca16f15dabce451b9d7dd20c9e3a3ca8ae",
   "applied": [
     "xtalk",
     "timeout",
     "ICaloIndexer",
     "nodefgeotool",
     "ICalibrateCaloHitsTool",
-    "ICalorimeterTool"
+    "ICalorimeterTool",
+    "INoiseTools"
   ],
   "unapplied": [
     "mdutils",
     "ci",
     "FCChh",
-    "INoiseTools",
     "hcal-seg",
     "hcal-seg-row",
     "caloToolInfo",
@@ -59,7 +59,7 @@
       "oid": "e3b080d3b58993977fa5519e15338f7d5cff832b"
     },
     "INoiseTools": {
-      "oid": "5cff9ea864fd6d5f751817d8b6765aab7192dde7"
+      "oid": "25efbfca16f15dabce451b9d7dd20c9e3a3ca8ae"
     },
     "caloCellIndexerSvc": {
       "oid": "dee9564776a43ad4d7d47bd9fae3286ba9f22eed"

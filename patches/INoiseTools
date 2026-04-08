@@ -1,6 +1,6 @@
-Bottom: 9bd0aa38cadd5e51aa0e83dd6bd78db77deae152
-Top:    e97577822f1c0ec25e776b0aa888152aac2d87ba
+Bottom: 7694e92c669967fee81d11de9a3f18090dc3ab3c
+Top:    a921baffd80c1e0123bab7aa4b4ee1ce6cc495cb
 Author: sss <sss@karma>
-Date:   2026-04-08 11:15:31 -0400
+Date:   2026-04-08 11:25:14 -0400
 
 Move INoiseCaloCellsTool and INoiesContTool here from k4FWCore.
