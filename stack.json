@@ -1,15 +1,15 @@
 {
   "version": 5,
-  "prev": "3f196410ad75b06d2d8dc4f166ecaebea2d35a7a",
-  "head": "f303564377cfa434d483694e05c43511ec0b5fdb",
+  "prev": "5075b810faa4e3afc9b95270ef0d084a162d206e",
+  "head": "30c56c411bb91b9d8bdd868d12cb875448d3498b",
   "applied": [
     "xtalk",
     "timeout",
-    "ICalibrateCaloHitsTool"
+    "ICalibrateCaloHitsTool",
+    "ITopoClusterInputTool"
   ],
   "unapplied": [
     "FCChh",
-    "ITopoClusterInputTool",
     "mdutils",
     "nodefgeotool",
     "ICalorimeterTool",
@@ -63,7 +63,7 @@
       "oid": "d4721978966f07c1965f00afe73fc8f1e0ee0660"
     },
     "ITopoClusterInputTool": {
-      "oid": "e18187e96e7f645b6a1d2d88869de210b728028b"
+      "oid": "30c56c411bb91b9d8bdd868d12cb875448d3498b"
     },
     "caloCellIndexerSvc": {
       "oid": "fe1b8667b23c9f335867f2b15c80ed21074bf53b"
