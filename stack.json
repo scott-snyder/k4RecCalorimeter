@@ -1,16 +1,16 @@
 {
   "version": 5,
-  "prev": "2ad6ad098dabc0ec2ecbd86c55b5c09f5bf792c6",
-  "head": "b017e1e5be570220e890b01e17b613095aa6d7c2",
+  "prev": "f9121381ed37baefb288327f99edc829a1d695e9",
+  "head": "0b89e18b909877e29e0b4be34b9064ce6e67de39",
   "applied": [
     "xtalk",
     "timeout",
     "ICaloIndexer",
-    "nodefgeotool"
+    "nodefgeotool",
+    "ICalibrateCaloHitsTool"
   ],
   "unapplied": [
     "ICalorimeterTool",
-    "ICalibrateCaloHitsTool",
     "mdutils",
     "ci",
     "FCChh",
@@ -50,7 +50,7 @@
       "oid": "cb94bafe1d96ce136a6c30e0b131dac834f11998"
     },
     "ICalibrateCaloHitsTool": {
-      "oid": "0705f97b513c5d4228aa6951d854fdc0f0d87726"
+      "oid": "0b89e18b909877e29e0b4be34b9064ce6e67de39"
     },
     "ICaloIndexer": {
       "oid": "79aede41d4d5e290cd93c4da04b63f2b14778110"
