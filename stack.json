@@ -1,10 +1,12 @@
 {
   "version": 5,
-  "prev": "c195e53dc65757d4edde1fc06548ac050a4ce78f",
-  "head": "d7af866509ace5857d0e4f855ee8c315a4b0eb49",
+  "prev": "6fefad3f735b3b3cab86d92d1d7c96efc1785033",
+  "head": "cd97bd0564ba8f5877437b10119fa954410ad26a",
   "applied": [
     "xtalk",
-    "timeout"
+    "timeout",
+    "hcal-seg",
+    "hcal-seg-row"
   ],
   "unapplied": [
     "INoiseTools",
@@ -14,8 +16,6 @@
     "ICalorimeterTool",
     "xtalkSpan",
     "FCChh",
-    "hcal-seg",
-    "hcal-seg-row",
     "caloToolInfo",
     "cellsInConst",
     "idmap",
@@ -87,10 +87,10 @@
       "oid": "20621c501222e6dd2eeafb4f24df06a49bac82b8"
     },
     "hcal-seg": {
-      "oid": "5f0083bab831ef2ffca895c3500229e3704836d6"
+      "oid": "77923752f9a59585a195bd0b6d19d36d1067747c"
     },
     "hcal-seg-row": {
-      "oid": "e352d06f2ae5faf864a2043d638fc4517f094063"
+      "oid": "cd97bd0564ba8f5877437b10119fa954410ad26a"
     },
     "hcal-tool": {
       "oid": "2abc6f1e8e5bf69180b21ec83584c952f4264c0c"
