@@ -5,6 +5,7 @@
 
 // k4FWCore
 #include "k4Interface/IGeoSvc.h"
+#include "k4FWCore/MetadataUtils.h"
 
 // DD4hep
 #include "DD4hep/DetType.h"
@@ -85,12 +86,17 @@ StatusCode CreateCaloCells::initialize() {
   }
 
   // Copy over the CellIDEncoding string from the input collection to the output collection
-  auto hitsEncoding = m_hitsCellIDEncoding.get_optional();
+  std::string inEncodingName = podio::collMetadataParamName(m_hits.objKey(), edm4hep::labels::CellIDEncoding);
+  std::optional<std::string> hitsEncoding =
+    k4FWCore::getParameter<std::string>(inEncodingName, this);
+
   if (!hitsEncoding.has_value()) {
     error() << "Missing cellID encoding for input collection" << endmsg;
     return StatusCode::FAILURE;
   }
-  m_cellsCellIDEncoding.put(hitsEncoding.value());
+
+  std::string outEncodingName = podio::collMetadataParamName(m_cells.objKey(), edm4hep::labels::CellIDEncoding);
+  k4FWCore::putParameter (outEncodingName, *hitsEncoding, this);
 
   m_decoder = dd4hep::DDSegmentation::BitFieldCoder(hitsEncoding.value());
   m_systemIndex = m_decoder.index ("system");
