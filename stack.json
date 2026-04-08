@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "7b461f7284adfa9982e8737a9b3a18906ea626d4",
-  "head": "42296e054a9f7b80c7c84a619108a7a43a68c473",
+  "prev": "5a3654658fd022dbdfb946fd74ef4a63c2a7755c",
+  "head": "3fb7ef8c888a484e41d5c686efbd8077caaf8fb4",
   "applied": [
     "xtalk",
     "timeout",
@@ -20,12 +20,12 @@
     "cellsInConst",
     "idmap",
     "idmapIndexer",
-    "multiIndexer"
+    "multiIndexer",
+    "hcal-tool"
   ],
   "unapplied": [
     "ci",
     "k4geo-noclone",
-    "hcal-tool",
     "ecalbarrelIndexer",
     "hcalIndexer",
     "ecalendcapTool",
@@ -105,7 +105,7 @@
       "oid": "6fbd4a40b64e6e1ef5fba257b7f59274ba5060d3"
     },
     "hcal-tool": {
-      "oid": "5a1fdd1593191d7a8d7339c4dd4e562029065ac0"
+      "oid": "3fb7ef8c888a484e41d5c686efbd8077caaf8fb4"
     },
     "hcalIndexer": {
       "oid": "a2736cfa2228b62a433b73d9a38f69b416162438"
