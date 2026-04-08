@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "df07088ac7429155be6ce43f1af50b9fc383ddf2",
-  "head": "dabab6880847bbc73bf18ff8818b1af88f179073",
+  "prev": "71ec3d1b26bb4aaf5566d9ddfa1ef27c5f296230",
+  "head": "6579fa3d73ec0c8116eb3b51de62becb887ce2f9",
   "applied": [
     "xtalk",
     "ICaloReadCrosstalkMap",
@@ -15,7 +15,8 @@
     "FCChh",
     "k4geo-noclone",
     "nodefgeotool",
-    "ICalorimeterTool"
+    "ICalorimeterTool",
+    "refresh-temp"
   ],
   "unapplied": [
     "INoiseTools",
@@ -152,6 +153,9 @@
     },
     "noiseIndex": {
       "oid": "30ad2d893bffd307f6d84726d6cdcbedbbd495cd"
+    },
+    "refresh-temp": {
+      "oid": "6579fa3d73ec0c8116eb3b51de62becb887ce2f9"
     },
     "repnoise": {
       "oid": "d8b7aa8c0eb1150454ee8d82cf0073508b172f62"
