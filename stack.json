@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "b9aaec3bcb785bb0c07281bbedaa512cc0894aee",
-  "head": "a9468cf47467e1c4f1ac41e92c07a369100e2515",
+  "prev": "9991634aeaca6af9568d29269571b703394ea556",
+  "head": "6fbd4a40b64e6e1ef5fba257b7f59274ba5060d3",
   "applied": [
     "xtalk",
     "timeout",
@@ -12,13 +12,13 @@
     "ICalorimeterTool",
     "INoiseTools",
     "ICalibrateCaloHitsTool",
-    "ICaloIndexer"
+    "ICaloIndexer",
+    "hcal-seg",
+    "hcal-seg-row"
   ],
   "unapplied": [
     "ci",
     "k4geo-noclone",
-    "hcal-seg",
-    "hcal-seg-row",
     "caloToolInfo",
     "xtalkSpan",
     "cellsInConst",
@@ -99,10 +99,10 @@
       "oid": "68701437a6ca6942889243fa044d3e89ad81dd7f"
     },
     "hcal-seg": {
-      "oid": "a2a38a44bec832ba45dd9941bf3d7637c48a7c7a"
+      "oid": "cf39edf42ec1b451925a00c0d6781a8a965387cf"
     },
     "hcal-seg-row": {
-      "oid": "b3b2cabb60c638499e50caddbb94d2d1619a30fe"
+      "oid": "6fbd4a40b64e6e1ef5fba257b7f59274ba5060d3"
     },
     "hcal-tool": {
       "oid": "5a1fdd1593191d7a8d7339c4dd4e562029065ac0"
