@@ -7,7 +7,7 @@
 // Interfaces
 #include "RecCaloCommon/ICalibrateCaloHitsTool.h"
 #include "k4Interface/ICalorimeterTool.h"
-#include "RecCaloCommon/ICalorimeterTool.h"
+#include "RecCaloCommon/INoiseCaloCellsTool.h"
 
 // Gaudi
 #include "Gaudi/Algorithm.h"
