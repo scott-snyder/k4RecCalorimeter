@@ -1,9 +1,10 @@
 {
   "version": 5,
-  "prev": "08ca8740358592bf87704f1281649acce6eec190",
-  "head": "f9f640bb7d6ad287713a2098ec6eb9d725b0718f",
+  "prev": "bbee554354d3aec3c8713e256cca7d50d8b983e7",
+  "head": "a3380215be4c969f4d327035eca32a62c77125aa",
   "applied": [
-    "xtalk"
+    "xtalk",
+    "ITowerTools"
   ],
   "unapplied": [
     "ICaloReadNeighboursMap",
@@ -12,7 +13,6 @@
     "ICaloCreateMap",
     "ITopoClusterInputTool",
     "ICaloReadCrosstalkMap",
-    "ITowerTools",
     "timeout",
     "FCChh",
     "k4geo-noclone",
@@ -79,7 +79,7 @@
       "oid": "cac8bf8e0b814301d117aec5f7158529d1fbdc53"
     },
     "ITowerTools": {
-      "oid": "159acf186278d860082d8b5415a6ed74826094ab"
+      "oid": "a3380215be4c969f4d327035eca32a62c77125aa"
     },
     "caloCellIndexerSvc": {
       "oid": "f091765735d93b01eaac4370be5547c2a730bac0"
