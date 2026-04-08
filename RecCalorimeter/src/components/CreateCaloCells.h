@@ -7,7 +7,7 @@
 // Interfaces
 #include "k4Interface/ICalibrateCaloHitsTool.h"
 #include "RecCaloCommon/ICaloReadCrosstalkMap.h"
-#include "k4Interface/ICalorimeterTool.h"
+#include "RecCaloCommon/ICalorimeterTool.h"
 #include "k4Interface/INoiseCaloCellsTool.h"
 
 // Gaudi
@@ -72,7 +72,7 @@ private:
   /// Handle for the calorimeter cells noise tool
   mutable ToolHandle<INoiseCaloCellsTool> m_noiseTool{"NoiseCaloCellsFlatTool", this};
   /// Handle for the geometry tool
-  ToolHandle<ICalorimeterTool> m_geoTool{"", this};
+  ToolHandle<k4::recCalo::ICalorimeterTool> m_geoTool{"", this};
 
   /// Add crosstalk to cells?
   Gaudi::Property<bool> m_addCrosstalk{this, "addCrosstalk", false, "Add crosstalk effect?"};
