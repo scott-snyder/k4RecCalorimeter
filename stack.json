@@ -1,15 +1,15 @@
 {
   "version": 5,
-  "prev": "9e4e974439da685977e96648e1b26bfaa2ec4862",
-  "head": "1fcb7e3608d64cd463c13093e64027395fa83856",
+  "prev": "3784e5cde95e901f23842fb5a9d8a2b88b870ed0",
+  "head": "cd97bd0564ba8f5877437b10119fa954410ad26a",
   "applied": [
     "xtalk",
     "timeout",
     "hcal-seg",
-    "hcal-seg-row",
-    "ci"
+    "hcal-seg-row"
   ],
   "unapplied": [
+    "ci",
     "INoiseTools",
     "mdutils",
     "nodefgeotool",
