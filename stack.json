@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "fb4864ed05599d2d432bbc2a7ea91d9d5448371a",
-  "head": "729aed963851ca6b73015ab3a470bf4483d0e4b5",
+  "prev": "b9aaec3bcb785bb0c07281bbedaa512cc0894aee",
+  "head": "a9468cf47467e1c4f1ac41e92c07a369100e2515",
   "applied": [
     "xtalk",
     "timeout",
@@ -11,12 +11,12 @@
     "nodefgeotool",
     "ICalorimeterTool",
     "INoiseTools",
-    "ICalibrateCaloHitsTool"
+    "ICalibrateCaloHitsTool",
+    "ICaloIndexer"
   ],
   "unapplied": [
     "ci",
     "k4geo-noclone",
-    "ICaloIndexer",
     "hcal-seg",
     "hcal-seg-row",
     "caloToolInfo",
@@ -54,7 +54,7 @@
       "oid": "729aed963851ca6b73015ab3a470bf4483d0e4b5"
     },
     "ICaloIndexer": {
-      "oid": "7feeb3baf78da6003bfc416e5a409c1e5b7fd089"
+      "oid": "a9468cf47467e1c4f1ac41e92c07a369100e2515"
     },
     "ICalorimeterTool": {
       "oid": "38961ffc7e0453a725062f3431f8ccd7aeddde45"
