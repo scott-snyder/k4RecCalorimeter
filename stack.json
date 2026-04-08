@@ -1,15 +1,15 @@
 {
   "version": 5,
-  "prev": "e527881b85f1fe45ad0a160dd009dc33382a5ebe",
-  "head": "d8f82ba2bafb7d45f50f53fcc7c117ced355a3ea",
+  "prev": "241125dcc3b4a19deb613fbfd190d2f75250f4dd",
+  "head": "63f42a2a26ce10f5ddbee9c991d55b28e6769a09",
   "applied": [
     "xtalk",
     "ICaloReadCrosstalkMap",
-    "mdutils"
+    "mdutils",
+    "ci",
+    "ITowerTools"
   ],
   "unapplied": [
-    "ci",
-    "ITowerTools",
     "ICaloReadNeighboursMap",
     "ICaloCreateMap",
     "ITopoClusterInputTool",
@@ -79,7 +79,7 @@
       "oid": "cac8bf8e0b814301d117aec5f7158529d1fbdc53"
     },
     "ITowerTools": {
-      "oid": "a3380215be4c969f4d327035eca32a62c77125aa"
+      "oid": "63f42a2a26ce10f5ddbee9c991d55b28e6769a09"
     },
     "caloCellIndexerSvc": {
       "oid": "f091765735d93b01eaac4370be5547c2a730bac0"
@@ -100,7 +100,7 @@
       "oid": "a803841caa46b38b1b0eeb7b521a3ef03344fdb0"
     },
     "ci": {
-      "oid": "78c4bd476d7933b16634bfe0c2430cf757637ad5"
+      "oid": "10fc79a3f9444fdf7ffe818ca50cb77f95f23550"
     },
     "createCaloCells": {
       "oid": "7e2e6b4aee017dcec8d511125b4b4ea670de04b4"
