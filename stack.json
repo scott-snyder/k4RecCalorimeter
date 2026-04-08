@@ -1,12 +1,11 @@
 {
   "version": 5,
-  "prev": "308e5b560d79f2275174aad1f0368925dd9c9b47",
-  "head": "bbc29feb100d5ef8a2938ed5b71d7a8bc5bd10fb",
+  "prev": "50ddfd674e53e5370ffd163b2bc9bb6c3b82ff19",
+  "head": "cdb7cf32cfde9e066ac001c278a2cfee2585e510",
   "applied": [
     "xtalk",
     "ICaloReadCrosstalkMap",
-    "mdutils",
-    "refresh-temp"
+    "mdutils"
   ],
   "unapplied": [
     "ci",
@@ -140,7 +139,7 @@
       "oid": "0d8b107ac1940d2de06d12e48b2d2fbe27c01a50"
     },
     "mdutils": {
-      "oid": "6f281398f9133897e786ec733e0e672dc43f8f4b"
+      "oid": "cdb7cf32cfde9e066ac001c278a2cfee2585e510"
     },
     "move-check": {
       "oid": "e8a1c82ed0ee579bb159f985af6d9c008c89e2ec"
@@ -153,9 +152,6 @@
     },
     "noiseIndex": {
       "oid": "30ad2d893bffd307f6d84726d6cdcbedbbd495cd"
-    },
-    "refresh-temp": {
-      "oid": "bbc29feb100d5ef8a2938ed5b71d7a8bc5bd10fb"
     },
     "repnoise": {
       "oid": "d8b7aa8c0eb1150454ee8d82cf0073508b172f62"
