@@ -1,6 +1,6 @@
 Bottom: 7b109f8728348be0521812aa897fb6535f56e1e2
 Top:    5b4d7b3a874770754763d5e58e952cb8282d8814
 Author: sss <sss@karma>
-Date:   2026-04-08 09:13:59 -0400
+Date:   2026-04-08 09:14:43 -0400
 
 Move ICaloIndexer here from k4FWCore.
