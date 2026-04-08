@@ -1,15 +1,15 @@
 {
   "version": 5,
-  "prev": "0b442f3f9d45b143ddd3820339c52eaa58c556c0",
-  "head": "5e8f6436cb4e7bc00c31c3723fd1f706ceca837d",
+  "prev": "de6221d703237ec0129339648112a9a187932cdc",
+  "head": "3b332a820b93f9ee3372fc743b2be676f5e774ba",
   "applied": [
     "xtalk",
     "timeout",
     "hcal-seg",
-    "hcal-seg-row"
+    "hcal-seg-row",
+    "ci"
   ],
   "unapplied": [
-    "ci",
     "INoiseTools",
     "mdutils",
     "nodefgeotool",
@@ -72,7 +72,7 @@
       "oid": "1cba5f233ac1301753b6cbb4f9147292a87b6685"
     },
     "ci": {
-      "oid": "1fcb7e3608d64cd463c13093e64027395fa83856"
+      "oid": "3b332a820b93f9ee3372fc743b2be676f5e774ba"
     },
     "createCaloCells": {
       "oid": "24573b3cdab9e3f331f29ff5a5d92c499d70d902"
