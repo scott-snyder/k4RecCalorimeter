@@ -1,6 +1,0 @@
-Bottom: 8573cc9c8b8c185893fdb29b0d83eaffa7244e1e
-Top:    8573cc9c8b8c185893fdb29b0d83eaffa7244e1e
-Author: sss <sss@karma>
-Date:   2026-04-08 11:14:04 -0400
-
-Move ITopoClusterInputTool here from k4FWCore.
