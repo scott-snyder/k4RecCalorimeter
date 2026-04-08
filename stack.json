@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "9991634aeaca6af9568d29269571b703394ea556",
-  "head": "6fbd4a40b64e6e1ef5fba257b7f59274ba5060d3",
+  "prev": "c59afd896611be8f4a100b82a1d44bdfbf454c03",
+  "head": "62074c7db81f676e3d1ccfc0f684d7bdf6195f75",
   "applied": [
     "xtalk",
     "timeout",
@@ -14,13 +14,13 @@
     "ICalibrateCaloHitsTool",
     "ICaloIndexer",
     "hcal-seg",
-    "hcal-seg-row"
+    "hcal-seg-row",
+    "caloToolInfo",
+    "xtalkSpan"
   ],
   "unapplied": [
     "ci",
     "k4geo-noclone",
-    "caloToolInfo",
-    "xtalkSpan",
     "cellsInConst",
     "idmap",
     "idmapIndexer",
@@ -69,7 +69,7 @@
       "oid": "28d52bd95f01748fec6cbfd40cd3a6599f15de34"
     },
     "caloToolInfo": {
-      "oid": "eb9c7013a3b460ec26f85f4b44cad5248894b729"
+      "oid": "28db5c996228dbceeb7e271f571b390017a22d23"
     },
     "cellposIndex": {
       "oid": "35c11f601c831fc4d94bd2699199c7d4664490e0"
@@ -162,7 +162,7 @@
       "oid": "1faee81bc0bb8a3db9fbbb93ef86ba5aeb9a9e17"
     },
     "xtalkSpan": {
-      "oid": "59d461938d59e7d12c85bacc69cd81504c47b5c7"
+      "oid": "62074c7db81f676e3d1ccfc0f684d7bdf6195f75"
     }
   }
 }
