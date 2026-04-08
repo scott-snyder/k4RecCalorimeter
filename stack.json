@@ -1,15 +1,15 @@
 {
   "version": 5,
-  "prev": "006a31fd7f2a056b028d37f5bce0e3ee8c0a3bf5",
-  "head": "a0d9a8dfceef7a22ffc9251dc7496b9c18673d2a",
+  "prev": "6faa1591a131f68bb0a5cda3a42a5bd07404458b",
+  "head": "78c4bd476d7933b16634bfe0c2430cf757637ad5",
   "applied": [
     "xtalk",
-    "ICaloReadCrosstalkMap"
+    "ICaloReadCrosstalkMap",
+    "ci"
   ],
   "unapplied": [
     "ITowerTools",
     "mdutils",
-    "ci",
     "ICaloReadNeighboursMap",
     "ICaloCreateMap",
     "ITopoClusterInputTool",
@@ -100,7 +100,7 @@
       "oid": "a803841caa46b38b1b0eeb7b521a3ef03344fdb0"
     },
     "ci": {
-      "oid": "4038fe4cfbd69401d1612a6a6f9c4ed82747a448"
+      "oid": "78c4bd476d7933b16634bfe0c2430cf757637ad5"
     },
     "createCaloCells": {
       "oid": "7e2e6b4aee017dcec8d511125b4b4ea670de04b4"
