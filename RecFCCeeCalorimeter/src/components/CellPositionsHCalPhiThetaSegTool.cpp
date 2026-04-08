@@ -23,9 +23,8 @@ StatusCode CellPositionsHCalPhiThetaSegTool::initialize() {
   dd4hep::Segmentation segmentation = readout.segmentation();
   m_segmentationType = segmentation.segmentation()->type();
 
-  const dd4hep::DetElementObject& de = segmentation.detector();
   dd4hep::VolumeManager vman_glob = detector->volumeManager();
-  m_volman = vman_glob.subdetector (de.id);
+  m_volman = vman_glob.subdetector (segmentation.detector()->id);
 
   if (m_segmentationType == "FCCSWGridPhiTheta_k4geo") {
     // get GridPhiTheta segmentation
