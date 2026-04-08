@@ -1,11 +1,12 @@
 {
   "version": 5,
-  "prev": "b4ce8e90f76645edd83034cff28a7f733f55e88e",
-  "head": "e9fefbcedaf7e12167d217572763ad048c6fa595",
+  "prev": "4ed3dd97ea9403b852d61f5a01096dd7e25d4192",
+  "head": "21d57f00de099e62df78479df1dd051700f3193c",
   "applied": [
     "xtalk",
     "timeout",
-    "ICalibrateCaloHitsTool"
+    "ICalibrateCaloHitsTool",
+    "refresh-temp"
   ],
   "unapplied": [
     "FCChh",
@@ -136,6 +137,9 @@
     },
     "noiseIndex": {
       "oid": "a4d7e2dbf71e8d785fe09e987e69e13818b3d6b7"
+    },
+    "refresh-temp": {
+      "oid": "21d57f00de099e62df78479df1dd051700f3193c"
     },
     "repnoise": {
       "oid": "f1b3776713e7f92f4cca3fe08f6b49147668aa90"
