@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "b0ecbce3e7794a0bad699c56fe9973ff752ad935",
-  "head": "1e496b68e1366a39c02fdb335e12c38538399b16",
+  "prev": "fd2614249a3d215077c7c5ab05960e0c2d0fe467",
+  "head": "f3b256e4ea8f5a2dab95f4a45b45bde40c0330e9",
   "applied": [
     "xtalk",
     "timeout",
@@ -41,7 +41,8 @@
     "check-deprecated",
     "check-remove",
     "k4geo-noclone",
-    "ci"
+    "ci",
+    "nodecl"
   ],
   "unapplied": [],
   "hidden": [],
@@ -129,6 +130,9 @@
     },
     "multiIndexer": {
       "oid": "1525785c1ec3396b0285a49e5354997f2be1b704"
+    },
+    "nodecl": {
+      "oid": "f3b256e4ea8f5a2dab95f4a45b45bde40c0330e9"
     },
     "nodefgeotool": {
       "oid": "e91024c79e95682651c24be6f33107684957f6ee"
