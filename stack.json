@@ -1,13 +1,12 @@
 {
   "version": 5,
-  "prev": "ba526f508c5ee6dafa5ab64a58d0790a15d1d842",
-  "head": "47438e6e66e77fafe559f034bce4a413a916b924",
+  "prev": "0b442f3f9d45b143ddd3820339c52eaa58c556c0",
+  "head": "5e8f6436cb4e7bc00c31c3723fd1f706ceca837d",
   "applied": [
     "xtalk",
     "timeout",
     "hcal-seg",
-    "hcal-seg-row",
-    "refresh-temp"
+    "hcal-seg-row"
   ],
   "unapplied": [
     "ci",
@@ -88,10 +87,10 @@
       "oid": "20621c501222e6dd2eeafb4f24df06a49bac82b8"
     },
     "hcal-seg": {
-      "oid": "77923752f9a59585a195bd0b6d19d36d1067747c"
+      "oid": "127bdbbb540365b84b5651c94aa91fc644256fc9"
     },
     "hcal-seg-row": {
-      "oid": "cd97bd0564ba8f5877437b10119fa954410ad26a"
+      "oid": "5e8f6436cb4e7bc00c31c3723fd1f706ceca837d"
     },
     "hcal-tool": {
       "oid": "2abc6f1e8e5bf69180b21ec83584c952f4264c0c"
@@ -125,9 +124,6 @@
     },
     "noiseIndex": {
       "oid": "f3349a2887823ec548175a7b2af0b48e11ffa4c5"
-    },
-    "refresh-temp": {
-      "oid": "47438e6e66e77fafe559f034bce4a413a916b924"
     },
     "repnoise": {
       "oid": "955e1c81f1d6686543b3e11241a8e6c4253a637a"
