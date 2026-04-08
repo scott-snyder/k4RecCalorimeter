@@ -1,13 +1,13 @@
 {
   "version": 5,
-  "prev": "6faa1591a131f68bb0a5cda3a42a5bd07404458b",
-  "head": "78c4bd476d7933b16634bfe0c2430cf757637ad5",
+  "prev": "77ae575cd023330cedef8ce83544cd869e3d5e01",
+  "head": "a0d9a8dfceef7a22ffc9251dc7496b9c18673d2a",
   "applied": [
     "xtalk",
-    "ICaloReadCrosstalkMap",
-    "ci"
+    "ICaloReadCrosstalkMap"
   ],
   "unapplied": [
+    "ci",
     "ITowerTools",
     "mdutils",
     "ICaloReadNeighboursMap",
