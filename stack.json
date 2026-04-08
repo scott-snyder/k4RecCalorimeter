@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "cd50494cd9559b1140cad83711d3aeb96f2273a9",
-  "head": "010d462d8f384b80034647deb57fab9cf41a65ec",
+  "prev": "ba3bd73e3c4f5c835ac0ba38b8008debd44fee40",
+  "head": "c26d1e3d7f4326bda35879663615e71695749d79",
   "applied": [
     "xtalk",
     "ICaloReadCrosstalkMap",
@@ -15,10 +15,10 @@
     "FCChh",
     "k4geo-noclone",
     "nodefgeotool",
-    "ICalorimeterTool"
+    "ICalorimeterTool",
+    "INoiseTools"
   ],
   "unapplied": [
-    "INoiseTools",
     "ICalibrateCaloHitsTool",
     "ICaloIndexer",
     "hcal-seg",
@@ -73,7 +73,7 @@
       "oid": "010d462d8f384b80034647deb57fab9cf41a65ec"
     },
     "INoiseTools": {
-      "oid": "1e4d754105a116448d5d9dd9b958756b95385b73"
+      "oid": "c26d1e3d7f4326bda35879663615e71695749d79"
     },
     "ITopoClusterInputTool": {
       "oid": "b449cb8854680bb3ca1065f0796140a65dc58135"
