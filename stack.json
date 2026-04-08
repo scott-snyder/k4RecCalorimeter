@@ -1,11 +1,12 @@
 {
   "version": 5,
-  "prev": "fa239ff3c096f5b7a55edfe6f222cdb1cd20c16e",
-  "head": "79aede41d4d5e290cd93c4da04b63f2b14778110",
+  "prev": "af38bea8d1bf3aca30e951b434ba96d8ed0dd5c3",
+  "head": "55e4be32654dfc1a0841d4fc8dc8497c9fafaa02",
   "applied": [
     "xtalk",
     "timeout",
-    "ICaloIndexer"
+    "ICaloIndexer",
+    "ci"
   ],
   "unapplied": [
     "nodefgeotool",
@@ -13,7 +14,6 @@
     "ICalorimeterTool",
     "INoiseTools",
     "mdutils",
-    "ci",
     "FCChh",
     "hcal-seg",
     "hcal-seg-row",
@@ -80,7 +80,7 @@
       "oid": "39cddc4bfff5185466df484b8ec47b32b559c637"
     },
     "ci": {
-      "oid": "5950c8325185b19be4ba8aea55a6bb42bedb27c5"
+      "oid": "55e4be32654dfc1a0841d4fc8dc8497c9fafaa02"
     },
     "createCaloCells": {
       "oid": "835aa1f95ef992b735623927537e304e91fd7cd1"
