@@ -1,9 +1,10 @@
 {
   "version": 5,
-  "prev": "f28dea36c5492af279940269bc724b115c4f498d",
-  "head": "f9f640bb7d6ad287713a2098ec6eb9d725b0718f",
+  "prev": "006a31fd7f2a056b028d37f5bce0e3ee8c0a3bf5",
+  "head": "a0d9a8dfceef7a22ffc9251dc7496b9c18673d2a",
   "applied": [
-    "xtalk"
+    "xtalk",
+    "ICaloReadCrosstalkMap"
   ],
   "unapplied": [
     "ITowerTools",
@@ -12,7 +13,6 @@
     "ICaloReadNeighboursMap",
     "ICaloCreateMap",
     "ITopoClusterInputTool",
-    "ICaloReadCrosstalkMap",
     "timeout",
     "FCChh",
     "k4geo-noclone",
