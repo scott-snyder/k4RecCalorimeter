@@ -1,6 +1,6 @@
-Bottom: c8517400cfe226d24b0029bf0368b328cc65e363
-Top:    8f014cc333317317472878627c6c184bd0a64a7c
+Bottom: 971304380e6f3cd797524dc35472c4b74ce10194
+Top:    1dc6606b2a7462e8a4dbb73833f7cc2871ba2c49
 Author: sss <sss@karma>
-Date:   2026-04-08 09:14:43 -0400
+Date:   2026-04-08 09:25:24 -0400
 
 Configure indexing service in test scripts.
