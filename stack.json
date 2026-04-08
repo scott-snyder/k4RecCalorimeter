@@ -1,13 +1,15 @@
 {
   "version": 5,
-  "prev": "b091c443993061b950da3146a80626f84b0b6ef5",
-  "head": "0fcd47bf5187433a31ae97531e7a309ff854452e",
+  "prev": "f8e638ff4a20ff61355cbc2e610b78e8c0285e6f",
+  "head": "d41fc6dc77a8637eedda67c12b6c1ecbfcfb3856",
   "applied": [
     "xtalk",
     "timeout",
     "FCChh",
     "ITopoClusterInputTool",
-    "mdutils",
+    "mdutils"
+  ],
+  "unapplied": [
     "nodefgeotool",
     "ICalorimeterTool",
     "INoiseTools",
@@ -36,9 +38,7 @@
     "subdetVolman2",
     "subdetVolman",
     "sortnoise",
-    "repnoise"
-  ],
-  "unapplied": [
+    "repnoise",
     "move-check",
     "check-deprecated",
     "check-remove",
