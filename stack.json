@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "5188c1813fff7d32050fdfde02522a0d30ce0334",
-  "head": "8dc6108572a7093798ea6a2bba4dd97cee35b7b7",
+  "prev": "d05a50ae61dc24c78a994120808f4322f7d7dd98",
+  "head": "b620b4443e879cec5b6556645b933801c3a06de1",
   "applied": [
     "xtalk",
     "timeout",
@@ -38,12 +38,12 @@
     "sortnoise",
     "repnoise",
     "move-check",
-    "check-deprecated"
+    "check-deprecated",
+    "check-remove",
+    "k4geo-noclone"
   ],
   "unapplied": [
-    "ci",
-    "k4geo-noclone",
-    "check-remove"
+    "ci"
   ],
   "hidden": [],
   "patches": {
@@ -81,7 +81,7 @@
       "oid": "8dc6108572a7093798ea6a2bba4dd97cee35b7b7"
     },
     "check-remove": {
-      "oid": "f0bd7138c22e26fd10fc08a4760cd89aeb7c799c"
+      "oid": "576f4ee53d7c663bf1591e23039b98bbfb719c1c"
     },
     "ci": {
       "oid": "a5c19ee63df0df8584842bcf20332a65cef35a9f"
@@ -120,7 +120,7 @@
       "oid": "11253f2d8c0f7445c0dc5f81db8df5faebcb407b"
     },
     "k4geo-noclone": {
-      "oid": "28db11cd89de1e09bfffb348741da654a26c6123"
+      "oid": "b620b4443e879cec5b6556645b933801c3a06de1"
     },
     "mdutils": {
       "oid": "d41fc6dc77a8637eedda67c12b6c1ecbfcfb3856"
