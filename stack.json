@@ -1,14 +1,14 @@
 {
   "version": 5,
-  "prev": "6573c9fe4cb0af25bd640a69589233a9b841f974",
-  "head": "7538f6cf37cd92483e1bb6a30205d34e4e8f4f85",
+  "prev": "d039a8fecb4fe6d934c11a383108b8e7e20ffaf9",
+  "head": "2fab0bf3b422a3f103951080951bc1e2d89455d1",
   "applied": [
     "xtalk",
     "timeout",
-    "xtalkSpan",
-    "ci"
+    "xtalkSpan"
   ],
   "unapplied": [
+    "ci",
     "ICaloIndexer",
     "nodefgeotool",
     "ICalibrateCaloHitsTool",
