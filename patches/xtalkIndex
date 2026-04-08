@@ -1,6 +1,6 @@
 Bottom: d2371a00882903c04e0e94b59fdf49a725ed8bcb
 Top:    e90dd1aa48304e7476f0a7bbf87717c8e743366d
 Author: scott snyder <snyder@bnl.gov>
-Date:   2026-04-08 13:25:13 -0400
+Date:   2026-04-08 13:25:44 -0400
 
 More efficient data storage for ReadCaloCrosstalkMap.
