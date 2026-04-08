@@ -1,10 +1,11 @@
 {
   "version": 5,
-  "prev": "22fa95728e01eaa3e6f9624e4a6469d726530923",
-  "head": "a7d8c1f5cbc4f1f54e97269e3ca148fc90feafba",
+  "prev": "318905a01d45bdd90d440c87fea7c5ed09b8575c",
+  "head": "4551d697e0d77a7aaf12d3ffdb6805af1f7bdade",
   "applied": [
     "xtalk",
-    "timeout"
+    "timeout",
+    "ICaloIndexer"
   ],
   "unapplied": [
     "ICalibrateCaloHitsTool",
@@ -14,7 +15,6 @@
     "nodefgeotool",
     "ICalorimeterTool",
     "INoiseTools",
-    "ICaloIndexer",
     "hcal-seg",
     "hcal-seg-row",
     "caloToolInfo",
@@ -53,7 +53,7 @@
       "oid": "0705f97b513c5d4228aa6951d854fdc0f0d87726"
     },
     "ICaloIndexer": {
-      "oid": "5be40b2c9f13c80846bb36a4ec79e8e4fa22e734"
+      "oid": "4551d697e0d77a7aaf12d3ffdb6805af1f7bdade"
     },
     "ICalorimeterTool": {
       "oid": "7df3378a053ab5068a39e400cd2fe29be2d63247"
