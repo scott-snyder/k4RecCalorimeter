@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "b29312ca71d5bfc2e4eec511762c579660a7d5e9",
-  "head": "563649f33c117b678de345301438a6ff53303b6e",
+  "prev": "a4d7455e799beee34d9f1ef871dcd780cccef237",
+  "head": "447bf0d8507e729eeb2f96061233dfc66cabd69e",
   "applied": [
     "xtalk",
     "timeout",
@@ -11,7 +11,8 @@
     "ITopoClusterInputTool",
     "FCChh",
     "nodefgeotool",
-    "ICalorimeterTool"
+    "ICalorimeterTool",
+    "refresh-temp"
   ],
   "unapplied": [
     "INoiseTools",
@@ -136,6 +137,9 @@
     },
     "noiseIndex": {
       "oid": "a4d7e2dbf71e8d785fe09e987e69e13818b3d6b7"
+    },
+    "refresh-temp": {
+      "oid": "447bf0d8507e729eeb2f96061233dfc66cabd69e"
     },
     "repnoise": {
       "oid": "f1b3776713e7f92f4cca3fe08f6b49147668aa90"
