@@ -1,10 +1,11 @@
 {
   "version": 5,
-  "prev": "96ada25d6f577be670479d86244b3dc890d80b9a",
-  "head": "68c01194faeeb101ec0ddcf79fa535c1f5f3b2bc",
-  "applied": [],
+  "prev": "683ccbb483016c2b1ed72008bbc0bbfe0e669b19",
+  "head": "89bbbd64415357fa56f537c594083231b7b0fd2f",
+  "applied": [
+    "xtalk"
+  ],
   "unapplied": [
-    "xtalk",
     "mdutils",
     "ci",
     "ITowerTools",
