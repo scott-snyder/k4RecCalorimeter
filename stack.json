@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "c59afd896611be8f4a100b82a1d44bdfbf454c03",
-  "head": "62074c7db81f676e3d1ccfc0f684d7bdf6195f75",
+  "prev": "4984a267490af777606752ffd8b135b6e8cd8cef",
+  "head": "a06f4ab315db5961c77788cd10f5e804a658da0b",
   "applied": [
     "xtalk",
     "timeout",
@@ -16,12 +16,12 @@
     "hcal-seg",
     "hcal-seg-row",
     "caloToolInfo",
-    "xtalkSpan"
+    "xtalkSpan",
+    "cellsInConst"
   ],
   "unapplied": [
     "ci",
     "k4geo-noclone",
-    "cellsInConst",
     "idmap",
     "idmapIndexer",
     "multiIndexer",
@@ -75,7 +75,7 @@
       "oid": "35c11f601c831fc4d94bd2699199c7d4664490e0"
     },
     "cellsInConst": {
-      "oid": "43440c4e514c5a5c7f06fefa346e05c08585cb1c"
+      "oid": "a06f4ab315db5961c77788cd10f5e804a658da0b"
     },
     "check-deprecated": {
       "oid": "380aa60607d2f84f84973c9cad735e36d04c649c"
