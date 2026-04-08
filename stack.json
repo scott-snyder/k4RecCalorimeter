@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "624ac328d357a7b3bdd0b2fdba2dc5e042f00cf8",
-  "head": "d6e37ca65da72c61e6a5f3703e8dcf07b2232776",
+  "prev": "5188c1813fff7d32050fdfde02522a0d30ce0334",
+  "head": "8dc6108572a7093798ea6a2bba4dd97cee35b7b7",
   "applied": [
     "xtalk",
     "timeout",
@@ -35,14 +35,14 @@
     "createCaloCells",
     "subdetVolman2",
     "subdetVolman",
-    "sortnoise"
+    "sortnoise",
+    "repnoise",
+    "move-check",
+    "check-deprecated"
   ],
   "unapplied": [
     "ci",
     "k4geo-noclone",
-    "repnoise",
-    "move-check",
-    "check-deprecated",
     "check-remove"
   ],
   "hidden": [],
@@ -78,7 +78,7 @@
       "oid": "a06f4ab315db5961c77788cd10f5e804a658da0b"
     },
     "check-deprecated": {
-      "oid": "380aa60607d2f84f84973c9cad735e36d04c649c"
+      "oid": "8dc6108572a7093798ea6a2bba4dd97cee35b7b7"
     },
     "check-remove": {
       "oid": "f0bd7138c22e26fd10fc08a4760cd89aeb7c799c"
@@ -126,7 +126,7 @@
       "oid": "d41fc6dc77a8637eedda67c12b6c1ecbfcfb3856"
     },
     "move-check": {
-      "oid": "9fc1e92168bb1863321b199945ade13c19fbc366"
+      "oid": "fd31190af3e7bd5ce1fc5328824a3df2d5c5ff2a"
     },
     "multiIndexer": {
       "oid": "42296e054a9f7b80c7c84a619108a7a43a68c473"
@@ -138,7 +138,7 @@
       "oid": "c4ed83bc21a2c89304a8aa6246149cbc4339a6ec"
     },
     "repnoise": {
-      "oid": "b6b61fdc9b6a8c562282c64f57cc58a6e4521104"
+      "oid": "9dfb24aa3e44f600b58d99d6e6de6ce536a4b75e"
     },
     "sortnoise": {
       "oid": "d6e37ca65da72c61e6a5f3703e8dcf07b2232776"
