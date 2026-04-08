@@ -1,14 +1,15 @@
 {
   "version": 5,
-  "prev": "3f2c98769a811db286ba65a7e38140e0c47ffd30",
-  "head": "a89b1f74e1df5e72fc304b8160c2c8559f25b7e8",
+  "prev": "89ec6f9427e2fa8ff34c571d3f625abe98befc1c",
+  "head": "7d922a5fc729eca263d397d5913bd7939463ef59",
   "applied": [
     "xtalk",
     "ICaloReadCrosstalkMap",
     "mdutils",
     "ci",
     "ITowerTools",
-    "ICaloReadNeighboursMap"
+    "ICaloReadNeighboursMap",
+    "refresh-temp"
   ],
   "unapplied": [
     "ICaloCreateMap",
@@ -152,6 +153,9 @@
     },
     "noiseIndex": {
       "oid": "30ad2d893bffd307f6d84726d6cdcbedbbd495cd"
+    },
+    "refresh-temp": {
+      "oid": "7d922a5fc729eca263d397d5913bd7939463ef59"
     },
     "repnoise": {
       "oid": "d8b7aa8c0eb1150454ee8d82cf0073508b172f62"
