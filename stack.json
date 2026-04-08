@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "d30762ca56e809f8bd7c5d7bb85b3315add29c5d",
-  "head": "8fe5367d8c1540da28de34d5873fd44b3c0c7805",
+  "prev": "df6da9de61f466476e650ca4451dae0e5fe22ce0",
+  "head": "4e684b2bfce8d1ca11d719489c1c83a18a557bc0",
   "applied": [
     "xtalk",
     "timeout",
@@ -36,14 +36,15 @@
     "subdetVolman2",
     "subdetVolman",
     "sortnoise",
-    "repnoise",
+    "repnoise"
+  ],
+  "unapplied": [
     "move-check",
     "check-deprecated",
     "check-remove",
     "k4geo-noclone",
     "ci"
   ],
-  "unapplied": [],
   "hidden": [],
   "patches": {
     "FCChh": {
