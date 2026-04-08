@@ -1,14 +1,13 @@
 {
   "version": 5,
-  "prev": "3f0eb32286bdef152bd01e5999d951f422c21ae8",
-  "head": "fd9537828ab5be72e16e5c993e0c0b4f974b62fe",
+  "prev": "345ac9e6c2c8af711c8af22982e18ce3cc724d75",
+  "head": "d360e95b49d696d731b89017c8e98c65a37290d5",
   "applied": [
     "xtalk",
     "timeout",
     "INoiseTools",
     "nodefgeotool",
-    "ICalorimeterTool",
-    "refresh-temp"
+    "ICalorimeterTool"
   ],
   "unapplied": [
     "ci",
@@ -49,7 +48,7 @@
       "oid": "b6abfdb31595248e89b8c961db5bf026e405a31a"
     },
     "ICalorimeterTool": {
-      "oid": "48107974b96e6707f947724601d3e619bbe429d4"
+      "oid": "d360e95b49d696d731b89017c8e98c65a37290d5"
     },
     "INoiseTools": {
       "oid": "21b56d5c2735c1a02778a6c3c050e25d1820a9e4"
@@ -125,9 +124,6 @@
     },
     "noiseIndex": {
       "oid": "f3349a2887823ec548175a7b2af0b48e11ffa4c5"
-    },
-    "refresh-temp": {
-      "oid": "fd9537828ab5be72e16e5c993e0c0b4f974b62fe"
     },
     "repnoise": {
       "oid": "955e1c81f1d6686543b3e11241a8e6c4253a637a"
