@@ -1,11 +1,12 @@
 {
   "version": 5,
-  "prev": "2b88b73ca4120d47c67a276bc11ef46719630899",
-  "head": "0167015627f064e919dde4c0844890d0799b120a",
+  "prev": "0eaab2c2ce71a55a8d3d197e87de7fd99519099e",
+  "head": "06c27524df8e81ff8b96c14592f28ab969f6902f",
   "applied": [
     "xtalk",
     "timeout",
-    "ICalibrateCaloHitsTool"
+    "ICalibrateCaloHitsTool",
+    "ci"
   ],
   "unapplied": [
     "ITopoClusterInputTool",
@@ -42,8 +43,7 @@
     "move-check",
     "check-deprecated",
     "check-remove",
-    "k4geo-noclone",
-    "ci"
+    "k4geo-noclone"
   ],
   "hidden": [],
   "patches": {
@@ -84,7 +84,7 @@
       "oid": "b8d77f0ce786df7ffe2b06f11e2175140b444600"
     },
     "ci": {
-      "oid": "1e496b68e1366a39c02fdb335e12c38538399b16"
+      "oid": "06c27524df8e81ff8b96c14592f28ab969f6902f"
     },
     "createCaloCells": {
       "oid": "5b7b718c0ff6c1b0ad30c8897b6041120db12165"
