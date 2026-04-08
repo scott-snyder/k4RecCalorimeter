@@ -1,5 +1,7 @@
 #include "PhotonIDTool.h"
 
+#include "k4FWCore/MetadataUtils.h"
+
 // our EDM
 #include "edm4hep/Cluster.h"
 #include "edm4hep/ClusterCollection.h"
@@ -38,7 +40,9 @@ StatusCode PhotonIDTool::initialize() {
   }
 
   // read from the metadata the names of the shape parameters in the input clusters
-  std::vector<std::string> shapeParameters = m_inShapeParameterHandle.get({});
+  std::string inParameterName = podio::collMetadataParamName(m_inClusters.objKey(), edm4hep::labels::ShapeParameterNames);
+  auto shapeParameters =
+    k4FWCore::getParameter<std::vector<std::string> >(inParameterName, this).value_or({});
   debug() << "Variables in shapeParameters of input clusters:" << endmsg;
   for (const auto& str : shapeParameters) {
     debug() << str << endmsg;
@@ -79,7 +83,9 @@ StatusCode PhotonIDTool::initialize() {
 
   // append the MVA score to the output shape parameters
   shapeParameters.push_back("photonIDscore");
-  m_outShapeParameterHandle.put(shapeParameters);
+
+  std::string outParameterName = podio::collMetadataParamName(m_outClusters.objKey(), edm4hep::labels::ShapeParameterNames);
+  k4FWCore::putParameter (outParameterName, shapeParameters, this);
 
   info() << "Initialized the photonID MVA tool" << endmsg;
   return StatusCode::SUCCESS;
