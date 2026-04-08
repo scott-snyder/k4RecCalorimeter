@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "7d53a64558a01e96c886ca622c6064fe7f24e5ed",
-  "head": "764be1bdabb598f9a078fa4fc5d97ed559a96d39",
+  "prev": "c3f941d460f737515a3a02168c7aa88597ce48ba",
+  "head": "efe3239254193d92ce616b04c5fa8820b1cf7fa2",
   "applied": [
     "xtalk",
     "ICaloReadCrosstalkMap",
@@ -17,8 +17,7 @@
     "nodefgeotool",
     "ICalorimeterTool",
     "INoiseTools",
-    "ICalibrateCaloHitsTool",
-    "refresh-temp"
+    "ICalibrateCaloHitsTool"
   ],
   "unapplied": [
     "ICaloIndexer",
@@ -56,7 +55,7 @@
       "oid": "ff792d44f79704eb8f864da1649b3051f05e256d"
     },
     "ICalibrateCaloHitsTool": {
-      "oid": "2605cbc2eb3ed5692d57a48b22e0a788bfe84eab"
+      "oid": "efe3239254193d92ce616b04c5fa8820b1cf7fa2"
     },
     "ICaloCreateMap": {
       "oid": "a65989ff713c7cd74f06b180f01111b4506303ad"
@@ -153,9 +152,6 @@
     },
     "noiseIndex": {
       "oid": "30ad2d893bffd307f6d84726d6cdcbedbbd495cd"
-    },
-    "refresh-temp": {
-      "oid": "764be1bdabb598f9a078fa4fc5d97ed559a96d39"
     },
     "repnoise": {
       "oid": "d8b7aa8c0eb1150454ee8d82cf0073508b172f62"
