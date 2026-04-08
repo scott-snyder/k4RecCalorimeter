@@ -9,7 +9,7 @@
 #include "k4FWCore/DataHandle.h"
 
 // Interface
-#include "k4Interface/ITowerToolThetaModule.h"
+#include "RecCaloCommon/ITowerToolThetaModule.h"
 
 // edm4hep
 namespace edm4hep {
