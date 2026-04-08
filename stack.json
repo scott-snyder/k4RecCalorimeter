@@ -1,10 +1,11 @@
 {
   "version": 5,
-  "prev": "58e72ba1674429960fc135ca9cc91944a418c336",
-  "head": "d7af866509ace5857d0e4f855ee8c315a4b0eb49",
+  "prev": "c0ab53481e6bd311a47530433bda718505499930",
+  "head": "ae46784c354d979cdce9b0262d3ffe55879b9cf9",
   "applied": [
     "xtalk",
-    "timeout"
+    "timeout",
+    "INoiseTools"
   ],
   "unapplied": [
     "xtalkSpan",
@@ -12,7 +13,6 @@
     "ci",
     "nodefgeotool",
     "ICalorimeterTool",
-    "INoiseTools",
     "FCChh",
     "hcal-seg",
     "hcal-seg-row",
@@ -51,7 +51,7 @@
       "oid": "3e010cebe6a296419daadb98902c87e1c46881f3"
     },
     "INoiseTools": {
-      "oid": "4bfbbe8be2a8be8715c27e2201e941355fbc4ff1"
+      "oid": "ae46784c354d979cdce9b0262d3ffe55879b9cf9"
     },
     "caloCellIndexerSvc": {
       "oid": "a878b2b6e2b57313895a21247be04760b47dd6e0"
