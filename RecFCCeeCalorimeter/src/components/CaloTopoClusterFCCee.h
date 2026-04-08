@@ -15,7 +15,7 @@
 
 // Key4HEP
 #include "k4FWCore/DataHandle.h"
-#include "k4Interface/ICaloReadNeighboursMap.h"
+#include "RecCaloCommon/ICaloReadNeighboursMap.h"
 #include "k4Interface/IGeoSvc.h"
 #include "RecCaloCommon/INoiseConstTool.h"
 #include "RecCaloCommon/ICaloCellIndexerSvc.h"
