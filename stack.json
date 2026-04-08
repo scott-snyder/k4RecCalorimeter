@@ -1,17 +1,17 @@
 {
   "version": 5,
-  "prev": "40ebd45b048b8952c60caabdcaa904aeceec8266",
-  "head": "f90165e606a37c7b3a5eac90b8059fba8456622c",
+  "prev": "c9dacfd62b0ffebe2d8dbbb64acc98b6f004c9f4",
+  "head": "094e3099a091f1b0b1339ab504dcd705ea5a30ee",
   "applied": [
     "xtalk",
     "timeout",
     "INoiseTools",
     "nodefgeotool",
-    "ICalorimeterTool"
+    "ICalorimeterTool",
+    "mdutils"
   ],
   "unapplied": [
     "xtalkSpan",
-    "mdutils",
     "ci",
     "FCChh",
     "hcal-seg",
@@ -111,7 +111,7 @@
       "oid": "11639f140429960a2c489d6250c05ae79613c464"
     },
     "mdutils": {
-      "oid": "d2ce4a23834cd71919c24665478e5217d267e985"
+      "oid": "094e3099a091f1b0b1339ab504dcd705ea5a30ee"
     },
     "move-check": {
       "oid": "c89c62ab4a4b1a96fa659b959400d32acbb6379b"
