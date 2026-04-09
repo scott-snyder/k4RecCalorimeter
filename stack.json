@@ -1,17 +1,17 @@
 {
   "version": 5,
-  "prev": "c4c646ed43ba44adbd944db8869547a921b66501",
-  "head": "76c5b619ea55bd465b243c4845163acbf21b6345",
+  "prev": "35baaeceafb69e09bf17687b84043d1d5b0a339c",
+  "head": "92a7970520b7a80d271eeb38b89c17a1ffb200d7",
   "applied": [
     "xtalk",
     "timeout",
     "ICalorimeterTool",
-    "mdutils"
+    "mdutils",
+    "ci"
   ],
   "unapplied": [
     "hcal-seg",
     "hcal-seg-row",
-    "ci",
     "caloToolInfo",
     "cellsInConst",
     "idmapIndexer",
@@ -69,7 +69,7 @@
       "oid": "5ddb7b14c0413d5a97ac0c4d17190e8a5c319816"
     },
     "ci": {
-      "oid": "8d11033d137c93c827cfa18f8a38d553582420e8"
+      "oid": "92a7970520b7a80d271eeb38b89c17a1ffb200d7"
     },
     "createCaloCells": {
       "oid": "bd945758d34538d5e04adb2f083b28cbfac343f9"
