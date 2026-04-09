@@ -1,10 +1,11 @@
 {
   "version": 5,
-  "prev": "c9b6833d53c0d99a0ae042c51c28f18601d42889",
-  "head": "d7af866509ace5857d0e4f855ee8c315a4b0eb49",
+  "prev": "6fa8b3fafd158a7d6b2cbb88ff872810609c9a36",
+  "head": "519ae8486d08969eeef592ddbb716d85091b2763",
   "applied": [
     "xtalk",
-    "timeout"
+    "timeout",
+    "FCChh2"
   ],
   "unapplied": [
     "hcal-seg",
@@ -46,6 +47,9 @@
   "patches": {
     "FCChh": {
       "oid": "b6abfdb31595248e89b8c961db5bf026e405a31a"
+    },
+    "FCChh2": {
+      "oid": "519ae8486d08969eeef592ddbb716d85091b2763"
     },
     "ICalorimeterTool": {
       "oid": "5bcaca6235470b2a2a3616e52b1b85261162f908"
