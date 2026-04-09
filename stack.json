@@ -1,14 +1,14 @@
 {
   "version": 5,
-  "prev": "588c398aad8d42c3bd741f35675c9eadf4e74807",
-  "head": "d4e3c15191322c3ac9b8f9dfc3b7734c02a2d4ed",
+  "prev": "51499fe06a7fb284e7984b28e80725108ef50c1e",
+  "head": "c4ec6a6571092a193fba8a713287116bc3b6d281",
   "applied": [
     "xtalk",
-    "timeout"
+    "timeout",
+    "mdutils"
   ],
   "unapplied": [
     "idmapIndexer",
-    "mdutils",
     "ci",
     "ICalorimeterTool",
     "hcal-seg",
@@ -105,7 +105,7 @@
       "oid": "c59641982f7c2fa1d2795dc9cc8b485703f0aada"
     },
     "mdutils": {
-      "oid": "24a786ba1358b58a27f27e82a037c9e754df2eb8"
+      "oid": "c4ec6a6571092a193fba8a713287116bc3b6d281"
     },
     "move-check": {
       "oid": "098dc9de57ad14afab8b2fdc5e172c9f7d3b571c"
