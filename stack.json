@@ -1,11 +1,12 @@
 {
   "version": 5,
-  "prev": "5d7b89d1a6a4e86365455d12b086a003cac18526",
-  "head": "9aea6aac6fb2942163e64f1dbd11b1977a67e9af",
+  "prev": "adde293a66c6cd35bbe1d49eaa76a17b2be6a2f7",
+  "head": "bebf7559be5d1bd2e14a46c4c5d9c06c98ca992f",
   "applied": [
     "xtalk",
     "timeout",
-    "ICalorimeterTool"
+    "ICalorimeterTool",
+    "refresh-temp"
   ],
   "unapplied": [
     "mdutils",
@@ -115,6 +116,9 @@
     },
     "noiseIndex": {
       "oid": "688e986871dee0a699a81812f4f2eb4a35e56c55"
+    },
+    "refresh-temp": {
+      "oid": "bebf7559be5d1bd2e14a46c4c5d9c06c98ca992f"
     },
     "repnoise": {
       "oid": "bc60d788ca8175c829462133472a16fab2f100a5"
