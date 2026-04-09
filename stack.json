@@ -1,10 +1,11 @@
 {
   "version": 5,
-  "prev": "d8a19657db218e052d3a6a0fbdccd3a9f9ff6d26",
-  "head": "d4e3c15191322c3ac9b8f9dfc3b7734c02a2d4ed",
+  "prev": "df5300f8d0d8bc453a6f948798f3b2790e214863",
+  "head": "111462d23253aba96c9b57c19160d3418bc82efd",
   "applied": [
     "xtalk",
-    "timeout"
+    "timeout",
+    "idmapIndexer"
   ],
   "unapplied": [
     "ICalorimeterTool",
@@ -14,7 +15,6 @@
     "hcal-seg-row",
     "caloToolInfo",
     "cellsInConst",
-    "idmapIndexer",
     "multiIndexer",
     "hcal-tool",
     "ecalbarrelIndexer",
@@ -96,7 +96,7 @@
       "oid": "3006b518e227e3d128d54628b79e7caadbc20ee3"
     },
     "idmapIndexer": {
-      "oid": "9c147560e63f2831b81f1a3b55fc2ee78ad65134"
+      "oid": "111462d23253aba96c9b57c19160d3418bc82efd"
     },
     "indexingConfig": {
       "oid": "5fb5cac2d5c3b2a748b7229c12cb0adcf22baf7c"
