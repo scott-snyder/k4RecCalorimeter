@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "302d0b73511db7de6571050cfac3cb668f698d91",
-  "head": "cd6def576dd6c0f4d114febff2f110e1ee5c0f41",
+  "prev": "f7f8f0e4f27f2cc09ed9e2c196a15b2e8fc279a9",
+  "head": "5fa9919e4529fe8dd181ff632c815cdd4bc5747a",
   "applied": [
     "xtalk",
     "timeout",
@@ -14,8 +14,7 @@
     "nodefgeotool",
     "ICalorimeterTool",
     "xtalkSpan",
-    "FCChh",
-    "refresh-temp"
+    "FCChh"
   ],
   "unapplied": [
     "caloToolInfo",
@@ -47,7 +46,7 @@
   "hidden": [],
   "patches": {
     "FCChh": {
-      "oid": "a593542cec33077c1155573d9fb37c474e8187dd"
+      "oid": "5fa9919e4529fe8dd181ff632c815cdd4bc5747a"
     },
     "FCChh2": {
       "oid": "81d648b46a663c9e9da055d90684e63af3648da4"
@@ -129,9 +128,6 @@
     },
     "noiseIndex": {
       "oid": "f3349a2887823ec548175a7b2af0b48e11ffa4c5"
-    },
-    "refresh-temp": {
-      "oid": "cd6def576dd6c0f4d114febff2f110e1ee5c0f41"
     },
     "repnoise": {
       "oid": "955e1c81f1d6686543b3e11241a8e6c4253a637a"
