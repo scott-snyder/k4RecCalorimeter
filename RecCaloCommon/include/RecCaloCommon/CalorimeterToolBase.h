@@ -46,7 +46,7 @@ public:
    *   return Status code.
    */
   virtual StatusCode prepareEmptyCells(std::unordered_map<CellID, double>& aCells) const final;
-  virtual StatusCode prepareEmptyCells(std::unordered_map<uint64_t, double>& aCells) final override
+  virtual StatusCode prepareEmptyCells(std::unordered_map<CellID, double>& aCells) final override
   { const auto* cthis = this;  return cthis->prepareEmptyCells(aCells); }
 
   /** Return the segmentation associated with this geometry.
