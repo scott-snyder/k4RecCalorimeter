@@ -111,7 +111,7 @@ public:
    */
   void printStats(std::ostream& s) const;
 
-  
+
 private:
   /// The mapping.
   IDMap_t m_map;
@@ -140,7 +140,6 @@ IDMapIndexer<NFIELDS>::IDMapIndexer (int detID,
                                      std::span<const uint64_t> ids,
                                      size_t sizeHint /*= 0*/,
                                      std::span<const FieldDesc_t> ignoredFields /* = {}*/)
-                                     
   : m_map (fields, INVALID, ids,
            [](size_t i) { return i; },
            sizeHint),
