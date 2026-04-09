@@ -1,9 +1,8 @@
 {
   "version": 5,
-  "prev": "3805417481db2e636dd05f13599627989ba75ee3",
-  "head": "9471cbcd1c15b6d6fd9e212ed9916d8f78c2ee29",
-  "applied": [],
-  "unapplied": [
+  "prev": "9fe108e45ac7d659b64b8ad8593eecfd7d012801",
+  "head": "a593542cec33077c1155573d9fb37c474e8187dd",
+  "applied": [
     "xtalk",
     "timeout",
     "FCChh2",
@@ -15,7 +14,9 @@
     "nodefgeotool",
     "ICalorimeterTool",
     "xtalkSpan",
-    "FCChh",
+    "FCChh"
+  ],
+  "unapplied": [
     "caloToolInfo",
     "cellsInConst",
     "idmap",
@@ -45,16 +46,16 @@
   "hidden": [],
   "patches": {
     "FCChh": {
-      "oid": "b6abfdb31595248e89b8c961db5bf026e405a31a"
+      "oid": "a593542cec33077c1155573d9fb37c474e8187dd"
     },
     "FCChh2": {
-      "oid": "bf6104c3c54cefaceee7308e7bda749f745afda8"
+      "oid": "81d648b46a663c9e9da055d90684e63af3648da4"
     },
     "ICalorimeterTool": {
-      "oid": "5bcaca6235470b2a2a3616e52b1b85261162f908"
+      "oid": "0aed2c0899ff785bd43c4598110a2ea2c6d3e991"
     },
     "INoiseTools": {
-      "oid": "4912973321f913a96de2e03cf89bdd033bd98e1c"
+      "oid": "592d24a798982c361ca0102665127ede0cde8854"
     },
     "caloCellIndexerSvc": {
       "oid": "0c657e62d33e395fc639964a2217f2881a6f7651"
@@ -75,7 +76,7 @@
       "oid": "1cba5f233ac1301753b6cbb4f9147292a87b6685"
     },
     "ci": {
-      "oid": "3b332a820b93f9ee3372fc743b2be676f5e774ba"
+      "oid": "69ab21e644f6438ca84d72eb112a6a69fc868927"
     },
     "createCaloCells": {
       "oid": "24573b3cdab9e3f331f29ff5a5d92c499d70d902"
@@ -90,10 +91,10 @@
       "oid": "20621c501222e6dd2eeafb4f24df06a49bac82b8"
     },
     "hcal-seg": {
-      "oid": "127bdbbb540365b84b5651c94aa91fc644256fc9"
+      "oid": "552d721b45639e2474dbef686a175fc6b56ecf64"
     },
     "hcal-seg-row": {
-      "oid": "5e8f6436cb4e7bc00c31c3723fd1f706ceca837d"
+      "oid": "d857edb41f11f08778005550c49265a8bc58353f"
     },
     "hcal-tool": {
       "oid": "2abc6f1e8e5bf69180b21ec83584c952f4264c0c"
@@ -114,7 +115,7 @@
       "oid": "51d513ab0e07cf7392feb8b66ba67536c8bd851a"
     },
     "mdutils": {
-      "oid": "a0ef14749a7653c6b91b98a472478bab3012a7c5"
+      "oid": "a2d4e3ae1bdfdaaa03bc819b43a3c10225b4ab96"
     },
     "move-check": {
       "oid": "8850c78877f9f796d6ec98be4ac387aa061b147b"
@@ -123,7 +124,7 @@
       "oid": "3050d97e060d2599afcbc5a31cc2133a1bced8fa"
     },
     "nodefgeotool": {
-      "oid": "74e8c629a5350e4171600f49da523505012fd2c6"
+      "oid": "680c6b23de019ed038c20276e83570375d39ea1d"
     },
     "noiseIndex": {
       "oid": "f3349a2887823ec548175a7b2af0b48e11ffa4c5"
@@ -141,19 +142,19 @@
       "oid": "889da753b5141be29546d3fcc66176c8120192eb"
     },
     "timeout": {
-      "oid": "d7af866509ace5857d0e4f855ee8c315a4b0eb49"
+      "oid": "d4e3c15191322c3ac9b8f9dfc3b7734c02a2d4ed"
     },
     "topoNoiseIndex": {
       "oid": "d0cd4e6b5100726ccde4e0dd9a52a813abb751cc"
     },
     "xtalk": {
-      "oid": "d330e9ca108721c0b65dd5c8fbf5a968f8281171"
+      "oid": "59275294d1a04621de71c1265040a03ff7bef3b9"
     },
     "xtalkIndex": {
       "oid": "e24a4750ccc42a0b4934fb0043e6208dc718c750"
     },
     "xtalkSpan": {
-      "oid": "956d16a2ead1eb8057c219d2e2b130b7e4def3c8"
+      "oid": "fac2f39e2cff7d13aac757eb67a6a0e979228083"
     }
   }
 }
