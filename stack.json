@@ -1,12 +1,11 @@
 {
   "version": 5,
-  "prev": "6bc7b729e11cd5d48d593b6f5a81410c13bbdd28",
-  "head": "b579e38607c0bc2b7ba6fd408bbc616153e403a8",
+  "prev": "6c1eec42ddb42863f9cca4cf3517350342565e9d",
+  "head": "bf6104c3c54cefaceee7308e7bda749f745afda8",
   "applied": [
     "xtalk",
     "timeout",
-    "FCChh2",
-    "refresh-temp"
+    "FCChh2"
   ],
   "unapplied": [
     "hcal-seg",
@@ -50,7 +49,7 @@
       "oid": "b6abfdb31595248e89b8c961db5bf026e405a31a"
     },
     "FCChh2": {
-      "oid": "519ae8486d08969eeef592ddbb716d85091b2763"
+      "oid": "bf6104c3c54cefaceee7308e7bda749f745afda8"
     },
     "ICalorimeterTool": {
       "oid": "5bcaca6235470b2a2a3616e52b1b85261162f908"
@@ -129,9 +128,6 @@
     },
     "noiseIndex": {
       "oid": "f3349a2887823ec548175a7b2af0b48e11ffa4c5"
-    },
-    "refresh-temp": {
-      "oid": "b579e38607c0bc2b7ba6fd408bbc616153e403a8"
     },
     "repnoise": {
       "oid": "955e1c81f1d6686543b3e11241a8e6c4253a637a"
