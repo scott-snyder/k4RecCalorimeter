@@ -1,12 +1,11 @@
 {
   "version": 5,
-  "prev": "365a8ae975301943b9ee3a9969a6399005478e0d",
-  "head": "257d68cde5cdccf8ac153be7fe060d798fdf423a",
+  "prev": "1de63063cc20061017adb055d525d34fda1a32ed",
+  "head": "1cce7afe519302a699d0c9412ca518c433c6ead9",
   "applied": [
     "xtalk",
     "timeout",
-    "idmapIndexer",
-    "refresh-temp"
+    "idmapIndexer"
   ],
   "unapplied": [
     "ICalorimeterTool",
@@ -97,7 +96,7 @@
       "oid": "3006b518e227e3d128d54628b79e7caadbc20ee3"
     },
     "idmapIndexer": {
-      "oid": "111462d23253aba96c9b57c19160d3418bc82efd"
+      "oid": "1cce7afe519302a699d0c9412ca518c433c6ead9"
     },
     "indexingConfig": {
       "oid": "5fb5cac2d5c3b2a748b7229c12cb0adcf22baf7c"
@@ -116,9 +115,6 @@
     },
     "noiseIndex": {
       "oid": "688e986871dee0a699a81812f4f2eb4a35e56c55"
-    },
-    "refresh-temp": {
-      "oid": "257d68cde5cdccf8ac153be7fe060d798fdf423a"
     },
     "repnoise": {
       "oid": "bc60d788ca8175c829462133472a16fab2f100a5"
