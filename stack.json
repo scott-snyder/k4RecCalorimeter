@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "ef0c7c0a8fd6f8ba87d9b9d966c361bcee71319e",
+  "prev": "99d193756628aac0fcf341d2dbc68c14bd759a96",
   "head": "fb91db9457aff3b896534d7bd5c5c1776ecc4a75",
   "applied": [
     "k4geo-noclone",
@@ -25,8 +25,6 @@
     "createCaloCells"
   ],
   "unapplied": [
-    "subdetVolman2",
-    "subdetVolman",
     "discrit-wip",
     "discrit2-wip",
     "diag-wip",
@@ -93,12 +91,6 @@
     },
     "createCaloCells": {
       "oid": "fb91db9457aff3b896534d7bd5c5c1776ecc4a75"
-    },
-    "subdetVolman2": {
-      "oid": "217b76c5c337e91021434d5b4c1b41802f06c789"
-    },
-    "subdetVolman": {
-      "oid": "57b698c92d2e0a6dd74bcccb5e121afb6d99c2c1"
     },
     "discrit-wip": {
       "oid": "e5c47ad16e2edbd5d242e9a7c0244843fd03e53a"
