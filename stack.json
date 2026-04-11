@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "f65e897dd79812f6a77738a5d44a020631dcdd71",
-  "head": "707242e0d00b92a5c7bfa25562776122c4214018",
+  "prev": "765759e92c1a2ff352b6c1347303768b0a28028e",
+  "head": "579e67db25256a26d173a8797f99d7d36ca8f1f1",
   "applied": [
     "k4geo-noclone",
     "mdutils",
@@ -13,8 +13,7 @@
     "multiIndexer",
     "hcal-tool",
     "ecalbarrelIndexer",
-    "hcalIndexer",
-    "refresh-temp"
+    "hcalIndexer"
   ],
   "unapplied": [
     "ecalendcapTool",
@@ -66,10 +65,7 @@
       "oid": "5d8a18807f62523298819f151b292d8a3fbc2594"
     },
     "hcalIndexer": {
-      "oid": "fa8b4702f7ff2fa0f2d4ef504d3ff04dd2ce8c3a"
-    },
-    "refresh-temp": {
-      "oid": "707242e0d00b92a5c7bfa25562776122c4214018"
+      "oid": "579e67db25256a26d173a8797f99d7d36ca8f1f1"
     },
     "ecalendcapTool": {
       "oid": "69328b0722120a9e716461a828d39de269184f82"
