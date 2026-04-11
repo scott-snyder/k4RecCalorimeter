@@ -1,0 +1,11 @@
+Bottom: fbde135fea3a6c4cdbae8b43cc91120e20e3509f
+Top:    fbde135fea3a6c4cdbae8b43cc91120e20e3509f
+Author: sss <sss@karma>
+Date:   2025-08-13 11:35:50 -0400
+
+ICalorimeterTool updates.
+
+Remove non-const methods of ICalorimeterTool and (re)-add override
+keywords in CalorimeterToolBase.
+Add cellIDs/segmentation/readoutName/id methods to ICalorimeterTool
+(implementations are already in CalorimeterToolBase).
