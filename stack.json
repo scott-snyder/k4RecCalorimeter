@@ -1,16 +1,16 @@
 {
   "version": 5,
-  "prev": "042b2735e5e1449922af6afd16b8f261d1671575",
-  "head": "63a283843236b95b41e4a9243f1eaf1ebaf99964",
+  "prev": "d02f2e58b3173f0897308179180a8f9ac4a64a00",
+  "head": "345adc8210858877bff98d5c99ba36117ab382f5",
   "applied": [
     "xtalk",
     "timeout",
-    "cellsInConst"
+    "cellsInConst",
+    "ci"
   ],
   "unapplied": [
     "caloToolInfo",
     "mdutils",
-    "ci",
     "idmapIndexer",
     "hcal-seg",
     "hcal-seg-row",
@@ -65,7 +65,7 @@
       "oid": "36332833270ac7c2204a7ce616d8669a6cb179c9"
     },
     "ci": {
-      "oid": "4e6c8b6136c75591fc8121a4a9f5ff87b71e0830"
+      "oid": "345adc8210858877bff98d5c99ba36117ab382f5"
     },
     "createCaloCells": {
       "oid": "6c41941ec654d3680a8dea8fb97d1ff3770fe80a"
