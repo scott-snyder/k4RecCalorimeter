@@ -1,16 +1,16 @@
 {
   "version": 5,
-  "prev": "f1fa3b427b920eca4690f29b4e2efbb201a91e42",
-  "head": "63a283843236b95b41e4a9243f1eaf1ebaf99964",
+  "prev": "8c75353633f4cfc3b7475e35f83880ce761d3348",
+  "head": "61ee2cd3f71446b5d2e787c7a18d9dac36fe6cee",
   "applied": [
     "xtalk",
     "timeout",
-    "cellsInConst"
+    "cellsInConst",
+    "mdutils"
   ],
   "unapplied": [
     "ci",
     "caloToolInfo",
-    "mdutils",
     "idmapIndexer",
     "hcal-seg",
     "hcal-seg-row",
@@ -101,7 +101,7 @@
       "oid": "e1eebbe35582db2920858610f02c72401d400653"
     },
     "mdutils": {
-      "oid": "cff6cab61349ddcb1fe5088878a47e0ddbe505d4"
+      "oid": "61ee2cd3f71446b5d2e787c7a18d9dac36fe6cee"
     },
     "move-check": {
       "oid": "b39c43149e713af57ddd711f0bbd692cca418832"
