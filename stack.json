@@ -1,12 +1,13 @@
 {
   "version": 5,
-  "prev": "a836f758056326ad7287d846f11a13f1b418f202",
-  "head": "0ffca28b6e9261bdcf1b8607b20b057dbaee80d2",
+  "prev": "25abd05b8f8b431b4fd7e8a7a6913d279c980141",
+  "head": "33105bf550cdd016e715311249f99cc54ef0d86f",
   "applied": [
     "xtalk",
     "timeout",
     "idmapIndexer",
-    "mdutils"
+    "mdutils",
+    "refresh-temp"
   ],
   "unapplied": [
     "hcal-seg",
@@ -111,6 +112,9 @@
     },
     "noiseIndex": {
       "oid": "80aa29d22dd9b653445576fc85228e606013d83b"
+    },
+    "refresh-temp": {
+      "oid": "33105bf550cdd016e715311249f99cc54ef0d86f"
     },
     "repnoise": {
       "oid": "443930db1c13c5c29d104c8a23184430a8bbfef3"
