@@ -118,7 +118,7 @@ StatusCode AugmentClustersFCCee::initialize() {
   // append to the metadata of the input clusters (if any)
   std::string inParameterName = podio::collMetadataParamName(m_inClusters.objKey(), edm4hep::labels::ShapeParameterNames);
   auto showerShapeDecorations =
-    k4FWCore::getParameter<std::vector<std::string> >(inParameterName, this).value_or({});
+    k4FWCore::getParameter<std::vector<std::string> >(inParameterName, this).value_or(std::vector<std::string>());
 
   for (size_t k = 0; k < m_detectorNames.size(); k++) {
     const char* detector = m_detectorNames[k].c_str();

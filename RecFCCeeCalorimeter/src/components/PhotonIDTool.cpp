@@ -42,7 +42,7 @@ StatusCode PhotonIDTool::initialize() {
   // read from the metadata the names of the shape parameters in the input clusters
   std::string inParameterName = podio::collMetadataParamName(m_inClusters.objKey(), edm4hep::labels::ShapeParameterNames);
   auto shapeParameters =
-    k4FWCore::getParameter<std::vector<std::string> >(inParameterName, this).value_or({});
+    k4FWCore::getParameter<std::vector<std::string> >(inParameterName, this).value_or(std::vector<std::string>());
   debug() << "Variables in shapeParameters of input clusters:" << endmsg;
   for (const auto& str : shapeParameters) {
     debug() << str << endmsg;

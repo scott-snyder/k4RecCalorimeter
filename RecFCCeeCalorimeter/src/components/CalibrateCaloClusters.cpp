@@ -80,7 +80,7 @@ StatusCode CalibrateCaloClusters::initialize() {
   // the output
   std::string inParameterName = podio::collMetadataParamName(m_inClusters.objKey(), edm4hep::labels::ShapeParameterNames);
   auto shapeParameters =
-    k4FWCore::getParameter<std::vector<std::string> >(inParameterName, this).value_or({});
+    k4FWCore::getParameter<std::vector<std::string> >(inParameterName, this).value_or(std::vector<std::string>());
 
   shapeParameters.push_back("rawE");
 
