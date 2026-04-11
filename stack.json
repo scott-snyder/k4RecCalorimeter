@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "b3b503e51ff862f1eb4e4bde520bea9f2ee6c274",
-  "head": "5a6d177923b99d59f057153193f8eeffd8879a40",
+  "prev": "7b0647026001fa9936151c956659d26c43f7ec81",
+  "head": "5431f6018f682c063742b5bc76fc6256ee12459b",
   "applied": [
     "k4geo-noclone",
     "mdutils",
@@ -15,10 +15,10 @@
     "ecalbarrelIndexer",
     "hcalIndexer",
     "ecalendcapTool",
-    "caloCellIndexerSvc"
+    "caloCellIndexerSvc",
+    "cellposIndex"
   ],
   "unapplied": [
-    "cellposIndex",
     "indexingConfig",
     "xtalkIndex",
     "topoNoiseIndex",
@@ -74,7 +74,7 @@
       "oid": "5a6d177923b99d59f057153193f8eeffd8879a40"
     },
     "cellposIndex": {
-      "oid": "4a0ee162b3a7b7084143bf7ee320485941193af4"
+      "oid": "5431f6018f682c063742b5bc76fc6256ee12459b"
     },
     "indexingConfig": {
       "oid": "bd2c3c09739ab2c28a03d191622f3d76eda62755"
