@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "befade15183d2b58381db1df3e1654ac96f7139e",
+  "prev": "75f5999dfecc994bd2c8aaeacac0d83239df63d9",
   "head": "3fd9f3c7433a4ea796fee56244bc4df637d944af",
   "applied": [
     "xtalk",
@@ -10,7 +10,6 @@
   "unapplied": [
     "ci",
     "idmapIndexer",
-    "mdutils",
     "hcal-seg",
     "hcal-seg-row",
     "cellsInConst",
@@ -99,9 +98,6 @@
     },
     "k4geo-noclone": {
       "oid": "e1eebbe35582db2920858610f02c72401d400653"
-    },
-    "mdutils": {
-      "oid": "3fb72da39c7a0072602b4a43cdf86a6747e94d01"
     },
     "move-check": {
       "oid": "b39c43149e713af57ddd711f0bbd692cca418832"
