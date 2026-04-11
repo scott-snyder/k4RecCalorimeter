@@ -1,13 +1,13 @@
 {
   "version": 5,
-  "prev": "80af60408b986e5aaacd6e3ff8e54bc298fa6174",
-  "head": "0d3cff4ad10075aa230b03a9173370d9c669bfa7",
+  "prev": "e6b073ef4c570dc3137c297c452f3f36b0eb27c2",
+  "head": "a5baa856e8c35d3ff7d2b9adac5ee092ba7dd2aa",
   "applied": [
     "k4geo-noclone",
-    "mdutils"
+    "mdutils",
+    "ICellPositionsTool"
   ],
   "unapplied": [
-    "ICellPositionsTool",
     "ICalorimeterTool",
     "INoiseTools",
     "ICalibrateCaloHitsTool",
@@ -52,7 +52,7 @@
       "oid": "0d3cff4ad10075aa230b03a9173370d9c669bfa7"
     },
     "ICellPositionsTool": {
-      "oid": "0ba5480a38dd7454fa72ad809009d5e5be3fa11a"
+      "oid": "a5baa856e8c35d3ff7d2b9adac5ee092ba7dd2aa"
     },
     "ICalorimeterTool": {
       "oid": "02144ade2f4af45c4efa2db69899ec55f53664da"
