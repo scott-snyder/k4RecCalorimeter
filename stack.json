@@ -1,14 +1,13 @@
 {
   "version": 5,
-  "prev": "8158ca1b05c75595b45d4730e100e7b0d8a2b7fc",
-  "head": "72ab243ce206b34f63fa06e4e23bf1650037d433",
+  "prev": "de15c1090ebc031c97fba819c4f19abe9334b291",
+  "head": "f93ed153d196e2663b8a6ded2d6d705b154ce36a",
   "applied": [
     "k4geo-noclone",
     "mdutils",
     "hcal-seg",
     "hcal-seg-row",
-    "caloToolInfo",
-    "refresh-temp"
+    "caloToolInfo"
   ],
   "unapplied": [
     "xtalkSpan",
@@ -49,10 +48,7 @@
       "oid": "1ff1ec002e158ba606f21017674e03f104abe7f4"
     },
     "caloToolInfo": {
-      "oid": "33a96769958fce875a6d2f033878ec6fd7ace907"
-    },
-    "refresh-temp": {
-      "oid": "72ab243ce206b34f63fa06e4e23bf1650037d433"
+      "oid": "f93ed153d196e2663b8a6ded2d6d705b154ce36a"
     },
     "xtalkSpan": {
       "oid": "a69c0e969d606d2b0aa0acfe1388752c941be584"
