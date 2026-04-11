@@ -1,6 +1,0 @@
-Bottom: 58c749bc139925e42cc0ce6693f1fd2b5a4ee417
-Top:    99d1eb167ac90a7b043f178caeeae23d3070f535
-Author: sss <sss@karma>
-Date:   2026-03-27 14:16:38 -0400
-
-Move ICaloCreateMap here from k4FWCore.

@@ -1,14 +1,12 @@
 {
   "version": 5,
-  "prev": "9f60b00dd76fc6011b79d9fdb0e6656de39f8d31",
+  "prev": "a64f987a200d7601fbb19d0a6fac2773500f4fbc",
   "head": "0d3cff4ad10075aa230b03a9173370d9c669bfa7",
   "applied": [
     "k4geo-noclone",
     "mdutils"
   ],
   "unapplied": [
-    "ICaloCreateMap",
-    "ITowerTools",
     "hcal-seg",
     "hcal-seg-row",
     "caloToolInfo",
@@ -43,12 +41,6 @@
     },
     "mdutils": {
       "oid": "0d3cff4ad10075aa230b03a9173370d9c669bfa7"
-    },
-    "ICaloCreateMap": {
-      "oid": "5144b3190803bbe18c15c906ebb0a6d4d118e3a3"
-    },
-    "ITowerTools": {
-      "oid": "b3ede707b902f48a71bf21ff82b9f91ffb66ec34"
     },
     "hcal-seg": {
       "oid": "73bfd101c5d05c0bf94e09ee311b155f4716ff87"
