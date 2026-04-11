@@ -1,11 +1,12 @@
 {
   "version": 5,
-  "prev": "85ee1a5dbcf979b504c54cd64dea0367516e401c",
-  "head": "3fd9f3c7433a4ea796fee56244bc4df637d944af",
+  "prev": "bc41ee631c9944a9d04fb8cfe58654a33eebaf68",
+  "head": "4e6c8b6136c75591fc8121a4a9f5ff87b71e0830",
   "applied": [
     "xtalk",
     "timeout",
-    "caloToolInfo"
+    "caloToolInfo",
+    "ci"
   ],
   "unapplied": [
     "idmapIndexer",
@@ -35,8 +36,7 @@
     "check-remove",
     "k4geo-noclone",
     "FCChh2",
-    "FCChh",
-    "ci"
+    "FCChh"
   ],
   "hidden": [],
   "patches": {
@@ -65,7 +65,7 @@
       "oid": "36332833270ac7c2204a7ce616d8669a6cb179c9"
     },
     "ci": {
-      "oid": "022cc62e57dfc993646da508ad217da0b30cc21c"
+      "oid": "4e6c8b6136c75591fc8121a4a9f5ff87b71e0830"
     },
     "createCaloCells": {
       "oid": "6c41941ec654d3680a8dea8fb97d1ff3770fe80a"
