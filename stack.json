@@ -1,11 +1,10 @@
 {
   "version": 5,
-  "prev": "53819c1a0882832b8f2a178d6bd730cc0d57dc11",
-  "head": "58f8d070d9acfff2b186d5eeb2fc19dda921d72a",
+  "prev": "b7b5af78e5bb41e3653ce0801f5a2f775821a911",
+  "head": "0d3cff4ad10075aa230b03a9173370d9c669bfa7",
   "applied": [
     "k4geo-noclone",
-    "mdutils",
-    "ICalorimeterTool"
+    "mdutils"
   ],
   "unapplied": [
     "INoiseTools",
@@ -49,9 +48,6 @@
     },
     "mdutils": {
       "oid": "0d3cff4ad10075aa230b03a9173370d9c669bfa7"
-    },
-    "ICalorimeterTool": {
-      "oid": "58f8d070d9acfff2b186d5eeb2fc19dda921d72a"
     },
     "INoiseTools": {
       "oid": "1ceb7bad7deb621a6d7ffc0b3e026b296d111396"
