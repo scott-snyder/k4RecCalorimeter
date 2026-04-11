@@ -1,15 +1,12 @@
 {
   "version": 5,
-  "prev": "2a4b5c19688e54f76464da4432a1301b485103cd",
+  "prev": "9f60b00dd76fc6011b79d9fdb0e6656de39f8d31",
   "head": "0d3cff4ad10075aa230b03a9173370d9c669bfa7",
   "applied": [
     "k4geo-noclone",
     "mdutils"
   ],
   "unapplied": [
-    "ICaloReadCrosstalkMap",
-    "ICaloReadNeighboursMap",
-    "ICaloIndexer",
     "ICaloCreateMap",
     "ITowerTools",
     "hcal-seg",
@@ -46,15 +43,6 @@
     },
     "mdutils": {
       "oid": "0d3cff4ad10075aa230b03a9173370d9c669bfa7"
-    },
-    "ICaloReadCrosstalkMap": {
-      "oid": "5f6fe281c1baba28473872e7294ab0fb218f1f6f"
-    },
-    "ICaloReadNeighboursMap": {
-      "oid": "c16d0ad4b02f6b3c29c1f11d502055a68271a29e"
-    },
-    "ICaloIndexer": {
-      "oid": "802e06908ca11704b062e330736c3225bd3982b5"
     },
     "ICaloCreateMap": {
       "oid": "5144b3190803bbe18c15c906ebb0a6d4d118e3a3"

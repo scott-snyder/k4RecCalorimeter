@@ -1,6 +1,0 @@
-Bottom: 1e94b0b15fe9c41341e3b0c8e4c2938ef44f1efa
-Top:    759fccb9817bf61da8ab212b21148c7f3c62b23f
-Author: sss <sss@karma>
-Date:   2026-03-27 13:32:05 -0400
-
-Move ICaloReadCrosstalkMap here from k4FWCore.
