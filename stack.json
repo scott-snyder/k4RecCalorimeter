@@ -1,14 +1,12 @@
 {
   "version": 5,
-  "prev": "b7b5af78e5bb41e3653ce0801f5a2f775821a911",
+  "prev": "2a4b5c19688e54f76464da4432a1301b485103cd",
   "head": "0d3cff4ad10075aa230b03a9173370d9c669bfa7",
   "applied": [
     "k4geo-noclone",
     "mdutils"
   ],
   "unapplied": [
-    "INoiseTools",
-    "ICalibrateCaloHitsTool",
     "ICaloReadCrosstalkMap",
     "ICaloReadNeighboursMap",
     "ICaloIndexer",
@@ -48,12 +46,6 @@
     },
     "mdutils": {
       "oid": "0d3cff4ad10075aa230b03a9173370d9c669bfa7"
-    },
-    "INoiseTools": {
-      "oid": "1ceb7bad7deb621a6d7ffc0b3e026b296d111396"
-    },
-    "ICalibrateCaloHitsTool": {
-      "oid": "f79e50f75f7844453f70c807d713d904416b4284"
     },
     "ICaloReadCrosstalkMap": {
       "oid": "5f6fe281c1baba28473872e7294ab0fb218f1f6f"
