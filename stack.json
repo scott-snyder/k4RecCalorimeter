@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "3bbfccead93b6c5a0367a1acbc91901725174fd9",
+  "prev": "45b2d5750642ec48b6a9faefb8e544ae822f5c22",
   "head": "5c41ce6dcdbb171d456ed373f27f7ce76e2f3b15",
   "applied": [
     "k4geo-noclone",
@@ -23,7 +23,6 @@
     "noiseIndex"
   ],
   "unapplied": [
-    "createTopoCluster",
     "createCaloCells",
     "subdetVolman2",
     "subdetVolman",
@@ -87,9 +86,6 @@
     },
     "noiseIndex": {
       "oid": "5c41ce6dcdbb171d456ed373f27f7ce76e2f3b15"
-    },
-    "createTopoCluster": {
-      "oid": "8ea7ebec3b14373c628f14c5561c3ad86dea2a21"
     },
     "createCaloCells": {
       "oid": "e752d0fffe0123ef0196d626b93178eb277a9f68"
