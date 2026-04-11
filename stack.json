@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "5b342f96206dbe30a86ade87f7b1b0fe312d6d28",
-  "head": "d1d0959d380b3f0f5a4ef0612090149d85774da5",
+  "prev": "7f7ba0775165a3f418e1f0feac83fc0511473787",
+  "head": "e664e08119aec606bc1ef99493641ade86033360",
   "applied": [
     "xtalk",
     "timeout",
@@ -11,8 +11,7 @@
     "ICalorimeterTool",
     "hcal-seg",
     "hcal-seg-row",
-    "caloToolInfo",
-    "refresh-temp"
+    "caloToolInfo"
   ],
   "unapplied": [
     "cellsInConst",
@@ -55,7 +54,7 @@
       "oid": "c19bccf4772af6bf179ddcedb2cd0a1c6b32e202"
     },
     "caloToolInfo": {
-      "oid": "b7e16b2fd258db32f0e83b2ec50602d3ec189e30"
+      "oid": "e664e08119aec606bc1ef99493641ade86033360"
     },
     "cellposIndex": {
       "oid": "fb2b26143657b7da040d3687e89147a75066df6e"
@@ -116,9 +115,6 @@
     },
     "noiseIndex": {
       "oid": "688e986871dee0a699a81812f4f2eb4a35e56c55"
-    },
-    "refresh-temp": {
-      "oid": "d1d0959d380b3f0f5a4ef0612090149d85774da5"
     },
     "repnoise": {
       "oid": "bc60d788ca8175c829462133472a16fab2f100a5"
