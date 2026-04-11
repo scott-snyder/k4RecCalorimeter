@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "6be45e34c3106f0e7ef15bab4ac98af9a3295a71",
-  "head": "0492be6075483da89e591e72200026396fa8471e",
+  "prev": "b93a280b0922f965b197b73096efc1425cc84029",
+  "head": "f7c63c132d4a97779f5b4d8bba3296f4493fe68d",
   "applied": [
     "k4geo-noclone",
     "mdutils",
@@ -10,11 +10,11 @@
     "caloToolInfo",
     "cellsInConst",
     "idmapIndexer",
-    "multiIndexer"
+    "multiIndexer",
+    "hcal-tool",
+    "ecalbarrelIndexer"
   ],
   "unapplied": [
-    "hcal-tool",
-    "ecalbarrelIndexer",
     "hcalIndexer",
     "ecalendcapTool",
     "caloCellIndexerSvc",
@@ -59,10 +59,10 @@
       "oid": "0492be6075483da89e591e72200026396fa8471e"
     },
     "hcal-tool": {
-      "oid": "8914815951889f2c0b4901417d43df5038f2d176"
+      "oid": "a6d82c91db7c8dd5fc4cd1e327d3e082c6f2c009"
     },
     "ecalbarrelIndexer": {
-      "oid": "5b247a69c65e4c854f625bb228d1338b462683af"
+      "oid": "f7c63c132d4a97779f5b4d8bba3296f4493fe68d"
     },
     "hcalIndexer": {
       "oid": "abea22fa4982bd2dd453c95f84a36ef77d1ccfb2"
