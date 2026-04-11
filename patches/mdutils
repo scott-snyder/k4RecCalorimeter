@@ -1,0 +1,6 @@
+Bottom: 9ce04bacd8c864c0767ccc89dd55ea0bffd7f494
+Top:    0441385cb42cc66abd55521abf258aa7c2e1e198
+Author: sss <sss@karma>
+Date:   2026-04-11 12:46:36 -0400
+
+Rewrite use of deprecated MetaDataHandles in terms of put/getParameter.
