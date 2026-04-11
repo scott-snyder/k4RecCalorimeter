@@ -1,11 +1,12 @@
 {
   "version": 5,
-  "prev": "909f77b0bb5413c9993f22d3ec2e8f591c95cb8f",
-  "head": "95c2434cd3292cf2e4e61986154116981967535e",
+  "prev": "10cfa2621b36b84e314c5123098079d94bb6da5d",
+  "head": "1ff1ec002e158ba606f21017674e03f104abe7f4",
   "applied": [
     "k4geo-noclone",
     "mdutils",
-    "hcal-seg"
+    "hcal-seg",
+    "hcal-seg-row"
   ],
   "unapplied": [
     "caloToolInfo",
@@ -43,6 +44,9 @@
     },
     "hcal-seg": {
       "oid": "95c2434cd3292cf2e4e61986154116981967535e"
+    },
+    "hcal-seg-row": {
+      "oid": "1ff1ec002e158ba606f21017674e03f104abe7f4"
     },
     "caloToolInfo": {
       "oid": "e853f508060208cb9e7536d5b6cd6b694e0b97ea"
