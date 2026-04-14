@@ -1,14 +1,13 @@
 {
   "version": 5,
-  "prev": "38b9c9baf71d54afa9ec0710e00352a801848f35",
-  "head": "44e519185bbbc4264e9005471d9633cb8b549de0",
-  "applied": [
+  "prev": "610c47c628830474a2baea0146a887c4647d9318",
+  "head": "af144d8ec6e15684162965d1b2d88ecb56e76e7c",
+  "applied": [],
+  "unapplied": [
     "xtalk",
     "timeout",
     "hcal-seg",
-    "hcal-seg-row"
-  ],
-  "unapplied": [
+    "hcal-seg-row",
     "cellsInConst",
     "mdutils",
     "ci",
