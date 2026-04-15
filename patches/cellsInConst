@@ -1,9 +1,0 @@
-Bottom: 131546640100b082ebcf39e0fb5c19be0fd5d799
-Top:    131546640100b082ebcf39e0fb5c19be0fd5d799
-Author: scott snyder <snyder@bnl.gov>
-Date:   2026-04-15 15:06:49 -0400
-
-Remove duplication of CellID lists.
-
-Store lists of calorimeter CellIDs in the cell constants service,
-to avoid duplicates.

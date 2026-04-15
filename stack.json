@@ -1,17 +1,14 @@
 {
   "version": 5,
-  "prev": "5c2d960ade3e664c149b45a8c0d60fa1e2427b34",
-  "head": "d32db8fb60e8bdd1311fb8a8e91c9ff80496a430",
+  "prev": "ee1d095f6ce382cadfba16fb2fca425a95affd86",
+  "head": "4d1a318c8000f9f6c129c2ceafa4c6c5cc3b2620",
   "applied": [
     "xtalk",
     "timeout",
     "hcal-seg",
     "hcal-seg-row",
-    "cellsInConst",
     "mdutils",
     "ci",
-    "caloToolInfo",
-    "idmapIndexer",
     "multiIndexer",
     "hcal-tool",
     "ecalbarrelIndexer",
@@ -40,43 +37,37 @@
   "hidden": [],
   "patches": {
     "FCChh": {
-      "oid": "d32db8fb60e8bdd1311fb8a8e91c9ff80496a430"
+      "oid": "4d1a318c8000f9f6c129c2ceafa4c6c5cc3b2620"
     },
     "FCChh2": {
-      "oid": "2d5984835169c1985996a937850794fb977cb1c9"
+      "oid": "9aa3209bf01cfa13547870fa9c6fab7c5a0e48fe"
     },
     "caloCellIndexerSvc": {
-      "oid": "75c0cb79d1bd16907d8398c51d71c905d2fd102b"
-    },
-    "caloToolInfo": {
-      "oid": "b50a5487135e0b6471f7ea7b00f9e3b95ce2c6c1"
+      "oid": "b18fa481df1750abacaddf969206040d338e0902"
     },
     "cellposIndex": {
-      "oid": "8a1f1be8e37536a9a7fd4c3c8e368d8efc4bee41"
-    },
-    "cellsInConst": {
-      "oid": "fdc095a92594b9c93631f615ce5369857f7e3103"
+      "oid": "1dcaea994c7451eb71cd27e9f794dd8dab25a3bd"
     },
     "check-deprecated": {
-      "oid": "deeeebb7f77ac23d0f003295a91e4a3447e77d24"
+      "oid": "31c469b875fb6b546fae5f9015a219ab699a9ff8"
     },
     "check-remove": {
-      "oid": "c2169d3c116c25489b60eb4c43cc73cc2d17bae7"
+      "oid": "18246fa3a00ca588a82bf49c6903cb9752eafa48"
     },
     "ci": {
-      "oid": "71114d0717e157b34757be555fcb4a09c325ca8f"
+      "oid": "8fc02b57251bdd93363679b5479d3d583abcd25e"
     },
     "createCaloCells": {
-      "oid": "cfd1cf7b1a6bca1ff2e47361ffe30c0b61428795"
+      "oid": "6c411314ffa4073a7a487d91235a2f4313e352be"
     },
     "createTopoCluster": {
-      "oid": "be2ecd55c8d695b039a81e2ee2dec71056c8b7d9"
+      "oid": "ca0e2a05716e474f09c41d6d00c0db51ae436d53"
     },
     "ecalbarrelIndexer": {
-      "oid": "70763ea2780a053f47cedb4b516d801670038ff6"
+      "oid": "a186d8dd9b37f4a3e74be8903c79cdcbd19ad75a"
     },
     "ecalendcapTool": {
-      "oid": "8a7267a1e86e4ba8af7e670d71c35e99792aa8a2"
+      "oid": "4dad53aff68ff870960a3e658037908bee1159ac"
     },
     "hcal-seg": {
       "oid": "b916b08930b05563f5263715f1a3fac89ea29ee8"
@@ -85,55 +76,52 @@
       "oid": "4e34fa3346821fa30f5425f63f58716d8bf3e169"
     },
     "hcal-tool": {
-      "oid": "d9631184ab0c02d9b6efcfbc7a56c55e631dc0c9"
+      "oid": "84f1f4bf0e5beaacf179a0ce0005cb2b2bb4bfce"
     },
     "hcalIndexer": {
-      "oid": "6e80392fad46806a5b202e6c59ce71975a215b6c"
-    },
-    "idmapIndexer": {
-      "oid": "aef94741cf05eeea4e57d28b885abbc7c97c657a"
+      "oid": "16fb42a647dbafe44bea6c4e6d24224a72751648"
     },
     "indexingConfig": {
-      "oid": "3193550f682798ae29183544de52671e3722815a"
+      "oid": "5728d5e61622086b04e3095133d04561faf6d8e3"
     },
     "k4geo-noclone": {
-      "oid": "d9b557273814793bed1682fa29fed3c8327b3664"
+      "oid": "048c35cbce25e8fdda0c2391ca361764e10a6678"
     },
     "mdutils": {
-      "oid": "e48e12afd94eab897bf776215fb34631ad43dc8c"
+      "oid": "1675e3a93b277857ccaa85e35c93ed350edbb672"
     },
     "move-check": {
-      "oid": "0c664340cbdba4a18c30d8a8ba2d86a91b9b2da1"
+      "oid": "b89054cc140bc75824c6d372f082b6a8de32d97b"
     },
     "multiIndexer": {
-      "oid": "c09c4ac0fa531c2975b1df9ba9a7aa75464d35d8"
+      "oid": "a114a9580b5a7635fcad70abc6fadf8740c6e39d"
     },
     "noiseIndex": {
-      "oid": "338a21f1bd997a618fec58a4cd2c3d5b85577db1"
+      "oid": "3a1ea33906ed2b0e0e795fc864e0cfb613cb8ee5"
     },
     "repnoise": {
-      "oid": "66c5171aafaffe555389ea3e2b0803153e937217"
+      "oid": "0e38d869493e88472f35f8531a77deda77bef6d4"
     },
     "sortnoise": {
-      "oid": "783fa4829049a401e62ab4627e0d14faf6f7015d"
+      "oid": "11c19b1ed1f10ab0c5a61c3e5527ccb2db6d0af7"
     },
     "subdetVolman": {
-      "oid": "b9b058dab1d45873243e996ec550f7c95c422115"
+      "oid": "1ffae1aef5e497ad0cdb0783eaeb543f5a72920a"
     },
     "subdetVolman2": {
-      "oid": "470bca386bf77ede0d22638fe16c00bb4a924628"
+      "oid": "586d2ca9044d8cd6f93f188f9670b4e3aad33daa"
     },
     "timeout": {
       "oid": "e701d982ab7411fd25f39632b1a10f99b9ba4718"
     },
     "topoNoiseIndex": {
-      "oid": "91957f1f111891716bca6cc846ee1f64d8e2eb67"
+      "oid": "82dad86ec6796513e84434621018b905c674292c"
     },
     "xtalk": {
       "oid": "96109390c76458c72ead301b7d1e9dfcb32e624d"
     },
     "xtalkIndex": {
-      "oid": "3ecc9be656486253b62fa5d8fc75b99c7bff37ab"
+      "oid": "9fe8603b2cd7cc87f339e900700c0bf5923afb72"
     }
   }
 }
