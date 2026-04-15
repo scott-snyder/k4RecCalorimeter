@@ -1,14 +1,14 @@
 {
   "version": 5,
-  "prev": "f3f9e202c4e0a47c6053c8152a1542e06fbc632c",
-  "head": "544606c6d2ded11e2e3dc35f886e24969378a689",
+  "prev": "3e526b17307d6402ef9f1c8ea4cb74d9851e4907",
+  "head": "d23e2902fa51f2b36aa5a12a5989dc3e882fde54",
   "applied": [
     "xtalk",
     "timeout",
-    "multiIndexer",
-    "ci"
+    "multiIndexer"
   ],
   "unapplied": [
+    "ci",
     "mdutils",
     "hcal-seg",
     "hcal-seg-row",
