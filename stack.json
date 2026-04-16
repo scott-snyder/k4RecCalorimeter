@@ -1,17 +1,17 @@
 {
   "version": 5,
-  "prev": "76e30c7d03b63990c62a874d0c521632363d91da",
-  "head": "e701d982ab7411fd25f39632b1a10f99b9ba4718",
+  "prev": "37ce52b3ad15f9104b74952f3f1585a13dc95059",
+  "head": "b916b08930b05563f5263715f1a3fac89ea29ee8",
   "applied": [
     "xtalk",
-    "timeout"
+    "timeout",
+    "hcal-seg"
   ],
   "unapplied": [
     "multiIndexer",
     "ci",
     "abort-wip",
     "mdutils",
-    "hcal-seg",
     "hcal-seg-row",
     "hcal-tool",
     "ecalbarrelIndexer",
