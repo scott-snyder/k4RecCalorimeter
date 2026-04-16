@@ -1,10 +1,10 @@
-Bottom: 6459fceabcac0c1e400d0f3ccf476c7102e59225
+Bottom: 5aa36001f43cd4a3e0e067e29879a1c9c8adfea0
 Top:    a557d939fa82f8ff04c66f34c092fc767bd35ab0
 Author: sss <sss@karma>
-Date:   2026-04-16 16:03:21 -0400
+Date:   2026-04-16 16:03:33 -0400
 
 Adjust HCal positioning tool for updates in HCal segmentation.
 
 Update CellPositionsHCalPhiThetaSegTool to work properly when the HCal
-row segmentation is changed to properly return the position in the volume
+segmentations are changed to properly return the position in the volume
 coordinate system.
