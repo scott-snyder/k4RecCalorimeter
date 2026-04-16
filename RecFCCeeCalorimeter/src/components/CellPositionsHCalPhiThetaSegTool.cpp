@@ -141,8 +141,9 @@ void CellPositionsHCalPhiThetaSegTool::getPositions(const edm4hep::CalorimeterHi
 
 dd4hep::Position CellPositionsHCalPhiThetaSegTool::xyzPosition(const CellID aCellId) const {
 
-  if (m_segmentationType == "FCCSWHCalPhiTheta_k4geo" ||
-      m_segmentationType == "FCCSWHCalPhiRow_k4geo")
+  if ((m_segmentationType == "FCCSWHCalPhiTheta_k4geo" ||
+       m_segmentationType == "FCCSWHCalPhiRow_k4geo") &&
+      m_segmentation->cellsSpanVolumes())
   {
     dd4hep::DDSegmentation::CellID volumeId = m_segmentation->volumeID(aCellId);
     dd4hep::VolumeManagerContext* vc = m_volman.lookupContext(volumeId);
@@ -151,7 +152,8 @@ dd4hep::Position CellPositionsHCalPhiThetaSegTool::xyzPosition(const CellID aCel
     return outSeg;
   }
 
-  // following code is valid for FCCSWGridPhiTheta_k4geo segmentation type.
+  // following code is valid for FCCSWGridPhiTheta_k4geo segmentation type,
+  // or FCCSWHCal* before positioning fixes.
 
   dd4hep::DDSegmentation::CellID volumeId = aCellId;
   m_decoder->set(volumeId, "phi", 0);
