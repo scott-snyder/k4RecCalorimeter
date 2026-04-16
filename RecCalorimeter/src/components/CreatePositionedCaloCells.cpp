@@ -107,6 +107,15 @@ StatusCode CreatePositionedCaloCells::initialize() {
 }
 
 StatusCode CreatePositionedCaloCells::execute(const EventContext&) const {
+  FILE* f = fopen("/proc/self/maps", "r");
+  char buf[1024];
+  while (true) {
+    size_t n = fread(buf, 1, sizeof(buf), f);
+    if (n == 0) break;
+    fwrite(buf, 1, n, stdout);
+  }
+  fflush(stdout);
+  std::abort();
   // Get the input collection with Geant4 hits
   const edm4hep::SimCalorimeterHitCollection* hits = m_hits.get();
   debug() << "Input Hit collection size: " << hits->size() << endmsg;
