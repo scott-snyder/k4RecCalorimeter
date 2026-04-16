@@ -1,11 +1,11 @@
 {
   "version": 5,
-  "prev": "0ec2578e19ece02c9d01479555a68f30d1e05ff6",
+  "prev": "030a8b4ee9c7fd77785bc4f4139ca3b08ced7236",
   "head": "06505ba92b738346d969a06e73d61e76199cfb1d",
   "applied": [
     "xtalk",
     "timeout",
-    "adjust-hcal-positioning-tool"
+    "hcal-seg"
   ],
   "unapplied": [
     "multiIndexer",
@@ -46,9 +46,6 @@
     "abort-wip": {
       "oid": "0b5dc2f28a0dfe47329927df57e288305861e85d"
     },
-    "adjust-hcal-positioning-tool": {
-      "oid": "06505ba92b738346d969a06e73d61e76199cfb1d"
-    },
     "caloCellIndexerSvc": {
       "oid": "b18fa481df1750abacaddf969206040d338e0902"
     },
@@ -75,6 +72,9 @@
     },
     "ecalendcapTool": {
       "oid": "4dad53aff68ff870960a3e658037908bee1159ac"
+    },
+    "hcal-seg": {
+      "oid": "06505ba92b738346d969a06e73d61e76199cfb1d"
     },
     "hcal-tool": {
       "oid": "84f1f4bf0e5beaacf179a0ce0005cb2b2bb4bfce"
