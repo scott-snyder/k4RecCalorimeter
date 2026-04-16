@@ -89,5 +89,9 @@ private:
   Gaudi::Property<std::vector<int>> m_numLayersHCalThreeParts{this, "numLayersHCalThreeParts", {6, 9, 22}};
   /// Volume manager
   dd4hep::VolumeManager m_volman;
+
+  int m_layerIndex = -1;
+  int m_phiIndex = -1;
+  int m_thetaIndex = -1; 
 };
 #endif /* RECCALORIMETER_CellPositionsHCalPhiThetaSegTool_H */

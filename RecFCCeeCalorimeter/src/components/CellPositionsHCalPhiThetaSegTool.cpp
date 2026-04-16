@@ -60,9 +60,14 @@ StatusCode CellPositionsHCalPhiThetaSegTool::initialize() {
     return StatusCode::FAILURE;
   }
 
+  m_layerIndex = m_decoder->index("layer");
+
   // needed only for FCCSWGridPhiTheta_k4geo segmentation
   if(m_segmentationType == "FCCSWGridPhiTheta_k4geo")
   {
+    m_phiIndex = m_decoder->index("phi");
+    m_thetaIndex = m_decoder->index("theta");
+
     // retrieve radii from the LayeredCalorimeterData extension
     DetElement caloDetElem = detector->detector(m_detectorName);
     if (!caloDetElem.isValid()) {
@@ -141,14 +146,34 @@ void CellPositionsHCalPhiThetaSegTool::getPositions(const edm4hep::CalorimeterHi
 
 dd4hep::Position CellPositionsHCalPhiThetaSegTool::xyzPosition(const CellID aCellId) const {
 
-  if ((m_segmentationType == "FCCSWHCalPhiTheta_k4geo" ||
-       m_segmentationType == "FCCSWHCalPhiRow_k4geo") &&
-      m_segmentation->cellsSpanVolumes())
+  if (m_segmentationType == "FCCSWHCalPhiTheta_k4geo" ||
+      m_segmentationType == "FCCSWHCalPhiRow_k4geo")
   {
-    dd4hep::DDSegmentation::CellID volumeId = m_segmentation->volumeID(aCellId);
-    dd4hep::VolumeManagerContext* vc = m_volman.lookupContext(volumeId);
-    dd4hep::DDSegmentation::Vector3D inSeg = m_segmentation->position(aCellId);
-    dd4hep::Position outSeg = vc->localToWorld(dd4hep::Position(inSeg));
+    if (m_segmentation->cellsSpanVolumes()) {
+      dd4hep::DDSegmentation::CellID volumeId = m_segmentation->volumeID(aCellId);
+      dd4hep::VolumeManagerContext* vc = m_volman.lookupContext(volumeId);
+      dd4hep::DDSegmentation::Vector3D inSeg = m_segmentation->position(aCellId);
+      dd4hep::Position outSeg = vc->localToWorld(dd4hep::Position(inSeg));
+
+      if (msgLevel(MSG::DEBUG)) {
+        debug() << "Layer : " << m_decoder->get(aCellId, m_layerIndex) << endmsg;
+        debug() << "Global position : x = " << outSeg.x() << " y = " << outSeg.y() 
+                << " z = " << outSeg.z() << endmsg;
+      }
+
+      return outSeg;
+    }
+    // Before positioning fixes.
+    // get global position
+    auto posCell = m_segmentation->position(aCellId);
+    dd4hep::Position outSeg(posCell.x(), posCell.y(), posCell.z());
+
+    if (msgLevel(MSG::DEBUG)) {
+      debug() << "Layer : " << m_decoder->get(aCellId, m_layerIndex) << endmsg;
+      debug() << "Global position : x = " << outSeg.x() << " y = " << outSeg.y() 
+              << " z = " << outSeg.z() << endmsg;
+    }
+
     return outSeg;
   }
 
@@ -156,10 +181,10 @@ dd4hep::Position CellPositionsHCalPhiThetaSegTool::xyzPosition(const CellID aCel
   // or FCCSWHCal* before positioning fixes.
 
   dd4hep::DDSegmentation::CellID volumeId = aCellId;
-  m_decoder->set(volumeId, "phi", 0);
-  m_decoder->set(volumeId, "theta", 0);
+  m_decoder->set(volumeId, m_phiIndex, 0);
+  m_decoder->set(volumeId, m_thetaIndex, 0);
 
-  int layer = m_decoder->get(volumeId, "layer");
+  int layer = m_decoder->get(volumeId, m_layerIndex);
   // get radius in cm
   double radius = m_radii[layer];
   // get local position (for r=1)
@@ -167,17 +192,19 @@ dd4hep::Position CellPositionsHCalPhiThetaSegTool::xyzPosition(const CellID aCel
   // scale by radius to get global position
   dd4hep::Position outSeg(inSeg.x() * radius, inSeg.y() * radius, inSeg.z() * radius);
 
-  // MM: TBD the z-coordinate still needs to be carefully validated
-  // at the first glance it seems to be off in some cases in the Endcap
-  debug() << "Layer : " << layer << "\tradius : " << radius << " cm" << endmsg;
-  debug() << "Local position : x = " << inSeg.x() << " y = " << inSeg.y() << " z = " << inSeg.z() << endmsg;
-  debug() << "Global position : x = " << outSeg.x() << " y = " << outSeg.y() << " z = " << outSeg.z() << endmsg;
+  if (msgLevel(MSG::DEBUG)) {
+    // MM: TBD the z-coordinate still needs to be carefully validated
+    // at the first glance it seems to be off in some cases in the Endcap
+    debug() << "Layer : " << layer << "\tradius : " << radius << " cm" << endmsg;
+    debug() << "Local position : x = " << inSeg.x() << " y = " << inSeg.y() << " z = " << inSeg.z() << endmsg;
+    debug() << "Global position : x = " << outSeg.x() << " y = " << outSeg.y() << " z = " << outSeg.z() << endmsg;
+  }
 
   return outSeg;
 }
 
 int CellPositionsHCalPhiThetaSegTool::layerId(const CellID aCellId) const {
-  return m_decoder->get(aCellId, "layer");
+  return m_decoder->get(aCellId, m_layerIndex);
 }
 
 // calculate layer radii from LayeredCalorimeterData extension
