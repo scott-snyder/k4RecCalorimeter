@@ -1,9 +1,0 @@
-Bottom: db358112c5351bb0189ef017d53ace389c57db0f
-Top:    db358112c5351bb0189ef017d53ace389c57db0f
-Author: scott snyder <snyder@bnl.gov>
-Date:   2026-04-17 13:38:38 -0400
-
-MultiIndexer
-
-An ICaloIndexer implementation that combines indexers across several
-detectors.
