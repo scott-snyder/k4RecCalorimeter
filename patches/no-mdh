@@ -1,0 +1,8 @@
+Bottom: 286c7ebfd5ba7d26a3d7057810220eb44b8366a9
+Top:    286c7ebfd5ba7d26a3d7057810220eb44b8366a9
+Author: sss <sss@karma>
+Date:   2026-04-17 15:19:37 -0400
+
+Remove unneeded #includes of MetaDataHandle.h.
+
+Avoids deprecation warnings.
