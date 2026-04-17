@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "d34e813fa7c01bb57bf68a8f57b9520fc6d23b79",
+  "prev": "e985b119ae485d71855257f83cd3f6200355727f",
   "head": "1931899cc5089179bc90e4f70e47f8c7a4bd0025",
   "applied": [
     "xtalk",
@@ -28,9 +28,7 @@
     "check-remove",
     "k4geo-noclone"
   ],
-  "unapplied": [
-    "abort-wip"
-  ],
+  "unapplied": [],
   "hidden": [
     "FCChh",
     "mdutils"
@@ -38,9 +36,6 @@
   "patches": {
     "FCChh": {
       "oid": "00b1211dbc25e379193eddc3c42c2cd2744a54de"
-    },
-    "abort-wip": {
-      "oid": "dcbc0fd6954a0dd99407b5287ffadd4e70a8cbaa"
     },
     "caloCellIndexerSvc": {
       "oid": "07cd18a8323a0bc087c6341fd84c11025e21c25a"
