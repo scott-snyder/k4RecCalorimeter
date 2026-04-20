@@ -1,11 +1,12 @@
 {
   "version": 5,
-  "prev": "40c1cee480c83f2d56e040cdce84235d9738812b",
-  "head": "5a6edd4fb4e2d302b2f951b3588ee6c670f1b6ba",
+  "prev": "a09c29162e1665766b20815268ba74a703965a61",
+  "head": "3036ce53de6a32543523a68ceb4a6b8338ec4a91",
   "applied": [
     "xtalk",
     "timeout",
-    "ecalbarrelIndexer"
+    "ecalbarrelIndexer",
+    "ci"
   ],
   "unapplied": [
     "no-mdh",
@@ -14,7 +15,6 @@
     "hcal-tool",
     "hcalIndexer",
     "ecalendcapTool",
-    "ci",
     "cellposIndex",
     "indexingConfig",
     "xtalkIndex",
@@ -52,7 +52,7 @@
       "oid": "7dd8b1d25a1f7afffbd68fc2642b4b3ac128b988"
     },
     "ci": {
-      "oid": "c12e73c891c710e81ffc4c2307d886d668619953"
+      "oid": "3036ce53de6a32543523a68ceb4a6b8338ec4a91"
     },
     "createCaloCells": {
       "oid": "232511fc4408ca1a9ea594483d1158d8b89651ed"
