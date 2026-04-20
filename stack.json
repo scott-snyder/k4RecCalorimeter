@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "ac18c8027b0285d6891e59822b2d2182fed8b35c",
-  "head": "6982da4ab7fb925122f859e3a0ae5789f1ce575e",
+  "prev": "1c8c825eabf39984916f1de6ad10dd19538e2cf8",
+  "head": "c1498a63bc96b8bd4b74db37bac2f32b648987dd",
   "applied": [
     "xtalk",
     "timeout",
@@ -11,8 +11,7 @@
     "hcal-seg",
     "hcal-tool",
     "hcalIndexer",
-    "ecalendcapTool",
-    "refresh-temp"
+    "ecalendcapTool"
   ],
   "unapplied": [
     "ci",
@@ -65,7 +64,7 @@
       "oid": "fc31bb62f729c13d5cb5ab25512bbd24b15a163b"
     },
     "ecalendcapTool": {
-      "oid": "b1619ed88f4c063c23423dd8fbaeec1dcaf4de0e"
+      "oid": "c1498a63bc96b8bd4b74db37bac2f32b648987dd"
     },
     "hcal-seg": {
       "oid": "c308610296a0f989488fabe7f1772eadd06c342b"
@@ -93,9 +92,6 @@
     },
     "noiseIndex": {
       "oid": "a7c16be6e2e84f93e90fd30806c3529c834c87ee"
-    },
-    "refresh-temp": {
-      "oid": "6982da4ab7fb925122f859e3a0ae5789f1ce575e"
     },
     "repnoise": {
       "oid": "c6f60609ece1b056527b6d4ac3f323bff181a143"
