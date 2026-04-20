@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "f0e16b41e63e573e57ace8181416c9fd62061838",
-  "head": "fc2478860fdcd32c7fc39a3e8cb9bfc203829dff",
+  "prev": "805c09971c7c177533b6c44d8e241b7fe1ad8d39",
+  "head": "b7071eda29f4c35adfb028e8ba59dc71a3994a7a",
   "applied": [
     "xtalk",
     "timeout",
@@ -10,11 +10,11 @@
     "caloCellIndexerSvc",
     "hcal-seg",
     "hcal-tool",
-    "hcalIndexer"
+    "hcalIndexer",
+    "ci",
+    "ecalendcapTool"
   ],
   "unapplied": [
-    "ci",
-    "ecalendcapTool",
     "cellposIndex",
     "indexingConfig",
     "xtalkIndex",
@@ -52,7 +52,7 @@
       "oid": "9d68e78a0f2732ebfb67831977d79a99c3332020"
     },
     "ci": {
-      "oid": "3540833619a1abddf6267aa94fa0841dfda87719"
+      "oid": "b215db9c59a9341a9ab925b072360a00fc6263f1"
     },
     "createCaloCells": {
       "oid": "38b853c7e7a18970210c6144d532a74a468c3b79"
@@ -64,7 +64,7 @@
       "oid": "82699ad9e717d70e9dd4c7f4bbdaf790a690f65c"
     },
     "ecalendcapTool": {
-      "oid": "793ad5fdd2018445b7a54f85a210bd76f3d5e65e"
+      "oid": "b7071eda29f4c35adfb028e8ba59dc71a3994a7a"
     },
     "hcal-seg": {
       "oid": "0109a31f30921d88adce9bab4096cbbd21817893"
