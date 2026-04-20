@@ -1,13 +1,14 @@
 {
   "version": 5,
-  "prev": "8625c4d1afaf71a68a28418c16d43bf331dfb0a8",
-  "head": "150e1d99557a46218c37b9ae489314c28f4bafc9",
+  "prev": "fd3d54833ee502b71739643dfb0b20013718deb5",
+  "head": "5018e6640f9ec78bb15f7e7af2357b1a455b2b7e",
   "applied": [
     "k4geo-noclone",
     "no-mdh",
     "hcal-seg",
     "ecalbarrelIndexer",
-    "hcal-tool"
+    "hcal-tool",
+    "hcalIndexer"
   ],
   "unapplied": [
     "ecalendcapTool",
@@ -42,6 +43,9 @@
     },
     "hcal-tool": {
       "oid": "150e1d99557a46218c37b9ae489314c28f4bafc9"
+    },
+    "hcalIndexer": {
+      "oid": "5018e6640f9ec78bb15f7e7af2357b1a455b2b7e"
     },
     "ecalendcapTool": {
       "oid": "4bf8d7f00b4f8497039de5c5623a3b5cb7f35a4f"
