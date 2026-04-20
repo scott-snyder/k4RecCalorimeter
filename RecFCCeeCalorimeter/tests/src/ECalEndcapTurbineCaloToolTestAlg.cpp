@@ -49,7 +49,7 @@ StatusCode ECalEndcapTurbineCaloToolTestAlg::initialize()
   K4_GAUDI_CHECK (indexer != nullptr);
   K4_GAUDI_CHECK( indexer->detIDBits() == 4 );
 
-  _CHECK (indexer->cellIDs().size() == ncells);
+  K4_GAUDI_CHECK (indexer->cellIDs().size() == ncells);
   for (size_t i = 0; i < ncells; i++) {
     K4_GAUDI_CHECK (ids[i] == indexer->cellIDs()[i]);
     K4_GAUDI_CHECK (indexer->index(ids[i]) == i);
