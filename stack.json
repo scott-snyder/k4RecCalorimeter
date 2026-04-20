@@ -1,19 +1,19 @@
 {
   "version": 5,
-  "prev": "50661c3428c22d2c49378c62aac169cfb36e400b",
-  "head": "4a089ae9e0c3cd07f808421baa3ff1ec2278a452",
+  "prev": "77937f39ef2fbd08c1dc4bdb5f35f0c47c363516",
+  "head": "401d2c1df4a6f8fd5a7558d39b71df611c8932d4",
   "applied": [
     "xtalk",
     "timeout",
     "no-mdh",
-    "caloCellIndexerSvc"
+    "caloCellIndexerSvc",
+    "ecalbarrelIndexer",
+    "hcal-seg",
+    "hcal-tool",
+    "hcalIndexer"
   ],
   "unapplied": [
     "ci",
-    "hcal-seg",
-    "hcal-tool",
-    "ecalbarrelIndexer",
-    "hcalIndexer",
     "ecalendcapTool",
     "cellposIndex",
     "indexingConfig",
@@ -61,19 +61,19 @@
       "oid": "a985d99d42855a550cb3860f835143d75002edb7"
     },
     "ecalbarrelIndexer": {
-      "oid": "7fe27e6a543c67b84a7dd309d3de8abb59a9ee0f"
+      "oid": "d95e6afa0b24b4a06868f893b806dbb6379f18fd"
     },
     "ecalendcapTool": {
       "oid": "bdad3c0df952bd9c39304bc4622f63fe0974c513"
     },
     "hcal-seg": {
-      "oid": "746ebfb306b5da41da48f4302db980001badf06e"
+      "oid": "080fe96625026abc21f08593b4f2734c6e47bc99"
     },
     "hcal-tool": {
-      "oid": "17529341ee5fd5faca645e2f5e6983a32db67d14"
+      "oid": "6a1dcd1f4c3a989f613875621fde0f183bdaf8ae"
     },
     "hcalIndexer": {
-      "oid": "b5249dd4a1fa5333e4b497d90b7f5657f761b728"
+      "oid": "401d2c1df4a6f8fd5a7558d39b71df611c8932d4"
     },
     "indexingConfig": {
       "oid": "237b3baa660303f0f559d9b5e39213d67c2bcb13"
