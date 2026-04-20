@@ -1,9 +1,10 @@
 {
   "version": 5,
-  "prev": "7a6af585c7ff6277aaccececbd6fa2fa21bff258",
-  "head": "a86d546f54e176b88be75a79bbdfd757044a3e06",
+  "prev": "649dde7361a38c8558f9a226261b01d93deffd1c",
+  "head": "0cde1966a9ebfc766dae0b913ffc8b7efeb379e8",
   "applied": [
-    "k4geo-noclone"
+    "k4geo-noclone",
+    "no-mdh"
   ],
   "unapplied": [
     "hcal-seg",
@@ -35,6 +36,9 @@
   "patches": {
     "k4geo-noclone": {
       "oid": "a86d546f54e176b88be75a79bbdfd757044a3e06"
+    },
+    "no-mdh": {
+      "oid": "0cde1966a9ebfc766dae0b913ffc8b7efeb379e8"
     },
     "hcal-seg": {
       "oid": "ae42eb7a16d5515232874a339a110e9bed6fa99f"
