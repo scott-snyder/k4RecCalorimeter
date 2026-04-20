@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "1dcdfd2b471b5154e1f9698ec1025b8c2afeef24",
-  "head": "02291459fabd97edcfda762f546f1abb177bf8d6",
+  "prev": "a2522a766c8e26fe49d3fba6f93e647778c44638",
+  "head": "7e1c12881c7defa41c924c9834846e69b1696121",
   "applied": [
     "k4geo-noclone",
     "no-mdh",
@@ -19,11 +19,11 @@
     "createTopoCluster",
     "createCaloCells",
     "subdetVolman2",
-    "subdetVolman"
+    "subdetVolman",
+    "discrit-wip",
+    "discrit2-wip"
   ],
   "unapplied": [
-    "discrit-wip",
-    "discrit2-wip",
     "diag-wip",
     "cellids-wip"
   ],
@@ -81,10 +81,10 @@
       "oid": "02291459fabd97edcfda762f546f1abb177bf8d6"
     },
     "discrit-wip": {
-      "oid": "fefd5209882f7d1f0ad21d5fe96ad23f95d11773"
+      "oid": "635161efb4e5e0e21320ca5753341be9441b6013"
     },
     "discrit2-wip": {
-      "oid": "cf2d3faa7f351dbfed05d6a8c3130e7aa347de18"
+      "oid": "7e1c12881c7defa41c924c9834846e69b1696121"
     },
     "diag-wip": {
       "oid": "98b439cbdb26187d0c5beb1a1f8c281c8545cb82"
