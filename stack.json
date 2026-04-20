@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "c2e6f689eee7526e2cd8a0931b19c81e3aa3434a",
-  "head": "c26a01369aabcacd1eab368701661aa372f0c68d",
+  "prev": "2e76154b8a32f4ea8c80820208c3251498459762",
+  "head": "185b1082ca2b9694e212b1bdbd1ab90712e75b01",
   "applied": [
     "xtalk",
     "timeout",
@@ -10,8 +10,7 @@
     "caloCellIndexerSvc",
     "hcal-seg",
     "hcal-tool",
-    "hcalIndexer",
-    "refresh-temp"
+    "hcalIndexer"
   ],
   "unapplied": [
     "ci",
@@ -74,7 +73,7 @@
       "oid": "152790e3ea4aeed7863567b8a248747084070565"
     },
     "hcalIndexer": {
-      "oid": "302bc0c2e6669c7f93df92a6be1e98e129d7a2c6"
+      "oid": "185b1082ca2b9694e212b1bdbd1ab90712e75b01"
     },
     "indexingConfig": {
       "oid": "4418927f59698855c604f9fb9a442253142d8392"
@@ -93,9 +92,6 @@
     },
     "noiseIndex": {
       "oid": "a7c16be6e2e84f93e90fd30806c3529c834c87ee"
-    },
-    "refresh-temp": {
-      "oid": "c26a01369aabcacd1eab368701661aa372f0c68d"
     },
     "repnoise": {
       "oid": "c6f60609ece1b056527b6d4ac3f323bff181a143"
