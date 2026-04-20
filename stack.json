@@ -1,13 +1,12 @@
 {
   "version": 5,
-  "prev": "889763cb465e71ef699cad331244560bc00a373a",
-  "head": "d9d734ba0806b2d4c57d50201099bee82e365856",
+  "prev": "9818cc344bc53cfd075f1725681b5c1cd15adbb9",
+  "head": "fc31bb62f729c13d5cb5ab25512bbd24b15a163b",
   "applied": [
     "xtalk",
     "timeout",
     "no-mdh",
-    "ecalbarrelIndexer",
-    "refresh-temp"
+    "ecalbarrelIndexer"
   ],
   "unapplied": [
     "caloCellIndexerSvc",
@@ -62,7 +61,7 @@
       "oid": "9ee71c67e476c5f723750c759ac8d048143560e7"
     },
     "ecalbarrelIndexer": {
-      "oid": "82699ad9e717d70e9dd4c7f4bbdaf790a690f65c"
+      "oid": "fc31bb62f729c13d5cb5ab25512bbd24b15a163b"
     },
     "ecalendcapTool": {
       "oid": "a083ad8444e083066cefc889005d83a9f2e7bcf5"
@@ -93,9 +92,6 @@
     },
     "noiseIndex": {
       "oid": "a7c16be6e2e84f93e90fd30806c3529c834c87ee"
-    },
-    "refresh-temp": {
-      "oid": "d9d734ba0806b2d4c57d50201099bee82e365856"
     },
     "repnoise": {
       "oid": "c6f60609ece1b056527b6d4ac3f323bff181a143"
