@@ -1,16 +1,16 @@
 {
   "version": 5,
-  "prev": "d24343a98f6315b2e4ad10ce419880846b55de07",
-  "head": "7a6afc13ec2aee37a28f4b3bde43b2b6413c1d55",
+  "prev": "aab25b75d7cd23286fafad37051f8141d16fbc4d",
+  "head": "c308610296a0f989488fabe7f1772eadd06c342b",
   "applied": [
     "xtalk",
     "timeout",
     "no-mdh",
     "ecalbarrelIndexer",
-    "caloCellIndexerSvc"
+    "caloCellIndexerSvc",
+    "hcal-seg"
   ],
   "unapplied": [
-    "hcal-seg",
     "hcal-tool",
     "hcalIndexer",
     "ci",
@@ -67,7 +67,7 @@
       "oid": "a083ad8444e083066cefc889005d83a9f2e7bcf5"
     },
     "hcal-seg": {
-      "oid": "0109a31f30921d88adce9bab4096cbbd21817893"
+      "oid": "c308610296a0f989488fabe7f1772eadd06c342b"
     },
     "hcal-tool": {
       "oid": "0a0ec3d685ea41f3910604c45fedba1f99130835"
