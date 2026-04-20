@@ -84,4 +84,5 @@ if(BUILD_TESTING)
             COMMAND k4run ${PROJECT_SOURCE_DIR}/RecFCCeeCalorimeter/tests/options/TubeLayerModuleThetaCaloTool_test.py
             WORKING_DIRECTORY ${PROJECT_BINARY_DIR}/Testing/Temporary
           )
+  set_test_env( TubeLayerModuleThetaCaloTool_test )
 endif()
