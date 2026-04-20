@@ -1,11 +1,10 @@
 {
   "version": 5,
-  "prev": "87430f781e22f4ad58efc615a154d65925d4fede",
-  "head": "3b00322a55dcc6b231ab34a2e49486e965b46c99",
+  "prev": "667ff7fa244578560ff5038c7ce1be23f47a3964",
+  "head": "0cde1966a9ebfc766dae0b913ffc8b7efeb379e8",
   "applied": [
     "k4geo-noclone",
-    "no-mdh",
-    "cellsInConst"
+    "no-mdh"
   ],
   "unapplied": [
     "hcal-seg",
@@ -38,9 +37,6 @@
     },
     "no-mdh": {
       "oid": "0cde1966a9ebfc766dae0b913ffc8b7efeb379e8"
-    },
-    "cellsInConst": {
-      "oid": "3b00322a55dcc6b231ab34a2e49486e965b46c99"
     },
     "hcal-seg": {
       "oid": "ae42eb7a16d5515232874a339a110e9bed6fa99f"
