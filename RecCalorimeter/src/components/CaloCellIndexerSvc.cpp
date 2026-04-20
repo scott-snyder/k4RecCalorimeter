@@ -37,7 +37,9 @@ StatusCode CaloCellIndexerSvc::initialize()
         error() << "Out-of-range detector ID " << detid << endmsg;
         return StatusCode::FAILURE;
       }
-      mask_t mask = static_cast<mask_t>(1) << detid;
+      mask_t mask;
+      mask.set (detid);
+      // xxx
       if (m_indexers.find(mask) != m_indexers.end()) {
         error() << "Duplicate detector ID " << detid << endmsg;
         return StatusCode::FAILURE;
@@ -66,7 +68,8 @@ const ICaloIndexer* CaloCellIndexerSvc::indexer (int detID,
     error() << "Out-of-range detector ID " << detID << endmsg;
     return nullptr;
   }
-  mask_t mask = static_cast<mask_t>(1) << detID;
+  mask_t mask;
+  mask.set (detID);
   auto it = m_indexers.find (mask);
   if (it != m_indexers.end()) {
     return it->second.get();
@@ -93,13 +96,13 @@ const ICaloIndexer* CaloCellIndexerSvc::indexer (std::span<const int> detIDs,
   std::lock_guard lock (m_mutex);
 
   // Build detID mask.
-  mask_t mask = 0;
+  mask_t mask;
   for (int id : detIDs) {
     if (id > MAX_DETID) {
       error() << "Out-of-range detector ID " << id << endmsg;
       return nullptr;
     }
-    mask |= (static_cast<mask_t> (1) << id);
+    mask.set (id);
   }
 
   // Do we already have this combination?
@@ -127,6 +130,7 @@ const ICaloIndexer* CaloCellIndexerSvc::indexer (std::span<const int> detIDs,
                                             indexers,
                                             *m_constantsSvc);
 
+  // xxx
   return m_indexers.emplace (mask, std::move(mi)).first->second.get();
 }
 

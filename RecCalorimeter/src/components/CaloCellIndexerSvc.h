@@ -17,6 +17,8 @@
 #include "GaudiKernel/Service.h"
 #include "GaudiKernel/ToolHandle.h"
 #include "GaudiKernel/ServiceHandle.h"
+#include <bitset>
+#include <unordered_map>
 #include <mutex>
 #include <climits>
 
@@ -75,9 +77,9 @@ private:
   { this, "CaloCellConstantsSvc", "k4::recCalo::CaloCellConstantsSvc" };
 
   /// Map from bit mask of detector IDs to indexer objects.
-  using mask_t = uint64_t;
-  constexpr static int MAX_DETID = sizeof(mask_t) * CHAR_BIT;
-  std::map<mask_t, std::unique_ptr<ICaloIndexer> > m_indexers;
+  constexpr static int MAX_DETID = 255;
+  using mask_t = std::bitset<MAX_DETID+1>;
+  std::unordered_map<mask_t, std::unique_ptr<ICaloIndexer> > m_indexers;
 
   /// Guard access to the map.
   mutable std::recursive_mutex m_mutex;
