@@ -1,14 +1,14 @@
 {
   "version": 5,
-  "prev": "91f55ac41c417f5a2c922b6100a674ff291ccacc",
-  "head": "937be5f654765ef29b61b525f1ca5fb44c43aec0",
+  "prev": "e7e7ae87ee75f8a6a6f56557bac8f75302990582",
+  "head": "7e49391c4b88aa17c4c9a5665170e96ab20e8128",
   "applied": [
     "xtalk",
     "timeout",
-    "no-mdh",
-    "ci"
+    "no-mdh"
   ],
   "unapplied": [
+    "ci",
     "hcal-seg",
     "hcal-tool",
     "ecalbarrelIndexer",
