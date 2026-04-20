@@ -1,11 +1,10 @@
 {
   "version": 5,
-  "prev": "976a42c25bc00483cbf94da409a301caaabc0c19",
-  "head": "2121aaf1570e71e09d60d9ad4d1fb1e878e346bd",
+  "prev": "44886c9c5db5968914d1fad778584093d7c40cd8",
+  "head": "0cde1966a9ebfc766dae0b913ffc8b7efeb379e8",
   "applied": [
     "k4geo-noclone",
-    "no-mdh",
-    "idmapIndexer"
+    "no-mdh"
   ],
   "unapplied": [
     "hcal-seg",
@@ -37,9 +36,6 @@
     },
     "no-mdh": {
       "oid": "0cde1966a9ebfc766dae0b913ffc8b7efeb379e8"
-    },
-    "idmapIndexer": {
-      "oid": "2121aaf1570e71e09d60d9ad4d1fb1e878e346bd"
     },
     "hcal-seg": {
       "oid": "ae42eb7a16d5515232874a339a110e9bed6fa99f"
