@@ -1,9 +1,0 @@
-Bottom: a1674420437be3e484d7397c8e4a980b2181f306
-Top:    001f4737ce40e822b535165bbeedd265b7577300
-Author: scott snyder <snyder@bnl.gov>
-Date:   2026-02-07 16:25:26 -0500
-
-Implement HCalPhiThetaCaloTool::indexer().
-
-Implement indexer() for the Allegro hcal, using IDMapIndexer.
-Also add a simple test.
