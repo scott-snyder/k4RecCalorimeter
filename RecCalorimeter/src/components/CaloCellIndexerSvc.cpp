@@ -7,8 +7,8 @@
 
 
 #include "CaloCellIndexerSvc.h"
-#include "RecCaloCommon/k4RecCalorimeter_check.h"
 #include "RecCaloCommon/MultiIndexer.h"
+#include "k4FWCore/GaudiChecks.h"
 
 
 DECLARE_COMPONENT(k4::recCalo::CaloCellIndexerSvc);
@@ -22,9 +22,9 @@ namespace k4::recCalo {
  */
 StatusCode CaloCellIndexerSvc::initialize()
 {
-  K4RECCALORIMETER_CHECK( Service::initialize() );
-  K4RECCALORIMETER_CHECK( m_constantsSvc.retrieve() );
-  K4RECCALORIMETER_CHECK( m_geoTools.retrieve() );
+  K4_GAUDI_CHECK( Service::initialize() );
+  K4_GAUDI_CHECK( m_constantsSvc.retrieve() );
+  K4_GAUDI_CHECK( m_geoTools.retrieve() );
 
   std::lock_guard lock (m_mutex);
 
