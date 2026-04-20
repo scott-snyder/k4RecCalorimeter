@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "a2522a766c8e26fe49d3fba6f93e647778c44638",
-  "head": "7e1c12881c7defa41c924c9834846e69b1696121",
+  "prev": "7992d91c4eb47030b965607e7e655f493afb1fac",
+  "head": "e6c23bda63bfc44c85845f753d529341b61fca26",
   "applied": [
     "k4geo-noclone",
     "no-mdh",
@@ -21,12 +21,11 @@
     "subdetVolman2",
     "subdetVolman",
     "discrit-wip",
-    "discrit2-wip"
-  ],
-  "unapplied": [
+    "discrit2-wip",
     "diag-wip",
     "cellids-wip"
   ],
+  "unapplied": [],
   "hidden": [],
   "patches": {
     "k4geo-noclone": {
@@ -87,10 +86,10 @@
       "oid": "7e1c12881c7defa41c924c9834846e69b1696121"
     },
     "diag-wip": {
-      "oid": "98b439cbdb26187d0c5beb1a1f8c281c8545cb82"
+      "oid": "c248c9a441a34595609fc9f23deadd375b5facf6"
     },
     "cellids-wip": {
-      "oid": "480bcca0c30bd18cf49f335f1c1a96a8d31251c5"
+      "oid": "e6c23bda63bfc44c85845f753d529341b61fca26"
     }
   }
 }
