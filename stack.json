@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "1d7bd6530b039ff6415772f8be0bd1a477acd7d3",
-  "head": "a35151db90e2acff1888903148ea1e5e816e1a50",
+  "prev": "de29b4229d1802e00ac51679f72982c0f0839571",
+  "head": "b627375e4b9a4d911d4ff87cb9753d86a1868ae4",
   "applied": [
     "k4geo-noclone",
     "no-mdh",
@@ -14,10 +14,10 @@
     "cellposIndex",
     "indexingConfig",
     "xtalkIndex",
-    "topoNoiseIndex"
+    "topoNoiseIndex",
+    "noiseIndex"
   ],
   "unapplied": [
-    "noiseIndex",
     "createTopoCluster",
     "createCaloCells",
     "subdetVolman2",
@@ -66,7 +66,7 @@
       "oid": "a35151db90e2acff1888903148ea1e5e816e1a50"
     },
     "noiseIndex": {
-      "oid": "cc81b579f08f9569bf953130ec677c0736a904fe"
+      "oid": "b627375e4b9a4d911d4ff87cb9753d86a1868ae4"
     },
     "createTopoCluster": {
       "oid": "27d60f36eb28bc61e240b1e48195ec490e00a8f3"
