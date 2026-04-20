@@ -1,14 +1,14 @@
 {
   "version": 5,
-  "prev": "bdfc5b834c1342888d055ed3599c1a3b82caa61b",
-  "head": "4374c906c669e54a6a98e6eda429a2505b443fd2",
+  "prev": "7b5c28962b5a9a5c741ff564c2e91069273a65bb",
+  "head": "2ea3d17b2f1ff996dc22a645d2572da227031077",
   "applied": [
     "k4geo-noclone",
     "no-mdh",
-    "hcal-seg"
+    "hcal-seg",
+    "multiIndexer"
   ],
   "unapplied": [
-    "multiIndexer",
     "hcal-tool",
     "ecalbarrelIndexer",
     "hcalIndexer",
@@ -40,7 +40,7 @@
       "oid": "4374c906c669e54a6a98e6eda429a2505b443fd2"
     },
     "multiIndexer": {
-      "oid": "0011e6369fc09035164eb7aef77c0c313bd46ffc"
+      "oid": "2ea3d17b2f1ff996dc22a645d2572da227031077"
     },
     "hcal-tool": {
       "oid": "7e8b8e6ed1069c4fb4886751253a843164dc100c"
