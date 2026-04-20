@@ -1,12 +1,14 @@
 {
   "version": 5,
-  "prev": "07363cc174b49aa7c383d530cb8426eabbfe27ea",
-  "head": "7337e21a9ca6d1aef84e885d867d8147a9ebe3d9",
+  "prev": "81485780bcf680c1cb6fff1f47221b6bf64cbd48",
+  "head": "82699ad9e717d70e9dd4c7f4bbdaf790a690f65c",
   "applied": [
     "xtalk",
     "timeout",
     "no-mdh",
-    "ecalbarrelIndexer",
+    "ecalbarrelIndexer"
+  ],
+  "unapplied": [
     "caloCellIndexerSvc",
     "hcal-seg",
     "hcal-tool",
@@ -29,7 +31,6 @@
     "check-remove",
     "k4geo-noclone"
   ],
-  "unapplied": [],
   "hidden": [
     "FCChh",
     "mdutils"
