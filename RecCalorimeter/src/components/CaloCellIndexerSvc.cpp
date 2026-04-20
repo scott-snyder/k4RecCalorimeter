@@ -39,12 +39,12 @@ StatusCode CaloCellIndexerSvc::initialize()
       }
       mask_t mask;
       mask.set (detid);
-      // xxx
-      if (m_indexers.find(mask) != m_indexers.end()) {
+      std::unique_ptr<ICaloIndexer>& uptr = m_indexers[mask];
+      if (uptr) {
         error() << "Duplicate detector ID " << detid << endmsg;
         return StatusCode::FAILURE;
       }
-      m_indexers[mask] = std::move(indexer);
+      uptr = std::move(indexer);
     }
   }
 
@@ -106,9 +106,9 @@ const ICaloIndexer* CaloCellIndexerSvc::indexer (std::span<const int> detIDs,
   }
 
   // Do we already have this combination?
-  auto it = m_indexers.find (mask);
-  if (it != m_indexers.end()) {
-    return it->second.get();
+  std::unique_ptr<ICaloIndexer>& uptr = m_indexers[mask];
+  if (uptr) {
+    return uptr.get();
   }
 
   // Make a new MultiIndexer.
@@ -126,12 +126,11 @@ const ICaloIndexer* CaloCellIndexerSvc::indexer (std::span<const int> detIDs,
     }
   }
 
-  auto mi = std::make_unique<MultiIndexer> (detIDBits,
-                                            indexers,
-                                            *m_constantsSvc);
+  uptr = std::make_unique<MultiIndexer> (detIDBits,
+                                         indexers,
+                                         *m_constantsSvc);
 
-  // xxx
-  return m_indexers.emplace (mask, std::move(mi)).first->second.get();
+  return uptr.get();
 }
 
 
