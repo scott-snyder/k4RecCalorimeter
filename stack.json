@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "2fcec8bd84fc94696cbe46420003fe18a1ef485f",
-  "head": "079f47a0ade68fd7c3b2bc4faf529002435ce514",
+  "prev": "3e1302cce2d2d197379656d8ed8e3c3936f2665d",
+  "head": "c1498a63bc96b8bd4b74db37bac2f32b648987dd",
   "applied": [
     "xtalk",
     "timeout",
@@ -11,7 +11,9 @@
     "hcal-seg",
     "hcal-tool",
     "hcalIndexer",
-    "ecalendcapTool",
+    "ecalendcapTool"
+  ],
+  "unapplied": [
     "ci",
     "cellposIndex",
     "indexingConfig",
@@ -24,9 +26,7 @@
     "subdetVolman",
     "sortnoise",
     "repnoise",
-    "move-check"
-  ],
-  "unapplied": [
+    "move-check",
     "check-deprecated",
     "check-remove",
     "k4geo-noclone"
