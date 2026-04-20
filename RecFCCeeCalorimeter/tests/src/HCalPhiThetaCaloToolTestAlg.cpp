@@ -7,7 +7,7 @@
 
 #undef NDEBUG
 #include "RecCaloCommon/ICalorimeterTool.h"
-#include "RecCaloCommon/k4RecCalorimeter_check.h"
+#include "k4FWCore/GaudiChecks.h"
 #include "GaudiKernel/Algorithm.h"
 #include "GaudiKernel/ToolHandle.h"
 #include <span>
@@ -40,16 +40,16 @@ DECLARE_COMPONENT(k4::recCalo::HCalPhiThetaCaloToolTestAlg);
 
 StatusCode HCalPhiThetaCaloToolTestAlg::initialize()
 {
-  K4RECCALORIMETER_CHECK( m_barrelTool.retrieve() );
-  K4RECCALORIMETER_CHECK( m_endcapTool.retrieve() );
+  K4_GAUDI_CHECK( m_barrelTool.retrieve() );
+  K4_GAUDI_CHECK( m_endcapTool.retrieve() );
 
-  K4RECCALORIMETER_CHECK (m_barrelTool->readoutName() == "HCalBarrelReadout");
-  K4RECCALORIMETER_CHECK (m_barrelTool->id() == 8);
-  K4RECCALORIMETER_CHECK (m_endcapTool->readoutName() == "HCalEndcapReadout");
-  K4RECCALORIMETER_CHECK (m_endcapTool->id() == 9);
+  K4_GAUDI_CHECK (m_barrelTool->readoutName() == "HCalBarrelReadout");
+  K4_GAUDI_CHECK (m_barrelTool->id() == 8);
+  K4_GAUDI_CHECK (m_endcapTool->readoutName() == "HCalEndcapReadout");
+  K4_GAUDI_CHECK (m_endcapTool->id() == 9);
 
-  K4RECCALORIMETER_CHECK( testTool (*m_barrelTool, 210944) );
-  K4RECCALORIMETER_CHECK( testTool (*m_endcapTool, 80896) );
+  K4_GAUDI_CHECK( testTool (*m_barrelTool, 210944) );
+  K4_GAUDI_CHECK( testTool (*m_endcapTool, 80896) );
 
   return StatusCode::SUCCESS;
 }
@@ -60,16 +60,16 @@ StatusCode HCalPhiThetaCaloToolTestAlg::testTool (const k4::recCalo::ICalorimete
 {
   std::span<const uint64_t> ids = tool.cellIDs();
   size_t ncells = ids.size();
-  K4RECCALORIMETER_CHECK (ncells == exp_ncells);
+  K4_GAUDI_CHECK (ncells == exp_ncells);
 
   std::unique_ptr<ICaloIndexer> indexer = tool.indexer();
-  K4RECCALORIMETER_CHECK (indexer != nullptr);
-  K4RECCALORIMETER_CHECK( indexer->detIDBits() == 4 );
+  K4_GAUDI_CHECK (indexer != nullptr);
+  K4_GAUDI_CHECK( indexer->detIDBits() == 4 );
 
-  K4RECCALORIMETER_CHECK (indexer->cellIDs().size() == ncells);
+  K4_GAUDI_CHECK (indexer->cellIDs().size() == ncells);
   for (size_t i = 0; i < ncells; i++) {
-    K4RECCALORIMETER_CHECK (ids[i] == indexer->cellIDs()[i]);
-    K4RECCALORIMETER_CHECK (indexer->index(ids[i]) == i);
+    K4_GAUDI_CHECK (ids[i] == indexer->cellIDs()[i]);
+    K4_GAUDI_CHECK (indexer->index(ids[i]) == i);
   }
 
   return StatusCode::SUCCESS;
