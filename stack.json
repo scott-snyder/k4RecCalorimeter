@@ -1,13 +1,12 @@
 {
   "version": 5,
-  "prev": "32b14eabeb94114cc2128fc2c4d9a727127a2a3b",
-  "head": "5a6edd4fb4e2d302b2f951b3588ee6c670f1b6ba",
-  "applied": [
+  "prev": "cff3c15bb442b509485f7923fab3bb98c6eab9b0",
+  "head": "c16087d6c8aa9173a97408354603eccb4d1bf16b",
+  "applied": [],
+  "unapplied": [
     "xtalk",
     "timeout",
-    "ecalbarrelIndexer"
-  ],
-  "unapplied": [
+    "ecalbarrelIndexer",
     "ci",
     "no-mdh",
     "caloCellIndexerSvc",
