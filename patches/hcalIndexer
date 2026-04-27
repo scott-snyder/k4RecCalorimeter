@@ -1,7 +1,7 @@
 Bottom: b1264347850df483b1b2bd70bb627e5adc8c557f
 Top:    b19458c22b447c1bbc8054e037da32d3018e9daf
 Author: scott snyder <snyder@bnl.gov>
-Date:   2026-04-27 15:22:31 -0400
+Date:   2026-04-27 15:23:10 -0400
 
 Implement HCalPhiThetaCaloTool::indexer().
 
