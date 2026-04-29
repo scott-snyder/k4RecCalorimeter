@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "eca83d52a60742197dee5814cfe86de9b840145c",
-  "head": "7b7d654554d5d2647216ada8d062dff72401b52f",
+  "prev": "0c39e697aea66b571efffaf8d26fa09223ec6b1b",
+  "head": "23121afd15b172959051a2036132d42b23faf0ea",
   "applied": [
     "xtalk",
     "timeout",
@@ -25,8 +25,7 @@
     "repnoise",
     "move-check",
     "check-deprecated",
-    "check-remove",
-    "refresh-temp"
+    "check-remove"
   ],
   "unapplied": [
     "k4geo-noclone"
@@ -49,7 +48,7 @@
       "oid": "af9bd5a93c35a5719dbcd3448837ae4465e9a454"
     },
     "check-remove": {
-      "oid": "67301f63fc30b7352f5d7aeb68585064a749a015"
+      "oid": "23121afd15b172959051a2036132d42b23faf0ea"
     },
     "ci": {
       "oid": "ebb07da80de2a5f073d1828a7744b5d013ec8d8f"
@@ -89,9 +88,6 @@
     },
     "noiseIndex": {
       "oid": "2f8bd5d67fef2180c663fe91c0ce2d8ef9957d51"
-    },
-    "refresh-temp": {
-      "oid": "7b7d654554d5d2647216ada8d062dff72401b52f"
     },
     "repnoise": {
       "oid": "6f5cf85d18089e1a6385d78ba93cc8b509716b14"
