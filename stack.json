@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "f77bb77f2f090c35a65bc3ba11bdbac749cc8dd6",
-  "head": "338430e49db0992f5baaf3d244541b408a20f01e",
+  "prev": "3f19b126e061330ef61bf0c9de3557353c01c535",
+  "head": "9b2e30529603f442ad23e3c827e5798c19895447",
   "applied": [
     "xtalk",
     "timeout",
@@ -15,7 +15,8 @@
     "cellposIndex",
     "indexingConfig",
     "xtalkIndex",
-    "topoNoiseIndex"
+    "topoNoiseIndex",
+    "refresh-temp"
   ],
   "unapplied": [
     "noiseIndex",
@@ -88,6 +89,9 @@
     },
     "noiseIndex": {
       "oid": "62fe4600a5e402eaa4837a98930a9d89b50b3e16"
+    },
+    "refresh-temp": {
+      "oid": "9b2e30529603f442ad23e3c827e5798c19895447"
     },
     "repnoise": {
       "oid": "45567f19a922eb44b435f648279dd2d24dab05b4"
