@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "0c39e697aea66b571efffaf8d26fa09223ec6b1b",
-  "head": "23121afd15b172959051a2036132d42b23faf0ea",
+  "prev": "e176e23c9dfcf02f5ef99a748e6e959ed01e3c48",
+  "head": "87abc89856e12b49821462ac4d7c068486475112",
   "applied": [
     "xtalk",
     "timeout",
@@ -25,11 +25,10 @@
     "repnoise",
     "move-check",
     "check-deprecated",
-    "check-remove"
-  ],
-  "unapplied": [
+    "check-remove",
     "k4geo-noclone"
   ],
+  "unapplied": [],
   "hidden": [
     "FCChh",
     "mdutils"
@@ -78,7 +77,7 @@
       "oid": "52b23cd05aa3808e4ef4d6b3dced68d95999901a"
     },
     "k4geo-noclone": {
-      "oid": "9809e6f1eb579c332988b62b5e2ab087d6b944d3"
+      "oid": "87abc89856e12b49821462ac4d7c068486475112"
     },
     "mdutils": {
       "oid": "b9f46034152e74af649f41df9478feb05b94e94b"
