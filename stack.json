@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "6a46e62ff57b776d801ac3103bca48bc69e3e46d",
-  "head": "35a067501549fb5abcdae1ccfa99e7603725c097",
+  "prev": "3dc2f5c3d70e0158fa23ae84b3374cfb0460ec1f",
+  "head": "2f8bd5d67fef2180c663fe91c0ce2d8ef9957d51",
   "applied": [
     "xtalk",
     "timeout",
@@ -16,8 +16,7 @@
     "indexingConfig",
     "xtalkIndex",
     "topoNoiseIndex",
-    "noiseIndex",
-    "refresh-temp"
+    "noiseIndex"
   ],
   "unapplied": [
     "createTopoCluster",
@@ -88,10 +87,7 @@
       "oid": "a6a1ad143fbb688891552a8651535af4e6ed5209"
     },
     "noiseIndex": {
-      "oid": "7a1b8bbba1eaa805ff10b1372fc6c80628dca216"
-    },
-    "refresh-temp": {
-      "oid": "35a067501549fb5abcdae1ccfa99e7603725c097"
+      "oid": "2f8bd5d67fef2180c663fe91c0ce2d8ef9957d51"
     },
     "repnoise": {
       "oid": "45567f19a922eb44b435f648279dd2d24dab05b4"
