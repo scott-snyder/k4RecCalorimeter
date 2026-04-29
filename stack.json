@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "5f10f01dbd42c097cdd047d24f40d59a440391fb",
-  "head": "8a7534e3b2f575a0f5f8bb1144635279e580a456",
+  "prev": "7141f60bc49085fc2f5381f0c57b6dfae724a32f",
+  "head": "06c237fbb4ee938c3de2f5cbadda7e3b466bfd72",
   "applied": [
     "xtalk",
     "timeout",
@@ -14,8 +14,7 @@
     "ecalendcapTool",
     "cellposIndex",
     "indexingConfig",
-    "xtalkIndex",
-    "refresh-temp"
+    "xtalkIndex"
   ],
   "unapplied": [
     "topoNoiseIndex",
@@ -90,9 +89,6 @@
     "noiseIndex": {
       "oid": "62fe4600a5e402eaa4837a98930a9d89b50b3e16"
     },
-    "refresh-temp": {
-      "oid": "8a7534e3b2f575a0f5f8bb1144635279e580a456"
-    },
     "repnoise": {
       "oid": "45567f19a922eb44b435f648279dd2d24dab05b4"
     },
@@ -115,7 +111,7 @@
       "oid": "7c8a2a59ac9876301d2165415a86284a8e4307ae"
     },
     "xtalkIndex": {
-      "oid": "a2c96bce7ee57144a4623579eb5a37f527b69898"
+      "oid": "06c237fbb4ee938c3de2f5cbadda7e3b466bfd72"
     }
   }
 }
