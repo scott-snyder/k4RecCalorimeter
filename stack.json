@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "d4f11b6c1ba1199dd5ef6311d84d1086a4793848",
-  "head": "ba46e8dba4984026025d21da5536250acf6a1892",
+  "prev": "fb133c7c67be99a823bca928ee0d80370f870663",
+  "head": "95e21789d49098a48142b1c64ee3fd083aea1992",
   "applied": [
     "xtalk",
     "timeout",
@@ -21,8 +21,7 @@
     "createCaloCells",
     "subdetVolman2",
     "subdetVolman",
-    "sortnoise",
-    "refresh-temp"
+    "sortnoise"
   ],
   "unapplied": [
     "repnoise",
@@ -90,14 +89,11 @@
     "noiseIndex": {
       "oid": "2f8bd5d67fef2180c663fe91c0ce2d8ef9957d51"
     },
-    "refresh-temp": {
-      "oid": "ba46e8dba4984026025d21da5536250acf6a1892"
-    },
     "repnoise": {
       "oid": "45567f19a922eb44b435f648279dd2d24dab05b4"
     },
     "sortnoise": {
-      "oid": "ac5244becfbae0ae00436ef8ead57065949cee07"
+      "oid": "95e21789d49098a48142b1c64ee3fd083aea1992"
     },
     "subdetVolman": {
       "oid": "98c8465db3d50c57b1dff5e510ebb82a48ba5ce2"
