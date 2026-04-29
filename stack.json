@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "9afc090e12fff5759a97a15a03b05e201c1c23e7",
-  "head": "cf9af651a7c6c1132653e0c3092eae19b1a03e34",
+  "prev": "9814dcf78419e1cb0b48bfd97c4f0aa32a438ffb",
+  "head": "a2c96bce7ee57144a4623579eb5a37f527b69898",
   "applied": [
     "xtalk",
     "timeout",
@@ -12,11 +12,11 @@
     "hcal-tool",
     "hcalIndexer",
     "ecalendcapTool",
-    "cellposIndex"
+    "cellposIndex",
+    "indexingConfig",
+    "xtalkIndex"
   ],
   "unapplied": [
-    "indexingConfig",
-    "xtalkIndex",
     "topoNoiseIndex",
     "noiseIndex",
     "createTopoCluster",
@@ -75,7 +75,7 @@
       "oid": "4ee1a2aab1f430b090213dfb8c09d12f430cf069"
     },
     "indexingConfig": {
-      "oid": "976eb9ed02e95b0252841107dd05a3fdda4aacdc"
+      "oid": "52b23cd05aa3808e4ef4d6b3dced68d95999901a"
     },
     "k4geo-noclone": {
       "oid": "9809e6f1eb579c332988b62b5e2ab087d6b944d3"
@@ -111,7 +111,7 @@
       "oid": "7c8a2a59ac9876301d2165415a86284a8e4307ae"
     },
     "xtalkIndex": {
-      "oid": "41aa5e4a3bd0a68b5fa4563d82e2d75ee93c1140"
+      "oid": "a2c96bce7ee57144a4623579eb5a37f527b69898"
     }
   }
 }
