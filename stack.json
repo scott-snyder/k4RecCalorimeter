@@ -1,10 +1,11 @@
 {
   "version": 5,
-  "prev": "25fbadc32bf0cd595373cc256dadb2da71fb81c6",
-  "head": "762ebc788f5409e67701e63ba3c8ca5468b03f99",
-  "applied": [],
+  "prev": "4f9b9f11f782dcd8dcc244b5bdb4cea1ef2a6738",
+  "head": "52a70b81fcd5c7b03c7890632bf69d3425fb1f0f",
+  "applied": [
+    "xtalk"
+  ],
   "unapplied": [
-    "xtalk",
     "timeout",
     "ecalbarrelIndexer",
     "ci",
@@ -107,7 +108,7 @@
       "oid": "5b6cdb1ad16fec377f33c07b8a558c729f29190b"
     },
     "xtalk": {
-      "oid": "84458db4c09d6607b75c9e9dddb8a42f34f4fad6"
+      "oid": "52a70b81fcd5c7b03c7890632bf69d3425fb1f0f"
     },
     "xtalkIndex": {
       "oid": "41aa5e4a3bd0a68b5fa4563d82e2d75ee93c1140"
