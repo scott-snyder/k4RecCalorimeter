@@ -267,7 +267,7 @@ StatusCode CaloTopoClusterFCCee::execute(const EventContext&) const {
   debug() << "Total energy of clusters above threshold:                           " << checkTotEnergyAboveThreshold
           << endmsg;
   if (m_createClusterCellCollection) {
-    debug() << "Leftover cells :                                    " << inCells->size() - outClusterCells->size()
+    debug() << "Leftover cells :                                    " << inCells.size() - outClusterCells->size()
             << endmsg;
   }
 
