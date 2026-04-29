@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "af9ccadb8b1d08868a3d61b4850d025fcd20c64a",
-  "head": "529ec9d0a71d16d486ca3fa9c009e0fb7357e0b4",
+  "prev": "52f12f8baeb3937a55aa122a5c7fa2383ecc6111",
+  "head": "46be3d42c0507b7e002ed2d97fce1ad54dec4752",
   "applied": [
     "xtalk",
     "timeout",
@@ -17,8 +17,7 @@
     "xtalkIndex",
     "topoNoiseIndex",
     "noiseIndex",
-    "createTopoCluster",
-    "refresh-temp"
+    "createTopoCluster"
   ],
   "unapplied": [
     "createCaloCells",
@@ -58,7 +57,7 @@
       "oid": "b5a8990a13eaabd5817e49df15b640719adbd60c"
     },
     "createTopoCluster": {
-      "oid": "63f09ad789cd72ed5b2b6cc6827b6b56bad5e166"
+      "oid": "46be3d42c0507b7e002ed2d97fce1ad54dec4752"
     },
     "ecalbarrelIndexer": {
       "oid": "7414f49339f78bbf5606d8aa4dcf6596c394b0c6"
@@ -89,9 +88,6 @@
     },
     "noiseIndex": {
       "oid": "2f8bd5d67fef2180c663fe91c0ce2d8ef9957d51"
-    },
-    "refresh-temp": {
-      "oid": "529ec9d0a71d16d486ca3fa9c009e0fb7357e0b4"
     },
     "repnoise": {
       "oid": "45567f19a922eb44b435f648279dd2d24dab05b4"
