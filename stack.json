@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "fb133c7c67be99a823bca928ee0d80370f870663",
-  "head": "95e21789d49098a48142b1c64ee3fd083aea1992",
+  "prev": "629f8be6a0aef4ac59e4189f5b077a197054acfd",
+  "head": "496defab444bd8176b7549f825e809b1214a27e7",
   "applied": [
     "xtalk",
     "timeout",
@@ -21,10 +21,10 @@
     "createCaloCells",
     "subdetVolman2",
     "subdetVolman",
-    "sortnoise"
+    "sortnoise",
+    "repnoise"
   ],
   "unapplied": [
-    "repnoise",
     "move-check",
     "check-deprecated",
     "check-remove",
@@ -90,7 +90,7 @@
       "oid": "2f8bd5d67fef2180c663fe91c0ce2d8ef9957d51"
     },
     "repnoise": {
-      "oid": "45567f19a922eb44b435f648279dd2d24dab05b4"
+      "oid": "496defab444bd8176b7549f825e809b1214a27e7"
     },
     "sortnoise": {
       "oid": "95e21789d49098a48142b1c64ee3fd083aea1992"
