@@ -1,16 +1,14 @@
 {
   "version": 5,
-  "prev": "1441d7cbca9cb94b49dca0ad2fffda7d0be4bd2e",
+  "prev": "3a1510c6e82683a952767b798a93bd4a9d2777a9",
   "head": "7c6d9b788829bb7d856b19da6d9a205282537016",
   "applied": [
     "xtalk",
     "timeout"
   ],
   "unapplied": [
-    "ecalbarrelIndexer",
     "ci",
     "caloCellIndexerSvc",
-    "hcal-seg",
     "hcal-tool",
     "hcalIndexer",
     "ecalendcapTool",
@@ -59,14 +57,8 @@
     "createTopoCluster": {
       "oid": "f47f20d88a420db75388f83df6f8b7f71da2f00b"
     },
-    "ecalbarrelIndexer": {
-      "oid": "7414f49339f78bbf5606d8aa4dcf6596c394b0c6"
-    },
     "ecalendcapTool": {
       "oid": "e84fe245fe66fc9cc20d379fe6d5f91c04f470bd"
-    },
-    "hcal-seg": {
-      "oid": "8e578973da1edcf6306493e3624c279722cc1668"
     },
     "hcal-tool": {
       "oid": "4b946f743c957f2c9383fc409c6423b9f1253833"
