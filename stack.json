@@ -1,11 +1,11 @@
 {
   "version": 5,
-  "prev": "6648dc9eb5edcb497240adfba1c47436e436f975",
+  "prev": "ec1c481510e825cac6d32e9b7fd540a3cd9ba958",
   "head": "3bde0a380bc74d414765589b2b82b5ef23f39cbb",
   "applied": [
     "xtalk",
     "timeout",
-    "add-implementation-of"
+    "hcal-theta-tool"
   ],
   "unapplied": [
     "ci",
@@ -35,9 +35,6 @@
     "FCChh": {
       "oid": "00b1211dbc25e379193eddc3c42c2cd2744a54de"
     },
-    "add-implementation-of": {
-      "oid": "3bde0a380bc74d414765589b2b82b5ef23f39cbb"
-    },
     "caloCellIndexerSvc": {
       "oid": "b307067eeefc47cbcc03d79bd868720b22617282"
     },
@@ -61,6 +58,9 @@
     },
     "ecalendcapTool": {
       "oid": "e84fe245fe66fc9cc20d379fe6d5f91c04f470bd"
+    },
+    "hcal-theta-tool": {
+      "oid": "3bde0a380bc74d414765589b2b82b5ef23f39cbb"
     },
     "indexingConfig": {
       "oid": "52b23cd05aa3808e4ef4d6b3dced68d95999901a"
