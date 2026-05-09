@@ -53,7 +53,7 @@ public:
 
   /** Return the subdetector ID.
    */
-  virtual int id() const final override;
+  virtual int id() const override;
 
 protected:
   /// Return the resolved readout.
@@ -62,6 +62,9 @@ protected:
   /** Fill vector with all existing cells for this geometry.
    */
   virtual StatusCode collectCells(std::vector<CellID>& cells) const = 0;
+
+  /// Return handle to the geometry service.
+  ServiceHandle<IGeoSvc>& geoSvc() { return m_geoSvc; }
 
   /// Create the list of cells and store with the constants service.
   StatusCode makeCells();
