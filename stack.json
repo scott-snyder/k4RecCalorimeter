@@ -1,15 +1,15 @@
 {
   "version": 5,
-  "prev": "0a4de007446d096fd2f3d36e9755147e16253919",
-  "head": "78ab2c664a9c79fd911f2863651e9b0dca71ea75",
+  "prev": "11d50d8fd5398d1c1dab8e96b16e4ea59d801893",
+  "head": "248fbbb5ca013a25a59b1ec410d62661cf6bd575",
   "applied": [
     "xtalk",
-    "timeout"
+    "timeout",
+    "hcal-tool"
   ],
   "unapplied": [
     "ci",
     "caloCellIndexerSvc",
-    "hcal-tool",
     "hcalIndexer",
     "ecalendcapTool",
     "cellposIndex",
@@ -61,7 +61,7 @@
       "oid": "e84fe245fe66fc9cc20d379fe6d5f91c04f470bd"
     },
     "hcal-tool": {
-      "oid": "4b946f743c957f2c9383fc409c6423b9f1253833"
+      "oid": "248fbbb5ca013a25a59b1ec410d62661cf6bd575"
     },
     "hcalIndexer": {
       "oid": "4ee1a2aab1f430b090213dfb8c09d12f430cf069"
