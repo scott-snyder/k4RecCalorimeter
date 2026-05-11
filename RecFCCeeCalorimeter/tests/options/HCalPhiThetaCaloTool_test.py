@@ -23,7 +23,12 @@ hcalEndcapTool = C.HCalPhiThetaCaloTool \
 
 
 appmgr = C.ApplicationMgr \
-    (TopAlg = [C.k4__recCalo__HCalPhiThetaCaloToolTestAlg
+    (TopAlg = [C.k4__recCalo__HCalPhiCaloToolTestAlg
                (HCalBarrelTool = hcalBarrelTool,
-                HCalEndcapTool = hcalEndcapTool)],
+                HCalEndcapTool = hcalEndcapTool,
+                ExpectedBarrelReadout = 'HCalBarrelReadout',
+                ExpectedEndcapReadout = 'HCalEndcapReadout',
+                ExpectedBarrelCells = 210944,
+                ExpectedEndcapCells =  80896,
+                )],
      ExtSvc = [geoSvc])
