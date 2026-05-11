@@ -75,8 +75,9 @@ if(BUILD_TESTING)
   gaudi_add_module( k4RecFCCeeCalorimeterTests
                     SOURCES
                     tests/src/TubeLayerModuleThetaCaloToolTestAlg.cpp
-                    tests/src/HCalPhiThetaCaloToolTestAlg.cpp
+                    tests/src/HCalPhiCaloToolTestAlg.cpp
                     LINK k4FWCore::k4FWCore
+                    k4geo::detectorSegmentations
                     k4FWCore::k4Interface
                     Gaudi::GaudiKernel
                     RecCaloCommon
@@ -93,4 +94,16 @@ if(BUILD_TESTING)
             WORKING_DIRECTORY ${PROJECT_BINARY_DIR}/Testing/Temporary
         )
   set_test_env( HCalPhiThetaCaloTool_test )
+
+  add_test( NAME HCalPhiRowCaloTool_test
+            COMMAND k4run ${PROJECT_SOURCE_DIR}/RecFCCeeCalorimeter/tests/options/HCalPhiRowCaloTool_test.py
+            WORKING_DIRECTORY ${PROJECT_BINARY_DIR}/Testing/Temporary
+        )
+  set_test_env( HCalPhiRowCaloTool_test )
+
+  add_test( NAME HCalPhiGroupedRowCaloTool_test
+            COMMAND k4run ${PROJECT_SOURCE_DIR}/RecFCCeeCalorimeter/tests/options/HCalPhiGroupedRowCaloTool_test.py
+            WORKING_DIRECTORY ${PROJECT_BINARY_DIR}/Testing/Temporary
+        )
+  set_test_env( HCalPhiGroupedRowCaloTool_test )
 endif()
