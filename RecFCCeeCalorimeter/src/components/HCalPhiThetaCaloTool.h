@@ -23,6 +23,14 @@ public:
   virtual ~HCalPhiThetaCaloTool() = default;
 
 
+  /** Gaudi initialize method.
+   */
+  virtual StatusCode initialize() override final;
+
+  /** Return the subdetector ID.
+   */
+  virtual int id() const final override;
+
   /** Return a new indexer object for this subdetector.
    */
   virtual std::unique_ptr<k4::recCalo::ICaloIndexer> indexer() const override final;
@@ -32,6 +40,10 @@ protected:
   /** Fill vector with all existing cells for this geometry.
    */
   virtual StatusCode collectCells(std::vector<uint64_t>& cells) const override final;
+
+private:
+  /// Detector ID.
+  int m_id = -1;
 };
 
 #endif /* RECFCCEECALORIMETER_HCALPHITHETACALOTOOL_H */
