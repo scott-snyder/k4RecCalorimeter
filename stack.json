@@ -1,11 +1,11 @@
 {
   "version": 5,
-  "prev": "c702f2ba1cfb97a5e3cf2335f433438f4c371c26",
+  "prev": "508ed3e33790ce6da867074ee3c07711b2b36edd",
   "head": "074b20e1d5fbeb8c86fa9a2c71144786ecb69ac5",
   "applied": [
     "xtalk",
     "timeout",
-    "hcal-theta-tool"
+    "hcal-tools"
   ],
   "unapplied": [
     "ci",
@@ -59,7 +59,7 @@
     "ecalendcapTool": {
       "oid": "e84fe245fe66fc9cc20d379fe6d5f91c04f470bd"
     },
-    "hcal-theta-tool": {
+    "hcal-tools": {
       "oid": "074b20e1d5fbeb8c86fa9a2c71144786ecb69ac5"
     },
     "indexingConfig": {
