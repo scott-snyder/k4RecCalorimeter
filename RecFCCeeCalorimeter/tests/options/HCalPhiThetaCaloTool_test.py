@@ -12,10 +12,10 @@ compactFile = "ALLEGRO_o1_v03.xml"
 pathToDetector = (
     os.environ.get("K4GEO", "")
     + "/FCCee/ALLEGRO/compact/"
-    + os.path.splitext(compactFile)[0])
+    + os.path.splitext(compactFile)[0]
+)
 
-geoSvc = C.GeoSvc('GeoSvc',
-                  detectors = [os.path.join (pathToDetector, compactFile)])
+geoSvc = C.GeoSvc("GeoSvc", detectors = [os.path.join (pathToDetector, compactFile)])
 
 hcalBarrelTool = C.HCalPhiThetaCaloTool(
     "hcalBarrelGeometryTool", readoutName="HCalBarrelReadout"
@@ -28,7 +28,7 @@ hcalEndcapTool = C.HCalPhiThetaCaloTool(
 # Sorry about the lack of whitespace and ugly formatting, but ruff-format
 # complains if this is written legibly.
 appmgr = C.ApplicationMgr(
-    TopAlg = [
+    TopAlg=[
         C.k4__recCalo__HCalPhiCaloToolTestAlg(
             HCalBarrelTool=hcalBarrelTool,
             HCalEndcapTool=hcalEndcapTool,
@@ -38,5 +38,5 @@ appmgr = C.ApplicationMgr(
             ExpectedEndcapCells=80896,
         )
     ],
-    ExtSvc = [geoSvc],
+    ExtSvc=[geoSvc],
 )

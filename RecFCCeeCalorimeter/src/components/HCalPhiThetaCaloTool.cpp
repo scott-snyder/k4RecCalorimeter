@@ -10,9 +10,7 @@
 #include "detectorSegmentations/FCCSWHCalPhiTheta_k4geo.h"
 #include "k4FWCore/GaudiChecks.h"
 
-
 DECLARE_COMPONENT(HCalPhiThetaCaloTool)
-
 
 /** Return the name of this subdetector, to be used to find the
     subdetector ID.
@@ -27,7 +25,7 @@ std::string HCalPhiThetaCaloTool::detectorName() const {
 /** Fill vector with all existing cells for this geometry.
  */
 StatusCode HCalPhiThetaCaloTool::collectCells(std::vector<uint64_t>& cells) const {
-  cells.reserve (readoutName() == "HCalBarrelReadout" ? 210944 : 80896);
+  cells.reserve(readoutName() == "HCalBarrelReadout" ? 210944 : 80896);
   const auto* seg =
       dynamic_cast<const dd4hep::DDSegmentation::FCCSWHCalPhiTheta_k4geo*>(readout().segmentation().segmentation());
   if (!seg) {
@@ -64,7 +62,6 @@ StatusCode HCalPhiThetaCaloTool::collectCells(std::vector<uint64_t>& cells) cons
   return StatusCode::SUCCESS;
 }
 
-
 /** Return a new indexer object for this subdetector.
  */
 std::unique_ptr<k4::recCalo::ICaloIndexer> HCalPhiThetaCaloTool::indexer() const {
@@ -80,9 +77,9 @@ std::unique_ptr<k4::recCalo::ICaloIndexer> HCalPhiThetaCaloTool::indexer() const
   using Indexer_t = k4::recCalo::IDMapIndexer<3>;
   dd4hep::IDDescriptor idSpec = readout().idSpec();
   // Sorry, clang-format insists on making this hard to read.
-  std::vector<Indexer_t::FieldDesc_t> fields{Indexer_t::IDMap_t::makeDesc(*idSpec.field(seg->fieldNameLayer())),
-                                             Indexer_t::IDMap_t::makeDesc(*idSpec.field(seg->fieldNameTheta())),
-                                             Indexer_t::IDMap_t::makeDesc(*idSpec.field(seg->fieldNamePhi()))};
+  std::vector<Indexer_t::FieldDesc_t>fields{Indexer_t::IDMap_t::makeDesc(*idSpec.field(seg->fieldNameLayer())),
+                                            Indexer_t::IDMap_t::makeDesc(*idSpec.field(seg->fieldNameTheta())),
+                                            Indexer_t::IDMap_t::makeDesc(*idSpec.field(seg->fieldNamePhi()))};
 
   const dd4hep::BitFieldElement& sysField = *idSpec.field("system");
   if (sysField.offset() != 0) {

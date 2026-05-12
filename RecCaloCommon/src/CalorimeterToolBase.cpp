@@ -37,8 +37,7 @@ StatusCode CalorimeterToolBase::initialize() {
     if (m_readout.isValid()) {
       m_id = m_readout.segmentation().detector()->id;
     }
-  }
-  else {
+  } else {
     m_id = m_geoSvc->getDetector()->constant<int>("DetID_" + detName);
   }
 

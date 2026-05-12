@@ -6,7 +6,6 @@
  * @brief Calorimeter tool for Allegro HCal.
  */
 
-
 #ifndef RECFCCEECALORIMETER_HCALPHITHETACALOTOOL_H
 #define RECFCCEECALORIMETER_HCALPHITHETACALOTOOL_H
 

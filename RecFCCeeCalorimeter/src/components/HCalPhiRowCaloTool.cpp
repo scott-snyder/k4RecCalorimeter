@@ -10,7 +10,6 @@
 #include "detectorSegmentations/FCCSWHCalPhiRow_k4geo.h"
 #include "k4FWCore/GaudiChecks.h"
 
-
 DECLARE_COMPONENT(HCalPhiRowCaloTool)
 
 /** Return the name of this subdetector, to be used to find the
@@ -29,7 +28,7 @@ StatusCode HCalPhiRowCaloTool::collectCells(std::vector<uint64_t>& cells) const 
   bool is_barrel = (readoutName() == "HCalBarrelReadoutPhiRow");
   cells.reserve(is_barrel ? 1031680 : 1164800);
   const auto* seg =
-      dynamic_cast<const dd4hep::DDSegmentation::FCCSWHCalPhiRow_k4geo*> (readout().segmentation().segmentation());
+      dynamic_cast<const dd4hep::DDSegmentation::FCCSWHCalPhiRow_k4geo*>(readout().segmentation().segmentation());
   if (!seg) {
     error() << "Unable to cast segmentation pointer!!!! Tool only applicable to FCCSWHCalPhiRow_k4geo "
                "segmentation."
@@ -66,12 +65,11 @@ StatusCode HCalPhiRowCaloTool::collectCells(std::vector<uint64_t>& cells) const 
   return StatusCode::SUCCESS;
 }
 
-
 /** Return a new indexer object for this subdetector.
  */
 std::unique_ptr<k4::recCalo::ICaloIndexer> HCalPhiRowCaloTool::indexer() const {
   const auto* seg =
-      dynamic_cast<const dd4hep::DDSegmentation::FCCSWHCalPhiRow_k4geo*> (readout().segmentation().segmentation());
+      dynamic_cast<const dd4hep::DDSegmentation::FCCSWHCalPhiRow_k4geo*>(readout().segmentation().segmentation());
   if (!seg) {
     error() << "Unable to cast segmentation pointer!!!! Tool only applicable to FCCSWHCalPhiTow_k4geo "
                "segmentation."
@@ -86,7 +84,7 @@ std::unique_ptr<k4::recCalo::ICaloIndexer> HCalPhiRowCaloTool::indexer() const {
   // Sorry for the ugly formatting, but clang-format insists.
   std::vector<Indexer_t::FieldDesc_t> fields{Indexer_t::IDMap_t::makeDesc(*idSpec.field(seg->fieldNameLayer())),
                                              Indexer_t::IDMap_t::makeDesc(*idSpec.field(seg->fieldNameRow())),
-                                             Indexer_t::IDMap_t::makeDesc(*idSpec.field(seg->fieldNamePhi())) };
+                                             Indexer_t::IDMap_t::makeDesc(*idSpec.field(seg->fieldNamePhi()))};
 
   const dd4hep::BitFieldElement& sysField = *idSpec.field("system");
   if (sysField.offset() != 0) {
@@ -95,10 +93,10 @@ std::unique_ptr<k4::recCalo::ICaloIndexer> HCalPhiRowCaloTool::indexer() const {
 
   std::vector<Indexer_t::FieldDesc_t> ignoredFields;
   if (!is_barrel) {
-    ignoredFields.push_back (Indexer_t::IDMap_t::makeDesc (*idSpec.field(seg->fieldNamePseudoLayer())));
+    ignoredFields.push_back(Indexer_t::IDMap_t::makeDesc(*idSpec.field(seg->fieldNamePseudoLayer())));
   }
 
   // Again, clang-format complains if this is written legibly...
-  return std::make_unique<Indexer_t> (this->id(), sysField.width(), fields, cellIDs(), is_barrel ? 4200000 : 1000000,
-                                      ignoredFields);
+  return std::make_unique<Indexer_t>(this->id(), sysField.width(), fields, cellIDs(), is_barrel ? 4200000 : 1000000,
+                                     ignoredFields);
 }
