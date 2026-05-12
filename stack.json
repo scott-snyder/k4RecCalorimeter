@@ -1,12 +1,14 @@
 {
   "version": 5,
-  "prev": "0bd5cceb2d0769f009a4e9c6578edc2e37fc86ad",
-  "head": "2834f0d0eff888571bd21bb8897b16f5079cae71",
+  "prev": "53c96d0cba9db04727019a9550ee257a9c1bda2e",
+  "head": "7cf630ee1679ac2d44dc6f4d0d10b5e005f02e59",
   "applied": [
     "xtalk",
     "timeout",
     "hcal-tools",
-    "ci",
+    "ci"
+  ],
+  "unapplied": [
     "caloCellIndexerSvc",
     "ecalendcapTool",
     "cellposIndex",
@@ -25,7 +27,6 @@
     "check-remove",
     "k4geo-noclone"
   ],
-  "unapplied": [],
   "hidden": [
     "FCChh",
     "mdutils"
