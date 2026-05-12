@@ -87,6 +87,6 @@ std::unique_ptr<k4::recCalo::ICaloIndexer> HCalPhiThetaCaloTool::indexer() const
   }
 
   // Again, clang-format...
-  return std::make_unique<Indexer_t>(this->id(), sysField.width(),fields, cellIDs(),
+  return std::make_unique<Indexer_t>(this->id(), sysField.width(), fields, cellIDs(),
                                      readoutName() == "HCalBarrelReadout" ? 900000 : 700000);
 }

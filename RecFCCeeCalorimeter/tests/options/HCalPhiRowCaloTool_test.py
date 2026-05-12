@@ -15,7 +15,7 @@ pathToDetector = (
     + os.path.splitext(compactFile)[0]
 )
 
-geoSvc = C.GeoSvc("GeoSvc", detectors=[os.path.join (pathToDetector, compactFile)])
+geoSvc = C.GeoSvc("GeoSvc", detectors=[os.path.join(pathToDetector, compactFile)])
 
 hcalBarrelTool = C.HCalPhiRowCaloTool(
     "hcalBarrelGeometryTool", readoutName="HCalBarrelReadoutPhiRow"

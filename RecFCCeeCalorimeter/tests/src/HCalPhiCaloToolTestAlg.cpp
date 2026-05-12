@@ -21,7 +21,6 @@
 #include <fstream>
 #include <span>
 
-
 namespace k4::recCalo {
 
 class HCalPhiCaloToolTestAlg : public Algorithm {
@@ -84,7 +83,6 @@ StatusCode HCalPhiCaloToolTestAlg::initialize() {
 
   return StatusCode::SUCCESS;
 }
-
 
 StatusCode HCalPhiCaloToolTestAlg::testTool(const k4::recCalo::ICalorimeterTool& tool, size_t exp_ncells) const {
   std::span<const uint64_t> ids = tool.cellIDs();
