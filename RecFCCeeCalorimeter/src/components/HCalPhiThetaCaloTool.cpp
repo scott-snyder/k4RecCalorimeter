@@ -115,5 +115,5 @@ HCalPhiThetaCaloTool::indexer() const
   return std::make_unique<Indexer_t> (this->id(),
                                       sysField.width(),
                                       fields, cellIDs(),
-                                      900000);
+                                      readoutName() == "HCalBarrelReadout" ? 900000 : 700000);
 }
