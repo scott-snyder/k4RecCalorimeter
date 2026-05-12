@@ -77,9 +77,9 @@ std::unique_ptr<k4::recCalo::ICaloIndexer> HCalPhiThetaCaloTool::indexer() const
   using Indexer_t = k4::recCalo::IDMapIndexer<3>;
   dd4hep::IDDescriptor idSpec = readout().idSpec();
   // Sorry, clang-format insists on making this hard to read.
-  std::vector<Indexer_t::FieldDesc_t>fields{Indexer_t::IDMap_t::makeDesc(*idSpec.field(seg->fieldNameLayer())),
-                                            Indexer_t::IDMap_t::makeDesc(*idSpec.field(seg->fieldNameTheta())),
-                                            Indexer_t::IDMap_t::makeDesc(*idSpec.field(seg->fieldNamePhi()))};
+  std::vector<Indexer_t::FieldDesc_t> fields{Indexer_t::IDMap_t::makeDesc(*idSpec.field(seg->fieldNameLayer())),
+                                             Indexer_t::IDMap_t::makeDesc(*idSpec.field(seg->fieldNameTheta())),
+                                             Indexer_t::IDMap_t::makeDesc(*idSpec.field(seg->fieldNamePhi()))};
 
   const dd4hep::BitFieldElement& sysField = *idSpec.field("system");
   if (sysField.offset() != 0) {
@@ -87,6 +87,6 @@ std::unique_ptr<k4::recCalo::ICaloIndexer> HCalPhiThetaCaloTool::indexer() const
   }
 
   // Again, clang-format...
-  return std::make_unique<Indexer_t> (this->id(), sysField.width(),fields, cellIDs(),
-                                      readoutName() == "HCalBarrelReadout" ? 900000 : 700000);
+  return std::make_unique<Indexer_t>(this->id(), sysField.width(),fields, cellIDs(),
+                                     readoutName() == "HCalBarrelReadout" ? 900000 : 700000);
 }

@@ -33,14 +33,14 @@ class HCalPhiCaloToolTestAlg : public Algorithm {
 private:
   StatusCode testTool(const k4::recCalo::ICalorimeterTool& tool, size_t exp_ncells) const;
 
-  Gaudi::Property<int> m_expectedBarrelCells{this, "ExpectedBarrelCells", 0, "" };
-  Gaudi::Property<int> m_expectedEndcapCells{this, "ExpectedEndcapCells", 0, "" };
+  Gaudi::Property<int> m_expectedBarrelCells{this, "ExpectedBarrelCells", 0, ""};
+  Gaudi::Property<int> m_expectedEndcapCells{this, "ExpectedEndcapCells", 0, ""};
 
-  Gaudi::Property<std::string> m_expectedBarrelReadout{this, "ExpectedBarrelReadout", "", "" };
-  Gaudi::Property<std::string> m_expectedEndcapReadout{this, "ExpectedEndcapReadout", "", "" };
+  Gaudi::Property<std::string> m_expectedBarrelReadout{this, "ExpectedBarrelReadout", "", ""};
+  Gaudi::Property<std::string> m_expectedEndcapReadout{this, "ExpectedEndcapReadout", "", ""};
 
-  Gaudi::Property<bool> m_groupRows {this, "GroupRows", false, ""};
-  Gaudi::Property<bool> m_dumpCells {this, "DumpCells", false, ""};
+  Gaudi::Property<bool> m_groupRows{this, "GroupRows", false, ""};
+  Gaudi::Property<bool> m_dumpCells{this, "DumpCells", false, ""};
 
   ToolHandle<k4::recCalo::ICalorimeterTool> m_barrelTool{this, "HCalBarrelTool", "", ""};
   ToolHandle<k4::recCalo::ICalorimeterTool> m_endcapTool{this, "HCalEndcapTool", "", ""};
@@ -86,7 +86,7 @@ StatusCode HCalPhiCaloToolTestAlg::initialize() {
 }
 
 
-StatusCode HCalPhiCaloToolTestAlg::testTool (const k4::recCalo::ICalorimeterTool& tool, size_t exp_ncells) const {
+StatusCode HCalPhiCaloToolTestAlg::testTool(const k4::recCalo::ICalorimeterTool& tool, size_t exp_ncells) const {
   std::span<const uint64_t> ids = tool.cellIDs();
   size_t ncells = ids.size();
   K4_GAUDI_CHECK(ncells == exp_ncells);
