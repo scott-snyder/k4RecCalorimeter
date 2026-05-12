@@ -21,13 +21,10 @@ public:
   using CalorimeterToolBase::CalorimeterToolBase;
   virtual ~HCalPhiRowCaloTool() = default;
 
-  /** Gaudi initialize method.
+  /** Return the name of this subdetector, to be used to find the
+      subdetector ID.
    */
-  virtual StatusCode initialize() override final;
-
-  /** Return the subdetector ID.
-   */
-  virtual int id() const final override;
+  virtual std::string detectorName() const override;
 
   /** Return a new indexer object for this subdetector.
    */
@@ -37,10 +34,6 @@ protected:
   /** Fill vector with all existing cells for this geometry.
    */
   virtual StatusCode collectCells(std::vector<uint64_t>& cells) const override final;
-
-private:
-  /// Detector ID.
-  int m_id = -1;
 };
 
 #endif /* RECFCCEECALORIMETER_HCALPHIROWCALOTOOL_H */

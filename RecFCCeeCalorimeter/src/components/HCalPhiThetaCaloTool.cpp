@@ -6,7 +6,6 @@
  */
 
 #include "HCalPhiThetaCaloTool.h"
-#include "DD4hep/Detector.h"
 #include "RecCaloCommon/IDMapIndexer.h"
 #include "detectorSegmentations/FCCSWHCalPhiTheta_k4geo.h"
 #include "k4FWCore/GaudiChecks.h"
@@ -15,30 +14,15 @@
 DECLARE_COMPONENT(HCalPhiThetaCaloTool)
 
 
-/** Gaudi initialize method.
- */
-StatusCode HCalPhiThetaCaloTool::initialize() {
-  // Look up the detector ID.
-  std::string detidname = "DetID_";
+/** Return the name of this subdetector, to be used to find the
+    subdetector ID.
+*/
+std::string HCalPhiThetaCaloTool::detectorName() const {
   if (readoutName() == "HCalBarrelReadout")
-    detidname += "HCAL_Barrel";
+    return "HCAL_Barrel";
   else
-    detidname += "HCAL_Endcap";
-
-  K4_GAUDI_CHECK( geoSvc().retrieve() );
-  m_id = geoSvc()->getDetector()->constant<int>(detidname);
-  if (m_id < 0) {
-    error() << "Can't find detector ID " << detidname << endmsg;
-    return StatusCode::FAILURE;
-  }
-
-  K4_GAUDI_CHECK(CalorimeterToolBase::initialize());
-  return StatusCode::SUCCESS;
+    return "HCAL_Endcap";
 }
-
-/** Return the subdetector ID.
- */
-int HCalPhiThetaCaloTool::id() const { return m_id; }
 
 /** Fill vector with all existing cells for this geometry.
  */
@@ -56,7 +40,7 @@ StatusCode HCalPhiThetaCaloTool::collectCells(std::vector<uint64_t>& cells) cons
   const dd4hep::DDSegmentation::BitFieldCoder& decoder = *readout().idSpec().decoder();
 
   dd4hep::DDSegmentation::CellID cID = 0;
-  decoder.set(cID, "system", m_id);
+  decoder.set(cID, "system", this->id());
 
   size_t layer_id = decoder.index(seg->fieldNameLayer());
   size_t theta_id = decoder.index(seg->fieldNameTheta());
