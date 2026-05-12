@@ -16,12 +16,10 @@
  *
  *  Manage IDs for HCal.
  */
-class HCalPhiThetaCaloTool : public CalorimeterToolBase
-{
+class HCalPhiThetaCaloTool : public CalorimeterToolBase {
 public:
   using CalorimeterToolBase::CalorimeterToolBase;
   virtual ~HCalPhiThetaCaloTool() = default;
-
 
   /** Gaudi initialize method.
    */
@@ -34,7 +32,6 @@ public:
   /** Return a new indexer object for this subdetector.
    */
   virtual std::unique_ptr<k4::recCalo::ICaloIndexer> indexer() const override final;
-
 
 protected:
   /** Fill vector with all existing cells for this geometry.

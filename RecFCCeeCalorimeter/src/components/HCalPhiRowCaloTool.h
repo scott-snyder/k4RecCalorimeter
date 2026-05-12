@@ -16,8 +16,7 @@
  *
  *  Manage IDs for HCal (with row indexing).
  */
-class HCalPhiRowCaloTool : public CalorimeterToolBase
-{
+class HCalPhiRowCaloTool : public CalorimeterToolBase {
 public:
   using CalorimeterToolBase::CalorimeterToolBase;
   virtual ~HCalPhiRowCaloTool() = default;
@@ -33,7 +32,6 @@ public:
   /** Return a new indexer object for this subdetector.
    */
   virtual std::unique_ptr<k4::recCalo::ICaloIndexer> indexer() const override final;
-
 
 protected:
   /** Fill vector with all existing cells for this geometry.
