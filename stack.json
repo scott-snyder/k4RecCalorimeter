@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "ca134905157615f35007da8f7bb4559e649202e9",
-  "head": "f51add2c1933e5155b65241d2b06ff489ca401dd",
+  "prev": "e0e58ff753dbfa82b3022d9f3f9e37e48330c834",
+  "head": "f0f52b62b883ef01ec829637d7929ba2e1c76140",
   "applied": [
     "xtalk",
     "timeout",
@@ -60,7 +60,7 @@
       "oid": "ffba41ec08f705716ad19e390e6b80d915f36d55"
     },
     "hcal-tools": {
-      "oid": "f51add2c1933e5155b65241d2b06ff489ca401dd"
+      "oid": "f0f52b62b883ef01ec829637d7929ba2e1c76140"
     },
     "indexingConfig": {
       "oid": "3c016e2e945b80faf604e1738346cab21d29914f"
