@@ -1,14 +1,14 @@
 {
   "version": 5,
-  "prev": "53c96d0cba9db04727019a9550ee257a9c1bda2e",
-  "head": "7cf630ee1679ac2d44dc6f4d0d10b5e005f02e59",
+  "prev": "ca134905157615f35007da8f7bb4559e649202e9",
+  "head": "f51add2c1933e5155b65241d2b06ff489ca401dd",
   "applied": [
     "xtalk",
     "timeout",
-    "hcal-tools",
-    "ci"
+    "hcal-tools"
   ],
   "unapplied": [
+    "ci",
     "caloCellIndexerSvc",
     "ecalendcapTool",
     "cellposIndex",
