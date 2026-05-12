@@ -1,12 +1,11 @@
 {
   "version": 5,
-  "prev": "3f32531f97305d2acabcab02e0511e508700d3e2",
-  "head": "f03e7de2de249b69512a5fc13d1b32863ef43e21",
+  "prev": "4f62af7664b776b44ae2440a826d4cebd31dcaf2",
+  "head": "7a452732d5d8f2db77000d1bd6c7cd0b11aa251c",
   "applied": [
     "xtalk",
     "timeout",
-    "hcal-tools",
-    "refresh-temp"
+    "hcal-tools"
   ],
   "unapplied": [
     "ci",
@@ -61,7 +60,7 @@
       "oid": "e84fe245fe66fc9cc20d379fe6d5f91c04f470bd"
     },
     "hcal-tools": {
-      "oid": "80e6a10d33190a8ccee48f851ba95fa529622f45"
+      "oid": "7a452732d5d8f2db77000d1bd6c7cd0b11aa251c"
     },
     "indexingConfig": {
       "oid": "52b23cd05aa3808e4ef4d6b3dced68d95999901a"
@@ -77,9 +76,6 @@
     },
     "noiseIndex": {
       "oid": "2f8bd5d67fef2180c663fe91c0ce2d8ef9957d51"
-    },
-    "refresh-temp": {
-      "oid": "f03e7de2de249b69512a5fc13d1b32863ef43e21"
     },
     "repnoise": {
       "oid": "0b2bfada3a9c0315804ac3c1b0d512876f5cafb7"
