@@ -1,13 +1,11 @@
 {
   "version": 5,
-  "prev": "6461cf150e53c09bf09ba6487993f2b053f5eb13",
+  "prev": "df2bd758567b9a8fcd847db28c065b9cb8c82d49",
   "head": "70b28c7767c54df836c86c76406339012d7c0a27",
   "applied": [
     "k4geo-noclone"
   ],
   "unapplied": [
-    "hcal-tool",
-    "hcalIndexer",
     "ecalendcapTool",
     "caloCellIndexerSvc",
     "cellposIndex",
@@ -28,12 +26,6 @@
   "patches": {
     "k4geo-noclone": {
       "oid": "70b28c7767c54df836c86c76406339012d7c0a27"
-    },
-    "hcal-tool": {
-      "oid": "150e1d99557a46218c37b9ae489314c28f4bafc9"
-    },
-    "hcalIndexer": {
-      "oid": "5018e6640f9ec78bb15f7e7af2357b1a455b2b7e"
     },
     "ecalendcapTool": {
       "oid": "8ee0d322e91805a7919d8c701c8a836919f5ce81"
