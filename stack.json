@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "b5d18001402cfea60a00cbec58219396a6ce017d",
-  "head": "5fe1d17ebf030f849534a891f741684ecd3f9f62",
+  "prev": "f21585aa1f5870673d8e539b95742e57ec3c3128",
+  "head": "3b29d3fe08ad6a9b691726319d117a38400c2356",
   "applied": [
     "k4geo-noclone",
     "ecalendcapTool",
@@ -11,7 +11,8 @@
     "xtalkIndex",
     "topoNoiseIndex",
     "noiseIndex",
-    "createTopoCluster"
+    "createTopoCluster",
+    "createCaloCells"
   ],
   "unapplied": [
     "subdetVolman2",
@@ -49,6 +50,9 @@
     },
     "createTopoCluster": {
       "oid": "5fe1d17ebf030f849534a891f741684ecd3f9f62"
+    },
+    "createCaloCells": {
+      "oid": "3b29d3fe08ad6a9b691726319d117a38400c2356"
     },
     "subdetVolman2": {
       "oid": "3b14cb1f185c60bc6fb50a0f883d885ef854b0a8"
