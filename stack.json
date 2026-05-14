@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "9a273e92e289ad6221beb62c7c6cc79257e04019",
-  "head": "65d2177a58e0d3d26c516c545be28f9f0dc1ba01",
+  "prev": "e7fa3e217b5609e67bdfa00ad2aef0039204b253",
+  "head": "18beb139914cd32f6af56f8e4870495020431a43",
   "applied": [
     "k4geo-noclone",
     "ecalendcapTool",
@@ -16,10 +16,10 @@
     "subdetVolman2",
     "subdetVolman",
     "discrit-wip",
-    "discrit2-wip"
+    "discrit2-wip",
+    "diag-wip"
   ],
   "unapplied": [
-    "diag-wip",
     "cellids-wip"
   ],
   "hidden": [],
@@ -67,7 +67,7 @@
       "oid": "65d2177a58e0d3d26c516c545be28f9f0dc1ba01"
     },
     "diag-wip": {
-      "oid": "c248c9a441a34595609fc9f23deadd375b5facf6"
+      "oid": "18beb139914cd32f6af56f8e4870495020431a43"
     },
     "cellids-wip": {
       "oid": "e6c23bda63bfc44c85845f753d529341b61fca26"
