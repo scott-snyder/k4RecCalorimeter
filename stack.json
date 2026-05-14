@@ -1,14 +1,13 @@
 {
   "version": 5,
-  "prev": "fc74a050e7b009ccac4bad5946e97f6a153807e4",
-  "head": "c9ad4d68363143cd1bd938ca79b567f61076708b",
+  "prev": "19a5e1fbc2a2e16f4f111876675097cd751af9e5",
+  "head": "3cb91b50b9be36d005ccf1bd91939c6515514163",
   "applied": [
     "k4geo-noclone",
     "ecalendcapTool",
     "caloCellIndexerSvc",
     "cellposIndex",
-    "indexingConfig",
-    "xtalkIndex"
+    "indexingConfig"
   ],
   "unapplied": [
     "topoNoiseIndex",
@@ -38,9 +37,6 @@
     },
     "indexingConfig": {
       "oid": "3cb91b50b9be36d005ccf1bd91939c6515514163"
-    },
-    "xtalkIndex": {
-      "oid": "c9ad4d68363143cd1bd938ca79b567f61076708b"
     },
     "topoNoiseIndex": {
       "oid": "a35151db90e2acff1888903148ea1e5e816e1a50"
