@@ -102,6 +102,10 @@ private:
   /// Name for calo cells (output collection)
   mutable std::string m_cells;
 
+  Gaudi::Property<float> m_discritMin {this, "discritMin", 0};
+  Gaudi::Property<float> m_discritMax {this, "discritMax", 100};
+  Gaudi::Property<int> m_discritN     {this, "discritN", -1};
+
   /// Maps of cell IDs (corresponding to DD4hep IDs) vs digitised cell energies
   mutable std::unordered_map<uint64_t, double> m_cellsMap;
   /// Maps of cell IDs (corresponding to DD4hep IDs) on transfer of signals due to crosstalk
