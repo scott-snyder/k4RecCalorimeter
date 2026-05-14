@@ -1,10 +1,11 @@
 {
   "version": 5,
-  "prev": "50decf3f22611f4f7e81536a13cc2f3bce20ce68",
-  "head": "79d408b0adf61be9ba285a879e25b8a627f23375",
+  "prev": "12272860f24504f57892bd13762e383d6a8ea437",
+  "head": "c62293dfc043f96981742f4731c0e695f637cf79",
   "applied": [
     "k4geo-noclone",
-    "ecalendcapTool"
+    "ecalendcapTool",
+    "caloCellIndexerSvc"
   ],
   "unapplied": [
     "cellposIndex",
@@ -28,6 +29,9 @@
     },
     "ecalendcapTool": {
       "oid": "79d408b0adf61be9ba285a879e25b8a627f23375"
+    },
+    "caloCellIndexerSvc": {
+      "oid": "c62293dfc043f96981742f4731c0e695f637cf79"
     },
     "cellposIndex": {
       "oid": "00e80c762b2f48ca6f22e6621aa605e428c312a9"
