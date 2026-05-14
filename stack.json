@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "2040f8773026d1ad213389faa2ec2c390fa08c48",
-  "head": "6b11994847357865853f94d5adfda7f895707e4a",
+  "prev": "f0ea58e69566a25bfdbf651ec961eb0e92b51290",
+  "head": "7b09e0d40bc8144e28daac48599a3150cfd58876",
   "applied": [
     "k4geo-noclone",
     "ecalendcapTool",
@@ -14,10 +14,10 @@
     "createTopoCluster",
     "createCaloCells",
     "subdetVolman2",
-    "subdetVolman"
+    "subdetVolman",
+    "discrit-wip"
   ],
   "unapplied": [
-    "discrit-wip",
     "discrit2-wip",
     "diag-wip",
     "cellids-wip"
@@ -61,7 +61,7 @@
       "oid": "6b11994847357865853f94d5adfda7f895707e4a"
     },
     "discrit-wip": {
-      "oid": "635161efb4e5e0e21320ca5753341be9441b6013"
+      "oid": "7b09e0d40bc8144e28daac48599a3150cfd58876"
     },
     "discrit2-wip": {
       "oid": "7e1c12881c7defa41c924c9834846e69b1696121"
