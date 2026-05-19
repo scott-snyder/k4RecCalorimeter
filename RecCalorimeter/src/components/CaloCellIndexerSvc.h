@@ -70,9 +70,11 @@ public:
 
 
 private:
+  /// List of calorimeter tools taht can provide indexers.
   ToolHandleArray<ICalorimeterTool> m_geoTools
   { this, "GeoTools", {} };
 
+  /// The cell constants service.
   ServiceHandle<k4::recCalo::ICaloCellConstantsSvc> m_constantsSvc
   { this, "CaloCellConstantsSvc", "k4::recCalo::CaloCellConstantsSvc" };
 
