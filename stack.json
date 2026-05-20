@@ -1,14 +1,14 @@
 {
   "version": 5,
-  "prev": "b0790ff0d0468b64169ea01065c97f91fe59de4d",
-  "head": "9f04d015e173189d6581988e9c1cc8229e75d32d",
+  "prev": "c78b9c5f4fef6eeb57b17738f649483a5eee8685",
+  "head": "7315ab5ac3bddf522bec93740dc83a9dd81c19c5",
   "applied": [
     "xtalk",
     "timeout",
-    "caloCellIndexerSvc"
+    "caloCellIndexerSvc",
+    "ci"
   ],
   "unapplied": [
-    "ci",
     "ecalendcapTool",
     "cellposIndex",
     "indexingConfig",
@@ -47,7 +47,7 @@
       "oid": "82aff8f2c7f9e3f72991fb9e1dbfc49eec87514d"
     },
     "ci": {
-      "oid": "5311e4ebf864a6bc752e1a25fd78c608cb8134db"
+      "oid": "7315ab5ac3bddf522bec93740dc83a9dd81c19c5"
     },
     "createCaloCells": {
       "oid": "22aed943a57cb6cd29d1c435100d4edb7f732c5a"
