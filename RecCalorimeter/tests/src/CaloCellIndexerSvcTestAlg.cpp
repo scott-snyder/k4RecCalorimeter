@@ -79,4 +79,3 @@ StatusCode CaloCellIndexerSvcTestAlg::initialize() {
 StatusCode CaloCellIndexerSvcTestAlg::execute() { return StatusCode::SUCCESS; }
 
 } // namespace k4::recCalo
-

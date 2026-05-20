@@ -27,15 +27,15 @@ ecalBarrelTool = C.TubeLayerModuleThetaCaloTool(
     activeFieldName="layer",
     activeVolumesNumber=11,
     fieldNames=["system"],
-    fieldValues=[ECAL_Barrel]
+    fieldValues=[ECAL_Barrel],
 )
 
 hcalBarrelTool = C.HCalPhiThetaCaloTool(
-    "hcalBarrelGeometryTool", readoutName= "HCalBarrelReadout"
+    "hcalBarrelGeometryTool", readoutName="HCalBarrelReadout"
 )
 
-indexerSvc = C.k4__recCalo__CaloCellIndexerSvc (
-    GeoTools = [ecalBarrelTool, hcalBarrelTool]
+indexerSvc = C.k4__recCalo__CaloCellIndexerSvc(
+    GeoTools=[ecalBarrelTool, hcalBarrelTool]
 )
 
 appmgr = C.ApplicationMgr(
