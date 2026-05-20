@@ -1,12 +1,11 @@
 {
   "version": 5,
-  "prev": "ab26754816a4cf1ae414befdcc6d28888daf04ba",
-  "head": "603f458c8ae3f794ed6c24677cca4f84cf75676d",
+  "prev": "815111a08eff76700563cb4ead3105bb506a5272",
+  "head": "45ab224af04cb83dcd57c049f0b2f775e16a4b8c",
   "applied": [
     "xtalk",
     "timeout",
-    "caloCellIndexerSvc",
-    "refresh-temp"
+    "caloCellIndexerSvc"
   ],
   "unapplied": [
     "ci",
@@ -36,7 +35,7 @@
       "oid": "00b1211dbc25e379193eddc3c42c2cd2744a54de"
     },
     "caloCellIndexerSvc": {
-      "oid": "13e45dee7913b8141c3b39d666bebcf53906daa1"
+      "oid": "45ab224af04cb83dcd57c049f0b2f775e16a4b8c"
     },
     "cellposIndex": {
       "oid": "edc3e08721d1e4351c19f209cbe6e6eea063f784"
@@ -73,9 +72,6 @@
     },
     "noiseIndex": {
       "oid": "c4925645ea73c51a8f67be2cef92269c7e4a2891"
-    },
-    "refresh-temp": {
-      "oid": "603f458c8ae3f794ed6c24677cca4f84cf75676d"
     },
     "repnoise": {
       "oid": "dfd285c7272519fce110bebdf5df0b6e898aec68"
