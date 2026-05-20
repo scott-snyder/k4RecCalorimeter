@@ -10,14 +10,13 @@
 #ifndef RECCALOCOMMON_ICALOCELLINDEXERSVC_H
 #define RECCALOCOMMON_ICALOCELLINDEXERSVC_H
 
-
+// clang-format off: headers best listed in reverse-dependency order.
 #include "RecCaloCommon/ICaloIndexer.h"
 #include "GaudiKernel/IInterface.h"
 #include <span>
-
+// clang-format on
 
 namespace k4::recCalo {
-
 
 /**
  * @brief Holder for calorimeter cell indexers.
@@ -28,12 +27,10 @@ namespace k4::recCalo {
  * One might think of having this be part of ICaloCellConstantsSvc,
  * but we run into initialization loops in that case.
  */
-class ICaloCellIndexerSvc
-  : virtual public IInterface
+class ICaloCellIndexerSvc : virtual public IInterface
 {
 public:
   DeclareInterfaceID (ICaloCellIndexerSvc, 1, 0);
-
 
   /**
    * @brief Return indexer for a given subdetector.
@@ -42,8 +39,7 @@ public:
    *
    * Returns a pointer to the indexer or nullptr if there isn't one defined.
    */
-  virtual const ICaloIndexer* indexer (int detID, bool quiet = false) const = 0;
-
+  virtual const ICaloIndexer* indexer(int detID, bool quiet = false) const = 0;
 
   /**
    * @brief Return indexer for a given set of subdetectors.
@@ -52,13 +48,10 @@ public:
    *
    * Returns a pointer to the indexer or nullptr if there isn't one defined.
    */
-  virtual const ICaloIndexer* indexer (std::span<const int> detIDs,
-                                       bool quiet = false) = 0;
+  virtual const ICaloIndexer* indexer(std::span<const int> detIDs,
+                                      bool quiet = false) = 0;
 };
 
-
 } // namespace k4::recCalo
-
-
 
 #endif // not RECCALOCOMMON_ICALOCELLINDEXERSVC_H
