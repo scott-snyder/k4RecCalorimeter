@@ -68,7 +68,7 @@ StatusCode CaloCellIndexerSvcTestAlg::initialize() {
   std::span<const uint64_t> ids01 = indexer01->cellIDs();
   K4_GAUDI_CHECK(ids01.size() == ids0.size() + ids1.size());
   K4_GAUDI_CHECK(std::equal(ids0.begin(), ids0.end(), ids01.begin()));
-  K4_GAUDI_CHECK(std::equal(ids1.begin(), ids1.end(), ids01.begin()+ids0.size()));
+  K4_GAUDI_CHECK(std::equal(ids1.begin(), ids1.end(), ids01.begin() + ids0.size()));
   for (size_t i = 0; i < ids01.size(); ++i) {
     K4_GAUDI_CHECK(indexer01->index(ids01[i]) == i);
   }
@@ -76,9 +76,7 @@ StatusCode CaloCellIndexerSvcTestAlg::initialize() {
   return StatusCode::SUCCESS;
 }
 
-
 StatusCode CaloCellIndexerSvcTestAlg::execute() { return StatusCode::SUCCESS; }
-
 
 } // namespace k4::recCalo
 

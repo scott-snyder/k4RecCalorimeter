@@ -55,8 +55,7 @@ StatusCode CaloCellIndexerSvc::initialize() {
  *
  * Returns a pointer to the indexer or nullptr if there isn't one defined.
  */
-const ICaloIndexer* CaloCellIndexerSvc::indexer(int detID, bool quiet /*= false*/) const
-{
+const ICaloIndexer* CaloCellIndexerSvc::indexer(int detID, bool quiet /*= false*/) const {
   std::lock_guard lock(m_mutex);
 
   if (detID > MAX_DETID) {
@@ -78,10 +77,10 @@ const ICaloIndexer* CaloCellIndexerSvc::indexer(int detID, bool quiet /*= false*
 /**
  * @brief Return indexer for a given set of subdetectors.
  */
-const ICaloIndexer* CaloCellIndexerSvc::indexer(std::span<const int> detIDs, bool quiet /*= false*/)
-{
+const ICaloIndexer* CaloCellIndexerSvc::indexer(std::span<const int> detIDs, bool quiet /*= false*/) {
   // Degenerate cases
-  if (detIDs.empty()) return nullptr;
+  if (detIDs.empty())
+    return nullptr;
   if (detIDs.size() == 1) {
     return indexer(detIDs[0], quiet);
   }

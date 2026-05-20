@@ -18,28 +18,29 @@ pathToDetector = (
     + os.path.splitext(compactFile)[0]
 )
 
-geoSvc = C.GeoSvc("GeoSvc", detectors=[os.path.join (pathToDetector, compactFile)])
+geoSvc = C.GeoSvc("GeoSvc", detectors=[os.path.join(pathToDetector, compactFile)])
 
 ecalBarrelTool = C.TubeLayerModuleThetaCaloTool(
     "ecalBarrelGeometryTool",
-    readoutName = "ECalBarrelModuleThetaMerged",
-    activeVolumeName = "LAr_sensitive",
-    activeFieldName = "layer",
-    activeVolumesNumber = 11,
-    fieldNames = ["system"],
-    fieldValues = [ECAL_Barrel]
+    readoutName="ECalBarrelModuleThetaMerged",
+    activeVolumeName="LAr_sensitive",
+    activeFieldName="layer",
+    activeVolumesNumber=11,
+    fieldNames=["system"],
+    fieldValues=[ECAL_Barrel]
 )
 
 hcalBarrelTool = C.HCalPhiThetaCaloTool(
-    "hcalBarrelGeometryTool",
-     readoutName = "HCalBarrelReadout"
+    "hcalBarrelGeometryTool", readoutName= "HCalBarrelReadout"
 )
 
-indexerSvc = C.k4__recCalo__CaloCellIndexerSvc (GeoTools = [ecalBarrelTool,
-                                                            hcalBarrelTool])
+indexerSvc = C.k4__recCalo__CaloCellIndexerSvc (
+    GeoTools = [ecalBarrelTool, hcalBarrelTool]
+)
 
 appmgr = C.ApplicationMgr(
     TopAlg=[
-        C.k4__recCalo__CaloCellIndexerSvcTestAlg(DetIDs=[ECAL_Barrel, HCAL_Barrel])],
+        C.k4__recCalo__CaloCellIndexerSvcTestAlg(DetIDs=[ECAL_Barrel, HCAL_Barrel])
+    ],
     ExtSvc=[geoSvc, indexerSvc],
 )
