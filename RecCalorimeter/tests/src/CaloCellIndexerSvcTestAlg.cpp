@@ -15,8 +15,7 @@
 
 namespace k4::recCalo {
 
-class CaloCellIndexerSvcTestAlg : public Algorithm
-{
+class CaloCellIndexerSvcTestAlg : public Algorithm {
 public:
   using Algorithm::Algorithm;
 
@@ -34,11 +33,10 @@ private:
 
 DECLARE_COMPONENT(k4::recCalo::CaloCellIndexerSvcTestAlg);
 
-StatusCode CaloCellIndexerSvcTestAlg::initialize()
-{
+StatusCode CaloCellIndexerSvcTestAlg::initialize() {
   K4_GAUDI_CHECK(m_svc.retrieve());
 
-  K4_GAUDI_CHECK(m_svc->indexer (999) == nullptr);
+  K4_GAUDI_CHECK(m_svc->indexer(999) == nullptr);
   K4_GAUDI_CHECK(m_detIDs.size() == 2);
 
   const ICaloIndexer* indexer0 = m_svc->indexer(m_detIDs[0]);
@@ -58,10 +56,10 @@ StatusCode CaloCellIndexerSvcTestAlg::initialize()
 
   std::span<const uint64_t> ids1 = indexer1->cellIDs();
   for (size_t i = 0; i < ids1.size(); ++i) {
-    K4_GAUDI_CHECK( indexer1->index(ids1[i]) == i );
+    K4_GAUDI_CHECK(indexer1->index(ids1[i]) == i);
   }
 
-  const ICaloIndexer* indexer01 = m_svc->indexer (m_detIDs);
+  const ICaloIndexer* indexer01 = m_svc->indexer(m_detIDs);
   K4_GAUDI_CHECK(indexer01 != nullptr);
   K4_GAUDI_CHECK(indexer01->detIDs().size() == 2);
   K4_GAUDI_CHECK(indexer01->detIDs()[0] == m_detIDs[0]);
@@ -69,8 +67,8 @@ StatusCode CaloCellIndexerSvcTestAlg::initialize()
 
   std::span<const uint64_t> ids01 = indexer01->cellIDs();
   K4_GAUDI_CHECK(ids01.size() == ids0.size() + ids1.size());
-  K4_GAUDI_CHECK(std::equal (ids0.begin(), ids0.end(), ids01.begin()));
-  K4_GAUDI_CHECK(std::equal (ids1.begin(), ids1.end(), ids01.begin()+ids0.size()));
+  K4_GAUDI_CHECK(std::equal(ids0.begin(), ids0.end(), ids01.begin()));
+  K4_GAUDI_CHECK(std::equal(ids1.begin(), ids1.end(), ids01.begin()+ids0.size()));
   for (size_t i = 0; i < ids01.size(); ++i) {
     K4_GAUDI_CHECK(indexer01->index(ids01[i]) == i);
   }
@@ -79,10 +77,7 @@ StatusCode CaloCellIndexerSvcTestAlg::initialize()
 }
 
 
-StatusCode CaloCellIndexerSvcTestAlg::execute()
-{
-  return StatusCode::SUCCESS;
-}
+StatusCode CaloCellIndexerSvcTestAlg::execute() { return StatusCode::SUCCESS; }
 
 
 } // namespace k4::recCalo

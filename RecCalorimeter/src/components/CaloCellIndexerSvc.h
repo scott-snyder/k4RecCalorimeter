@@ -6,7 +6,6 @@
  * @brief Holder for calorimeter cell indexers.
  */
 
-
 #ifndef RECCALORIMETER_CALOCELLINDEXERSVC_H
 #define RECCALORIMETER_CALOCELLINDEXERSVC_H
 
@@ -34,8 +33,7 @@ namespace k4::recCalo {
  * One might think of having this be part of ICaloCellConstantsSvc,
  * but we run into initialization loops in that case.
  */
-class CaloCellIndexerSvc : public extends<Service, ICaloCellIndexerSvc>
-{
+class CaloCellIndexerSvc : public extends<Service, ICaloCellIndexerSvc> {
 public:
   using base_class::base_class;
 
@@ -60,12 +58,11 @@ public:
    *
    * Returns a pointer to the indexer or nullptr if there isn't one defined.
    */
-  virtual const ICaloIndexer* indexer(std::span<const int> detIDs,
-                                      bool quiet = false) override;
+  virtual const ICaloIndexer* indexer(std::span<const int> detIDs, bool quiet = false) override;
 
 private:
-  /// List of calorimeter tools taht can provide indexers.
-  ToolHandleArray<ICalorimeterTool> m_geoTools{this, "GeoTools", {} };
+  /// List of calorimeter tools that can provide indexers.
+  ToolHandleArray<ICalorimeterTool> m_geoTools{this, "GeoTools", {}};
 
   /// The cell constants service.
   // clang-format off: this gets broken illogically.

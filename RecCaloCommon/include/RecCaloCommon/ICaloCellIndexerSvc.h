@@ -6,7 +6,6 @@
  * @brief Holder for calorimeter cell indexers.
  */
 
-
 #ifndef RECCALOCOMMON_ICALOCELLINDEXERSVC_H
 #define RECCALOCOMMON_ICALOCELLINDEXERSVC_H
 
@@ -27,10 +26,9 @@ namespace k4::recCalo {
  * One might think of having this be part of ICaloCellConstantsSvc,
  * but we run into initialization loops in that case.
  */
-class ICaloCellIndexerSvc : virtual public IInterface
-{
+class ICaloCellIndexerSvc : virtual public IInterface {
 public:
-  DeclareInterfaceID (ICaloCellIndexerSvc, 1, 0);
+  DeclareInterfaceID(ICaloCellIndexerSvc, 1, 0);
 
   /**
    * @brief Return indexer for a given subdetector.
@@ -48,8 +46,7 @@ public:
    *
    * Returns a pointer to the indexer or nullptr if there isn't one defined.
    */
-  virtual const ICaloIndexer* indexer(std::span<const int> detIDs,
-                                      bool quiet = false) = 0;
+  virtual const ICaloIndexer* indexer(std::span<const int> detIDs, bool quiet = false) = 0;
 };
 
 } // namespace k4::recCalo

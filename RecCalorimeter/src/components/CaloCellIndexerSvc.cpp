@@ -18,8 +18,7 @@ namespace k4::recCalo {
 /**
  * @brief Gaudi initialize method.
  */
-StatusCode CaloCellIndexerSvc::initialize()
-{
+StatusCode CaloCellIndexerSvc::initialize() {
   K4_GAUDI_CHECK(Service::initialize());
   K4_GAUDI_CHECK(m_constantsSvc.retrieve());
   K4_GAUDI_CHECK(m_geoTools.retrieve());
@@ -49,7 +48,6 @@ StatusCode CaloCellIndexerSvc::initialize()
   return StatusCode::SUCCESS;
 }
 
-
 /**
  * @brief Return indexer for a given subdetector.
  * @param detID Subdetector ID for the desired indexer.
@@ -57,8 +55,7 @@ StatusCode CaloCellIndexerSvc::initialize()
  *
  * Returns a pointer to the indexer or nullptr if there isn't one defined.
  */
-const ICaloIndexer* CaloCellIndexerSvc::indexer(int detID,
-                                                bool quiet /*= false*/) const
+const ICaloIndexer* CaloCellIndexerSvc::indexer(int detID, bool quiet /*= false*/) const
 {
   std::lock_guard lock(m_mutex);
 
@@ -81,8 +78,7 @@ const ICaloIndexer* CaloCellIndexerSvc::indexer(int detID,
 /**
  * @brief Return indexer for a given set of subdetectors.
  */
-const ICaloIndexer* CaloCellIndexerSvc::indexer(std::span<const int> detIDs,
-                                                bool quiet /*= false*/)
+const ICaloIndexer* CaloCellIndexerSvc::indexer(std::span<const int> detIDs, bool quiet /*= false*/)
 {
   // Degenerate cases
   if (detIDs.empty()) return nullptr;
@@ -113,7 +109,8 @@ const ICaloIndexer* CaloCellIndexerSvc::indexer(std::span<const int> detIDs,
   size_t detIDBits = 0;
   for (int id : detIDs) {
     const ICaloIndexer* indexer = this->indexer(id, quiet);
-    if (!indexer) return nullptr;
+    if (!indexer)
+      return nullptr;
     indexers.push_back(indexer);
     if (detIDBits == 0)
       detIDBits = indexer->detIDBits();
@@ -123,9 +120,7 @@ const ICaloIndexer* CaloCellIndexerSvc::indexer(std::span<const int> detIDs,
     }
   }
 
-  uptr = std::make_unique<MultiIndexer>(detIDBits,
-                                        indexers,
-                                        *m_constantsSvc);
+  uptr = std::make_unique<MultiIndexer>(detIDBits, indexers, *m_constantsSvc);
 
   return uptr.get();
 }
