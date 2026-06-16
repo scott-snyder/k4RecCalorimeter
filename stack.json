@@ -1,12 +1,13 @@
 {
   "version": 5,
-  "prev": "4e87af343be1da1b4d5a93de7f8f7ea64eba5cc8",
-  "head": "be003dbae7f28249244c5a17543fc15289656776",
-  "applied": [],
-  "unapplied": [
+  "prev": "c4c57f0861f99826f4b1e668eec205c211ed239d",
+  "head": "dbde07facdf01ff5e160b7103288a33eb7daa2aa",
+  "applied": [
     "k4geo-noclone",
     "ecalendcapTool",
-    "caloCellIndexerSvc",
+    "caloCellIndexerSvc"
+  ],
+  "unapplied": [
     "cellposIndex",
     "indexingConfig",
     "xtalkIndex",
@@ -24,13 +25,13 @@
   "hidden": [],
   "patches": {
     "k4geo-noclone": {
-      "oid": "70b28c7767c54df836c86c76406339012d7c0a27"
+      "oid": "02832588c97481323ce0d276c4d8f955b9069886"
     },
     "ecalendcapTool": {
-      "oid": "79d408b0adf61be9ba285a879e25b8a627f23375"
+      "oid": "19e5529372569b486a93543e7a9a9acb69a121ac"
     },
     "caloCellIndexerSvc": {
-      "oid": "c62293dfc043f96981742f4731c0e695f637cf79"
+      "oid": "dbde07facdf01ff5e160b7103288a33eb7daa2aa"
     },
     "cellposIndex": {
       "oid": "95f719b3f72e604329864496e8bbb662e078f359"
