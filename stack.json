@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "e3ed0b9b1ac8da22e10cda5f7f1eb21461d622af",
-  "head": "122b328ac4fb62ae60007700324e44711bee7eb7",
+  "prev": "802854270212053121692e69fe1f0c1f8d4967a6",
+  "head": "7a6394da065990a75ff615406549b32afd5c24db",
   "applied": [
     "xtalk",
     "timeout",
@@ -19,13 +19,12 @@
     "subdetVolman",
     "sortnoise",
     "repnoise",
-    "move-check"
-  ],
-  "unapplied": [
+    "move-check",
     "check-deprecated",
     "check-remove",
     "k4geo-noclone"
   ],
+  "unapplied": [],
   "hidden": [
     "FCChh",
     "mdutils"
@@ -41,10 +40,10 @@
       "oid": "5542cddbaff76c8486cbd3ee7dbc588eeb97edee"
     },
     "check-deprecated": {
-      "oid": "8bb3c6cb24d9dd5dbe5d75db3d91b9d064401902"
+      "oid": "a146dcf8d25c93401b816723ada93ed9be6eb0b8"
     },
     "check-remove": {
-      "oid": "82aff8f2c7f9e3f72991fb9e1dbfc49eec87514d"
+      "oid": "b5434dc55825bf97a887d2484ad76ae1388ab586"
     },
     "ci": {
       "oid": "626ecffdd6fc59d1186e89e8af4a872d4b09e815"
@@ -62,7 +61,7 @@
       "oid": "c74e3d86aca0ef505056fe56fb8c4cf9967347de"
     },
     "k4geo-noclone": {
-      "oid": "11c52d41c3a5c743e2dca3ea55e21e8e917c7966"
+      "oid": "7a6394da065990a75ff615406549b32afd5c24db"
     },
     "mdutils": {
       "oid": "b9f46034152e74af649f41df9478feb05b94e94b"

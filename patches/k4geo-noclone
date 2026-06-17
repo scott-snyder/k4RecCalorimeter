@@ -1,7 +1,7 @@
-Bottom: 92c4567a75b58592e274a00028988d424e47504a
-Top:    a2fa834bbb6301f3b5a0af44f2f26ef38563d7c7
+Bottom: 72d0b27d7d103370cf4f3a90306b71e9076999a1
+Top:    3ed3699c54b401e5ce4a7ee74c4fe5250aa64b82
 Author: sss <sss@karma>
-Date:   2026-05-19 11:22:15 -0400
+Date:   2026-06-17 15:27:52 -0400
 
 Do not clone k4geo in tests.
 
