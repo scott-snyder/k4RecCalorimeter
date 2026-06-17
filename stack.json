@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "f56c3dd46420678067c9ef14f594cfbafc6549f8",
-  "head": "c60d87c668f626d7c9f6ae75cbb3298fb66e364b",
+  "prev": "de40d8200bc319d13ea827af640d0c7669468c84",
+  "head": "53b70bb84bad5b1735d05cc6a0da1d7f14f8b13c",
   "applied": [
     "xtalk",
     "timeout",
@@ -19,7 +19,8 @@
     "subdetVolman",
     "sortnoise",
     "repnoise",
-    "move-check"
+    "move-check",
+    "refresh-temp"
   ],
   "unapplied": [
     "check-deprecated",
@@ -72,6 +73,9 @@
     },
     "noiseIndex": {
       "oid": "8fa22c3006140e32579b0105acca7407ed86b196"
+    },
+    "refresh-temp": {
+      "oid": "53b70bb84bad5b1735d05cc6a0da1d7f14f8b13c"
     },
     "repnoise": {
       "oid": "0050db8529f8b9cc18528d5c6ba12a860e50f9ef"
