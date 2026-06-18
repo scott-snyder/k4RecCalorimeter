@@ -242,7 +242,7 @@ createEcalBarrelCells = CreateCaloCells(
     "CreateECalBarrelCells",
     doCellCalibration=True,
     calibTool=calibEcalBarrel,
-    crosstalksTool=None,
+    crosstalkTool=None,
     addCrosstalk=False,
     addCellNoise=False,
     filterCellNoise=False,

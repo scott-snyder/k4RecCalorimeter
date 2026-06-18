@@ -121,7 +121,7 @@ createEcalBarrelCellsStep1 = CreateCaloCells(
     OutputLevel=INFO,
     hits=ecalBarrelReadoutName,
     cells="ECalBarrelCellsStep1",
-    addPosition=True,
+    addPosition=False,
 )
 TopAlg += [createEcalBarrelCellsStep1]
 

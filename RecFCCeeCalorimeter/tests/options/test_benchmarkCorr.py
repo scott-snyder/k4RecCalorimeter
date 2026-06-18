@@ -220,7 +220,7 @@ createEcalBarrelCells = CreateCaloCells(
     "CreateECalBarrelCells",
     doCellCalibration=True,
     calibTool=calibEcalBarrel,
-    crosstalksTool=readCrosstalkMap,
+    crosstalkTool=readCrosstalkMap,
     addCrosstalk=False,
     addCellNoise=False,
     filterCellNoise=False,
