@@ -1,11 +1,12 @@
 {
   "version": 5,
-  "prev": "a3960be52af357f58e471ea98999cd86474f123b",
-  "head": "d2f488b93d4275886e5f7c048e88c46a931179f5",
+  "prev": "d8ae289f10f2d438618c6f8260088d3f0eaf4f8d",
+  "head": "e19d94484f4bb8ecf7b581fc58810aa194d3ea2f",
   "applied": [
     "xtalk",
     "timeout",
-    "ci"
+    "ci",
+    "k4geo-noclone"
   ],
   "unapplied": [
     "ecalendcapTool",
@@ -22,8 +23,7 @@
     "repnoise",
     "move-check",
     "check-deprecated",
-    "check-remove",
-    "k4geo-noclone"
+    "check-remove"
   ],
   "hidden": [
     "FCChh",
@@ -58,7 +58,7 @@
       "oid": "e8916027211f3ba01ec8c43a9893e97559e247fa"
     },
     "k4geo-noclone": {
-      "oid": "684cc7034f4da5b01d3ce4caa5c3565c177f2d7b"
+      "oid": "e19d94484f4bb8ecf7b581fc58810aa194d3ea2f"
     },
     "mdutils": {
       "oid": "b9f46034152e74af649f41df9478feb05b94e94b"
