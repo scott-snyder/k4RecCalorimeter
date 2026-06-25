@@ -108,6 +108,9 @@ private:
   Gaudi::Property<double> m_massPeak{this, "massPeak", 0.135, "pi0 mass peak [GeV]"};
   Gaudi::Property<double> m_massLow{this, "massLow", 0.0, "lower boundary of pi0 mass window [GeV]"};
   Gaudi::Property<double> m_massHigh{this, "massHigh", 0.27, "upper boundary of pi0 mass window [GeV]"};
+
+  Gaudi::Property<double> m_minClusterEnergy{this, "minClusterEnergy", 0.2, "minimum cluster energy [GeV]"};
+  Gaudi::Property<double> m_maxDR{this, "maxDR", 0.2, "max DR"};
 };
 
 #endif /* RECCALORIMETER_PAIRCALOCLUSTERSPI0_H */
