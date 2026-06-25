@@ -2,8 +2,12 @@
 // Key4HEP
 #include "k4FWCore/MetadataUtils.h"
 
+#include "TLorentzVector.h"
+#include "TVector3.h"
+
 // Include the <cmath> header for sqrt, pow
 #include <cmath>
+#include <fstream>
 
 DECLARE_COMPONENT(PairCaloClustersPi0)
 
@@ -96,11 +100,33 @@ edm4hep::ClusterCollection* PairCaloClustersPi0::ClusterPairing(const edm4hep::C
   edm4hep::ClusterCollection* unpairedClusters = m_unpairedClusters.createAndPut();
   edm4hep::ClusterCollection* pairedClusters = m_pairedClusters.createAndPut();
 
+  auto getTLV = [](const edm4hep::Cluster& cl) {
+    double e = cl.getEnergy();
+    TVector3 disp(cl.getPosition().x, cl.getPosition().y, cl.getPosition().z);
+    return TLorentzVector(disp * (e / disp.Mag()), e);
+  };
+
+#if 0
+  std::ofstream of ("clust.dump");
+  std::cout << m_inClusters.objKey() << "\n";
+  for (size_t i = 0; i < inClusters->size(); ++i) {
+    const auto& cl = inClusters->at(i);
+    TLorentzVector tlv = getTLV (cl);
+    of << std::format ("{:3d} {:7.3f} {:8.5f} {:8.5f}\n",
+                       i, tlv.E(), tlv.Theta(), tlv.Phi());
+  }
+
+  strfry("");
+  of << "\n\n";
+#endif
   // ***** Step 1: Get all possible cluster pairs in the mass window, overlap of clusters allowed *****
   verbose() << "We are in cluster pairing, step 1" << endmsg;
   std::vector<std::pair<size_t, size_t>> vec_AllPossiblePairs;
   for (size_t i = 0; i < inClusters->size(); ++i) {
+    TLorentzVector tlv_i = getTLV(inClusters->at(i));
     double energy_i = inClusters->at(i).getEnergy();
+    if (energy_i < m_minClusterEnergy)
+      continue;
     edm4hep::Vector3d cluster_i_position3d(inClusters->at(i).getPosition().x, inClusters->at(i).getPosition().y,
                                            inClusters->at(i).getPosition().z);
     // For the moment, the cluster direction uses the pointing assumption: from (0,0,0) to the cluster position. Waiting
@@ -108,7 +134,10 @@ edm4hep::ClusterCollection* PairCaloClustersPi0::ClusterPairing(const edm4hep::C
     edm4hep::Vector3d cluster_i_momentum =
         PairCaloClustersPi0::projectMomentum(energy_i, cluster_i_position3d, edm4hep::Vector3d(0, 0, 0));
     for (size_t j = i + 1; j < inClusters->size(); j++) {
+      TLorentzVector tlv_j = getTLV(inClusters->at(j));
       double energy_j = inClusters->at(j).getEnergy();
+      if (energy_j < m_minClusterEnergy)
+        continue;
       edm4hep::Vector3d cluster_j_position3d(inClusters->at(j).getPosition().x, inClusters->at(j).getPosition().y,
                                              inClusters->at(j).getPosition().z);
       // For the moment, the cluster direction uses the pointing assumption: from (0,0,0) to the cluster position.
@@ -116,12 +145,23 @@ edm4hep::ClusterCollection* PairCaloClustersPi0::ClusterPairing(const edm4hep::C
       edm4hep::Vector3d cluster_j_momentum =
           PairCaloClustersPi0::projectMomentum(energy_j, cluster_j_position3d, edm4hep::Vector3d(0, 0, 0));
       double invM = PairCaloClustersPi0::getInvariantMass(energy_i, cluster_i_momentum, energy_j, cluster_j_momentum);
-      if (invM > masslow && invM < masshigh) {
+      if (invM > masslow && invM < masshigh && tlv_i.DeltaR(tlv_j) < m_maxDR) {
         std::pair<size_t, size_t> this_possible_pair = std::make_pair(i, j);
         vec_AllPossiblePairs.push_back(this_possible_pair);
+#if 0
+        of << std::format ("{:3d} {:3d} {:10.5f} {:10.5f} {:8.5f} {:10.5f}\n",
+                           i, j, invM, (tlv_i+tlv_j).M(),
+                           tlv_i.DeltaR(tlv_j),
+                           (tlv_i+tlv_j).Perp());
+#endif
       }
     }
   }
+
+#if 0
+  of.close();
+  strfry("");
+#endif
 
   // ***** Step 2: make all possible combinations of cluster pairing without overlap *****
   verbose() << "We are in cluster pairing step 2" << endmsg;
@@ -213,7 +253,7 @@ edm4hep::ClusterCollection* PairCaloClustersPi0::ClusterPairing(const edm4hep::C
       // very unlikely, but if the sum of mass deviation is the same between two combinations, we have to randomly
       // choose one
       else if (this_devM == best_devM) {
-        index_best_combi = (rand() % 2) ? i_combi : index_best_combi;
+        // index_best_combi = (rand() % 2) ? i_combi : index_best_combi;
       }
     }
     bestcombi_pairs = vec_Maxcombi_pairs[index_best_combi];
@@ -223,15 +263,19 @@ edm4hep::ClusterCollection* PairCaloClustersPi0::ClusterPairing(const edm4hep::C
 
   // Step 4: save paired and unpaired clusters, reconstruct pi0 candidates
   verbose() << "We are in cluster pairing step 4" << endmsg;
-  std::vector<size_t> vec_index_paired_clusters;
+  std::vector<std::pair<size_t, size_t> > vec_index_paired_clusters;
   // save paired clusters
+  auto getPairE = [&] (const std::pair<size_t, size_t>& p)
+  { return inClusters->at(p.first).getEnergy() + inClusters->at(p.second).getEnergy(); };
+  std::ranges::sort (bestcombi_pairs,
+                     [&] (const std::pair<size_t, size_t>& a,
+                          const std::pair<size_t, size_t>& b)
+                     { return getPairE(a) > getPairE(b); });
   for (size_t i = 0; i < bestcombi_pairs.size(); i++) {
-    auto outCluster1 = inClusters->at(bestcombi_pairs[i].first).clone();
-    pairedClusters->push_back(outCluster1);
-    vec_index_paired_clusters.push_back(bestcombi_pairs[i].first);
-    auto outCluster2 = inClusters->at(bestcombi_pairs[i].second).clone();
-    pairedClusters->push_back(outCluster2);
-    vec_index_paired_clusters.push_back(bestcombi_pairs[i].second);
+    const auto& outCluster1 = inClusters->at(bestcombi_pairs[i].first);
+    vec_index_paired_clusters.emplace_back(bestcombi_pairs[i].first, reconstructedPi0->size());
+    const auto& outCluster2 = inClusters->at(bestcombi_pairs[i].second);
+    vec_index_paired_clusters.emplace_back(bestcombi_pairs[i].second, reconstructedPi0->size());
     // reconstruct pi0 from these two clusters
     edm4hep::Vector3d position1(outCluster1.getPosition().x, outCluster1.getPosition().y, outCluster1.getPosition().z);
     edm4hep::Vector3d position2(outCluster2.getPosition().x, outCluster2.getPosition().y, outCluster2.getPosition().z);
@@ -254,16 +298,20 @@ edm4hep::ClusterCollection* PairCaloClustersPi0::ClusterPairing(const edm4hep::C
     reconstructedPi0->push_back(this_pi0);
   }
   for (size_t i = 0; i < inClusters->size(); ++i) {
-    bool IsPaired = false;
+    int ipair = -1;
     for (size_t j = 0; j < vec_index_paired_clusters.size(); j++) {
-      if (i == vec_index_paired_clusters[j]) {
-        IsPaired = true;
+      if (i == vec_index_paired_clusters[j].first) {
+        ipair = vec_index_paired_clusters[j].second;
         break;
       }
     }
-    // save unpaired clusters
-    if (!IsPaired) {
-      auto outCluster = inClusters->at(i).clone();
+    // save clusters
+    auto outCluster = inClusters->at(i).clone();
+    if (ipair >= 0) {
+      pairedClusters->push_back(outCluster);
+      reconstructedPi0->at(ipair).addToClusters(outCluster);
+    }
+    else {
       unpairedClusters->push_back(outCluster);
       verbose() << "save unpaired cluster. cluster index = " << i << endmsg;
     }
