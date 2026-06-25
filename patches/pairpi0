@@ -1,0 +1,6 @@
+Bottom: 7ead8820d75ff6cd702a2a6b299b2003e2755904
+Top:    7ead8820d75ff6cd702a2a6b299b2003e2755904
+Author: scott snyder <snyder@bnl.gov>
+Date:   2026-06-24 23:29:36 -0400
+
+Restrict pi0 candidates to avoid combinatorial explosion.

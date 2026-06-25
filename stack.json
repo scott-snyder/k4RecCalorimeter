@@ -1,9 +1,10 @@
 {
   "version": 5,
-  "prev": "c5146bae83377ce712063e54f6a1d61697440cef",
-  "head": "02832588c97481323ce0d276c4d8f955b9069886",
+  "prev": "7bb20e8fc1f58f468033c75196328cd7614e2ae4",
+  "head": "b71fe3142e938a55f780220e6edf2f50eccbd0b6",
   "applied": [
-    "k4geo-noclone"
+    "k4geo-noclone",
+    "pairpi0"
   ],
   "unapplied": [
     "ecalendcapTool",
@@ -25,6 +26,9 @@
   "patches": {
     "k4geo-noclone": {
       "oid": "02832588c97481323ce0d276c4d8f955b9069886"
+    },
+    "pairpi0": {
+      "oid": "b71fe3142e938a55f780220e6edf2f50eccbd0b6"
     },
     "ecalendcapTool": {
       "oid": "19e5529372569b486a93543e7a9a9acb69a121ac"
