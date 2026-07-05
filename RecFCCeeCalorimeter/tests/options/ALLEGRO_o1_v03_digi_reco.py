@@ -376,7 +376,7 @@ if runHCal:
         "hcalEndcapGeometryTool", readoutName=hcalEndcapReadoutName
     )
     geotools += [hcalEndcapGeometryTool]
-    
+
 
 from Configurables import k4__recCalo__CaloCellIndexerSvc
 
