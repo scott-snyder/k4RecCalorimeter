@@ -224,15 +224,18 @@ calibEcalEndcap = CalibrateInLayersTool(
 
 # Indexing service.
 from Configurables import TubeLayerModuleThetaCaloTool, k4__recCalo__CaloCellIndexerSvc
-ecalBarrelGeometryTool = TubeLayerModuleThetaCaloTool("ecalBarrelGeometryTool",
-                                                      readoutName=ecalBarrelReadoutName,
-                                                      activeVolumeName="LAr_sensitive",
-                                                      activeFieldName="layer",
-                                                      activeVolumesNumber=ecalBarrelLayers,
-                                                      fieldNames=["system"],
-                                                      fieldValues=[IDs["ECAL_Barrel"]],
-                                                      OutputLevel=INFO)
-ExtSvc += [k4__recCalo__CaloCellIndexerSvc (GeoTools = [ecalBarrelGeometryTool])]
+
+ecalBarrelGeometryTool = TubeLayerModuleThetaCaloTool(
+    "ecalBarrelGeometryTool",
+    readoutName=ecalBarrelReadoutName,
+    activeVolumeName="LAr_sensitive",
+    activeFieldName="layer",
+    activeVolumesNumber=ecalBarrelLayers,
+    fieldNames=["system"],
+    fieldValues=[IDs["ECAL_Barrel"]],
+    OutputLevel=INFO
+)
+ExtSvc += [k4__recCalo__CaloCellIndexerSvc(GeoTools = [ecalBarrelGeometryTool])]
 
 # Step 1: merge hits into cells according to initial segmentation
 ecalBarrelCellsName = "ECalBarrelCells"
