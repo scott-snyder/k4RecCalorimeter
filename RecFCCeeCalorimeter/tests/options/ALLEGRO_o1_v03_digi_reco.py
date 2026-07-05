@@ -355,9 +355,9 @@ ecalBarrelGeometryTool = TubeLayerModuleThetaCaloTool("ecalBarrelGeometryTool",
                                                       OutputLevel=INFO)
 geotools += [ecalBarrelGeometryTool]
 
-from Configurables import ECalEndcapTurbineCaloTool
-ecalEndcapGeometryTool = ECalEndcapTurbineCaloTool ("ecalEndcapGeometryTool",
-                                                    readoutName=ecalEndcapReadoutName)
+from Configurables import TurbineEndcapCaloTool
+ecalEndcapGeometryTool = TurbineEndcapCaloTool ("ecalEndcapGeometryTool",
+                                                readoutName=ecalEndcapReadoutName)
 geotools += [ecalEndcapGeometryTool]
 
 if runHCal:
