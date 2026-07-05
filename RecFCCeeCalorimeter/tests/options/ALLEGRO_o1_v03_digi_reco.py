@@ -360,8 +360,9 @@ geotools += [ecalBarrelGeometryTool]
 
 from Configurables import TurbineEndcapCaloTool
 
-ecalEndcapGeometryTool = TurbineEndcapCaloTool (
-    "ecalEndcapGeometryTool", readoutName=ecalEndcapReadoutName)
+ecalEndcapGeometryTool = TurbineEndcapCaloTool(
+    "ecalEndcapGeometryTool", readoutName=ecalEndcapReadoutName
+)
 geotools += [ecalEndcapGeometryTool]
 
 if runHCal:
@@ -372,13 +373,14 @@ if runHCal:
     )
     geotools += [hcalBarrelGeometryTool]
     hcalEndcapGeometryTool = HCalPhiThetaCaloTool(
-        "hcalEndcapGeometryTool", readoutName=hcalEndcapReadoutName)
+        "hcalEndcapGeometryTool", readoutName=hcalEndcapReadoutName
+    )
     geotools += [hcalEndcapGeometryTool]
     
 
 from Configurables import k4__recCalo__CaloCellIndexerSvc
 
-ExtSvc += [k4__recCalo__CaloCellIndexerSvc(GeoTools = geotools)]
+ExtSvc += [k4__recCalo__CaloCellIndexerSvc(GeoTools=geotools)]
 
 if runHCal:
     from Configurables import CalibrateCaloHitsTool

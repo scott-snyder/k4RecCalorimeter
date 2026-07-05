@@ -233,9 +233,9 @@ ecalBarrelGeometryTool = TubeLayerModuleThetaCaloTool(
     activeVolumesNumber=ecalBarrelLayers,
     fieldNames=["system"],
     fieldValues=[IDs["ECAL_Barrel"]],
-    OutputLevel=INFO
+    OutputLevel=INFO,
 )
-ExtSvc += [k4__recCalo__CaloCellIndexerSvc(GeoTools = [ecalBarrelGeometryTool])]
+ExtSvc += [k4__recCalo__CaloCellIndexerSvc(GeoTools=[ecalBarrelGeometryTool])]
 
 # Step 1: merge hits into cells according to initial segmentation
 ecalBarrelCellsName = "ECalBarrelCells"

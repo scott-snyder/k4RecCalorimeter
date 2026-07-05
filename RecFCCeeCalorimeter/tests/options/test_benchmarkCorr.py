@@ -189,7 +189,7 @@ ecalBarrelGeometryTool = TubeLayerModuleThetaCaloTool(
     fieldValues=[IDs["ECAL_Barrel"]],
     OutputLevel=INFO,
 )
-ExtSvc += [k4__recCalo__CaloCellIndexerSvc(GeoTools = [ecalBarrelGeometryTool])]
+ExtSvc += [k4__recCalo__CaloCellIndexerSvc(GeoTools=[ecalBarrelGeometryTool])]
 
 if runHCal:
     from Configurables import CalibrateCaloHitsTool
