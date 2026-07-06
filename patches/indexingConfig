@@ -4,3 +4,5 @@ Author: sss <sss@karma>
 Date:   2026-02-06 10:37:47 -0500
 
 Configure indexing service in test scripts.
+
+Update test scripts to configure indexing service where it will be needed.
