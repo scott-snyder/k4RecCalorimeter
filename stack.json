@@ -1,14 +1,14 @@
 {
   "version": 5,
-  "prev": "6761d88a3682c6c2ba6ad107458b62ee91e7c72c",
-  "head": "9b6f5efd7fc205eaced5ec82a30adadd11ba7db0",
+  "prev": "ae65f6b0e89bedc6a9143ff3969808033eb731d2",
+  "head": "de2e6f085e1d897ef86256615c0fe7c4cabbd9b8",
   "applied": [
     "k4geo-noclone",
     "pairpi0",
-    "xtalkIndex",
-    "cellposIndex"
+    "xtalkIndex"
   ],
   "unapplied": [
+    "cellposIndex",
     "ci",
     "ecalendcapTool",
     "topoNoiseIndex",
