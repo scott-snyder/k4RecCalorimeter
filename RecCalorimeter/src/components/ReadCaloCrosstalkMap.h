@@ -60,15 +60,15 @@ private:
   Gaudi::Property<std::string> m_fileName{this, "fileName", "", "Name of the file that contains the crosstalk map."};
 
   /// Our subdetector ID.  If defaulted, ECAL_Barrel will be used.
-  Gaudi::Property<int> m_detID{ this, "detID", -1, "Subsystem ID for this detector.  Defaults to ECAL_Barrel."};
+  Gaudi::Property<int> m_detID{this, "detID", -1, "Subsystem ID for this detector.  Defaults to ECAL_Barrel."};
 
   /// Cell constants service.
   ServiceHandle<k4::recCalo::ICaloCellConstantsSvc> m_constantsSvc{
-    this, "CaloCellConstantsSvc", "k4::recCalo::CaloCellConstantsSvc", "The cell constants service"};
+      this, "CaloCellConstantsSvc", "k4::recCalo::CaloCellConstantsSvc", "The cell constants service"};
 
   /// Cell indexing service.
   ServiceHandle<k4::recCalo::ICaloCellIndexerSvc> m_indexerSvc{
-    this, "CaloCellIndexerSvc", "k4::recCalo::CaloCellIndexerSvc", "The cell indexing service."};
+      this, "CaloCellIndexerSvc", "k4::recCalo::CaloCellIndexerSvc", "The cell indexing service."};
 
   /// Structure storing the crosstalk data.
   // We store both ID and coefficient data in flat vectors.
@@ -89,13 +89,13 @@ private:
     /// Given a cell index, return a span of neighbouring cell IDs.
     std::span<const CellID> getNeighbours(size_t cellNdx) const {
       const auto& indices = m_neighbourIndices.at(cellNdx);
-      return std::span<const CellID>(m_neighbours.data()+indices.first, indices.second);
+      return std::span<const CellID>(m_neighbours.data() + indices.first, indices.second);
     }
 
     /// Given a cell index, return a span of crosstalk coefficients.
     std::span<const double> getCrosstalks(size_t cellNdx) const {
       const auto& indices = m_crosstalkIndices.at(cellNdx);
-      return std::span<const double>(m_crosstalks.data()+indices.first, indices.second);
+      return std::span<const double>(m_crosstalks.data() + indices.first, indices.second);
     }
   };
 

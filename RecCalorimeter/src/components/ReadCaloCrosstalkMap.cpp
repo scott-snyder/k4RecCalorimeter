@@ -64,7 +64,7 @@ StatusCode ReadCaloCrosstalkMap::initialize() {
     CrosstalkData data = readData(*xtalkFile);
 
     // Store it in the constants service and get back the pointer.
-    K4_GAUDI_CHECK(m_constantsSvc->putObj(m_fileName, std::move (data)));
+    K4_GAUDI_CHECK(m_constantsSvc->putObj(m_fileName, std::move(data)));
     m_data = m_constantsSvc->getObj<CrosstalkData>(m_fileName);
     K4_GAUDI_CHECK(m_data != nullptr);
   }
@@ -82,7 +82,6 @@ auto ReadCaloCrosstalkMap::getNeighbours(CellID aCellId) const -> std::span<cons
 std::span<const double> ReadCaloCrosstalkMap::getCrosstalks(CellID aCellId) const {
   return m_data->getCrosstalks(m_indexer->index(aCellId));
 }
-
 
 /// Read crosstalk data from a file.
 auto ReadCaloCrosstalkMap::readData(TFile& xtalkFile) const -> CrosstalkData {

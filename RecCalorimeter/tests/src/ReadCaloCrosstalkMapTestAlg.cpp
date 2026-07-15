@@ -11,8 +11,8 @@
 #include "k4FWCore/GaudiChecks.h"
 
 #include "GaudiKernel/Algorithm.h"
-#include "GaudiKernel/ToolHandle.h"
 #include "GaudiKernel/ServiceHandle.h"
+#include "GaudiKernel/ToolHandle.h"
 
 #include "TFile.h"
 #include "TTree.h"
@@ -33,7 +33,7 @@ private:
 
   /// Cell indexing service.
   ServiceHandle<k4::recCalo::ICaloCellIndexerSvc> m_indexerSvc{
-    this, "CaloCellIndexerSvc", "k4::recCalo::CaloCellIndexerSvc", "The cell indexing service."};
+      this, "CaloCellIndexerSvc", "k4::recCalo::CaloCellIndexerSvc", "The cell indexing service."};
 
   Gaudi::Property<std::string> m_fileName{this, "fileName", "crosstalkTest.root", ""};
 
@@ -117,7 +117,7 @@ StatusCode ReadCaloCrosstalkMapTestAlg::checkCrosstalk(unsigned int ncells, cons
     for (unsigned i = 0; i < nneigh; i++) {
       if (neighs[i] != cellIDs[ineigh + i]) {
         error() << "Neighbour mismatch for cell index " << icell << " ID " << cellIDs[icell] << " offset " << i
-                << " expected " << cellIDs[ineigh+i] << " got " << neighs[i] << endmsg;
+                << " expected " << cellIDs[ineigh + i] << " got " << neighs[i] << endmsg;
         return StatusCode::FAILURE;
       }
       if (xtalk[i] != ineigh + i + 0.5) {
