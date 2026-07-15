@@ -30,19 +30,15 @@ ecalBarrelTool = C.TubeLayerModuleThetaCaloTool(
     fieldValues=[ECAL_Barrel],
 )
 
-indexerSvc = C.k4__recCalo__CaloCellIndexerSvc(
-    GeoTools=[ecalBarrelTool]
-)
+indexerSvc = C.k4__recCalo__CaloCellIndexerSvc(GeoTools=[ecalBarrelTool])
 
-crosstalkTool = C.ReadCaloCrosstalkMap ("ReadCaloCrosstalkMap",
-                                        fileName = fileName,
-                                        detID = ECAL_Barrel)
+crosstalkTool = C.ReadCaloCrosstalkMap(
+    "ReadCaloCrosstalkMap", fileName=fileName, detID=ECAL_Barrel)
 
 appmgr = C.ApplicationMgr(
     TopAlg=[
-        C.k4__recCalo__ReadCaloCrosstalkMapTestAlg(Tool = crosstalkTool,
-                                                   fileName = fileName,
-                                                   detID = ECAL_Barrel)
+        C.k4__recCalo__ReadCaloCrosstalkMapTestAlg(
+            Tool=crosstalkTool, fileName=fileName, detID=ECAL_Barrel)
     ],
     ExtSvc=[geoSvc, indexerSvc],
 )

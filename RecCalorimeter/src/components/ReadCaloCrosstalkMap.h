@@ -5,7 +5,6 @@
  * @brief Return crosstalk information for a subdetector read from a TTree.
  */
 
-
 #ifndef RECCALORIMETER_READCALOXTALKMAP_H
 #define RECCALORIMETER_READCALOXTALKMAP_H
 
@@ -13,9 +12,9 @@
 #include "GaudiKernel/AlgTool.h"
 
 // Interface
-#include "RecCaloCommon/ICaloReadCrosstalkMap.h"
 #include "RecCaloCommon/ICaloCellConstantsSvc.h"
 #include "RecCaloCommon/ICaloCellIndexerSvc.h"
+#include "RecCaloCommon/ICaloReadCrosstalkMap.h"
 #include <span>
 
 class IGeoSvc;
@@ -58,20 +57,18 @@ private:
   /// Name of input root file that contains the TTree with
   /// cellID->vec<list_crosstalk_neighboursCellID> and
   /// cellId->vec<list_crosstalksCellID>
-  Gaudi::Property<std::string> m_fileName{this, "fileName", "",
-      "Name of the file that contains the crosstalk map."};
+  Gaudi::Property<std::string> m_fileName{this, "fileName", "", "Name of the file that contains the crosstalk map."};
 
   /// Our subdetector ID.  If defaulted, ECAL_Barrel will be used.
-  Gaudi::Property<int> m_detID
-    { this, "detID", -1, "Subsystem ID for this detector.  Defaults to ECAL_Barrel." };
+  Gaudi::Property<int> m_detID { this, "detID", -1, "Subsystem ID for this detector.  Defaults to ECAL_Barrel." };
 
   /// Cell constants service.
-  ServiceHandle<k4::recCalo::ICaloCellConstantsSvc> m_constantsSvc
-  { this, "CaloCellConstantsSvc", "k4::recCalo::CaloCellConstantsSvc", "The cell constants service" };
+  ServiceHandle<k4::recCalo::ICaloCellConstantsSvc> m_constantsSvc{
+    this, "CaloCellConstantsSvc", "k4::recCalo::CaloCellConstantsSvc", "The cell constants service" };
 
   /// Cell indexing service.
-  ServiceHandle<k4::recCalo::ICaloCellIndexerSvc> m_indexerSvc
-  { this, "CaloCellIndexerSvc", "k4::recCalo::CaloCellIndexerSvc", "The cell indexing service." };
+  ServiceHandle<k4::recCalo::ICaloCellIndexerSvc> m_indexerSvc{
+    this, "CaloCellIndexerSvc", "k4::recCalo::CaloCellIndexerSvc", "The cell indexing service." };
 
   /// Structure storing the crosstalk data.
   // We store both ID and coefficient data in flat vectors.
@@ -79,30 +76,26 @@ private:
     /// This vector is indexed by the cell index.  It gives
     /// (INDEX,SIZE) pairs in m_neighbours giving the neighbour IDS
     /// for each cellID.
-    std::vector<std::pair<size_t, size_t> > m_neighbourIndices;
+    std::vector<std::pair<size_t, size_t>> m_neighbourIndices;
     /// Neighbour cellID data.
     std::vector<CellID> m_neighbours;
     /// This vector is indexed by the cell index.  It gives
     /// (INDEX,SIZE) pairs in m_crosstalks giving the crosstalk coefficients
     /// for each cellID.
-    std::vector<std::pair<size_t, size_t> > m_crosstalkIndices;
+    std::vector<std::pair<size_t, size_t>> m_crosstalkIndices;
     /// Crosstalk coefficient data.
     std::vector<double> m_crosstalks;
 
     /// Given a cell index, return a span of neighbouring cell IDs.
-    std::span<const CellID> getNeighbours (size_t cellNdx) const
-    {
+    std::span<const CellID> getNeighbours (size_t cellNdx) const {
       const auto& indices = m_neighbourIndices.at(cellNdx);
-      return std::span<const CellID> (m_neighbours.data()+indices.first,
-                                      indices.second);
+      return std::span<const CellID> (m_neighbours.data()+indices.first, indices.second);
     }
 
     /// Given a cell index, return a span of crosstalk coefficients.
-    std::span<const double> getCrosstalks (size_t cellNdx) const
-    {
+    std::span<const double> getCrosstalks (size_t cellNdx) const {
       const auto& indices = m_crosstalkIndices.at(cellNdx);
-      return std::span<const double> (m_crosstalks.data()+indices.first,
-                                      indices.second);
+      return std::span<const double> (m_crosstalks.data()+indices.first, indices.second);
     }
   };
 
@@ -113,7 +106,7 @@ private:
   const k4::recCalo::ICaloIndexer* m_indexer = nullptr;
 
   /// Read crosstalk data from a file.
-  CrosstalkData readData (TFile& xtalkFile) const;
+  CrosstalkData readData(TFile& xtalkFile) const;
 };
 
 #endif /* RECCALORIMETER_READCALOXTALKMAP_H */
