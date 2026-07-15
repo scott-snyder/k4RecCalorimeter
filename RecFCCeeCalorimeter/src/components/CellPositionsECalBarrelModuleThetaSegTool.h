@@ -43,6 +43,7 @@ namespace DDSegmentation {
 
 class CellPositionsECalBarrelModuleThetaSegTool : public extends<AlgTool, k4::recCalo::ICellPositionsTool> {
 public:
+  using CellID = dd4hep::CellID;
   using base_class::base_class;
   virtual ~CellPositionsECalBarrelModuleThetaSegTool() = default;
 
@@ -51,9 +52,9 @@ public:
   virtual void getPositions(const edm4hep::CalorimeterHitCollection& aCells,
                             edm4hep::CalorimeterHitCollection& outputColl) const override final;
 
-  virtual dd4hep::Position xyzPosition(const dd4hep::CellID aCellId) const override final;
+  virtual dd4hep::Position xyzPosition(const CellID aCellId) const override final;
 
-  virtual int layerId(const dd4hep::CellID aCellId) const override final;
+  virtual int layerId(const CellID aCellId) const override final;
 
 private:
   /// Handle to the geometry service
@@ -70,5 +71,10 @@ private:
   using PositionData = std::vector<dd4hep::Position>;
   std::span<const dd4hep::Position> m_positions;
   const k4::recCalo::ICaloIndexer* m_indexer = nullptr;
+
+  dd4hep::VolumeManager m_volman;
+
+  /// Calculate position for one cell.
+  dd4hep::Position calcPosition(CellID id) const;
 };
 #endif /* RECCALORIMETER_CELLPOSITIONSECALBARRELMODULETHETASEGTOOL_H */
