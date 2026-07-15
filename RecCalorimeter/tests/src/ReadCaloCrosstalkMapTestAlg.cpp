@@ -7,10 +7,13 @@
 
 #include "RecCaloCommon/ICaloCellIndexerSvc.h"
 #include "RecCaloCommon/ICaloReadCrosstalkMap.h"
+
 #include "k4FWCore/GaudiChecks.h"
+
 #include "GaudiKernel/Algorithm.h"
 #include "GaudiKernel/ToolHandle.h"
 #include "GaudiKernel/ServiceHandle.h"
+
 #include "TFile.h"
 #include "TTree.h"
 #include <memory>
@@ -30,20 +33,18 @@ private:
 
   /// Cell indexing service.
   ServiceHandle<k4::recCalo::ICaloCellIndexerSvc> m_indexerSvc{
-    this, "CaloCellIndexerSvc", "k4::recCalo::CaloCellIndexerSvc", "The cell indexing service." };
+    this, "CaloCellIndexerSvc", "k4::recCalo::CaloCellIndexerSvc", "The cell indexing service."};
 
   Gaudi::Property<std::string> m_fileName{this, "fileName", "crosstalkTest.root", ""};
 
-  Gaudi::Property<int> m_detID{ this, "detID", -1, ""};
+  Gaudi::Property<int> m_detID{this, "detID", -1, ""};
 
-  Gaudi::Property<unsigned> m_ncells{ this, "ncells", 100, ""};
+  Gaudi::Property<unsigned> m_ncells{this, "ncells", 100, ""};
 
 
-  StatusCode writeFile(unsigned int ncells,
-                       const std::string& filename,
+  StatusCode writeFile(unsigned int ncells, const std::string& filename,
                        const k4::recCalo::ICaloIndexer& indexer) const;
-  StatusCode checkCrosstalk(unsigned int ncells,
-                            const ICaloReadCrosstalkMap& tool,
+  StatusCode checkCrosstalk(unsigned int ncells, const ICaloReadCrosstalkMap& tool,
                             const k4::recCalo::ICaloIndexer& indexer) const;
 };
 
@@ -85,10 +86,10 @@ StatusCode ReadCaloCrosstalkMapTestAlg::writeFile(unsigned int ncells, const std
       return StatusCode::FAILURE;
     }
 
-    write_neighbours.assign (cellIDs.begin() + ineigh, cellIDs.begin() + ineigh + nneigh);
+    write_neighbours.assign(cellIDs.begin() + ineigh, cellIDs.begin() + ineigh + nneigh);
     write_crosstalks.clear();
     for (size_t i = 0; i < nneigh; i++) {
-      write_crosstalks.push_back (ineigh + i + 0.5);
+      write_crosstalks.push_back(ineigh + i + 0.5);
     }
     tree->Fill();
   }
@@ -100,7 +101,7 @@ StatusCode ReadCaloCrosstalkMapTestAlg::writeFile(unsigned int ncells, const std
 }
 
 StatusCode ReadCaloCrosstalkMapTestAlg::checkCrosstalk(unsigned int ncells, const ICaloReadCrosstalkMap& tool,
-                                                        const k4::recCalo::ICaloIndexer& indexer) const {
+                                                       const k4::recCalo::ICaloIndexer& indexer) const {
   std::span<const CellID> cellIDs = indexer.cellIDs();
   for (size_t icell = 0; icell < ncells; icell++) {
     std::span<const CellID> neighs = tool.getNeighbours(cellIDs[icell]);
@@ -115,15 +116,13 @@ StatusCode ReadCaloCrosstalkMapTestAlg::checkCrosstalk(unsigned int ncells, cons
     unsigned ineigh = icell * 10 + 100;
     for (unsigned i = 0; i < nneigh; i++) {
       if (neighs[i] != cellIDs[ineigh + i]) {
-        error() << "Neighbour mismatch for cell index " << icell << " ID " << cellIDs[icell] << " offset " << i << " expected " << cellIDs[ineigh+i]
-                << " got " << neighs[i] << endmsg;
+        error() << "Neighbour mismatch for cell index " << icell << " ID " << cellIDs[icell] << " offset " << i
+                << " expected " << cellIDs[ineigh+i] << " got " << neighs[i] << endmsg;
         return StatusCode::FAILURE;
       }
       if (xtalk[i] != ineigh + i + 0.5) {
-        error() << "Crosstalk mismatch for cell index " << icell << " ID " << cellIDs[icell]
-                << " offset " << i
-                << " expected " << ineigh + i + 0.5 << " got "
-                << xtalk[i] << endmsg;
+        error() << "Crosstalk mismatch for cell index " << icell << " ID " << cellIDs[icell] << " offset " << i
+                << " expected " << ineigh + i + 0.5 << " got " << xtalk[i] << endmsg;
         return StatusCode::FAILURE;
       }
     }

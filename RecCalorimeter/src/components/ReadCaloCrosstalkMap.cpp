@@ -64,7 +64,7 @@ StatusCode ReadCaloCrosstalkMap::initialize() {
     CrosstalkData data = readData(*xtalkFile);
 
     // Store it in the constants service and get back the pointer.
-    K4_GAUDI_CHECK(m_constantsSvc->putObj (m_fileName, std::move (data)));
+    K4_GAUDI_CHECK(m_constantsSvc->putObj(m_fileName, std::move (data)));
     m_data = m_constantsSvc->getObj<CrosstalkData>(m_fileName);
     K4_GAUDI_CHECK(m_data != nullptr);
   }
@@ -79,16 +79,13 @@ auto ReadCaloCrosstalkMap::getNeighbours(CellID aCellId) const -> std::span<cons
 
 /// Given a cell ID, return a span of crosstalk coeffients,
 /// one per neighbour cell.
-std::span<const double>
-ReadCaloCrosstalkMap::getCrosstalks(CellID aCellId) const
-{
-  return m_data->getCrosstalks (m_indexer->index (aCellId));
+std::span<const double> ReadCaloCrosstalkMap::getCrosstalks(CellID aCellId) const {
+  return m_data->getCrosstalks(m_indexer->index(aCellId));
 }
 
 
 /// Read crosstalk data from a file.
-auto ReadCaloCrosstalkMap::readData(TFile& xtalkFile) const -> CrosstalkData
-{
+auto ReadCaloCrosstalkMap::readData(TFile& xtalkFile) const -> CrosstalkData {
   CrosstalkData data;
 
   TTree* tree = nullptr;
@@ -117,12 +114,12 @@ auto ReadCaloCrosstalkMap::readData(TFile& xtalkFile) const -> CrosstalkData
     {
       size_t oldsz = data.m_neighbours.size();
       data.m_neighbours.insert(data.m_neighbours.end(), read_neighbours->begin(), read_neighbours->end());
-      data.m_neighbourIndices.at(ndx) = std::make_pair(oldsz, data.m_neighbours.size()-oldsz);
+      data.m_neighbourIndices.at(ndx) = std::make_pair(oldsz, data.m_neighbours.size() - oldsz);
     }
     {
       size_t oldsz = data.m_crosstalks.size();
       data.m_crosstalks.insert(data.m_crosstalks.end(), read_crosstalks->begin(), read_crosstalks->end());
-      data.m_crosstalkIndices.at(ndx) = std::make_pair(oldsz, data.m_crosstalks.size()-oldsz);
+      data.m_crosstalkIndices.at(ndx) = std::make_pair(oldsz, data.m_crosstalks.size() - oldsz);
     }
   }
 
