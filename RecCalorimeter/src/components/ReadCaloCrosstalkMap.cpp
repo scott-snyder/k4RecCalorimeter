@@ -1,6 +1,6 @@
 #include "ReadCaloCrosstalkMap.h"
-#include "RecCaloCommon/k4RecCalorimeter_check.h"
 #include "k4Interface/IGeoSvc.h"
+#include "k4FWCore/GaudiChecks.h"
 #include "DD4hep/Detector.h"
 
 #include "TBranch.h"
@@ -10,35 +10,40 @@
 
 DECLARE_COMPONENT(ReadCaloCrosstalkMap)
 
+/**
+ * Standard Gaudi initialization method.
+ */
 StatusCode ReadCaloCrosstalkMap::initialize() {
-  // prevent to initialize the tool if not intended (input file path empty)
-  // otherwise things will crash if m_fileName is not available
-  // not a perfect solution but tools seems to not be meant to be optional
-  if (m_fileName == "") {
+  // Do nothing if no file name.
+  if (m_fileName.empty()) {
     debug() << "Empty 'fileName' provided, it means cross-talk map is not needed, exiting ReadCaloCrosstalkMap "
                "initialization"
             << endmsg;
     return StatusCode::SUCCESS;
   }
 
-  info() << "Loading crosstalk map..." << endmsg;
+  K4_GAUDI_CHECK(AlgTool::initialize());
+  K4_GAUDI_CHECK( m_constantsSvc.retrieve() );
+  K4_GAUDI_CHECK( m_indexerSvc.retrieve() );
 
-  K4RECCALORIMETER_CHECK(AlgTool::initialize());
-  K4RECCALORIMETER_CHECK( m_constantsSvc.retrieve() );
-  K4RECCALORIMETER_CHECK( m_indexerSvc.retrieve() );
-
+  // Find our subdetector ID.
+  // If defaulted, get the ECAL_Barrel ID from the geometry service.
   int detID = m_detID;
   if (detID < 0) {
-    // If defaulted, get the ECAL_Barrel ID from the geometry service.
     ServiceHandle<IGeoSvc> geoSvc ("GeoSvc", name());
-    K4RECCALORIMETER_CHECK( geoSvc.retrieve() );
+    K4_GAUDI_CHECK( geoSvc.retrieve() );
     detID = geoSvc->getDetector()->constantAsDouble("DetID_ECAL_Barrel");
   }
-  m_indexer = m_indexerSvc->indexer (detID);
-  K4RECCALORIMETER_CHECK( m_indexer != nullptr );
 
+  // Find the indexer for this subdetector.
+  m_indexer = m_indexerSvc->indexer (detID);
+  K4_GAUDI_CHECK( m_indexer != nullptr );
+
+  // See if we've already read this data file.
   m_data = m_constantsSvc->getObj<CrosstalkData> (m_fileName);
   if (!m_data) {
+    // No --- need to read it.
+    info() << "Loading crosstalk map " << m_fileName << endmsg;
     // Check if crosstalk file exists
     if (gSystem->AccessPathName(m_fileName.value().c_str())) {
       error() << "Provided file with the crosstalk map not found!" << endmsg;
@@ -54,16 +59,35 @@ StatusCode ReadCaloCrosstalkMap::initialize() {
       info() << "Using the following file with the crosstalk map: " << m_fileName.value() << endmsg;
     }
 
+    // Read the file and make the data object.
     CrosstalkData data = readData (*xtalkFile);
-    K4RECCALORIMETER_CHECK( m_constantsSvc->putObj (m_fileName, std::move (data)) );
+
+    // Store it in the constants service and get back the pointer.
+    K4_GAUDI_CHECK( m_constantsSvc->putObj (m_fileName, std::move (data)) );
     m_data = m_constantsSvc->getObj<CrosstalkData> (m_fileName);
-    K4RECCALORIMETER_CHECK( m_data != nullptr );
+    K4_GAUDI_CHECK( m_data != nullptr );
   }
 
   return StatusCode::SUCCESS;
 }
 
+/// Given a cell ID, return a span of neighbouring cell IDs.
+auto
+ReadCaloCrosstalkMap::getNeighbours(CellID aCellId) const -> std::span<const CellID>
+{
+  return m_data->getNeighbours (m_indexer->index (aCellId));
+}
 
+/// Given a cell ID, return a span of crosstalk coeffients,
+/// one per neighbour cell.
+std::span<const double>
+ReadCaloCrosstalkMap::getCrosstalks(CellID aCellId) const
+{
+  return m_data->getCrosstalks (m_indexer->index (aCellId));
+}
+
+
+/// Read crosstalk data from a file.
 auto ReadCaloCrosstalkMap::readData (TFile& xtalkFile) const -> CrosstalkData
 {
   CrosstalkData data;
@@ -82,19 +106,25 @@ auto ReadCaloCrosstalkMap::readData (TFile& xtalkFile) const -> CrosstalkData
   data.m_neighbourIndices.resize (ncells);
   data.m_crosstalkIndices.resize (ncells);
 
-  for (uint i = 0; i < tree->GetEntries(); i++) {
+  unsigned nent = tree->GetEntries();
+  for (uint i = 0; i < nent; i++) {
     tree->GetEntry(i);
 
     unsigned ndx = m_indexer->index (read_cellId);
+    if (ndx == k4::recCalo::ICaloIndexer::INVALID || ndx >= ncells) {
+      error() << "Read bad cell ID " << read_cellId << " giving index " << ndx
+              << " at entry " << i << endmsg;
+      continue;
+    }
     {
       size_t oldsz = data.m_neighbours.size();
       data.m_neighbours.insert (data.m_neighbours.end(), read_neighbours->begin(), read_neighbours->end());
-      data.m_neighbourIndices[ndx] = std::make_pair (oldsz, data.m_neighbours.size()-oldsz);
+      data.m_neighbourIndices.at(ndx) = std::make_pair (oldsz, data.m_neighbours.size()-oldsz);
     }
     {
       size_t oldsz = data.m_crosstalks.size();
       data.m_crosstalks.insert (data.m_crosstalks.end(), read_crosstalks->begin(), read_crosstalks->end());
-      data.m_crosstalkIndices[ndx] = std::make_pair (oldsz, data.m_crosstalks.size()-oldsz);
+      data.m_crosstalkIndices.at(ndx) = std::make_pair (oldsz, data.m_crosstalks.size()-oldsz);
     }
   }
 
@@ -110,14 +140,3 @@ auto ReadCaloCrosstalkMap::readData (TFile& xtalkFile) const -> CrosstalkData
   return data;
 }
 
-auto
-ReadCaloCrosstalkMap::getNeighbours(CellID aCellId) const -> std::span<const CellID>
-{
-  return m_data->getNeighbours (m_indexer->index (aCellId));
-}
-
-std::span<const double>
-ReadCaloCrosstalkMap::getCrosstalks(CellID aCellId) const
-{
-  return m_data->getCrosstalks (m_indexer->index (aCellId));
-}
