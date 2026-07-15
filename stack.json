@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "5266b624ab1f6dac48b964306aba634d10185fda",
-  "head": "15213d8323e294cc0f9cdda212ca0e59f93b2e84",
+  "prev": "ecf0bb2e6f72a95cf1dd3edc68414ed265f892f5",
+  "head": "4d506ff739b36d29524d556c6889eeca725f2d48",
   "applied": [],
   "unapplied": [
     "indexingConfig",
