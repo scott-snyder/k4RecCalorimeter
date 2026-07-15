@@ -1,10 +1,8 @@
 {
   "version": 5,
-  "prev": "acf86e1b7ac76a64d765713b52255538e83b9ce0",
-  "head": "cd18111b966bdceef08dfe476ad3d85a66c4a25f",
-  "applied": [
-    "indexingConfig"
-  ],
+  "prev": "749c891c390b1f17b9c337d0d23d09ec9677f643",
+  "head": "4d506ff739b36d29524d556c6889eeca725f2d48",
+  "applied": [],
   "unapplied": [
     "ci",
     "k4geo-noclone",
@@ -25,9 +23,6 @@
   ],
   "hidden": [],
   "patches": {
-    "indexingConfig": {
-      "oid": "cd18111b966bdceef08dfe476ad3d85a66c4a25f"
-    },
     "ci": {
       "oid": "da5d1d31be033eb3eac72fdeed07c60b7f18d850"
     },
