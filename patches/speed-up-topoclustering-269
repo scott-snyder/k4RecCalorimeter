@@ -1,0 +1,12 @@
+Bottom: e3264f4c6e135cf2ab1353a06d09217b2f1536e9
+Top:    143a48048dd367d0cb4f2b279c22348e06513a32
+Author: scott snyder <snyder@bnl.gov>
+Date:   2026-07-15 17:00:57 -0400
+
+Revert "speed up topoclustering (#269)"
+
+This reverts commit 4d506ff739b36d29524d556c6889eeca725f2d48.
+
+* speed up topoclustering
+
+* make code flow identical to previous version
