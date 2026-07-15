@@ -1,6 +1,7 @@
 #include "PairCaloClustersPi0.h"
 // Key4HEP
 #include "k4FWCore/MetadataUtils.h"
+
 #include "TLorentzVector.h"
 #include "TVector3.h"
 
@@ -99,11 +100,10 @@ edm4hep::ClusterCollection* PairCaloClustersPi0::ClusterPairing(const edm4hep::C
   edm4hep::ClusterCollection* unpairedClusters = m_unpairedClusters.createAndPut();
   edm4hep::ClusterCollection* pairedClusters = m_pairedClusters.createAndPut();
 
-  auto getTLV = [] (const edm4hep::Cluster& cl)
-  {
+  auto getTLV = [](const edm4hep::Cluster& cl) {
     double e = cl.getEnergy();
-    TVector3 disp (cl.getPosition().x, cl.getPosition().y, cl.getPosition().z);
-    return TLorentzVector (disp * (e/disp.Mag()), e);
+    TVector3 disp(cl.getPosition().x, cl.getPosition().y, cl.getPosition().z);
+    return TLorentzVector(disp * (e/disp.Mag()), e);
   };
 
 #if 0
@@ -123,9 +123,10 @@ edm4hep::ClusterCollection* PairCaloClustersPi0::ClusterPairing(const edm4hep::C
   verbose() << "We are in cluster pairing, step 1" << endmsg;
   std::vector<std::pair<size_t, size_t>> vec_AllPossiblePairs;
   for (size_t i = 0; i < inClusters->size(); ++i) {
-    TLorentzVector tlv_i = getTLV (inClusters->at(i));
+    TLorentzVector tlv_i = getTLV(inClusters->at(i));
     double energy_i = inClusters->at(i).getEnergy();
-    if (energy_i < m_minClusterEnergy) continue;
+    if (energy_i < m_minClusterEnergy)
+      continue;
     edm4hep::Vector3d cluster_i_position3d(inClusters->at(i).getPosition().x, inClusters->at(i).getPosition().y,
                                            inClusters->at(i).getPosition().z);
     // For the moment, the cluster direction uses the pointing assumption: from (0,0,0) to the cluster position. Waiting
@@ -133,9 +134,10 @@ edm4hep::ClusterCollection* PairCaloClustersPi0::ClusterPairing(const edm4hep::C
     edm4hep::Vector3d cluster_i_momentum =
         PairCaloClustersPi0::projectMomentum(energy_i, cluster_i_position3d, edm4hep::Vector3d(0, 0, 0));
     for (size_t j = i + 1; j < inClusters->size(); j++) {
-      TLorentzVector tlv_j = getTLV (inClusters->at(j));
+      TLorentzVector tlv_j = getTLV(inClusters->at(j));
       double energy_j = inClusters->at(j).getEnergy();
-      if (energy_j < m_minClusterEnergy) continue;
+      if (energy_j < m_minClusterEnergy)
+        continue;
       edm4hep::Vector3d cluster_j_position3d(inClusters->at(j).getPosition().x, inClusters->at(j).getPosition().y,
                                              inClusters->at(j).getPosition().z);
       // For the moment, the cluster direction uses the pointing assumption: from (0,0,0) to the cluster position.
@@ -251,7 +253,7 @@ edm4hep::ClusterCollection* PairCaloClustersPi0::ClusterPairing(const edm4hep::C
       // very unlikely, but if the sum of mass deviation is the same between two combinations, we have to randomly
       // choose one
       else if (this_devM == best_devM) {
-        //index_best_combi = (rand() % 2) ? i_combi : index_best_combi;
+        // index_best_combi = (rand() % 2) ? i_combi : index_best_combi;
       }
     }
     bestcombi_pairs = vec_Maxcombi_pairs[index_best_combi];
