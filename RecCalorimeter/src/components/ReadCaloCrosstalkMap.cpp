@@ -133,4 +133,3 @@ auto ReadCaloCrosstalkMap::readData(TFile& xtalkFile) const -> CrosstalkData {
 
   return data;
 }
-

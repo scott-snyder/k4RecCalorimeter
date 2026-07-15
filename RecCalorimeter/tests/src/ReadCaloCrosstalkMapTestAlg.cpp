@@ -41,7 +41,6 @@ private:
 
   Gaudi::Property<unsigned> m_ncells{this, "ncells", 100, ""};
 
-
   StatusCode writeFile(unsigned int ncells, const std::string& filename,
                        const k4::recCalo::ICaloIndexer& indexer) const;
   StatusCode checkCrosstalk(unsigned int ncells, const ICaloReadCrosstalkMap& tool,
@@ -131,4 +130,3 @@ StatusCode ReadCaloCrosstalkMapTestAlg::checkCrosstalk(unsigned int ncells, cons
 }
 
 } // namespace k4::recCalo
-
