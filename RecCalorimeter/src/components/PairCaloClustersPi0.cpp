@@ -103,7 +103,7 @@ edm4hep::ClusterCollection* PairCaloClustersPi0::ClusterPairing(const edm4hep::C
   auto getTLV = [](const edm4hep::Cluster& cl) {
     double e = cl.getEnergy();
     TVector3 disp(cl.getPosition().x, cl.getPosition().y, cl.getPosition().z);
-    return TLorentzVector(disp * (e/disp.Mag()), e);
+    return TLorentzVector(disp * (e / disp.Mag()), e);
   };
 
 #if 0
