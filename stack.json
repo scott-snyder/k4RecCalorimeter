@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "db2d09b918e55d0a436bd9a03c0b82861b0ebde4",
-  "head": "c1d9925f40a98596f052d20478beb647ef9d494d",
+  "prev": "f1ba3a7fc71909cde2a613b70dca404476faf16d",
+  "head": "5482041e7603ae114b0391dfacec288a96284b32",
   "applied": [
     "indexingConfig",
     "ci",
@@ -38,7 +38,7 @@
       "oid": "f93a624d52b7c9efde478d07b342db6b6a4be8a2"
     },
     "xtalkIndex": {
-      "oid": "c1d9925f40a98596f052d20478beb647ef9d494d"
+      "oid": "5482041e7603ae114b0391dfacec288a96284b32"
     },
     "ecalendcapTool": {
       "oid": "19e5529372569b486a93543e7a9a9acb69a121ac"
