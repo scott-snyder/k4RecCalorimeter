@@ -1,14 +1,13 @@
 {
   "version": 5,
-  "prev": "1722ee1828125094fad61e4822880ec1d2d0eac4",
-  "head": "198212ce7e94b1799ce683a8645bfd030ba425ce",
+  "prev": "7004982d1695a1a31059fdcd3996820672b9ae84",
+  "head": "0c8e41f2d2342443f8e7edbde95c5404885dee25",
   "applied": [
     "indexingConfig",
     "ci",
     "k4geo-noclone",
     "pairpi0",
-    "xtalkIndex",
-    "refresh-temp"
+    "xtalkIndex"
   ],
   "unapplied": [
     "ecalendcapTool",
@@ -39,10 +38,7 @@
       "oid": "f93a624d52b7c9efde478d07b342db6b6a4be8a2"
     },
     "xtalkIndex": {
-      "oid": "5482041e7603ae114b0391dfacec288a96284b32"
-    },
-    "refresh-temp": {
-      "oid": "198212ce7e94b1799ce683a8645bfd030ba425ce"
+      "oid": "0c8e41f2d2342443f8e7edbde95c5404885dee25"
     },
     "ecalendcapTool": {
       "oid": "19e5529372569b486a93543e7a9a9acb69a121ac"
