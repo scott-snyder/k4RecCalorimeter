@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "975ca34358b480aa6943358d0ea03f9072d46190",
-  "head": "31067d5997e0ac77b94e2f8348ecddcf2376e25f",
+  "prev": "a479ee5fbb74cf877a05b362e6c8df58a93b64a4",
+  "head": "5bf4df76138a8840c8bdfec593ee993a68a564cb",
   "applied": [
     "k4geo-noclone",
     "pairpi0",
@@ -9,7 +9,8 @@
     "cellposIndex",
     "topoNoiseIndex",
     "createCaloCells",
-    "discrit-wip"
+    "discrit-wip",
+    "discrit2-wip"
   ],
   "unapplied": [
     "ci",
@@ -18,7 +19,6 @@
     "createTopoCluster",
     "subdetVolman2",
     "subdetVolman",
-    "discrit2-wip",
     "diag-wip",
     "cellids-wip"
   ],
@@ -45,6 +45,9 @@
     "discrit-wip": {
       "oid": "31067d5997e0ac77b94e2f8348ecddcf2376e25f"
     },
+    "discrit2-wip": {
+      "oid": "5bf4df76138a8840c8bdfec593ee993a68a564cb"
+    },
     "ci": {
       "oid": "da5d1d31be033eb3eac72fdeed07c60b7f18d850"
     },
@@ -62,9 +65,6 @@
     },
     "subdetVolman": {
       "oid": "ebde5d6a01c079b74975cb2cd53687b7f58c1e7f"
-    },
-    "discrit2-wip": {
-      "oid": "e0abffd58fc4fe5f8660c926460abc5165897930"
     },
     "diag-wip": {
       "oid": "bbd73c73c7e7601242c8f4ec2f3932593d99ed53"
