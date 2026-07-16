@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "94d4ae81a9cb2927f5fc32151eeb8bb2d1345054",
-  "head": "9cd21329e8cc02f4c6687e1bb0dc530adb5dd938",
+  "prev": "bf82e1a8d0325e2c13ccf9bfb45f2ac47b0e01df",
+  "head": "7d4d83a97c78b29a182ffc9815208987389edb24",
   "applied": [
     "k4geo-noclone",
     "pairpi0",
@@ -10,8 +10,7 @@
     "topoNoiseIndex",
     "createCaloCells",
     "discrit-wip",
-    "discrit2-wip",
-    "refresh-temp"
+    "discrit2-wip"
   ],
   "unapplied": [
     "ci",
@@ -41,16 +40,13 @@
       "oid": "8422d7aea250cd77772a6a6afe8cfeb7becd1875"
     },
     "createCaloCells": {
-      "oid": "a82e1737e8a0c4ea922e9bf2e4348a5e15dfb53c"
+      "oid": "dca8f651a6e20d50c6154b542308ea2a6f7dfe81"
     },
     "discrit-wip": {
-      "oid": "31067d5997e0ac77b94e2f8348ecddcf2376e25f"
+      "oid": "6563fd0929001d133cfcd03e73b541dbfb0c315c"
     },
     "discrit2-wip": {
-      "oid": "5bf4df76138a8840c8bdfec593ee993a68a564cb"
-    },
-    "refresh-temp": {
-      "oid": "9cd21329e8cc02f4c6687e1bb0dc530adb5dd938"
+      "oid": "7d4d83a97c78b29a182ffc9815208987389edb24"
     },
     "ci": {
       "oid": "da5d1d31be033eb3eac72fdeed07c60b7f18d850"
