@@ -250,7 +250,7 @@ private:
 
   /// Handle for the calorimeter cells crosstalk tool
   ToolHandle<k4::recCalo::ICaloReadCrosstalkMap> m_crosstalksTool
-  {this, "crosstalkTool", "ReadCaloCrosstalkMap", "Handle for the cell crosstalk tool"};
+  {this, "crosstalksTool", "ReadCaloCrosstalkMap", "Handle for the cell crosstalk tool"};
 
   /// Handle for tool to calibrate Geant4 energy to EM scale tool
   ToolHandle<k4::recCalo::ICalibrateCaloHitsTool> m_calibTool{"CalibrateCaloHitsTool", this};
