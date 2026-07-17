@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "9cdb495cbace09fbed8cbc1b57dc53fc7f803abe",
-  "head": "5a8581d2292a1bff402931e4b9fbe1cb5bfe8315",
+  "prev": "7002d9dd8a17ae607c7a9291841464ea26707e40",
+  "head": "9a6f8505e544a21b2eebb733d4be1f5c5b9cb981",
   "applied": [
     "k4geo-noclone",
     "pairpi0",
@@ -11,10 +11,10 @@
     "createCaloCells",
     "discrit-wip",
     "discrit2-wip",
-    "negNoiseRMS"
+    "negNoiseRMS",
+    "noiseIndex2"
   ],
   "unapplied": [
-    "noiseIndex2",
     "noisedump",
     "ci",
     "ecalendcapTool",
@@ -55,7 +55,7 @@
       "oid": "5a8581d2292a1bff402931e4b9fbe1cb5bfe8315"
     },
     "noiseIndex2": {
-      "oid": "72688e587bf894c10e25a9747c779b8ebe047796"
+      "oid": "9a6f8505e544a21b2eebb733d4be1f5c5b9cb981"
     },
     "noisedump": {
       "oid": "a3b8ccebb67fa481270d7b6a0496de0879ea792d"
