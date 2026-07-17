@@ -42,7 +42,7 @@ StatusCode TopoCaloNoisyCells::initialize() {
   for (uint i = 0; i < tree->GetEntries(); i++) {
     tree->GetEntry(i);
     m_map.insert(std::pair<uint64_t, std::pair<double, double>>(readCellId,
-                                                                std::make_pair(readNoisyCells, readNoisyCellsOffset)));
+                                                                std::make_pair(std::abs(readNoisyCells), readNoisyCellsOffset)));
   }
   delete tree;
   inFile->Close();
