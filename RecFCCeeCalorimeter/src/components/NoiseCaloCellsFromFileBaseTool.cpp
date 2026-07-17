@@ -213,7 +213,7 @@ double NoiseCaloCellsFromFileBaseTool::getNoiseRMSPerCell(CellID aCellId) const 
   if (m_addPileup) {
     totalNoiseRMS = sqrt(elecNoiseRMS * elecNoiseRMS + pileupNoiseRMS * pileupNoiseRMS) * m_scaleFactor;
   } else { // avoid useless math operations if no pileup
-    totalNoiseRMS = elecNoiseRMS * m_scaleFactor;
+    totalNoiseRMS = std::abs(elecNoiseRMS) * m_scaleFactor;
   }
 
   if (totalNoiseRMS < 1e-6) {
