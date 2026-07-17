@@ -1,20 +1,31 @@
 #include "NoiseCaloCellsFromFileBarrelTool.h"
+#include "k4FWCore/GaudiChecks.h"
 
 DECLARE_COMPONENT(NoiseCaloCellsFromFileBarrelTool)
 
-unsigned NoiseCaloCellsFromFileBarrelTool::getBin(CellID aCellId) const {
-  double cellTheta = m_cellPositionsTool->xyzPosition(aCellId).Theta();
 
-  // All histograms have same binning, all bins with same size
-  // Using the histogram in the first layer to get the bin size
-  int Nbins = m_histoElecNoiseRMS.at(0)->GetNbinsX();
-  int ibin = m_histoElecNoiseRMS.at(0)->FindFixBin(cellTheta);
+StatusCode NoiseCaloCellsFromFileBarrelTool::initialize()
+{
+  K4_GAUDI_CHECK(NoiseCaloCellsFromFileBaseTool::initialize());
+  K4_GAUDI_CHECK(m_cellPositionsTool.retrieve());
+  return StatusCode::SUCCESS;
+}
 
-  if (ibin > Nbins) {
-    error() << "theta outside range of the histograms! Cell theta: " << cellTheta << " Nbins in histogram: " << Nbins
-            << endmsg;
-    ibin = Nbins;
+
+StatusCode NoiseCaloCellsFromFileBarrelTool::initBinning (NoiseData& data,
+                                                          const k4::recCalo::ICaloIndexer& indexer) const
+{
+  data.m_bins.resize (indexer.cellIDs().size());
+
+  const TH1* h_rms = data.m_histoElecNoiseRMS.at(0).get();
+  const TH1* h_offset = m_setNoiseOffset ? data.m_histoElecNoiseOffset.at(0).get() : nullptr;
+  for (uint64_t id : indexer.cellIDs()) {
+    unsigned ndx = indexer.index (id);
+    double cellTheta = m_cellPositionsTool->xyzPosition(id).Theta();
+    int ibinRMS = h_rms->FindFixBin(cellTheta);
+    int ibinOffset = h_offset ? h_offset->FindFixBin(cellTheta) : 0;
+    data.m_bins.at(ndx) = std::make_pair(ibinRMS, ibinOffset);
   }
 
-  return ibin;
+  return StatusCode::SUCCESS;
 }
