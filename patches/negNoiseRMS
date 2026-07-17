@@ -1,0 +1,6 @@
+Bottom: ac9c6c752b55db376dfc42e4847283c59ccfad93
+Top:    ac9c6c752b55db376dfc42e4847283c59ccfad93
+Author: scott snyder <snyder@bnl.gov>
+Date:   2026-07-17 16:08:44 -0400
+
+Take the absolute value of noise RMS if it's negative in the histogram.

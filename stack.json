@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "9e93d9c4ae51db79569f49a002ec41f595a632b6",
-  "head": "7d4d83a97c78b29a182ffc9815208987389edb24",
+  "prev": "f41c0398e5b3e22a3d504079d0cb53aefd36866a",
+  "head": "d875a5c3cd24e840bd58e9009e4c4a94cd9a1af4",
   "applied": [
     "k4geo-noclone",
     "pairpi0",
@@ -10,7 +10,8 @@
     "topoNoiseIndex",
     "createCaloCells",
     "discrit-wip",
-    "discrit2-wip"
+    "discrit2-wip",
+    "negNoiseRMS"
   ],
   "unapplied": [
     "noiseIndex2",
@@ -49,6 +50,9 @@
     },
     "discrit2-wip": {
       "oid": "7d4d83a97c78b29a182ffc9815208987389edb24"
+    },
+    "negNoiseRMS": {
+      "oid": "d875a5c3cd24e840bd58e9009e4c4a94cd9a1af4"
     },
     "noiseIndex2": {
       "oid": "72688e587bf894c10e25a9747c779b8ebe047796"
