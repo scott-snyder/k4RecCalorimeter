@@ -34,11 +34,22 @@ StatusCode NoiseCaloCellsFromFileBaseTool::initialize() {
   return StatusCode::SUCCESS;
 }
 
+static FILE* flog = 0;
 template <class C>
 void NoiseCaloCellsFromFileBaseTool::addRandomCellNoiseT(C& aCells) const {
+  if (!flog) {
+    flog = fopen ("f.log", "w");
+  }
+  fprintf (flog, "addRandomCellNoise\n");
   for (auto& p : aCells) {
-    p.second += getNoiseOffsetPerCell(p.first);
-    p.second += (getNoiseRMSPerCell(p.first) * m_gauss.shoot());
+    double orig = p.second;
+    double offs = getNoiseOffsetPerCell(p.first);
+    double rms = getNoiseRMSPerCell(p.first);
+    double noise = (rms * m_gauss.shoot());
+    p.second += offs;
+    p.second += noise;
+    fprintf (flog, "%lu %f %f %f %f %f\n",
+             p.first, orig, offs, rms, noise, p.second);
   }
 }
 
