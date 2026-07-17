@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "87908927226febcba94621707387aca36ae3e919",
-  "head": "72688e587bf894c10e25a9747c779b8ebe047796",
+  "prev": "b94dfa0b3ec06c9c4e7614a91036440643d9183a",
+  "head": "7d4d83a97c78b29a182ffc9815208987389edb24",
   "applied": [
     "k4geo-noclone",
     "pairpi0",
@@ -10,10 +10,10 @@
     "topoNoiseIndex",
     "createCaloCells",
     "discrit-wip",
-    "discrit2-wip",
-    "noiseIndex2"
+    "discrit2-wip"
   ],
   "unapplied": [
+    "noiseIndex2",
     "ci",
     "ecalendcapTool",
     "noiseIndex",
