@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "7002d9dd8a17ae607c7a9291841464ea26707e40",
-  "head": "9a6f8505e544a21b2eebb733d4be1f5c5b9cb981",
+  "prev": "1f9c418edcba02fef9316512a1e3678a331f07ab",
+  "head": "77af0ff5cac75fe2f0176d1cf0039c9e6cd4a5e2",
   "applied": [
     "k4geo-noclone",
     "pairpi0",
@@ -12,7 +12,8 @@
     "discrit-wip",
     "discrit2-wip",
     "negNoiseRMS",
-    "noiseIndex2"
+    "noiseIndex2",
+    "refresh-temp"
   ],
   "unapplied": [
     "noisedump",
@@ -56,6 +57,9 @@
     },
     "noiseIndex2": {
       "oid": "9a6f8505e544a21b2eebb733d4be1f5c5b9cb981"
+    },
+    "refresh-temp": {
+      "oid": "77af0ff5cac75fe2f0176d1cf0039c9e6cd4a5e2"
     },
     "noisedump": {
       "oid": "a3b8ccebb67fa481270d7b6a0496de0879ea792d"
