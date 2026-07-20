@@ -1,20 +1,20 @@
 {
   "version": 5,
-  "prev": "7db353941e5bf3a2d4d4ae17875477b66a0d5e55",
-  "head": "cba1dd6f0320f87c24578b66c5a1b8163b1a5cbe",
+  "prev": "772cd676ce1e56fc76fcf4fad16c449b064b61fa",
+  "head": "2a3f50039d0d005b8e79c90716748fd1098a6916",
   "applied": [
     "k4geo-noclone",
     "pairpi0",
     "xtalkIndex",
     "cellposIndex",
-    "phiwrap"
+    "phiwrap",
+    "negNoiseRMS"
   ],
   "unapplied": [
     "topoNoiseIndex",
     "createCaloCells",
     "discrit-wip",
     "discrit2-wip",
-    "negNoiseRMS",
     "noiseIndex",
     "createTopoCluster",
     "noisedump",
@@ -41,6 +41,9 @@
     "phiwrap": {
       "oid": "cba1dd6f0320f87c24578b66c5a1b8163b1a5cbe"
     },
+    "negNoiseRMS": {
+      "oid": "2a3f50039d0d005b8e79c90716748fd1098a6916"
+    },
     "topoNoiseIndex": {
       "oid": "8422d7aea250cd77772a6a6afe8cfeb7becd1875"
     },
@@ -52,9 +55,6 @@
     },
     "discrit2-wip": {
       "oid": "7d4d83a97c78b29a182ffc9815208987389edb24"
-    },
-    "negNoiseRMS": {
-      "oid": "1631ef7af34b0dbaabcb997676136181731c4fac"
     },
     "noiseIndex": {
       "oid": "bd25ac1deee4679f5304c4139b6ab0349a2db789"
