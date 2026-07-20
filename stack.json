@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "a3606524e4024f0d9a0507b69bc06f752cd48c73",
-  "head": "62125398617dbb57e11e99906ce321d0559c023e",
+  "prev": "052a4334e87d2ff7726765535590aabf9c9d92b2",
+  "head": "217c34758f46f69ecaab2284028bc7b85d3fefbd",
   "applied": [
     "k4geo-noclone",
     "pairpi0",
@@ -12,11 +12,11 @@
     "discrit-wip",
     "discrit2-wip",
     "negNoiseRMS",
-    "noiseIndex"
+    "noiseIndex",
+    "phiwrap"
   ],
   "unapplied": [
     "createTopoCluster",
-    "phiwrap",
     "noisedump",
     "ci",
     "subdetVolman2",
@@ -56,11 +56,11 @@
     "noiseIndex": {
       "oid": "62125398617dbb57e11e99906ce321d0559c023e"
     },
+    "phiwrap": {
+      "oid": "217c34758f46f69ecaab2284028bc7b85d3fefbd"
+    },
     "createTopoCluster": {
       "oid": "3bbfc60ad816fc9f765f29a31bb1447cbb3e6177"
-    },
-    "phiwrap": {
-      "oid": "435acbff38e3ee4fae8bc823442cd019156d1d37"
     },
     "noisedump": {
       "oid": "a3b8ccebb67fa481270d7b6a0496de0879ea792d"
