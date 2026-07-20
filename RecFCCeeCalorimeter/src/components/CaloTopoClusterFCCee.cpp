@@ -14,6 +14,8 @@
 #include "k4FWCore/MetadataUtils.h"
 #include "k4FWCore/GaudiChecks.h"
 
+#include "RecCaloCommon/phihelper.h"
+
 // EDM4hep
 #include "edm4hep/CalorimeterHitCollection.h"
 #include "edm4hep/ClusterCollection.h"
@@ -255,6 +257,7 @@ StatusCode CaloTopoClusterFCCee::execute(const EventContext&) const {
 
     double sumCellPhi = 0.;
     double sumCellTheta = 0.;
+    double phi0 = 0;
 
     double deltaR = 0.;
 
@@ -265,6 +268,8 @@ StatusCode CaloTopoClusterFCCee::execute(const EventContext&) const {
     cellPhi.reserve(cluster.size());
     cellTheta.reserve(cluster.size());
     cellEnergy.reserve(cluster.size());
+
+    using k4::recCalo::deltaPhi, k4::recCalo::wrapToPi;
 
     for (const FastCell& fastcell : cluster) {
 
@@ -284,7 +289,9 @@ StatusCode CaloTopoClusterFCCee::execute(const EventContext&) const {
       cellTheta.push_back(theta);
       cellEnergy.push_back(energy);
 
-      sumCellPhi += phi * energy;
+      if (sumCellPhi == 0)
+        phi0 = phi;
+      sumCellPhi += deltaPhi (phi, phi0) * energy;
       sumCellTheta += theta * energy;
 
       // attach cell
@@ -305,12 +312,12 @@ StatusCode CaloTopoClusterFCCee::execute(const EventContext&) const {
       outCluster.setPosition(
           edm4hep::Vector3f(clusterPosX / clusterEnergy, clusterPosY / clusterEnergy, clusterPosZ / clusterEnergy));
 
-      sumCellPhi /= clusterEnergy;
+      sumCellPhi = wrapToPi (sumCellPhi / clusterEnergy + phi0);
       sumCellTheta /= clusterEnergy;
 
       for (size_t i = 0; i < cellEnergy.size(); ++i) {
         deltaR +=
-            std::hypot(cellTheta[i] - sumCellTheta, cellPhi[i] - sumCellPhi) * cellEnergy[i];
+          std::hypot(cellTheta[i] - sumCellTheta, deltaPhi (cellPhi[i], sumCellPhi)) * cellEnergy[i];
       }
       outCluster.addToShapeParameters(deltaR / clusterEnergy);
     } else {
