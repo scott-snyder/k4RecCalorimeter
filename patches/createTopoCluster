@@ -1,0 +1,6 @@
+Bottom: 985ecfa1d6c9ec0ed542659eee715b0f65edde51
+Top:    985ecfa1d6c9ec0ed542659eee715b0f65edde51
+Author: scott snyder <snyder@bnl.gov>
+Date:   2026-07-20 09:08:19 -0400
+
+createTopoCluster: Reduce use of maps.  Some clean up.
