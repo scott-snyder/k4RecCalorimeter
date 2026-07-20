@@ -90,7 +90,7 @@ auto TopoCaloNoisyCells::readData (TFile& inFile) const -> NoiseData
   for (uint i = 0; i < tree->GetEntries(); i++) {
     tree->GetEntry(i);
     unsigned ndx = data.m_indexer->index (readCellId);
-    data.m_noise.at(ndx) = std::make_pair (readNoisyCells, readNoisyCellsOffset);
+    data.m_noise.at(ndx) = std::make_pair (std::abs (readNoisyCells), readNoisyCellsOffset);
   }
   delete tree;
   inFile.Close();
