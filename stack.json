@@ -1,15 +1,14 @@
 {
   "version": 5,
-  "prev": "8126159f2c79a386901b0e3a1465ce166098fe4a",
-  "head": "54c9d15fa0d527a5b8261662b510e347d8e41e61",
+  "prev": "d0f9751b47d821985631762fd4e36d2995ea2b2e",
+  "head": "9e47b217e8a1911bb9fd6a25ead037a506600955",
   "applied": [
     "k4geo-noclone",
     "pairpi0",
     "xtalkIndex",
     "cellposIndex",
     "phiwrap",
-    "negNoiseRMS",
-    "refresh-temp"
+    "negNoiseRMS"
   ],
   "unapplied": [
     "topoNoiseIndex",
@@ -43,10 +42,7 @@
       "oid": "cba1dd6f0320f87c24578b66c5a1b8163b1a5cbe"
     },
     "negNoiseRMS": {
-      "oid": "2a3f50039d0d005b8e79c90716748fd1098a6916"
-    },
-    "refresh-temp": {
-      "oid": "54c9d15fa0d527a5b8261662b510e347d8e41e61"
+      "oid": "9e47b217e8a1911bb9fd6a25ead037a506600955"
     },
     "topoNoiseIndex": {
       "oid": "8422d7aea250cd77772a6a6afe8cfeb7becd1875"
