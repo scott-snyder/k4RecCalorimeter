@@ -1,17 +1,17 @@
 {
   "version": 5,
-  "prev": "d0f9751b47d821985631762fd4e36d2995ea2b2e",
-  "head": "9e47b217e8a1911bb9fd6a25ead037a506600955",
+  "prev": "4cbcd5b49d77219db9cc819ffdb045cd92a437ad",
+  "head": "8fcc976a8b5fddc4b1cac401104131484417f674",
   "applied": [
     "k4geo-noclone",
     "pairpi0",
     "xtalkIndex",
     "cellposIndex",
     "phiwrap",
-    "negNoiseRMS"
+    "negNoiseRMS",
+    "topoNoiseIndex"
   ],
   "unapplied": [
-    "topoNoiseIndex",
     "createCaloCells",
     "discrit-wip",
     "discrit2-wip",
@@ -45,7 +45,7 @@
       "oid": "9e47b217e8a1911bb9fd6a25ead037a506600955"
     },
     "topoNoiseIndex": {
-      "oid": "8422d7aea250cd77772a6a6afe8cfeb7becd1875"
+      "oid": "8fcc976a8b5fddc4b1cac401104131484417f674"
     },
     "createCaloCells": {
       "oid": "dca8f651a6e20d50c6154b542308ea2a6f7dfe81"
