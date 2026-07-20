@@ -7,13 +7,16 @@
 #include <sys/types.h>
 #include <utility>
 #include <vector>
+#include <optional>
 
 // Gaudi
 #include "Gaudi/Algorithm.h"
+#include "GaudiKernel/ServiceHandle.h"
 #include "GaudiKernel/ToolHandle.h"
 
 // Key4HEP
 #include "RecCaloCommon/ICaloReadNeighboursMap.h"
+#include "RecCaloCommon/ICaloCellIndexerSvc.h"
 #include "RecCaloCommon/INoiseConstTool.h"
 #include "k4FWCore/DataHandle.h"
 #include "k4Interface/IGeoSvc.h"
@@ -51,28 +54,98 @@ namespace DDSegmentation {
  *  @author Giovanni Marchiori - algorithm rewritten for significant speed-up
  */
 
-/// internal cell representation used for clustering, to avoid cloning EDM objects repeatedly
-struct FastCell {
-  uint64_t cellID;
-  float energy;
-  float x;
-  float y;
-  float z;
-  uint8_t type; // 0=unused,1=seed,2=neighbour,3=lastNeighbour
-  float SoverN;
-};
-using FastCluster = std::vector<FastCell>;
-using FastClusterMap = std::map<uint32_t, FastCluster>; // TODO make it unordered or a vector
-
 class CaloTopoClusterFCCee : public Gaudi::Algorithm {
 public:
+  using CellID = dd4hep::DDSegmentation::CellID;
+
   CaloTopoClusterFCCee(const std::string& name, ISvcLocator* svcLoc);
 
   /**
    *
    */
-  StatusCode initialize();
+  virtual StatusCode initialize() override;
 
+  virtual StatusCode execute(const EventContext&) const override;
+
+private:
+  /// internal cell representation used for clustering, to avoid cloning EDM objects repeatedly
+  struct FastCell {
+    CellID cellID;
+    float energy;
+    float x;
+    float y;
+    float z;
+    uint8_t type; // 0=unused,1=seed,2=neighbour,3=lastNeighbour
+    float SoverN;
+    unsigned icoll;
+    unsigned ihit;
+  };
+  using FastCluster = std::vector<FastCell>;
+  using FastClusterMap = std::map<uint32_t, FastCluster>; // TODO make it unordered or a vector
+
+  /**
+   * @brief Map from cell ids to cell state:
+   *          0 = no cell
+   *          > 0: cell index + 1
+   *          < 0: -cluster index - 1
+   *
+   * This is implemented one of two ways.  If there is an ICaloIndexer
+   * available and we're dealing with more than 1% of the total cells,
+   * then we store the states using a std::vector (full representation).
+   * Otherwise, we use a std::unordered_map (sparse representation).
+   */
+  class CellsMap
+  {
+  public:
+    /**
+     * @brief Constructor.
+     * @param allCells All cells being clustered.
+     * @param indexer ICaloIndexer object for the detectors being handled,
+     *                or nullptr if one is not available.
+     */
+    CellsMap (const std::vector<FastCell>& allCells,
+              const k4::recCalo::ICaloIndexer* indexer);
+
+
+    /**
+     * @brief Look up a cell state given a cell id.
+     * Returns a reference to 0 if the cell wasn't in the input set.
+     * This should not be overwritten!
+     */
+    int32_t& find (CellID cellid)
+    {
+      if (m_indexer) {
+        unsigned ndx = m_indexer->index (cellid);
+        // Neighbour tool may return invalid cells...
+        if (ndx == k4::recCalo::ICaloIndexer::INVALID)
+          return m_zero;
+        return m_cellVec.at(ndx);
+      }
+      else {
+        auto it = m_cellMap.find (cellid);
+        if (it == m_cellMap.end()) {
+          return m_zero;
+        }
+        return it->second;
+      }
+    }
+
+    /// Map of cellid->state used in the sparse representation.
+    std::unordered_map<CellID, int32_t> m_cellMap;
+
+    /// Dummy.  In the sparse representation, we return a reference to this
+    /// for cells that are not present.
+    int32_t m_zero = 0;
+
+    /// Indexer object.  If this is non-null, we're using the full
+    /// representation.
+    const k4::recCalo::ICaloIndexer* m_indexer = nullptr;
+
+    /// Vector of cell states for the full representation.
+    std::vector<int32_t> m_cellVec;
+  };
+
+ 
   /** Build clusters from the found seeds.
    * First the function initialises a cluster in the preClusterCollection for the seed cells,
    * then it calls the CaloTopoClusterFCCee::searchForNeighbours function to retrieve the vector of next cellIDs to add
@@ -84,7 +157,9 @@ public:
    *   @param[in] clusters, collection of clusters to be filled by the algorithm (map of clusterID -> FastCluster)
    */
   StatusCode buildClusters(const std::vector<FastCell>& seedCells,
-                           const std::unordered_map<uint64_t, FastCell>& allCells, FastClusterMap& clusters) const;
+                           const std::vector<FastCell>& allCells,
+                           CellsMap& allCellsMap,
+                           FastClusterMap& clusters) const;
   /** Search for neighbours and add them to cluster collection
    *   @param[in] cellID, the cell ID for which to find the neighbours
    *   @param[in] clusterID, the current cluster ID
@@ -98,22 +173,21 @@ public:
    *   @param[in] allowClusterMerge, bool to allow for clusters to be merged
    *   return vector of cellID of found neighbours
    */
-  std::vector<uint64_t> searchForNeighbours(const uint64_t cellID, uint& clusterID, int nSigma,
-                                            const std::unordered_map<uint64_t, FastCell>& allCells,
-                                            std::unordered_map<uint64_t, uint32_t>& usedCells, FastClusterMap& clusters,
-                                            std::unordered_map<uint32_t, std::unordered_set<uint64_t>>& clusterMembers,
-                                            bool allowClusterMerge) const;
-
-  StatusCode execute(const EventContext&) const;
-
-  StatusCode finalize();
+  std::vector<CellID> searchForNeighbours(const CellID cellID,
+                                          uint& clusterID,
+                                          int nSigma,
+                                          const std::vector<FastCell>& allCells,
+                                          CellsMap& allCellsMap,
+                                          FastClusterMap& clusters,
+                                          std::unordered_map<uint32_t, std::unordered_set<CellID>>& clusterMembers,
+                                          bool allowClusterMerge) const;
 
 private:
   /// List of input cell collections
   Gaudi::Property<std::vector<std::string>> m_cellCollections{
       this, "cells", {}, "Names of CalorimeterHit collections to read"};
   /// the vector of input k4FWCore::DataHandles for the input cell collections
-  std::vector<k4FWCore::DataHandle<edm4hep::CalorimeterHitCollection>*> m_cellCollectionHandles;
+  mutable std::vector<k4FWCore::DataHandle<edm4hep::CalorimeterHitCollection> > m_cellCollectionHandles;
   // Cluster collection (output)
   mutable k4FWCore::DataHandle<edm4hep::ClusterCollection> m_clusterCollection{"clusters", Gaudi::DataHandle::Writer,
                                                                                this};
@@ -124,9 +198,11 @@ private:
   Gaudi::Property<std::vector<int>> m_caloIDs{this, "calorimeterIDs", {}, "Corresponding list of calorimeter IDs"};
 
   /// Handle for the cells noise tool
-  mutable ToolHandle<k4::recCalo::INoiseConstTool> m_noiseTool{"TopoCaloNoisyCells", this};
+  ToolHandle<k4::recCalo::INoiseConstTool> m_noiseTool
+    {this, "noiseTool", "TopoCaloNoisyCells", "Handle for the cells noise tool"};
   /// Handle for neighbours tool
-  mutable ToolHandle<k4::recCalo::ICaloReadNeighboursMap> m_neighboursTool{"TopoCaloNeighbours", this};
+  ToolHandle<k4::recCalo::ICaloReadNeighboursMap> m_neighboursTool
+    {this, "neigboursTool", "TopoCaloNeighbours", "Handle for tool to retrieve cell neighbours"};
   // flag to use a pre-calculated neighbor map
   Gaudi::Property<bool> m_useNeighborMap{this, "useNeighborMap", true, "use pre-calculated neighbor map"};
   // use GeoSvc when the neighbor map is not present
@@ -153,7 +229,10 @@ private:
   Gaudi::Property<bool> m_createClusterCellCollection{this, "createClusterCellCollection", false};
   /// General decoder to encode the calorimeter sub-system to determine which
   /// positions tool to use
-  dd4hep::DDSegmentation::BitFieldCoder* m_decoder;
+  std::optional<dd4hep::DDSegmentation::BitFieldCoder> m_decoder;
   int m_indexSystem;
+
+  ServiceHandle<k4::recCalo::ICaloCellIndexerSvc> m_indexerSvc
+    { this, "CaloCellIndexerSvc", "k4::recCalo::CaloCellIndexerSvc", "" };
 };
 #endif /* RECFCCEECALORIMETER_CALOTOPOCLUSTERFCCEE_H */
