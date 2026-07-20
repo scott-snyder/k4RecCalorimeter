@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "154090ae304feb63fbf73de34e8faac3020c1c1e",
-  "head": "435acbff38e3ee4fae8bc823442cd019156d1d37",
+  "prev": "a3606524e4024f0d9a0507b69bc06f752cd48c73",
+  "head": "62125398617dbb57e11e99906ce321d0559c023e",
   "applied": [
     "k4geo-noclone",
     "pairpi0",
@@ -12,11 +12,11 @@
     "discrit-wip",
     "discrit2-wip",
     "negNoiseRMS",
-    "noiseIndex",
-    "createTopoCluster",
-    "phiwrap"
+    "noiseIndex"
   ],
   "unapplied": [
+    "createTopoCluster",
+    "phiwrap",
     "noisedump",
     "ci",
     "subdetVolman2",
