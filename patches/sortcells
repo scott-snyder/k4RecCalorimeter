@@ -1,0 +1,8 @@
+Bottom: 5a2e5af5caa9383652fb820178d8f0a43cc381fc
+Top:    5a2e5af5caa9383652fb820178d8f0a43cc381fc
+Author: scott snyder <snyder@bnl.gov>
+Date:   2026-07-21 10:41:11 -0400
+
+Sort cells in CreatePositionedCaloCells.
+
+
