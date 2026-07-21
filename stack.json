@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "a608c39d102b72bd9ae1109713935d3398916e5f",
-  "head": "7847cd2a22361684fa8b91950ba0e2d5632eeb36",
+  "prev": "2e3616723eddfca9617860c211c8f24833293938",
+  "head": "56376d7215d812ff20cfe27a3489b3059d7a0f2e",
   "applied": [
     "k4geo-noclone",
     "pairpi0",
@@ -15,8 +15,7 @@
     "discrit2-wip",
     "noiseIndex",
     "createTopoCluster",
-    "sortcells",
-    "refresh-temp"
+    "sortcells"
   ],
   "unapplied": [
     "noisedump",
@@ -65,10 +64,7 @@
       "oid": "cd89b6925cd8548bae856d6ff8070801d0f7ca1b"
     },
     "sortcells": {
-      "oid": "d4a2dc9f5892510b7ad2c52482afc8468b2c91cb"
-    },
-    "refresh-temp": {
-      "oid": "7847cd2a22361684fa8b91950ba0e2d5632eeb36"
+      "oid": "56376d7215d812ff20cfe27a3489b3059d7a0f2e"
     },
     "noisedump": {
       "oid": "a3b8ccebb67fa481270d7b6a0496de0879ea792d"
