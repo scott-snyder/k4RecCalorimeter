@@ -1,10 +1,9 @@
 {
   "version": 5,
-  "prev": "97aae08baefe38b49bc2bb933718578a717130a0",
-  "head": "0349201d73f732fede7220a94f0c1440982ea620",
+  "prev": "0faee344db8ec87299b473b372dbe15f0e9337bd",
+  "head": "b2bda41193cb99754559272e452b3a3a39697683",
   "applied": [
-    "negNoiseRMS",
-    "refresh-temp"
+    "negNoiseRMS"
   ],
   "unapplied": [
     "phiwrap",
@@ -29,10 +28,7 @@
   "hidden": [],
   "patches": {
     "negNoiseRMS": {
-      "oid": "cf2812371b6767dfa42604633e98e7701f085eca"
-    },
-    "refresh-temp": {
-      "oid": "0349201d73f732fede7220a94f0c1440982ea620"
+      "oid": "b2bda41193cb99754559272e452b3a3a39697683"
     },
     "phiwrap": {
       "oid": "41ae3f1abaf68f4eb41cf1b39bb3c6f985bf0e48"
