@@ -1,13 +1,13 @@
 {
   "version": 5,
-  "prev": "a1f2f2e879175bdf97a8a833a364e273e8d8f561",
-  "head": "192226c2e5799de5fdf108729533d909f341874c",
+  "prev": "62b7155ace23efd6fc9b77b81cf719d9409d3714",
+  "head": "5d3829cbf98e2541f392e6938ab65316df28b3e2",
   "applied": [
-    "negNoiseRMS",
-    "phiwrap",
-    "ci"
+    "phiwrap"
   ],
   "unapplied": [
+    "negNoiseRMS",
+    "ci",
     "k4geo-noclone",
     "pairpi0",
     "xtalkIndex",
@@ -27,11 +27,11 @@
   ],
   "hidden": [],
   "patches": {
+    "phiwrap": {
+      "oid": "5d3829cbf98e2541f392e6938ab65316df28b3e2"
+    },
     "negNoiseRMS": {
       "oid": "b2bda41193cb99754559272e452b3a3a39697683"
-    },
-    "phiwrap": {
-      "oid": "8e17f5a975c1e177a3b3510388a470506ff993a6"
     },
     "ci": {
       "oid": "192226c2e5799de5fdf108729533d909f341874c"
