@@ -235,12 +235,15 @@ CreatePositionedCaloCells::operator()(const edm4hep::SimCalorimeterHitCollection
   }
 
   // 6. Copy information to CaloHitCollection
+  std::vector<uint64_t> ids;
+  for (const auto& cell : m_cellsMap) ids.push_back (cell.first);
+  std::ranges::sort (ids);
   edm4hep::CalorimeterHitCollection edmCellsCollection;
-  for (const auto& cell : m_cellsMap) {
-    if (m_addCellNoise || (!m_addCellNoise && cell.second != 0.)) {
+  for (const uint64_t cellid : ids) {
+    double energy = m_cellsMap[cellid];
+    if (m_addCellNoise || (!m_addCellNoise && energy != 0.)) {
       auto newCell = edmCellsCollection.create();
-      newCell.setEnergy(cell.second);
-      uint64_t cellid = cell.first;
+      newCell.setEnergy(energy);
       newCell.setCellID(cellid);
 
       // add cell position
