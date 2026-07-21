@@ -1,15 +1,15 @@
 {
   "version": 5,
-  "prev": "62b7155ace23efd6fc9b77b81cf719d9409d3714",
-  "head": "5d3829cbf98e2541f392e6938ab65316df28b3e2",
+  "prev": "d3798d5cc96d4b8b03b5c88ccae72cc5f7eb9cc7",
+  "head": "f8d1c65d48dd5850f832b262f87674cec6f00c4c",
   "applied": [
-    "phiwrap"
+    "phiwrap",
+    "k4geo-noclone",
+    "pairpi0"
   ],
   "unapplied": [
     "negNoiseRMS",
     "ci",
-    "k4geo-noclone",
-    "pairpi0",
     "xtalkIndex",
     "cellposIndex",
     "topoNoiseIndex",
@@ -30,17 +30,17 @@
     "phiwrap": {
       "oid": "5d3829cbf98e2541f392e6938ab65316df28b3e2"
     },
+    "k4geo-noclone": {
+      "oid": "6faad69ea2f614327bba2858cc12514def32af4f"
+    },
+    "pairpi0": {
+      "oid": "f8d1c65d48dd5850f832b262f87674cec6f00c4c"
+    },
     "negNoiseRMS": {
       "oid": "b2bda41193cb99754559272e452b3a3a39697683"
     },
     "ci": {
       "oid": "192226c2e5799de5fdf108729533d909f341874c"
-    },
-    "k4geo-noclone": {
-      "oid": "8035b5734cf2633f55548dc9d202b8b9db7aebe0"
-    },
-    "pairpi0": {
-      "oid": "ed806972082918fed512d269f15f6f8d4663471f"
     },
     "xtalkIndex": {
       "oid": "de2e6f085e1d897ef86256615c0fe7c4cabbd9b8"
