@@ -24,8 +24,7 @@ namespace k4::recCalo {
  * Odd positive (negative) multiples of pi map to (-)pi.
  */
 template <std::floating_point T>
-inline T wrapToPi(T phi)
-{
+inline T wrapToPi(T phi) {
   constexpr T PI = std::numbers::pi_v<T>;
   // For large values this is faster:
   if (phi < -100 || phi > 100) {
@@ -33,7 +32,8 @@ inline T wrapToPi(T phi)
   }
   while (phi > PI)
     phi -= 2 * PI;
-  while (phi < -PI) phi += 2 * PI;
+  while (phi < -PI)
+    phi += 2 * PI;
   return phi;
 }
 
@@ -41,8 +41,7 @@ inline T wrapToPi(T phi)
  * Return difference phiA - phiB in range [-pi, pi]
  */
 template <std::floating_point T>
-inline T deltaPhi(T phiA, T phiB)
-{
+inline T deltaPhi(T phiA, T phiB) {
   return wrapToPi(phiA - phiB);
 }
 
@@ -58,8 +57,7 @@ inline T deltaPhi(T phiA, T phiB)
  * The returned value is within the range [-pi, pi].
  */
 template <std::floating_point T>
-inline T phiMean(T phiA, T phiB)
-{
+inline T phiMean(T phiA, T phiB) {
   const T diff = wrapToPi(phiA - phiB);
   return wrapToPi(phiB + 0.5 * diff);
 }
@@ -74,10 +72,10 @@ inline T phiMean(T phiA, T phiB)
  * The returned value is within the range [-pi, pi].
  */
 template <std::floating_point T>
-inline T phiBisect(T phiA, T phiB)
-{
+inline T phiBisect(T phiA, T phiB) {
   T phi = 0.5 * (phiA + phiB);
-  if (phiA > phiB) phi += std::numbers::pi;
+  if (phiA > phiB)
+    phi += std::numbers::pi;
   return wrapToPi(phi);
 }
 
