@@ -35,8 +35,7 @@ typedef boost::mpl::list<float, double, long double> test_types;
 
 // cppcheck-suppress unknownMacro
 BOOST_TEST_DECORATOR(TOLERANCE)
-BOOST_AUTO_TEST_CASE_TEMPLATE(test_wrap, T, test_types)
-{
+BOOST_AUTO_TEST_CASE_TEMPLATE(test_wrap, T, test_types) {
   // Needed for boost to apply the correct tolerance in the comparison.
   // Also note the use of floats for all literals (0.0f) when used
   // in a comparison to ensure the lowest common type is float.
@@ -70,8 +69,7 @@ BOOST_AUTO_TEST_CASE_TEMPLATE(test_wrap, T, test_types)
 
 // cppcheck-suppress unknownMacro
 BOOST_TEST_DECORATOR(TOLERANCE)
-BOOST_AUTO_TEST_CASE_TEMPLATE(test_delta, T, test_types)
-{
+BOOST_AUTO_TEST_CASE_TEMPLATE(test_delta, T, test_types) {
   constexpr T PI = std::numbers::pi_v<T>;
   BOOST_TEST(deltaPhi<T>(3.0, 2.0) == 1.0f);
   BOOST_TEST(deltaPhi<T>(3 * M_PI, 2 * PI) == PI);
@@ -79,8 +77,7 @@ BOOST_AUTO_TEST_CASE_TEMPLATE(test_delta, T, test_types)
 }
 
 BOOST_TEST_DECORATOR(TOLERANCE)
-BOOST_AUTO_TEST_CASE_TEMPLATE(test_mean, T, test_types)
-{
+BOOST_AUTO_TEST_CASE_TEMPLATE(test_mean, T, test_types) {
   constexpr T PI = std::numbers::pi_v<T>;
   // Check values against unit vector addition
   std::vector<std::pair<T, T>> v = {{0, 0},
@@ -122,8 +119,7 @@ BOOST_AUTO_TEST_CASE_TEMPLATE(test_mean, T, test_types)
 }
 
 BOOST_TEST_DECORATOR(TOLERANCE)
-BOOST_AUTO_TEST_CASE_TEMPLATE(test_bisect, T, test_types)
-{
+BOOST_AUTO_TEST_CASE_TEMPLATE(test_bisect, T, test_types) {
   constexpr T PI = std::numbers::pi_v<T>;
   BOOST_TEST(phiBisect<T>(-1.0, 1.0) == 0.0f);
   BOOST_TEST(phiBisect<T>(1.0, -1.0) == PI);

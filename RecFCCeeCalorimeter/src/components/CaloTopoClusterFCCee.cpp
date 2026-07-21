@@ -260,7 +260,7 @@ StatusCode CaloTopoClusterFCCee::execute(const EventContext&) const {
 
       if (sumCellPhi == 0)
         phi0 = phi;
-      sumCellPhi += deltaPhi (phi, phi0) * energy;
+      sumCellPhi += deltaPhi(phi, phi0) * energy;
       sumCellTheta += theta * energy;
 
       // attach cell
@@ -281,12 +281,12 @@ StatusCode CaloTopoClusterFCCee::execute(const EventContext&) const {
       outCluster.setPosition(
           edm4hep::Vector3f(clusterPosX / clusterEnergy, clusterPosY / clusterEnergy, clusterPosZ / clusterEnergy));
 
-      sumCellPhi = wrapToPi (sumCellPhi / clusterEnergy + phi0);
+      sumCellPhi = wrapToPi(sumCellPhi / clusterEnergy + phi0);
       sumCellTheta /= clusterEnergy;
 
       for (size_t i = 0; i < cellEnergy.size(); ++i) {
-        deltaR +=
-            std::sqrt(std::pow(cellTheta[i] - sumCellTheta, 2) + std::pow(deltaPhi(cellPhi[i], sumCellPhi), 2)) * cellEnergy[i];
+        deltaR += std::sqrt(std::pow(cellTheta[i] - sumCellTheta, 2) + std::pow(deltaPhi(cellPhi[i], sumCellPhi), 2)) *
+                  cellEnergy[i];
       }
       outCluster.addToShapeParameters(deltaR / clusterEnergy);
     } else {
