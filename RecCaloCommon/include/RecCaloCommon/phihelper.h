@@ -30,14 +30,14 @@ namespace k4::recCalo {
  */
 template <std::floating_point T>
 inline constexpr T wrapToPi(T phi) {
-  constexpr T TWOPI = 2*std::numbers::pi_v<T>;
-  constexpr T INV2PI = std::numbers::inv_pi_v<T>/2;
+  constexpr T TWOPI = 2 * std::numbers::pi_v<T>;
+  constexpr T INV2PI = std::numbers::inv_pi_v<T> / 2;
   T x = phi * INV2PI;
 
   // Round x to the nearest integer.
   // https://stackoverflow.com/questions/17035464/a-fast-method-to-round-a-double-to-a-32-bit-int-explained
-  static_assert (std::numeric_limits<T>::digits <= sizeof (long int) * CHAR_BIT);
-  constexpr T TOINT = 0x1.8p0 * (1ul<<(std::numeric_limits<T>::digits-1));
+  static_assert(std::numeric_limits<T>::digits <= sizeof(long int) * CHAR_BIT);
+  constexpr T TOINT = 0x1.8p0 * (1ul << (std::numeric_limits<T>::digits - 1));
   T ix = (x + TOINT) - TOINT;
 
   // Above gives banker's rounding; that is, halves round to even integers.
@@ -46,11 +46,13 @@ inline constexpr T wrapToPi(T phi) {
   // better way of doing this?
   T diff = ix - x;
   if (std::abs(diff) == 0.5) {
-    if (ix > 0) -- ix;
-    else if (ix < 0) ++ix;
+    if (ix > 0)
+      -- ix;
+    else if (ix < 0)
+      ++ix;
   }
 
-  return phi - TWOPI*ix;
+  return phi - TWOPI * ix;
 }
 
 /**
