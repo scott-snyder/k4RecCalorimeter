@@ -1,19 +1,19 @@
 {
   "version": 5,
-  "prev": "7105c45b853ff1265426afdbe68f041937121495",
-  "head": "e08940341aa075d46c91102991b68a8bd6d3e3be",
+  "prev": "8681eb92696def4b98ac43cfd70e95afa7614b47",
+  "head": "f2bd0f61a884bf7cb500a84418de186e8458f3a3",
   "applied": [
     "phiwrap",
     "k4geo-noclone",
     "pairpi0",
     "xtalkIndex",
     "cellposIndex",
-    "topoNoiseIndex",
-    "createCaloCells",
-    "discrit-wip",
-    "discrit2-wip"
+    "topoNoiseIndex"
   ],
   "unapplied": [
+    "createCaloCells",
+    "discrit-wip",
+    "discrit2-wip",
     "negNoiseRMS",
     "ci",
     "noiseIndex",
