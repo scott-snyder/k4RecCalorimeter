@@ -1,15 +1,15 @@
 {
   "version": 5,
-  "prev": "750eae906b077583b5f960e19d808880d916724d",
-  "head": "6d6b0d861a96b70240f1c4a5faea9392c90ea8da",
+  "prev": "ec95c59db98804db847f4113aba4b2bf22120a16",
+  "head": "9c5517432321563d4d81bb0827875c193f4cae66",
   "applied": [
     "phiwrap",
     "k4geo-noclone",
     "pairpi0",
-    "xtalkIndex",
-    "cellposIndex"
+    "xtalkIndex"
   ],
   "unapplied": [
+    "cellposIndex",
     "negNoiseRMS",
     "ci",
     "topoNoiseIndex",
