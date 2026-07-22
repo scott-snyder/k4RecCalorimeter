@@ -317,7 +317,7 @@ StatusCode CaloTopoClusterFCCee::execute(const EventContext&) const {
 
       for (size_t i = 0; i < cellEnergy.size(); ++i) {
         deltaR +=
-          std::hypot(cellTheta[i] - sumCellTheta, deltaPhi(cellPhi[i] - sumCellPhi)) * cellEnergy[i];
+          std::hypot(cellTheta[i] - sumCellTheta, deltaPhi(cellPhi[i], sumCellPhi)) * cellEnergy[i];
       }
       outCluster.addToShapeParameters(deltaR / clusterEnergy);
     } else {
