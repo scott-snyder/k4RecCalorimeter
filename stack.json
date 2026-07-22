@@ -1,17 +1,17 @@
 {
   "version": 5,
-  "prev": "44e9a7890e161ff18eb9e9702788b37f466832ad",
-  "head": "9c5517432321563d4d81bb0827875c193f4cae66",
+  "prev": "750eae906b077583b5f960e19d808880d916724d",
+  "head": "6d6b0d861a96b70240f1c4a5faea9392c90ea8da",
   "applied": [
     "phiwrap",
     "k4geo-noclone",
     "pairpi0",
-    "xtalkIndex"
+    "xtalkIndex",
+    "cellposIndex"
   ],
   "unapplied": [
     "negNoiseRMS",
     "ci",
-    "cellposIndex",
     "topoNoiseIndex",
     "createCaloCells",
     "discrit-wip",
@@ -39,14 +39,14 @@
     "xtalkIndex": {
       "oid": "9c5517432321563d4d81bb0827875c193f4cae66"
     },
+    "cellposIndex": {
+      "oid": "6d6b0d861a96b70240f1c4a5faea9392c90ea8da"
+    },
     "negNoiseRMS": {
       "oid": "b2bda41193cb99754559272e452b3a3a39697683"
     },
     "ci": {
       "oid": "192226c2e5799de5fdf108729533d909f341874c"
-    },
-    "cellposIndex": {
-      "oid": "9b6f5efd7fc205eaced5ec82a30adadd11ba7db0"
     },
     "topoNoiseIndex": {
       "oid": "eed8eb754d82ed5f25d7d682a9eb0bd20de975b0"
