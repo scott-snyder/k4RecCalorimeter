@@ -1,12 +1,10 @@
 {
   "version": 5,
-  "prev": "e613db1156274091432001caf7184964c2004b05",
-  "head": "c71b1026c17ee8e0151f324cf4aab08cf6a53684",
+  "prev": "64ba3da73db7b93cb879ad04b89950bca402b223",
+  "head": "81427be939febf095600a242b1dd04ba9b1c8262",
   "applied": [
     "phiwrap",
-    "phiwrap2"
-  ],
-  "unapplied": [
+    "phiwrap2",
     "k4geo-noclone",
     "pairpi0",
     "xtalkIndex",
@@ -16,7 +14,9 @@
     "createTopoCluster",
     "createCaloCells",
     "discrit-wip",
-    "discrit2-wip",
+    "discrit2-wip"
+  ],
+  "unapplied": [
     "sortcells",
     "negNoiseRMS",
     "ci",
@@ -35,34 +35,34 @@
       "oid": "c71b1026c17ee8e0151f324cf4aab08cf6a53684"
     },
     "k4geo-noclone": {
-      "oid": "6faad69ea2f614327bba2858cc12514def32af4f"
+      "oid": "3238e88d90d6ad40ec6a5078a874f088eff311ac"
     },
     "pairpi0": {
-      "oid": "f8d1c65d48dd5850f832b262f87674cec6f00c4c"
+      "oid": "b71b6b533f1e365753aa73f27c07228303d8aab7"
     },
     "xtalkIndex": {
-      "oid": "9c5517432321563d4d81bb0827875c193f4cae66"
+      "oid": "7b78b682a5475eac6fdf7fd85484bf79ef4dda56"
     },
     "cellposIndex": {
-      "oid": "6d6b0d861a96b70240f1c4a5faea9392c90ea8da"
+      "oid": "79af6bc43b6c358137c2fb588283d93eec83f169"
     },
     "topoNoiseIndex": {
-      "oid": "f2bd0f61a884bf7cb500a84418de186e8458f3a3"
+      "oid": "884914c00f06f66dba9188a20404d2154e065694"
     },
     "noiseIndex": {
-      "oid": "c04d7edc1086ff76fa84d126c140b2a8ba3641dc"
+      "oid": "d010dd24f24f7a036d7e677342f34288235da4d9"
     },
     "createTopoCluster": {
-      "oid": "df5ad7631378174c25fe1cb6ae84e32da1fd5f2d"
+      "oid": "33b0837be43e9327461852fa6cba498418438342"
     },
     "createCaloCells": {
-      "oid": "3aa15d3c41b419e2e21735d5368c15722f932656"
+      "oid": "6d652000e682d6430062463abe7dd3db7a025308"
     },
     "discrit-wip": {
-      "oid": "735fbca2d1a8824574585dd158459686c9e2f78d"
+      "oid": "11c7055394d6dc7fa9d069a374d531cf5d838e60"
     },
     "discrit2-wip": {
-      "oid": "b546a86ca6ff0d0f8d895abf53967c42d6e60a13"
+      "oid": "81427be939febf095600a242b1dd04ba9b1c8262"
     },
     "sortcells": {
       "oid": "0a7c9b93816c2c47045e82a5bb430245156a45f0"
