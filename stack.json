@@ -1,21 +1,21 @@
 {
   "version": 5,
-  "prev": "84298d60825c2aa8278204b2c37a405c136e17b1",
-  "head": "f2bd0f61a884bf7cb500a84418de186e8458f3a3",
+  "prev": "7105c45b853ff1265426afdbe68f041937121495",
+  "head": "e08940341aa075d46c91102991b68a8bd6d3e3be",
   "applied": [
     "phiwrap",
     "k4geo-noclone",
     "pairpi0",
     "xtalkIndex",
     "cellposIndex",
-    "topoNoiseIndex"
+    "topoNoiseIndex",
+    "createCaloCells",
+    "discrit-wip",
+    "discrit2-wip"
   ],
   "unapplied": [
     "negNoiseRMS",
     "ci",
-    "createCaloCells",
-    "discrit-wip",
-    "discrit2-wip",
     "noiseIndex",
     "createTopoCluster",
     "sortcells",
@@ -45,20 +45,20 @@
     "topoNoiseIndex": {
       "oid": "f2bd0f61a884bf7cb500a84418de186e8458f3a3"
     },
+    "createCaloCells": {
+      "oid": "8aa4f5f233334689f4cf8c0f77481a93c05f9a9a"
+    },
+    "discrit-wip": {
+      "oid": "253c084c6e9c69796bb9c7d259c3c3f85e507a36"
+    },
+    "discrit2-wip": {
+      "oid": "e08940341aa075d46c91102991b68a8bd6d3e3be"
+    },
     "negNoiseRMS": {
       "oid": "b2bda41193cb99754559272e452b3a3a39697683"
     },
     "ci": {
       "oid": "192226c2e5799de5fdf108729533d909f341874c"
-    },
-    "createCaloCells": {
-      "oid": "725816bc2cd02a70d6f94988f80e41e91c7c8a92"
-    },
-    "discrit-wip": {
-      "oid": "17d84d714c81769ee91355c58a6b692c1e443b11"
-    },
-    "discrit2-wip": {
-      "oid": "031bd5574bcae58862fc0526391ed1dcdab2739f"
     },
     "noiseIndex": {
       "oid": "b0e36843c492807dbb9ca6671a8a495d6c927ca4"
