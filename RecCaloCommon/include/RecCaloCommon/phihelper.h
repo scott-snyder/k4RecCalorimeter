@@ -47,7 +47,7 @@ inline constexpr T wrapToPi(T phi) {
   T diff = ix - x;
   if (std::abs(diff) == 0.5) {
     if (ix > 0)
-      -- ix;
+      --ix;
     else if (ix < 0)
       ++ix;
   }
