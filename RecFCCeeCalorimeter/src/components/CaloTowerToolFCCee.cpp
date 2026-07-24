@@ -8,6 +8,8 @@
 // DD4hep
 #include "DD4hep/Detector.h"
 
+extern FILE* flog(const char*);
+
 DECLARE_COMPONENT(CaloTowerToolFCCee)
 
 StatusCode CaloTowerToolFCCee::initialize() {
