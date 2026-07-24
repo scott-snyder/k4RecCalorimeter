@@ -157,14 +157,14 @@ uint CaloTowerToolFCCee::CellsIntoTowers(std::vector<std::vector<float>>& aTower
     double et = cell.getEnergy() * sin(cellTheta);
     if (et > 0) {
       aTowers[iTheta][phiIndexTower(iPhi)] += et;
-      if (iTheta == 117 || iPhi == 480) {
+      if (iTheta == 117 && iPhi == 480) {
         FILE* f = flog("add pos cell ");
         fprintf (f, "%f %f\n", et, aTowers[iTheta][phiIndexTower(iPhi)]);
       }
     }
     else {
       negTowers[iTheta*m_nPhiTower + phiIndexTower(iPhi)] += et;
-      if (iTheta == 117 || iPhi == 480) {
+      if (iTheta == 117 && iPhi == 480) {
         FILE* f = flog("add neg cell ");
         fprintf (f, "%f %f\n", et, negTowers[iTheta*m_nPhiTower + phiIndexTower(iPhi)]);
       }
@@ -183,7 +183,7 @@ uint CaloTowerToolFCCee::CellsIntoTowers(std::vector<std::vector<float>>& aTower
   for (size_t jTheta = 0; (int)jTheta < m_nThetaTower; ++jTheta) {
     for (size_t jPhi = 0; (int)jPhi < m_nPhiTower; ++jPhi) {
       aTowers[jTheta][jPhi] += negTowers[jTheta*m_nPhiTower + jPhi];
-      if (iTheta == 117 || iPhi == 480) {
+      if (iTheta == 117 && iPhi == 480) {
         FILE* f = flog("sum cell ");
         fprintf (f, "%f\n", aTowers[jTheta][jPhi]);
       }
