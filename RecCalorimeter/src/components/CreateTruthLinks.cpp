@@ -7,7 +7,7 @@ FILE* flog(const char* what)
   static FILE* f = nullptr;
   if (!f)
     f = fopen ("f.log", "w");
-  fprintf (f, "%8d %s ", ilog++, what);
+  fprintf (f, "-> %3d %s ", ilog++, what);
   return f;
 }
 
@@ -153,6 +153,8 @@ StatusCode CreateTruthLinks::execute(const EventContext&) const {
         double e = simHitContrib.getEnergy() * calib_factor;
         debug() << "initial true contributor " << k << " id " << origmcp.id() << " (with E = " << origmcp.getEnergy()
                 << " and pdg " << origmcp.getPDG() << " ) e hit: " << e << endmsg;
+        fprintf (f, "    contrib %d index %d E = %f pdg %d Ehit %f\n",
+                 k, index_mcp, origmcp.getEnergy(), origmcp.getPDG(), e);
 
         if (doRemapping) {
           if (remap_as_you_go.find(index_mcp) != remap_as_you_go.end()) {
@@ -478,6 +480,8 @@ StatusCode CreateTruthLinks::execute(const EventContext&) const {
         debug() << "gs " << mcp.getGeneratorStatus() << " dint " << mcp.isDecayedInTracker() << " bs "
                 << mcp.isBackscatter() << " npar " << mcp.getParents().size() << " pdg " << mcp.getPDG() << " end"
                 << " " << mcp.getEndpoint()[0] << " " << mcp.getEndpoint()[1] << " " << mcp.getEndpoint()[2] << endmsg;
+        fprintf (f, "      after remap %d index %d %d E = %f pdg %d Ehit %f\n",
+                 k, index_mcp, mcp.id().index, mcp.getEnergy(), mcp.getPDG(), e);
 
         simHitMapEnergy[mcp.id().index] += e;
       } // end loop over contributions
