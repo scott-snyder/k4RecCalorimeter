@@ -170,6 +170,13 @@ uint CaloTowerToolFCCee::CellsIntoTowers(std::vector<std::vector<float>>& aTower
       aTowers[jTheta][jPhi] = dTowers[jTheta*m_nPhiTower + jPhi];
     }
   }
+  for (auto& p : m_cellsInTowers) {
+    std::sort (p.second.begin(), p.second.end(),
+               [](const edm4hep::CalorimeterHit& a,
+                  const edm4hep::CalorimeterHit& b)
+               { return a.getCellID() < b.getCellID(); });
+                  
+  }
 
   return clusteredCells;
 }
