@@ -170,9 +170,9 @@ uint CaloTowerToolFCCee::CellsIntoTowers(std::vector<std::vector<float>>& aTower
   }
 
 
-  for (size_t iTheta = 0; iTheta < m_nThetaTower; ++iTheta) {
-    for (size_t iPhi = 0; iPhi < m_nPhiTower; ++iPhi) {
-      aTowers[iTheta][iPhi] += negTowers[iTheta*m_nPhiTower + iPhi];
+  for (size_t jTheta = 0; (int)jTheta < m_nThetaTower; ++jTheta) {
+    for (size_t jPhi = 0; (int)jPhi < m_nPhiTower; ++jPhi) {
+      aTowers[jTheta][jPhi] += negTowers[jTheta*m_nPhiTower + jPhi];
     }
   }
   for (auto& p : m_cellsInTowers) {
