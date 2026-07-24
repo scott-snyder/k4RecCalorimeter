@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "98f8b224f3bf8317c2b4878d879b53d75a0c646a",
-  "head": "0e7108c29c41de8efd27b3d2de646bf95729da83",
+  "prev": "5274fd6f23d2039d883401881a323a6520eb15ed",
+  "head": "c10ca32561486553db1370a959bbdb952d3c8fb3",
   "applied": [
     "phiwrap",
     "phiwrap2",
@@ -17,10 +17,10 @@
     "discrit2-wip",
     "idfix",
     "doublesum",
-    "cprint"
+    "cprint",
+    "sortcells"
   ],
   "unapplied": [
-    "sortcells",
     "towersort",
     "xprint",
     "negNoiseRMS",
@@ -79,7 +79,7 @@
       "oid": "0e7108c29c41de8efd27b3d2de646bf95729da83"
     },
     "sortcells": {
-      "oid": "2f439ff660ebbd834a852ca254bda99d3ee8b4d8"
+      "oid": "c10ca32561486553db1370a959bbdb952d3c8fb3"
     },
     "towersort": {
       "oid": "2ae6495eb4e9214f50096a610367a56bdcea1239"
