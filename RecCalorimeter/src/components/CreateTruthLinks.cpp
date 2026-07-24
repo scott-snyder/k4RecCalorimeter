@@ -493,6 +493,9 @@ StatusCode CreateTruthLinks::execute(const EventContext&) const {
           link.setFrom(caloHit);
           link.setTo(mcp);
           double w = simHitMapEnergy[mcp.id().index] / caloHit.getEnergy();
+          fprintf (f, "      made link %d %d %f\n",
+                   (int)(caloHit.id().index),
+                   (int)(mcp.id().index), w);
           sumw += w;
           link.setWeight(w);
         }
