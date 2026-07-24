@@ -10,6 +10,16 @@
 #include "edm4hep/ClusterCollection.h"
 #include "edm4hep/Vector3f.h"
 
+int ilog = 0;
+FILE* flog(const char* what)
+{
+  static FILE* f = nullptr;
+  if (!f)
+    f = fopen ("f.log", "w");
+  fprintf (f, "-> %3d %s ", ilog++, what);
+  return f;
+}
+
 DECLARE_COMPONENT(CreateCaloClustersSlidingWindowFCCee)
 
 CreateCaloClustersSlidingWindowFCCee::CreateCaloClustersSlidingWindowFCCee(const std::string& name, ISvcLocator* svcLoc)
@@ -80,6 +90,15 @@ StatusCode CreateCaloClustersSlidingWindowFCCee::execute(const EventContext&) co
   if (m_towerTool->buildTowers(m_towers, true) == 0) {
     debug() << "Empty cell collection." << endmsg;
     return StatusCode::SUCCESS;
+  }
+
+  FILE* f = flog ("SW clusters ");
+  fprintf (f, "%s --- towers\n", this->name().c_str());
+  for (size_t i = 0; i < m_towers.size(); ++i) {
+    fprintf (f, " %3d", (int)i);
+    for (float e : m_towers[i])
+      fprintf (f, " %f", e);
+    fprintf (f, "\n");
   }
 
   // 2. Find local maxima with sliding window, build preclusters, calculate their barycentre position
@@ -237,6 +256,11 @@ StatusCode CreateCaloClustersSlidingWindowFCCee::execute(const EventContext&) co
             newPreCluster.phi = atan2(posY, posX);
             newPreCluster.transEnergy = sumEnergyFin;
             m_preClusters.push_back(newPreCluster);
+            f = flog("  precluster ");
+            fprintf (f, "et %f pos %f %f %f ang %f %f\n",
+                     sumEnergyFin, posX, posY, posZ,
+                     newPreCluster.theta,
+                     newPreCluster.phi);
           }
         }
       }
@@ -334,6 +358,9 @@ StatusCode CreateCaloClustersSlidingWindowFCCee::execute(const EventContext&) co
       auto cluster = clusters->create();
       cluster.setPosition(edm4hep::Vector3f(clu.X, clu.Y, clu.Z));
       cluster.setEnergy(clusterEnergy);
+      FILE* f = flog("   final cluster ");
+      fprintf (f, "%f %f %f %f\n",
+               clusterEnergy, clu.X, clu.Y, clu.Z);
       debug() << "Attaching cells to the clusters." << endmsg;
       m_towerTool->attachCells(clu.theta, clu.phi, halfThetaFin, halfPhiFin, cluster, clusterCells,
                                m_ellipseFinalCluster);
