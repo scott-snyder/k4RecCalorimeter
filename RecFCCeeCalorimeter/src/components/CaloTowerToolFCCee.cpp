@@ -8,6 +8,8 @@
 // DD4hep
 #include "DD4hep/Detector.h"
 
+extern FILE* flog(const char*);
+
 DECLARE_COMPONENT(CaloTowerToolFCCee)
 
 StatusCode CaloTowerToolFCCee::initialize() {
@@ -156,14 +158,14 @@ uint CaloTowerToolFCCee::CellsIntoTowers(std::vector<std::vector<float>>& aTower
     if (et > 0) {
       aTowers[iTheta][phiIndexTower(iPhi)] += et;
       if (iTheta == 117 || iPhi == 480) {
-        f = flog("add pos cell ");
+        FILE* f = flog("add pos cell ");
         fprintf (f, "%f %f\n", et, aTowers[iTheta][phiIndexTower(iPhi)]);
       }
     }
     else {
       negTowers[iTheta*m_nPhiTower + phiIndexTower(iPhi)] += et;
       if (iTheta == 117 || iPhi == 480) {
-        f = flog("add neg cell ");
+        FILE* f = flog("add neg cell ");
         fprintf (f, "%f %f\n", et, negTowers[iTheta*m_nPhiTower + phiIndexTower(iPhi)]);
       }
     }
@@ -182,7 +184,7 @@ uint CaloTowerToolFCCee::CellsIntoTowers(std::vector<std::vector<float>>& aTower
     for (size_t jPhi = 0; (int)jPhi < m_nPhiTower; ++jPhi) {
       aTowers[jTheta][jPhi] += negTowers[jTheta*m_nPhiTower + jPhi];
       if (iTheta == 117 || iPhi == 480) {
-        f = flog("sum cell ");
+        FILE* f = flog("sum cell ");
         fprintf (f, "%f\n", aTowers[jTheta][jPhi]);
       }
     }
