@@ -183,7 +183,7 @@ uint CaloTowerToolFCCee::CellsIntoTowers(std::vector<std::vector<float>>& aTower
   for (size_t jTheta = 0; (int)jTheta < m_nThetaTower; ++jTheta) {
     for (size_t jPhi = 0; (int)jPhi < m_nPhiTower; ++jPhi) {
       aTowers[jTheta][jPhi] += negTowers[jTheta*m_nPhiTower + jPhi];
-      if (iTheta == 117 && iPhi == 480) {
+      if (jTheta == 117 && jPhi == 480) {
         FILE* f = flog("sum cell ");
         fprintf (f, "%f\n", aTowers[jTheta][jPhi]);
       }
