@@ -1,6 +1,16 @@
 #include "CreateTruthLinks.h"
 #include <cmath>
 
+int ilog = 0;
+FILE* flog(const char* what)
+{
+  static FILE* f = nullptr;
+  if (!f)
+    f = fopen ("f.log", "w");
+  fprintf (f, "-> %3d %s ", ilog++, what);
+  return f;
+}
+
 DECLARE_COMPONENT(CreateTruthLinks)
 
 CreateTruthLinks::CreateTruthLinks(const std::string& name, ISvcLocator* svcLoc) : Gaudi::Algorithm(name, svcLoc) {
@@ -91,15 +101,19 @@ StatusCode CreateTruthLinks::execute(const EventContext&) const {
   const edm4hep::MCParticleCollection* mcparticles = m_mcparticles.get();
 
   debug() << "Creating CaloHit <-> MCParticle links : " << endmsg;
+  FILE* f = flog("Creating CaloHit <-> MCParticle links :\n");
 
   // loop over calo<->sim hit collection
   std::map<int, int> nhits; // map of nhits with given ID in link collections
   for (size_t ih = 0; ih < m_cell_hit_linkCollectionHandles.size(); ih++) {
+    f = flog("Processing input sim <-> calo hit link collection");
+    fprintf (f, " %d : %s\n", (int)ih, m_cell_hit_linkCollectionHandles[ih]->objKey().c_str());
     debug() << "Processing input sim <-> calo hit link collection " << ih << " : "
             << m_cell_hit_linkCollectionHandles[ih]->objKey() << endmsg;
     const edm4hep::CaloHitSimCaloHitLinkCollection* caloHitSimCaloHitLinks =
         m_cell_hit_linkCollectionHandles[ih]->get();
     debug() << "Collection size: " << caloHitSimCaloHitLinks->size() << endmsg;
+    fprintf (f, "Collection size: %d\n", (int)caloHitSimCaloHitLinks->size());
 
     // Loop over the G4 hits, find the associated calo hits, then loop over
     // the G4 hit contribution to calculate contribution of each MCParticle to the calo hit
@@ -107,6 +121,9 @@ StatusCode CreateTruthLinks::execute(const EventContext&) const {
       debug() << "Processing new sim <-> calo hit link: " << endmsg;
       const auto& simHit = assoc.getTo();
       const auto& caloHit = assoc.getFrom();
+      f = flog("Processing new sim <-> calo hit link: ");
+      fprintf (f, "%d %d\n",
+               (int)(simHit.id().index), (int)(caloHit.id().index));
       debug() << "Sim hit id and index: " << simHit.id() << " " << simHit.id().index << endmsg;
       debug() << "Calo hit id and index: " << caloHit.id() << " " << caloHit.id().index << endmsg;
       if (nhits[simHit.id().index + ih * (1 << 24)] > 0) {
@@ -121,6 +138,8 @@ StatusCode CreateTruthLinks::execute(const EventContext&) const {
       // assuming here there is at most one simhit per calo hit (0 in the case of noise hit)
       double calib_factor = caloHit.getEnergy() / simHit.getEnergy();
       debug() << "Calib factor = " << calib_factor << endmsg;
+      fprintf (f, "  calo E %f sim E %f calib %f\n",
+               caloHit.getEnergy(), simHit.getEnergy(), calib_factor);
 
       // now loop over truth contributions
       int k = -1;
@@ -134,6 +153,8 @@ StatusCode CreateTruthLinks::execute(const EventContext&) const {
         double e = simHitContrib.getEnergy() * calib_factor;
         debug() << "initial true contributor " << k << " id " << origmcp.id() << " (with E = " << origmcp.getEnergy()
                 << " and pdg " << origmcp.getPDG() << " ) e hit: " << e << endmsg;
+        fprintf (f, "    contrib %d index %d E = %f pdg %d Ehit %f\n",
+                 k, index_mcp, origmcp.getEnergy(), origmcp.getPDG(), e);
 
         if (doRemapping) {
           if (remap_as_you_go.find(index_mcp) != remap_as_you_go.end()) {
@@ -459,6 +480,8 @@ StatusCode CreateTruthLinks::execute(const EventContext&) const {
         debug() << "gs " << mcp.getGeneratorStatus() << " dint " << mcp.isDecayedInTracker() << " bs "
                 << mcp.isBackscatter() << " npar " << mcp.getParents().size() << " pdg " << mcp.getPDG() << " end"
                 << " " << mcp.getEndpoint()[0] << " " << mcp.getEndpoint()[1] << " " << mcp.getEndpoint()[2] << endmsg;
+        fprintf (f, "      after remap %d index %d %d E = %f pdg %d Ehit %f\n",
+                 k, index_mcp, mcp.id().index, mcp.getEnergy(), mcp.getPDG(), e);
 
         simHitMapEnergy[mcp.id().index] += e;
       } // end loop over contributions
@@ -470,6 +493,9 @@ StatusCode CreateTruthLinks::execute(const EventContext&) const {
           link.setFrom(caloHit);
           link.setTo(mcp);
           double w = simHitMapEnergy[mcp.id().index] / caloHit.getEnergy();
+          fprintf (f, "      made link %d %d %f\n",
+                   (int)(caloHit.id().index),
+                   (int)(mcp.id().index), w);
           sumw += w;
           link.setWeight(w);
         }
