@@ -358,6 +358,9 @@ StatusCode CreateCaloClustersSlidingWindowFCCee::execute(const EventContext&) co
       auto cluster = clusters->create();
       cluster.setPosition(edm4hep::Vector3f(clu.X, clu.Y, clu.Z));
       cluster.setEnergy(clusterEnergy);
+      FILE* f = flog("   final cluster ");
+      fprintf (f, "%f %f %f %f\n",
+               clusterEnergy, clu.X, clu.Y, clu.Z);
       debug() << "Attaching cells to the clusters." << endmsg;
       m_towerTool->attachCells(clu.theta, clu.phi, halfThetaFin, halfPhiFin, cluster, clusterCells,
                                m_ellipseFinalCluster);

@@ -156,10 +156,6 @@ uint CaloTowerToolFCCee::CellsIntoTowers(std::vector<std::vector<float>>& aTower
     // endmsg;
     double et = cell.getEnergy() * sin(cellTheta);
     dTowers[iTheta*m_nPhiTower + phiIndexTower(iPhi)] += et;
-    if (iTheta == 117 && iPhi == 480) {
-      FILE* f = flog("add cell ");
-      fprintf (f, "%f %f\n", et, dTowers[iTheta*m_nPhiTower + phiIndexTower(iPhi)]);
-    }
     if (fillTowersCells) {
       clusteredCells++;
       m_cellsInTowers[std::make_pair(iTheta, phiIndexTower(iPhi))].push_back(cell);
@@ -174,10 +170,6 @@ uint CaloTowerToolFCCee::CellsIntoTowers(std::vector<std::vector<float>>& aTower
   for (size_t jTheta = 0; (int)jTheta < m_nThetaTower; ++jTheta) {
     for (size_t jPhi = 0; (int)jPhi < m_nPhiTower; ++jPhi) {
       aTowers[jTheta][jPhi] = dTowers[jTheta*m_nPhiTower + jPhi];
-      if (jTheta == 117 && jPhi == 480) {
-        FILE* f = flog("rounded cell ");
-        fprintf (f, "%f\n", aTowers[jTheta][jPhi]);
-      }
     }
   }
   for (auto& p : m_cellsInTowers) {
