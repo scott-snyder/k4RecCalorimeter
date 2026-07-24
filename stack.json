@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "0c6d2e1a6058155d67e9d8d8f3415b710c576339",
-  "head": "828abb9c377c4a76f92a5438793f2129563d454a",
+  "prev": "915d99cb3f24aa9e7e3ec4a5795dcd41cb62d86c",
+  "head": "4d141ef101a2a18a575fa8144b9cdf964effc850",
   "applied": [
     "phiwrap",
     "phiwrap2",
@@ -72,7 +72,7 @@
       "oid": "ddff04e2622248f8d6fa72022917e25b8b70beb4"
     },
     "doublesum": {
-      "oid": "828abb9c377c4a76f92a5438793f2129563d454a"
+      "oid": "4d141ef101a2a18a575fa8144b9cdf964effc850"
     },
     "cprint": {
       "oid": "be189271c57962e552ed7ee9b05b8c4a2b2eba94"
