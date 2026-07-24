@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "9b35d4a507720c782928a52d6715c68f13720c4b",
-  "head": "07f05f5f1990d0871f8654986fd8cf11d2fef898",
+  "prev": "e5c2c65255164ea4d76e644856f7f11007994393",
+  "head": "e1b00142151c11d9f6eaf750b117a4ea9bfbeab6",
   "applied": [
     "phiwrap",
     "phiwrap2",
@@ -17,11 +17,11 @@
     "discrit2-wip",
     "idfix",
     "doublesum",
-    "towersort",
     "sortcells",
     "cprint"
   ],
   "unapplied": [
+    "towersort",
     "xprint",
     "negNoiseRMS",
     "ci",
@@ -75,14 +75,14 @@
     "doublesum": {
       "oid": "1195c64979870995a9b3001e42693514e28110cf"
     },
-    "towersort": {
-      "oid": "2ae6495eb4e9214f50096a610367a56bdcea1239"
-    },
     "sortcells": {
-      "oid": "6e14ae043f26537d6957df29beee1c397ae2a9ad"
+      "oid": "2f439ff660ebbd834a852ca254bda99d3ee8b4d8"
     },
     "cprint": {
-      "oid": "07f05f5f1990d0871f8654986fd8cf11d2fef898"
+      "oid": "e1b00142151c11d9f6eaf750b117a4ea9bfbeab6"
+    },
+    "towersort": {
+      "oid": "2ae6495eb4e9214f50096a610367a56bdcea1239"
     },
     "xprint": {
       "oid": "2f921673b2f7a4c3b21a6e2a2bf94a9fd261b167"
