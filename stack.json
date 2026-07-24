@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "e7443c470c2150612cf8e77a4a894a64f56acdfc",
-  "head": "790c23e5ba64ea15bb9e4a8868b29d5992f37bf5",
+  "prev": "894e88382dc332dacf6bad0c1417343e9cfee3b8",
+  "head": "ddff04e2622248f8d6fa72022917e25b8b70beb4",
   "applied": [
     "phiwrap",
     "phiwrap2",
@@ -15,12 +15,12 @@
     "createCaloCells",
     "discrit-wip",
     "discrit2-wip",
-    "idfix",
-    "towersort",
-    "cprint",
-    "sortcells"
+    "idfix"
   ],
   "unapplied": [
+    "towersort",
+    "cprint",
+    "sortcells",
     "xprint",
     "negNoiseRMS",
     "ci",
