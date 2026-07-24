@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "a25a8cc062e6418abb10097bba039d903f7ceca8",
-  "head": "2ac91d6318f73a3669826b62cffcb08ec798edc1",
+  "prev": "6952e9d86c24dc0e99d22774918272931800114f",
+  "head": "eea6d3ae95e6ccb35126b1277223727f21f10eb1",
   "applied": [
     "phiwrap",
     "phiwrap2",
@@ -17,10 +17,10 @@
     "discrit2-wip",
     "idfix",
     "towersort",
-    "cprint",
-    "sortcells"
+    "cprint"
   ],
   "unapplied": [
+    "sortcells",
     "xprint",
     "negNoiseRMS",
     "ci",
