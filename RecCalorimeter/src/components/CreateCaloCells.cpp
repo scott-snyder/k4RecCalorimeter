@@ -421,6 +421,7 @@ StatusCode CreateCaloCells::execute(const EventContext&) const {
     if (icell != CaloCells::INVALID_ICELL) {
       links.emplace_back (hit.getCellID(), std::make_pair(icell, ihit));
     }
+    ++ihit;
   }
 
   std::ranges::sort (links);
