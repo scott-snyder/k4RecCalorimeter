@@ -11,6 +11,8 @@
 #include "edm4hep/CalorimeterHit.h"
 #include <k4FWCore/MetadataUtils.h>
 
+extern FILE* flog(const char*);
+
 DECLARE_COMPONENT(CreatePositionedCaloCells)
 
 CreatePositionedCaloCells::~CreatePositionedCaloCells() { delete m_decoder; }
@@ -284,6 +286,14 @@ CreatePositionedCaloCells::operator()(const edm4hep::SimCalorimeterHitCollection
       link.setFrom(cell);
       link.setTo(hit);
     }
+  }
+
+  FILE* f = flog ("links ");
+  fprintf (f, "%s\n", this->name().c_str());
+  int ilink = 0;
+  for (const auto& l : edmCellHitLinksCollection) {
+    fprintf (f, "  %3d: %3d -> %3d\n", ilink++,
+             l.getFrom().id().index, l.getTo().id().index);
   }
 
   debug() << "Output Cell collection size: " << edmCellsCollection.size() << endmsg;
