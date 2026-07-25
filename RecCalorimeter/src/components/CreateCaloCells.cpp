@@ -21,6 +21,17 @@
 #include <algorithm>
 
 
+int ilog = 0;
+FILE* flog(const char* what)
+{
+  static FILE* f = nullptr;
+  if (!f)
+    f = fopen ("f.log", "w");
+  fprintf (f, "-> %3d %s ", ilog++, what);
+  return f;
+}
+
+
 DECLARE_COMPONENT(CreateCaloCells)
 
 
@@ -258,6 +269,21 @@ StatusCode CreateCaloCells::execute(const EventContext&) const {
   const edm4hep::SimCalorimeterHitCollection* hits = m_hits.get();
   debug() << "Input Hit collection size: " << hits->size() << endmsg;
 
+  FILE* f = flog ("Input size ");
+  fprintf (f, "%s %d\n", this->name().c_str(), (int)hits->size());
+  if (this->name().find("Cells2") != std::string::npos)
+  {
+    std::vector<std::pair<uint64_t, unsigned> > vv;
+    for (size_t i = 0; i < hits->size(); ++i) {
+      vv.emplace_back ((*hits)[i].getCellID(), i);
+    }
+    std::ranges::sort(vv);
+    for (const auto& p : vv) {
+      fprintf (f, "    ID %lld energy %f\n",
+               (long long int)p.first, (*hits)[p.second].getEnergy());
+    }
+  }
+
   // Find calorimeter type.
   const k4::recCalo::ICaloIndexer* indexer = nullptr;
   int calotype = 0;
@@ -437,6 +463,8 @@ StatusCode CreateCaloCells::execute(const EventContext&) const {
   m_links.put(edmCellHitLinksCollection);
 
   debug() << "Output Cell collection size: " << edmCellsCollection->size() << endmsg;
+  f = flog ("   Output size ");
+  fprintf (f, "%d\n", (int)edmCellsCollection->size());
 
   return StatusCode::SUCCESS;
 }
