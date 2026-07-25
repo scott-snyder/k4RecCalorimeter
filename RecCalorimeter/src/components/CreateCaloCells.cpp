@@ -21,6 +21,17 @@
 #include <algorithm>
 
 
+int ilog = 0;
+FILE* flog(const char* what)
+{
+  static FILE* f = nullptr;
+  if (!f)
+    f = fopen ("f.log", "w");
+  fprintf (f, "-> %3d %s ", ilog++, what);
+  return f;
+}
+
+
 DECLARE_COMPONENT(CreateCaloCells)
 
 
@@ -430,6 +441,14 @@ StatusCode CreateCaloCells::execute(const EventContext&) const {
     auto link = edmCellHitLinksCollection->create();
     link.setFrom((*edmCellsCollection)[p.second.first]);
     link.setTo((*hits)[p.second.second]);
+  }
+
+  FILE* f = flog ("links ");
+  fprintf (f, "%s\n", this->name().c_str());
+  int ilink = 0;
+  for (const auto& l : *edmCellHitLinksCollection) {
+    fprintf (f, "  %3d: %3d -> %3d\n", ilink++,
+             l.getFrom().id().index, l.getTo().id().index);
   }
 
   // push the CaloHitCollection to event store
