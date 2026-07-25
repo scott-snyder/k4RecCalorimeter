@@ -413,14 +413,23 @@ StatusCode CreateCaloCells::execute(const EventContext&) const {
 
   // create hits<->cell links
   edm4hep::CaloHitSimCaloHitLinkCollection* edmCellHitLinksCollection = new edm4hep::CaloHitSimCaloHitLinkCollection();
+  std::vector<std::pair<uint64_t, std::pair<index_t, index_t> > > links;
+  links.reserve (hits->size());
+  index_t ihit = 0;
   for (const auto& hit : *hits) {
     index_t icell = cells.indexByID (hit.getCellID());
     if (icell != CaloCells::INVALID_ICELL) {
-      // create Sim<->Reco hit associations
-      auto link = edmCellHitLinksCollection->create();
-      link.setFrom((*edmCellsCollection)[icell]);
-      link.setTo(hit);
+      links.emplace_back (hit.getCellID(), std::make_pair(icell, ihit));
     }
+    ++ihit;
+  }
+
+  std::ranges::sort (links);
+  for (const auto& p : links) {
+    // create Sim<->Reco hit associations
+    auto link = edmCellHitLinksCollection->create();
+    link.setFrom((*edmCellsCollection)[p.second.first]);
+    link.setTo((*hits)[p.second.second]);
   }
 
   // push the CaloHitCollection to event store
