@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "881b43c4a9aef51eab2de129fa2eabb6b61c2cfc",
-  "head": "cd4bb93b720901aaa4d3ecb0bd685fedc3e36488",
+  "prev": "b0b52e8cd043249416ec0674c29afb560c0756c2",
+  "head": "ec6e082a6f5aa580aa044a2e414a06ab232accb5",
   "applied": [
     "phiwrap",
     "phiwrap2",
@@ -17,10 +17,10 @@
     "discrit2-wip",
     "idfix",
     "doublesum",
-    "sortcells",
-    "lprint"
+    "sortcells"
   ],
   "unapplied": [
+    "lprint",
     "xprint",
     "cprint",
     "towersort",
