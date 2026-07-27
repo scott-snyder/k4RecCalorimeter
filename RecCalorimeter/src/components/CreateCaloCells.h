@@ -226,7 +226,7 @@ private:
 
     /// Vector of cellid, energy pairs per cell.
     // In FULL mode, all cellids are present in sorted order.
-    // If FILTERED, some may have been remove.
+    // If FILTERED, some may have been removed.
     // In SPARSE, only cells actually used are present.
     using CellData_t = std::vector<std::pair<uint64_t, double> >;
     CellData_t m_cells;
