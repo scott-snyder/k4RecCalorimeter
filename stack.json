@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "8dd61021d28d6a958d0ebe6cdf97b36a37d14c1b",
-  "head": "8128ced62044cf03a08bec0e06cb3672affad610",
+  "prev": "4090729ac25346bb219dcd53e8d7f5351559c874",
+  "head": "f3a761cea513e6206d03c05a83b0024e9d7c12a1",
   "applied": [
     "doublesum",
     "idfix",
@@ -16,11 +16,11 @@
     "createTopoCluster",
     "createCaloCells",
     "discrit-wip",
-    "discrit2-wip"
+    "discrit2-wip",
+    "sortcells",
+    "sortlinks"
   ],
   "unapplied": [
-    "sortcells",
-    "sortlinks",
     "lprint",
     "xprint",
     "cprint",
@@ -78,10 +78,10 @@
       "oid": "8128ced62044cf03a08bec0e06cb3672affad610"
     },
     "sortcells": {
-      "oid": "9b4a71d526c6017a64c8ec83cafb833b34b7342f"
+      "oid": "4dba578f9d401909f9d1c07b81f03f8a83d54ecf"
     },
     "sortlinks": {
-      "oid": "fe0b237babf34571a8989cf0d994260174c82559"
+      "oid": "f3a761cea513e6206d03c05a83b0024e9d7c12a1"
     },
     "lprint": {
       "oid": "04592ab4ae90ae9b3f322c6187000d10ae2f153f"
