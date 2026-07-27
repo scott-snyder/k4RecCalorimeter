@@ -1,8 +1,10 @@
 {
   "version": 5,
-  "prev": "3abc0d46820005868a666416d3c2ce1e238bae4b",
-  "head": "4d506ff739b36d29524d556c6889eeca725f2d48",
-  "applied": [],
+  "prev": "72db6e2eb64050f309a3f4729bca1441e946b44f",
+  "head": "7da3c520f26e729fb70c1dfa36a2351e116f87bd",
+  "applied": [
+    "doublesum"
+  ],
   "unapplied": [
     "idfix",
     "phiwrap",
@@ -17,7 +19,6 @@
     "createCaloCells",
     "discrit-wip",
     "discrit2-wip",
-    "doublesum",
     "sortcells",
     "sortlinks",
     "lprint",
@@ -34,6 +35,9 @@
   ],
   "hidden": [],
   "patches": {
+    "doublesum": {
+      "oid": "7da3c520f26e729fb70c1dfa36a2351e116f87bd"
+    },
     "idfix": {
       "oid": "8706d0ce172f9ee12fba4b4a5dd442cf7df4b6f3"
     },
@@ -72,9 +76,6 @@
     },
     "discrit2-wip": {
       "oid": "f8096697efaae051f50095a515c1d2f9c40af3fa"
-    },
-    "doublesum": {
-      "oid": "ee38c928f82a81fe8a11a08dccffe01a67ab4dc5"
     },
     "sortcells": {
       "oid": "9b4a71d526c6017a64c8ec83cafb833b34b7342f"
