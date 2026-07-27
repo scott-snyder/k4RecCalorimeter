@@ -297,8 +297,8 @@ StatusCode CreateCaloCells::execute(const EventContext&) const {
     if (calotype == 0) {
       error() << "detector id " << detid << " is not a calorimeter" << endmsg;
     }
-    indexer = m_indexerSvc->indexer (detid, !m_addCellNoise);
     if (m_addCellNoise) {
+      indexer = m_indexerSvc->indexer (detid, !m_addCellNoise);
       if (!indexer) {
         error() << "Cannot find indexer for detid " << detid << endmsg;
         return StatusCode::FAILURE;
