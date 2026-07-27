@@ -97,6 +97,20 @@ StatusCode CreatePositionedCaloCells::initialize() {
 std::tuple<edm4hep::CalorimeterHitCollection, edm4hep::CaloHitSimCaloHitLinkCollection>
 CreatePositionedCaloCells::operator()(const edm4hep::SimCalorimeterHitCollection& hits) const {
   debug() << "Input Hit collection size: " << hits.size() << endmsg;
+  FILE* f = flog ("Input size ");
+  fprintf (f, "%s %d\n", this->name().c_str(), (int)hits.size());
+  if (this->name().find("Cells2") != std::string::npos)
+  {
+    std::vector<std::pair<uint64_t, unsigned> > vv;
+    for (size_t i = 0; i < hits.size(); ++i) {
+      vv.emplace_back (hits[i].getCellID(), i);
+    }
+    std::ranges::sort(vv);
+    for (const auto& p : vv) {
+      fprintf (f, "    ID %lld energy %f\n",
+               (long long int)p.first, hits[p.second].getEnergy());
+    }
+  }
 
   // 0. Clear all cells
   if (m_addCellNoise) {
@@ -288,15 +302,9 @@ CreatePositionedCaloCells::operator()(const edm4hep::SimCalorimeterHitCollection
     }
   }
 
-  FILE* f = flog ("links ");
-  fprintf (f, "%s\n", this->name().c_str());
-  int ilink = 0;
-  for (const auto& l : edmCellHitLinksCollection) {
-    fprintf (f, "  %3d: %3d -> %3d\n", ilink++,
-             l.getFrom().id().index, l.getTo().id().index);
-  }
-
   debug() << "Output Cell collection size: " << edmCellsCollection.size() << endmsg;
+  f = flog ("   Output size ");
+  fprintf (f, "%d\n", (int)edmCellsCollection.size());
 
   // push the output collections to event store
   return std::make_tuple(std::move(edmCellsCollection), std::move(edmCellHitLinksCollection));
