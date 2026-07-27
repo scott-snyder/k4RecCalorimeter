@@ -1,16 +1,16 @@
 {
   "version": 5,
-  "prev": "93205105d9050080e0c7fa568f5163931d576e16",
-  "head": "126357e713ba84025c3fbf9e94172e1676345382",
+  "prev": "5423ebf30c573c9cbeaecfc56d23a7bdfde7cbc0",
+  "head": "c98e3c8b729f97630acf977865e101b8e9ae8edf",
   "applied": [
     "doublesum",
     "idfix",
     "phiwrap",
-    "phiwrap2"
+    "phiwrap2",
+    "k4geo-noclone",
+    "pairpi0"
   ],
   "unapplied": [
-    "k4geo-noclone",
-    "pairpi0",
     "xtalkIndex",
     "cellposIndex",
     "topoNoiseIndex",
@@ -48,10 +48,10 @@
       "oid": "126357e713ba84025c3fbf9e94172e1676345382"
     },
     "k4geo-noclone": {
-      "oid": "3238e88d90d6ad40ec6a5078a874f088eff311ac"
+      "oid": "be803cba9e0340bb114cb6f6ba0735394749541a"
     },
     "pairpi0": {
-      "oid": "b71b6b533f1e365753aa73f27c07228303d8aab7"
+      "oid": "c98e3c8b729f97630acf977865e101b8e9ae8edf"
     },
     "xtalkIndex": {
       "oid": "7b78b682a5475eac6fdf7fd85484bf79ef4dda56"
