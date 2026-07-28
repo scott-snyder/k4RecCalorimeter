@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "a12c6a8a205a9ab9ba29f16921ebfb8ba3ed179b",
-  "head": "05686cc1d6e404a07f525f01bc710cb4d4fd69f0",
+  "prev": "da8c6a31ac907d8d69f9168e2dcccfe5abddddcf",
+  "head": "9d0419b0b88147e9adaa774a687039311d007698",
   "applied": [
     "doublesum",
     "idfix",
@@ -19,10 +19,10 @@
     "discrit2-wip",
     "sortcells",
     "sortlinks",
-    "sortnoise"
+    "sortnoise",
+    "lprint"
   ],
   "unapplied": [
-    "lprint",
     "xprint",
     "cprint",
     "towersort",
@@ -88,7 +88,7 @@
       "oid": "05686cc1d6e404a07f525f01bc710cb4d4fd69f0"
     },
     "lprint": {
-      "oid": "04592ab4ae90ae9b3f322c6187000d10ae2f153f"
+      "oid": "9d0419b0b88147e9adaa774a687039311d007698"
     },
     "xprint": {
       "oid": "273ef88da7ce3538b08bedd35eca14c4428a3098"
