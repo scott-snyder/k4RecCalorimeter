@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "41ddd1728cfb52770bb89c0c0587dc461a27fe54",
+  "prev": "5a7cb017e57ad6305dfc3eda78881fee269ac8d5",
   "head": "8ff969c4230e76c8c980539acb5960a0b06aa87c",
   "applied": [
     "xtalk",
@@ -25,8 +25,6 @@
   ],
   "unapplied": [
     "ci",
-    "ecalendcapTool",
-    "indexingConfig",
     "subdetVolman2",
     "subdetVolman",
     "repnoise",
@@ -69,14 +67,8 @@
     "doublesum": {
       "oid": "6c890e24851b59225e927d87ad7669b6292fd8e0"
     },
-    "ecalendcapTool": {
-      "oid": "6f23fd8fa0996ceeabb96de696ca6e16fbd057af"
-    },
     "idfix": {
       "oid": "b2b0752041f039b05b87d61dc6fa22f60325d40c"
-    },
-    "indexingConfig": {
-      "oid": "e8916027211f3ba01ec8c43a9893e97559e247fa"
     },
     "k4geo-noclone": {
       "oid": "71800b4128ee128edf3bef6830ecb37607b7a2b3"
