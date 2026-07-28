@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "4090729ac25346bb219dcd53e8d7f5351559c874",
-  "head": "f3a761cea513e6206d03c05a83b0024e9d7c12a1",
+  "prev": "8ea1816595851d0597ccfb5f0275bcd44ed1a66e",
+  "head": "46de0b07d4c0c982620d0ece2f79ab7895044f7a",
   "applied": [
     "doublesum",
     "idfix",
@@ -18,7 +18,8 @@
     "discrit-wip",
     "discrit2-wip",
     "sortcells",
-    "sortlinks"
+    "sortlinks",
+    "sortnoise"
   ],
   "unapplied": [
     "lprint",
@@ -82,6 +83,9 @@
     },
     "sortlinks": {
       "oid": "f3a761cea513e6206d03c05a83b0024e9d7c12a1"
+    },
+    "sortnoise": {
+      "oid": "46de0b07d4c0c982620d0ece2f79ab7895044f7a"
     },
     "lprint": {
       "oid": "04592ab4ae90ae9b3f322c6187000d10ae2f153f"
