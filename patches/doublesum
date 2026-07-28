@@ -3,4 +3,10 @@ Top:    c70c26c44a4602f3c9ec7e4ea1544148ba723eb0
 Author: scott snyder <snyder@bnl.gov>
 Date:   2026-07-23 23:15:35 -0400
 
-doublesum
+Fix SW clustering sensitivity to cell ordering.
+
+The results of SW clustering depend on the order in which cells are listed
+in the input container, due to FP non-associativity in sums over cells.
+These sums are done in single-precision, so we can fix this in practice
+by doing the sums in double precision and only rounding to single precision
+at the end.

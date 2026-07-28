@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "031dc83a49180b93f332d207b64bd411b20dba04",
-  "head": "8efe3b83761849d727af981a1056156b6f7f3ee6",
+  "prev": "60ce4e74d346e870f9c48551a2c8261f91d60046",
+  "head": "b5077357e7952bfb2ec3a19342645d386f5025c2",
   "applied": [
     "doublesum"
   ],
@@ -31,7 +31,7 @@
   "hidden": [],
   "patches": {
     "doublesum": {
-      "oid": "8efe3b83761849d727af981a1056156b6f7f3ee6"
+      "oid": "b5077357e7952bfb2ec3a19342645d386f5025c2"
     },
     "ci": {
       "oid": "016db427fda172786777e4c855a74c7a19409c23"
