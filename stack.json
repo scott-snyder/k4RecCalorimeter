@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "ebdf2a0e2a2439ecbf789798c5e48213b9f4c7ee",
+  "prev": "8e5eed30159c3148c32c42f37ed495cf6311e67a",
   "head": "436ebb263145d91e689e4dd2d8dde745f25377dc",
   "applied": [
     "xtalk",
@@ -16,7 +16,6 @@
   "unapplied": [
     "ci",
     "ecalendcapTool",
-    "cellposIndex",
     "indexingConfig",
     "topoNoiseIndex",
     "noiseIndex",
@@ -37,9 +36,6 @@
   "patches": {
     "FCChh": {
       "oid": "00b1211dbc25e379193eddc3c42c2cd2744a54de"
-    },
-    "cellposIndex": {
-      "oid": "8db92de6dd077263608da8c94811fc926da0052f"
     },
     "check-deprecated": {
       "oid": "918ec06ce3bd67d94b0550bb4af3f788b842bc43"
