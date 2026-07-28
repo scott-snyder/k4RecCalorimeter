@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "d569ae1035a617f4522c76cc53c268fd53ba8635",
-  "head": "cd93221dd894c825b28e1f13457807348a618bc7",
+  "prev": "41ddd1728cfb52770bb89c0c0587dc461a27fe54",
+  "head": "8ff969c4230e76c8c980539acb5960a0b06aa87c",
   "applied": [
     "xtalk",
     "timeout",
@@ -20,7 +20,8 @@
     "discrit-wip",
     "discrit2-wip",
     "sortcells",
-    "sortlinks"
+    "sortlinks",
+    "sortnoise"
   ],
   "unapplied": [
     "ci",
@@ -106,6 +107,9 @@
     },
     "sortlinks": {
       "oid": "cd93221dd894c825b28e1f13457807348a618bc7"
+    },
+    "sortnoise": {
+      "oid": "8ff969c4230e76c8c980539acb5960a0b06aa87c"
     },
     "subdetVolman": {
       "oid": "17bda534b859c04a0d6cee0cf3e6d2a2c4550cdb"
