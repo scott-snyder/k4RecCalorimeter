@@ -3,4 +3,9 @@ Top:    884e9ad3b6662054eedd965cc975ae90edb9951b
 Author: scott snyder <snyder@bnl.gov>
 Date:   2026-07-24 11:36:11 -0400
 
-idfix
+Fix cluster<>mcparticle links.
+
+When trying to match cluster cells with reconstructed cells, need to look at
+cell id, not id().  The latter is just the index in the container, and we're
+looking at completely different containers here.  (The collectionID doesn't
+save us since it's not available for containers that were read from a file.)
