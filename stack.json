@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "7c55365c2a4ba977c4f98bbf6f3d2d7f01e60a4c",
+  "prev": "9e7fec92621de301f2cdc527e6e035650114bd30",
   "head": "05686cc1d6e404a07f525f01bc710cb4d4fd69f0",
   "applied": [
     "doublesum",
@@ -22,11 +22,6 @@
     "sortnoise"
   ],
   "unapplied": [
-    "lprint",
-    "xprint",
-    "cprint",
-    "towersort",
-    "negNoiseRMS",
     "ci",
     "noisedump",
     "subdetVolman2",
@@ -86,21 +81,6 @@
     },
     "sortnoise": {
       "oid": "05686cc1d6e404a07f525f01bc710cb4d4fd69f0"
-    },
-    "lprint": {
-      "oid": "9d0419b0b88147e9adaa774a687039311d007698"
-    },
-    "xprint": {
-      "oid": "273ef88da7ce3538b08bedd35eca14c4428a3098"
-    },
-    "cprint": {
-      "oid": "0e7108c29c41de8efd27b3d2de646bf95729da83"
-    },
-    "towersort": {
-      "oid": "2ae6495eb4e9214f50096a610367a56bdcea1239"
-    },
-    "negNoiseRMS": {
-      "oid": "b2bda41193cb99754559272e452b3a3a39697683"
     },
     "ci": {
       "oid": "192226c2e5799de5fdf108729533d909f341874c"
