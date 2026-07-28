@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "0da5fb28edc5f452c0069c43f266c62240a4197f",
-  "head": "8ff969c4230e76c8c980539acb5960a0b06aa87c",
+  "prev": "35186a35180e990f036fa1d5a2743548d3e27311",
+  "head": "770f5d1b561d83f9131d8f08430ac1f10e6bf9c9",
   "applied": [
     "xtalk",
     "timeout",
@@ -21,7 +21,8 @@
     "discrit2-wip",
     "sortcells",
     "sortlinks",
-    "sortnoise"
+    "sortnoise",
+    "repnoise"
   ],
   "unapplied": [
     "ci",
@@ -90,6 +91,9 @@
     },
     "phiwrap2": {
       "oid": "64ff147417fc4073c6acf1bcf1cca5e3e5eef651"
+    },
+    "repnoise": {
+      "oid": "770f5d1b561d83f9131d8f08430ac1f10e6bf9c9"
     },
     "repnoise2": {
       "oid": "b9d921abf40ad058039784d2ff74fb6226e843d9"
