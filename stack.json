@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "ea5fe7bd230e9ef8ba4980f01d11724ce2e27fba",
+  "prev": "39b849e07225226d2fdf45f61c7074ef335ed7dd",
   "head": "57ecdb429ad236814571a33d44e2544aad3107fb",
   "applied": [
     "xtalk",
@@ -20,7 +20,6 @@
     "ci",
     "ecalendcapTool",
     "indexingConfig",
-    "createTopoCluster",
     "createCaloCells",
     "subdetVolman2",
     "subdetVolman",
@@ -52,9 +51,6 @@
     },
     "createCaloCells": {
       "oid": "05a84d36a399f3bd67ff4c0aefa8c18739eb7bda"
-    },
-    "createTopoCluster": {
-      "oid": "a2408dd754b99f27a18dd1c72d1b613690213496"
     },
     "doublesum": {
       "oid": "6c890e24851b59225e927d87ad7669b6292fd8e0"
