@@ -1,10 +1,11 @@
 {
   "version": 5,
-  "prev": "dec5acc70c58637b85cb4aef2f0d2714b71ddb18",
-  "head": "4d506ff739b36d29524d556c6889eeca725f2d48",
-  "applied": [],
+  "prev": "3c5ad63551305514e3c3239a17fbf46d124f9bf9",
+  "head": "8efe3b83761849d727af981a1056156b6f7f3ee6",
+  "applied": [
+    "doublesum"
+  ],
   "unapplied": [
-    "doublesum",
     "idfix",
     "phiwrap",
     "phiwrap2",
