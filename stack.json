@@ -1,10 +1,12 @@
 {
   "version": 5,
-  "prev": "aca1f0207fbd203ea0bbee0876c6092b1921cbc1",
-  "head": "77deb53c9312a925aa28e36c6b161c9508aae25e",
+  "prev": "f6f5b4109c08612494cef4140d781aa6b5669a01",
+  "head": "b2b0752041f039b05b87d61dc6fa22f60325d40c",
   "applied": [
     "xtalk",
-    "timeout"
+    "timeout",
+    "doublesum",
+    "idfix"
   ],
   "unapplied": [
     "ci",
@@ -51,8 +53,14 @@
     "createTopoCluster": {
       "oid": "a2408dd754b99f27a18dd1c72d1b613690213496"
     },
+    "doublesum": {
+      "oid": "6c890e24851b59225e927d87ad7669b6292fd8e0"
+    },
     "ecalendcapTool": {
       "oid": "6f23fd8fa0996ceeabb96de696ca6e16fbd057af"
+    },
+    "idfix": {
+      "oid": "b2b0752041f039b05b87d61dc6fa22f60325d40c"
     },
     "indexingConfig": {
       "oid": "e8916027211f3ba01ec8c43a9893e97559e247fa"
