@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "b9df7aaae17d0768046c9933c056645be9fffb8b",
+  "prev": "e81040dace77a18a0180bb3d4095b18cb58a1aa1",
   "head": "55fcfb2b9eee8b5b8130f453cc310a69d48fca59",
   "applied": [
     "xtalk",
@@ -18,8 +18,6 @@
     "ci",
     "ecalendcapTool",
     "indexingConfig",
-    "topoNoiseIndex",
-    "noiseIndex",
     "createTopoCluster",
     "createCaloCells",
     "subdetVolman2",
@@ -77,9 +75,6 @@
     "move-check": {
       "oid": "2a315d52f40e2678b04fdc47ce6f5108ac92a798"
     },
-    "noiseIndex": {
-      "oid": "ff796492c63933901512a39d6d05175dcf61913d"
-    },
     "pairpi0": {
       "oid": "d2b73d2ecca57fcc550c8f44d8ffea746d9928ff"
     },
@@ -103,9 +98,6 @@
     },
     "timeout": {
       "oid": "77deb53c9312a925aa28e36c6b161c9508aae25e"
-    },
-    "topoNoiseIndex": {
-      "oid": "9b6943fdabd77ab4222d669d3d6137e8d06950d2"
     },
     "xtalk": {
       "oid": "4bd65e6352ae75cee19dc1c88dc9e7d565911f99"
