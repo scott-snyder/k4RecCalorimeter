@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "1153b53d7cfe93aa16b844e57ec3671389e2ff10",
-  "head": "71800b4128ee128edf3bef6830ecb37607b7a2b3",
+  "prev": "5a491aa5cdcee2bd374d3dd4a9608002cb909942",
+  "head": "d2b73d2ecca57fcc550c8f44d8ffea746d9928ff",
   "applied": [
     "xtalk",
     "timeout",
@@ -9,7 +9,8 @@
     "idfix",
     "phiwrap",
     "phiwrap2",
-    "k4geo-noclone"
+    "k4geo-noclone",
+    "pairpi0"
   ],
   "unapplied": [
     "ci",
@@ -78,6 +79,9 @@
     },
     "noiseIndex": {
       "oid": "ff796492c63933901512a39d6d05175dcf61913d"
+    },
+    "pairpi0": {
+      "oid": "d2b73d2ecca57fcc550c8f44d8ffea746d9928ff"
     },
     "phiwrap": {
       "oid": "a4db6d0911d6450ae6eb7c116f47d75f7d1fef82"
