@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "df2bfda79c9765762db9ca3339f3a20c9ac79cc3",
+  "prev": "4a344fc2aa05aa0d4138d9b47cc0265152d4b867",
   "head": "e7caa3151655ee272148e16417dc99fde9b14fdb",
   "applied": [
     "xtalk",
@@ -28,7 +28,6 @@
     "ci",
     "subdetVolman2",
     "subdetVolman",
-    "repnoise2",
     "move-check",
     "check-deprecated",
     "check-remove"
@@ -94,9 +93,6 @@
     },
     "repnoise": {
       "oid": "e7caa3151655ee272148e16417dc99fde9b14fdb"
-    },
-    "repnoise2": {
-      "oid": "b9d921abf40ad058039784d2ff74fb6226e843d9"
     },
     "sortcells": {
       "oid": "7464b372c0ab560622170a0b985414d1f413f995"
