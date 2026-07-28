@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "9e7fec92621de301f2cdc527e6e035650114bd30",
+  "prev": "bcdc1f5cf29369d19d5da0276a6c64a8ac49e38f",
   "head": "05686cc1d6e404a07f525f01bc710cb4d4fd69f0",
   "applied": [
     "doublesum",
@@ -23,7 +23,6 @@
   ],
   "unapplied": [
     "ci",
-    "noisedump",
     "subdetVolman2",
     "subdetVolman",
     "diag-wip",
@@ -84,9 +83,6 @@
     },
     "ci": {
       "oid": "192226c2e5799de5fdf108729533d909f341874c"
-    },
-    "noisedump": {
-      "oid": "a3b8ccebb67fa481270d7b6a0496de0879ea792d"
     },
     "subdetVolman2": {
       "oid": "77d10ffb363ed18ed2d51f88d4730080e3a362e2"
