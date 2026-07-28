@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "a5c857350e5acd07c42fe39b16e759fd0a52c7a5",
-  "head": "bdde8c26562b38fd2e08a58541239f20752a7e91",
+  "prev": "373948e73c2317e6059d778fd7c84f7453e52f2c",
+  "head": "a4b8b4e56c5c6a97395234507d2514d28b58955f",
   "applied": [
     "xtalk",
     "timeout",
@@ -25,7 +25,8 @@
     "repnoise",
     "subdetVolman2",
     "subdetVolman",
-    "move-check"
+    "move-check",
+    "refresh-temp"
   ],
   "unapplied": [
     "ci",
@@ -90,6 +91,9 @@
     },
     "phiwrap2": {
       "oid": "64ff147417fc4073c6acf1bcf1cca5e3e5eef651"
+    },
+    "refresh-temp": {
+      "oid": "a4b8b4e56c5c6a97395234507d2514d28b58955f"
     },
     "repnoise": {
       "oid": "e7caa3151655ee272148e16417dc99fde9b14fdb"
