@@ -1,0 +1,11 @@
+Bottom: 252808e57f28e89496c391e110aad28bc8e13e6d
+Top:    fd7b428aadf3aee769651851d83b36867d311918
+Author: scott snyder <snyder@bnl.gov>
+Date:   2026-07-28 10:32:37 -0400
+
+More efficient data storage for ReadCaloCrosstalkMap.
+
+Change ReadCaloCrosstalkMap to store data in flat vectors rather then
+in hash maps., using the indexing service.  This is faster and takes
+much less space.  Also use CaloCellConstantsSvc to avoid duplicating
+the data, and add a unit test.
