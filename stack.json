@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "11337f8119570ba35436b1abeb111ee9f83ab04b",
-  "head": "305a0769d7bfe3233690ccdca7ec20a091508f3e",
+  "prev": "f30d6375d732ec312aa2ced875973ce9e63f8487",
+  "head": "cd93221dd894c825b28e1f13457807348a618bc7",
   "applied": [
     "xtalk",
     "timeout",
@@ -18,7 +18,9 @@
     "createTopoCluster",
     "createCaloCells",
     "discrit-wip",
-    "discrit2-wip"
+    "discrit2-wip",
+    "sortcells",
+    "sortlinks"
   ],
   "unapplied": [
     "ci",
@@ -99,6 +101,12 @@
     },
     "repnoise": {
       "oid": "b9d921abf40ad058039784d2ff74fb6226e843d9"
+    },
+    "sortcells": {
+      "oid": "7464b372c0ab560622170a0b985414d1f413f995"
+    },
+    "sortlinks": {
+      "oid": "cd93221dd894c825b28e1f13457807348a618bc7"
     },
     "sortnoise": {
       "oid": "035aebb8b2c3c1b1d9525212d7a536e836c99c21"
