@@ -27,23 +27,30 @@ StatusCode NoiseCaloCellsFromFileBaseTool::initialize() {
 }
 
 template <class C>
-void NoiseCaloCellsFromFileBaseTool::addRandomCellNoiseT(C& aCells) const {
+void NoiseCaloCellsFromFileBaseTool::addRandomCellNoiseT(C& aCells, CLHEP::RandGauss& r) const {
   for (auto& p : aCells) {
     p.second += getNoiseOffsetPerCell(p.first);
-    p.second += (getNoiseRMSPerCell(p.first) * m_gauss.shoot());
+    p.second += (getNoiseRMSPerCell(p.first) * r.shoot());
   }
 }
 
 void NoiseCaloCellsFromFileBaseTool::addRandomCellNoise(std::unordered_map<CellID, double>& aCells) const {
+  CLHEP::Ranlux64Engine e;
+  initEvent(e);
+  CLHEP::RandGauss r(e);
+
   using p_t = std::pair<uint64_t, double>;
   std::vector<p_t> cells (aCells.begin(), aCells.end());
   std::ranges::sort (cells, [](const p_t& a, const p_t& b) { return a.first < b.first; });
-  addRandomCellNoiseT(cells);
+  addRandomCellNoiseT(cells, r);
   for (const p_t& p : cells) aCells[p.first] = p.second;
 }
 
 void NoiseCaloCellsFromFileBaseTool::addRandomCellNoise(std::vector<std::pair<CellID, double>>& aCells) const {
-  addRandomCellNoiseT(aCells);
+  CLHEP::Ranlux64Engine e;
+  initEvent(e);
+  CLHEP::RandGauss r(e);
+  addRandomCellNoiseT(aCells, r);
 }
 
 template <typename C>
@@ -66,5 +73,19 @@ void NoiseCaloCellsFromFileBaseTool::filterCellNoise(std::unordered_map<CellID, 
 
 void NoiseCaloCellsFromFileBaseTool::filterCellNoise(std::vector<std::pair<CellID, double>>& aCells) const {
   filterCellNoiseT(aCells);
+}
+
+void NoiseCaloCellsFromFileBaseTool::initEvent(CLHEP::Ranlux64Engine& e) const
+{
+  const edm4hep::EventHeaderCollection* ehs = m_header.get();
+  edm4hep::EventHeader eh = ehs->at(0);
+  // FIXME: Use all bits of event number.
+  long seeds[] = {static_cast<long>(eh.getRunNumber()),
+                  static_cast<long>(eh.getEventNumber()),
+                  0x76439862,
+                  0};
+  if (seeds[0] == 0) seeds[0] = 0x7fffffff;
+  if (seeds[1] == 0) seeds[1] = 0x7fffffff;
+  e.setSeeds (seeds);
 }
 
