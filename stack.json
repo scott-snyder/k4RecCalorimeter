@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "373948e73c2317e6059d778fd7c84f7453e52f2c",
-  "head": "a4b8b4e56c5c6a97395234507d2514d28b58955f",
+  "prev": "d2df9ac20cd2ec9b08492a93b8397c80d28d7663",
+  "head": "c1a332aa9c7a1032e85aa10264e26b2a33d3e2dc",
   "applied": [
     "xtalk",
     "timeout",
@@ -25,8 +25,7 @@
     "repnoise",
     "subdetVolman2",
     "subdetVolman",
-    "move-check",
-    "refresh-temp"
+    "move-check"
   ],
   "unapplied": [
     "ci",
@@ -78,7 +77,7 @@
       "oid": "b9f46034152e74af649f41df9478feb05b94e94b"
     },
     "move-check": {
-      "oid": "bdde8c26562b38fd2e08a58541239f20752a7e91"
+      "oid": "c1a332aa9c7a1032e85aa10264e26b2a33d3e2dc"
     },
     "noiseIndex": {
       "oid": "57ecdb429ad236814571a33d44e2544aad3107fb"
@@ -91,9 +90,6 @@
     },
     "phiwrap2": {
       "oid": "64ff147417fc4073c6acf1bcf1cca5e3e5eef651"
-    },
-    "refresh-temp": {
-      "oid": "a4b8b4e56c5c6a97395234507d2514d28b58955f"
     },
     "repnoise": {
       "oid": "e7caa3151655ee272148e16417dc99fde9b14fdb"
