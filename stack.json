@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "a927049c33ab63b0e4bbf555cbb315f85049163e",
+  "prev": "cc51ff5b7f368e87de703402581c0fb998489e10",
   "head": "8e9d172bc303bd68cbfba6aa091993ce9d521a5b",
   "applied": [
     "idfix",
@@ -25,11 +25,10 @@
     "subdetVolman2",
     "subdetVolman",
     "diag-wip",
-    "cellids-wip"
-  ],
-  "hidden": [
+    "cellids-wip",
     "ci"
   ],
+  "hidden": [],
   "patches": {
     "idfix": {
       "oid": "009965af6938791226750dc760619896becb7e19"
