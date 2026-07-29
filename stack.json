@@ -1,12 +1,11 @@
 {
   "version": 5,
-  "prev": "2ae95616af7e7058a6e574afb28848614b44e624",
+  "prev": "f90a068b281df5d100dc50402788f2e636b438be",
   "head": "009965af6938791226750dc760619896becb7e19",
   "applied": [
     "idfix"
   ],
   "unapplied": [
-    "ci",
     "doublesum",
     "phiwrap",
     "phiwrap2",
@@ -28,13 +27,12 @@
     "diag-wip",
     "cellids-wip"
   ],
-  "hidden": [],
+  "hidden": [
+    "ci"
+  ],
   "patches": {
     "idfix": {
       "oid": "009965af6938791226750dc760619896becb7e19"
-    },
-    "ci": {
-      "oid": "6c30c77bd4d738def3f9b358e84c2decd5008591"
     },
     "doublesum": {
       "oid": "b5077357e7952bfb2ec3a19342645d386f5025c2"
@@ -95,6 +93,9 @@
     },
     "cellids-wip": {
       "oid": "13e9f6a57b8446d21f3d8029c0242cf334a05620"
+    },
+    "ci": {
+      "oid": "6c30c77bd4d738def3f9b358e84c2decd5008591"
     }
   }
 }
