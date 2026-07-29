@@ -1,12 +1,8 @@
 {
   "version": 5,
-  "prev": "fe6a0b3da9b3d3bc60632a2359d38fdec69bad1d",
-  "head": "7c4b82b43f589d1ddf0e4de2da8ebd0ccba69ed5",
+  "prev": "45a091b7136ff7300ad8702bd3d15b08a848744e",
+  "head": "f2c20f3d38d116b0f8b08adfff3e830480e2ddd8",
   "applied": [
-    "idfix",
-    "doublesum",
-    "phiwrap",
-    "phiwrap2",
     "k4geo-noclone",
     "pairpi0",
     "xtalkIndex",
@@ -30,56 +26,44 @@
   ],
   "hidden": [],
   "patches": {
-    "idfix": {
-      "oid": "ccffd20674042196688828dab1cdc82d1f291945"
-    },
-    "doublesum": {
-      "oid": "326ec0ae0a2c5a237928524153681c1529e0e878"
-    },
-    "phiwrap": {
-      "oid": "9524ab177a5b890db94c5b4b15580c73947bc3ab"
-    },
-    "phiwrap2": {
-      "oid": "b2d31e02defda39ac4e46a78807f6d2d036d8438"
-    },
     "k4geo-noclone": {
-      "oid": "3dbef78f60e48a9ec0b3001e641d9e12c806ef93"
+      "oid": "c61c380c3d5b3132b463df8eb4162119dd574a5c"
     },
     "pairpi0": {
-      "oid": "a3b61311e4216b4aba8a9fecc685575887ccaa25"
+      "oid": "e090eff6e569afb1cb0fa9ffeb8b3f1f81a74bfb"
     },
     "xtalkIndex": {
-      "oid": "5976e75e15fc247555cc81db8b5d6c448d8d35ea"
+      "oid": "4bc40dbbdafcce8bd7edb09443e2203fa23b8bca"
     },
     "cellposIndex": {
-      "oid": "22b904e05a9130795a8ba5f7da5ab6b15b014f74"
+      "oid": "94c6f2054df8ccf33cebaa5a1ab92211c1ce5e35"
     },
     "topoNoiseIndex": {
-      "oid": "f8beaf7418304afd6b866c91e53fab74896c279f"
+      "oid": "80fcb60b03e5e60b2c90fd57e0b66a5c280e7ea7"
     },
     "noiseIndex": {
-      "oid": "4635845add9ef94cca8ca5c6208bfd387dd3e6b0"
+      "oid": "8cee08ff5343db1d20fc743dbb10f7c18502d2fe"
     },
     "createTopoCluster": {
-      "oid": "41261b086c0981cd95afc597769e08f53346f8b6"
+      "oid": "44d76fe5687c1e7087f449a5b59f3a3a2fa2f2ab"
     },
     "createCaloCells": {
-      "oid": "e0329235d56f236268c84fd16e535eebdfac557b"
+      "oid": "55e468e978b64a336b67580e3f8ebb62c347705a"
     },
     "discrit-wip": {
-      "oid": "0f080b4bdd4529c95259d9051a4c61d09821d5fd"
+      "oid": "8b88e96ee8d6ec536ac3bf531b8fe6bfb5c7be66"
     },
     "discrit2-wip": {
-      "oid": "da7b2da56a4f49c296b1a2e6210dc562d30bdf7f"
+      "oid": "321aa656eddd0bedb3f6da9ca4ce6557b2b1169b"
     },
     "sortcells": {
-      "oid": "fcd36833ba7e02ff3fbdef1cee6714fd21f925ef"
+      "oid": "b082a66dbe8ac4c8051a9a3897094e67ccb40ea0"
     },
     "sortlinks": {
-      "oid": "3dd598886559607ee16f0915300d5feae3579010"
+      "oid": "3502a2128dbb2020bb4261927e55ccfcd69deaf6"
     },
     "sortnoise": {
-      "oid": "7c4b82b43f589d1ddf0e4de2da8ebd0ccba69ed5"
+      "oid": "f2c20f3d38d116b0f8b08adfff3e830480e2ddd8"
     },
     "subdetVolman2": {
       "oid": "77d10ffb363ed18ed2d51f88d4730080e3a362e2"
