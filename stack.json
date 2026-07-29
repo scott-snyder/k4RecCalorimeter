@@ -1,14 +1,10 @@
 {
   "version": 5,
-  "prev": "c46f6e1c79d0949ec687ef859acf636c86ccdf5f",
-  "head": "dcfb6c4c6a34671c21dc9a66dc81777e91ecbdc0",
+  "prev": "dc750267b30d3765142a302f26f6d13a7d314f48",
+  "head": "22f446915d850ec82f00c1df5cb4a59fcb11265b",
   "applied": [
     "xtalk",
     "timeout",
-    "doublesum",
-    "idfix",
-    "phiwrap",
-    "phiwrap2",
     "k4geo-noclone",
     "pairpi0",
     "xtalkIndex",
@@ -40,85 +36,73 @@
       "oid": "00b1211dbc25e379193eddc3c42c2cd2744a54de"
     },
     "cellposIndex": {
-      "oid": "2bf89506713ffe184c039f44613c261e7934497f"
+      "oid": "1b9a1eaf7ca2a5b05b6e7d643e6cf17bcfe8eab4"
     },
     "check-deprecated": {
-      "oid": "ae87df982673a1a5c56d34bb11616f30fcc7b0a5"
+      "oid": "2332e652e32f4807807ce4d846d7c1a7ba7bb55f"
     },
     "check-remove": {
-      "oid": "d299b79d0ef654bf4ddcb8bada8014b109ea7ed8"
+      "oid": "bcc7cee7406d55c5059846878c14dcadc19f3489"
     },
     "ci": {
-      "oid": "dcfb6c4c6a34671c21dc9a66dc81777e91ecbdc0"
+      "oid": "22f446915d850ec82f00c1df5cb4a59fcb11265b"
     },
     "createCaloCells": {
-      "oid": "fec425964b29d579fd902e23081ee39f73a75dee"
+      "oid": "12fe95d19739e768131123f0eae26b2864f1ecfa"
     },
     "createTopoCluster": {
-      "oid": "109df0723783577f3bce0128a2d1bc96a3ca4389"
+      "oid": "8e4eaad7fef6e0d9fe73f933b0a8f15908471495"
     },
     "discrit-wip": {
-      "oid": "3cfbda968283b0ba005be8a8bed85c3fd9ef7879"
+      "oid": "185438109f94f91a925e5a590dcd7fc5ddb47cf4"
     },
     "discrit2-wip": {
-      "oid": "3671e61185057999509509bc8ef14b50e3e9a5d9"
-    },
-    "doublesum": {
-      "oid": "f230bb68ff61be98e8441fbf6600b05cf2d16bde"
-    },
-    "idfix": {
-      "oid": "f35aaa8e7d48d5c9d7bc92ecedf04f622c8069a5"
+      "oid": "eb2172f4c998edb1a558b0c2133cbd35a752acf5"
     },
     "k4geo-noclone": {
-      "oid": "84f3f8c598797bba37c93a33a80c7021290942cd"
+      "oid": "72735e43a613ca257be826b3910873b07643bced"
     },
     "mdutils": {
       "oid": "b9f46034152e74af649f41df9478feb05b94e94b"
     },
     "move-check": {
-      "oid": "509cd2d25f2578147af6fd366a2be20cf4d54670"
+      "oid": "16c8cf84a71d83c4af809a6a582935ea117dd4d9"
     },
     "noiseIndex": {
-      "oid": "5b92837d621ded1fd2c6858771bec081982e15fe"
+      "oid": "52c5a00ac79b106f0d1b4ff74274a682f177139c"
     },
     "pairpi0": {
-      "oid": "9279da0a2e1aa83b20427584afb5b27069b8adaf"
-    },
-    "phiwrap": {
-      "oid": "0f66d5c69c3d5d888b4c5028cd1563a6f7ae46ac"
-    },
-    "phiwrap2": {
-      "oid": "0728b5db06ee235078ae6efd5d7ae955a172f884"
+      "oid": "11ade9c891cb6110ede533c3a425873d615c17e4"
     },
     "repnoise": {
-      "oid": "1c97a9658c456f704b06498c390388d2f21b0361"
+      "oid": "1caf306f8725bb374e0224d4a63979147152b0e7"
     },
     "sortcells": {
-      "oid": "53a5424ba0ff091059b76c1bf2371df782c1b1af"
+      "oid": "5cc9857aa22a3476f4e921eb0fe22c5dc2a77d92"
     },
     "sortlinks": {
-      "oid": "b19088c4990bbac5ec0a433b8d2528d7c33cb830"
+      "oid": "b9540d06b29938248f99a45d2b811cdd276b2ce2"
     },
     "sortnoise": {
-      "oid": "3cf0dbf92f86bbfb21900fe7b0ac5d00355f21a1"
+      "oid": "563747c6724565e423b6ff9c9d4520252b7ff2cb"
     },
     "subdetVolman": {
-      "oid": "ca38def74eaa41a289660252755bfddbd6c00bb9"
+      "oid": "7c3af083cdb01877796fc62bb6f8618a44d29e14"
     },
     "subdetVolman2": {
-      "oid": "77961ba0c1d01cd9d82ca7564df46ed4588fbe1a"
+      "oid": "9ab226e82d96b8213e046e793d8c0ea5986c2e13"
     },
     "timeout": {
       "oid": "c4e096c18b1e7493a26be0ac79eb9137a40ac2de"
     },
     "topoNoiseIndex": {
-      "oid": "493ee80e084bcaca4267da29d0bc74baf86d1349"
+      "oid": "efe170b9295f4d70fa4b12ee420b3d782b29d0ac"
     },
     "xtalk": {
       "oid": "47285e98a7c70921bc6010d8e8249ead13878e3c"
     },
     "xtalkIndex": {
-      "oid": "7a0eaac509c605af6842fcf04b4d054965542c70"
+      "oid": "79f251abdc9c78d0fecd290706c8afb3ef8c6c6e"
     }
   }
 }
