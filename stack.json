@@ -1,13 +1,13 @@
 {
   "version": 5,
-  "prev": "3aaafec6c4372c24f2931ca08872af230f769497",
-  "head": "63ac2ab2719a02770c50f2f71d62fa68bf733803",
+  "prev": "e8e7885024142d51665df058e06cbb5ba6b25092",
+  "head": "2abd51c6be293bdd7fbf954c0963a5f168a2966d",
   "applied": [
     "timeout",
-    "pairpi0"
+    "pairpi0",
+    "xtalkIndex"
   ],
   "unapplied": [
-    "xtalkIndex",
     "ci",
     "k4geo-noclone",
     "cellposIndex",
@@ -34,7 +34,7 @@
       "oid": "63ac2ab2719a02770c50f2f71d62fa68bf733803"
     },
     "xtalkIndex": {
-      "oid": "710b9e67c0f2a6610e3c88e3b7eb695a2bc6a5fe"
+      "oid": "2abd51c6be293bdd7fbf954c0963a5f168a2966d"
     },
     "ci": {
       "oid": "fbf5f8269eb1b22b43c257ad532fe2afffd71019"
