@@ -1,8 +1,9 @@
 {
   "version": 5,
-  "prev": "f6ee9f70abade1fbe8fc31565e3d5bd57e0ea7a6",
-  "head": "1316998f8639a9bf135daa94109c6cd9c9c3bf63",
-  "applied": [
+  "prev": "3d9f4bea2cb121c060103a5fdbd0c93d039ab422",
+  "head": "4d506ff739b36d29524d556c6889eeca725f2d48",
+  "applied": [],
+  "unapplied": [
     "xtalk",
     "timeout",
     "doublesum",
@@ -27,9 +28,7 @@
     "subdetVolman",
     "move-check",
     "check-deprecated",
-    "check-remove"
-  ],
-  "unapplied": [
+    "check-remove",
     "ci"
   ],
   "hidden": [
