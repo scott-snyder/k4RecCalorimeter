@@ -1,0 +1,10 @@
+Bottom: d54a60abfabc6e58920a2e6ba3cac983dc28d5f5
+Top:    d54a60abfabc6e58920a2e6ba3cac983dc28d5f5
+Author: scott snyder <snyder@bnl.gov>
+Date:   2026-07-31 23:13:37 -0400
+
+Fix wrapToPi for ARM long double.
+    
+On ARM, a long double is 128 bits and the exponent in the TOINT calcuation
+overflows a 64-bit int.  Resolve by breaking up the exponent into two
+factors.
