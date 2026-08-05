@@ -1,0 +1,12 @@
+Bottom: 139c894c502642e82a513f3bfe26cba682bd6510
+Top:    ee6779eec9f233b16eadaff327a683890ca63a02
+Author: scott snyder <snyder@bnl.gov>
+Date:   2026-08-05 16:20:28 -0400
+
+Further minor fixes for phi wrapping.
+
+ - On ARM, a long double is 128 bits and the exponent in the TOINT calcuation
+   overflows a 64-bit int.  Resolve by breaking up the exponent into two
+   factors.
+ - Missing climit include.
+ - Suppress clang22 warning about use of __COUNTER__ in boost.test.
