@@ -3,8 +3,10 @@ Top:    973d4298cfff7ace7a138cc54c8d0384bd6fba27
 Author: scott snyder <snyder@bnl.gov>
 Date:   2026-07-31 23:13:37 -0400
 
-Fix wrapToPi for ARM long double.
-    
-On ARM, a long double is 128 bits and the exponent in the TOINT calcuation
-overflows a 64-bit int.  Resolve by breaking up the exponent into two
-factors.
+Further minor fixes for phi wrapping.
+
+ - On ARM, a long double is 128 bits and the exponent in the TOINT calcuation
+   overflows a 64-bit int.  Resolve by breaking up the exponent into two
+   factors.
+ - Missing climit include.
+ - Suppress clang22 warning about use of __COUNTER__ in boost.test.
