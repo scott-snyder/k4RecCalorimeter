@@ -33,11 +33,11 @@ if [ "$usePythia" -gt 0 ]; then
     fi
 else
     # particle gun (for debug do not run it if files already present. Comment the if and fi lines for production)
-    if ! test -f FCChh_sim_e.root; then
+    #if ! test -f FCChh_sim_e.root; then
 	echo "Generating events and performing the Geant4 simulation with ddsim"
 	ddsim --enableGun --gun.distribution uniform --gun.momentumMin "50*GeV" --gun.momentumMax "50*GeV" --gun.thetaMin "0.5*deg" --gun.thetaMax "1.5*deg" --gun.particle e- --numberOfEvents 2 --outputFile FCChh_sim_e.root --random.enableEventSeed --random.seed 4255 --compactFile $K4GEO/FCChh/compact/FCChhBaseline/FCChh_DectMaster.xml || exit 1
 	ddsim --enableGun --gun.distribution uniform --gun.momentumMin "20*GeV" --gun.momentumMax "20*GeV" --gun.thetaMin "80*deg" --gun.thetaMax "100*deg" --gun.particle pi+ --numberOfEvents 2 --outputFile FCChh_sim_pi.root --random.enableEventSeed --random.seed 4255 --compactFile $K4GEO/FCChh/compact/FCChhBaseline/FCChh_DectMaster.xml || exit 1
-    fi
+    #fi
 fi
 
 # run the DIGI step
@@ -45,18 +45,18 @@ SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd ) 
 if [ "$usePythia" -gt 0 ]; then
     k4run $SCRIPT_DIR/runFullCaloSystem_Digitisation.py || exit 1
 else
-    if ! test -f FCChh_sim_digi_e.root; then
+    #if ! test -f FCChh_sim_digi_e.root; then
 	k4run $SCRIPT_DIR/runFullCaloSystem_Digitisation.py --IOSvc.Input=FCChh_sim_e.root --IOSvc.Output=FCChh_sim_digi_e.root || exit 1
 	k4run $SCRIPT_DIR/runFullCaloSystem_Digitisation.py --IOSvc.Input=FCChh_sim_pi.root --IOSvc.Output=FCChh_sim_digi_pi.root || exit 1
-    fi
+    #fi
 fi
 
 # run the RECO step
 if [ "$usePythia" -gt 0 ]; then
     k4run $SCRIPT_DIR/runFullCaloSystem_ReconstructionSW_noNoise.py || exit 1
 else
-    if ! test -f FCChh_sim_digi_reco_e.root; then
+    #if ! test -f FCChh_sim_digi_reco_e.root; then
 	k4run $SCRIPT_DIR/runFullCaloSystem_ReconstructionSW_noNoise.py --IOSvc.Input=FCChh_sim_digi_e.root --IOSvc.Output=FCChh_sim_digi_reco_e.root || exit 1
 	k4run $SCRIPT_DIR/runFullCaloSystem_ReconstructionSW_noNoise.py --IOSvc.Input=FCChh_sim_digi_pi.root --IOSvc.Output=FCChh_sim_digi_reco_pi.root || exit 1
-    fi
+    #fi
 fi
