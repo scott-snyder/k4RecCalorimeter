@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "87f3de9c4a56145b6506f7ccd95a075f7f9429bc",
-  "head": "ce7a19edecea423f614d5cfd34f7f17d455fe45b",
+  "prev": "4f48176835404eb5879cb491063dd6554f888622",
+  "head": "2cef378609d1063f8bb2d4fb5a03f57eda44a314",
   "applied": [
     "timeout",
     "pairpi0",
@@ -17,14 +17,15 @@
     "discrit2-wip",
     "sortcells",
     "sortlinks",
-    "sortnoise",
+    "sortnoise"
+  ],
+  "unapplied": [
     "ci",
     "subdetVolman2",
     "subdetVolman",
     "diag-wip",
     "cellids-wip"
   ],
-  "unapplied": [],
   "hidden": [],
   "patches": {
     "timeout": {
