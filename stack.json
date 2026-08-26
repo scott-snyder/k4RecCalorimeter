@@ -1,9 +1,10 @@
 {
   "version": 5,
-  "prev": "a0000b45599f916c543f9fc1b3da72fc1f221cfc",
-  "head": "4715455b9bdf065458d0d85bc4c2dcd4a1cc62fc",
+  "prev": "8c6923d9f546acea1507dc62e146279a3ffa720a",
+  "head": "28e2992443a7bdef587b1706997abc6da8d1c321",
   "applied": [
-    "timeout"
+    "timeout",
+    "hhtest"
   ],
   "unapplied": [
     "pairpi0",
@@ -30,6 +31,9 @@
   "patches": {
     "timeout": {
       "oid": "4715455b9bdf065458d0d85bc4c2dcd4a1cc62fc"
+    },
+    "hhtest": {
+      "oid": "28e2992443a7bdef587b1706997abc6da8d1c321"
     },
     "pairpi0": {
       "oid": "94858011c66dc51043508967534cb0cac7d1a9c1"

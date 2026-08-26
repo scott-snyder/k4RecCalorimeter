@@ -1,0 +1,6 @@
+Bottom: f73eaef0752268bf9adb2bbc9fe862a2d08488fa
+Top:    f73eaef0752268bf9adb2bbc9fe862a2d08488fa
+Author: scott snyder <snyder@bnl.gov>
+Date:   2026-08-26 11:42:52 -0400
+
+Don't skip tests.
