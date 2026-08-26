@@ -1,10 +1,11 @@
 {
   "version": 5,
-  "prev": "8c6923d9f546acea1507dc62e146279a3ffa720a",
-  "head": "28e2992443a7bdef587b1706997abc6da8d1c321",
+  "prev": "62cd884ba301de046f4080499ec32c063af8c9dc",
+  "head": "b2739576f5fa0da4e281dd252b97942772f5b7b0",
   "applied": [
     "timeout",
-    "hhtest"
+    "hhtest",
+    "refresh-temp"
   ],
   "unapplied": [
     "pairpi0",
@@ -34,6 +35,9 @@
     },
     "hhtest": {
       "oid": "28e2992443a7bdef587b1706997abc6da8d1c321"
+    },
+    "refresh-temp": {
+      "oid": "b2739576f5fa0da4e281dd252b97942772f5b7b0"
     },
     "pairpi0": {
       "oid": "94858011c66dc51043508967534cb0cac7d1a9c1"
