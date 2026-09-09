@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "1f59f6b99fab20d7fb254c00ba9d31ebb10d6c19",
-  "head": "0434f2d60abf1f0712a2a1e95ac847f8da18875d",
+  "prev": "d3a5336caf68d0c311f3c8a4bfced6f2a4c157d9",
+  "head": "6a943dc8e60c7e3bb773c0550858006b5c26b99e",
   "applied": [
     "xtalk",
     "timeout",
@@ -24,10 +24,11 @@
     "subdetVolman",
     "move-check",
     "check-deprecated",
-    "check-remove",
+    "check-remove"
+  ],
+  "unapplied": [
     "ci"
   ],
-  "unapplied": [],
   "hidden": [
     "FCChh",
     "mdutils"
