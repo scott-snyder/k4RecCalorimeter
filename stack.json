@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "1614a5ddef2d1740786841454386b6785fdf161c",
-  "head": "aa555593c59cc3ede0beffd820dbe1c428a7d8d7",
+  "prev": "072bd2d1d711d1c426fa0b92f465581dd7ebb421",
+  "head": "763b42b1365684905e6e92fcb891ba5c3f28180b",
   "applied": [
     "xtalk",
     "timeout",
@@ -12,7 +12,9 @@
     "topoNoiseIndex",
     "noiseIndex",
     "createTopoCluster",
-    "createCaloCells",
+    "createCaloCells"
+  ],
+  "unapplied": [
     "discrit-wip",
     "discrit2-wip",
     "sortcells",
@@ -23,9 +25,7 @@
     "subdetVolman",
     "move-check",
     "check-deprecated",
-    "check-remove"
-  ],
-  "unapplied": [
+    "check-remove",
     "ci"
   ],
   "hidden": [
