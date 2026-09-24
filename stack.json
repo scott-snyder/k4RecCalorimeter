@@ -1,13 +1,12 @@
 {
   "version": 5,
-  "prev": "60163910b5b7eaafb79ee683d1b95018904dbfd5",
+  "prev": "c860ade66c844db681bdb06b7a53ccb1f76b920d",
   "head": "cf5f8188e6e54de709dd865e0649f0bbd5698867",
   "applied": [],
   "unapplied": [
     "timeout",
     "hhtest",
     "pairpi0",
-    "xtalkIndex",
     "phiwrap3",
     "k4geo-noclone",
     "cellposIndex",
@@ -36,9 +35,6 @@
     },
     "pairpi0": {
       "oid": "064b0688a26a1248d5007aa4326d0abde79a87b4"
-    },
-    "xtalkIndex": {
-      "oid": "4561f9acfc45669b26b9198a2802495c5481ca22"
     },
     "phiwrap3": {
       "oid": "f82e814431f1f4a5b8f11b132605960f09136226"
