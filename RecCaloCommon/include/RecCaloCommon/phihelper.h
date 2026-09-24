@@ -12,6 +12,7 @@
 #ifndef RECCALOCOMMON_PHIHELPER_H
 #define RECCALOCOMMON_PHIHELPER_H
 
+#include <concepts>
 #include <climits>
 #include <cmath>
 #include <numbers>
