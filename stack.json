@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "3318b6a30d8e9645e7acc49dca8267a2c79b372e",
-  "head": "02cc1092efa0dad51c34198678c3ee1f1ea763a3",
+  "prev": "afa9c9e41e8e1e4207cd555fd6f4cc9f974e046a",
+  "head": "944c23c218d3fee0425a3f1ba149dc3c3659a2eb",
   "applied": [
     "timeout",
     "hhtest",
@@ -15,8 +15,7 @@
     "createCaloCells",
     "discrit-wip",
     "discrit2-wip",
-    "discrit3-wip",
-    "refresh-temp"
+    "discrit3-wip"
   ],
   "unapplied": [
     "sortcells",
@@ -67,10 +66,7 @@
       "oid": "650cfddefbd198b3886877ef10397818102a8eac"
     },
     "discrit3-wip": {
-      "oid": "b87a0b53c47941be92f8de9ff67f7bb2a3c8c56b"
-    },
-    "refresh-temp": {
-      "oid": "02cc1092efa0dad51c34198678c3ee1f1ea763a3"
+      "oid": "944c23c218d3fee0425a3f1ba149dc3c3659a2eb"
     },
     "sortcells": {
       "oid": "cd86c32f5337cfd78c8f9e7974f399f4566df610"
