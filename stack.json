@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "992481454d71a2633f833a40c0bf3ae18b19bedc",
-  "head": "944c23c218d3fee0425a3f1ba149dc3c3659a2eb",
+  "prev": "4d8b11689d13127b1e8411bad367ee484a16632a",
+  "head": "650cfddefbd198b3886877ef10397818102a8eac",
   "applied": [
     "timeout",
     "hhtest",
@@ -14,10 +14,10 @@
     "createTopoCluster",
     "createCaloCells",
     "discrit-wip",
-    "discrit2-wip",
-    "discrit3-wip"
+    "discrit2-wip"
   ],
   "unapplied": [
+    "discrit3-wip",
     "sortcells",
     "sortlinks",
     "sortnoise",
