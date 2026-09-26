@@ -66,8 +66,12 @@ private:
    *
    * @return                Pointer to the output cluster collection.
    */
-  edm4hep::ClusterCollection* ClusterPairing(const edm4hep::ClusterCollection* inClusters, double masspeak,
-                                             double masslow, double masshigh) const;
+  void ClusterPairing(const edm4hep::ClusterCollection& inClusters,
+                      edm4hep::ReconstructedParticleCollection& reconstructedPi0,
+                      edm4hep::ClusterCollection& pairedClusters,
+                      edm4hep::ClusterCollection& unpairedClusters,
+                      double masspeak,
+                      double masslow, double masshigh) const;
 
   /**
    * Project the energy of a cluster in the pointing direction of the cluster
@@ -92,6 +96,11 @@ private:
    */
   double getInvariantMass(double E1, edm4hep::Vector3d momentum1, double E2, edm4hep::Vector3d momentum2) const;
 
+  StatusCode doPairing(const edm4hep::ClusterCollection& inClusters,
+                       edm4hep::ReconstructedParticleCollection& reconstructedPi0s,
+                       edm4hep::ClusterCollection& pairedClusters,
+                       edm4hep::ClusterCollection& unpairedClusters) const;
+
   /// Handle for input calorimeter clusters collection
   mutable k4FWCore::DataHandle<edm4hep::ClusterCollection> m_inClusters{"inClusters", Gaudi::DataHandle::Reader, this};
   /// Handle for reconstructed pi0 particles (output1) collection
@@ -109,8 +118,13 @@ private:
   Gaudi::Property<double> m_massLow{this, "massLow", 0.0, "lower boundary of pi0 mass window [GeV]"};
   Gaudi::Property<double> m_massHigh{this, "massHigh", 0.27, "upper boundary of pi0 mass window [GeV]"};
 
-  Gaudi::Property<double> m_minClusterEnergy{this, "minClusterEnergy", 0.2, "minimum cluster energy [GeV]"};
+  //Gaudi::Property<double> m_minClusterEnergy{this, "minClusterEnergy", 0.2, "minimum cluster energy [GeV]"};
+  //Gaudi::Property<double> m_maxDR{this, "maxDR", 0.2, "max DR"};
+  Gaudi::Property<double> m_minClusterEnergy{this, "minClusterEnergy", 0.1, "minimum cluster energy [GeV]"};
   Gaudi::Property<double> m_maxDR{this, "maxDR", 0.2, "max DR"};
+
+  mutable float m_oldTime = 0;
+  mutable float m_newTime = 0;
 };
 
 #endif /* RECCALORIMETER_PAIRCALOCLUSTERSPI0_H */
