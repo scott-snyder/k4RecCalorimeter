@@ -5,11 +5,106 @@
 #include "TLorentzVector.h"
 #include "TVector3.h"
 
+#include "boost/graph/adjacency_list.hpp"
+#include "boost/graph/maximum_weighted_matching.hpp"
+
 // Include the <cmath> header for sqrt, pow
 #include <cmath>
 #include <fstream>
+#include <ranges>
+
 
 DECLARE_COMPONENT(PairCaloClustersPi0)
+
+
+namespace {
+
+
+using Graph = boost::adjacency_list<boost::vecS,
+                                    boost::vecS,
+                                    boost::undirectedS,
+                                    boost::no_property,
+                                    boost::property<boost::edge_weight_t, double> >;
+using Vertex = boost::graph_traits<Graph>::vertex_descriptor;
+using Edge = boost::graph_traits<Graph>::edge_descriptor;
+
+
+template <class IT>
+auto make_range (const std::pair<IT, IT>& p)
+{
+  return std::ranges::subrange (p.first, p.second);
+}
+
+
+Graph makeGraph(const edm4hep::ClusterCollection* inClusters,
+                std::vector<TLorentzVector>& pairs,
+                double minClusterEnergy,
+                double maxDR,
+                double masspeak,
+                double masslow,
+                double masshigh)
+{
+  Graph g(inClusters->size());
+
+  auto getTLV = [](const edm4hep::Cluster& cl) {
+    double e = cl.getEnergy();
+    TVector3 disp(cl.getPosition().x, cl.getPosition().y, cl.getPosition().z);
+    return TLorentzVector(disp * (e / disp.Mag()), e);
+  };
+
+  double wsum = 0;
+
+  for (size_t i = 0; i < inClusters->size(); ++i) {
+    const auto& cl_i = inClusters->at(i);
+    if (cl_i.getEnergy() < minClusterEnergy)
+      continue;
+    TLorentzVector tlv_i = getTLV (cl_i);
+
+    for (size_t j = i + 1; j < inClusters->size(); j++) {
+      const auto& cl_j = inClusters->at(j);
+      if (cl_j.getEnergy() < minClusterEnergy)
+        continue;
+      TLorentzVector tlv_j = getTLV (cl_j);
+
+      TLorentzVector vpair = tlv_i + tlv_j;
+      double invM = vpair.M();
+      if (invM > masslow && invM < masshigh && tlv_i.DeltaR(tlv_j) < maxDR) {
+        double w = std::pow (invM - masspeak, 2);
+        wsum += w;
+        boost::add_edge (i, j, w, g);
+        pairs.push_back (vpair);
+      }      
+    }
+  }
+
+  for (auto e : make_range (boost::edges (g))) {
+    double w = boost::get (boost::edge_weight, g, e);
+    boost::put (boost::edge_weight, g, e, 2*wsum - w);
+  }
+
+  return g;
+}
+
+
+std::vector<Edge> findEdgesFromConnected (const Graph& g)
+{
+  size_t nv = boost::num_vertices(g);
+  std::vector<Vertex> mate (nv);
+  boost::maximum_weighted_matching (g, mate.data());
+
+  std::vector<Edge> out;
+  for (Vertex v1 = 0; v1 < nv; ++v1) {
+    Vertex v2 = mate[v1];
+    if (v2 != boost::graph_traits<Graph>::null_vertex() && v1 < v2) {
+      out.push_back (boost::edge (v1, v2, g).first);
+    }
+  }
+
+  return out;
+}
+
+
+} // anonymous namespace
 
 PairCaloClustersPi0::PairCaloClustersPi0(const std::string& name, ISvcLocator* svcLoc)
     : Gaudi::Algorithm(name, svcLoc) {
@@ -310,4 +405,20 @@ edm4hep::ClusterCollection* PairCaloClustersPi0::ClusterPairing(const edm4hep::C
   }
 
   return unpairedClusters;
+}
+
+
+StatusCode PairCaloClustersPi0::doPairing(const edm4hep::ClusterCollection* inClusters) const
+{
+  std::vector<TLorentzVector> pairs;
+  Graph g = makeGraph (inClusters,
+                       pairs,
+                       m_minClusterEnergy,
+                       m_maxDR,
+                       m_massPeak,
+                       m_massLow,
+                       m_massHigh);
+  std::vector<Edge> edges = findEdgesFromConnected (g);
+
+  return StatusCode::SUCCESS;
 }
