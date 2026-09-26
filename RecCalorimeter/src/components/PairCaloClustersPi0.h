@@ -92,6 +92,8 @@ private:
    */
   double getInvariantMass(double E1, edm4hep::Vector3d momentum1, double E2, edm4hep::Vector3d momentum2) const;
 
+  StatusCode doPairing(const edm4hep::ClusterCollection* inClusters) const;
+
   /// Handle for input calorimeter clusters collection
   mutable k4FWCore::DataHandle<edm4hep::ClusterCollection> m_inClusters{"inClusters", Gaudi::DataHandle::Reader, this};
   /// Handle for reconstructed pi0 particles (output1) collection
