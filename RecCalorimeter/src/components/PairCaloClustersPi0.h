@@ -66,8 +66,12 @@ private:
    *
    * @return                Pointer to the output cluster collection.
    */
-  edm4hep::ClusterCollection* ClusterPairing(const edm4hep::ClusterCollection* inClusters, double masspeak,
-                                             double masslow, double masshigh) const;
+  void ClusterPairing(const edm4hep::ClusterCollection& inClusters,
+                      edm4hep::ReconstructedParticleCollection& reconstructedPi0,
+                      edm4hep::ClusterCollection& pairedClusters,
+                      edm4hep::ClusterCollection& unpairedClusters,
+                      double masspeak,
+                      double masslow, double masshigh) const;
 
   /**
    * Project the energy of a cluster in the pointing direction of the cluster
@@ -91,6 +95,11 @@ private:
    * @return                 Invariant mass.
    */
   double getInvariantMass(double E1, edm4hep::Vector3d momentum1, double E2, edm4hep::Vector3d momentum2) const;
+
+  StatusCode doPairing(const edm4hep::ClusterCollection& inClusters,
+                       edm4hep::ReconstructedParticleCollection& reconstructedPi0s,
+                       edm4hep::ClusterCollection& pairedClusters,
+                       edm4hep::ClusterCollection& unpairedClusters) const;
 
   /// Handle for input calorimeter clusters collection
   mutable k4FWCore::DataHandle<edm4hep::ClusterCollection> m_inClusters{"inClusters", Gaudi::DataHandle::Reader, this};
