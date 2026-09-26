@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "4d8b11689d13127b1e8411bad367ee484a16632a",
+  "prev": "4ed188baa1f96389b6a47c58ce8c3e5413030b26",
   "head": "650cfddefbd198b3886877ef10397818102a8eac",
   "applied": [
     "timeout",
@@ -17,7 +17,6 @@
     "discrit2-wip"
   ],
   "unapplied": [
-    "discrit3-wip",
     "sortcells",
     "sortlinks",
     "sortnoise",
@@ -64,9 +63,6 @@
     },
     "discrit2-wip": {
       "oid": "650cfddefbd198b3886877ef10397818102a8eac"
-    },
-    "discrit3-wip": {
-      "oid": "944c23c218d3fee0425a3f1ba149dc3c3659a2eb"
     },
     "sortcells": {
       "oid": "cd86c32f5337cfd78c8f9e7974f399f4566df610"
