@@ -328,12 +328,17 @@ StatusCode CreateCaloCells::execute(const EventContext&) const {
     auto discrit = [&] (float e) -> float
       {
         if (m_discritN == 0) return e;
-        if (e < m_discritMin) return m_discritMin;
-        if (e > m_discritMax) return m_discritMax;
-        float range = m_discritMax - m_discritMin;
-        float x = (e - m_discritMin) / range;
-        return static_cast<int>(x*m_discritN + 0.5) / static_cast<float>(m_discritN) * range + m_discritMin;
+        if (e < m_discritMinE) return m_discritMinE;
+        if (e > m_discritMaxE) return m_discritMaxE;
+
+        float emax = e < m_discritBreakE ? m_discritBreakE : m_discritMaxE;
+        float range = emax - m_discritMinE;
+
+        // Discritize
+        float x = (e - m_discritMinE) / range;
+        return static_cast<int>(x*m_discritN + 0.5) / static_cast<float>(m_discritN) * range + m_discritMinE;
       };
+
     auto calib = cells.m_cells;
     for (auto& p : calib) p.second = 1;
     if (m_doCellCalibration) m_calibTool->calibrate(calib);
