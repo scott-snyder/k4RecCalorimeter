@@ -282,8 +282,13 @@ private:
   mutable k4FWCore::DataHandle<edm4hep::CaloHitSimCaloHitLinkCollection> m_links{"", Gaudi::DataHandle::Writer, this};
   /// Name of active volumes
 
-  Gaudi::Property<float> m_discritMin {this, "discritMin", 0};
-  Gaudi::Property<float> m_discritMax {this, "discritMax", 100};
+  /// Mininum energy (GeV)
+  Gaudi::Property<float> m_discritMinE {this, "discritMinE", 0};
+  /// Energy breakpoint between gains (GeV)
+  Gaudi::Property<float> m_discritBreakE {this, "discritBreakE", 1};
+  /// Maximum energy (GeV)
+  Gaudi::Property<float> m_discritMaxE {this, "discritMaxE", 100};
+  
   Gaudi::Property<int> m_discritN     {this, "discritN", -1};
 
   /// Pointer to the geometry service
