@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "4ed188baa1f96389b6a47c58ce8c3e5413030b26",
-  "head": "650cfddefbd198b3886877ef10397818102a8eac",
+  "prev": "50eb0f828ebf4485c18eb4face8457734751bb60",
+  "head": "fb28bb55b0253949e21f062a546e79971f2f7576",
   "applied": [
     "timeout",
     "hhtest",
@@ -14,7 +14,8 @@
     "createTopoCluster",
     "createCaloCells",
     "discrit-wip",
-    "discrit2-wip"
+    "discrit2-wip",
+    "discrit3-wip"
   ],
   "unapplied": [
     "sortcells",
@@ -63,6 +64,9 @@
     },
     "discrit2-wip": {
       "oid": "650cfddefbd198b3886877ef10397818102a8eac"
+    },
+    "discrit3-wip": {
+      "oid": "fb28bb55b0253949e21f062a546e79971f2f7576"
     },
     "sortcells": {
       "oid": "cd86c32f5337cfd78c8f9e7974f399f4566df610"
