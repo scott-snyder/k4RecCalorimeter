@@ -13,6 +13,7 @@
 #include <cmath>
 #include <fstream>
 #include <ranges>
+#include <chrono>
 
 
 DECLARE_COMPONENT(PairCaloClustersPi0)
@@ -107,6 +108,18 @@ std::vector<Edge> findEdgesFromConnected (const Graph& g)
 }
 
 
+void dumpClusters (const edm4hep::ReconstructedParticleCollection& reconstructedPi0s,
+                   const edm4hep::ClusterCollection& pairedClusters,
+                   const edm4hep::ClusterCollection& unpairedClusters)
+{
+  std::cout << std::format (" sizes {} {} {}\n",
+                            reconstructedPi0s.size(),
+                            pairedClusters.size(),
+                            unpairedClusters.size());
+}
+
+
+
 } // anonymous namespace
 
 PairCaloClustersPi0::PairCaloClustersPi0(const std::string& name, ISvcLocator* svcLoc)
@@ -153,25 +166,51 @@ StatusCode PairCaloClustersPi0::execute(const EventContext&) const {
   edm4hep::ClusterCollection* pairedClusters = m_pairedClusters.createAndPut();
 
   // Initialize output clusters
-  ClusterPairing(*inClusters,
-                 *reconstructedPi0,
-                 *pairedClusters,
-                 *unpairedClusters,
-                 m_massPeak, m_massLow, m_massHigh);
+  {
+    auto start = std::chrono::steady_clock::now();
+    ClusterPairing(*inClusters,
+                   *reconstructedPi0,
+                   *pairedClusters,
+                   *unpairedClusters,
+                   m_massPeak, m_massLow, m_massHigh);
+    auto end = std::chrono::steady_clock::now();
+    std::chrono::duration<float> elapsed = end - start;
+    m_oldTime += elapsed.count();
+  }
 
   edm4hep::ReconstructedParticleCollection reconstructedPi02;
   edm4hep::ClusterCollection unpairedClusters2;
   edm4hep::ClusterCollection pairedClusters2;
 
-  K4_GAUDI_CHECK( doPairing (*inClusters,
-                             reconstructedPi02,
-                             pairedClusters2,
-                             unpairedClusters2) );
+  {
+    auto start = std::chrono::steady_clock::now();
+    K4_GAUDI_CHECK( doPairing (*inClusters,
+                               reconstructedPi02,
+                               pairedClusters2,
+                               unpairedClusters2) );
+    auto end = std::chrono::steady_clock::now();
+    std::chrono::duration<float> elapsed = end - start;
+    m_newTime += elapsed.count();
+  }
+
+  std::cout << "aaa " << name() << " cluster results\n";
+  std::cout << "old\n";
+  dumpClusters (*reconstructedPi0,
+                *pairedClusters,
+                *unpairedClusters);
+  std::cout << "new\n";
+  dumpClusters (reconstructedPi02,
+                pairedClusters2,
+                unpairedClusters2);
 
   return StatusCode::SUCCESS;
 }
 
-StatusCode PairCaloClustersPi0::finalize() { return Gaudi::Algorithm::finalize(); }
+StatusCode PairCaloClustersPi0::finalize() {
+  std::cout << std::format ("aaa2 {} {} {}\n",
+                            name(), m_oldTime, m_newTime);
+  return Gaudi::Algorithm::finalize();
+}
 
 // calculation of invariant mass
 double PairCaloClustersPi0::getInvariantMass(double E1, edm4hep::Vector3d momentum1, double E2,
