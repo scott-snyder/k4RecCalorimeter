@@ -22,11 +22,12 @@ DECLARE_COMPONENT(PairCaloClustersPi0)
 namespace {
 
 
+using EdgeProps = boost::property<boost::edge_weight_t, double>;
 using Graph = boost::adjacency_list<boost::vecS,
                                     boost::vecS,
                                     boost::undirectedS,
                                     boost::no_property,
-                                    boost::property<boost::edge_weight_t, double> >;
+                                    EdgeProps>;
 using Vertex = boost::graph_traits<Graph>::vertex_descriptor;
 using Edge = boost::graph_traits<Graph>::edge_descriptor;
 
@@ -90,7 +91,7 @@ Graph makeGraph(const edm4hep::ClusterCollection& inClusters,
 }
 
 
-std::vector<Edge> findEdgesFromConnected (const Graph& g)
+std::vector<Edge> findEdges (const Graph& g)
 {
   size_t nv = boost::num_vertices(g);
   std::vector<Vertex> mate (nv);
@@ -473,7 +474,7 @@ StatusCode PairCaloClustersPi0::doPairing(const edm4hep::ClusterCollection& inCl
                        m_massPeak,
                        m_massLow,
                        m_massHigh);
-  std::vector<Edge> edges = findEdgesFromConnected (g);
+  std::vector<Edge> edges = findEdges (g);
 
   std::vector<bool> used_clusts (nclust);
   for (const Edge& e : edges) {
