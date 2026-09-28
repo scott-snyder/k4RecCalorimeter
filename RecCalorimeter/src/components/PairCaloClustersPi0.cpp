@@ -201,8 +201,8 @@ StatusCode PairCaloClustersPi0::doPairing(const edm4hep::ClusterCollection& inCl
 
   std::vector<bool> used_clusts (nclust);
   for (const Edge& e : edges) {
-    const auto& cl1 = inClusters.at(boost::source(e, g));
-    const auto& cl2 = inClusters.at(boost::target(e, g));
+    auto cl1 = inClusters.at(boost::source(e, g)).clone();
+    auto cl2 = inClusters.at(boost::target(e, g)).clone();
     TLorentzVector tlv1 = getTLV (cl1);
     TLorentzVector tlv2 = getTLV (cl2);
     TLorentzVector tlv_pi = tlv1 + tlv2;
@@ -214,8 +214,8 @@ StatusCode PairCaloClustersPi0::doPairing(const edm4hep::ClusterCollection& inCl
     this_pi0.addToClusters(cl1);
     this_pi0.addToClusters(cl2);
     reconstructedPi0s.push_back(this_pi0);
-    pairedClusters.push_back (cl1.clone());
-    pairedClusters.push_back (cl2.clone());
+    pairedClusters.push_back (cl1);
+    pairedClusters.push_back (cl2);
     used_clusts[boost::source(e, g)] = true;
     used_clusts[boost::target(e, g)] = true;
   }
