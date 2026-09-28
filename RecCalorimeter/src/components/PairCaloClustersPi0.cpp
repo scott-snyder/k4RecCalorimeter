@@ -293,8 +293,6 @@ edm4hep::ClusterCollection* PairCaloClustersPi0::ClusterPairing(const edm4hep::C
         111, outCluster1.getEnergy() + outCluster2.getEnergy(),
         edm4hep::Vector3f(momentum1.x + momentum2.x, momentum1.y + momentum2.y, momentum1.z + momentum2.z),
         edm4hep::Vector3f(0, 0, 0), 0., this_pi0_invM, 0., edm4hep::CovMatrix4f());
-    this_pi0.addToClusters(outCluster1);
-    this_pi0.addToClusters(outCluster2);
     reconstructedPi0->push_back(this_pi0);
   }
   for (size_t i = 0; i < inClusters->size(); ++i) {
