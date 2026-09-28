@@ -263,15 +263,19 @@ edm4hep::ClusterCollection* PairCaloClustersPi0::ClusterPairing(const edm4hep::C
 
   // Step 4: save paired and unpaired clusters, reconstruct pi0 candidates
   verbose() << "We are in cluster pairing step 4" << endmsg;
-  std::vector<size_t> vec_index_paired_clusters;
+  std::vector<std::pair<size_t, size_t> > vec_index_paired_clusters;
   // save paired clusters
+  auto getPairE = [&] (const std::pair<size_t, size_t>& p)
+  { return inClusters->at(p.first).getEnergy() + inClusters->at(p.second).getEnergy(); };
+  std::ranges::sort (bestcombi_pairs,
+                     [&] (const std::pair<size_t, size_t>& a,
+                          const std::pair<size_t, size_t>& b)
+                     { return getPairE(a) > getPairE(b); });
   for (size_t i = 0; i < bestcombi_pairs.size(); i++) {
-    auto outCluster1 = inClusters->at(bestcombi_pairs[i].first).clone();
-    pairedClusters->push_back(outCluster1);
-    vec_index_paired_clusters.push_back(bestcombi_pairs[i].first);
-    auto outCluster2 = inClusters->at(bestcombi_pairs[i].second).clone();
-    pairedClusters->push_back(outCluster2);
-    vec_index_paired_clusters.push_back(bestcombi_pairs[i].second);
+    const auto& outCluster1 = inClusters->at(bestcombi_pairs[i].first);
+    vec_index_paired_clusters.emplace_back(bestcombi_pairs[i].first, reconstructedPi0->size());
+    const auto& outCluster2 = inClusters->at(bestcombi_pairs[i].second);
+    vec_index_paired_clusters.emplace_back(bestcombi_pairs[i].second, reconstructedPi0->size());
     // reconstruct pi0 from these two clusters
     edm4hep::Vector3d position1(outCluster1.getPosition().x, outCluster1.getPosition().y, outCluster1.getPosition().z);
     edm4hep::Vector3d position2(outCluster2.getPosition().x, outCluster2.getPosition().y, outCluster2.getPosition().z);
@@ -294,16 +298,20 @@ edm4hep::ClusterCollection* PairCaloClustersPi0::ClusterPairing(const edm4hep::C
     reconstructedPi0->push_back(this_pi0);
   }
   for (size_t i = 0; i < inClusters->size(); ++i) {
-    bool IsPaired = false;
+    int ipair = -1;
     for (size_t j = 0; j < vec_index_paired_clusters.size(); j++) {
-      if (i == vec_index_paired_clusters[j]) {
-        IsPaired = true;
+      if (i == vec_index_paired_clusters[j].first) {
+        ipair = vec_index_paired_clusters[j].second;
         break;
       }
     }
-    // save unpaired clusters
-    if (!IsPaired) {
-      auto outCluster = inClusters->at(i).clone();
+    // save clusters
+    auto outCluster = inClusters->at(i).clone();
+    if (ipair >= 0) {
+      pairedClusters->push_back(outCluster);
+      reconstructedPi0->at(ipair).addToClusters(outCluster);
+    }
+    else {
       unpairedClusters->push_back(outCluster);
       verbose() << "save unpaired cluster. cluster index = " << i << endmsg;
     }
