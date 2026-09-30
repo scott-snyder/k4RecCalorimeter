@@ -33,7 +33,8 @@ namespace {
 /// non-sparse graph not being modified dynamically.
 /// The maximum_weighted_matching algorithm requires the edge weight
 /// as an internal property.
-using EdgeProps = boost::property<boost::edge_weight_t, double>;
+using EdgeProps = boost::property<boost::edge_weight_t, double,
+                                  boost::property<boost::edge_index_t, int> >;
 using Graph = boost::adjacency_list<boost::vecS,
                                     boost::vecS,
                                     boost::undirectedS,
@@ -77,6 +78,7 @@ Graph makeGraph(const edm4hep::ClusterCollection& inClusters,
 
   double wsum = 0;
 
+  size_t iedge = 0;
   for (size_t i = 0; i < inClusters.size(); ++i) {
     const auto& cl_i = inClusters.at(i);
     if (cl_i.getEnergy() < minClusterEnergy)
@@ -94,7 +96,7 @@ Graph makeGraph(const edm4hep::ClusterCollection& inClusters,
       if (invM > masslow && invM < masshigh && tlv_i.DeltaR(tlv_j) < maxDR) {
         double w = std::pow (invM - masspeak, 2);
         wsum += w;
-        boost::add_edge (i, j, w, g);
+        boost::add_edge (i, j, EdgeProps(w, iedge++), g);
         pairs.push_back (vpair);
       }      
     }
@@ -199,8 +201,18 @@ StatusCode PairCaloClustersPi0::doPairing(const edm4hep::ClusterCollection& inCl
                        m_massHigh);
   std::vector<Edge> edges = findEdges (g);
 
-  std::vector<bool> used_clusts (nclust);
+  std::ranges::sort (edges,
+                     [&] (const Edge& e1, const Edge& e2)
+                     {
+                       int iedge1 = boost::get (boost::edge_index, g, e1);
+                       int iedge2 = boost::get (boost::edge_index, g, e2);
+                       return pairs[iedge1].E() > pairs[iedge2].E();
+                     });
+
+  std::vector<int> used_clusts (nclust, -1);
   for (const Edge& e : edges) {
+    std::cout << std::format ("aaa2 {}\n",
+                              boost::get(boost::edge_index, g, e));
     auto cl1 = inClusters.at(boost::source(e, g)).clone();
     auto cl2 = inClusters.at(boost::target(e, g)).clone();
     TLorentzVector tlv1 = getTLV (cl1);
@@ -211,18 +223,20 @@ StatusCode PairCaloClustersPi0::doPairing(const edm4hep::ClusterCollection& inCl
        edm4hep::Vector3f(tlv_pi.Px(), tlv_pi.Py(), tlv_pi.Pz()),
        edm4hep::Vector3f(0, 0, 0), 0., tlv_pi.M(), 0.,
        edm4hep::CovMatrix4f());
-    this_pi0.addToClusters(cl1);
-    this_pi0.addToClusters(cl2);
+    used_clusts[boost::source(e, g)] = reconstructedPi0s.size();
+    used_clusts[boost::target(e, g)] = reconstructedPi0s.size();
     reconstructedPi0s.push_back(this_pi0);
-    pairedClusters.push_back (cl1);
-    pairedClusters.push_back (cl2);
-    used_clusts[boost::source(e, g)] = true;
-    used_clusts[boost::target(e, g)] = true;
   }
 
   for (size_t i = 0; i < nclust; ++i) {
-    if (!used_clusts[i]) {
-      unpairedClusters.push_back (inClusters.at(i).clone());
+    auto cl = inClusters.at(i).clone();
+    int ipair = used_clusts[i];
+    if (ipair >= 0) {
+      reconstructedPi0s[ipair].addToClusters (cl);
+      pairedClusters.push_back (cl);
+    }
+    else {
+      unpairedClusters.push_back (cl);
     }
   }
 
