@@ -145,14 +145,17 @@ edm4hep::ClusterCollection* PairCaloClustersPi0::ClusterPairing(const edm4hep::C
       edm4hep::Vector3d cluster_j_momentum =
           PairCaloClustersPi0::projectMomentum(energy_j, cluster_j_position3d, edm4hep::Vector3d(0, 0, 0));
       double invM = PairCaloClustersPi0::getInvariantMass(energy_i, cluster_i_momentum, energy_j, cluster_j_momentum);
-      if (invM > masslow && invM < masshigh && tlv_i.DeltaR(tlv_j) < m_maxDR) {
+      if (invM > masslow && invM < masshigh && std::abs(tlv_i.Angle(tlv_j.Vect())) < m_maxDTheta) {
         std::pair<size_t, size_t> this_possible_pair = std::make_pair(i, j);
         vec_AllPossiblePairs.push_back(this_possible_pair);
-#if 0
-        of << std::format ("{:3d} {:3d} {:10.5f} {:10.5f} {:8.5f} {:10.5f}\n",
+#if 1
+        std::cout << std::format ("pair {:3d} -- {:3d} {:3d} {:10.5f} {:10.5f} dr {:8.5f} dth {:8.5f} {:10.5f}\n",
+                                  vec_AllPossiblePairs.size(),
                            i, j, invM, (tlv_i+tlv_j).M(),
                            tlv_i.DeltaR(tlv_j),
+                           tlv_i.Angle(tlv_j.Vect()),
                            (tlv_i+tlv_j).Perp());
+        std::cout.flush();
 #endif
       }
     }
