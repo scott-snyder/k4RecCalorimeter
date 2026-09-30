@@ -1,14 +1,13 @@
 {
   "version": 5,
-  "prev": "6744db2f94d7f4e8978475f8e4eaa9928bf9f027",
-  "head": "470c5836538318cc3db67e8b4331121fce056ab0",
+  "prev": "f739886a0bbc2f429a44124984f9e770b38f0255",
+  "head": "4491c32d096d842c76d5d8b17a826562fcad9279",
   "applied": [
     "timeout",
     "hhtest",
     "pairpi0",
     "phiwrap3",
-    "k4geo-noclone",
-    "refresh-temp"
+    "k4geo-noclone"
   ],
   "unapplied": [
     "pi0graph-wip",
@@ -38,16 +37,13 @@
       "oid": "b9d304a9afe5d3689af647e58ce62eda5f78b70d"
     },
     "pairpi0": {
-      "oid": "bb00c75a19d575468c45b94fd0548f6ad338f2a6"
+      "oid": "4f98feca3d74c008826de44a41ba838d4f2734ad"
     },
     "phiwrap3": {
-      "oid": "9638e2f6ee07d34e57ecac9eeae61eb08a065925"
+      "oid": "447106e5c4b5472ad1c708f708faf82288644790"
     },
     "k4geo-noclone": {
-      "oid": "e444c334b74ac729f85a790215145590ca2e8da4"
-    },
-    "refresh-temp": {
-      "oid": "470c5836538318cc3db67e8b4331121fce056ab0"
+      "oid": "4491c32d096d842c76d5d8b17a826562fcad9279"
     },
     "pi0graph-wip": {
       "oid": "b1ec7208e42e6fb6adf9907175b5917508ae6540"
