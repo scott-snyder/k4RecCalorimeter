@@ -285,6 +285,17 @@ edm4hep::ClusterCollection* PairCaloClustersPi0::ClusterPairing(const edm4hep::C
         PairCaloClustersPi0::projectMomentum(outCluster2.getEnergy(), position2, edm4hep::Vector3d(0, 0, 0));
     double this_pi0_invM =
         PairCaloClustersPi0::getInvariantMass(outCluster1.getEnergy(), momentum1, outCluster2.getEnergy(), momentum2);
+    std::ostringstream ss;
+    ss << m_reconstructedPi0;
+    std::cout << std::format ("aaa2 {} {} {} {} {} {} {}\n",
+                              name(),
+                              ss.str(),
+                              i,
+                              bestcombi_pairs[i].first,
+                              bestcombi_pairs[i].second,
+                              getPairE(bestcombi_pairs[i]),
+                              outCluster1.getEnergy()+outCluster2.getEnergy());
+    std::cout.flush();
     verbose() << "Final pairing " << i << " first cluster = " << bestcombi_pairs[i].first
               << ", second cluster =  " << bestcombi_pairs[i].second << ", invariant mass [GeV] = " << this_pi0_invM
               << endmsg;
