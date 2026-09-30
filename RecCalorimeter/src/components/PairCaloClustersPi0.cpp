@@ -64,7 +64,10 @@ TLorentzVector getTLV (const edm4hep::Cluster& cl)
 
 /**
  * @brief Create graph corresponding to a set of clusters.
- * @param inClusters 
+ * @param inClusters The input set of clusters.
+ * @param paris Filled with the 4-vector for each candidate pair
+ *              (corresponding to an edge in the graph).
+ * @param minClusterEnergy Minimum energy for a cluster to be considered.
  */
 Graph makeGraph(const edm4hep::ClusterCollection& inClusters,
                 std::vector<TLorentzVector>& pairs,
