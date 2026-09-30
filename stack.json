@@ -1,15 +1,14 @@
 {
   "version": 5,
-  "prev": "37e830c36ef9b17faa63fe52a44907f983884e58",
-  "head": "514456a8afe9196e6dafc85e0c9d869b1c82cfe7",
+  "prev": "483b496a9ff0f4622ab3a29d9eceb9c265f469b5",
+  "head": "2a411a4be300ac958c1ecdb83dd26be77fb5dd29",
   "applied": [
     "timeout",
     "hhtest",
     "pairpi0",
     "phiwrap3",
     "k4geo-noclone",
-    "pi0graph-wip",
-    "refresh-temp"
+    "pi0graph-wip"
   ],
   "unapplied": [
     "cellposIndex",
@@ -47,10 +46,7 @@
       "oid": "be7a27ab53a8ee0e4915f94f3e6a3ef1d27641f2"
     },
     "pi0graph-wip": {
-      "oid": "0a2ceb355bac091fc6c31748343e4eb967f62820"
-    },
-    "refresh-temp": {
-      "oid": "514456a8afe9196e6dafc85e0c9d869b1c82cfe7"
+      "oid": "2a411a4be300ac958c1ecdb83dd26be77fb5dd29"
     },
     "cellposIndex": {
       "oid": "45db3224d76f49ecf94ab980e2c3a98f470d4f6c"
