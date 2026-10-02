@@ -1,14 +1,13 @@
 {
   "version": 5,
-  "prev": "3d2a6fbbe9b0bcd4a5482cc54d4c44fd172229ab",
-  "head": "058adfce06eea1af0aaa8332257cb44678ac1542",
+  "prev": "7ba72159c71c1ebaa930d8e120c00cb2f0ff62cc",
+  "head": "50a7ebd19e89e817714f25e60add48ea5fc0cd20",
   "applied": [
     "timeout",
     "hhtest",
     "phiwrap3",
     "pairpi0",
-    "ci",
-    "refresh-temp"
+    "ci"
   ],
   "unapplied": [
     "k4geo-noclone",
@@ -40,13 +39,10 @@
       "oid": "6f9a9dc7719bd591bb392238b03d8daddee4f8bc"
     },
     "pairpi0": {
-      "oid": "4efa200eb5deff4d118edd0acd297d5c091aac12"
+      "oid": "76eb0de0c56b546b65495c301be2e0ed2539d6ae"
     },
     "ci": {
-      "oid": "d01067f09bc55193d11d5bb81d81690385cb45c5"
-    },
-    "refresh-temp": {
-      "oid": "058adfce06eea1af0aaa8332257cb44678ac1542"
+      "oid": "50a7ebd19e89e817714f25e60add48ea5fc0cd20"
     },
     "k4geo-noclone": {
       "oid": "6f15d750216cfabe72fa3e03ff92e538bd9fa7e6"
