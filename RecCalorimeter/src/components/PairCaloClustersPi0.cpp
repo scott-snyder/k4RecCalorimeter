@@ -43,7 +43,7 @@ using Edge = boost::graph_traits<Graph>::edge_descriptor;
 
 /// Helper: Turn a pair of iterators into a range.
 template <class IT>
-auto make_range (const std::pair<IT, IT>& p) {
+auto make_range(const std::pair<IT, IT>& p) {
   return std::ranges::subrange(p.first, p.second);
 }
 
@@ -122,7 +122,6 @@ Graph makeGraph(const edm4hep::ClusterCollection& inClusters,
 
   return g;
 }
-
 
 /// Find the edeges of the graph corresponding to the desired solution.
 std::vector<Edge> findEdges(const Graph& g) {
