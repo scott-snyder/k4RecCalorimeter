@@ -12,7 +12,7 @@
  */
 
 #if __clang_major__ >= 22
-# pragma clang diagnostic ignored "-Wc2y-extensions"
+#pragma clang diagnostic ignored "-Wc2y-extensions"
 #endif
 
 #define BOOST_TEST_DYN_LINK
