@@ -1,13 +1,13 @@
 {
   "version": 5,
-  "prev": "35a2ff92713c2ccad33c737829aa07276e51626e",
+  "prev": "718ba167fc0e84df68b46a2804fb306e1e8dfa3e",
   "head": "be047eb51f30afa29996207c12ef2915b922caed",
   "applied": [
     "timeout",
     "hhtest",
     "phiwrap3",
     "k4geo-noclone",
-    "make-paircaloclusterspi0-more"
+    "pairp0"
   ],
   "unapplied": [
     "cellposIndex",
@@ -41,7 +41,7 @@
     "k4geo-noclone": {
       "oid": "76153e6a10668a2e018a34047b3ec050ab463d9b"
     },
-    "make-paircaloclusterspi0-more": {
+    "pairp0": {
       "oid": "be047eb51f30afa29996207c12ef2915b922caed"
     },
     "cellposIndex": {
