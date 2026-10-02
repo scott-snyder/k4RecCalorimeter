@@ -8,8 +8,8 @@
 
 #include "PairCaloClustersPi0.h"
 // Key4HEP
-#include "k4FWCore/MetadataUtils.h"
 #include "k4FWCore/GaudiChecks.h"
+#include "k4FWCore/MetadataUtils.h"
 
 #include "TLorentzVector.h"
 #include "TVector3.h"
@@ -25,14 +25,13 @@
 
 DECLARE_COMPONENT(PairCaloClustersPi0)
 
-
 namespace {
-
 
 /// Graph data structures.  This is the recommended structure for a
 /// non-sparse graph not being modified dynamically.
 /// The maximum_weighted_matching algorithm requires the edge weight
 /// as an internal property.
+// clang-format off
 using EdgeProps = boost::property<boost::edge_weight_t, double,
                                   boost::property<boost::edge_index_t, int> >;
 using Graph = boost::adjacency_list<boost::vecS,
@@ -42,20 +41,18 @@ using Graph = boost::adjacency_list<boost::vecS,
                                     EdgeProps>;
 using Vertex = boost::graph_traits<Graph>::vertex_descriptor;
 using Edge = boost::graph_traits<Graph>::edge_descriptor;
+// clang-format on
 
 
 /// Helper: Turn a pair of iterators into a range.
 template <class IT>
-auto make_range (const std::pair<IT, IT>& p)
-{
-  return std::ranges::subrange (p.first, p.second);
+auto make_range (const std::pair<IT, IT>& p) {
+  return std::ranges::subrange(p.first, p.second);
 }
-
 
 /// Helper: Extract a 4-vector from a cluster (assuming it comes
 /// from the origin).
-TLorentzVector getTLV (const edm4hep::Cluster& cl)
-{
+TLorentzVector getTLV (const edm4hep::Cluster& cl) {
   double e = cl.getEnergy();
   TVector3 disp(cl.getPosition().x, cl.getPosition().y, cl.getPosition().z);
   return TLorentzVector(disp * (e / disp.Mag()), e);
@@ -73,6 +70,7 @@ TLorentzVector getTLV (const edm4hep::Cluster& cl)
  * @param masslow Low end of mass window to acccept.
  * @param masshigh Upper end of mass window to acccept.
  */
+// clang-format off
 Graph makeGraph(const edm4hep::ClusterCollection& inClusters,
                 std::vector<TLorentzVector>& pairs,
                 double minClusterEnergy,
@@ -80,6 +78,7 @@ Graph makeGraph(const edm4hep::ClusterCollection& inClusters,
                 double masspeak,
                 double masslow,
                 double masshigh)
+// clang-format on
 {
   // New graph; number of vertices corresponds to the number of clusters.
   Graph g(inClusters.size());
@@ -93,14 +92,14 @@ Graph makeGraph(const edm4hep::ClusterCollection& inClusters,
     const auto& cl_i = inClusters.at(i);
     if (cl_i.getEnergy() < minClusterEnergy)
       continue;
-    TLorentzVector tlv_i = getTLV (cl_i);
+    TLorentzVector tlv_i = getTLV(cl_i);
 
     for (size_t j = i + 1; j < inClusters.size(); j++) {
       // Apply energy requirement to second cluster and get 4-momentum.
       const auto& cl_j = inClusters.at(j);
       if (cl_j.getEnergy() < minClusterEnergy)
         continue;
-      TLorentzVector tlv_j = getTLV (cl_j);
+      TLorentzVector tlv_j = getTLV(cl_j);
 
       // Calculate total 4-momentum; apply mass and opening angle requirements.
       TLorentzVector vpair = tlv_i + tlv_j;
@@ -108,21 +107,21 @@ Graph makeGraph(const edm4hep::ClusterCollection& inClusters,
       if (invM > masslow && invM < masshigh && std::abs(tlv_i.Angle(tlv_j.Vect())) < maxDTheta) {
         // Good candidate.  Set the weight to the square difference from the
         // pi0 mass (we'll adjust it later).
-        double w = std::pow (invM - masspeak, 2);
+        double w = std::pow(invM - masspeak, 2);
         wsum += w;
 
         // Add the edge to the graph, and remember the 4-momentum.
-        boost::add_edge (i, j, EdgeProps(w, pairs.size()), g);
-        pairs.push_back (vpair);
-      }      
+        boost::add_edge(i, j, EdgeProps(w, pairs.size()), g);
+        pairs.push_back(vpair);
+      }
     }
   }
 
   // Adjust weights such that finding the maximum weight will actually find
   // the maximum cardinality, minimum weight solution of the orginal weights.
-  for (auto e : make_range (boost::edges (g))) {
-    double w = boost::get (boost::edge_weight, g, e);
-    boost::put (boost::edge_weight, g, e, 2*wsum - w);
+  for (auto e : make_range(boost::edges (g))) {
+    double w = boost::get(boost::edge_weight, g, e);
+    boost::put(boost::edge_weight, g, e, 2*wsum - w);
   }
 
   return g;
@@ -130,28 +129,26 @@ Graph makeGraph(const edm4hep::ClusterCollection& inClusters,
 
 
 /// Find the edeges of the graph corresponding to the desired solution.
-std::vector<Edge> findEdges (const Graph& g)
+std::vector<Edge> findEdges(const Graph& g)
 {
   // Run the algorithm.
   size_t nv = boost::num_vertices(g);
-  std::vector<Vertex> mate (nv);
-  boost::maximum_weighted_matching (g, mate.data());
+  std::vector<Vertex> mate(nv);
+  boost::maximum_weighted_matching(g, mate.data());
 
   // Read out the edges of the solution.
   std::vector<Edge> out;
   for (Vertex v1 = 0; v1 < nv; ++v1) {
     Vertex v2 = mate[v1];
     if (v2 != boost::graph_traits<Graph>::null_vertex() && v1 < v2) {
-      out.push_back (boost::edge (v1, v2, g).first);
+      out.push_back(boost::edge(v1, v2, g).first);
     }
   }
 
   return out;
 }
 
-
 } // anonymous namespace
-
 
 PairCaloClustersPi0::PairCaloClustersPi0(const std::string& name, ISvcLocator* svcLoc)
     : Gaudi::Algorithm(name, svcLoc) {
@@ -162,7 +159,7 @@ PairCaloClustersPi0::PairCaloClustersPi0(const std::string& name, ISvcLocator* s
 }
 
 StatusCode PairCaloClustersPi0::initialize() {
-  K4_GAUDI_CHECK( Gaudi::Algorithm::initialize() );
+  K4_GAUDI_CHECK(Gaudi::Algorithm::initialize());
 
   // If there are shapeParameters metadata in the input cluster collection, ship them to the output cluster collections
   auto shapeParameterNames = k4FWCore::getCollectionParameter<std::vector<std::string>>(
@@ -192,10 +189,12 @@ StatusCode PairCaloClustersPi0::execute(const EventContext&) const {
   edm4hep::ClusterCollection* unpairedClusters = m_unpairedClusters.createAndPut();
   edm4hep::ClusterCollection* pairedClusters = m_pairedClusters.createAndPut();
 
+  // clang-format off
   K4_GAUDI_CHECK( doPairing (*inClusters,
                              *reconstructedPi0,
                              *pairedClusters,
                              *unpairedClusters) );
+  // clang-format on
 
   return StatusCode::SUCCESS;
 }
@@ -204,11 +203,11 @@ StatusCode PairCaloClustersPi0::execute(const EventContext&) const {
 StatusCode PairCaloClustersPi0::doPairing(const edm4hep::ClusterCollection& inClusters,
                                           edm4hep::ReconstructedParticleCollection& reconstructedPi0s,
                                           edm4hep::ClusterCollection& pairedClusters,
-                                          edm4hep::ClusterCollection& unpairedClusters) const
-{
+                                          edm4hep::ClusterCollection& unpairedClusters) const {
   // Make the graph and find the matching.
   size_t nclust = inClusters.size();
   std::vector<TLorentzVector> pairs;
+  // clang-format off
   Graph g = makeGraph (inClusters,
                        pairs,
                        m_minClusterEnergy,
@@ -216,27 +215,28 @@ StatusCode PairCaloClustersPi0::doPairing(const edm4hep::ClusterCollection& inCl
                        m_massPeak,
                        m_massLow,
                        m_massHigh);
-  std::vector<Edge> edges = findEdges (g);
+  // clang-format on
+  std::vector<Edge> edges = findEdges(g);
 
   // Sort in order of descending energy.
-  std::ranges::sort (edges,
-                     [&] (const Edge& e1, const Edge& e2)
-                     {
-                       int iedge1 = boost::get (boost::edge_index, g, e1);
-                       int iedge2 = boost::get (boost::edge_index, g, e2);
-                       return pairs[iedge1].E() > pairs[iedge2].E();
-                     });
+  std::ranges::sort (edges, [&](const Edge& e1, const Edge& e2) {
+    int iedge1 = boost::get(boost::edge_index, g, e1);
+    int iedge2 = boost::get(boost::edge_index, g, e2);
+    return pairs[iedge1].E() > pairs[iedge2].E();
+  });
 
   // Make the pi0 candidates.  We keep the cluster->pair map in used_clusts.
-  std::vector<int> used_clusts (nclust, -1);
+  std::vector<int> used_clusts(nclust, -1);
   for (const Edge& e : edges) {
-    int iedge = boost::get (boost::edge_index, g, e);
+    int iedge = boost::get(boost::edge_index, g, e);
     const TLorentzVector tlv_pi = pairs[iedge];
+    // clang-format off
     edm4hep::MutableReconstructedParticle this_pi0
       (111, tlv_pi.E(),
        edm4hep::Vector3f(tlv_pi.Px(), tlv_pi.Py(), tlv_pi.Pz()),
        edm4hep::Vector3f(0, 0, 0), 0., tlv_pi.M(), 0.,
        edm4hep::CovMatrix4f());
+    // clang-format on
     used_clusts[boost::source(e, g)] = reconstructedPi0s.size();
     used_clusts[boost::target(e, g)] = reconstructedPi0s.size();
     reconstructedPi0s.push_back(this_pi0);
@@ -248,11 +248,11 @@ StatusCode PairCaloClustersPi0::doPairing(const edm4hep::ClusterCollection& inCl
     auto cl = inClusters.at(i).clone();
     int ipair = used_clusts[i];
     if (ipair >= 0) {
-      reconstructedPi0s[ipair].addToClusters (cl);
-      pairedClusters.push_back (cl);
+      reconstructedPi0s[ipair].addToClusters(cl);
+      pairedClusters.push_back(cl);
     }
     else {
-      unpairedClusters.push_back (cl);
+      unpairedClusters.push_back(cl);
     }
   }
 

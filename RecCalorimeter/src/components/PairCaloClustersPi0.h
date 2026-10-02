@@ -58,13 +58,14 @@ class Vector3d;
  * standard algorithms to solve it that run in polynomial time
  * and linear space.  Here we use the maximum_weighted_matching algorithm
  * from boost.graph.  This finds the matching (a configuration with no
- * more than one edge for any vertex) with the maximum sum of edge weights.  
+ * more than one edge for any vertex) with the maximum sum of edge weights.
  * This sounds like it's not really what we want, but if we transform
  * our weights according to wi' -> C - wi, where C is larger than any wi,
  * than maximizing the sum of wi' will give the matching with maximum
  * cardinality with the minimum sum of weights.
  *
- * The algorithm implemented by boost.graph has N^3 complexity.
+ * The algorithm implemented by boost.graph (Galil, https://doi.org/10.1145/6462.6502)
+ * has N^3 complexity.
  * The best known is ~ N^2 log N, but the boost.graph version
  * seems to be good enough.
  *
@@ -86,7 +87,6 @@ public:
 
   StatusCode execute(const EventContext&) const;
 
-
 private:
   /**
    * Cluster pairing algorithm
@@ -98,8 +98,7 @@ private:
    */
   StatusCode doPairing(const edm4hep::ClusterCollection& inClusters,
                        edm4hep::ReconstructedParticleCollection& reconstructedPi0s,
-                       edm4hep::ClusterCollection& pairedClusters,
-                       edm4hep::ClusterCollection& unpairedClusters) const;
+                       edm4hep::ClusterCollection& pairedClusters, edm4hep::ClusterCollection& unpairedClusters) const;
 
 
   /// Handle for input calorimeter clusters collection
