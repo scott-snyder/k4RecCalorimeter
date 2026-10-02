@@ -1,14 +1,13 @@
 {
   "version": 5,
-  "prev": "d651d2554a51db5cd6c2f2c7446e9a624585ed33",
-  "head": "6016bfb832183a9e38c85a4736dc14b27f7fe2f8",
+  "prev": "c89d88931a82b7bf7dfc4378d0a79aadca40c88c",
+  "head": "d01067f09bc55193d11d5bb81d81690385cb45c5",
   "applied": [
     "timeout",
     "hhtest",
     "phiwrap3",
     "pairpi0",
-    "ci",
-    "refresh-temp"
+    "ci"
   ],
   "unapplied": [
     "k4geo-noclone",
@@ -37,16 +36,13 @@
       "oid": "92e09f28de5e8f15c29650233d677b85cb7643b1"
     },
     "phiwrap3": {
-      "oid": "85ec2505e97db3e56ec4914cdfc8cb03eca8bffc"
+      "oid": "6f9a9dc7719bd591bb392238b03d8daddee4f8bc"
     },
     "pairpi0": {
-      "oid": "fdd509d2d0dfb6035242b4cef16e133370136d9f"
+      "oid": "4efa200eb5deff4d118edd0acd297d5c091aac12"
     },
     "ci": {
-      "oid": "4cf49a429fb15f6a6389cd681202305d488e4ef7"
-    },
-    "refresh-temp": {
-      "oid": "6016bfb832183a9e38c85a4736dc14b27f7fe2f8"
+      "oid": "d01067f09bc55193d11d5bb81d81690385cb45c5"
     },
     "k4geo-noclone": {
       "oid": "6f15d750216cfabe72fa3e03ff92e538bd9fa7e6"
