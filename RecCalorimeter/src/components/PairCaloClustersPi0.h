@@ -100,7 +100,6 @@ private:
                        edm4hep::ReconstructedParticleCollection& reconstructedPi0s,
                        edm4hep::ClusterCollection& pairedClusters, edm4hep::ClusterCollection& unpairedClusters) const;
 
-
   /// Handle for input calorimeter clusters collection
   mutable k4FWCore::DataHandle<edm4hep::ClusterCollection> m_inClusters{"inClusters", Gaudi::DataHandle::Reader, this};
   /// Handle for reconstructed pi0 particles (output1) collection

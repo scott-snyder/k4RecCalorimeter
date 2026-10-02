@@ -5,7 +5,6 @@
  * @brief Make pi0 candidates from cluster pairs.
  */
 
-
 #include "PairCaloClustersPi0.h"
 // Key4HEP
 #include "k4FWCore/GaudiChecks.h"
@@ -21,7 +20,6 @@
 #include <cmath>
 #include <fstream>
 #include <ranges>
-
 
 DECLARE_COMPONENT(PairCaloClustersPi0)
 
@@ -43,7 +41,6 @@ using Vertex = boost::graph_traits<Graph>::vertex_descriptor;
 using Edge = boost::graph_traits<Graph>::edge_descriptor;
 // clang-format on
 
-
 /// Helper: Turn a pair of iterators into a range.
 template <class IT>
 auto make_range (const std::pair<IT, IT>& p) {
@@ -52,12 +49,11 @@ auto make_range (const std::pair<IT, IT>& p) {
 
 /// Helper: Extract a 4-vector from a cluster (assuming it comes
 /// from the origin).
-TLorentzVector getTLV (const edm4hep::Cluster& cl) {
+TLorentzVector getTLV(const edm4hep::Cluster& cl) {
   double e = cl.getEnergy();
   TVector3 disp(cl.getPosition().x, cl.getPosition().y, cl.getPosition().z);
   return TLorentzVector(disp * (e / disp.Mag()), e);
 }
-
 
 /**
  * @brief Create graph corresponding to a set of clusters.
@@ -119,9 +115,9 @@ Graph makeGraph(const edm4hep::ClusterCollection& inClusters,
 
   // Adjust weights such that finding the maximum weight will actually find
   // the maximum cardinality, minimum weight solution of the orginal weights.
-  for (auto e : make_range(boost::edges (g))) {
+  for (auto e : make_range(boost::edges(g))) {
     double w = boost::get(boost::edge_weight, g, e);
-    boost::put(boost::edge_weight, g, e, 2*wsum - w);
+    boost::put(boost::edge_weight, g, e, 2 * wsum - w);
   }
 
   return g;
@@ -129,8 +125,7 @@ Graph makeGraph(const edm4hep::ClusterCollection& inClusters,
 
 
 /// Find the edeges of the graph corresponding to the desired solution.
-std::vector<Edge> findEdges(const Graph& g)
-{
+std::vector<Edge> findEdges(const Graph& g) {
   // Run the algorithm.
   size_t nv = boost::num_vertices(g);
   std::vector<Vertex> mate(nv);
@@ -219,7 +214,7 @@ StatusCode PairCaloClustersPi0::doPairing(const edm4hep::ClusterCollection& inCl
   std::vector<Edge> edges = findEdges(g);
 
   // Sort in order of descending energy.
-  std::ranges::sort (edges, [&](const Edge& e1, const Edge& e2) {
+  std::ranges::sort(edges, [&](const Edge& e1, const Edge& e2) {
     int iedge1 = boost::get(boost::edge_index, g, e1);
     int iedge2 = boost::get(boost::edge_index, g, e2);
     return pairs[iedge1].E() > pairs[iedge2].E();
@@ -250,8 +245,7 @@ StatusCode PairCaloClustersPi0::doPairing(const edm4hep::ClusterCollection& inCl
     if (ipair >= 0) {
       reconstructedPi0s[ipair].addToClusters(cl);
       pairedClusters.push_back(cl);
-    }
-    else {
+    } else {
       unpairedClusters.push_back(cl);
     }
   }
