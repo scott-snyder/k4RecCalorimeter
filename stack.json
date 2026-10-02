@@ -1,13 +1,14 @@
 {
   "version": 5,
-  "prev": "718ba167fc0e84df68b46a2804fb306e1e8dfa3e",
-  "head": "be047eb51f30afa29996207c12ef2915b922caed",
+  "prev": "082f48168d157d1baf5cbe63de704247a3dca10b",
+  "head": "f6451658c4b613dd92ddad237323d9f698735d9c",
   "applied": [
     "timeout",
     "hhtest",
     "phiwrap3",
     "k4geo-noclone",
-    "pairp0"
+    "pairp0",
+    "ci"
   ],
   "unapplied": [
     "cellposIndex",
@@ -21,7 +22,6 @@
     "sortcells",
     "sortlinks",
     "sortnoise",
-    "ci",
     "subdetVolman2",
     "subdetVolman",
     "diag-wip",
@@ -43,6 +43,9 @@
     },
     "pairp0": {
       "oid": "be047eb51f30afa29996207c12ef2915b922caed"
+    },
+    "ci": {
+      "oid": "f6451658c4b613dd92ddad237323d9f698735d9c"
     },
     "cellposIndex": {
       "oid": "45db3224d76f49ecf94ab980e2c3a98f470d4f6c"
@@ -76,9 +79,6 @@
     },
     "sortnoise": {
       "oid": "0cb1974fca786bc7631d38f647d0cdc37ff4a442"
-    },
-    "ci": {
-      "oid": "b98d97ceb8a48a8513c070a675686065a464ccd3"
     },
     "subdetVolman2": {
       "oid": "c654a731b15b69c15cfd8245a763c6e4b8a69159"
