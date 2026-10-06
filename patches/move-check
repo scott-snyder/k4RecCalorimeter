@@ -1,7 +1,7 @@
-Bottom: 56e49b9f2482ca19dd7787383cc30bc69fc43e84
-Top:    1da31c67c2a6ea100ed4a884ce757c1efcb5035b
+Bottom: 007bb28d8ce120c9dd43eebcb23d71ea73ea45be
+Top:    16fd4fb1a9aeea2788f33365a0fe5863924e5f1c
 Author: sss <sss@karma>
-Date:   2026-09-09 14:25:53 -0400
+Date:   2026-10-06 12:02:34 -0400
 
 Update tools to use K4_GAUDI_CHECK from k4FWCore rather than
 K4RECCALORIMETER_CHECK.

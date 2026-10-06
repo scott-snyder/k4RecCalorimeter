@@ -1,6 +1,6 @@
-Bottom: 50f5d1fd88994824f7b44289451ffe73150ded4e
-Top:    0fd1dee0837b1dda25f1b80dcb243b36ddf45474
+Bottom: 78e001f35f6fe5ae9e10205bc4c82bf32ad2582e
+Top:    572d746550c10ca517467b31a835bf7c7c772b69
 Author: scott snyder <snyder@bnl.gov>
-Date:   2026-09-09 14:25:34 -0400
+Date:   2026-10-06 12:02:34 -0400
 
 Restrict pi0 candidates to avoid combinatorial explosion.
