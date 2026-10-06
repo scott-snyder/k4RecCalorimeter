@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "080705d0720cef963adb6fceb1846a451104c386",
+  "prev": "2292c846ef4fa1e57d9551d336e417baf226c1b0",
   "head": "b4884bc2d3bd93278c6e9c68f9a71ccc2602dec8",
   "applied": [
     "xtalk",
@@ -26,10 +26,9 @@
     "check-deprecated",
     "check-remove"
   ],
-  "unapplied": [
-    "ci"
-  ],
+  "unapplied": [],
   "hidden": [
+    "ci",
     "FCChh",
     "mdutils"
   ],
