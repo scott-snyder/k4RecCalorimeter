@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "5506f4c001b671305665ed00c0b095f42ea531df",
+  "prev": "1b09240a38dbb31288aa50578d5e55263af582b8",
   "head": "58b3e7f10ffdb6f2cc5bd2ff871d91335ab1a078",
   "applied": [
     "xtalk",
@@ -10,7 +10,6 @@
     "hhtest"
   ],
   "unapplied": [
-    "pairpi0",
     "topoNoiseIndex",
     "createTopoCluster",
     "createCaloCells",
@@ -75,9 +74,6 @@
     },
     "noiseIndex": {
       "oid": "33713a0cfd956675c1a4e508f66ede91ea9d4fa0"
-    },
-    "pairpi0": {
-      "oid": "ee990ec0eb5f282182df3831fdf03f109625236f"
     },
     "phiwrap3": {
       "oid": "8d959d3cc538ed3011acb6b3eaa35e4e9e2b7c2b"
