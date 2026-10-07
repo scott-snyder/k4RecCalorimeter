@@ -1,14 +1,16 @@
 {
   "version": 5,
-  "prev": "e735bb73fdb6866c418d93e819f8e2782da41149",
-  "head": "e5eee11298d13efbfaa6936460e3bf1cd42c348d",
+  "prev": "e3d68bb3b1cfd55c86d5157fdce246120e570bf9",
+  "head": "9e74a759c89f2bddc300a7ff20a8be6108c4e0b6",
   "applied": [
     "xtalk",
     "timeout",
     "k4geo-noclone",
     "phiwrap3",
     "hhtest",
-    "pairpi0",
+    "pairpi0"
+  ],
+  "unapplied": [
     "topoNoiseIndex",
     "createTopoCluster",
     "createCaloCells",
@@ -26,7 +28,6 @@
     "check-deprecated",
     "check-remove"
   ],
-  "unapplied": [],
   "hidden": [
     "ci",
     "FCChh",
