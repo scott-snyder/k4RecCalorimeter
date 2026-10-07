@@ -1,6 +1,6 @@
-Bottom: 49b7a1de25c264e64ffe072234bcf8907b829a7b
-Top:    7685425e5387712b902a31cc451863c85e581078
+Bottom: 67727e922ccdb8b8009a46c0811ca41068ca4733
+Top:    e05a5cdb9287066f5335efa8e2c47c6156e1ec7c
 Author: sss <sss@karma>
-Date:   2026-10-06 12:02:34 -0400
+Date:   2026-10-07 12:19:10 -0400
 
 More efficienct calorimeter cells reconstruction + positioning flexibility.
