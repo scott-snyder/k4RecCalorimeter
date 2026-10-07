@@ -1,13 +1,12 @@
 {
   "version": 5,
-  "prev": "974e77787f4b83da516b97ede43f4f7a5861cbaa",
+  "prev": "973a3f17713010fc7f6a3c5d851233c760ef9a93",
   "head": "50b8aca98a5a97c073aa7b9f5944885126198304",
   "applied": [
     "xtalk",
     "timeout"
   ],
   "unapplied": [
-    "k4geo-noclone",
     "phiwrap3",
     "hhtest",
     "pairpi0",
@@ -63,9 +62,6 @@
     },
     "hhtest": {
       "oid": "6152a7c3787a4ab3aaae75d141588f9b717f8a6f"
-    },
-    "k4geo-noclone": {
-      "oid": "d85ee28723b2bf46fadf08924f8d289e7e159b43"
     },
     "mdutils": {
       "oid": "b9f46034152e74af649f41df9478feb05b94e94b"
