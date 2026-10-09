@@ -105,7 +105,7 @@ private:
   double getNoiseRMSPerCell(int ibin, unsigned cellLayer) const;
   double getNoiseOffsetPerCell(int ibin, unsigned cellLayer) const;
 
-  //clang-format off
+  // clang-format off
   /// Add pileup contribution to the electronics noise? (only if read from file)
   Gaudi::Property<bool> m_addPileup
     {this, "addPileup", true, "Add pileup contribution to the electronics noise? (only if read from file)"};
@@ -143,7 +143,7 @@ private:
     { this, "CaloCellIndexerSvc", "k4::recCalo::CaloCellIndexerSvc", "" };
   ServiceHandle<k4::recCalo::ICaloCellConstantsSvc> m_constantsSvc
     { this, "CaloCellConstantsSvc", "k4::recCalo::CaloCellConstantsSvc", "" };
-    //clang-format on
+    // clang-format on
 
   const k4::recCalo::ICaloIndexer* m_indexer = nullptr;
 };
