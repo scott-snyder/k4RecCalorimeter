@@ -5,9 +5,8 @@
  * @file ReadNoiseFromFileBaseTool.cpp
  * @author scott snyder <snyder@bnl.gov>
  * @date Jul, 2026
- * @brief 
+ * @brief xxx to fill in
  */
-
 
 #include "RecCaloCommon/ReadNoiseFromFileBaseTool.h"
 
@@ -15,8 +14,8 @@
 #include "detectorCommon/DetUtils_k4geo.h"
 
 // k4FWCore
-#include "k4Interface/IGeoSvc.h"
 #include "k4FWCore/GaudiChecks.h"
+#include "k4Interface/IGeoSvc.h"
 
 // DD4hep
 #include "DD4hep/Detector.h"
@@ -31,11 +30,11 @@
 
 
 StatusCode ReadNoiseFromFileBaseTool::initialize() {
-  K4_GAUDI_CHECK( AlgTool::initialize() );
+  K4_GAUDI_CHECK(AlgTool::initialize());
 
-  K4_GAUDI_CHECK( m_geoSvc.retrieve() );
-  K4_GAUDI_CHECK( m_indexerSvc.retrieve() );
-  K4_GAUDI_CHECK( m_constantsSvc.retrieve() );
+  K4_GAUDI_CHECK(m_geoSvc.retrieve());
+  K4_GAUDI_CHECK(m_indexerSvc.retrieve());
+  K4_GAUDI_CHECK(m_constantsSvc.retrieve());
 
   if (m_numRadialLayers > 0) {
     m_numHistograms = m_numRadialLayers;
@@ -49,24 +48,23 @@ StatusCode ReadNoiseFromFileBaseTool::initialize() {
   m_index_activeField = m_decoder->index(m_activeFieldName);
 
   int detID = readout.segmentation().detector()->id;
-  m_indexer = m_indexerSvc->indexer (detID);
-  K4_GAUDI_CHECK( m_indexer != nullptr );
+  m_indexer = m_indexerSvc->indexer(detID);
+  K4_GAUDI_CHECK(m_indexer != nullptr);
 
   // get noise constants.
-  m_data = m_constantsSvc->getObj<NoiseData> (m_noiseFileName);
+  m_data = m_constantsSvc->getObj<NoiseData>(m_noiseFileName);
   if (!m_data) {
     NoiseData noise;
-    K4_GAUDI_CHECK( ReadNoiseFromFileBaseTool::initNoiseFromFile(noise) );
-    K4_GAUDI_CHECK( m_constantsSvc->putObj (m_noiseFileName, std::move (noise)) );
-    m_data = m_constantsSvc->getObj<NoiseData> (m_noiseFileName);
-    K4_GAUDI_CHECK( m_data != nullptr );
+    K4_GAUDI_CHECK(ReadNoiseFromFileBaseTool::initNoiseFromFile(noise));
+    K4_GAUDI_CHECK(m_constantsSvc->putObj (m_noiseFileName, std::move (noise)));
+    m_data = m_constantsSvc->getObj<NoiseData>(m_noiseFileName);
+    K4_GAUDI_CHECK(m_data != nullptr);
   }
 
   return StatusCode::SUCCESS;
 }
 
-StatusCode ReadNoiseFromFileBaseTool::initNoiseFromFile(NoiseData& data) const
-{
+StatusCode ReadNoiseFromFileBaseTool::initNoiseFromFile(NoiseData& data) const {
   // Check if file exists
   if (m_noiseFileName.empty()) {
     error() << "Name of the file with the noise values not provided!" << endmsg;
@@ -86,16 +84,14 @@ StatusCode ReadNoiseFromFileBaseTool::initNoiseFromFile(NoiseData& data) const
     info() << "Using the following file with the noise values: " << m_noiseFileName.value() << endmsg;
   }
 
-  auto getHist =  [&] (const std::string& name)
-  {
+  auto getHist =  [&](const std::string& name) {
     TH1* h = dynamic_cast<TH1*>(noiseFile->Get(name.c_str()));
     if (h) {
       h->SetDirectory(nullptr);
-    }
-    else {
+    } else {
       error() << "Cannot read noise histogram " << name << " from file " << m_noiseFileName << endmsg;
     }
-    return std::unique_ptr<TH1> (h);
+    return std::unique_ptr<TH1>(h);
   };
 
   std::string elecNoiseLayerHistoName, pileupLayerHistoName;
@@ -153,7 +149,7 @@ StatusCode ReadNoiseFromFileBaseTool::initNoiseFromFile(NoiseData& data) const
     }
   }
 
-  K4_GAUDI_CHECK( initBinning (data, *m_indexer));
+  K4_GAUDI_CHECK(initBinning(data, *m_indexer));
 
   return StatusCode::SUCCESS;
 }
@@ -161,7 +157,7 @@ StatusCode ReadNoiseFromFileBaseTool::initNoiseFromFile(NoiseData& data) const
 
 double ReadNoiseFromFileBaseTool::getNoiseRMSPerCell(CellID aCellId) const {
   // Get cell coordinates: bin and radial layer
-  unsigned ndx = m_indexer->index (aCellId);
+  unsigned ndx = m_indexer->index(aCellId);
   int ibin = m_data->m_bins.at(ndx).first;
 
   unsigned cellLayer = m_decoder->get(aCellId, m_index_activeField);
@@ -210,7 +206,7 @@ double ReadNoiseFromFileBaseTool::getNoiseOffsetPerCell(CellID aCellId) const {
     return 0.;
 
   // Get cell coordinates: bin and radial layer
-  unsigned ndx = m_indexer->index (aCellId);
+  unsigned ndx = m_indexer->index(aCellId);
   int ibin = m_data->m_bins.at(ndx).second;
 
   unsigned cellLayer = m_decoder->get(aCellId, m_index_activeField);
@@ -247,39 +243,34 @@ double ReadNoiseFromFileBaseTool::getNoiseOffsetPerCell(int ibin, unsigned cellL
 }
 
 
-std::pair<double, double>
-ReadNoiseFromFileBaseTool::getNoisePerCell(CellID aCellId) const
-{
+std::pair<double, double> ReadNoiseFromFileBaseTool::getNoisePerCell(CellID aCellId) const {
   // Get cell coordinates: bin and radial layer
-  unsigned ndx = m_indexer->index (aCellId);
+  unsigned ndx = m_indexer->index(aCellId);
   const std::pair<unsigned, unsigned>& bins = m_data->m_bins.at(ndx);
 
   unsigned cellLayer = m_decoder->get(aCellId, m_index_activeField);
 
   double rms = getNoiseRMSPerCell(bins.first, cellLayer);
   double offset = m_setNoiseOffset ? getNoiseOffsetPerCell(bins.second, cellLayer) : 0;
-  return std::make_pair (rms, offset);
+  return std::make_pair(rms, offset);
 }
 
-
 // Need a copy ctor to put these in std::any.
-ReadNoiseFromFileBaseTool::NoiseData::NoiseData (const NoiseData& other)
-  : m_bins (other.m_bins)
-{
-  auto copyHists = [] (std::vector<std::unique_ptr<TH1> >& dst,
-                       const std::vector<std::unique_ptr<TH1> >& src)
+ReadNoiseFromFileBaseTool::NoiseData::NoiseData(const NoiseData& other) : m_bins(other.m_bins) {
+  auto copyHists = [](std::vector<std::unique_ptr<TH1> >& dst,
+                      const std::vector<std::unique_ptr<TH1> >& src)
   {
-    dst.reserve (src.size());
+    dst.reserve(src.size());
     for (size_t i = 0; i < src.size(); i++) {
-      TH1* hcopy = dynamic_cast<TH1*> (src[i]->Clone());
-      hcopy->SetDirectory (nullptr);
-      dst.emplace_back (hcopy);
+      TH1* hcopy = dynamic_cast<TH1*>(src[i]->Clone());
+      hcopy->SetDirectory(nullptr);
+      dst.emplace_back(hcopy);
     }
   };
 
-  copyHists (m_histoPileupNoiseRMS, other.m_histoPileupNoiseRMS);
-  copyHists (m_histoElecNoiseRMS, other.m_histoElecNoiseRMS);
-  copyHists (m_histoPileupOffset, other.m_histoPileupOffset);
-  copyHists (m_histoElecNoiseOffset, other.m_histoElecNoiseOffset);
+  copyHists(m_histoPileupNoiseRMS, other.m_histoPileupNoiseRMS);
+  copyHists(m_histoElecNoiseRMS, other.m_histoElecNoiseRMS);
+  copyHists(m_histoPileupOffset, other.m_histoPileupOffset);
+  copyHists(m_histoElecNoiseOffset, other.m_histoElecNoiseOffset);
 }
 

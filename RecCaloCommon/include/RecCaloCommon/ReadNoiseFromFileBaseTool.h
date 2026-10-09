@@ -6,7 +6,7 @@
  * @file RecCaloCommon/ReadNoiseFromFileBaseTool.h
  * @author scott snyder <snyder@bnl.gov>
  * @date Jul, 2026
- * @brief 
+ * @brief xxx to fill in
  */
 
 
@@ -21,9 +21,9 @@
 #include "k4FWCore/DataHandle.h"
 
 // Interfaces
-#include "RecCaloCommon/INoiseConstTool.h"
-#include "RecCaloCommon/ICaloCellIndexerSvc.h"
 #include "RecCaloCommon/ICaloCellConstantsSvc.h"
+#include "RecCaloCommon/ICaloCellIndexerSvc.h"
+#include "RecCaloCommon/INoiseConstTool.h"
 
 // k4geo
 #include "detectorSegmentations/FCCSWGridPhiEta_k4geo.h"
@@ -75,26 +75,24 @@ protected:
     NoiseData& operator=(const NoiseData&) = delete;
     NoiseData& operator=(NoiseData&&) = default;
     /// Histograms with pileup RMS (index in array - radial layer)
-    std::vector<std::unique_ptr<TH1> > m_histoPileupNoiseRMS;
+    std::vector<std::unique_ptr<TH1>> m_histoPileupNoiseRMS;
     /// Histograms with electronics noise RMS (index in array - radial layer)
-    std::vector<std::unique_ptr<TH1> > m_histoElecNoiseRMS;
+    std::vector<std::unique_ptr<TH1>> m_histoElecNoiseRMS;
 
     /// Histograms with pileup offset (index in array - radial layer)
-    std::vector<std::unique_ptr<TH1> > m_histoPileupOffset;
+    std::vector<std::unique_ptr<TH1>> m_histoPileupOffset;
     /// Histograms with electronics noise offset (index in array - radial layer)
-    std::vector<std::unique_ptr<TH1> > m_histoElecNoiseOffset;
+    std::vector<std::unique_ptr<TH1>> m_histoElecNoiseOffset;
 
     // rms, offset
-    std::vector<std::pair<unsigned, unsigned> > m_bins;
+    std::vector<std::pair<unsigned, unsigned>> m_bins;
   };
 
-  virtual StatusCode initBinning (NoiseData& data,
-                                  const k4::recCalo::ICaloIndexer& indexer) const = 0;
+  virtual StatusCode initBinning(NoiseData& data, const k4::recCalo::ICaloIndexer& indexer) const = 0;
 
   // Decoder
   dd4hep::DDSegmentation::BitFieldCoder* m_decoder;
   int m_index_activeField = -1;
-
 
 private:
   /// Open file and read noise histograms in the memory
@@ -104,37 +102,45 @@ private:
   double getNoiseOffsetPerCell(int ibin, unsigned cellLayer) const;
 
   /// Add pileup contribution to the electronics noise? (only if read from file)
+  //clang-format off
   Gaudi::Property<bool> m_addPileup{this, "addPileup", true,
                                     "Add pileup contribution to the electronics noise? (only if read from file)"};
 
   /// Name of the file with noise constants
-  Gaudi::Property<std::string> m_noiseFileName{this, "noiseFileName", "", "Name of the file with noise constants"};
+  Gaudi::Property<std::string> m_noiseFileName
+    {this, "noiseFileName", "", "Name of the file with noise constants"};
   /// Name of active layers for sampling calorimeter
-  Gaudi::Property<std::string> m_activeFieldName{this, "activeFieldName", "active_layer",
-                                                 "Name of active layers for sampling calorimeter"};
+  Gaudi::Property<std::string> m_activeFieldName
+    {this, "activeFieldName", "active_layer", "Name of active layers for sampling calorimeter"};
   /// Name of pileup histogram
-  Gaudi::Property<std::string> m_pileupHistoName{this, "pileupHistoName", "h_pileup_layer", "Name of pileup histogram"};
+  Gaudi::Property<std::string> m_pileupHistoName
+    {this, "pileupHistoName", "h_pileup_layer", "Name of pileup histogram"};
   /// Name of electronics noise offset histogram
-  Gaudi::Property<std::string> m_elecNoiseOffsetHistoName{this, "elecNoiseOffsetHistoName", "h_mean_pileup_layer",
-                                                          "Name of electronics noise offset histogram"};
+  Gaudi::Property<std::string> m_elecNoiseOffsetHistoName
+    {this, "elecNoiseOffsetHistoName", "h_mean_pileup_layer", "Name of electronics noise offset histogram"};
   /// Name of pileup offset histogram
-  Gaudi::Property<std::string> m_pileupOffsetHistoName{this, "pileupOffsetHistoName", "h_pileup_layer",
-                                                       "Name of pileup offset histogram"};
+  Gaudi::Property<std::string> m_pileupOffsetHistoName
+    {this, "pileupOffsetHistoName", "h_pileup_layer", "Name of pileup offset histogram"};
 
   /// For config compatibility.
-  Gaudi::Property<uint> m_numRadialLayers{this, "numRadialLayers", 0, "Number of radial layers.  Deprecated: use numHistograms instead."};
+  Gaudi::Property<uint> m_numRadialLayers
+    {this, "numRadialLayers", 0, "Number of radial layers.  Deprecated: use numHistograms instead."};
   /// Number of radial layers/wheels
-  Gaudi::Property<uint> m_numHistograms{this, "numHistograms", 3, "Number of histograms"};
- 
+  Gaudi::Property<uint> m_numHistograms
+    {this, "numHistograms", 3, "Number of histograms"};
+
   /// Factor to apply to the noise values to get them in GeV if e.g. they were produced in MeV
-  Gaudi::Property<float> m_scaleFactor{this, "scaleFactor", 1, "Factor to apply to the noise values"};
+  Gaudi::Property<float> m_scaleFactor
+    {this, "scaleFactor", 1, "Factor to apply to the noise values"};
 
   const NoiseData* m_data = nullptr;
 
   ServiceHandle<k4::recCalo::ICaloCellIndexerSvc> m_indexerSvc
-  { this, "CaloCellIndexerSvc", "k4::recCalo::CaloCellIndexerSvc", "" };
+    { this, "CaloCellIndexerSvc", "k4::recCalo::CaloCellIndexerSvc", "" };
   ServiceHandle<k4::recCalo::ICaloCellConstantsSvc> m_constantsSvc
-  { this, "CaloCellConstantsSvc", "k4::recCalo::CaloCellConstantsSvc", "" };
+    { this, "CaloCellConstantsSvc", "k4::recCalo::CaloCellConstantsSvc", "" };
+    //clang-format on
+
   const k4::recCalo::ICaloIndexer* m_indexer = nullptr;
 };
 
