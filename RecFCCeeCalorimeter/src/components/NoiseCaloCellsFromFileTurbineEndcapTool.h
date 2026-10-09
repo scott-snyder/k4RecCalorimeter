@@ -22,11 +22,10 @@
 class NoiseCaloCellsFromFileTurbineEndcapTool : public NoiseCaloCellsFromFileBaseTool {
 public:
   NoiseCaloCellsFromFileTurbineEndcapTool(const std::string& type, const std::string& name, const IInterface* parent)
-    : NoiseCaloCellsFromFileBaseTool(type, name, parent) {
+      : NoiseCaloCellsFromFileBaseTool(type, name, parent) {
     // Override some property defaults from the base class.
     m_readoutName = "ECalEndcapTurbine";
   }
-
 
 protected:
   virtual StatusCode initBinning(NoiseData& data, const k4::recCalo::ICaloIndexer& indexer) const override;

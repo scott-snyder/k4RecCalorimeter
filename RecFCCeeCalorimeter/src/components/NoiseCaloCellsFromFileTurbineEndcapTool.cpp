@@ -21,7 +21,6 @@ unsigned NoiseCaloCellsFromFileTurbineEndcapTool::getBin(const char* what,
   return ibin;
 }
 
-
 StatusCode NoiseCaloCellsFromFileTurbineEndcapTool::initBinning(NoiseData& data,
                                                                 const k4::recCalo::ICaloIndexer& indexer) const {
   data.m_bins.resize(indexer.cellIDs().size());

@@ -7,7 +7,7 @@
 
 DECLARE_COMPONENT(ReadNoiseFromFileTool)
 
-StatusCode  ReadNoiseFromFileTool::initBinning(NoiseData& data, const k4::recCalo::ICaloIndexer& indexer) const {
+StatusCode ReadNoiseFromFileTool::initBinning(NoiseData& data, const k4::recCalo::ICaloIndexer& indexer) const {
   /// PhiEta segmentation
   const auto* segmentation = dynamic_cast<const dd4hep::DDSegmentation::FCCSWGridPhiEta_k4geo*>(
       m_geoSvc->getDetector()->readout(m_readoutName).segmentation().segmentation());

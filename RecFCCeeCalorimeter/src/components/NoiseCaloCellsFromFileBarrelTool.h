@@ -21,7 +21,7 @@
 class NoiseCaloCellsFromFileBarrelTool : public NoiseCaloCellsFromFileBaseTool {
 public:
   NoiseCaloCellsFromFileBarrelTool(const std::string& type, const std::string& name, const IInterface* parent)
-    : NoiseCaloCellsFromFileBaseTool(type, name, parent) {
+      : NoiseCaloCellsFromFileBaseTool(type, name, parent) {
     // Override some property defaults from the base class.
     m_readoutName = "ECalBarrelThetaModuleMerged";
   }
@@ -35,7 +35,6 @@ private:
   /// Handle for tool to get cell positions - available also to derived classes
   ToolHandle<k4::recCalo::ICellPositionsTool> m_cellPositionsTool{this, "cellPositionsTool", "",
                                                                   "Handle for tool to retrieve cell positions"};
-
 };
 
 #endif /* RECFCCEECALORIMETER_NOISECALOCELLFROMFILEBARRELTOOL_H */

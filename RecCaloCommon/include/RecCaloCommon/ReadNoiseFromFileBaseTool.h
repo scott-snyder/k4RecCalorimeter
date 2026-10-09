@@ -105,10 +105,10 @@ private:
   double getNoiseRMSPerCell(int ibin, unsigned cellLayer) const;
   double getNoiseOffsetPerCell(int ibin, unsigned cellLayer) const;
 
-  /// Add pileup contribution to the electronics noise? (only if read from file)
   //clang-format off
-  Gaudi::Property<bool> m_addPileup{this, "addPileup", true,
-                                    "Add pileup contribution to the electronics noise? (only if read from file)"};
+  /// Add pileup contribution to the electronics noise? (only if read from file)
+  Gaudi::Property<bool> m_addPileup
+    {this, "addPileup", true, "Add pileup contribution to the electronics noise? (only if read from file)"};
 
   /// Name of the file with noise constants
   Gaudi::Property<std::string> m_noiseFileName

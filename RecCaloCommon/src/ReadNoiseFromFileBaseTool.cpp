@@ -55,7 +55,7 @@ StatusCode ReadNoiseFromFileBaseTool::initialize() {
   if (!m_data) {
     NoiseData noise;
     K4_GAUDI_CHECK(ReadNoiseFromFileBaseTool::initNoiseFromFile(noise));
-    K4_GAUDI_CHECK(m_constantsSvc->putObj(m_noiseFileName, std::move (noise)));
+    K4_GAUDI_CHECK(m_constantsSvc->putObj(m_noiseFileName, std::move(noise)));
     m_data = m_constantsSvc->getObj<NoiseData>(m_noiseFileName);
     K4_GAUDI_CHECK(m_data != nullptr);
   }
@@ -254,7 +254,7 @@ std::pair<double, double> ReadNoiseFromFileBaseTool::getNoisePerCell(CellID aCel
 
 // Need a copy ctor to put these in std::any.
 ReadNoiseFromFileBaseTool::NoiseData::NoiseData(const NoiseData& other) : m_bins(other.m_bins) {
-  auto copyHists = [](std::vector<std::unique_ptr<TH1> >& dst, const std::vector<std::unique_ptr<TH1> >& src) {
+  auto copyHists = [](std::vector<std::unique_ptr<TH1>>& dst, const std::vector<std::unique_ptr<TH1>>& src) {
     dst.reserve(src.size());
     for (size_t i = 0; i < src.size(); i++) {
       TH1* hcopy = dynamic_cast<TH1*>(src[i]->Clone());
