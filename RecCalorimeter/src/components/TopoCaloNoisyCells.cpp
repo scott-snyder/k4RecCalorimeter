@@ -102,7 +102,6 @@ double TopoCaloNoisyCells::getNoiseRMSPerCell(CellID aCellId) const {
   return m_data->m_noise.at(ndx).first;
 }
 
-
 double TopoCaloNoisyCells::getNoiseOffsetPerCell(CellID aCellId) const {
   unsigned ndx = m_indexer->index(aCellId);
   return m_data->m_noise.at(ndx).second;
@@ -112,4 +111,3 @@ std::pair<double, double> TopoCaloNoisyCells::getNoisePerCell(CellID aCellId) co
   unsigned ndx = m_indexer->index(aCellId);
   return m_data->m_noise.at(ndx);
 }
-
