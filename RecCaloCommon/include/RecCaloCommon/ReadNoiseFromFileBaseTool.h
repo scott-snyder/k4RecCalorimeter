@@ -143,7 +143,7 @@ private:
     { this, "CaloCellIndexerSvc", "k4::recCalo::CaloCellIndexerSvc", "" };
   ServiceHandle<k4::recCalo::ICaloCellConstantsSvc> m_constantsSvc
     { this, "CaloCellConstantsSvc", "k4::recCalo::CaloCellConstantsSvc", "" };
-    // clang-format on
+  // clang-format on
 
   const k4::recCalo::ICaloIndexer* m_indexer = nullptr;
 };
