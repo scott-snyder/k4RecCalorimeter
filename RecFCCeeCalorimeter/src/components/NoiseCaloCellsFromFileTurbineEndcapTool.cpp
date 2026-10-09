@@ -7,7 +7,7 @@ unsigned NoiseCaloCellsFromFileTurbineEndcapTool::getBin(const char* what,
                                                          const TH1& h,
                                                          unsigned iRho,
                                                          unsigned iZ) const {
-// clang-format on
+  // clang-format on
   unsigned NbinsZ = h.GetNbinsX();
   unsigned NbinsRho = h.GetNbinsY();
 
@@ -22,7 +22,8 @@ unsigned NoiseCaloCellsFromFileTurbineEndcapTool::getBin(const char* what,
 }
 
 
-StatusCode NoiseCaloCellsFromFileTurbineEndcapTool::initBinning(NoiseData& data,const k4::recCalo::ICaloIndexer& indexer) const {
+StatusCode NoiseCaloCellsFromFileTurbineEndcapTool::initBinning(NoiseData& data,
+                                                                const k4::recCalo::ICaloIndexer& indexer) const {
   data.m_bins.resize(indexer.cellIDs().size());
 
   for (uint64_t id : indexer.cellIDs()) {

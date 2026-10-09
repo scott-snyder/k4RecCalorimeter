@@ -3,13 +3,11 @@
 
 DECLARE_COMPONENT(NoiseCaloCellsFromFileBarrelTool)
 
-
 StatusCode NoiseCaloCellsFromFileBarrelTool::initialize() {
   K4_GAUDI_CHECK(NoiseCaloCellsFromFileBaseTool::initialize());
   K4_GAUDI_CHECK(m_cellPositionsTool.retrieve());
   return StatusCode::SUCCESS;
 }
-
 
 StatusCode NoiseCaloCellsFromFileBarrelTool::initBinning(NoiseData& data,
                                                          const k4::recCalo::ICaloIndexer& indexer) const {

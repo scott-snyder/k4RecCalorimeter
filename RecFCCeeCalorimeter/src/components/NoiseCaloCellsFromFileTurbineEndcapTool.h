@@ -22,8 +22,7 @@
 class NoiseCaloCellsFromFileTurbineEndcapTool : public NoiseCaloCellsFromFileBaseTool {
 public:
   NoiseCaloCellsFromFileTurbineEndcapTool(const std::string& type, const std::string& name, const IInterface* parent)
-    : NoiseCaloCellsFromFileBaseTool(type, name, parent)
-  {
+    : NoiseCaloCellsFromFileBaseTool(type, name, parent) {
     // Override some property defaults from the base class.
     m_readoutName = "ECalEndcapTurbine";
   }
@@ -38,8 +37,6 @@ private:
   /// Unused, but temporarily here for config compatibility
   ToolHandle<k4::recCalo::ICellPositionsTool> m_cellPositionsTool{this, "cellPositionsTool", "",
                                                                   "Handle for tool to retrieve cell positions"};
-
-
 };
 
 #endif /* RECFCCEECALORIMETER_NOISECALOCELLFROMFILETURBINEENDCAPTOOL_H */

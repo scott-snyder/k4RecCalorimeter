@@ -63,4 +63,3 @@ void NoiseCaloCellsFromFileBaseTool::filterCellNoise(std::unordered_map<CellID, 
 void NoiseCaloCellsFromFileBaseTool::filterCellNoise(std::vector<std::pair<CellID, double>>& aCells) const {
   filterCellNoiseT(aCells);
 }
-
