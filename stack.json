@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "cd71b1aa7b9bb0d18985264849ab53e894f342d7",
-  "head": "69f03fd9a666052a0d04bcf5b4192ee7dbe1d283",
+  "prev": "ec2faddd29efa75213f37ec70a7a478c64c5fc54",
+  "head": "637fc92e3d0f2d6db97c42185632d83a89ddc288",
   "applied": [
     "timeout",
     "hhtest",
@@ -9,8 +9,7 @@
     "pairpi0",
     "k4geo-noclone",
     "topoNoiseIndex",
-    "noiseIndex",
-    "refresh-temp"
+    "noiseIndex"
   ],
   "unapplied": [
     "ci",
@@ -49,10 +48,7 @@
       "oid": "6a92e76b9e41fc72671e584d982f2e6ee1ff656e"
     },
     "noiseIndex": {
-      "oid": "4f0c263eca4cb237fbb98cb6a0d24c326a2d5e97"
-    },
-    "refresh-temp": {
-      "oid": "69f03fd9a666052a0d04bcf5b4192ee7dbe1d283"
+      "oid": "637fc92e3d0f2d6db97c42185632d83a89ddc288"
     },
     "ci": {
       "oid": "acf41d26e2d752e1014a77b97ae2c7a9b0cd61ca"
