@@ -59,12 +59,12 @@ private:
   /// Name
   Gaudi::Property<std::string> m_fileName{this, "fileName",
                                           "/afs/cern.ch/user/c/cneubuse/public/FCChh/cellNoise_map_segHcal.root"};
-// clang-format off
+  // clang-format off
   ServiceHandle<k4::recCalo::ICaloCellConstantsSvc> m_constantsSvc
   { this, "CaloCellConstantsSvc", "k4::recCalo::CaloCellConstantsSvc", "" };
   ServiceHandle<k4::recCalo::ICaloCellIndexerSvc> m_indexerSvc
   { this, "CaloCellIndexerSvc", "k4::recCalo::CaloCellIndexerSvc", "" };
-// clang-format on
+  // clang-format on
 
   /// System encoding string
   Gaudi::Property<std::string> m_systemEncoding{this, "systemEncoding", "system:4", "System encoding string"};

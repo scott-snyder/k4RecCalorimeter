@@ -43,7 +43,7 @@ StatusCode TopoCaloNoisyCells::initialize() {
 
     NoiseData data = readData(*inFile);
     K4_GAUDI_CHECK(m_constantsSvc->putObj(m_fileName, std::move(data)));
-    m_data = m_constantsSvc->getObj<NoiseData> (m_fileName);
+    m_data = m_constantsSvc->getObj<NoiseData>(m_fileName);
     K4_GAUDI_CHECK(m_data != nullptr);
   }
 
@@ -52,7 +52,6 @@ StatusCode TopoCaloNoisyCells::initialize() {
 
   return StatusCode::SUCCESS;
 }
-
 
 auto TopoCaloNoisyCells::readData(TFile& inFile) const -> NoiseData {
   NoiseData data;
@@ -109,7 +108,7 @@ double TopoCaloNoisyCells::getNoiseOffsetPerCell(CellID aCellId) const {
   return m_data->m_noise.at(ndx).second;
 }
 
-std::pair<double,double> TopoCaloNoisyCells::getNoisePerCell(CellID aCellId) const {
+std::pair<double, double> TopoCaloNoisyCells::getNoisePerCell(CellID aCellId) const {
   unsigned ndx = m_indexer->index(aCellId);
   return m_data->m_noise.at(ndx);
 }
