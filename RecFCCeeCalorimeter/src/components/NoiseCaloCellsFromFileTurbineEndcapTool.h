@@ -3,6 +3,7 @@
 
 #include "NoiseCaloCellsFromFileBaseTool.h"
 #include "RecCaloCommon/ICellPositionsTool.h"
+
 #include "GaudiKernel/ToolHandle.h"
 
 /** @class NoiseCaloCellsFromFileTurbineEndcapTool
@@ -20,10 +21,8 @@
 
 class NoiseCaloCellsFromFileTurbineEndcapTool : public NoiseCaloCellsFromFileBaseTool {
 public:
-  NoiseCaloCellsFromFileTurbineEndcapTool(const std::string& type,
-                                          const std::string& name,
-                                          const IInterface* parent)
-    : NoiseCaloCellsFromFileBaseTool (type, name, parent)
+  NoiseCaloCellsFromFileTurbineEndcapTool(const std::string& type, const std::string& name, const IInterface* parent)
+    : NoiseCaloCellsFromFileBaseTool(type, name, parent)
   {
     // Override some property defaults from the base class.
     m_readoutName = "ECalEndcapTurbine";
@@ -31,15 +30,10 @@ public:
 
 
 protected:
-  virtual StatusCode initBinning (NoiseData& data,
-                                  const k4::recCalo::ICaloIndexer& indexer) const override;
+  virtual StatusCode initBinning(NoiseData& data, const k4::recCalo::ICaloIndexer& indexer) const override;
 
 private:
-  unsigned getBin (const char* what,
-                   const TH1& h,
-                   unsigned iRho,
-                   unsigned iZ) const;
-
+  unsigned getBin(const char* what, const TH1& h, unsigned iRho, unsigned iZ) const;
 
   /// Unused, but temporarily here for config compatibility
   ToolHandle<k4::recCalo::ICellPositionsTool> m_cellPositionsTool{this, "cellPositionsTool", "",

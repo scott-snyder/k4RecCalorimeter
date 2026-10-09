@@ -7,9 +7,9 @@
 #include "GaudiKernel/RndmGenerators.h"
 
 // Interfaces
+#include "RecCaloCommon/ICalorimeterTool.h"
 #include "RecCaloCommon/INoiseCaloCellsTool.h"
 #include "RecCaloCommon/INoiseConstTool.h"
-#include "RecCaloCommon/ICalorimeterTool.h"
 
 #include "RecCaloCommon/ReadNoiseFromFileBaseTool.h"
 
@@ -35,8 +35,7 @@ class TFile;
  *
  */
 
-class NoiseCaloCellsFromFileBaseTool
-    : public extends<ReadNoiseFromFileBaseTool, k4::recCalo::INoiseCaloCellsTool> {
+class NoiseCaloCellsFromFileBaseTool : public extends<ReadNoiseFromFileBaseTool, k4::recCalo::INoiseCaloCellsTool> {
 public:
   using CellID = k4::recCalo::INoiseCaloCellsTool::CellID;
 
@@ -62,7 +61,6 @@ public:
    */
   virtual void filterCellNoise(std::vector<std::pair<CellID, double>>& aCells) const override final;
 
-
 private:
   template <typename C>
   void addRandomCellNoiseT(C& aCells) const;
@@ -72,7 +70,6 @@ private:
   /// Name of electronics noise RMS histogram
   Gaudi::Property<std::string> m_elecNoiseRMSHistoName{this, "elecNoiseRMSHistoName", "h_elecNoise_layer",
                                                        "Name of electronics noise RMS histogram"};
-
 
   /// Energy threshold (cells with Ecell < filterThreshold*m_cellNoise removed)
   Gaudi::Property<double> m_filterThreshold{
@@ -89,7 +86,6 @@ private:
   SmartIF<IRndmGenSvc> m_randSvc;
   /// Gaussian random number generator used for the generation of random noise hits
   Rndm::Numbers m_gauss;
-
 };
 
 #endif /* RECFCCEECALORIMETER_NOISECALOCELLSVSTHETAFROMFILEBASETOOL_H */
