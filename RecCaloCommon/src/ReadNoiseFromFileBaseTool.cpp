@@ -28,7 +28,6 @@
 #include "TMath.h"
 #include "TSystem.h"
 
-
 StatusCode ReadNoiseFromFileBaseTool::initialize() {
   K4_GAUDI_CHECK(AlgTool::initialize());
 
@@ -56,7 +55,7 @@ StatusCode ReadNoiseFromFileBaseTool::initialize() {
   if (!m_data) {
     NoiseData noise;
     K4_GAUDI_CHECK(ReadNoiseFromFileBaseTool::initNoiseFromFile(noise));
-    K4_GAUDI_CHECK(m_constantsSvc->putObj (m_noiseFileName, std::move (noise)));
+    K4_GAUDI_CHECK(m_constantsSvc->putObj(m_noiseFileName, std::move (noise)));
     m_data = m_constantsSvc->getObj<NoiseData>(m_noiseFileName);
     K4_GAUDI_CHECK(m_data != nullptr);
   }
@@ -84,7 +83,7 @@ StatusCode ReadNoiseFromFileBaseTool::initNoiseFromFile(NoiseData& data) const {
     info() << "Using the following file with the noise values: " << m_noiseFileName.value() << endmsg;
   }
 
-  auto getHist =  [&](const std::string& name) {
+  auto getHist = [&](const std::string& name) {
     TH1* h = dynamic_cast<TH1*>(noiseFile->Get(name.c_str()));
     if (h) {
       h->SetDirectory(nullptr);
@@ -153,7 +152,6 @@ StatusCode ReadNoiseFromFileBaseTool::initNoiseFromFile(NoiseData& data) const {
 
   return StatusCode::SUCCESS;
 }
-
 
 double ReadNoiseFromFileBaseTool::getNoiseRMSPerCell(CellID aCellId) const {
   // Get cell coordinates: bin and radial layer
@@ -242,7 +240,6 @@ double ReadNoiseFromFileBaseTool::getNoiseOffsetPerCell(int ibin, unsigned cellL
   return totalNoiseOffset;
 }
 
-
 std::pair<double, double> ReadNoiseFromFileBaseTool::getNoisePerCell(CellID aCellId) const {
   // Get cell coordinates: bin and radial layer
   unsigned ndx = m_indexer->index(aCellId);
@@ -257,9 +254,7 @@ std::pair<double, double> ReadNoiseFromFileBaseTool::getNoisePerCell(CellID aCel
 
 // Need a copy ctor to put these in std::any.
 ReadNoiseFromFileBaseTool::NoiseData::NoiseData(const NoiseData& other) : m_bins(other.m_bins) {
-  auto copyHists = [](std::vector<std::unique_ptr<TH1> >& dst,
-                      const std::vector<std::unique_ptr<TH1> >& src)
-  {
+  auto copyHists = [](std::vector<std::unique_ptr<TH1> >& dst, const std::vector<std::unique_ptr<TH1> >& src) {
     dst.reserve(src.size());
     for (size_t i = 0; i < src.size(); i++) {
       TH1* hcopy = dynamic_cast<TH1*>(src[i]->Clone());
@@ -273,4 +268,3 @@ ReadNoiseFromFileBaseTool::NoiseData::NoiseData(const NoiseData& other) : m_bins
   copyHists(m_histoPileupOffset, other.m_histoPileupOffset);
   copyHists(m_histoElecNoiseOffset, other.m_histoElecNoiseOffset);
 }
-

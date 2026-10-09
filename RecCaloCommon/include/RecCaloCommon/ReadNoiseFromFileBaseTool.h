@@ -9,7 +9,6 @@
  * @brief xxx to fill in
  */
 
-
 #ifndef RECCALOCOMMON_READNOISEFROMFILEBASETOOL_H
 #define RECCALOCOMMON_READNOISEFROMFILEBASETOOL_H
 
@@ -58,15 +57,20 @@ public:
   virtual std::pair<double, double> getNoisePerCell(CellID aCellID) const override final;
 
 protected:
+  // clang-format off
   /// Name of the detector readout
-  Gaudi::Property<std::string> m_readoutName{this, "readoutName", "ECalHitsPhiEta", "Name of the detector readout"};
+  Gaudi::Property<std::string> m_readoutName
+    {this, "readoutName", "ECalHitsPhiEta", "Name of the detector readout"};
   /// Noise offset, if false, mean is set to 0
-  Gaudi::Property<bool> m_setNoiseOffset{this, "setNoiseOffset", true, "Set a noise offset per cell"};
+  Gaudi::Property<bool> m_setNoiseOffset
+    {this, "setNoiseOffset", true, "Set a noise offset per cell"};
   /// Name of electronics noise histogram
-  Gaudi::Property<std::string> m_elecNoiseHistoName{this, "elecNoiseHistoName", "h_elecNoise_layer",
-                                                    "Name of electronics noise histogram"};
+  Gaudi::Property<std::string> m_elecNoiseHistoName
+    {this, "elecNoiseHistoName", "h_elecNoise_layer", "Name of electronics noise histogram"};
   /// Handle to the geometry service
-  ServiceHandle<IGeoSvc> m_geoSvc{this, "GeoSvc", "GeoSvc"};
+  ServiceHandle<IGeoSvc> m_geoSvc
+    {this, "GeoSvc", "GeoSvc"};
+  // clang-format on
 
   struct NoiseData {
     NoiseData() = default;
@@ -143,6 +147,5 @@ private:
 
   const k4::recCalo::ICaloIndexer* m_indexer = nullptr;
 };
-
 
 #endif // not RECCALOCOMMON_READNOISEFROMFILEBASETOOL_H

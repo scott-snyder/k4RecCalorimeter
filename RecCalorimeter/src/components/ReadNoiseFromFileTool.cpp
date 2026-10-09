@@ -7,8 +7,7 @@
 
 DECLARE_COMPONENT(ReadNoiseFromFileTool)
 
-StatusCode  ReadNoiseFromFileTool::initBinning(NoiseData& data,
-                                               const k4::recCalo::ICaloIndexer& indexer) const {
+StatusCode  ReadNoiseFromFileTool::initBinning(NoiseData& data, const k4::recCalo::ICaloIndexer& indexer) const {
   /// PhiEta segmentation
   const auto* segmentation = dynamic_cast<const dd4hep::DDSegmentation::FCCSWGridPhiEta_k4geo*>(
       m_geoSvc->getDetector()->readout(m_readoutName).segmentation().segmentation());
@@ -19,8 +18,7 @@ StatusCode  ReadNoiseFromFileTool::initBinning(NoiseData& data,
 
   data.m_bins.resize(indexer.cellIDs().size());
 
-  auto deltaEta = [](const TH1* h) -> std::pair<int, double>
-  {
+  auto deltaEta = [](const TH1* h) -> std::pair<int, double> {
     if (!h)
       return std::make_pair(0, 0.);
     int Nbins = h->GetNbinsX();
@@ -46,13 +44,12 @@ StatusCode  ReadNoiseFromFileTool::initBinning(NoiseData& data,
     {
       int ibin = floor(fabs(cellEta) / deltaEtaOffset) + 1;
       if (ibin > NbinsOffset) {
-        error() << "eta outside range of the offset histograms! Cell eta: " << cellEta << " Nbins in histogram: " << NbinsOffset
-                << endmsg;
+        error() << "eta outside range of the offset histograms! Cell eta: " << cellEta
+                << " Nbins in histogram: " << NbinsOffset << endmsg;
         ibin = NbinsOffset;
       }
       data.m_bins.at(ndx).second = ibin;
     }
-
   }
 
   return StatusCode::SUCCESS;

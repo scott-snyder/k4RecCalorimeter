@@ -19,7 +19,7 @@ public:
   virtual ~ReadNoiseFromFileTool() = default;
 
 protected:
-  virtual StatusCode initBinning (NoiseData& data, const k4::recCalo::ICaloIndexer& indexer) const;
+  virtual StatusCode initBinning(NoiseData& data, const k4::recCalo::ICaloIndexer& indexer) const;
 };
 
 #endif /* RECCALORIMETER_READNOISEFROMFILETOOL_H */
