@@ -4,3 +4,9 @@ Author: scott snyder <snyder@bnl.gov>
 Date:   2026-01-26 16:04:40 -0500
 
 More efficient data storage for TopoCaloNoisyCells.
+
+Hold noise data as a vector rather than as an unordered_map,
+using the indexing service.
+This is both faster and takes less space.
+Store the data in CaloCellConstantsSvc to avoid duplication in configurations
+where this tool is configured multiple times.
