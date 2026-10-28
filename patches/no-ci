@@ -1,0 +1,6 @@
+Bottom: d7ff30af09cb9df1e56732271acc16c8fd96012c
+Top:    d7ff30af09cb9df1e56732271acc16c8fd96012c
+Author: scott snyder <snyder@bnl.gov>
+Date:   2026-10-28 05:16:42 -0400
+
+Disable CI on push.
