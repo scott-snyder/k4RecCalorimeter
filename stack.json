@@ -1,17 +1,17 @@
 {
   "version": 5,
-  "prev": "a37c1a6ad7cf9f8efa47d0efc306585dd472e7b5",
-  "head": "0dce5185e7efb5344ddf7ae5040400ff363edda6",
+  "prev": "694c3c4f5145a2b3113bd7a2cecc113870255a2c",
+  "head": "28514e8236530076fb3e0c59f195c8e8117cf5cc",
   "applied": [
     "nocron",
     "timeout",
     "hhtest",
     "k4geo-noclone",
-    "noiseIndex",
-    "no-ci",
-    "ci"
+    "noiseIndex"
   ],
   "unapplied": [
+    "no-ci",
+    "ci",
     "cellposIndex",
     "createCaloCells",
     "createTopoCluster",
