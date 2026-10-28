@@ -1,6 +1,6 @@
 {
   "version": 5,
-  "prev": "ab1bff9c8fbac8de8f6f4e9f31102eecf06ac2e0",
+  "prev": "2cfc79a100ff7625ef7e68f18f2a5cdf32b1893e",
   "head": "926a2f2d2b7c9794ef27df5c660bcfa2e832c0d7",
   "applied": [
     "nocron",
@@ -17,7 +17,6 @@
     "discrit-wip",
     "discrit2-wip",
     "discrit3-wip",
-    "ci",
     "sortcells",
     "sortlinks",
     "sortnoise",
@@ -63,9 +62,6 @@
     },
     "discrit3-wip": {
       "oid": "883912eb20b888166a380aeb63ee00d2691be01b"
-    },
-    "ci": {
-      "oid": "aa8175fc1723a632ea961de818101b1dd7c37cbc"
     },
     "sortcells": {
       "oid": "7c5d359265bd82252199bf66badcd680b4aea3b4"
