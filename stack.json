@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "29684c1ad4a1ceaf80d0b3e207d0146b595f475c",
-  "head": "0efe177183dac087d0abb63eb8027be1666ffb80",
+  "prev": "a37c1a6ad7cf9f8efa47d0efc306585dd472e7b5",
+  "head": "0dce5185e7efb5344ddf7ae5040400ff363edda6",
   "applied": [
     "nocron",
     "timeout",
@@ -9,8 +9,7 @@
     "k4geo-noclone",
     "noiseIndex",
     "no-ci",
-    "ci",
-    "refresh-temp"
+    "ci"
   ],
   "unapplied": [
     "cellposIndex",
@@ -48,10 +47,7 @@
       "oid": "926a2f2d2b7c9794ef27df5c660bcfa2e832c0d7"
     },
     "ci": {
-      "oid": "5f7f135d83c8beb35fa69d3db48097d99676ce87"
-    },
-    "refresh-temp": {
-      "oid": "0efe177183dac087d0abb63eb8027be1666ffb80"
+      "oid": "0dce5185e7efb5344ddf7ae5040400ff363edda6"
     },
     "cellposIndex": {
       "oid": "82379809c4c3f18a8741afadc055d4c0ac516819"
