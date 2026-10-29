@@ -1,0 +1,13 @@
+Bottom: c272dba1c2076226a6a361e6e4c9f3a00f8a8da3
+Top:    c272dba1c2076226a6a361e6e4c9f3a00f8a8da3
+Author: scott snyder <snyder@bnl.gov>
+Date:   2026-10-29 13:57:09 -0400
+
+Fix failures seen running genconf.
+
+The Gaudi plugin libraries load the common RecCaloCommon library.
+Depending on the platform, however, when we ran genconf on the plugin
+libraries, we could find the version from the release rather than the
+one we just built.  If there were interface changes, that could result
+in genconf failing.  Adjust the runtime LD_LIBRARY_PATH so that we
+search the target directory for ReCCaloCommon first.
