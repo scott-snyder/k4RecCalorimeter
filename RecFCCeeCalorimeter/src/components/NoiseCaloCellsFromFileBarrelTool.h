@@ -32,7 +32,7 @@ protected:
   virtual StatusCode initBinning(NoiseData& data, const k4::recCalo::ICaloIndexer& indexer) const override;
 
 private:
-  /// Handle for tool to get cell positions - available also to derived classes
+  /// Handle for tool to get cell positions
   ToolHandle<k4::recCalo::ICellPositionsTool> m_cellPositionsTool{this, "cellPositionsTool", "",
                                                                   "Handle for tool to retrieve cell positions"};
 };

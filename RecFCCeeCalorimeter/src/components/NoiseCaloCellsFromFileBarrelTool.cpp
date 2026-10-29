@@ -13,6 +13,8 @@ StatusCode NoiseCaloCellsFromFileBarrelTool::initBinning(NoiseData& data,
                                                          const k4::recCalo::ICaloIndexer& indexer) const {
   data.m_bins.resize(indexer.cellIDs().size());
 
+  // All histograms have same binning, all bins with same size
+  // Using the histograms in the first layer to define binning.
   const TH1* h_rms = data.m_histoElecNoiseRMS.at(0).get();
   const TH1* h_offset = m_setNoiseOffset ? data.m_histoElecNoiseOffset.at(0).get() : nullptr;
   for (uint64_t id : indexer.cellIDs()) {

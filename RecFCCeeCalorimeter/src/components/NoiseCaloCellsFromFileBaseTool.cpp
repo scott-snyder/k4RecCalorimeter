@@ -29,8 +29,8 @@ StatusCode NoiseCaloCellsFromFileBaseTool::initialize() {
 template <class C>
 void NoiseCaloCellsFromFileBaseTool::addRandomCellNoiseT(C& aCells) const {
   for (auto& p : aCells) {
-    p.second += getNoiseOffsetPerCell(p.first);
-    p.second += (getNoiseRMSPerCell(p.first) * m_gauss.shoot());
+    auto [rms, offset] = getNoisePerCell (p.first);
+    p.second += offset + rms * m_gauss.shoot();
   }
 }
 
@@ -45,15 +45,13 @@ void NoiseCaloCellsFromFileBaseTool::addRandomCellNoise(std::vector<std::pair<Ce
 template <typename C>
 void NoiseCaloCellsFromFileBaseTool::filterCellNoiseT(C& aCells) const {
   // Erase a cell if it has energy below a threshold from the vector
-  if (m_useAbsInFilter) {
-    std::erase_if(aCells, [&](auto& p) {
-      return std::abs(p.second - getNoiseOffsetPerCell(p.first)) < m_filterThreshold * getNoiseRMSPerCell(p.first);
-    });
-  } else {
-    std::erase_if(aCells, [&](auto& p) {
-      return p.second < getNoiseOffsetPerCell(p.first) + m_filterThreshold * getNoiseRMSPerCell(p.first);
-    });
-  }
+  std::erase_if(aCells, [&](auto& p) {
+    auto [rms, offset] = getNoisePerCell (p.first);
+    double e = p.second - offset;
+    if (m_useAbsInFilter)
+      e = std::abs(e);
+    return e < m_filterThreshold * rms;
+  });
 }
 
 void NoiseCaloCellsFromFileBaseTool::filterCellNoise(std::unordered_map<CellID, double>& aCells) const {
