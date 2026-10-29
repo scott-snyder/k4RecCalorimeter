@@ -1,18 +1,18 @@
 {
   "version": 5,
-  "prev": "a79675e77f8a0c376d7df48c27d3283c5d97a343",
-  "head": "5936813bd329c5c5dc343c22c15c8c1ccb6b4256",
+  "prev": "f1f8353b8260b9770f7f0128948bbf660f8c8435",
+  "head": "5114df57305c9e4b5c622ebeebde94fb8b16fc9b",
   "applied": [
     "nocron",
     "timeout",
     "noiseIndex",
     "genconfFix",
     "hhtest",
-    "k4geo-noclone"
+    "k4geo-noclone",
+    "no-ci"
   ],
   "unapplied": [
     "ci",
-    "no-ci",
     "cellposIndex",
     "createCaloCells",
     "createTopoCluster",
@@ -47,11 +47,11 @@
     "k4geo-noclone": {
       "oid": "5936813bd329c5c5dc343c22c15c8c1ccb6b4256"
     },
+    "no-ci": {
+      "oid": "5114df57305c9e4b5c622ebeebde94fb8b16fc9b"
+    },
     "ci": {
       "oid": "cf7c9a1d1599df845d0a3d8b0a8b55a918ed65b0"
-    },
-    "no-ci": {
-      "oid": "926a2f2d2b7c9794ef27df5c660bcfa2e832c0d7"
     },
     "cellposIndex": {
       "oid": "82379809c4c3f18a8741afadc055d4c0ac516819"
