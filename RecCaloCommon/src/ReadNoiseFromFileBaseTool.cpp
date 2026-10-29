@@ -180,7 +180,8 @@ StatusCode ReadNoiseFromFileBaseTool::initNoiseFromFile(NoiseData& data) const {
     if (!h) {
       error() << "Cannot read noise histogram " << name << " from file " << m_noiseFileName << endmsg;
     } else if (h->GetNbinsX() < 1) {
-      error() << std::format("Histogram {} has 0 bins! check the file with noise and the name of the histogram!", name) << endmsg;
+      error() << std::format("Histogram {} has 0 bins! check the file with noise and the name of the histogram!", name)
+              << endmsg;
       h = nullptr;
     } else {
       h->SetDirectory(nullptr);
