@@ -3,4 +3,15 @@ Top:    ac52f7ea5854d81b5cbc6cb25420ede7f7f352a1
 Author: scott snyder <snyder@bnl.gov>
 Date:   2026-07-17 12:54:51 -0400
 
-noiseIndex2
+Performance (CPU/memory) improvements for cell noise tools.
+
+Factor out duplicate code between ReadNoiseFromFileTool and
+NoiseCaloCellsFromFileBaseTool (and derived classes) into a new base class
+ReadNoiseFromFileBaseTool.
+
+Precompute and cache the cell ID -> bin calculation rather then possibly
+having to look at cell positions each time.  Avoid unneeded per-cell
+virtual function calls.
+
+Restructure so that the noise data are CaloCellConstantsSvc.  Use unique_ptr
+to avoid explicit deletions.

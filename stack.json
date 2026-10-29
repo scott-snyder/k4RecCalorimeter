@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "f59ba4393bc9cfdf03040e20220ea35ac584e53b",
-  "head": "6651188edf3f2bea21e5bd587a4bdc3b42d8c0ba",
+  "prev": "3a00f26d6c0b22bb1e948eda96da7a5c0708c37b",
+  "head": "f80e0d1b2e62a52fad69720625fd4e3942377d0e",
   "applied": [
     "nocron",
     "timeout",
@@ -41,7 +41,7 @@
       "oid": "a9cd371cf1a7ce8d1467f1ac7b82c6712aed95bd"
     },
     "noiseIndex": {
-      "oid": "6651188edf3f2bea21e5bd587a4bdc3b42d8c0ba"
+      "oid": "f80e0d1b2e62a52fad69720625fd4e3942377d0e"
     },
     "no-ci": {
       "oid": "926a2f2d2b7c9794ef27df5c660bcfa2e832c0d7"
