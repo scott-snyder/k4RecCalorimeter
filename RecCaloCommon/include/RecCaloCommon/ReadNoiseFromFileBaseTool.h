@@ -4,9 +4,10 @@
  */
 /**
  * @file RecCaloCommon/ReadNoiseFromFileBaseTool.h
- * @author scott snyder <snyder@bnl.gov>
+ * @author scott snyder <snyder@bnl.gov>, Jana Faltova, Coralie Neubueser, Giovanni Marchior
  * @date Jul, 2026
- * @brief xxx to fill in
+ * @brief Base class for reading noise data taken from ROOT histograms
+ *        read from a file.
  */
 
 #ifndef RECCALOCOMMON_READNOISEFROMFILEBASETOOL_H
@@ -42,8 +43,32 @@ class TH1;
  *  @author Jana Faltova, Coralie Neubueser
  *  @date   2018-01
  *
+ * Returns noise RMS/offset per cell.
+ *
+ * Noise information is taken from histograms read from the ROOT file
+ * given by noiseFileName.  There are up to to four sets of histograms,
+ * for electronic noise RMS, pileup noise RMS, electronic noise offset,
+ * and pileup noise offset.  Offset histograms are present if setNoiseOffset
+ * is true, and pileup histograms are present if addPileup is true.
+ * Total rms/offset are calculated as the quadrature sum of electronic
+ * and pileup contributions, multiplied by m_scaleFactor.
+ * (??? This is the way the code has been --- but should offset be
+ * summed linearly?)
+ *
+ * Each set of histograms is provided as an indexed list.  The names are
+ * of the form HNAME1, HNAME2, etc., where the 1 in the name corresponds
+ * to index 0.  The index used is taken from the CellID field 
+ * activeFieldName.  This would usually be a layer index, but not
+ * necessarily.  The number of histograms within each set is given
+ * by numHistograms.
+ *
+ * All the histograms are held a NoiseData structure, registered with
+ * CaloCellConstantsSvc.
+ *
+ * The NoiseData structure also contains a mapping from CellIDs to histogram
+ * bin indices (separately for noise and offset histograms).
+ * This is filled in by the initBinning virtual method.
  */
-
 class ReadNoiseFromFileBaseTool : public extends<AlgTool, k4::recCalo::INoiseConstTool> {
 public:
   using base_class::base_class;
@@ -51,9 +76,13 @@ public:
 
   virtual StatusCode initialize() override;
 
-  /// Find the appropriate noise constant from the histogram
+  /// Return noise RMS for a given CellID.
   virtual double getNoiseRMSPerCell(CellID aCellID) const override final;
+
+  /// Return noise offset for a given CellID.
   virtual double getNoiseOffsetPerCell(CellID aCellID) const override final;
+
+  /// Return both noise RMS (first) and offset (second)  for a given CellID.
   virtual std::pair<double, double> getNoisePerCell(CellID aCellID) const override final;
 
 protected:
@@ -72,6 +101,7 @@ protected:
     {this, "GeoSvc", "GeoSvc"};
   // clang-format on
 
+  /// Noise data read from the file.
   struct NoiseData {
     NoiseData() = default;
     NoiseData(const NoiseData&);
@@ -84,14 +114,15 @@ protected:
     std::vector<std::unique_ptr<TH1>> m_histoElecNoiseRMS;
 
     /// Histograms with pileup offset (index in array - radial layer)
-    std::vector<std::unique_ptr<TH1>> m_histoPileupOffset;
+    std::vector<std::unique_ptr<TH1>> m_histoPileupNoiseOffset;
     /// Histograms with electronics noise offset (index in array - radial layer)
     std::vector<std::unique_ptr<TH1>> m_histoElecNoiseOffset;
 
-    // rms, offset
+    // Histogram bin indices (for RMS and offset) for each CellID.
     std::vector<std::pair<unsigned, unsigned>> m_bins;
   };
 
+  /// Initialize the m_bins member of NoiseData.
   virtual StatusCode initBinning(NoiseData& data, const k4::recCalo::ICaloIndexer& indexer) const = 0;
 
   // Decoder
@@ -99,11 +130,14 @@ protected:
   int m_index_activeField = -1;
 
 private:
-  /// Open file and read noise histograms in the memory
-  StatusCode initNoiseFromFile(NoiseData& data) const;
-
+  /// Return noise RMS for a given bin/layer.
   double getNoiseRMSPerCell(int ibin, unsigned cellLayer) const;
+
+  /// Return noise offset for a given bin/layer.
   double getNoiseOffsetPerCell(int ibin, unsigned cellLayer) const;
+
+  /// Open file and read noise histograms into a NoiseData structure.
+  StatusCode initNoiseFromFile(NoiseData& data) const;
 
   // clang-format off
   /// Add pileup contribution to the electronics noise? (only if read from file)
