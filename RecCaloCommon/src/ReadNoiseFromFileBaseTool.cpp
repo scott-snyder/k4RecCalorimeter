@@ -123,7 +123,7 @@ double ReadNoiseFromFileBaseTool::getNoiseRMSPerCell(int ibin, unsigned cellLaye
   }
 
   if (totalNoiseRMS < 1e-6) {
-    warning() << std::format("Zero noise: cell bin {} layer {} noise {}", ibin, cellLayer,  totalNoiseRMS) << endmsg;
+    warning() << std::format("Zero noise: cell bin {} layer {} noise {}", ibin, cellLayer, totalNoiseRMS) << endmsg;
   }
 
   return totalNoiseRMS;
@@ -180,8 +180,7 @@ StatusCode ReadNoiseFromFileBaseTool::initNoiseFromFile(NoiseData& data) const {
     if (!h) {
       error() << "Cannot read noise histogram " << name << " from file " << m_noiseFileName << endmsg;
     } else if (h->GetNbinsX() < 1) {
-      error() << "Histogram  " << name
-              << " has 0 bins! check the file with noise and the name of the histogram!" << endmsg;
+      error() << std::format("Histogram {} has 0 bins! check the file with noise and the name of the histogram!", name) << endmsg;
       h = nullptr;
     } else {
       h->SetDirectory(nullptr);
@@ -192,7 +191,7 @@ StatusCode ReadNoiseFromFileBaseTool::initNoiseFromFile(NoiseData& data) const {
 
   auto getHists = [&](const std::string& nameRoot, std::vector<std::unique_ptr<TH1>>& hists) {
     for (unsigned i = 0; i < m_numHistograms; i++) {
-      std::string name = std::format("{}{}", nameRoot, i+1);
+      std::string name = std::format("{}{}", nameRoot, i + 1);
       hists.push_back(getHist(name));
       if (!hists.back())
         return false;
