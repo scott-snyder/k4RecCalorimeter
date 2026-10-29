@@ -407,6 +407,7 @@ else:
     ecalEndcapNoiseTool = None
 
 from Configurables import k4__recCalo__CaloCellIndexerSvc
+
 ExtSvc += [k4__recCalo__CaloCellIndexerSvc(GeoTools=geotools)]
 
 # Create cells in ECal barrel (calibrated and positioned - optionally with xtalk and noise added)
