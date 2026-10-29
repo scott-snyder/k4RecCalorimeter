@@ -29,7 +29,7 @@ StatusCode NoiseCaloCellsFromFileBaseTool::initialize() {
 template <class C>
 void NoiseCaloCellsFromFileBaseTool::addRandomCellNoiseT(C& aCells) const {
   for (auto& p : aCells) {
-    auto [rms, offset] = getNoisePerCell (p.first);
+    auto [rms, offset] = getNoisePerCell(p.first);
     p.second += offset + rms * m_gauss.shoot();
   }
 }
@@ -46,7 +46,7 @@ template <typename C>
 void NoiseCaloCellsFromFileBaseTool::filterCellNoiseT(C& aCells) const {
   // Erase a cell if it has energy below a threshold from the vector
   std::erase_if(aCells, [&](auto& p) {
-    auto [rms, offset] = getNoisePerCell (p.first);
+    auto [rms, offset] = getNoisePerCell(p.first);
     double e = p.second - offset;
     if (m_useAbsInFilter)
       e = std::abs(e);

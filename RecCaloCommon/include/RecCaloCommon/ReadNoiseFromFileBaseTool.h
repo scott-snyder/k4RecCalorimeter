@@ -57,7 +57,7 @@ class TH1;
  *
  * Each set of histograms is provided as an indexed list.  The names are
  * of the form HNAME1, HNAME2, etc., where the 1 in the name corresponds
- * to index 0.  The index used is taken from the CellID field 
+ * to index 0.  The index used is taken from the CellID field
  * activeFieldName.  This would usually be a layer index, but not
  * necessarily.  The number of histograms within each set is given
  * by numHistograms.

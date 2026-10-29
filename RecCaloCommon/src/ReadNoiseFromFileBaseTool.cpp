@@ -123,7 +123,7 @@ double ReadNoiseFromFileBaseTool::getNoiseRMSPerCell(int ibin, unsigned cellLaye
   }
 
   if (totalNoiseRMS < 1e-6) {
-    warning() << std::format ("Zero noise: cell bin {} layer {} noise {}", ibin, cellLayer,  totalNoiseRMS) << endmsg;
+    warning() << std::format("Zero noise: cell bin {} layer {} noise {}", ibin, cellLayer,  totalNoiseRMS) << endmsg;
   }
 
   return totalNoiseRMS;
@@ -179,31 +179,26 @@ StatusCode ReadNoiseFromFileBaseTool::initNoiseFromFile(NoiseData& data) const {
     TH1* h = dynamic_cast<TH1*>(noiseFile->Get(name.c_str()));
     if (!h) {
       error() << "Cannot read noise histogram " << name << " from file " << m_noiseFileName << endmsg;
-    }
-    else if (h->GetNbinsX() < 1) {
+    } else if (h->GetNbinsX() < 1) {
       error() << "Histogram  " << name
               << " has 0 bins! check the file with noise and the name of the histogram!" << endmsg;
       h = nullptr;
-    }
-    else {
+    } else {
       h->SetDirectory(nullptr);
     }
 
     return std::unique_ptr<TH1>(h);
   };
 
-  auto getHists = [&](const std::string& nameRoot,
-                      std::vector<std::unique_ptr<TH1>>& hists) {
-    
+  auto getHists = [&](const std::string& nameRoot, std::vector<std::unique_ptr<TH1>>& hists) {
     for (unsigned i = 0; i < m_numHistograms; i++) {
-      std::string name = std::format ("{}{}", nameRoot, i+1);
+      std::string name = std::format("{}{}", nameRoot, i+1);
       hists.push_back(getHist(name));
       if (!hists.back())
         return false;
     }
     return true;
   };
-    
 
   if (!getHists(m_elecNoiseHistoName, data.m_histoElecNoiseRMS))
     return StatusCode::FAILURE;
