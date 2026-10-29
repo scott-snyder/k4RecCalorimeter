@@ -1,14 +1,13 @@
 {
   "version": 5,
-  "prev": "6a6224d083242fcc31821b0e663f5b269945e040",
-  "head": "a58e15ace708aebcd8f1b7bfc82d052181573ff8",
+  "prev": "f59ba4393bc9cfdf03040e20220ea35ac584e53b",
+  "head": "6651188edf3f2bea21e5bd587a4bdc3b42d8c0ba",
   "applied": [
     "nocron",
     "timeout",
     "hhtest",
     "k4geo-noclone",
-    "noiseIndex",
-    "refresh-temp"
+    "noiseIndex"
   ],
   "unapplied": [
     "no-ci",
@@ -42,10 +41,7 @@
       "oid": "a9cd371cf1a7ce8d1467f1ac7b82c6712aed95bd"
     },
     "noiseIndex": {
-      "oid": "b658506bc8da936d46d88ff93b32a3ffc924c817"
-    },
-    "refresh-temp": {
-      "oid": "a58e15ace708aebcd8f1b7bfc82d052181573ff8"
+      "oid": "6651188edf3f2bea21e5bd587a4bdc3b42d8c0ba"
     },
     "no-ci": {
       "oid": "926a2f2d2b7c9794ef27df5c660bcfa2e832c0d7"
