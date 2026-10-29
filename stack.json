@@ -1,17 +1,17 @@
 {
   "version": 5,
-  "prev": "590160c70174906b8818200c49ebf1fea77cc594",
-  "head": "46408159cb9d7adc79020b32894bae6952e46806",
+  "prev": "a79675e77f8a0c376d7df48c27d3283c5d97a343",
+  "head": "5936813bd329c5c5dc343c22c15c8c1ccb6b4256",
   "applied": [
     "nocron",
     "timeout",
     "noiseIndex",
     "genconfFix",
-    "ci",
     "hhtest",
     "k4geo-noclone"
   ],
   "unapplied": [
+    "ci",
     "no-ci",
     "cellposIndex",
     "createCaloCells",
@@ -41,14 +41,14 @@
     "genconfFix": {
       "oid": "4cdcc3195888c60325c183a3cbc7eaa2c75b0a0c"
     },
-    "ci": {
-      "oid": "cf7c9a1d1599df845d0a3d8b0a8b55a918ed65b0"
-    },
     "hhtest": {
-      "oid": "1749e3354e51984172106d8bc68ddfbf644fd017"
+      "oid": "0a404e11ba47ac9f453df13223166867eabbfed6"
     },
     "k4geo-noclone": {
-      "oid": "46408159cb9d7adc79020b32894bae6952e46806"
+      "oid": "5936813bd329c5c5dc343c22c15c8c1ccb6b4256"
+    },
+    "ci": {
+      "oid": "cf7c9a1d1599df845d0a3d8b0a8b55a918ed65b0"
     },
     "no-ci": {
       "oid": "926a2f2d2b7c9794ef27df5c660bcfa2e832c0d7"
