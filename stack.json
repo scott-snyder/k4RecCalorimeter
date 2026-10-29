@@ -1,15 +1,15 @@
 {
   "version": 5,
-  "prev": "6704742fd1823d35acd69d2ca48cb318e583db5e",
-  "head": "3c920aa0107c7c4a1b2b6e1188560ba4e11ddf3e",
+  "prev": "b634e2ccf58a0bb1cc4db4e220a49b7dd1e0ff90",
+  "head": "1e129398db4834cd629d78c9aaf766342f5b4c5b",
   "applied": [
     "nocron",
     "timeout",
     "noiseIndex",
-    "genconfFix"
+    "genconfFix",
+    "ci"
   ],
   "unapplied": [
-    "ci",
     "hhtest",
     "k4geo-noclone",
     "no-ci",
@@ -42,7 +42,7 @@
       "oid": "3c920aa0107c7c4a1b2b6e1188560ba4e11ddf3e"
     },
     "ci": {
-      "oid": "7ecdc5337b08896e2a58959d70194e6b3c356c78"
+      "oid": "1e129398db4834cd629d78c9aaf766342f5b4c5b"
     },
     "hhtest": {
       "oid": "11424fdf3164072c1eaf698b785a93b4b5b54ea3"
