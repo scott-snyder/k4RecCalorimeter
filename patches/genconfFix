@@ -11,3 +11,5 @@ libraries, we could find the version from the release rather than the
 one we just built.  If there were interface changes, that could result
 in genconf failing.  Adjust the runtime LD_LIBRARY_PATH so that we
 search the target directory for ReCCaloCommon first.
+
+Similarly for the test environment.
