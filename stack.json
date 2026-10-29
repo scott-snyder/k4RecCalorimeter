@@ -1,14 +1,13 @@
 {
   "version": 5,
-  "prev": "849e210c8d6bb0e06c2171246d960ee02157b416",
-  "head": "80b4ea455e0d2795bb78be8d9d3531a915ea8f97",
+  "prev": "055df1cd6a44b0fd373d8b1160555307f4646835",
+  "head": "780f5fae89bf39b6e3ec47aeaee637f0bf737541",
   "applied": [
     "nocron",
     "timeout",
     "hhtest",
     "k4geo-noclone",
-    "noiseIndex",
-    "refresh-temp"
+    "noiseIndex"
   ],
   "unapplied": [
     "no-ci",
@@ -42,10 +41,7 @@
       "oid": "a9cd371cf1a7ce8d1467f1ac7b82c6712aed95bd"
     },
     "noiseIndex": {
-      "oid": "315253d731c93f42c0bf661a12c0f55a0ce7e9d8"
-    },
-    "refresh-temp": {
-      "oid": "80b4ea455e0d2795bb78be8d9d3531a915ea8f97"
+      "oid": "780f5fae89bf39b6e3ec47aeaee637f0bf737541"
     },
     "no-ci": {
       "oid": "926a2f2d2b7c9794ef27df5c660bcfa2e832c0d7"
