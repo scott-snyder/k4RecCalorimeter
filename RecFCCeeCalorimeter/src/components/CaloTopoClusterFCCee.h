@@ -181,7 +181,7 @@ private:
                                           const std::vector<FastCell>& allCells,
                                           CellsMap& allCellsMap,
                                           FastClusterMap& clusters,
-                                          std::unordered_map<uint32_t, std::unordered_set<CellID>>& clusterMembers,
+                                          std::vector<std::unordered_set<CellID>>& clusterMembers,
                                           bool allowClusterMerge) const;
 
 private:
