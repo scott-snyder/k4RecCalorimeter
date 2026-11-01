@@ -116,11 +116,15 @@ StatusCode CaloTopoClusterFCCee::initialize() {
 }
 
 
+/// Initialize map of cells to states.
+/// Initially, each cell is mapped to one more than its index in allCells.
 CaloTopoClusterFCCee::CellsMap::CellsMap (const std::vector<FastCell>& allCells,
                                           const k4::recCalo::ICaloIndexer* indexer)
 {
   size_t ncells = allCells.size();
   if (indexer && ncells > 0.01 * indexer->cellIDs().size()) {
+    // Full representation: we have an indexer, and a significant
+    // number of cells are present.
     m_indexer = indexer;
     m_cellVec.resize (indexer->cellIDs().size());
     for (size_t icell = 0; icell < ncells; ++icell) {
@@ -156,6 +160,8 @@ StatusCode CaloTopoClusterFCCee::execute(const EventContext&) const {
     colls.push_back (coll);
     for (size_t ihit = 0; const edm4hep::CalorimeterHit& hit : *coll) {
       int caloID = m_decoder->get(hit.getCellID(), m_indexSystem);
+      // We only expect a few distinct IDs here, so just use a linear search.
+      // Could potentially use a bitmap instead if this is a bottleneck.
       if (std::ranges::find (caloIDs, caloID) == caloIDs.end()) {
         caloIDs.push_back (caloID);
       }
@@ -222,7 +228,8 @@ StatusCode CaloTopoClusterFCCee::execute(const EventContext&) const {
   double checkTotEnergyAboveThreshold = 0.;
   int clusterWithMixedCells = 0;
 
-  for (const auto& [clusterId, cluster] : clusters) {
+  for (uint32_t clusterId = 0; clusterId < clusters.size(); ++clusterId) {
+    const FastCluster& cluster = clusters.at(clusterId);
 
     double clusterEnergy = 0.;
     std::unordered_map<int, int> system;
@@ -355,14 +362,10 @@ StatusCode CaloTopoClusterFCCee::buildClusters(const std::vector<FastCell>& seed
 
   std::unordered_map<uint32_t, std::unordered_set<CellID>> clusterMembers;
   clusterMembers.reserve(seedCells.size());
+  clusters.reserve (1000);
 
   // loop over every seeds in calo to build a cluster (or merge with another cluster if appropriate)
-  uint32_t seedCounter = 0;
   for (const FastCell& seedCell : seedCells) {
-    seedCounter++;
-    if (msgLevel() <= MSG::VERBOSE)
-      verbose() << "Looking at seed: " << seedCounter << endmsg;
-
     CellID seedId = seedCell.cellID;
     int32_t& cellState = allCellsMap.find(seedId);
     if (cellState < 0) {
@@ -371,13 +374,15 @@ StatusCode CaloTopoClusterFCCee::buildClusters(const std::vector<FastCell>& seed
       continue;
     }
 
-    uint32_t clusterId = seedCounter;
+    uint32_t clusterId = clusters.size();
+    clusters.resize (clusters.size() + 1);
 
     // seed insertion (type = 1)
     FastCluster& cluster = clusters[clusterId];
     cluster.reserve(128);
     cluster.push_back(seedCell);
     cluster.back().type = 1;
+
     cellState = -clusterId-1;
     clusterMembers[clusterId].insert(seedId);
 
@@ -481,7 +486,7 @@ auto CaloTopoClusterFCCee::searchForNeighbours(
         if (msgLevel() <= MSG::VERBOSE)
           verbose() << "Neighbour kept, hit = " << hit.cellID << endmsg;
         int cellType = (nSigma == m_lastNeighbourSigma) ? 3 : 2;
-        FastCluster& cluster = clusters[clusterID];
+        FastCluster& cluster = clusters.at(clusterID);
         cluster.push_back(hit);
         cluster.back().type = cellType;
         cellState = -clusterID-1;
@@ -498,15 +503,15 @@ auto CaloTopoClusterFCCee::searchForNeighbours(
 
       uint32_t targetCluster = -cellState-1;
 
-      FastCluster& src = clusters[clusterID];
-      FastCluster& dst = clusters[targetCluster];
+      FastCluster& src = clusters.at(clusterID);
+      FastCluster& dst = clusters.at(targetCluster);
       std::unordered_set<CellID>& dstMembers = clusterMembers[targetCluster];
 
       if (msgLevel() <= MSG::VERBOSE) {
         verbose() << "Neighbour " << neighbourID << " was found in cluster " << targetCluster << ", cluster "
                   << clusterID << " will be merged!" << endmsg;
-        verbose() << "Assigning all cells ( " << clusters[clusterID].size() << " ) to Cluster " << targetCluster
-                  << " with ( " << clusters[targetCluster].size() << " ). " << endmsg;
+        verbose() << "Assigning all cells ( " << clusters.at(clusterID).size() << " ) to Cluster " << targetCluster
+                  << " with ( " << clusters.at(targetCluster).size() << " ). " << endmsg;
       }
 
       // merge all cells
@@ -519,7 +524,8 @@ auto CaloTopoClusterFCCee::searchForNeighbours(
         }
       }
 
-      clusters.erase(clusterID);
+      clusters.at(clusterID).clear();
+      clusters.at(clusterID).shrink_to_fit();
       clusterMembers.erase(clusterID);
       // changed clusterId -> if more neighbours are found, correct assignment
       clusterID = targetCluster;

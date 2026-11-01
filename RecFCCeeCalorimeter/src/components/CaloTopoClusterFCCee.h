@@ -81,7 +81,9 @@ private:
     unsigned ihit;
   };
   using FastCluster = std::vector<FastCell>;
-  using FastClusterMap = std::map<uint32_t, FastCluster>; // TODO make it unordered or a vector
+  // Index corresponds to clusterID.  An empty FastCluster means the cluster
+  // was deleted due to merging.
+  using FastClusterMap = std::vector<FastCluster>;
 
   /**
    * @brief Map from cell ids to cell state:
