@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "4b537f4dc2ddac210e5858bd4db3a924bd026d04",
-  "head": "faadf1b4b19bab6cd83398ae93989b1386b1c90d",
+  "prev": "cadcac12d97dc27e6f639b7574d1ebc2d7f199a8",
+  "head": "3200c5a3d2ee10da766a00d446f628fe1e3e535a",
   "applied": [
     "nocron",
     "timeout",
@@ -9,10 +9,10 @@
     "hhtest",
     "k4geo-noclone",
     "no-ci",
-    "createTopoCluster",
-    "noiseIndex"
+    "createTopoCluster"
   ],
   "unapplied": [
+    "noiseIndex",
     "ci",
     "cellposIndex",
     "createCaloCells",
