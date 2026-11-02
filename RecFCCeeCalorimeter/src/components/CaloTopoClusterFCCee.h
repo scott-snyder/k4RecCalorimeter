@@ -4,10 +4,10 @@
 // std
 #include <cstdint>
 #include <map>
+#include <optional>
 #include <sys/types.h>
 #include <utility>
 #include <vector>
-#include <optional>
 
 // Gaudi
 #include "Gaudi/Algorithm.h"
@@ -15,8 +15,8 @@
 #include "GaudiKernel/ToolHandle.h"
 
 // Key4HEP
-#include "RecCaloCommon/ICaloReadNeighboursMap.h"
 #include "RecCaloCommon/ICaloCellIndexerSvc.h"
+#include "RecCaloCommon/ICaloReadNeighboursMap.h"
 #include "RecCaloCommon/INoiseConstTool.h"
 #include "k4FWCore/DataHandle.h"
 #include "k4Interface/IGeoSvc.h"
@@ -96,8 +96,7 @@ private:
    * then we store the states using a std::vector (full representation).
    * Otherwise, we use a std::unordered_map (sparse representation).
    */
-  class CellsMap
-  {
+  class CellsMap {
   public:
     /**
      * @brief Constructor.
@@ -105,26 +104,22 @@ private:
      * @param indexer ICaloIndexer object for the detectors being handled,
      *                or nullptr if one is not available.
      */
-    CellsMap (const std::vector<FastCell>& allCells,
-              const k4::recCalo::ICaloIndexer* indexer);
-
+    CellsMap(const std::vector<FastCell>& allCells, const k4::recCalo::ICaloIndexer* indexer);
 
     /**
      * @brief Look up a cell state given a cell id.
      * Returns a reference to 0 if the cell wasn't in the input set.
      * This should not be overwritten!
      */
-    int32_t& find (CellID cellid)
-    {
+    int32_t& find(CellID cellid) {
       if (m_indexer) {
-        unsigned ndx = m_indexer->index (cellid);
+        unsigned ndx = m_indexer->index(cellid);
         // Neighbour tool may return invalid cells...
         if (ndx == k4::recCalo::ICaloIndexer::INVALID)
           return m_zero;
         return m_cellVec.at(ndx);
-      }
-      else {
-        auto it = m_cellMap.find (cellid);
+      } else {
+        auto it = m_cellMap.find(cellid);
         if (it == m_cellMap.end()) {
           return m_zero;
         }
@@ -147,7 +142,6 @@ private:
     std::vector<int32_t> m_cellVec;
   };
 
- 
   /** Build clusters from the found seeds.
    * First the function initialises a cluster in the preClusterCollection for the seed cells,
    * then it calls the CaloTopoClusterFCCee::searchForNeighbours function to retrieve the vector of next cellIDs to add
@@ -158,10 +152,13 @@ private:
    *   @param[in] allCells, collection of all cells (map cellID -> fastcell)
    *   @param[in] clusters, collection of clusters to be filled by the algorithm (map of clusterID -> FastCluster)
    */
+  // clang-format off
   StatusCode buildClusters(const std::vector<FastCell>& seedCells,
                            const std::vector<FastCell>& allCells,
                            CellsMap& allCellsMap,
                            FastClusterMap& clusters) const;
+  // clang-format on
+
   /** Search for neighbours and add them to cluster collection
    *   @param[in] cellID, the cell ID for which to find the neighbours
    *   @param[in] clusterID, the current cluster ID
@@ -175,6 +172,7 @@ private:
    *   @param[in] allowClusterMerge, bool to allow for clusters to be merged
    *   return vector of cellID of found neighbours
    */
+  // clang-format off
   std::vector<CellID> searchForNeighbours(const CellID cellID,
                                           uint& clusterID,
                                           int nSigma,
@@ -183,13 +181,14 @@ private:
                                           FastClusterMap& clusters,
                                           std::vector<std::unordered_set<CellID>>& clusterMembers,
                                           bool allowClusterMerge) const;
+  // clang-format on
 
 private:
   /// List of input cell collections
   Gaudi::Property<std::vector<std::string>> m_cellCollections{
       this, "cells", {}, "Names of CalorimeterHit collections to read"};
   /// the vector of input k4FWCore::DataHandles for the input cell collections
-  mutable std::vector<k4FWCore::DataHandle<edm4hep::CalorimeterHitCollection> > m_cellCollectionHandles;
+  mutable std::vector<k4FWCore::DataHandle<edm4hep::CalorimeterHitCollection>> m_cellCollectionHandles;
   // Cluster collection (output)
   mutable k4FWCore::DataHandle<edm4hep::ClusterCollection> m_clusterCollection{"clusters", Gaudi::DataHandle::Writer,
                                                                                this};
@@ -197,7 +196,9 @@ private:
   mutable k4FWCore::DataHandle<edm4hep::CalorimeterHitCollection> m_clusterCellsCollection{
       "clusterCells", Gaudi::DataHandle::Writer, this};
 
-  Gaudi::Property<std::vector<int>> m_caloIDs{this, "calorimeterIDs", {}, "Corresponding list of calorimeter IDs"};
+  // clang-format off
+  Gaudi::Property<std::vector<int>> m_caloIDs
+    {this, "calorimeterIDs", {}, "Corresponding list of calorimeter IDs"};
 
   /// Handle for the cells noise tool
   ToolHandle<k4::recCalo::INoiseConstTool> m_noiseTool
@@ -205,36 +206,54 @@ private:
   /// Handle for neighbours tool
   ToolHandle<k4::recCalo::ICaloReadNeighboursMap> m_neighboursTool
     {this, "neigboursTool", "TopoCaloNeighbours", "Handle for tool to retrieve cell neighbours"};
+
   // flag to use a pre-calculated neighbor map
-  Gaudi::Property<bool> m_useNeighborMap{this, "useNeighborMap", true, "use pre-calculated neighbor map"};
+  Gaudi::Property<bool> m_useNeighborMap
+    {this, "useNeighborMap", true, "use pre-calculated neighbor map"};
+
+  // name of the readout: only needed if useNeighborMap is set to false
+  Gaudi::Property<std::string> m_readoutName
+    {this, "readoutName", "",
+     "name of the readout (needed if useNeighborMap=false)"};
+
+  /// Seed threshold in sigma
+  Gaudi::Property<int> m_seedSigma
+    {this, "seedSigma", 4, "number of sigma in noise threshold"};
+
+  /// Neighbour threshold in sigma
+  Gaudi::Property<int> m_neighbourSigma
+    {this, "neighbourSigma", 2, "number of sigma in noise threshold"};
+
+  /// Last neighbour threshold in sigma
+  Gaudi::Property<int> m_lastNeighbourSigma
+    {this, "lastNeighbourSigma", 0, "number of sigma in noise threshold"};
+
+  /// Cluster energy threshold
+  Gaudi::Property<float> m_minClusterEnergy
+    {this, "minClusterEnergy", 0., "minimum cluster energy"};
+
+  /// System encoding string
+  Gaudi::Property<std::string> m_systemEncoding
+    {this, "systemEncoding", "system:4", "System encoding string"};
+
+  /// Flag if a new output cell collection of clustered cells should be created
+  Gaudi::Property<bool> m_createClusterCellCollection
+    {this, "createClusterCellCollection", false};
+
+  ServiceHandle<k4::recCalo::ICaloCellIndexerSvc> m_indexerSvc
+    { this, "CaloCellIndexerSvc", "k4::recCalo::CaloCellIndexerSvc", "" };
+
+  // clang-format on
+
   // use GeoSvc when the neighbor map is not present
   SmartIF<IGeoSvc> m_geoSvc;
-  // name of the readout: only needed if useNeighborMap is set to false
-  Gaudi::Property<std::string> m_readoutName{this, "readoutName", "",
-                                             "name of the readout (needed if useNeighborMap=false)"};
+
   // pointer to the segmentation object
   dd4hep::DDSegmentation::Segmentation* m_segmentation = nullptr;
 
-  /// Seed threshold in sigma
-  Gaudi::Property<int> m_seedSigma{this, "seedSigma", 4, "number of sigma in noise threshold"};
-  /// Neighbour threshold in sigma
-  Gaudi::Property<int> m_neighbourSigma{this, "neighbourSigma", 2, "number of sigma in noise threshold"};
-  /// Last neighbour threshold in sigma
-  Gaudi::Property<int> m_lastNeighbourSigma{this, "lastNeighbourSigma", 0, "number of sigma in noise threshold"};
-  /// Cluster energy threshold
-  Gaudi::Property<float> m_minClusterEnergy{this, "minClusterEnergy", 0., "minimum cluster energy"};
-
-  /// System encoding string
-  Gaudi::Property<std::string> m_systemEncoding{this, "systemEncoding", "system:4", "System encoding string"};
-
-  /// Flag if a new output cell collection of clustered cells should be created
-  Gaudi::Property<bool> m_createClusterCellCollection{this, "createClusterCellCollection", false};
   /// General decoder to encode the calorimeter sub-system to determine which
   /// positions tool to use
   std::optional<dd4hep::DDSegmentation::BitFieldCoder> m_decoder;
   int m_indexSystem;
-
-  ServiceHandle<k4::recCalo::ICaloCellIndexerSvc> m_indexerSvc
-    { this, "CaloCellIndexerSvc", "k4::recCalo::CaloCellIndexerSvc", "" };
 };
 #endif /* RECFCCEECALORIMETER_CALOTOPOCLUSTERFCCEE_H */
