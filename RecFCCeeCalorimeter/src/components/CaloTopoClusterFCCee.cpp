@@ -115,7 +115,6 @@ StatusCode CaloTopoClusterFCCee::initialize() {
   return StatusCode::SUCCESS;
 }
 
-
 /// Initialize map of cells to states.
 /// Initially, each cell is mapped to one more than its index in allCells.
 CaloTopoClusterFCCee::CellsMap::CellsMap(const std::vector<FastCell>& allCells,
@@ -132,7 +131,7 @@ CaloTopoClusterFCCee::CellsMap::CellsMap(const std::vector<FastCell>& allCells,
     }
   } else {
     for (size_t icell = 0; icell < ncells; ++icell) {
-      m_cellMap.emplace(allCells[icell].cellID, icell+1);
+      m_cellMap.emplace(allCells[icell].cellID, icell + 1);
     }
   }
 }
@@ -429,8 +428,8 @@ StatusCode CaloTopoClusterFCCee::buildClusters(const std::vector<FastCell>& seed
           if (msgLevel() <= MSG::VERBOSE)
             verbose() << "Add neighbours of " << cID << " in last round with thr = " << m_lastNeighbourSigma.value()
                       << " x sigma." << endmsg;
-          std::vector<CellID> lastNeighbours = searchForNeighbours(cID, clusterId, m_lastNeighbourSigma, allCells, allCellsMap, clusters,
-                                                                     clusterMembers, false);
+          std::vector<CellID> lastNeighbours = searchForNeighbours(cID, clusterId, m_lastNeighbourSigma, allCells,
+                                                                   allCellsMap, clusters, clusterMembers, false);
         }
       }
     }
@@ -450,7 +449,7 @@ auto CaloTopoClusterFCCee::searchForNeighbours(
     std::vector<std::unordered_set<CellID>>& clusterMembers,
     bool allowClusterMerge) const -> std::vector<CellID>
 {
-// clang-format on
+  // clang-format on
   std::vector<CellID> additionalNeighbours;
 
   // retrieve neighbours
@@ -506,7 +505,7 @@ auto CaloTopoClusterFCCee::searchForNeighbours(
     }
 
     // CASE 2: already used -> possible merge
-    else if (cellState < 0 && (-cellState -  1) != static_cast<int>(clusterID) && allowClusterMerge) {
+    else if (cellState < 0 && (-cellState - 1) != static_cast<int>(clusterID) && allowClusterMerge) {
 
       uint32_t targetCluster = -cellState - 1;
 
