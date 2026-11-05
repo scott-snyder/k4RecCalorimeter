@@ -1,6 +1,7 @@
 #include "ReadNoiseFromFileTool.h"
 #include "DD4hep/Detector.h"
 
+#include "detectorSegmentations/FCCSWGridPhiEta_k4geo.h"
 #include "k4Interface/IGeoSvc.h"
 
 #include "TH1F.h"
