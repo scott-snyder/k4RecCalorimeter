@@ -1,6 +1,3 @@
-/*
- * Copyright (C) 2002-2026 CERN for the benefit of the ATLAS collaboration.
- */
 /**
  * @file ReadNoiseFromFileBaseTool.cpp
  * @author scott snyder <snyder@bnl.gov>, Jana Faltova, Coralie Neubueser, Giovanni Marchior
@@ -140,14 +137,9 @@ double ReadNoiseFromFileBaseTool::getNoiseOffsetPerCell(int ibin, unsigned cellL
   double elecNoiseOffset = m_data->m_histoElecNoiseOffset.at(cellLayer)->GetBinContent(ibin);
 
   // Total noise: electronics noise + pileup
-  double totalNoiseOffset = 0;
-  if (m_addPileup) {
-    // ??? shouldn't the offset be summed linearly?
-    double pileupNoiseOffset = m_data->m_histoPileupNoiseOffset.at(cellLayer)->GetBinContent(ibin);
-    totalNoiseOffset = std::hypot(elecNoiseOffset, pileupNoiseOffset) * m_scaleFactor;
-  } else { // avoid useless math operations if no pileup
-    totalNoiseOffset = std::abs(elecNoiseOffset) * m_scaleFactor;
-  }
+  double pileupNoiseOffset = m_addPileup ? m_data->m_histoPileupNoiseOffset.at(cellLayer)->GetBinContent(ibin) : 0;
+  double totalNoiseOffset = (elecNoiseOffset + pileupNoiseOffset) * m_scaleFactor;
+
   // No warning is printed if offset is zero because that is the usual scenario
 
   return totalNoiseOffset;

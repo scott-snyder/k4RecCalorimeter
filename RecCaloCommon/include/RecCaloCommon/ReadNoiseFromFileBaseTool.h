@@ -1,7 +1,4 @@
 // This file's extension implies that it's C, but it's really -*- C++ -*-.
-/*
- * Copyright (C) 2002-2026 CERN for the benefit of the ATLAS collaboration.
- */
 /**
  * @file RecCaloCommon/ReadNoiseFromFileBaseTool.h
  * @author scott snyder <snyder@bnl.gov>, Jana Faltova, Coralie Neubueser, Giovanni Marchior
@@ -25,9 +22,6 @@
 #include "RecCaloCommon/ICaloCellIndexerSvc.h"
 #include "RecCaloCommon/INoiseConstTool.h"
 
-// k4geo
-#include "detectorSegmentations/FCCSWGridPhiEta_k4geo.h"
-
 #include <memory>
 
 class IGeoSvc;
@@ -35,10 +29,10 @@ class IGeoSvc;
 // Root
 class TH1;
 
-/** @class ReadNoiseFromFileTool
+/** @class ReadNoiseFromFileBaseTool
  *
  *  Tool to read the stored noise constant per cell in the calorimeters
- *  Access noise constants from TH1F histogram (noise vs. |eta|)
+ *  Access noise constants from TH1F histogram (noise vs. |eta| or |theta|)
  *
  *  @author Jana Faltova, Coralie Neubueser
  *  @date   2018-01
@@ -50,10 +44,9 @@ class TH1;
  * for electronic noise RMS, pileup noise RMS, electronic noise offset,
  * and pileup noise offset.  Offset histograms are present if setNoiseOffset
  * is true, and pileup histograms are present if addPileup is true.
- * Total rms/offset are calculated as the quadrature sum of electronic
- * and pileup contributions, multiplied by m_scaleFactor.
- * (??? This is the way the code has been --- but should offset be
- * summed linearly?)
+ * Total rms is calculated as the quadrature sum of electronic
+ * and pileup contributions, multiplied by m_scaleFactor; total offset
+ * is the linear sum of the same.
  *
  * Each set of histograms is provided as an indexed list.  The names are
  * of the form HNAME1, HNAME2, etc., where the 1 in the name corresponds
@@ -89,7 +82,7 @@ protected:
   // clang-format off
   /// Name of the detector readout
   Gaudi::Property<std::string> m_readoutName
-    {this, "readoutName", "ECalHitsPhiEta", "Name of the detector readout"};
+    {this, "readoutName", "", "Name of the detector readout"};
   /// Noise offset, if false, mean is set to 0
   Gaudi::Property<bool> m_setNoiseOffset
     {this, "setNoiseOffset", true, "Set a noise offset per cell"};
