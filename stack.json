@@ -1,12 +1,14 @@
 {
   "version": 5,
-  "prev": "4c224c0a08674cd5103910bb69cadffa453962c6",
-  "head": "6055eb64ba44447f6979f8f484dbe0fd5344e5d8",
+  "prev": "cbb33b16c118fc881b12e24589e8de42eb0b8cbb",
+  "head": "a9df116d82c760a34e69ac161a2bd35dcf46b5cf",
   "applied": [
     "nocron",
     "timeout",
     "hhtest",
-    "k4geo-noclone",
+    "k4geo-noclone"
+  ],
+  "unapplied": [
     "createTopoCluster",
     "no-ci",
     "ci",
@@ -23,7 +25,6 @@
     "diag-wip",
     "cellids-wip"
   ],
-  "unapplied": [],
   "hidden": [],
   "patches": {
     "nocron": {
