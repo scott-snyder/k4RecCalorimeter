@@ -1,0 +1,12 @@
+Bottom: 1e0c1c7c6007c5deb3ef942e545de7d7f8ee5f64
+Top:    1e0c1c7c6007c5deb3ef942e545de7d7f8ee5f64
+Author: scott snyder <snyder@bnl.gov>
+Date:   2026-11-16 16:29:28 -0500
+
+Fix issue with CollectionID.
+
+CollectionIDs are not assigned until collections are written; therefore,
+we cannot in general use them to distinguish collections in
+digitization/reconstruction.  Rework GGTFTrackFinder to use the index
+in the input collection sequence rather than collectionID to identify
+collections.  Fixes test failures for ALLEGRO and IDEA seen in FCC-config.
