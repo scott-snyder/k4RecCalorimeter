@@ -1,13 +1,12 @@
 {
   "version": 5,
-  "prev": "0b6b78208b98303f8cf11e49c2b19c009f7344d4",
-  "head": "f699c8e76d93735073f1c2661dd2c9f0281fdede",
+  "prev": "3ff17f773bde39802c62f899ab51101b5316a873",
+  "head": "a9df116d82c760a34e69ac161a2bd35dcf46b5cf",
   "applied": [
     "nocron",
     "timeout",
     "hhtest",
-    "k4geo-noclone",
-    "collid"
+    "k4geo-noclone"
   ],
   "unapplied": [
     "createTopoCluster",
@@ -39,9 +38,6 @@
     },
     "k4geo-noclone": {
       "oid": "a9df116d82c760a34e69ac161a2bd35dcf46b5cf"
-    },
-    "collid": {
-      "oid": "f699c8e76d93735073f1c2661dd2c9f0281fdede"
     },
     "createTopoCluster": {
       "oid": "be2f18de18c0511dae04ae9f4a4f4880311df619"
