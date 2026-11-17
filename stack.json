@@ -1,14 +1,14 @@
 {
   "version": 5,
-  "prev": "6aac34d04494f3c0b50b7875b02efb5c342c6162",
-  "head": "decce31c1f511a1cf95c6a29d6478a75f41af355",
+  "prev": "7c49f724173817ff782069792ad1c13ce203308f",
+  "head": "4ed5649d6ba8bb2f5bc8ce62c0fca3f08ae5da1e",
   "applied": [
     "xtalk",
     "timeout",
-    "hhtest"
+    "hhtest",
+    "pairpi0"
   ],
   "unapplied": [
-    "pairpi0",
     "k4geo-noclone",
     "topoNoiseIndex",
     "createTopoCluster",
@@ -76,7 +76,7 @@
       "oid": "16dcbfcf594776edcc16774ca7542f944e640700"
     },
     "pairpi0": {
-      "oid": "e60543158ebe672dcaa2bb1b66f6d4a1095f8a0c"
+      "oid": "4ed5649d6ba8bb2f5bc8ce62c0fca3f08ae5da1e"
     },
     "repnoise": {
       "oid": "7fc9a3fd484110531f87a0f266d4285ab20da60d"
