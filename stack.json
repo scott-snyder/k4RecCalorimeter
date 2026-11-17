@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "1db37ea457fea56015183cd6e8731d511ba017bc",
-  "head": "d08e1d84bd74901309701004d385f2179f2b74b5",
+  "prev": "dc70a4e76612b2015d424190bf1d5922b45460b4",
+  "head": "3a27f64940569f58ad04b7bc7d4ca97448ff90df",
   "applied": [
     "xtalk",
     "timeout",
@@ -15,12 +15,12 @@
     "sortcells",
     "sortlinks",
     "sortnoise",
-    "repnoise"
-  ],
-  "unapplied": [
+    "repnoise",
     "subdetVolman2",
     "subdetVolman",
-    "move-check",
+    "move-check"
+  ],
+  "unapplied": [
     "check-deprecated",
     "check-remove"
   ],
@@ -67,7 +67,7 @@
       "oid": "b9f46034152e74af649f41df9478feb05b94e94b"
     },
     "move-check": {
-      "oid": "38583b056e0873f6665432c624a37eb6c63a472e"
+      "oid": "3a27f64940569f58ad04b7bc7d4ca97448ff90df"
     },
     "repnoise": {
       "oid": "d08e1d84bd74901309701004d385f2179f2b74b5"
@@ -82,10 +82,10 @@
       "oid": "5b909869933de5e8a0cbe38d21dc7d33a873ad76"
     },
     "subdetVolman": {
-      "oid": "99e549e7533385449fe2a7c8a99c534e30512453"
+      "oid": "fa1a2f4c91506ecddb65af91f3f4c19303bc012c"
     },
     "subdetVolman2": {
-      "oid": "12c80177ed2c98560c00db2b2f53570c91517c76"
+      "oid": "6c24507f962a9f54f076012000a6b6ca937724cd"
     },
     "timeout": {
       "oid": "1b7504107b428f53a35b5d9d6f634013ebf9bae7"
