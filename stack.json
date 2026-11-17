@@ -1,15 +1,14 @@
 {
   "version": 5,
-  "prev": "f6afaab172c983231a508d5b5c47e0a69bf2aec2",
-  "head": "b21da9a7d585a338f9030add23602869a63c064c",
+  "prev": "bfa7644f9b50a6d78591256a1bd7828d22482107",
+  "head": "7d4775bc1734ae6f1ac1f38387437b334ec5c9bb",
   "applied": [
     "xtalk",
     "timeout",
     "hhtest",
     "k4geo-noclone",
     "createTopoCluster",
-    "createCaloCells",
-    "noiseIndex"
+    "createCaloCells"
   ],
   "unapplied": [
     "cellposIndex",
@@ -69,9 +68,6 @@
     },
     "move-check": {
       "oid": "38583b056e0873f6665432c624a37eb6c63a472e"
-    },
-    "noiseIndex": {
-      "oid": "b21da9a7d585a338f9030add23602869a63c064c"
     },
     "repnoise": {
       "oid": "7fc9a3fd484110531f87a0f266d4285ab20da60d"
