@@ -1,7 +1,7 @@
 {
   "version": 5,
-  "prev": "826b3d377cf7da2dd0afe4c2fcdcce592efa579a",
-  "head": "0f67de44f39764680eafc5d89e9a2b19fb4a8f79",
+  "prev": "8390cafbd266b62606cae10512678f0a1653a78a",
+  "head": "a057a7593bd2abc47e44f2ca762ae85f26094495",
   "applied": [
     "xtalk",
     "timeout",
@@ -18,8 +18,7 @@
     "repnoise",
     "subdetVolman2",
     "subdetVolman",
-    "move-check",
-    "refresh-temp"
+    "move-check"
   ],
   "unapplied": [
     "check-deprecated",
@@ -68,10 +67,7 @@
       "oid": "b9f46034152e74af649f41df9478feb05b94e94b"
     },
     "move-check": {
-      "oid": "3a27f64940569f58ad04b7bc7d4ca97448ff90df"
-    },
-    "refresh-temp": {
-      "oid": "0f67de44f39764680eafc5d89e9a2b19fb4a8f79"
+      "oid": "a057a7593bd2abc47e44f2ca762ae85f26094495"
     },
     "repnoise": {
       "oid": "d08e1d84bd74901309701004d385f2179f2b74b5"
