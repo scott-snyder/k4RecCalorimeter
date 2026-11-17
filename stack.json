@@ -1,13 +1,12 @@
 {
   "version": 5,
-  "prev": "0f56066a7d180e5da4d237412aa53d65525e9c93",
+  "prev": "6638fd3e3f750408afd68c97f969fadf7924a9d0",
   "head": "1b7504107b428f53a35b5d9d6f634013ebf9bae7",
   "applied": [
     "xtalk",
     "timeout"
   ],
   "unapplied": [
-    "hhtest",
     "pairpi0",
     "k4geo-noclone",
     "topoNoiseIndex",
@@ -59,9 +58,6 @@
     },
     "discrit2-wip": {
       "oid": "a97012a7b5e4344bbff9adc73757411337179cba"
-    },
-    "hhtest": {
-      "oid": "d2dbfc9a1caf63ae47eb5d787596ee6e2d3ccb56"
     },
     "k4geo-noclone": {
       "oid": "d7193c04a0a4a2ae9fa311b68c1e4e4de42dd34a"
