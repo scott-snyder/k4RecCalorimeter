@@ -1,17 +1,17 @@
 {
   "version": 5,
-  "prev": "fa0690ad373b5a6539eb6a182ed5d83b2c5eba33",
-  "head": "7d4775bc1734ae6f1ac1f38387437b334ec5c9bb",
+  "prev": "f6afaab172c983231a508d5b5c47e0a69bf2aec2",
+  "head": "b21da9a7d585a338f9030add23602869a63c064c",
   "applied": [
     "xtalk",
     "timeout",
     "hhtest",
     "k4geo-noclone",
     "createTopoCluster",
-    "createCaloCells"
+    "createCaloCells",
+    "noiseIndex"
   ],
   "unapplied": [
-    "noiseIndex",
     "cellposIndex",
     "discrit-wip",
     "discrit2-wip",
@@ -71,7 +71,7 @@
       "oid": "38583b056e0873f6665432c624a37eb6c63a472e"
     },
     "noiseIndex": {
-      "oid": "16dcbfcf594776edcc16774ca7542f944e640700"
+      "oid": "b21da9a7d585a338f9030add23602869a63c064c"
     },
     "repnoise": {
       "oid": "7fc9a3fd484110531f87a0f266d4285ab20da60d"
